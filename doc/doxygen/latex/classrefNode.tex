@@ -1,0 +1,230 @@
+\hypertarget{classrefNode}{\section{Referencia de la Clase ref\-Node}
+\label{classrefNode}\index{ref\-Node@{ref\-Node}}
+}
+
+
+Nodo referencia.  
+
+
+
+
+{\ttfamily \#include $<$run\-Tree.\-h$>$}
+
+Diagrama de herencias de ref\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classrefNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrefNode_a4dadca3053650b8f5ba67802460e3b94}{ref\-Node} ()
+\item 
+\hyperlink{classrefNode_a880ba91153659c5d38f5af5cebd27d87}{ref\-Node} (string str)
+\item 
+\hyperlink{classrefNode_aa2afe3e64503c9f44406b67cd40215cd}{ref\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$data)
+\item 
+\hyperlink{classrefNode_adea8c8e42d1a17012ee62ddeb22b5500}{ref\-Node} (\hyperlink{classrefNode}{ref\-Node} $\ast$a)
+\item 
+void \hyperlink{classrefNode_a6e05edbe71779a62106d8b511ae3373f}{set\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classrefNode_af3287bf7b98a88d97bf7076cbae2e50b}{get\-Ref} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$\& \hyperlink{classrefNode_acbcb5ebaa058e5dac4fbf775b62887c7}{get\-Ref} ()
+\item 
+void \hyperlink{classrefNode_ad2905de207b40a8b6aec5d4ba15351d6}{run} ()
+\item 
+void \hyperlink{classrefNode_a57cee8085d111667cc0bb89ac8d81b2a}{rm\-Ref} ()
+\item 
+void \hyperlink{classrefNode_a1988e5f81b403d5154766f1d93dbb5cf}{del} ()
+\item 
+string \hyperlink{classrefNode_aa51d80443279f4bca750f5c36d5f9b0b}{strvalue} ()
+\item 
+int \hyperlink{classrefNode_ac4f857aa305a2d79d20c110b6d4c5d3d}{numvalue} ()
+\item 
+bool \hyperlink{classrefNode_a5dd27fd2a77b369e0646ede62b617fe7}{boolvalue} ()
+\item 
+string \hyperlink{classrefNode_a08700bd9a86bd5d44dac8d5679b8fd13}{print} () const 
+\item 
+void \hyperlink{classrefNode_ae59d59767950abe3260b55fa0276ed0a}{set\-Key} (string s)
+\item 
+string \hyperlink{classrefNode_ab6a0e220221d4b8ad7e896383db554a1}{get\-Key} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo referencia. 
+
+Los nodos referencia son un tipo de nodos cuya funcionalidad consiste en referenciar a otros nodos. Son una pieza fundamental del sistema ya que permiten acceder a los nodos creados de forma dinámica.
+
+Una referencia tiene una cadena como clave que permite referirse a la misma. Las referencias suelen quedar agrupadas en otras estructuras de datos como las tablas de símbolos.
+
+Existen nodos que tienen un valor asociado. El tipo de este valor mucha veces no es conocido por lo que guardan una referencia a otro nodo como valor. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classrefNode_a4dadca3053650b8f5ba67802460e3b94}{\index{ref\-Node@{ref\-Node}!ref\-Node@{ref\-Node}}
+\index{ref\-Node@{ref\-Node}!refNode@{ref\-Node}}
+\subsubsection[{ref\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Node\-::ref\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_a4dadca3053650b8f5ba67802460e3b94}
+Método constructor que crea e inicializa un nodo referencia sin clave y con la referencia nula. \hypertarget{classrefNode_a880ba91153659c5d38f5af5cebd27d87}{\index{ref\-Node@{ref\-Node}!ref\-Node@{ref\-Node}}
+\index{ref\-Node@{ref\-Node}!refNode@{ref\-Node}}
+\subsubsection[{ref\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Node\-::ref\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_a880ba91153659c5d38f5af5cebd27d87}
+Método constructor que crea e inicializa un nodo referencia a partir de una clave dada. Tendrá una referencia nula. \hypertarget{classrefNode_aa2afe3e64503c9f44406b67cd40215cd}{\index{ref\-Node@{ref\-Node}!ref\-Node@{ref\-Node}}
+\index{ref\-Node@{ref\-Node}!refNode@{ref\-Node}}
+\subsubsection[{ref\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Node\-::ref\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_aa2afe3e64503c9f44406b67cd40215cd}
+Método constructor que crea e inicializa un nodo referencia a partir de un nodo que hace de clave. Tendrá una referencia nula. \hypertarget{classrefNode_adea8c8e42d1a17012ee62ddeb22b5500}{\index{ref\-Node@{ref\-Node}!ref\-Node@{ref\-Node}}
+\index{ref\-Node@{ref\-Node}!refNode@{ref\-Node}}
+\subsubsection[{ref\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Node\-::ref\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf ref\-Node} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_adea8c8e42d1a17012ee62ddeb22b5500}
+Método constructor que crea e inicializa un nodo referencia a partir de otro. Tendrá la misma referencia que el nodo copiado. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classrefNode_a5dd27fd2a77b369e0646ede62b617fe7}{\index{ref\-Node@{ref\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!refNode@{ref\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool ref\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_a5dd27fd2a77b369e0646ede62b617fe7}
+Si la referencia tiene clave devuelve verdadero, falso en caso contrario. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la referencia tiene una clave. 
+\end{DoxyReturn}
+\hypertarget{classrefNode_a1988e5f81b403d5154766f1d93dbb5cf}{\index{ref\-Node@{ref\-Node}!del@{del}}
+\index{del@{del}!refNode@{ref\-Node}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}void ref\-Node\-::del (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_a1988e5f81b403d5154766f1d93dbb5cf}
+Elimina una referencia y libera la memoria que ocupa. \hypertarget{classrefNode_ab6a0e220221d4b8ad7e896383db554a1}{\index{ref\-Node@{ref\-Node}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!refNode@{ref\-Node}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}string ref\-Node\-::get\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_ab6a0e220221d4b8ad7e896383db554a1}
+Obtiene la clave de la referencia. \begin{DoxyReturn}{Devuelve}
+Cadena que representa la clave de la referencia. 
+\end{DoxyReturn}
+\hypertarget{classrefNode_af3287bf7b98a88d97bf7076cbae2e50b}{\index{ref\-Node@{ref\-Node}!get\-Ref@{get\-Ref}}
+\index{get\-Ref@{get\-Ref}!refNode@{ref\-Node}}
+\subsubsection[{get\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ ref\-Node\-::get\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classrefNode_af3287bf7b98a88d97bf7076cbae2e50b}
+Devuelve el nodo referenciado. \begin{DoxyReturn}{Devuelve}
+Nodo referenciado. 
+\end{DoxyReturn}
+\hypertarget{classrefNode_acbcb5ebaa058e5dac4fbf775b62887c7}{\index{ref\-Node@{ref\-Node}!get\-Ref@{get\-Ref}}
+\index{get\-Ref@{get\-Ref}!refNode@{ref\-Node}}
+\subsubsection[{get\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$\& ref\-Node\-::get\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_acbcb5ebaa058e5dac4fbf775b62887c7}
+Devuelve la referencia interna al nodo. \begin{DoxyReturn}{Devuelve}
+Referencia. 
+\end{DoxyReturn}
+\hypertarget{classrefNode_ac4f857aa305a2d79d20c110b6d4c5d3d}{\index{ref\-Node@{ref\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!refNode@{ref\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}int ref\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_ac4f857aa305a2d79d20c110b6d4c5d3d}
+Obtiene el número de caracteres de la clave. \begin{DoxyReturn}{Devuelve}
+Número de caracteres. 
+\end{DoxyReturn}
+\hypertarget{classrefNode_a08700bd9a86bd5d44dac8d5679b8fd13}{\index{ref\-Node@{ref\-Node}!print@{print}}
+\index{print@{print}!refNode@{ref\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string ref\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrefNode_a08700bd9a86bd5d44dac8d5679b8fd13}
+Devuelve una cadena que representa el nodo al que apunta la referencia. \begin{DoxyReturn}{Devuelve}
+Cadena correspondiente al valor de la referencia. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classrefNode_a57cee8085d111667cc0bb89ac8d81b2a}{\index{ref\-Node@{ref\-Node}!rm\-Ref@{rm\-Ref}}
+\index{rm\-Ref@{rm\-Ref}!refNode@{ref\-Node}}
+\subsubsection[{rm\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void ref\-Node\-::rm\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrefNode_a57cee8085d111667cc0bb89ac8d81b2a}
+Sobrecarga el método de eliminación para que una referencia no se elimine como al disminuir a cero el número de referencias. 
+
+Reimplementado de \hyperlink{classrunNode_a8d0761660753ceb2c98836614c526a45}{run\-Node}.
+
+\hypertarget{classrefNode_ad2905de207b40a8b6aec5d4ba15351d6}{\index{ref\-Node@{ref\-Node}!run@{run}}
+\index{run@{run}!refNode@{ref\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void ref\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrefNode_ad2905de207b40a8b6aec5d4ba15351d6}
+Ejecuta el nodo referencia. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classrefNode_ae59d59767950abe3260b55fa0276ed0a}{\index{ref\-Node@{ref\-Node}!set\-Key@{set\-Key}}
+\index{set\-Key@{set\-Key}!refNode@{ref\-Node}}
+\subsubsection[{set\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void ref\-Node\-::set\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_ae59d59767950abe3260b55fa0276ed0a}
+Establece la clave de la referencia 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Nueva clave \\
+\hline
+\end{DoxyParams}
+\hypertarget{classrefNode_a6e05edbe71779a62106d8b511ae3373f}{\index{ref\-Node@{ref\-Node}!set\-Ref@{set\-Ref}}
+\index{set\-Ref@{set\-Ref}!refNode@{ref\-Node}}
+\subsubsection[{set\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void ref\-Node\-::set\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_a6e05edbe71779a62106d8b511ae3373f}
+Establece la referencia al nodo dado. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo al que apuntará la referencia \\
+\hline
+\end{DoxyParams}
+\hypertarget{classrefNode_aa51d80443279f4bca750f5c36d5f9b0b}{\index{ref\-Node@{ref\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!refNode@{ref\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string ref\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrefNode_aa51d80443279f4bca750f5c36d5f9b0b}
+Obtienen la cadena que hace de clave de la referencia . \begin{DoxyReturn}{Devuelve}
+Cadena correspondiente a la clave. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{runTree_8h}{run\-Tree.\-h}\item 
+trunk/src/run/tree/run\-Tree.\-cpp\end{DoxyCompactItemize}

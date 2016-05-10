@@ -1,0 +1,435 @@
+\hypertarget{classidNode}{\section{Referencia de la Clase id\-Node}
+\label{classidNode}\index{id\-Node@{id\-Node}}
+}
+
+
+Nodo identificador.  
+
+
+
+
+{\ttfamily \#include $<$id\-Node.\-h$>$}
+
+Diagrama de herencias de id\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classidNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classidNode_a0babfa8cabd86c11c3a4f625732d4c8d}{id\-Node} (string id)
+\item 
+void \hyperlink{classidNode_a720f6ab623192e93743e0098db5d7af7}{run} ()
+\item 
+virtual void \hyperlink{classidNode_a4492461c45b78b905757f2ecf97fc393}{run} (bool resolvkey)
+\item 
+virtual void \hyperlink{classidNode_a61b9528de4bb06f924dc60e9b682705e}{runf} ()
+\item 
+virtual void \hyperlink{classidNode_af1376fbb468dea9a953ce499a0e94d3d}{runc} ()
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_ae46892d8bd8e5521922f7090f3336839}{ref} ()
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_a7c354169bc6e38d433d11be645bb64a9}{reff} ()
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_a806975a98cecd6fc2e416fff4b356ea1}{refc} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classidNode_a69900402f8bfbe33559854cddf1bd0f9}{nodeval} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classidNode_a93d0147c1fd593831162bcb9a8dce671}{nodevalf} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classidNode_a1b7033729a1e2857eb0f18690aa616bb}{nodevalc} () const 
+\item 
+void \hyperlink{classidNode_aed42c343bc2be05c7b15114600cee491}{clear} ()
+\item 
+void \hyperlink{classidNode_a718cba1385de599875f8cc14f52f6c84}{noderef} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classidNode_a866c23e34133608ff9bd902e4561535d}{nodereff} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classidNode_a96747b61c1ea4c75e055485bc3fe678b}{noderefc} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+virtual bool \hyperlink{classidNode_a54667580929eab413d46ff5d3c7b3345}{exist} (bool func=true)
+\item 
+bool \hyperlink{classidNode_acaa38cc6ad44035f2229b82d7609b941}{existf} () const 
+\item 
+bool \hyperlink{classidNode_afff9130fd75f482fdb9f1c3ab0cb98c5}{existc} () const 
+\item 
+virtual bool \hyperlink{classidNode_a70123074df6f875c8308a4f5854b033d}{existfunction} ()
+\item 
+string \hyperlink{classidNode_a6b2f2759674e4757d4ec8a5812fabd51}{name} () const 
+\item 
+void \hyperlink{classidNode_ad63a31b677af72e2ad7924b9a63fc4cd}{set\-Name} (string \hyperlink{classidNode_a6b2f2759674e4757d4ec8a5812fabd51}{name})
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_a9a18e57d85c325a95aa2e490d5831622}{get\-Ref} () const 
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_aa64b9b4361c1f1e6cbf0533ac09bd7eb}{get\-Reff} () const 
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classidNode_a697af0deaf3fff0438df5c6356b64dd7}{get\-Refc} () const 
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classidNode_a9737789aa39604d013608f4d7fb9e60a}{resolved} (\hyperlink{classrunNode}{run\-Node} $\ast$\&id, \hyperlink{classrunNode}{run\-Node} $\ast$default\-\_\-val=N\-U\-L\-L, bool check\-\_\-privat=false, \hyperlink{classsTable}{s\-Table} $\ast$check\-\_\-table=N\-U\-L\-L)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classidNode_a70be10ae0c1bc5d1f4e6c142baeef403}{resolved\-As\-Str} (\hyperlink{classrunNode}{run\-Node} $\ast$\&id, bool isfunc=true, bool check\-\_\-private=false, \hyperlink{classsTable}{s\-Table} $\ast$check\-\_\-table=N\-U\-L\-L, bool force\-\_\-str=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo identificador. 
+
+Guarda una referencia a una clave de la tabla de símbolos.
+
+Su ejecución consiste en el acceso a la tabla de símbolos del contexto actual para obtener la clave, y por tanto el valor, que se corresponde al nombre del identificador.
+
+Presenta un método run para el acceso a cada tabla de símbolos.
+
+\hyperlink{classidNode}{id\-Node} es un nodo de tipo expresión no definida, por lo que toma como valor una referencia a un nodo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classidNode_a0babfa8cabd86c11c3a4f625732d4c8d}{\index{id\-Node@{id\-Node}!id\-Node@{id\-Node}}
+\index{id\-Node@{id\-Node}!idNode@{id\-Node}}
+\subsubsection[{id\-Node}]{\setlength{\rightskip}{0pt plus 5cm}id\-Node\-::id\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{id}
+\end{DoxyParamCaption}
+)}}\label{classidNode_a0babfa8cabd86c11c3a4f625732d4c8d}
+Constructor del nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nombre del identificador. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classidNode_aed42c343bc2be05c7b15114600cee491}{\index{id\-Node@{id\-Node}!clear@{clear}}
+\index{clear@{clear}!idNode@{id\-Node}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classidNode_aed42c343bc2be05c7b15114600cee491}
+Limpia el valor de la referencia, borrándola de la tabla de variables. \hypertarget{classidNode_a54667580929eab413d46ff5d3c7b3345}{\index{id\-Node@{id\-Node}!exist@{exist}}
+\index{exist@{exist}!idNode@{id\-Node}}
+\subsubsection[{exist}]{\setlength{\rightskip}{0pt plus 5cm}bool id\-Node\-::exist (
+\begin{DoxyParamCaption}
+\item[{bool}]{func = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a54667580929eab413d46ff5d3c7b3345}
+Tras la ejecución del nodo devuelve si existía la referencia en el nivel actual de la tabla de símbolos de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em func} & Comprueba además si existe como función. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano que indica si la variable existía . 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classidgetNode_ab17484e81265f876d0fd2babf2186765}{idget\-Node}.
+
+\hypertarget{classidNode_afff9130fd75f482fdb9f1c3ab0cb98c5}{\index{id\-Node@{id\-Node}!existc@{existc}}
+\index{existc@{existc}!idNode@{id\-Node}}
+\subsubsection[{existc}]{\setlength{\rightskip}{0pt plus 5cm}bool id\-Node\-::existc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_afff9130fd75f482fdb9f1c3ab0cb98c5}
+Tras la ejecución del nodo devuelve si existía la referencia en la tabla de símbolos de funciones. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la clase existía . 
+\end{DoxyReturn}
+\hypertarget{classidNode_acaa38cc6ad44035f2229b82d7609b941}{\index{id\-Node@{id\-Node}!existf@{existf}}
+\index{existf@{existf}!idNode@{id\-Node}}
+\subsubsection[{existf}]{\setlength{\rightskip}{0pt plus 5cm}bool id\-Node\-::existf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_acaa38cc6ad44035f2229b82d7609b941}
+Tras la ejecución del nodo devuelve si existía la referencia en la tabla de símbolos de funciones. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la función existía . 
+\end{DoxyReturn}
+\hypertarget{classidNode_a70123074df6f875c8308a4f5854b033d}{\index{id\-Node@{id\-Node}!existfunction@{existfunction}}
+\index{existfunction@{existfunction}!idNode@{id\-Node}}
+\subsubsection[{existfunction}]{\setlength{\rightskip}{0pt plus 5cm}bool id\-Node\-::existfunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a70123074df6f875c8308a4f5854b033d}
+Comprueba si existe la referencia correspondiente al nodo en la tabla de funciones. No necesita ejecutar el nodo. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la función existe. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classidgetNode_a26c065b2595bfebe90106db2c2e45643}{idget\-Node}.
+
+\hypertarget{classidNode_a9a18e57d85c325a95aa2e490d5831622}{\index{id\-Node@{id\-Node}!get\-Ref@{get\-Ref}}
+\index{get\-Ref@{get\-Ref}!idNode@{id\-Node}}
+\subsubsection[{get\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ id\-Node\-::get\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidNode_a9a18e57d85c325a95aa2e490d5831622}
+Obtiene la referencia en la tabla de símbolos de variables. \begin{DoxyReturn}{Devuelve}
+Referencia en la tabla de símbolos de variables. 
+\end{DoxyReturn}
+\hypertarget{classidNode_a697af0deaf3fff0438df5c6356b64dd7}{\index{id\-Node@{id\-Node}!get\-Refc@{get\-Refc}}
+\index{get\-Refc@{get\-Refc}!idNode@{id\-Node}}
+\subsubsection[{get\-Refc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ id\-Node\-::get\-Refc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidNode_a697af0deaf3fff0438df5c6356b64dd7}
+Obtiene la referencia en la tabla de símbolos de clases. \begin{DoxyReturn}{Devuelve}
+Referencia en la tabla de símbolos de clases. 
+\end{DoxyReturn}
+\hypertarget{classidNode_aa64b9b4361c1f1e6cbf0533ac09bd7eb}{\index{id\-Node@{id\-Node}!get\-Reff@{get\-Reff}}
+\index{get\-Reff@{get\-Reff}!idNode@{id\-Node}}
+\subsubsection[{get\-Reff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ id\-Node\-::get\-Reff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidNode_aa64b9b4361c1f1e6cbf0533ac09bd7eb}
+Obtiene la referencia en la tabla de símbolos de funciones. \begin{DoxyReturn}{Devuelve}
+Referencia en la tabla de símbolos de funciones. 
+\end{DoxyReturn}
+\hypertarget{classidNode_a6b2f2759674e4757d4ec8a5812fabd51}{\index{id\-Node@{id\-Node}!name@{name}}
+\index{name@{name}!idNode@{id\-Node}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string id\-Node\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_a6b2f2759674e4757d4ec8a5812fabd51}
+Obtiene el nombre del id \begin{DoxyReturn}{Devuelve}
+Nombre 
+\end{DoxyReturn}
+\hypertarget{classidNode_a718cba1385de599875f8cc14f52f6c84}{\index{id\-Node@{id\-Node}!noderef@{noderef}}
+\index{noderef@{noderef}!idNode@{id\-Node}}
+\subsubsection[{noderef}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::noderef (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a718cba1385de599875f8cc14f52f6c84}
+Cambia el valor que tiene la referencia con la clave correspondiente al identificador en el nivel actual la tabla de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo valor de la referencia. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{nexp\-Node}.
+
+\hypertarget{classidNode_a96747b61c1ea4c75e055485bc3fe678b}{\index{id\-Node@{id\-Node}!noderefc@{noderefc}}
+\index{noderefc@{noderefc}!idNode@{id\-Node}}
+\subsubsection[{noderefc}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::noderefc (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classidNode_a96747b61c1ea4c75e055485bc3fe678b}
+Cambia el valor que tiene la referencia con la clave correspondiente al identificador en la tabla de clases. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo valor de la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classidNode_a866c23e34133608ff9bd902e4561535d}{\index{id\-Node@{id\-Node}!nodereff@{nodereff}}
+\index{nodereff@{nodereff}!idNode@{id\-Node}}
+\subsubsection[{nodereff}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::nodereff (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classidNode_a866c23e34133608ff9bd902e4561535d}
+Cambia el valor que tiene la referencia con la clave correspondiente al identificador en la tabla de funciones. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo valor de la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classidNode_a69900402f8bfbe33559854cddf1bd0f9}{\index{id\-Node@{id\-Node}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!idNode@{id\-Node}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ id\-Node\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classidNode_a69900402f8bfbe33559854cddf1bd0f9}
+Obtiene el nodo al que apunta la referencia que el nodo tiene como valor. \begin{DoxyReturn}{Devuelve}
+Valor del id en el nivel actual de la tabla de variables. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classnexpNode_a964e408c8f55df1aa02269087914e538}{nexp\-Node}.
+
+\hypertarget{classidNode_a1b7033729a1e2857eb0f18690aa616bb}{\index{id\-Node@{id\-Node}!nodevalc@{nodevalc}}
+\index{nodevalc@{nodevalc}!idNode@{id\-Node}}
+\subsubsection[{nodevalc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ id\-Node\-::nodevalc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_a1b7033729a1e2857eb0f18690aa616bb}
+Obtiene el elemento referenciado por el par (clave, referencia) de la tabla de clases \begin{DoxyReturn}{Devuelve}
+Valor del id en la tabla de clases. 
+\end{DoxyReturn}
+\hypertarget{classidNode_a93d0147c1fd593831162bcb9a8dce671}{\index{id\-Node@{id\-Node}!nodevalf@{nodevalf}}
+\index{nodevalf@{nodevalf}!idNode@{id\-Node}}
+\subsubsection[{nodevalf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ id\-Node\-::nodevalf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_a93d0147c1fd593831162bcb9a8dce671}
+Obtiene el elemento referenciado por el par (clave, referencia) de la tabla de funciones \begin{DoxyReturn}{Devuelve}
+Valor del id en la tabla de funciones. 
+\end{DoxyReturn}
+\hypertarget{classidNode_ae46892d8bd8e5521922f7090f3336839}{\index{id\-Node@{id\-Node}!ref@{ref}}
+\index{ref@{ref}!idNode@{id\-Node}}
+\subsubsection[{ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node}$\ast$ id\-Node\-::ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classidNode_ae46892d8bd8e5521922f7090f3336839}
+Obtiene el valor referencia tomado por el nodo en la tabla de variables. \begin{DoxyReturn}{Devuelve}
+Referencia de la tabla de variables tomada como valor. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}{nexp\-Node}.
+
+\hypertarget{classidNode_a806975a98cecd6fc2e416fff4b356ea1}{\index{id\-Node@{id\-Node}!refc@{refc}}
+\index{refc@{refc}!idNode@{id\-Node}}
+\subsubsection[{refc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node}$\ast$ id\-Node\-::refc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_a806975a98cecd6fc2e416fff4b356ea1}
+Obtiene el valor referencia tomado por el nodo en la tabla de clases. \begin{DoxyReturn}{Devuelve}
+Referencia de la tabla de funciones tomada como valor. 
+\end{DoxyReturn}
+\hypertarget{classidNode_a7c354169bc6e38d433d11be645bb64a9}{\index{id\-Node@{id\-Node}!reff@{reff}}
+\index{reff@{reff}!idNode@{id\-Node}}
+\subsubsection[{reff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node}$\ast$ id\-Node\-::reff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_a7c354169bc6e38d433d11be645bb64a9}
+Obtiene el valor referencia tomado por el nodo en la tabla de funciones. \begin{DoxyReturn}{Devuelve}
+Referencia de la tabla de funciones tomada como valor. 
+\end{DoxyReturn}
+\hypertarget{classidNode_a9737789aa39604d013608f4d7fb9e60a}{\index{id\-Node@{id\-Node}!resolved@{resolved}}
+\index{resolved@{resolved}!idNode@{id\-Node}}
+\subsubsection[{resolved}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ id\-Node\-::resolved (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{default\-\_\-val = {\ttfamily NULL}, }
+\item[{bool}]{check\-\_\-privat = {\ttfamily false}, }
+\item[{{\bf s\-Table} $\ast$}]{check\-\_\-table = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classidNode_a9737789aa39604d013608f4d7fb9e60a}
+Resuelve la referencia correspondiente al nombre del nodo id en la tablas de símbolos del contexto indicado y la asigna como valor de id. .
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nodo ejecutable que será tratado como el nodo identificador. Si no es identificador no se lleva a cabo ninguna acción. \\
+\hline
+{\em default\-\_\-val} & Valor por defecto que devolverá si no existe. \\
+\hline
+{\em check\-\_\-private} & Comprueba si tiene acceso privado \\
+\hline
+{\em check\-\_\-table} & Entorno de tablas de símbolos que se usará. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classidNode_a70be10ae0c1bc5d1f4e6c142baeef403}{\index{id\-Node@{id\-Node}!resolved\-As\-Str@{resolved\-As\-Str}}
+\index{resolved\-As\-Str@{resolved\-As\-Str}!idNode@{id\-Node}}
+\subsubsection[{resolved\-As\-Str}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ id\-Node\-::resolved\-As\-Str (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{id, }
+\item[{bool}]{isfunc = {\ttfamily true}, }
+\item[{bool}]{check\-\_\-private = {\ttfamily false}, }
+\item[{{\bf s\-Table} $\ast$}]{check\-\_\-table = {\ttfamily NULL}, }
+\item[{bool}]{force\-\_\-str = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classidNode_a70be10ae0c1bc5d1f4e6c142baeef403}
+Resuelve la referencia correspondiente al nombre del nodo id en la tablas de símbolos del contexto indicado y la asigna como valor de id. Si esta no existe asignará como valor un nodo cadena correspondiente al nombre del identificador. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nodo ejecutable que será tratado como el nodo identificador. Si no es identificador no se lleva a cabo ninguna acción. \\
+\hline
+{\em isfunc} & Comprueba en la tabla de símbolos de funciones. \\
+\hline
+{\em check\-\_\-private} & Comprueba si tiene acceso privado. \\
+\hline
+{\em check\-\_\-table} & Entorno de tablas de símbolos que se usará. \\
+\hline
+{\em force\-\_\-str} & Convierte el nodo en un nodo cadena si no encuentra la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classidNode_a720f6ab623192e93743e0098db5d7af7}{\index{id\-Node@{id\-Node}!run@{run}}
+\index{run@{run}!idNode@{id\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a720f6ab623192e93743e0098db5d7af7}
+Accede a la tabla de símbolos de variables en el nivel actual y toma como valor la referencia correspondiente al nombre.
+
+Si no existe una referencia en la tabla de símbolos correspondiente al nombre del identificador esta es creada y apuntada a un nodo de tipo nulo.
+
+Si la referencia tomada como valor es otra referencia, toma esta última como valor, procediendo de la misma forma hasta que la referencia tomada como valor no apunte ha otra referencia. Este proceso se denomina resolver la referencia o clave. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+Reimplementado en \hyperlink{classidgetNode_a9423b08e0755a0432b47dde32e7c473f}{idget\-Node}.
+
+\hypertarget{classidNode_a4492461c45b78b905757f2ecf97fc393}{\index{id\-Node@{id\-Node}!run@{run}}
+\index{run@{run}!idNode@{id\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::run (
+\begin{DoxyParamCaption}
+\item[{bool}]{resolvkey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a4492461c45b78b905757f2ecf97fc393}
+Accede a la tabla de símbolos de variables en el nivel actual y toma como valor la referencia correspondiente al nombre. 
+\begin{DoxyParams}{Parámetros}
+{\em resolvkey} & Si es verdadero resuelve la referencia. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \hyperlink{classidgetNode_a5064c05a1e080cf66fbc754b2f76f111}{idget\-Node}.
+
+\hypertarget{classidNode_af1376fbb468dea9a953ce499a0e94d3d}{\index{id\-Node@{id\-Node}!runc@{runc}}
+\index{runc@{runc}!idNode@{id\-Node}}
+\subsubsection[{runc}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::runc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_af1376fbb468dea9a953ce499a0e94d3d}
+Accede a la tabla de símbolos de clases y toma como valor la referencia correspondiente al nombre. 
+
+Reimplementado en \hyperlink{classidgetNode_a6f3d7453fa18e1faba1b1ba06492096f}{idget\-Node}.
+
+\hypertarget{classidNode_a61b9528de4bb06f924dc60e9b682705e}{\index{id\-Node@{id\-Node}!runf@{runf}}
+\index{runf@{runf}!idNode@{id\-Node}}
+\subsubsection[{runf}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::runf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidNode_a61b9528de4bb06f924dc60e9b682705e}
+Accede a la tabla de símbolos de funciones y toma como valor la referencia correspondiente al nombre. 
+
+Reimplementado en \hyperlink{classidgetNode_a116329895e687e16356ee3aba892fc04}{idget\-Node}.
+
+\hypertarget{classidNode_ad63a31b677af72e2ad7924b9a63fc4cd}{\index{id\-Node@{id\-Node}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!idNode@{id\-Node}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void id\-Node\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classidNode_ad63a31b677af72e2ad7924b9a63fc4cd}
+Establece el nombre del identificador. 
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{idNode_8h}{id\-Node.\-h}\item 
+trunk/src/run/table/id\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="16cm" height="11cm" viewBox="135 182 303 217" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="136.706" y="203.008" width="300.999" height="192.565"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="136.706" y="203.008" width="300.999" height="192.565"/>
+    <rect style="fill: #ffffff" x="136.706" y="183.008" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="136.706" y="183.008" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="138.706" y="198.008"> replace </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="193.627" y="286" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="193.627" y="286" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.677" y="305">stringNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="187.083" y="353.8" width="123.55" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="187.083" y="353.8" width="123.55" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.858" y="372.8">replaceNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.677,332.236 248.677,341.9 248.858,341.9 248.858,353.8 "/>
+    <polygon style="fill: #ffffff" points="256.677,332.236 248.677,316.236 240.677,332.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.677,332.236 248.677,316.236 240.677,332.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="205" y="219.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="205" y="219.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.7" y="238.8">runNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.7,266.036 248.7,274.9 248.677,274.9 248.677,286 "/>
+    <polygon style="fill: #ffffff" points="256.7,266.036 248.7,250.036 240.7,266.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.7,266.036 248.7,250.036 240.7,266.036 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="335.806,353.8 372.1,353.8 372.1,247.808 365.03,247.808 365.03,247.8 292.4,247.8 "/>
+    <polygon style="fill: #ffffff" points="310.634,353.8 324.634,349 338.634,353.8 324.634,358.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="310.634,353.8 324.634,349 338.634,353.8 324.634,358.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="368.565" y="244.808">replace</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="342.634" y="350.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="244.8">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="335.806,367.8 397.4,367.8 397.4,233.878 338.712,233.878 338.712,233.8 292.4,233.8 "/>
+    <polygon style="fill: #ffffff" points="310.634,367.8 324.634,363 338.634,367.8 324.634,372.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="310.634,367.8 324.634,363 338.634,367.8 324.634,372.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="368.056" y="230.878">search</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="342.634" y="364.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="230.8">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="335.806,381.8 409.068,381.8 409.068,219.736 328.458,219.736 328.458,219.8 292.4,219.8 "/>
+    <polygon style="fill: #ffffff" points="310.634,381.8 324.634,377 338.634,381.8 324.634,386.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="310.634,381.8 324.634,377 338.634,381.8 324.634,386.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="368.763" y="216.736">str</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="342.634" y="378.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="216.8">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="161.912,367.8 155.244,367.8 155.244,233.8 205,233.8 "/>
+    <polygon style="fill: #ffffff" points="187.083,367.8 173.083,372.6 159.083,367.8 173.083,363 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="187.083,367.8 173.083,372.6 159.083,367.8 173.083,363 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="157.244" y="297.8">num</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="155.083" y="364.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="201" y="230.8">0,1</text>
+  </g>
+</svg>

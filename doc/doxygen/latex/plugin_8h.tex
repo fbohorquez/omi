@@ -1,0 +1,35 @@
+\hypertarget{plugin_8h}{\section{Referencia del Archivo trunk/src/plugin.h}
+\label{plugin_8h}\index{trunk/src/plugin.\-h@{trunk/src/plugin.\-h}}
+}
+
+
+Cargador de módulos dinámicos.  
+
+
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}run/tree/type\-Node.\-h\char`\"{}}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPluginLoader}{Plugin\-Loader}
+\begin{DoxyCompactList}\small\item\em Cargador de módulo dinámico. \end{DoxyCompactList}\item 
+class \hyperlink{classPluginsLoader}{Plugins\-Loader}
+\begin{DoxyCompactList}\small\item\em Cargador de módulos dinámicos. \end{DoxyCompactList}\item 
+class \hyperlink{classpluginNode}{plugin\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo dinámico. \end{DoxyCompactList}\item 
+class \hyperlink{classloadNode}{load\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo carga librería dinámica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Cargador de módulos dinámicos. Este módulo es el encargado de cargar de forma dinámica módulos funcionales del programa.
+
+Liesh utiliza módulos dinámicos para los siguientes casos\-:
+
+
+\begin{DoxyItemize}
+\item Defición de operaciones y tipos de datos de los distintos protocolos de red en la capa de aplicación.
+\end{DoxyItemize}
+
+Se define una clase que cargará de forma dinámica los módulos. Para ello lee de un fichero en disco la ruta y nombre de los módulos. 

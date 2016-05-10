@@ -1,0 +1,53 @@
+\hypertarget{classgetNode__endValue}{\section{Referencia de la Clase get\-Node\-\_\-end\-Value}
+\label{classgetNode__endValue}\index{get\-Node\-\_\-end\-Value@{get\-Node\-\_\-end\-Value}}
+}
+
+
+Nodo operador de acceso a final de secuencia.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de get\-Node\-\_\-end\-Value\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgetNode__endValue}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgetNode__endValue_aa6e13ab26b17eafe1773c096036f843f}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador de acceso a final de secuencia. 
+
+Realmente define a un pseudo tipo de dato ya que no guarda ningun valor real. Representa el final de un elemento compuesto de una forma secuencial, como por ejemplo un array o una cadena de caracteres
+
+Gracias a este nodo es posible contruir expresiones como \char`\"{}a\mbox{[}$\,$\mbox{]} = 2\char`\"{}
+
+Este tipo de objeto es utilizado por la gramática y el operador de acceso para obtener una referencia a la posición final, entendiéndose por esta a la siguiente posición del último elemento. Como este elemento aún no se ha creado se utiliza un nodo nulo como valor. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgetNode__endValue_aa6e13ab26b17eafe1773c096036f843f}{\index{get\-Node\-\_\-end\-Value@{get\-Node\-\_\-end\-Value}!run@{run}}
+\index{run@{run}!getNode_endValue@{get\-Node\-\_\-end\-Value}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-\_\-end\-Value\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode__endValue_aa6e13ab26b17eafe1773c096036f843f}
+La ejecución de este nodo, no lleva a cabo ninguna tarea ya que es utilizado semánticamente por otros nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

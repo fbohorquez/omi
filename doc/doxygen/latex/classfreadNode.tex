@@ -1,0 +1,66 @@
+\hypertarget{classfreadNode}{\section{Referencia de la Clase fread\-Node}
+\label{classfreadNode}\index{fread\-Node@{fread\-Node}}
+}
+
+
+Node función leer fichero.  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fread\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfreadNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfreadNode_aebdab762c8e7a5834a6365035a3ca00d}{fread\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file)
+\item 
+void \hyperlink{classfreadNode_a70bf100a17d78be82f7972d467b22fe8}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node función leer fichero. 
+
+Este nodo se encarga de leer todo el contenido de un fichero y tomar la cadena correspondiente como valor. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfreadNode_aebdab762c8e7a5834a6365035a3ca00d}{\index{fread\-Node@{fread\-Node}!fread\-Node@{fread\-Node}}
+\index{fread\-Node@{fread\-Node}!freadNode@{fread\-Node}}
+\subsubsection[{fread\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fread\-Node\-::fread\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classfreadNode_aebdab762c8e7a5834a6365035a3ca00d}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que representa la ruta del fichero a leer. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfreadNode_a70bf100a17d78be82f7972d467b22fe8}{\index{fread\-Node@{fread\-Node}!run@{run}}
+\index{run@{run}!freadNode@{fread\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fread\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfreadNode_a70bf100a17d78be82f7972d467b22fe8}
+Método de ejecución. Procede a la lectura del fichero y toma como valor la cadena resultante. Si el fichero no existe se produce un error. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

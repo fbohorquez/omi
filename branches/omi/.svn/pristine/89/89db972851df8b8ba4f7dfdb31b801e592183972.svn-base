@@ -1,0 +1,163 @@
+#!/usr/local/bin/omi
+true;
+false;
+<< true;
+<< false;
+a = true;
+<< a;
+<< b = true; 
+a = false;
+<< a;
+<< b = false;
+a = true;
+<< a;
+<< b = true;
+a = false;
+<< a;
+<< b = false;
+array[0] = true;
+array[1] = false;
+echo array;
+for (i = 0; i < 10; ++i) a = true;
+<< a;
+for (i = 0; i < 10; ++i) array[i] = true;
+<< array;
+<< "ABCDEF"[0] = false; //DEBERIA DAR ERROR.
+str = "ABCDEF";
+<< str[0] = false;
+<< str;
+str = "ABCDEF";
+<< str[0] = true;
+<< str;
+for (i = 0; i < 6; ++i) {
+   << "ABCDEF"[0] = false;
+}
+#~ while (size str){
+   #~ str[0] = false;
+#~ }
+#~ << str;
+#~ str = "ABCDEFG";
+#~ for (i = 0; i < 7; i ++) {
+   #~ str[i] =  str[6 - i];
+#~ }
+#~ << str;
+#~ echo (true == false);
+#~ echo (false == true);
+#~ echo (true == true);
+#~ echo (false == false);
+#~ 
+#~ echo "Distinto";
+#~ echo (true != false);
+#~ echo (false != true);
+#~ echo (true != true);
+#~ echo (false != false);
+#~ 
+#~ echo "Negación";
+#~ echo (!true);
+#~ echo (!false);
+#~ 
+#~ echo "Mayor";
+#~ echo true > false;
+#~ echo false > true;
+#~ echo true > true;
+#~ echo false > false;
+#~ 
+#~ echo "Menor";
+#~ echo true < false;
+#~ echo false < true;
+#~ echo true < true;
+#~ echo false < false;
+#~ 
+#~ echo "Mayor o igual";
+#~ echo true >= false;
+#~ echo false >= true;
+#~ echo true >= true;
+#~ echo false >= false;
+#~ 
+#~ echo "Menor o igual";
+#~ echo true <= false;
+#~ echo false <= true;
+#~ echo true <= true;
+#~ echo false <= false;
+#~ 
+#~ echo "AND";
+#~ echo true && false;
+#~ echo false && true;
+#~ echo true && true;
+#~ echo false && false;
+#~ 
+#~ echo "OR";
+#~ echo true || false;
+#~ echo false || true;
+#~ echo true || true;
+#~ echo false || false;
+#~ 
+#~ echo "Operadores numéricos";
+#~ 
+#~ echo "Suma";
+#~ echo true + false;
+#~ echo false + true;
+#~ echo true + true;
+#~ echo false + false;
+#~ 
+#~ echo "Resta";
+#~ echo true - false;
+#~ echo false - true;
+#~ echo true - true;
+#~ echo false - false;
+#~ 
+#~ echo "Producto";
+#~ echo true * false;
+#~ echo false * true;
+#~ echo true * true;
+#~ echo false * false;
+#~ 
+#~ echo "División";
+#~ echo true / false;
+#~ echo false / true;
+#~ echo true / true;
+#~ echo false / false;
+#~ 
+#~ echo "Módulo";
+#~ echo true % false;
+#~ echo false % true;
+#~ echo true % true;
+#~ echo false % false;
+#~ 
+#~ echo "Potencia";
+#~ echo true ^ false;
+#~ echo false ^ true;
+#~ echo true ^ true;
+#~ echo false ^ false;
+#~ 
+#~ echo "Preincremento";
+#~ echo ++true;
+#~ echo ++false;
+#~ 
+#~ echo "Postincremento";
+#~ echo true++;
+#~ echo false++;
+#~ 
+#~ echo "Predecremento";
+#~ echo --true;
+#~ echo --false;
+#~ 
+#~ echo "Postdecremento";
+#~ echo true--;
+#~ echo false--;
+#~ 
+#~ echo "Operadores de string";
+#~ echo "string ".true;
+#~ echo "string ".false;
+#~ 
+#~ echo "Conversión de tipos";
+#~ a = true;
+#~ b = false;
+#~ echo bool a;
+#~ echo bool b;
+#~ echo int a;
+#~ echo int b;
+#~ echo float a;
+#~ echo float b;
+
+

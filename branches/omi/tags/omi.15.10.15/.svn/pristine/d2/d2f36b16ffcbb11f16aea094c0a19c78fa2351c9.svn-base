@@ -1,0 +1,180 @@
+//interpreter.cpp
+//----------------------------------------------------------------------
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+#include "interpreter.h"
+#include "run/numData.h"
+#include "run/runTree.h"
+#include "run/sTable.h"
+#include "run/typeNode.h"
+#include "run/operatorNode.h"
+#include "run/operatorStrNode.h"
+#include "run/operatorArrayNode.h"
+#include "run/operatorDateNode.h"
+#include "run/operatorRegexpNode.h"
+#include "run/fileNode.h"
+#include "run/processNode.h"
+#include "run/componentNode.h"
+#include "error.h"
+#include "run/sqliteDb.h"
+#include "plugin.h"
+#include "lshParser.h"
+
+extern int yylex(void);
+extern void yy_scan_string (const char*);
+extern char* yytext;
+extern FILE *yyin;
+extern int yylineno;
+
+interpreter* interpreter::interpreter_ = NULL;
+
+void interpreter::scan_string(const char* str){
+    yy_scan_string(str);
+}
+
+void interpreter::generateClass () {
+   stringNode::generateClass () ;
+   arrayNode::generateClass () ;
+}
+
+interpreter::interpreter (int argc, char *argv[]) : inl_ (false), error_opt_ (false) {
+   parseOptions (argc, argv);
+}
+
+void interpreter::parseOptions (int argc, char *argv[]) {
+   int i, oc, c;
+   bool error_opt = false;
+   struct option longopts[] = {
+     { "inline",  0,  NULL, 'i' },
+     { "version",  no_argument,  NULL, 'V' },
+     { "cmd",  required_argument,  NULL,  'c' },
+     //~ { "help",  no_argument,  & do_help,  1 },
+     //~ { "verbose",  no_argument,  & do_verbose,  1 },
+     {0, 0, 0, 0}
+    };
+   int index = 0;
+   const char* const short_options = "ic:V";
+   while ((c = getopt_long(argc, argv, short_options, longopts, &index)) != -1) {
+      switch (c){
+         case 'i':
+            inl_  = 1;
+            inline_param = true;
+            break;
+         case 'c':
+            code_ = optarg;
+            break;
+         case '?':
+            error_opt_ = true;
+            exit(-1);
+         case 'h':
+            exit(0);
+         case 'V':
+            printVersion ();
+            exit(0);
+         default:
+            break;
+      }
+   }
+   if (!error_opt)
+      for (i=optind; i<argc; i++) 
+         args_.insert (args_.end(), argv[i]);
+}
+
+void interpreter::run() {
+   db::connect ();
+   sTable::sys_sTable ();
+   generateClass ();
+   parseArgs ();
+   if (code_ != "") caseCode();
+   if (file_ != "") caseScript();
+      else if (inl_) caseInline();   
+      else caseStdin();
+   db::close ();
+}
+
+void interpreter::caseScript () {
+   yyin = fopen (file_.c_str(),"r");
+   yyparse();
+}
+
+void interpreter::caseCode () {
+   yy_scan_string(code_.c_str());
+   yyparse();
+}
+
+void interpreter::caseInline () {
+   using_history ();
+   string history_file = HISTORY_FILE;
+   FILE *file = NULL;
+   if (!(file = fopen(history_file.c_str(),"r")))
+      file = fopen(history_file.c_str(),"w+b");
+   fclose (file);
+   if (int nerror = read_history (history_file.c_str ())) cerr << nerror << endl;;
+   while (true) {
+      string str = getLine();
+      yy_scan_string(str.c_str());
+      add_history (str.c_str());
+      write_history (history_file.c_str ());
+      yyparse();
+      warningQueue::warning ();
+   }
+}
+
+void interpreter::caseStdin () {
+   yyparse();
+}
+
+void interpreter::parseArgs () {
+   vector<string>::iterator iter = args_.begin();
+   if (!args_.empty() && !inl_)
+      infile = file_ = *iter;
+   idNode *id;
+   listNode* list = NULL;
+   for (; iter != args_.end(); iter ++) 
+      list = new listNode (list, new strNode (*iter));
+   string str ("args"); 
+   id = new idNode (str); 
+   asigNode a (id, new arrayNode (list));
+   a.run();
+}
+
+string interpreter::getLine () {
+   char* line = readline (string(PS1).c_str());
+   string str (line);
+   int pair_top = 0;
+   bool pair_check = false;
+   int pos = 0;
+   while (!pair_check) {
+      for (int i = pos; i < str.size(); ++i){
+         if (str[i] == '{' ) pair_top ++;
+         else if (str[i] == '}') pair_top --;
+      }
+      if(!(pair_check = (pair_top == 0))){
+         pos = str.size();
+         line = readline (string(PS2).c_str());
+         string s_aux (line);
+         str += s_aux;
+      }
+   }
+   return str;
+}
+
+void interpreter::printVersion () {
+   cout << INTERPRETER_NAME << ": " << INTERPRETER_DESCRIPTION << " (" << INTERPRETER_VERSION << ") " << endl;
+   cout << INTERPRETER_LICENSE << endl;
+}

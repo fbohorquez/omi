@@ -1,0 +1,96 @@
+\hypertarget{classpowNode}{\section{Referencia de la Clase pow\-Node}
+\label{classpowNode}\index{pow\-Node@{pow\-Node}}
+}
+
+
+Nodo operador potencia.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de pow\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classpowNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpowNode_a9f4c90105fa4281bc474ad55a6b02235}{pow\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classpowNode_addee6366a08fc6dc4fed08f04b48e3ef}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classpowNode_acae3871f4333db8866441a8117f35cd7}{do\-\_\-pow} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador potencia. 
+
+Este nodo implementa la operación potencia sobre dos nodos asociados.
+
+Si algún nodo es de tipo no aritmético fuerza la conversión a un tipo aritmético para realizar la operación
+
+El resultado de evaluar la expresión es un valor aritmético. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classpowNode_a9f4c90105fa4281bc474ad55a6b02235}{\index{pow\-Node@{pow\-Node}!pow\-Node@{pow\-Node}}
+\index{pow\-Node@{pow\-Node}!powNode@{pow\-Node}}
+\subsubsection[{pow\-Node}]{\setlength{\rightskip}{0pt plus 5cm}pow\-Node\-::pow\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classpowNode_a9f4c90105fa4281bc474ad55a6b02235}
+Constructor de la clase. Asocia el nodo operador a dos nodos aritméticos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classpowNode_acae3871f4333db8866441a8117f35cd7}{\index{pow\-Node@{pow\-Node}!do\-\_\-pow@{do\-\_\-pow}}
+\index{do\-\_\-pow@{do\-\_\-pow}!powNode@{pow\-Node}}
+\subsubsection[{do\-\_\-pow}]{\setlength{\rightskip}{0pt plus 5cm}num pow\-Node\-::do\-\_\-pow (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classpowNode_acae3871f4333db8866441a8117f35cd7}
+Ejecuta la operación potencia sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación. 
+\end{DoxyReturn}
+\hypertarget{classpowNode_addee6366a08fc6dc4fed08f04b48e3ef}{\index{pow\-Node@{pow\-Node}!run@{run}}
+\index{run@{run}!powNode@{pow\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void pow\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpowNode_addee6366a08fc6dc4fed08f04b48e3ef}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor aritmético del nodo mediante la operación potencia entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

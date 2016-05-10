@@ -1,0 +1,73 @@
+\hypertarget{classcontinueNode}{\section{Referencia de la Clase continue\-Node}
+\label{classcontinueNode}\index{continue\-Node@{continue\-Node}}
+}
+
+
+Nodo sentencia continue.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de continue\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcontinueNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcontinueNode_ace21e3368be1423dbe879546c61f25f2}{continue\-Node} (int n=1)
+\item 
+void \hyperlink{classcontinueNode_afef4eca9866bfb614c779a5c9b02adc1}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia continue. 
+
+Este nodo se utiliza para finalizar la iteración actual de un bloque de sentencias en una sentencia iterativa. Prosiguiendo así con la evaluación de la siguiente iteración.
+
+Es posible especificar un valor que indica el número de sentencias iterativas que se saltarán.
+
+Internamente se lanza una excepción (\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classcontinueException}{continue\-Exception}) que será atrapada por las sentencias iterativas. 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classcontinueNode_ace21e3368be1423dbe879546c61f25f2}{\index{continue\-Node@{continue\-Node}!continue\-Node@{continue\-Node}}
+\index{continue\-Node@{continue\-Node}!continueNode@{continue\-Node}}
+\subsubsection[{continue\-Node}]{\setlength{\rightskip}{0pt plus 5cm}continue\-Node\-::continue\-Node (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classcontinueNode_ace21e3368be1423dbe879546c61f25f2}
+Cosntructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em n} & Entero que indica el número de sentencias iterativas anidadas que se saltarán \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classcontinueNode_afef4eca9866bfb614c779a5c9b02adc1}{\index{continue\-Node@{continue\-Node}!run@{run}}
+\index{run@{run}!continueNode@{continue\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void continue\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcontinueNode_afef4eca9866bfb614c779a5c9b02adc1}
+Método que lleva a cabo la ejecución del nodo. Lanza una excepción continue que obliga a las sentencias iterativas a seguir con la siguiente iteración. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

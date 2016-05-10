@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="9cm" height="13cm" viewBox="361 278 174 249" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="362" y="299" width="172" height="226"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="362" y="299" width="172" height="226"/>
+    <rect style="fill: #ffffff" x="362" y="279" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="362" y="279" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="364" y="294"> fork </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="325" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="325" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="443.7" y="344">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="394" y="391" width="99.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="394" y="391" width="99.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="443.975" y="410">arithNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="443.7,371.236 443.7,390 423.7,390 423.7,370 443.975,370 443.975,391 "/>
+    <polygon style="fill: #ffffff" points="451.7,371.236 443.7,355.236 435.7,371.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="451.7,371.236 443.7,355.236 435.7,371.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="397" y="458" width="93.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="397" y="458" width="93.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="443.6" y="477">forkNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="443.975,437.236 443.975,446.5 443.6,446.5 443.6,458 "/>
+    <polygon style="fill: #ffffff" points="451.975,437.236 443.975,421.236 435.975,437.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="451.975,437.236 443.975,421.236 435.975,437.236 "/>
+  </g>
+</svg>

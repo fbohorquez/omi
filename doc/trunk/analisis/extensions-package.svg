@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="16cm" height="13cm" viewBox="171 82 301 257" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="103.8" width="298.398" height="234.464"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="103.8" width="298.398" height="234.464"/>
+    <rect style="fill: #ffffff" x="172" y="83.8" width="96.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="83.8" width="96.4" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="98.8"> extensions </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="189.98" y="198.884" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189.98" y="198.884" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="189.98" y="180.884" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189.98" y="180.884" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="195.98" y="216.784">
+      <tspan x="195.98" y="216.784">plugins</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="310.06" y="173.966" width="112.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="310.06" y="173.966" width="112.1" height="28"/>
+    <rect style="fill: #ffffff" x="310.06" y="155.966" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="310.06" y="155.966" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="316.06" y="191.866">
+      <tspan x="316.06" y="191.866"> gettext-ext </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="311.46" y="237.069" width="96.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="311.46" y="237.069" width="96.7" height="28"/>
+    <rect style="fill: #ffffff" x="311.46" y="219.069" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="311.46" y="219.069" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="317.46" y="254.969">
+      <tspan x="317.46" y="254.969"> mysql-ext </tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 10; stroke: #000000" x1="255.88" y1="212.884" x2="305.997" y2="189.835"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="301.033,197.621 308.028,188.9 296.854,188.536 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 10; stroke: #000000" x1="255.88" y1="212.884" x2="307.774" y2="248.537"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="298.543,248.261 309.617,249.803 304.206,240.019 "/>
+  </g>
+</svg>

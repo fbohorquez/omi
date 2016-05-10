@@ -1,0 +1,94 @@
+\hypertarget{classlthNode}{\section{Referencia de la Clase lth\-Node}
+\label{classlthNode}\index{lth\-Node@{lth\-Node}}
+}
+
+
+Nodo operador menor que.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de lth\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classlthNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlthNode_a467b1d41091b8de7a491b8176fc9cea3}{lth\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classlthNode_af7b0f02382415e845606e0c6e5795726}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classlthNode_aa7374e4f580eba442d8347f1c836e1dc}{do\-\_\-lth} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador menor que. 
+
+Este nodo implementa la operación menor que sobre dos nodos asociados.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classlthNode_a467b1d41091b8de7a491b8176fc9cea3}{\index{lth\-Node@{lth\-Node}!lth\-Node@{lth\-Node}}
+\index{lth\-Node@{lth\-Node}!lthNode@{lth\-Node}}
+\subsubsection[{lth\-Node}]{\setlength{\rightskip}{0pt plus 5cm}lth\-Node\-::lth\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classlthNode_a467b1d41091b8de7a491b8176fc9cea3}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classlthNode_aa7374e4f580eba442d8347f1c836e1dc}{\index{lth\-Node@{lth\-Node}!do\-\_\-lth@{do\-\_\-lth}}
+\index{do\-\_\-lth@{do\-\_\-lth}!lthNode@{lth\-Node}}
+\subsubsection[{do\-\_\-lth}]{\setlength{\rightskip}{0pt plus 5cm}bool lth\-Node\-::do\-\_\-lth (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classlthNode_aa7374e4f580eba442d8347f1c836e1dc}
+Ejecuta la operación menor sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classlthNode_af7b0f02382415e845606e0c6e5795726}{\index{lth\-Node@{lth\-Node}!run@{run}}
+\index{run@{run}!lthNode@{lth\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void lth\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlthNode_af7b0f02382415e845606e0c6e5795726}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación menor que entre el valor numérico de los dos nodos . 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

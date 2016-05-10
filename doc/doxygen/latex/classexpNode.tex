@@ -1,0 +1,83 @@
+\hypertarget{classexpNode}{\section{Referencia de la Clase exp\-Node}
+\label{classexpNode}\index{exp\-Node@{exp\-Node}}
+}
+
+
+Nodo de expresión.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de exp\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classexpNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classexpNode_aedb96104889212bae315a6381f8e0219}{set\-Node\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classexpNode_aa3d0a7a138a2fc089232f9fadf33a629}{clone} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo de expresión. 
+
+Una expresión tiene asociado un valor resultado de su evaluación.
+
+Los nodos expresiones pueden ser de dos tipos\-:
+
+
+\begin{DoxyItemize}
+\item Definidos (\hyperlink{classdexpNode}{dexp\-Node})\-: Tienen un valor interno definido. Por ejemplo un \hyperlink{classstringNode}{string\-Node} se representa mediante un string.
+\item No definidos (\hyperlink{classnexpNode}{nexp\-Node})\-: Tienen un valor interno no definido, haciendo referencia a un nodo ejecutable. Por ejemplo, una expresión de asignación tomará una referencia al nodo asignado, este valor puede ser string, array ....
+\end{DoxyItemize}
+
+Los nodos expresión son la base de muchos otros nodos que representan datos, operadores... Estos nodos serán utilizados como parte de una sentencia. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classexpNode_aa3d0a7a138a2fc089232f9fadf33a629}{\index{exp\-Node@{exp\-Node}!clone@{clone}}
+\index{clone@{clone}!expNode@{exp\-Node}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ exp\-Node\-::clone (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classexpNode_aa3d0a7a138a2fc089232f9fadf33a629}
+Método que toma un nodo y lo clona en función de su tipo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a clonar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo nuevo. 
+\end{DoxyReturn}
+\hypertarget{classexpNode_aedb96104889212bae315a6381f8e0219}{\index{exp\-Node@{exp\-Node}!set\-Node\-Value@{set\-Node\-Value}}
+\index{set\-Node\-Value@{set\-Node\-Value}!expNode@{exp\-Node}}
+\subsubsection[{set\-Node\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void exp\-Node\-::set\-Node\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classexpNode_aedb96104889212bae315a6381f8e0219}
+Establece el valor del nodo. Este método puede ser escrito en los nodos derivados. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que se toma como valor. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \hyperlink{classstringNode_af8d6ed0d5b9be3db1c7be9a905c25f67}{string\-Node}, \hyperlink{classarithNode_aa10435f1e329336baee9334df7a8b0cf}{arith\-Node} y \hyperlink{classlogicNode_a6d3f6e8397d9d0b51b97d681b8380342}{logic\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

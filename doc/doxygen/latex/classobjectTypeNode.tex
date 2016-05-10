@@ -1,0 +1,116 @@
+\hypertarget{classobjectTypeNode}{\section{Referencia de la Clase object\-Type\-Node}
+\label{classobjectTypeNode}\index{object\-Type\-Node@{object\-Type\-Node}}
+}
+
+
+Nodo tipo de objeto.  
+
+
+
+
+{\ttfamily \#include $<$run\-Tree.\-h$>$}
+
+Diagrama de herencias de object\-Type\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classobjectTypeNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classobjectTypeNode_af504d6b0b6801db2b712f7dda3dd342f}{object\-Type\-Node} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classobjectTypeNode_a4c248660eed9ffdd132f075224b82544}{get\-Method} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classobjectTypeNode_a6dbd87c8c646340d2e817c64d94afaf6}{get\-Method\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+virtual \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{get\-Class} ()
+\item 
+virtual void \hyperlink{classobjectTypeNode_adc36ba9bb3fe82a12c9a50eea11ee94b}{set\-Class} (\hyperlink{classrunNode}{run\-Node} $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo tipo de objeto. 
+
+Un nodo tipo de objeto referencia a un nodo que hace de clase y lo dota de ciertos métodos y atributos.
+
+Otros nodos pueden extender de este para poder ser asociado internamente a una clase. Así es posible hacer uso del valor del nodo como un objeto.
+
+Esto hace posible que se puedan utilizar expresiones u otros datos como objetos. \char`\"{}1234\char`\"{}-\/$>$find(\char`\"{}2\char`\"{}); 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classobjectTypeNode_af504d6b0b6801db2b712f7dda3dd342f}{\index{object\-Type\-Node@{object\-Type\-Node}!object\-Type\-Node@{object\-Type\-Node}}
+\index{object\-Type\-Node@{object\-Type\-Node}!objectTypeNode@{object\-Type\-Node}}
+\subsubsection[{object\-Type\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Type\-Node\-::object\-Type\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classobjectTypeNode_af504d6b0b6801db2b712f7dda3dd342f}
+Constructor de la clase. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{\index{object\-Type\-Node@{object\-Type\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!objectTypeNode@{object\-Type\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ object\-Type\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}
+Obtiene la clase a la que pertenece el nodo. Este método deberá ser escrito por los nodos derivados. \begin{DoxyReturn}{Devuelve}
+Nodo que representa la clase asociada al nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classobjectNode_a09303f23cd355cf6c404db07f0b4428c}{object\-Node}, \hyperlink{classarrayNode_adb8aba7525e34c7aec375f58be182bd8}{array\-Node}, \hyperlink{classstringNode_a9677c9a0529af401efad50376c7f0a78}{string\-Node}, \hyperlink{classarithNode_a870a354180acd033140f1d2c2fcde5a6}{arith\-Node} y \hyperlink{classlogicNode_ae7ba9985382ad86048f9c82b3c742147}{logic\-Node}.
+
+\hypertarget{classobjectTypeNode_a4c248660eed9ffdd132f075224b82544}{\index{object\-Type\-Node@{object\-Type\-Node}!get\-Method@{get\-Method}}
+\index{get\-Method@{get\-Method}!objectTypeNode@{object\-Type\-Node}}
+\subsubsection[{get\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ object\-Type\-Node\-::get\-Method (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classobjectTypeNode_a4c248660eed9ffdd132f075224b82544}
+Obtiene el método de la clase según la clave dada. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo que hace de cadena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo que representa el método. Si no se encuentra la clave N\-U\-L\-L. 
+\end{DoxyReturn}
+\hypertarget{classobjectTypeNode_a6dbd87c8c646340d2e817c64d94afaf6}{\index{object\-Type\-Node@{object\-Type\-Node}!get\-Method\-Ref@{get\-Method\-Ref}}
+\index{get\-Method\-Ref@{get\-Method\-Ref}!objectTypeNode@{object\-Type\-Node}}
+\subsubsection[{get\-Method\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ object\-Type\-Node\-::get\-Method\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classobjectTypeNode_a6dbd87c8c646340d2e817c64d94afaf6}
+Obtiene una referencia al método de la clase según la clave dada. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo que hace de cadena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al método. Si no se encuentra la clave N\-U\-L\-L. 
+\end{DoxyReturn}
+\hypertarget{classobjectTypeNode_adc36ba9bb3fe82a12c9a50eea11ee94b}{\index{object\-Type\-Node@{object\-Type\-Node}!set\-Class@{set\-Class}}
+\index{set\-Class@{set\-Class}!objectTypeNode@{object\-Type\-Node}}
+\subsubsection[{set\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void object\-Type\-Node\-::set\-Class (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classobjectTypeNode_adc36ba9bb3fe82a12c9a50eea11ee94b}
+Establece un nodo como clase del tipo de objeto. 
+\begin{DoxyParams}{Parámetros}
+{\em c} & Nodo que hace de clase. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{runTree_8h}{run\-Tree.\-h}\item 
+trunk/src/run/tree/run\-Tree.\-cpp\end{DoxyCompactItemize}

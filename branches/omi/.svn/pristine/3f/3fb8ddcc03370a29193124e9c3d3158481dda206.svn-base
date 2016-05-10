@@ -1,0 +1,11 @@
+#!/usr/local/bin/omi
+<< "_____";
+load ("/home/franj/projects/omi/trunk/interpreter/lib/gettext-ext.so");
+<< args[1]  ;
+setlocale (args[1]);
+<< "____";
+bindtextdomain ("messages", "/home/franj/projects/omi/examples/locale");
+bindtextdomain ("messages2", "/home/franj/projects/omi/examples/locale");
+textdomain ("messages");
+<< _("A")."B";
+<< dgettext ("messages2", "A")."B";

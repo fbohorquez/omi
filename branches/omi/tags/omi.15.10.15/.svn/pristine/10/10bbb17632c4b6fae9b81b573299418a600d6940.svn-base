@@ -1,0 +1,751 @@
+//stmtNode.h
+//----------------------------------------------------------------------
+/*
+ * Fco. Javier Bohórquez Ogalla
+ * 75766599-E
+ * Puerto Real (Cádiz)
+ * powersgame@gmail.com
+ */
+//----------------------------------------------------------------------
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+/**
+ * \file stmtNode.h
+ * \brief Nodos de sentencias
+ *
+ * Este fichero incluye nodos que representan sentencias.
+ *
+ * Liesh proporciona sentencias de diferente naturaleza y funcionalidad.
+ * Las sentencias se pueden categorizar en dos grupos.
+ *
+ * \li Sentencias de control.
+ * \li Sentencias de función.
+ *
+ * Las sentencias de control permiten influir en la secuencia de
+ * ejecución del programa. Algunos ejemplos son las sentencias "if",
+ * "while"...
+ *
+ * Las sentencias de función realizan una determinada operación sobre
+ * un nodo y el valor de interno de este. Como ejemplos pueden ser
+ * la sentencia "print", "read",...
+ *
+ *
+ */
+//----------------------------------------------------------------------
+#ifndef _STMTNODE_
+#define _STMTNODE_
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+#include <string>
+#include <iostream>
+#include <stdlib.h>
+#include <sstream>
+#include <fstream>
+#include <vector>
+#include <map>
+
+#include "runTree.h"
+#include "sTable.h"
+#include "typeNode.h"
+#include "operatorNode.h"
+#include "componentNode.h"
+#include "../error.h"
+#include "../lshParser.h"
+using namespace std;
+extern int yylineno;
+extern int yyparse ();
+extern void yyrestart(FILE*);
+extern FILE* yyin;
+//----------------------------------------------------------------------
+class noNode :
+   public runNode {
+ public:
+   noNode () {}
+   void run () {}
+};
+//----------------------------------------------------------------------
+class breakException :
+   public std::exception {
+ public:
+   breakException (int n = 1): n_(n) {}
+   const char* what() const throw() {
+      return "Break fuera de bloque.";
+   }
+   void end () {
+      if (n_ != 1) {
+         throw breakException (n_ - 1);
+      }
+   }
+ private:
+   int n_;
+};
+//----------------------------------------------------------------------
+class continueException :
+   public std::exception {
+ public:
+   continueException (int n = 1): n_(n) {}
+   const char* what() const throw() {
+      return "Continue fuera de bloque.";
+   }
+   void end () {
+      if (n_ != 1) {
+         throw continueException (n_ - 1);
+      }
+   }
+   bool islast () {
+      return n_ == 1;
+   }
+ private:
+   int n_;
+};
+//----------------------------------------------------------------------
+/**
+ * \class stmtNode
+ * \brief Nodo de sentencia
+ *
+ * La funcionalidad de este nodo es meramente constructiva. Su función
+ * es enlazar dos nodos de diferente naturaleza.
+ *
+ * El nodo de sentencia es asociado a otros dos nodos. Su ejecución
+ * consistirá en ejecutar ambos nodos de forma secuencial.
+ *
+ * Haciendo un uso recursivo del mismo es posible enlazar varios nodos
+ * de ejecución.
+ */
+extern string infile;
+class stmtNode :public runNode  {
+ public:
+   /**
+    * Constructor de la clase. Enlaza el nodo a otros dos nodos
+    * hijos.
+    *
+    * \param node1 Nodo que se ejecutará en primer lugar.
+    * \param node2 Nodo que se ejecutará en segundo lugar.
+    */
+   stmtNode (runNode* node1, runNode* node2, YYLTYPE bloq);
+   stmtNode (runNode* node1, runNode* node2);
+   /**
+    * Método de ejecución del nodo.
+    *
+    * Ejecuta secuencialmente los nodos asociados en la
+    * construcción del objeto.
+    */
+   void run ();
+   static bool compile_error;
+   static void newLine (void) {
+      yylloc.first_line = row_;
+      row_ ++;
+   }
+   static int row_;
+ private:
+   runNode *node1_, *node2_;
+   int line_;
+
+};
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+class includeNode :
+   public runNode {
+ public:
+   includeNode (runNode* file): file_(file) {}
+   void run () {
+      string file_aux;
+      int line_aux;
+      runNode* aux = file_;
+      if (nexpNode* nexp = dynamic_cast<nexpNode*> (aux)) {
+         nexp->run();
+         aux = nexp->nodeval();
+      }
+      aux->run();
+
+      if (stringNode* str = dynamic_cast<stringNode*> (aux)) {
+         string s = str->strvalue();
+         string ruta = infile.substr(0,infile.find_last_of("/\\") + 1);
+         s = ruta.append (s.c_str());
+         yyin = fopen (s.c_str(),"r");
+         file_aux = infile;
+         line_aux = stmtNode::row_;
+         stmtNode::row_= 2;
+         infile = s;
+         yyrestart (yyin);
+         cout << file_aux << " " << infile << endl;
+         yyparse();
+         infile = file_aux;
+         stmtNode::row_ = line_aux;
+      }
+
+   }
+ private:
+   runNode* file_;
+};
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+/**
+ * \class printNode
+ * \brief Nodo sentencia print
+ *
+ * Esta clase define el nodo correspondiente a la sentencia "print".
+ *
+ * La sentencia "print" se encarga de imprimir la cadena del nodo imprimible
+ * asociado en la salida estandar.
+ */
+class printNode : public runNode {
+ public:
+   /**
+    * Constructor de clase. Asocia un nodo hijo al
+    * nodo sentnecia print.
+    *
+    * \param exp Nodo sobre el que se ejecutará la sentencia print.
+    *
+    * El nodo asociado debe ser un nodo imprimible, en caso contrario
+    * se producirá un error de tipos.
+    */
+   printNode (runNode* exp);
+   /**
+    * Función de ejecución del nodo. Ejecuta el nodo imprimible
+    * asociado e imprime la cadena interna de este en la salida
+    * estándar.
+    */
+   void run ();
+ private:
+   runNode* exp_;
+};
+//----------------------------------------------------------------------
+class ifNode :
+   public runNode {
+ public:
+   ifNode (runNode* exp, runNode* ifb, runNode* elseb): exp_ (exp), ifb_ (ifb), elseb_ (elseb) {}
+   void run ();
+ private:
+   runNode *exp_, *ifb_, *elseb_;
+};
+
+class whileNode :
+   public runNode {
+ public:
+   whileNode (runNode* exp, runNode* rb): exp_ (exp), rb_ (rb) {}
+   void run ();
+ private:
+   runNode *exp_, *rb_;
+};
+
+class dowhileNode :
+   public runNode {
+ public:
+   dowhileNode (runNode* exp, runNode* rb): exp_ (exp), rb_ (rb) {}
+   void run ();
+ private:
+   runNode *exp_, *rb_;
+};
+
+class forNode :
+   public runNode {
+ public:
+   forNode (runNode* asig, runNode* exp, runNode* inc, runNode* rb):
+      asig_ (asig),
+      exp_ (exp),
+      inc_ (inc),
+      rb_ (rb) {}
+   void run () {
+      asig_->run();
+      logicNode* exp = dynamic_cast<logicNode*>(exp_);
+      if (exp) {
+         exp->run();
+         try {
+            while (exp->boolvalue()) {
+               try {
+                  if (rb_) rb_->run();
+               } catch (continueException&c) {
+                  c.end();
+               }
+               inc_->run();
+               exp_->run();
+            }
+         } catch (breakException& b) {
+            b.end();
+         }
+      } else
+         cerr << "Tipos incorrectos" << endl;
+   }
+ private:
+   runNode *exp_, *rb_, *asig_, *inc_;
+};
+
+class foreachNode :
+   public runNode {
+ public:
+   foreachNode (runNode* val, runNode* exp, runNode* rb = NULL, runNode* key = NULL):
+      val_ (val),
+
+      exp_ (exp),
+      key_ (key),
+      rb_ (rb) {}
+   void run ();
+ private:
+   void run_case_num ( numNode * n);
+   void run_case_array ( arrayNode * a);
+   void run_case_bool ( logicNode * l);
+   void run_case_str ( stringNode * s);
+   runNode *exp_, *rb_, *val_, *key_;
+};
+
+class foreachGeneratorNode :
+   public arrayNode {
+ public:
+   foreachGeneratorNode (runNode *elem, runNode* val, runNode* exp, runNode* rb, runNode* key = NULL, runNode *if_cond = NULL, runNode * elem_key = NULL):
+      elem_ (elem),
+      elem_key_ (elem_key),
+      if_cond_ (if_cond),
+      val_ (val),
+      exp_ (exp),
+      key_ (key),
+      rb_ (rb) {}
+   void run ();
+ private:
+   void run_case_num ( numNode * n);
+   void run_case_array ( arrayNode * a);
+   void run_case_bool ( logicNode * l);
+   void run_case_str ( stringNode * s);
+   void generator ();
+   runNode *elem_, *exp_, *rb_, *val_, *key_, *if_cond_, *elem_key_;
+};
+
+class iloopNode :
+
+   public runNode {
+ public:
+   iloopNode (runNode* iter, runNode* stmt, runNode *id = NULL, runNode *second_id = NULL, runNode *inc = NULL):
+      iter_ (iter),
+      stmt_ (stmt),
+      id_ (id),
+      second_id_ (second_id),
+      inc_ (inc) {}
+   void run ();
+   static runNode * get_ielement ();
+   static runNode * get_ielement_n (int i);
+   static runNode * set_ielement (runNode* node);
+   static runNode * push_ielement (runNode* node);
+   static runNode * pop_ielement ();
+   void setId (runNode * node, bool second = false);
+ private:
+   void run_case_num ( numNode * n);
+   void run_case_array ( arrayNode * a);
+   void run_case_bool ( logicNode * l);
+   void run_case_str ( stringNode * s);
+   static int icount;
+   static vector<runNode*> ielement;
+   runNode *iter_, *stmt_, *id_, *second_id_, *inc_;
+
+
+};
+
+
+
+class incloopNode :
+   public runNode {
+ public:
+   incloopNode (runNode* id, runNode* max, runNode* stmt):
+      id_ (id),
+      max_ (max),
+      stmt_ (stmt) {}
+   void run ();
+ private:
+
+   runNode *id_, *max_, *stmt_;
+};
+
+class caseNode :
+   public runNode {
+ public:
+   caseNode (runNode* exp, runNode* cb, runNode* cases):
+      exp_ (exp),
+      cb_ (cb),
+      cases_(cases), runall_(false) {}
+   void run (runNode* eval) {
+      logicNode *l1, *l2;
+      arithNode *a1, *a2;
+      stringNode *s1, *s2;
+      bool go = false;
+      nexpNode * id = dynamic_cast<nexpNode*> (eval);
+      if (id) {
+         id->run();
+         eval = id->nodeval();
+      }
+      id = dynamic_cast<nexpNode*> (exp_);
+      if (id) {
+         id->run();
+         exp_ = id->nodeval();
+      }
+      l1 = dynamic_cast<logicNode*> (eval);
+      l2 = dynamic_cast<logicNode*> (exp_);
+      a1 = dynamic_cast<arithNode*> (eval);
+      a2 = dynamic_cast<arithNode*> (exp_);
+      s1 = dynamic_cast<stringNode*> (eval);
+      s2 = dynamic_cast<stringNode*> (exp_);
+      // Compara la expresión del case con el valor a evaluar
+      if (s1) {
+         if (s2) {
+            if (s1->strvalue() == s2->strvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (a2) {
+            ostringstream out;
+            out << a2->numvalue();
+            if (s1->strvalue() == out.str()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (l2) {
+            if (s1->boolvalue() == l2->boolvalue()) {
+               if (cb_) cb_->run ();
+
+            } else {
+               go = true;
+            }
+         } else {
+            if (cb_) cb_->run ();
+         }
+      } else if (a1) {
+         if (s2) {
+            ostringstream out;
+            out << a1->numvalue();
+            if (s2->strvalue() == out.str()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (a2) {
+            if (a1->numvalue() == a2->numvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (l2) {
+            if (a1->boolvalue() == l2->boolvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else {
+            if (cb_) cb_->run ();
+         }
+      } else if (l1) {
+         if (s2) {
+            if (l1->boolvalue() == s2->boolvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (a2) {
+            if (l1->boolvalue() == a2->boolvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else if (l2) {
+            if (l1->boolvalue() == l2->boolvalue()) {
+               if (cb_) cb_->run ();
+            } else {
+               go = true;
+            }
+         } else {
+            if (cb_) cb_->run ();
+         }
+      } else {
+         //Si el case no tiene expresión (default):
+         if (cb_) cb_->run ();
+      }
+      if (runall_ && go ) cb_->run ();
+      if (caseNode * c = dynamic_cast<caseNode*> (cases_)) {
+         c->runall_ = runall_?runall_:!go;
+         c->run(eval);
+      }
+   }
+   void run () {
+      cb_->run();
+      if (cases_)
+         cases_->run();
+   }
+ private:
+   runNode *exp_, *cb_;
+   runNode* cases_;
+   bool runall_;
+};
+
+class switchNode :
+   public runNode {
+ public:
+   switchNode (runNode* eval, runNode* cases):
+      eval_(eval),
+      cases_ (cases) {}
+   void run () {
+      eval_->run ();
+      if (caseNode*c = dynamic_cast<caseNode*> (cases_)) {
+         try {
+            c->run (eval_);
+         } catch (breakException& b) {
+            b.end();
+         }
+      }
+   }
+ private:
+   runNode* eval_;
+   runNode* cases_;
+};
+
+class typeofNode :
+   public runNode {
+ public:
+   typeofNode (idNode* id):
+      id_(id) {}
+   void run () {
+      logicNode* l;
+      arithNode* a;
+      stringNode* s;
+      arrayNode* array;
+      if (id_) {
+         id_->run();
+         if (id_->ref() && id_->nodeval() && dynamic_cast<classNode*>(id_->nodeval()))
+            cout << "Class" << endl;
+         if (dynamic_cast<stringNode*>(id_->nodeval()))
+            cout << "String" << endl;
+         else if (array = dynamic_cast<arrayNode*>(id_->nodeval()))
+            cout << "Array (" << array->getArray()->size() << ")" << endl;
+         else if (dynamic_cast<arithNode*>(id_->nodeval()))
+            cout << "Arithmetic" << endl;
+         else if (dynamic_cast<logicNode*>(id_->nodeval()))
+            cout << "Boolean" << endl;
+         else if (dynamic_cast<functionNode*>(id_->nodeval()))
+            cout << "Function" << endl;
+         else if (dynamic_cast<idNode*>(id_->nodeval()))
+            cout << "ID" << endl;
+         else if (dynamic_cast<listNode*>(id_->nodeval()))
+            cout << "List" << endl;
+      }
+   }
+   
+   static string type (runNode *r);
+ private:
+   idNode *id_;
+};
+//----------------------------------------------------------------------
+
+class breakNode:
+   public runNode {
+ public:
+   breakNode (int n = 1): n_ (n) {}
+   void run () {
+      throw breakException(n_);
+   }
+ private:
+   int n_;
+};
+//----------------------------------------------------------------------
+class continueNode:
+   public runNode {
+ public:
+   continueNode (int n = 1): n_ (n) {}
+   void run () {
+      throw continueException(n_);
+   }
+ private:
+   int n_;
+};
+//----------------------------------------------------------------------
+
+class exitNode:
+   public runNode {
+ public:
+   void run () {
+      exit (0);
+   }
+};
+//----------------------------------------------------------------------
+/**
+ * \class labelNode
+ * \brief Nodo etiqueta
+ *
+ * Un nodo etiqueta permite el acceso a una rama de árbol de ejecución
+ * a partir de un un identificador.
+ *
+ * Internamente guarda en la tabla de símbolos una referencia a un nodo sentencia determinado
+ * del árbol de ejecución.
+ *
+ * Para acceder ejecutar el nodo y por consecuente todos sus hijos se define el nodo gotoNode
+ *
+ */
+class labelNode :
+   public runNode {
+ public:
+   /**
+   * Constructor de la clase.
+   *
+   * El primer parámetro debe ser un nodo identificador, el segundo un
+   * nodo sentencia.
+   */
+   labelNode (runNode* node1, runNode* node2): node1_ (node1), node2_(node2) {}
+   /**
+    * Ejecuta el nodo guardando en la tabla de símbolos una referencia
+    * al nodo sentencia con el identificador facilitado.
+    */
+   void run ();
+ private:
+   runNode *node1_, *node2_;
+};
+//----------------------------------------------------------------------
+/**
+ * \class gotoNode
+ * \brief Nodo de salto
+ *
+ * Este nodo permite saltar a una línea del código especificada por
+ * una etiqueta. Para ello obtiene de la tabla de símbolos la sentencia a
+ * la que hace referencia el identificador pasado en su inicialización. Luego
+ * ejecuta el nodo sentencia.
+ */
+class gotoNode :
+   public runNode {
+ public:
+   /**
+    * Constructor de clase
+    *
+    * Crea un nodo salto a partir de un identificador
+    */
+   gotoNode (runNode* node): node1_ (node) {}
+   /**
+    * Ejecuta el nodo accediendo en la tabla de símbolos al nodo sentencia
+    * referenciado por el identificador pasado en la inicialización
+    */
+   void run () {
+      runNode* node_aux1 = node1_;
+      nexpNode::resolved (node_aux1)->run();
+      if (stmtNode* stmt = dynamic_cast<stmtNode*> (node_aux1)) {
+         stmt->run();
+      }
+   }
+ private:
+   runNode *node1_;
+};
+
+//----------------------------------------------------------------------
+/**
+ * \class inputNode
+ * \brief Nodo de entrada de usuario
+ *
+ * Lee de la entrada estandar del usuario y guarda el contenido en
+ * un nodo string.
+ *
+ * La entrada puede ser de dos tipos
+ *
+ * tipo 0: correspondiente a la sentencia "input id" toma valores del teclado hasta que
+ * se hace un doble salto de línea
+ *
+ * tipo 1: correspondiente a la sentencia "inputline id" toma valores del teclado hasta que
+ * se hace un salto de linea
+ *
+ *
+ * Es posible especificar un prompt para la entra mediante la sentencia "input<prompt> id"
+ */
+class inputNode :
+   public stringNode {
+ public:
+   /**
+    * Constructor de la clase
+    * Recibe el identificador que se utilizará para referenciar en la tabla de simbolos el
+    * la cadena rebicida, el tipo de entrada, y el prompt a utilizar
+    */
+   inputNode (idNode* id, int type = 0, runNode* prompt = NULL): id_(id), type_ (type), prompt_ (prompt) {}
+   /**
+    * Imprime el prompt, recibe una cadena del usuario y la guarda
+    * en la tabla de símbolos mediante un nodo cadena.
+    */
+   void run ();
+ private:
+   idNode *id_;
+   runNode *prompt_;
+   int type_;
+};
+//----------------------------------------------------------------------
+class withNode : public runNode {
+   public: 
+      withNode (runNode* node, runNode *stmts);
+      void run();
+      static void push_with (runNode* node_);
+      static runNode *get_with ();
+      static void pop_with ();
+      
+   private:
+      static vector<runNode *> stack_with;
+      static int top_with;
+      runNode *node_, *stmts_;
+};
+//----------------------------------------------------------------------
+class sizeOfNode : public arithNode {
+   public:
+      sizeOfNode (runNode* node) : node_ (node){}
+      void run ();
+   private:
+      runNode * node_;
+};
+//----------------------------------------------------------------------
+class datInfoNode : public runNode {
+   public:
+      datInfoNode (runNode* node) : node_ (node){}
+      void run ();
+   private:
+      runNode * node_;
+};
+//----------------------------------------------------------------------
+class throwException :
+   public std::exception {
+ public:
+   throwException (runNode* resp): resp_(resp) {}
+   const char* what() const throw();
+   runNode* val () const {
+      return resp_;
+   }
+ private:
+   runNode* resp_;
+};
+//----------------------------------------------------------------------
+
+class tryNode : public runNode {
+   public:
+      tryNode (runNode* tryblock, runNode *id, runNode *catchblock) : tryblock_ (tryblock), id_ (id), catchblock_ (catchblock) {}
+      void run ();
+   private:
+      runNode * tryblock_, *id_, *catchblock_;
+};
+//----------------------------------------------------------------------
+
+class throwNode : public runNode {
+   public:
+      throwNode (runNode* obj) : obj_ (obj) {}
+      void run ();
+   private:
+      runNode *obj_;
+};
+//----------------------------------------------------------------------
+#endif
+
+

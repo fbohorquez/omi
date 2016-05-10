@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="23cm" height="9cm" viewBox="263 293 452 169" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="264" y="314" width="449" height="147"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="264" y="314" width="449" height="147"/>
+    <rect style="fill: #ffffff" x="264" y="294" width="42.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="264" y="294" width="42.5" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="266" y="309"> exp </text>
+  </g>
+  <g>
+    <g>
+      <ellipse style="fill: #ffffff" cx="367.15" cy="387.8" rx="69.15" ry="32"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="367.15" cy="387.8" rx="69.15" ry="32"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="367.15" y="383.7">
+        <tspan x="367.15" y="383.7">Interpretar</tspan>
+        <tspan x="367.15" y="399.7">sentencia</tspan>
+      </text>
+    </g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="298" y1="387.8" x2="436.3" y2="387.8"/>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="631.425" cy="389" rx="55.425" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="631.425" cy="389" rx="55.425" ry="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="631.425" y="392.9">
+      <tspan x="631.425" y="392.9">Expresión</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="453.299" y1="387.946" x2="576" y2="389"/>
+    <polygon style="fill: #000000" points="453.342,382.946 437.3,387.809 453.256,392.946 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="453.342,382.946 437.3,387.809 453.256,392.946 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="511" y="378">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+</svg>

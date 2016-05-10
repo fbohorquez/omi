@@ -1,0 +1,47 @@
+#!/usr/local/bin/omi
+#=======================================================================
+include "quiz.class.omi";
+#=======================================================================
+global quiz;
+#=======================================================================
+~ multichoice (text, rating) {
+   quiz->add_question (new MultiChoice (text, rating));
+}
+
+~ text (text, rating) {
+   quiz->add_question (new Text (text, rating));
+}
+
+~ option (text, correct = null) {
+   quiz->last_question()->add_option(new Option (text, correct));
+}
+#=======================================================================
+if (args[1]){
+   title = args[2]?:"Sin titulo";
+   << title;
+   quiz =  new Quiz (title);
+   include args[1];
+   quiz->run_quiz();
+}
+else
+   << "Debe indicar un cuestionario";
+#~ #=======================================================================
+#~ class stringClass {
+      #~ ~ OReq (elems) {
+         #~ $(elems)
+            #~ if (this == $) 
+               #~ return true;
+         #~ return false;
+      #~ }
+      #~ ~ concatX () {
+         #~ return this .= "X";
+      #~ }
+   #~ }
+#~ 
+   #~ foo = "ABC"->OReq({"A", "AB", "ABC"}); // foo vale true
+   #~ foo = "ABCD"->OReq({"A", "AB", "ABC"}); // foo vale false
+   #~ foo = "ABCD"->concatX(); // foo vale "ABCDX"
+   #~ 
+   #~ str = "ABCD";
+   #~ << str->concatX(); // Imprime "ABCDX"
+   #~ << str; // Imprime "ABCDX"

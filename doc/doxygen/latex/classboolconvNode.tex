@@ -1,0 +1,88 @@
+\hypertarget{classboolconvNode}{\section{Referencia de la Clase boolconv\-Node}
+\label{classboolconvNode}\index{boolconv\-Node@{boolconv\-Node}}
+}
+
+
+Nodo de conversión a booleano.  
+
+
+
+
+{\ttfamily \#include $<$conv\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de boolconv\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classboolconvNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classboolconvNode_a5e675df17489517475859bc393f232ce}{boolconv\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classboolconvNode_a344001e8903f5969a0187021d749c637}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classboolconvNode_a7bb697f6a097e580cb5fbfb1c0b6391a}{do\-\_\-boolconv} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de conversión a booleano. 
+
+Este nodo fuerza la conversion a booleano del valor de un nodo
+
+Si el nodo es booleano toma su propio valor Si el nodo es aritmético toma el valor booleano del nodo Si el nodo es cadena de texto toma verdadero si la cadena no es vacia Si el nodo es array toma verdadero si el array no está vacio 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classboolconvNode_a5e675df17489517475859bc393f232ce}{\index{boolconv\-Node@{boolconv\-Node}!boolconv\-Node@{boolconv\-Node}}
+\index{boolconv\-Node@{boolconv\-Node}!boolconvNode@{boolconv\-Node}}
+\subsubsection[{boolconv\-Node}]{\setlength{\rightskip}{0pt plus 5cm}boolconv\-Node\-::boolconv\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classboolconvNode_a5e675df17489517475859bc393f232ce}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classboolconvNode_a7bb697f6a097e580cb5fbfb1c0b6391a}{\index{boolconv\-Node@{boolconv\-Node}!do\-\_\-boolconv@{do\-\_\-boolconv}}
+\index{do\-\_\-boolconv@{do\-\_\-boolconv}!boolconvNode@{boolconv\-Node}}
+\subsubsection[{do\-\_\-boolconv}]{\setlength{\rightskip}{0pt plus 5cm}num boolconv\-Node\-::do\-\_\-boolconv (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classboolconvNode_a7bb697f6a097e580cb5fbfb1c0b6391a}
+Convierte un nodo a su valor booleano 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classboolconvNode_a344001e8903f5969a0187021d749c637}{\index{boolconv\-Node@{boolconv\-Node}!run@{run}}
+\index{run@{run}!boolconvNode@{boolconv\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void boolconv\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classboolconvNode_a344001e8903f5969a0187021d749c637}
+Tras ser ejecutado el operador toma como valor el resultado de la conversión a booleano del nodo asociado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{convOpNode_8h}{conv\-Op\-Node.\-h}\item 
+trunk/src/run/operators/conv\-Op\-Node.\-cpp\end{DoxyCompactItemize}

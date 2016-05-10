@@ -1,0 +1,66 @@
+\hypertarget{classexecNode}{\section{Referencia de la Clase exec\-Node}
+\label{classexecNode}\index{exec\-Node@{exec\-Node}}
+}
+
+
+Node operador ejecución de comando.  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de exec\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classexecNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexecNode_a58d08383a1a96a62d012c1288069a619}{exec\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classexecNode_a0eec036e65db650fa5a58e92dfbfb967}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador ejecución de comando. 
+
+Este nodo se encarga de ejecutar un comando en el sistema tomando como valor la salida del mismo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classexecNode_a58d08383a1a96a62d012c1288069a619}{\index{exec\-Node@{exec\-Node}!exec\-Node@{exec\-Node}}
+\index{exec\-Node@{exec\-Node}!execNode@{exec\-Node}}
+\subsubsection[{exec\-Node}]{\setlength{\rightskip}{0pt plus 5cm}exec\-Node\-::exec\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classexecNode_a58d08383a1a96a62d012c1288069a619}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em node.} & Nodo comando \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classexecNode_a0eec036e65db650fa5a58e92dfbfb967}{\index{exec\-Node@{exec\-Node}!run@{run}}
+\index{run@{run}!execNode@{exec\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void exec\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classexecNode_a0eec036e65db650fa5a58e92dfbfb967}
+Metodo de ejecución. Procede a la ejecución del nodo que hace de comando. Toma como valor el resultado de la ejecución de este en el sistema 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

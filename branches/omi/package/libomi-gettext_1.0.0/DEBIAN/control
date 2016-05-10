@@ -1,0 +1,7 @@
+Package: libomi-gettext
+Architecture: all
+Maintainer: Fco. Javier Bohórquez Ogalla
+Depends: omi
+Priority: optional
+Version: 1.0.0
+Description: Library Open Modular Interpreter Gettext

@@ -1,0 +1,166 @@
+\BOOKMARK [1][-]{section.1}{Visi\363n general}{}% 1
+\BOOKMARK [1][-]{section.2}{Situaci\363n actual}{}% 2
+\BOOKMARK [1][-]{section.3}{Necesidades}{}% 3
+\BOOKMARK [1][-]{section.4}{Objetivos}{}% 4
+\BOOKMARK [1][-]{section.5}{Requisitos funcionales}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Interprete}{section.5}% 6
+\BOOKMARK [3][-]{subsubsection.5.1.1}{L\351xico}{subsection.5.1}% 7
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Gram\341tica}{subsection.5.1}% 8
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Sem\341ntica}{subsection.5.1}% 9
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Comentarios}{subsection.5.1}% 10
+\BOOKMARK [3][-]{subsubsection.5.1.5}{Contenido fuente}{subsection.5.1}% 11
+\BOOKMARK [3][-]{subsubsection.5.1.6}{Entorno}{subsection.5.1}% 12
+\BOOKMARK [3][-]{subsubsection.5.1.7}{Par\341metros}{subsection.5.1}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Ejecuci\363n}{section.5}% 14
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Sentencias}{subsection.5.2}% 15
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Expresiones}{subsection.5.2}% 16
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Datos}{subsection.5.2}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Operadores}{subsection.5.2}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Tipos de datos}{section.5}% 19
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Nulo}{subsection.5.3}% 20
+\BOOKMARK [3][-]{subsubsection.5.3.2}{L\363gico}{subsection.5.3}% 21
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Aritm\351tico}{subsection.5.3}% 22
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Cadena de caracteres}{subsection.5.3}% 23
+\BOOKMARK [3][-]{subsubsection.5.3.5}{Expresiones regulares}{subsection.5.3}% 24
+\BOOKMARK [3][-]{subsubsection.5.3.6}{Arrays}{subsection.5.3}% 25
+\BOOKMARK [2][-]{subsection.5.4}{Sentencias de control de flujo}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Inclusi\363n de ficheros}{subsection.5.4}% 27
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Saltar a etiqueta}{subsection.5.4}% 28
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Sentencia if}{subsection.5.4}% 29
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Sentencia switch}{subsection.5.4}% 30
+\BOOKMARK [3][-]{subsubsection.5.4.5}{Sentencia while}{subsection.5.4}% 31
+\BOOKMARK [3][-]{subsubsection.5.4.6}{Sentencia do...while}{subsection.5.4}% 32
+\BOOKMARK [3][-]{subsubsection.5.4.7}{Sentencia for}{subsection.5.4}% 33
+\BOOKMARK [3][-]{subsubsection.5.4.8}{Sentencia foreach}{subsection.5.4}% 34
+\BOOKMARK [3][-]{subsubsection.5.4.9}{Sentenci\363n de iteraci\363n \341gil}{subsection.5.4}% 35
+\BOOKMARK [3][-]{subsubsection.5.4.10}{Sentencia with}{subsection.5.4}% 36
+\BOOKMARK [3][-]{subsubsection.5.4.11}{Finalizar bloque de sentencias}{subsection.5.4}% 37
+\BOOKMARK [3][-]{subsubsection.5.4.12}{Finalizar iteraci\363n}{subsection.5.4}% 38
+\BOOKMARK [3][-]{subsubsection.5.4.13}{Finalizar ejecuci\363n}{subsection.5.4}% 39
+\BOOKMARK [3][-]{subsubsection.5.4.14}{Capturar excepci\363n}{subsection.5.4}% 40
+\BOOKMARK [3][-]{subsubsection.5.4.15}{Lanzar excepci\363n}{subsection.5.4}% 41
+\BOOKMARK [2][-]{subsection.5.5}{Definiciones}{section.5}% 42
+\BOOKMARK [3][-]{subsubsection.5.5.1}{Variables}{subsection.5.5}% 43
+\BOOKMARK [3][-]{subsubsection.5.5.2}{Funciones}{subsection.5.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.5.3}{Clases de objetos}{subsection.5.5}% 45
+\BOOKMARK [3][-]{subsubsection.5.5.4}{Listas}{subsection.5.5}% 46
+\BOOKMARK [3][-]{subsubsection.5.5.5}{Pares clave/valor}{subsection.5.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.5.6}{Etiqueta}{subsection.5.5}% 48
+\BOOKMARK [3][-]{subsubsection.5.5.7}{Generadores}{subsection.5.5}% 49
+\BOOKMARK [2][-]{subsection.5.6}{Asignaciones}{section.5}% 50
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Asignaci\363n}{subsection.5.6}% 51
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Asignaci\363n de referencia}{subsection.5.6}% 52
+\BOOKMARK [2][-]{subsection.5.7}{Operadores aritm\351ticos}{section.5}% 53
+\BOOKMARK [3][-]{subsubsection.5.7.1}{Suma}{subsection.5.7}% 54
+\BOOKMARK [3][-]{subsubsection.5.7.2}{Diferencia}{subsection.5.7}% 55
+\BOOKMARK [3][-]{subsubsection.5.7.3}{Producto}{subsection.5.7}% 56
+\BOOKMARK [3][-]{subsubsection.5.7.4}{Divisi\363n}{subsection.5.7}% 57
+\BOOKMARK [3][-]{subsubsection.5.7.5}{Potencia}{subsection.5.7}% 58
+\BOOKMARK [3][-]{subsubsection.5.7.6}{M\363dulo}{subsection.5.7}% 59
+\BOOKMARK [3][-]{subsubsection.5.7.7}{Tama\361o}{subsection.5.7}% 60
+\BOOKMARK [3][-]{subsubsection.5.7.8}{Incremento y asignaci\363n}{subsection.5.7}% 61
+\BOOKMARK [3][-]{subsubsection.5.7.9}{Asignaci\363n e incremento}{subsection.5.7}% 62
+\BOOKMARK [3][-]{subsubsection.5.7.10}{Decremento y asignaci\363n}{subsection.5.7}% 63
+\BOOKMARK [3][-]{subsubsection.5.7.11}{Asignaci\363n y decremento}{subsection.5.7}% 64
+\BOOKMARK [3][-]{subsubsection.5.7.12}{Suma y asignaci\363n}{subsection.5.7}% 65
+\BOOKMARK [3][-]{subsubsection.5.7.13}{Diferencia y asignaci\363n}{subsection.5.7}% 66
+\BOOKMARK [3][-]{subsubsection.5.7.14}{Producto y asignaci\363n}{subsection.5.7}% 67
+\BOOKMARK [3][-]{subsubsection.5.7.15}{Divisi\363n y asignaci\363n}{subsection.5.7}% 68
+\BOOKMARK [3][-]{subsubsection.5.7.16}{Potencia y asignaci\363n}{subsection.5.7}% 69
+\BOOKMARK [3][-]{subsubsection.5.7.17}{M\363dulo y asignaci\363n}{subsection.5.7}% 70
+\BOOKMARK [2][-]{subsection.5.8}{Operadores l\363gicos}{section.5}% 71
+\BOOKMARK [3][-]{subsubsection.5.8.1}{AND l\363gico}{subsection.5.8}% 72
+\BOOKMARK [3][-]{subsubsection.5.8.2}{OR l\363gico}{subsection.5.8}% 73
+\BOOKMARK [3][-]{subsubsection.5.8.3}{NOT l\363gico}{subsection.5.8}% 74
+\BOOKMARK [3][-]{subsubsection.5.8.4}{Vac\355o}{subsection.5.8}% 75
+\BOOKMARK [3][-]{subsubsection.5.8.5}{Es nulo}{subsection.5.8}% 76
+\BOOKMARK [3][-]{subsubsection.5.8.6}{Menor que}{subsection.5.8}% 77
+\BOOKMARK [3][-]{subsubsection.5.8.7}{Menor o igual que}{subsection.5.8}% 78
+\BOOKMARK [3][-]{subsubsection.5.8.8}{Mayor que}{subsection.5.8}% 79
+\BOOKMARK [3][-]{subsubsection.5.8.9}{Mayor o igual que}{subsection.5.8}% 80
+\BOOKMARK [3][-]{subsubsection.5.8.10}{Igual que}{subsection.5.8}% 81
+\BOOKMARK [3][-]{subsubsection.5.8.11}{Id\351ntico que}{subsection.5.8}% 82
+\BOOKMARK [3][-]{subsubsection.5.8.12}{Distinto que}{subsection.5.8}% 83
+\BOOKMARK [3][-]{subsubsection.5.8.13}{No id\351ntico que}{subsection.5.8}% 84
+\BOOKMARK [2][-]{subsection.5.9}{Operadores sobre cadenas}{section.5}% 85
+\BOOKMARK [3][-]{subsubsection.5.9.1}{Concatenaci\363n}{subsection.5.9}% 86
+\BOOKMARK [3][-]{subsubsection.5.9.2}{explode}{subsection.5.9}% 87
+\BOOKMARK [3][-]{subsubsection.5.9.3}{implode}{subsection.5.9}% 88
+\BOOKMARK [3][-]{subsubsection.5.9.4}{sprintf}{subsection.5.9}% 89
+\BOOKMARK [3][-]{subsubsection.5.9.5}{Buscar subcadena}{subsection.5.9}% 90
+\BOOKMARK [3][-]{subsubsection.5.9.6}{Buscar y remplazar}{subsection.5.9}% 91
+\BOOKMARK [3][-]{subsubsection.5.9.7}{Remplazar subcadena}{subsection.5.9}% 92
+\BOOKMARK [3][-]{subsubsection.5.9.8}{Convertir a may\372sculas}{subsection.5.9}% 93
+\BOOKMARK [3][-]{subsubsection.5.9.9}{Convertir a min\372sculas}{subsection.5.9}% 94
+\BOOKMARK [2][-]{subsection.5.10}{Operadores sobre array}{section.5}% 95
+\BOOKMARK [3][-]{subsubsection.5.10.1}{Dividir en fragmentos}{subsection.5.10}% 96
+\BOOKMARK [3][-]{subsubsection.5.10.2}{Reducir mediante funci\363n}{subsection.5.10}% 97
+\BOOKMARK [3][-]{subsubsection.5.10.3}{Obtener \372ltimo}{subsection.5.10}% 98
+\BOOKMARK [3][-]{subsubsection.5.10.4}{Obtener primero}{subsection.5.10}% 99
+\BOOKMARK [3][-]{subsubsection.5.10.5}{Insertar en posici\363n}{subsection.5.10}% 100
+\BOOKMARK [3][-]{subsubsection.5.10.6}{Eliminar posici\363n}{subsection.5.10}% 101
+\BOOKMARK [3][-]{subsubsection.5.10.7}{Insertar al inicio}{subsection.5.10}% 102
+\BOOKMARK [3][-]{subsubsection.5.10.8}{Insertar al final}{subsection.5.10}% 103
+\BOOKMARK [3][-]{subsubsection.5.10.9}{Buscar}{subsection.5.10}% 104
+\BOOKMARK [3][-]{subsubsection.5.10.10}{Ordenar}{subsection.5.10}% 105
+\BOOKMARK [3][-]{subsubsection.5.10.11}{in array}{subsection.5.10}% 106
+\BOOKMARK [3][-]{subsubsection.5.10.12}{Rango}{subsection.5.10}% 107
+\BOOKMARK [3][-]{subsubsection.5.10.13}{Eliminar e insertar a partir de posici\363n}{subsection.5.10}% 108
+\BOOKMARK [2][-]{subsection.5.11}{Operadores sobre expresiones regulares}{section.5}% 109
+\BOOKMARK [3][-]{subsubsection.5.11.1}{Crear expresi\363n regular}{subsection.5.11}% 110
+\BOOKMARK [3][-]{subsubsection.5.11.2}{Comprobar expresi\363n regular}{subsection.5.11}% 111
+\BOOKMARK [3][-]{subsubsection.5.11.3}{Buscar mediante expresi\363n regular}{subsection.5.11}% 112
+\BOOKMARK [2][-]{subsection.5.12}{Operadores de conversi\363n de tipo}{section.5}% 113
+\BOOKMARK [3][-]{subsubsection.5.12.1}{Conversi\363n a num\351rico}{subsection.5.12}% 114
+\BOOKMARK [3][-]{subsubsection.5.12.2}{Conversi\363n a l\363gico}{subsection.5.12}% 115
+\BOOKMARK [3][-]{subsubsection.5.12.3}{Conversi\363n a cadena de caracteres}{subsection.5.12}% 116
+\BOOKMARK [2][-]{subsection.5.13}{Operadores de entrada/salida}{section.5}% 117
+\BOOKMARK [3][-]{subsubsection.5.13.1}{Escribir en la salida est\341ndar}{subsection.5.13}% 118
+\BOOKMARK [2][-]{subsection.5.14}{Leer de la entrada est\341ndar}{section.5}% 119
+\BOOKMARK [2][-]{subsection.5.15}{Operadores informativos}{section.5}% 120
+\BOOKMARK [3][-]{subsubsection.5.15.1}{Tipo de}{subsection.5.15}% 121
+\BOOKMARK [3][-]{subsubsection.5.15.2}{Tama\361o de}{subsection.5.15}% 122
+\BOOKMARK [3][-]{subsubsection.5.15.3}{Informaci\363n sobre}{subsection.5.15}% 123
+\BOOKMARK [2][-]{subsection.5.16}{Procesos}{section.5}% 124
+\BOOKMARK [3][-]{subsubsection.5.16.1}{Ejecutar comando}{subsection.5.16}% 125
+\BOOKMARK [3][-]{subsubsection.5.16.2}{Evaluar cadena}{subsection.5.16}% 126
+\BOOKMARK [3][-]{subsubsection.5.16.3}{Bifurcaci\363n de proceso}{subsection.5.16}% 127
+\BOOKMARK [3][-]{subsubsection.5.16.4}{Espera entre procesos}{subsection.5.16}% 128
+\BOOKMARK [3][-]{subsubsection.5.16.5}{Obtener identificador de proceso}{subsection.5.16}% 129
+\BOOKMARK [3][-]{subsubsection.5.16.6}{Obtener identificador de proceso padre}{subsection.5.16}% 130
+\BOOKMARK [3][-]{subsubsection.5.16.7}{Se\361ales entre procesos}{subsection.5.16}% 131
+\BOOKMARK [3][-]{subsubsection.5.16.8}{Manejador de se\361ales a procesos}{subsection.5.16}% 132
+\BOOKMARK [3][-]{subsubsection.5.16.9}{Llamar a funci\363n como proceso}{subsection.5.16}% 133
+\BOOKMARK [2][-]{subsection.5.17}{Ficheros}{section.5}% 134
+\BOOKMARK [3][-]{subsubsection.5.17.1}{Fichero}{subsection.5.17}% 135
+\BOOKMARK [3][-]{subsubsection.5.17.2}{Abrir ficheros}{subsection.5.17}% 136
+\BOOKMARK [3][-]{subsubsection.5.17.3}{Cerrar ficheros}{subsection.5.17}% 137
+\BOOKMARK [3][-]{subsubsection.5.17.4}{Escribir en fichero}{subsection.5.17}% 138
+\BOOKMARK [3][-]{subsubsection.5.17.5}{Leer de fichero}{subsection.5.17}% 139
+\BOOKMARK [3][-]{subsubsection.5.17.6}{Cambiar posici\363n de puntero a fichero}{subsection.5.17}% 140
+\BOOKMARK [3][-]{subsubsection.5.17.7}{Obtener la posici\363n actual de puntero a fichero}{subsection.5.17}% 141
+\BOOKMARK [3][-]{subsubsection.5.17.8}{Obtener contenido de un fichero}{subsection.5.17}% 142
+\BOOKMARK [3][-]{subsubsection.5.17.9}{Cadena como contenido de un fichero.}{subsection.5.17}% 143
+\BOOKMARK [3][-]{subsubsection.5.17.10}{A\361adir cadena al contenido de un fichero}{subsection.5.17}% 144
+\BOOKMARK [2][-]{subsection.5.18}{Fechas y tiempo}{section.5}% 145
+\BOOKMARK [3][-]{subsubsection.5.18.1}{Obtener fecha}{subsection.5.18}% 146
+\BOOKMARK [3][-]{subsubsection.5.18.2}{Tiempo Unix }{subsection.5.18}% 147
+\BOOKMARK [3][-]{subsubsection.5.18.3}{Parar ejecuci\363n}{subsection.5.18}% 148
+\BOOKMARK [2][-]{subsection.5.19}{Errores}{section.5}% 149
+\BOOKMARK [2][-]{subsection.5.20}{Extensiones}{section.5}% 150
+\BOOKMARK [3][-]{subsubsection.5.20.1}{Extensi\363n}{subsection.5.20}% 151
+\BOOKMARK [3][-]{subsubsection.5.20.2}{Carga de extensiones mediante fichero de configuraci\363n}{subsection.5.20}% 152
+\BOOKMARK [3][-]{subsubsection.5.20.3}{Carga de extensiones mediante sentencia}{subsection.5.20}% 153
+\BOOKMARK [3][-]{subsubsection.5.20.4}{Biblioteca GNU de internacionalizaci\363n \(gettext\)}{subsection.5.20}% 154
+\BOOKMARK [3][-]{subsubsection.5.20.5}{Operaciones sobre un SGBD Mysql}{subsection.5.20}% 155
+\BOOKMARK [1][-]{section.6}{Requisitos no funcionales}{}% 156
+\BOOKMARK [2][-]{subsection.6.1}{Rendimiento}{section.6}% 157
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Tiempo}{subsection.6.1}% 158
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Espacio}{subsection.6.1}% 159
+\BOOKMARK [2][-]{subsection.6.2}{Usabilidad}{section.6}% 160
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Reglas l\351xicas y sint\341cticas'}{subsection.6.2}% 161
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Interfaz}{subsection.6.2}% 162
+\BOOKMARK [2][-]{subsection.6.3}{Accesibilidad}{section.6}% 163
+\BOOKMARK [2][-]{subsection.6.4}{Estabilidad}{section.6}% 164
+\BOOKMARK [2][-]{subsection.6.5}{Mantenibilidad}{section.6}% 165
+\BOOKMARK [2][-]{subsection.6.6}{Concurrencia}{section.6}% 166

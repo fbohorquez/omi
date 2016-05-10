@@ -1,0 +1,20 @@
+#!/usr/local/bin/omi
+~ func () {
+   << "Indique un numero"; 
+   >> a;
+   << "Indique otro numero"; 
+   >> b;
+   if (b == 0)
+      throw "ERROR";
+   << a / b;
+}
+
+~ func2 () {
+   func ();
+}
+
+try {
+   func2();
+} catch (exception) {
+   << exception;
+}

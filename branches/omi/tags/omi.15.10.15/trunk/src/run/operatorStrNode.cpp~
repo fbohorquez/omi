@@ -1,0 +1,1031 @@
+//runTree.cpp
+//----------------------------------------------------------------------
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *      
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *      
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+#include "operatorStrNode.h"
+#include <boost/regex.hpp>
+using namespace std;
+using namespace boost;
+
+//----------------------------------------------------------------------
+explodeNode::explodeNode (runNode * substr, runNode * str):str_ (str),
+substr_ (substr)
+{
+}
+
+void
+explodeNode::run ()
+{
+  runNode *node_aux1 = substr_;
+  runNode *node_aux2 = str_;
+
+  //Ejecución de los nodos hijos 
+  nexpNode::resolved (node_aux1)->run ();
+  nexpNode::resolved (node_aux2)->run ();
+  //Comprobación de operandos 
+  //Ejecución de la operación 
+  //Toma de valor
+  strNode s1 = strNode (node_aux1);
+  strNode s2 = strNode (node_aux2);
+  arrayNode *array = new arrayNode ();
+  map < runNode *, runNode *, cmp_runNode > *v_array = array->getArray ();
+  int count = 0;
+  int pos = 0;
+  string substr = s1.strvalue ();
+  string str = s2.strvalue ();
+  if (substr != "")
+    {
+      string elem = str;
+      while ((pos = str.find (substr)) != string::npos)
+	{
+	  elem = str.substr (0, pos);
+	  str = str.substr (pos + substr.size ());
+	  (*v_array)[new numNode (count)] = new strNode (elem);
+	  count++;
+	}
+      (*v_array)[new numNode (count)] = new strNode (str);
+    }
+  else
+    for (; count < str.size (); ++count)
+      (*v_array)[new numNode (count)] = new strNode (str.substr (count, 1));
+  runNode *node = array;
+  ref_ = &node;
+}
+
+runNode **
+explodeNode::ref ()
+{
+  return ref_;
+}
+
+void
+explodeNode::noderef (runNode * node)
+{
+  ref_ = &node;
+}
+
+runNode *
+     explodeNode::nodeval () const const const const
+     {
+       return *ref_;
+     }
+
+     runNode *explodeNode::asMethod (runNode * obj)
+{
+  idNode *id = new idNode ("~substr");
+  listNode *params = new listNode (id, NULL);
+  substr_ = id;
+  str_ = obj;
+  runNode *body = new returnNode (this);
+  return new functionNode (NULL, params, body);
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+implodeNode::implodeNode (runNode * str, runNode * array):str_ (str),
+array_ (array)
+{
+}
+
+void
+implodeNode::run ()
+{
+  runNode *node_aux1 = str_;
+  runNode *node_aux2 = array_;
+  //Acceso a variables, y expresones de tipos no definidos
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux1))
+    {
+      nexp->run ();
+      node_aux1 = nexp->nodeval ();
+    }
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux2))
+    {
+      nexp->run ();
+      node_aux2 = nexp->nodeval ();
+    }
+  //Ejecución de los nodos hijos 
+  node_aux1->run ();
+  node_aux2->run ();
+  //Comprobación de operandos 
+  //Ejecución de la operación 
+  //Toma de valor
+  strNode s = strNode (node_aux1);
+  ostringstream oss (ostringstream::out);
+  //~ oss << n->numvalue();
+  //~ strvalue_ = oss.str();
+  if (arrayNode * array = dynamic_cast < arrayNode * >(node_aux2))
+    {
+      map < runNode *, runNode *, cmp_runNode > *v_array = array->getArray ();
+      map < runNode *, runNode *, cmp_runNode >::iterator iter;
+      map < runNode *, runNode *, cmp_runNode >::iterator iter_e =
+	v_array->end ();
+      if (v_array->size ())
+	iter_e--;
+      for (iter = v_array->begin (); iter != v_array->end (); ++iter)
+	{
+	  if (arrayNode * array_s =
+	      dynamic_cast < arrayNode * >(iter->second))
+	    {
+	      implodeNode i (str_, array_s);
+	      i.run ();
+	      oss << i.strvalue ();
+	    }
+	  else
+	    {
+	      strNode s (iter->second);
+	      oss << s.strvalue ();
+	    }
+	  if (iter != iter_e)
+	    oss << s.strvalue ();
+	}
+    }
+  string resp = oss.str ();
+  boolvalue_ = resp.size ();
+  numNode n (resp);
+  numvalue_ = n.numvalue ();
+  strvalue_ = resp;
+
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+sprintfNode::sprintfNode (runNode * list):list_ (list)
+{
+}
+
+void
+sprintfNode::run ()
+{
+  strvalue_ = "";
+  if (listNode * l = dynamic_cast < listNode * >(list_))
+    {
+      l->run ();
+      vector < runNode * >vec = l->listvalue ();
+      if (vec.size () != 0)
+	{
+	  vector < runNode * >::iterator iter = vec.begin ();
+	  runNode *node_aux = *iter;
+	  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux))
+	    {
+	      nexp->run ();
+	      node_aux = nexp->nodeval ();
+	    }
+	  node_aux->run ();
+	  if (stringNode * str = dynamic_cast < stringNode * >(node_aux))
+	    {
+	      string s = str->strvalue ();
+	      //Obteniendo lista de parámetors
+	      vector < runNode * >vec_param;
+	      for (++iter; iter != vec.end (); ++iter)
+		{
+		  vec_param.push_back (*iter);
+		}
+	      //Contamos el número de parámetros
+	      int pos = -2;
+	      int count = 0;
+	      while ((pos = s.find ("%", pos + 2)) != string::npos)
+		{
+		  count++;
+		  if (s[pos + 1] == '%')
+		    count--;
+		}
+	      //Parámetro a parámero vamos sustituyendo en la cadena
+	      if (count == vec_param.size ())
+		{
+		  int pos_vec = 0;
+		  pos = 0;
+		  while ((pos = s.find ("%", pos)) != string::npos)
+		    {
+		      bool use_param = true;
+		      //Lee parámetro
+		      runNode *node_aux_p;
+		      if (pos_vec < vec_param.size ())
+			{
+			  node_aux_p = vec_param[pos_vec];
+			  if (nexpNode * nexp =
+			      dynamic_cast < nexpNode * >(node_aux_p))
+			    {
+			      nexp->run ();
+			      node_aux_p = nexp->nodeval ();
+			    }
+			  node_aux_p->run ();
+			}
+		      //Busca expresión sustituible en cadena
+		      //NOTA: añadir cada posible formato
+		      int end_exp = s.size ();
+		      int frist_op = s.find ('d', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('i', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('u', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('f', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('F', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('e', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('o', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('s', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('c', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('x', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('X', pos);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+		      frist_op = s.find ('%', pos + 1);
+		      if (frist_op != string::npos && end_exp > frist_op)
+			end_exp = frist_op;
+
+		      string expresion = s.substr (pos + 1, end_exp - pos);
+		      //Obtiene el valor formato
+		      ostringstream out (ostringstream::out);
+		      out << expresion[expresion.size () - 1];
+		      string cad = out.str ();
+		      //Obtiene flag
+		      char flag = ' ';
+		      if (expresion[0] == '+')
+			flag = '+';
+		      else if (expresion[0] == '#')
+			flag = '#';
+		      else if (expresion[0] == '^')
+			flag = '^';
+		      //Obtiene presición
+		      int precision = 0;
+		      if (expresion.substr (((flag != ' ') ? 1 : 0),
+					    expresion.size () - 1) != "")
+			{
+			  istringstream ini (expresion.substr (0,
+							       expresion.size
+							       () - 1));
+			  ini >> precision;
+			}
+		      //LLeva a cabo la sustitución
+		      if (cad == "d" || cad == "i")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      int integer;
+			      ini >> integer;
+			      ostringstream outi (ostringstream::out);
+			      ostringstream outk (ostringstream::out);
+			      outi << integer;
+			      if (flag == '+')
+				{
+				  if (integer > 0)
+				    outk << "+";
+				}
+			      if (precision)
+				{
+				  if (precision - outi.str ().size () > 0)
+				    {
+				      for (int i = 0;
+					   i <
+					   precision - outi.str ().size ();
+					   i++)
+					{
+					  outk << "0";
+					}
+				    }
+				}
+			      outk << outi.str ();
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outk.str ());
+			    }
+			}
+		      else if (cad == "u")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      int integer;
+			      ini >> integer;
+			      integer = abs (integer);
+			      ostringstream outi (ostringstream::out);
+			      ostringstream outk (ostringstream::out);
+			      outi << integer;
+			      if (precision)
+				{
+				  if (precision - outi.str ().size () > 0)
+				    {
+				      for (int i = 0;
+					   i <
+					   precision - outi.str ().size ();
+					   i++)
+					{
+					  outk << "0";
+					}
+				    }
+				}
+			      outk << outi.str ();
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outk.str ());
+			    }
+			}
+		      else if (cad == "f")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      num doub;
+			      ini >> doub;
+			      ostringstream outi (ostringstream::out);
+			      if (precision)
+				outi.precision (precision);
+			      if (flag == '+')
+				if (doub > 0)
+				  outi << "+";
+			      outi << doub;
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outi.str ());
+			    }
+			}
+		      else if (cad == "F")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      num doub;
+			      ini >> doub;
+			      ostringstream outi (ostringstream::out);
+			      outi.flags (ios_base::uppercase);
+			      if (precision)
+				outi.precision (precision);
+			      if (flag == '+')
+				if (doub > 0)
+				  outi << "+";
+			      outi << doub;
+			      string upper = outi.str ();
+			      std::transform (upper.begin (), upper.end (),
+					      upper.begin (),::toupper);
+			      s =
+				s.replace (pos, expresion.size () + 1, upper);
+			    }
+			}
+		      else if (cad == "%")
+			{
+			  s = s.replace (pos, expresion.size () + 1, "%");
+			  use_param = false;
+			}
+		      else if (cad == "e")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      num doub;
+			      ini >> doub;
+			      ostringstream outi (ostringstream::out);
+			      outi.flags (ios_base::scientific);
+			      if (precision)
+				outi.precision (precision);
+			      if (flag == '+')
+				if (doub > 0)
+				  outi << "+";
+			      outi << doub;
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outi.str ());
+			    }
+			}
+		      else if (cad == "E")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      num doub;
+			      ini >> doub;
+			      ostringstream outi (ostringstream::out);
+			      outi.
+				flags (ios_base::scientific | ios_base::
+				       uppercase);
+			      if (precision)
+				outi.precision (precision);
+			      if (flag == '+')
+				if (doub > 0)
+				  outi << "+";
+			      outi << doub;
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outi.str ());
+			    }
+			}
+		      else if (cad == "o")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      int integer;
+			      ini >> integer;
+			      integer = abs (integer);
+			      ostringstream outi (ostringstream::out);
+			      ostringstream outk (ostringstream::out);
+			      if (flag == '#')
+				{
+				  outi.flags (ios_base::oct | ios::showbase);
+				  outk.flags (ios_base::oct | ios::showbase);
+				}
+			      else
+				{
+				  outi.flags (ios_base::oct);
+				  outk.flags (ios_base::oct);
+				}
+			      outi << integer;
+			      if (precision)
+				{
+				  if (precision - outi.str ().size () > 0)
+				    {
+				      for (int i = 0;
+					   i <
+					   precision - outi.str ().size ();
+					   i++)
+					{
+					  outk << "0";
+					}
+				    }
+				}
+			      outk << outi.str ();
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outk.str ());
+			    }
+			}
+		      else if (cad == "x")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      int integer;
+			      ini >> integer;
+			      integer = abs (integer);
+			      ostringstream outi (ostringstream::out);
+			      ostringstream outk (ostringstream::out);
+			      if (flag == '#')
+				{
+				  outi.flags (ios_base::hex | ios::showbase);
+				  outk.flags (ios_base::hex | ios::showbase);
+				}
+			      else
+				{
+				  outi.flags (ios_base::hex);
+				  outk.flags (ios_base::hex);
+				}
+			      outi << integer;
+			      if (precision)
+				{
+				  if (precision - outi.str ().size () > 0)
+				    {
+				      for (int i = 0;
+					   i <
+					   precision - outi.str ().size ();
+					   i++)
+					{
+					  outk << "0";
+					}
+				    }
+				}
+			      outk << outi.str ();
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outk.str ());
+			    }
+			}
+		      else if (cad == "X")
+			{
+			  if (arithNode * d =
+			      dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      istringstream ini (value.strvalue ());
+			      int integer;
+			      ini >> integer;
+			      integer = abs (integer);
+			      ostringstream outi (ostringstream::out);
+			      ostringstream outk (ostringstream::out);
+			      if (flag == '#')
+				{
+				  outi.
+				    flags (ios_base::hex | ios_base::
+					   uppercase | ios::showbase);
+				  outk.
+				    flags (ios_base::hex | ios_base::
+					   uppercase | ios::showbase);
+				}
+			      else
+				{
+				  outi.flags (ios_base::hex);
+				  outk.flags (ios_base::hex);
+				}
+			      outi << integer;
+			      if (precision)
+				{
+				  if (precision - outi.str ().size () > 0)
+				    {
+				      for (int i = 0;
+					   i <
+					   precision - outi.str ().size ();
+					   i++)
+					{
+					  outk << "0";
+					}
+				    }
+				}
+			      outk << outi.str ();
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   outk.str ());
+			    }
+			}
+		      else if (cad == "s" || cad == "c")
+			{
+			  if (stringNode * value =
+			      dynamic_cast < stringNode * >(node_aux_p))
+			    {
+			      string val = value->strvalue ();
+			      if (flag == '^')
+				{
+				  std::transform (val.begin (), val.end (),
+						  val.begin (),::toupper);
+				}
+			      if (precision)
+				{
+				  if (precision - val.size () > 0)
+				    {
+				      val = val.substr (0, precision);
+				    }
+				}
+			      s.replace (pos, expresion.size () + 1, val);
+			    }
+			  else if (arithNode * d =
+				   dynamic_cast < arithNode * >(node_aux_p))
+			    {
+			      strNode value (d);
+			      s =
+				s.replace (pos, expresion.size () + 1,
+					   value.strvalue ());
+			    }
+			}
+		      if (use_param)
+			pos_vec++;
+		      pos += expresion.size () + 1;
+
+		    }
+		  strvalue_ = s;
+		}
+	      else
+		{
+		  throw errorException ("number of parameters",
+					"sprintfNode: wrong number of parameters ",
+					1);
+		}
+	    }
+	}
+    }
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+findNode::findNode (runNode * cad, runNode * subcad, runNode * ini_pos):cad_ (cad), subcad_ (subcad),
+  ini_pos_
+  (ini_pos)
+{
+}
+
+void
+findNode::run ()
+{
+  runNode *node_aux1 = cad_;
+  runNode *node_aux2 = subcad_;
+  runNode *node_aux3 = ini_pos_;
+  //Acceso a variables, y expresones de tipos no definidos
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux1))
+    {
+      nexp->run ();
+      node_aux1 = nexp->nodeval ();
+    }
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux2))
+    {
+      nexp->run ();
+      node_aux2 = nexp->nodeval ();
+    }
+  if (node_aux3)
+    if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux3))
+      {
+	nexp->run ();
+	node_aux3 = nexp->nodeval ();
+      }
+  //Ejecución de los nodos hijos 
+  node_aux1->run ();
+  node_aux2->run ();
+  if (node_aux3)
+    node_aux3->run ();
+  stringNode *str = NULL, *substr = NULL;
+  numNode *num = dynamic_cast < numNode * >(node_aux1);
+  numNode *subnum = dynamic_cast < numNode * >(node_aux2);
+  if (num)
+    str = new strNode (num);
+  else
+    str = dynamic_cast < stringNode * >(node_aux1);
+  if (subnum)
+    substr = new strNode (subnum);
+  else
+    substr = dynamic_cast < stringNode * >(node_aux2);
+  if (str)
+    {
+      string s = str->strvalue ();
+      if (substr)
+	{
+	  string subs = substr->strvalue ();
+	  int ini = 0;
+	  if (node_aux3 != NULL)
+	    {
+	      if (arithNode * num1 = dynamic_cast < arithNode * >(node_aux3))
+		ini = num1->numvalue ();
+	      else if (stringNode * str1 =
+		       dynamic_cast < stringNode * >(node_aux3))
+		{
+		  numNode num1 (str1->strvalue ());
+		  ini = num1.numvalue ();
+		}
+	      else
+		throw errorException ("Unknown operand",
+				      "findNode: node 3 is unknown operand ",
+				      1);
+	    }
+	  if (s.find (subs, ini) != string::npos)
+	    numvalue_ = s.find (subs, ini);
+	  else
+	    numvalue_ = -1;
+	}
+      else
+	{
+	  string::iterator ini = s.begin ();
+	  int i = 0;
+	  if (regexpNode * reg = dynamic_cast < regexpNode * >(node_aux2))
+	    {
+	      regex r = reg->exvalue ();
+	      if (arithNode * num1 = dynamic_cast < arithNode * >(node_aux3))
+		{
+		  i = num1->numvalue ();
+		  for (int k = 0; k < i; k++)
+		    ini++;
+		}
+	      else if (stringNode * str1 =
+		       dynamic_cast < stringNode * >(node_aux3))
+		{
+		  numNode num1 (str1->strvalue ());
+		  i = num1.numvalue ();
+		  for (int k = 0; k < i; k++)
+		    ini++;
+		}
+	      match_results < std::string::iterator > what;
+	      if (regex_search (ini, s.end (), what, r))
+		{
+		  numvalue_ = distance (s.begin (), what[0].first);
+		}
+	      else
+		{
+		  numvalue_ = -1;
+		}
+	    }
+	}
+    }
+  else
+    {
+      throw errorException ("Wrong type", "findNode: node must be string", 1);
+    }
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+replaceNode::replaceNode (runNode * search, runNode * replace, runNode * cad, runNode * num_replace):
+search_ (search),
+replace_ (replace), cad_ (cad), num_replace_ (num_replace)
+{
+}
+
+void
+replaceNode::run ()
+{
+  runNode *node_aux1 = search_, node_aux2 = replace_,
+    node_aux3 = cad_, node_aux4 = num_replace_;
+  nexpNode::resolved (node_aux1)->run ();
+  nexpNode::resolved (node_aux2)->run ();
+  nexpNode::resolved (node_aux3)->run ();
+  if (node_aux4)
+    nexpNode::resolved (node_aux4)->run ();
+  stringNode *str_search = NULL, *str_replace = NULL, *str_cad = NULL;
+  numNode *num_search = dynamic_cast < numNode * >(node_aux1);
+  numNode *num_replace = dynamic_cast < numNode * >(node_aux2);
+  numNode *num_cad = dynamic_cast < numNode * >(node_aux3);
+  if (num_search)
+    str_search = new strNode (num_search);
+  else
+    str_search = dynamic_cast < stringNode * >(node_aux1);
+  if (num_replace)
+    str_replace = new strNode (num_replace);
+  else
+    str_replace = dynamic_cast < stringNode * >(node_aux2);
+  if (num_cad)
+    str_cad = new strNode (num_cad);
+  else
+    str_cad = dynamic_cast < stringNode * >(node_aux3);
+  if (str_search)
+    {
+      if (str_replace && str_cad)
+	{
+	  string s_search = str_search->strvalue (),
+	    s_replace = str_replace->strvalue (),
+	    s_cad = str_cad->strvalue ();
+	  if (node_aux4 != NULL)
+	    {
+
+	      int n_replace = -1;
+	      if (arithNode * num1 = dynamic_cast < arithNode * >(node_aux4))
+		{
+		  n_replace = num1->numvalue ();
+		}
+	      else if (stringNode * str1 =
+		       dynamic_cast < stringNode * >(node_aux4))
+		{
+		  numNode num1 (str1->strvalue ());
+		  n_replace = num1.numvalue ();
+		}
+	      else
+		throw errorException ("unknown operand",
+				      "replaceNode: node 4 is unknown operand ",
+				      1);
+	      int count = 0;
+	      int pos = 0;
+	      if (n_replace < 0)
+		{
+		  string aux = s_cad;
+		  s_cad.clear ();
+		  for (int i = aux.size () - 1; i >= 0; --i)
+		    {
+		      s_cad.push_back (aux[i]);
+		    }
+		  aux = s_search;
+		  s_search.clear ();
+		  for (int i = aux.size () - 1; i >= 0; --i)
+		    {
+		      s_search.push_back (aux[i]);
+		    }
+		  aux = s_replace;
+		  s_replace.clear ();
+		  for (int i = aux.size () - 1; i >= 0; --i)
+		    {
+		      s_replace.push_back (aux[i]);
+		    }
+		}
+	      while (count < abs (n_replace)
+		     && ((pos = s_cad.find (s_search, pos)) != string::npos))
+		{
+		  s_cad = s_cad.replace (pos, s_search.size (), s_replace);
+		  pos += s_replace.size ();
+		  count++;
+		}
+	      if (n_replace < 0)
+		{
+		  string aux = s_cad;
+		  s_cad.clear ();
+		  for (int i = aux.size () - 1; i >= 0; --i)
+		    {
+		      s_cad.push_back (aux[i]);
+		    }
+		}
+	    }
+	  else
+	    {
+	      int pos = 0;
+	      while ((pos = s_cad.find (s_search, pos)) != string::npos)
+		{
+
+		  s_cad = s_cad.replace (pos, s_search.size (), s_replace);
+		  pos += s_replace.size ();
+		}
+	    }
+	  strvalue_ = s_cad;
+	}
+      else
+	{
+	  throw errorException ("wrong type",
+				"replaceNode: node must be string", 1);
+	}
+    }
+  else
+    {
+      if (regexpNode * reg = dynamic_cast < regexpNode * >(node_aux1))
+	{
+	  if (str_replace && str_cad)
+	    {
+	      match_results < std::string::const_iterator > what;
+	      match_flag_type flags = boost::match_default;
+	      string s_replace = str_replace->strvalue (),
+		s_cad = str_cad->strvalue ();
+	      regex r = reg->exvalue ();
+	      string::const_iterator start, end;
+	      start = s_cad.begin ();
+	      end = s_cad.end ();
+	      int pos = 0;
+	      string aux_cad = s_cad;
+	      while (start != end
+		     && regex_search (start, end, what, r, flags))
+		{
+		  string::iterator iter_count = s_cad.begin ();
+		  int count = 0;
+		  while (iter_count != what[0].first)
+		    {
+		      iter_count++;
+		      count++;
+		    }
+		  string aux_replace = s_replace;
+		  if ((pos = aux_replace.find ("\\0")) != string::npos)
+		    aux_replace =
+		      aux_replace.replace (pos, 2,
+					   string (what[0].first,
+						   what[0].second));
+		  if (what.size () > 1)
+		    {
+		      for (int i = 1; i < what.size (); i++)
+			{
+			  ostringstream oss (ostringstream::out);
+			  oss << '\\' << i;
+			  if ((pos =
+			       aux_replace.find (oss.str ())) != string::npos)
+			    aux_replace =
+			      aux_replace.replace (pos, 2,
+						   string (what[i].first,
+							   what[i].second));
+			}
+		    }
+		  string::iterator iter_first = s_cad.begin (), iter_second;
+		  while (iter_first != what[0].first
+			 && iter_first != s_cad.end ())
+		    iter_first++;
+		  iter_second = iter_first;
+		  while (iter_second != what[0].second
+			 && iter_second != s_cad.end ())
+		    iter_second++;
+		  int size_b = s_cad.size ();
+		  s_cad =
+		    s_cad.replace (iter_first, iter_second, aux_replace);
+		  start = s_cad.begin ();
+		  end = s_cad.end ();
+		  while (count > 0)
+		    {
+		      start++;
+		      count--;
+		    }
+		  for (int i = 0; i < aux_replace.size (); i++)
+		    {
+		      start++;
+		    }
+		  if (what[0].first == what[0].second)
+		    start++;
+
+
+		}
+
+	      strvalue_ = s_cad;
+	      //~ strvalue_ = regex_replace(s_cad,r, s_replace);
+	    }
+	  else
+	    {
+	      throw errorException ("wrong type",
+				    "replaceNode: node must be string", 1);
+	    }
+	}
+    }
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+upperNode::upperNode (runNode * cad):cad_ (cad)
+{
+}
+
+void
+upperNode::run ()
+{
+  runNode *node_aux1 = cad_;
+  //Acceso a variables, y expresones de tipos no definidos
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux1))
+    {
+      nexp->run ();
+      node_aux1 = nexp->nodeval ();
+    }
+  node_aux1->run ();
+  string value;
+  if (numNode * num = dynamic_cast < numNode * >(node_aux1))
+    {
+      ostringstream outi (ostringstream::out);
+      outi.flags (ios_base::uppercase);
+      outi << num->numvalue ();
+      value = outi.str ();
+    }
+  else if (strNode * str = dynamic_cast < strNode * >(node_aux1))
+    {
+      value = str->strvalue ();
+      transform (value.begin (), value.end (), value.begin (),::toupper);
+    }
+  else
+    {
+      throw errorException ("wrong type", "upperNode: node must be string",
+			    1);
+    }
+  strvalue_ = value;
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+lowerNode::lowerNode (runNode * cad):cad_ (cad)
+{
+}
+
+void
+lowerNode::run ()
+{
+  runNode *node_aux1 = cad_;
+  //Acceso a variables, y expresones de tipos no definidos
+  if (nexpNode * nexp = dynamic_cast < nexpNode * >(node_aux1))
+    {
+      nexp->run ();
+      node_aux1 = nexp->nodeval ();
+    }
+  node_aux1->run ();
+  string value;
+  if (numNode * num = dynamic_cast < numNode * >(node_aux1))
+    {
+      ostringstream outi (ostringstream::out);
+      outi << num->numvalue ();
+      value = outi.str ();
+      transform (value.begin (), value.end (), value.begin (),::tolower);
+    }
+  else if (strNode * str = dynamic_cast < strNode * >(node_aux1))
+    {
+      value = str->strvalue ();
+      transform (value.begin (), value.end (), value.begin (),::tolower);
+    }
+  else
+    {
+      throw errorException ("wrong type", "upperNode: node must be string",
+			    1);
+    }
+  strvalue_ = value;
+}
+
+//----------------------------------------------------------------------

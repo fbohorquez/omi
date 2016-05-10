@@ -1,0 +1,97 @@
+\subsection{Ejecución}
+\subsubsection{Sentencias}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia.
+		\item [Categoría:] Ejecución.
+		\item [Descripción:] Son las unidades interpretables más pequeña en las que se divide un contenido fuente. Las sentencias están sujetas a
+		unas reglas sintácticas y encierran un significado semántico. El intérprete debe definir la gramática de cada sentencia y dotarlas de significado
+		semántico. Toda sentencia debe finalizar con el carácter ``;'', excluyendo las sentencias formadas por bloques de sentencias. Aunque carezca
+		de sentido práctico, para evitar posibles errores de codificación y mantener coherencia en la sintaxis y la definición del lenguaje, se debe
+		contemplar la sentencia vacía que sólo conste del carácter ``;''.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Bloques de sentencias.
+		\item [Categoría:] Ejecución.
+		\item [Descripción:] Son un conjunto de sentencias que deberán ser interpretadas y ejecutadas secuencialmente. La disposición de
+		sentencias en el bloque determinan el flujo de ejecución que se llevará a cabo cuando se intérprete el bloque. El contenido fuente
+		en si mismo es un bloque de sentencias. Todo bloque de sentencias de más de una sentencia (con excepción del contenido fuente en si mismo)
+		debe ir delimitado mediante llaves. Aunque no sea de uso común, para mantener coherencia en la sintaxis y la definición del lenguaje, se debe
+		contemplar el bloque de sentencias vacío.
+	\end {description}
+\end{framed}
+
+\subsubsection{Expresiones}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Expresiones.
+		\item [Categoría:] Ejecución.
+		\item [Descripción:] El intérprete debe ser capaz de evaluar expresiones. Estas son secuencias de datos, operadores, operandos,
+		elementos de puntuación y/o palabras clave, que especifican una unidad computacional.
+		Generalmente encierran un valor que se asocia a la expresión después de ser evaluada. Una sentencia puede estar formada por una o
+		varias expresiones que deberán ser evaluadas o interpretadas para dotarla de significado. Una sentencia puede constar únicamente
+		de una expresión en ese caso la sentencia es considerada la evaluación de dicha expresión.
+		
+		La expresión más simple equivale a un único dato, en este caso el valor de la expresión será el del dato.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Expresiones de tipo definido.
+		\item [Categoría:] Ejecución.
+		\item [Descripción:] Son expresiones cuyo valor es de un tipo definido y fijo. El sistema debe interpretar estas expresiones para determinar el valor
+		asociado a la mismas en un momento dado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Expresiones de tipo no definido.
+		\item [Categoría:] Ejecución.
+		\item [Número:] \cn
+		\item [Descripción:] Son expresiones cuyo valor no tiene un tipo definido ni fijo, sino que es durante la interpretación cuando se determina el tipo.
+		El sistema debe interpretar estas expresiones para determinar, además del valor asociado a la mismas, el tipo de dato que guardan en un momento
+		dado.
+	\end {description}
+\end{framed}
+
+\subsubsection{Datos}
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Datos.
+		\item [Categoría:] Ejecución.
+		\item [Número:] \cn
+		\item [Descripción:] El intérprete deberá operar sobre datos. El contenido fuente 
+      definirá cómo se han de construir y/o acceder a los datos y las operaciones que se realizarán sobre ellos durante la ejecución. 
+      
+      Un dato será tratado en función de su tipo. El tipo de dato lo dota de una semántica, un significado.
+      Así, todo dato deberá ser considerado un objeto, por lo que tendrán unas propiedades y funcionalidad ligadas al tipo como el que es tratado.
+      
+	\end {description}
+\end{framed}
+
+\subsubsection{Operadores}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operadores.
+		\item [Categoría:] Operadores.
+		\item [Descripción:] Se ha de facilitar una serie de operadores que permitan manipular los datos. Los operadores
+		son en si mismo expresiones, por los que estos tendrán un valor asociado tras ejecutarse. Los operadores constarán
+		de una serie operandos que intervendrán en la operación y que serán a su vez otras expresiones.
+		
+      Los operadores se clasificarán en función del tipo de valor que tendrán tras la ejecución, los tipos de
+		los operandos y/o la naturaleza del operador en si.  
+      
+      Un operador puede presentarse en forma de función, los operandos serán los parámetros de esta. La ejecución
+      de la función conllevará la realización de la operación asociada al operador.
+	\end {description}
+\end{framed}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="12cm" height="13cm" viewBox="170 82 238 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="103.8" width="236" height="238"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="103.8" width="236" height="238"/>
+    <rect style="fill: #ffffff" x="172" y="83.8" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="83.8" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="98.8"> fget </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="192" y="124.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="192" y="124.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="235.7" y="143.8">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="181" y="193.8" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="181" y="193.8" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="236.05" y="212.8">stringNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="235.7,171.036 235.7,181.3 236.05,181.3 236.05,193.8 "/>
+    <polygon style="fill: #ffffff" points="243.7,171.036 235.7,155.036 227.7,171.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="243.7,171.036 235.7,155.036 227.7,171.036 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="189" y="260.8" width="93.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="260.8" width="93.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="235.8" y="279.8">fgetNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="236.05,240.036 236.05,249.3 235.8,249.3 235.8,260.8 "/>
+    <polygon style="fill: #ffffff" points="244.05,240.036 236.05,224.036 228.05,240.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.05,240.036 236.05,224.036 228.05,240.036 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="307.772,274.8 317.6,274.8 317.6,138.8 279.4,138.8 "/>
+    <polygon style="fill: #ffffff" points="282.6,274.8 296.6,270 310.6,274.8 296.6,279.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="282.6,274.8 296.6,270 310.6,274.8 296.6,279.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="319.6" y="203.8">file</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="314.6" y="271.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="283.4" y="135.8"> 1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="283.4" y="151.8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="307.772,288.8 362,288.8 362,124.8 279.4,124.8 "/>
+    <polygon style="fill: #ffffff" points="282.6,288.8 296.6,284 310.6,288.8 296.6,293.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="282.6,288.8 296.6,284 310.6,288.8 296.6,293.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="364" y="203.8">size</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="314.6" y="285.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="283.4" y="121.8">0,1</text>
+  </g>
+</svg>

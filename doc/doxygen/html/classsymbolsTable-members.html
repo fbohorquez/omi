@@ -1,0 +1,241 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">symbolsTable Lista de los miembros</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Lista completa de los miembros de <a class="el" href="classsymbolsTable.html">symbolsTable</a>, incluyendo todos los heredados:</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a268924344725d21450d31e0e7538b7b4">begin</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a6d55b62ea700a80144f80cb41b3af474">begin</a>() const </td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a55a96b31c88df6eca606d84013e1f580">clear</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a1bf4ad22533d92d422e7f6691875d118">clearRef</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a320acaa976beb549c47ae99b57ad1047">copyRef</a>(symbolsTable *sym)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#aae5d6585aaa7eaa2202708c15b33fc4d">empty</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a00b865b64083f375f734ff5b6a9d6659">end</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a6cfc5bdad1b1297371b7da0582c0fc39">end</a>() const </td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a4e4e8b92f9a02430923bc3bf0b51528f">erase</a>(runNode *key)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#ad8cd21aa6ed7089a06c64458d926ce9f">erase_position</a>(unsigned int i)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#ae90d26824150c4573dd53730187e742e">find</a>(runNode *node)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a940e94aacbfd0d986450cef1e40859f0">findKey</a>(string key) const </td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a2018d3971bd0fb65878e8d378c519320">findRef</a>(runNode *node, runNode *default_node=NULL)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a01d8d5006dd3a20bb1501255fa6404c7">first</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a721b39ab8b58ed80297d847103fc77c9">getRef</a>(int val)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a79b0198ef35c8a82bdb509960cae3091">insert</a>(isymTable i, refNode *element)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a5c91259a0aa1eccc1d5efb03ba3deff8">insert</a>(int pos, refNode *element)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#ac974b6dcd3255b609d62a6d468df8531">last</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a3c0e01f4c039713ad0ba22939ac4828a">operator[]</a>(const string key)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#aeb92f6558212eebc8177a96f54eaaa6d">operator[]</a>(refNode *key)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#aa9c3af63a1bdd221ad4a0d3075789752">operator[]</a>(runNode *key)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#ad6b641fd0059cebe19567bcff9be5aba">operator[]</a>(int val)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a12abb82234dadb898ab7e7beda487a27">pop_back</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a7cf87d654443c053aa10bab7de16340d">print</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a519d5bfed68a2d2d93c9dba7b4e877ff">push_back</a>(refNode *node)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#a72a408962416eeea6555b6c11a396d6f">size</a>() const </td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a9a6e7802e446e8902ea850c94f1a10bd">symbolsTable</a>()</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classsymbolsTable.html#ae7753ebe94000f6440a9f13ce174846c">symbolsTable</a>(const symbolsTable *table)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classsymbolsTable.html#a1a1e095ea56925b2932a72caebf5f7b4">symbolsTable</a>(symbolsTable *table)</td><td class="entry"><a class="el" href="classsymbolsTable.html">symbolsTable</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

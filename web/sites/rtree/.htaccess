@@ -1,0 +1,12 @@
+#general config
+#--------------------------------------------------------
+RewriteEngine On
+
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+#sites config
+#--------------------------------------------------------
+
+RewriteRule ^(.*)$ $1 [L]
+

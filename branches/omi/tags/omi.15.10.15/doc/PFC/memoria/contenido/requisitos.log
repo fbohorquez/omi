@@ -1,0 +1,27 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.7)  3 JUN 2015 19:53
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/home/franj/projects/omi.svn/doc/PFC/memoria/contenido/requisitos
+(/home/franj/projects/omi.svn/doc/PFC/memoria/contenido/requisitos.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 12 languages loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 E
+      n esta sección se detalla la situación actual de la organización y ...
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 494451
+ 449 string characters out of 6171829
+ 48827 words of memory out of 5000000
+ 3337 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 456 hyphenation exceptions out of 8191
+ 5i,0n,4p,483b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,26 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visi\IeC {\'o}n general}{4}
+\contentsline {section}{\numberline {2}Estrategia}{4}
+\contentsline {section}{\numberline {3}Entorno de pruebas}{5}
+\contentsline {subsection}{\numberline {3.1}Hardware}{5}
+\contentsline {subsection}{\numberline {3.2}Software}{5}
+\contentsline {section}{\numberline {4}Roles}{5}
+\contentsline {section}{\numberline {5}Niveles de pruebas}{6}
+\contentsline {subsection}{\numberline {5.1}Pruebas unitarias}{6}
+\contentsline {subsubsection}{\numberline {5.1.1}Asignaci\IeC {\'o}n de booleanos}{6}
+\contentsline {subsubsection}{\numberline {5.1.2}Operador de igualdad con operandos num\IeC {\'e}ricos}{11}
+\contentsline {subsubsection}{\numberline {5.1.3}Definici\IeC {\'o}n y llamadas de funciones con cuerpo vac\IeC {\'\i }o}{21}
+\contentsline {subsection}{\numberline {5.2}Pruebas de integraci\IeC {\'o}n}{28}
+\contentsline {subsection}{\numberline {5.3}Pruebas funcionales del sistema}{31}
+\contentsline {subsubsection}{\numberline {5.3.1}Calculadora}{31}
+\contentsline {subsubsection}{\numberline {5.3.2}Sistema de cuestionarios}{32}
+\contentsline {subsubsection}{\numberline {5.3.3}Tic-Tac-Toe}{35}
+\contentsline {subsection}{\numberline {5.4}Pruebas no funcionales del sistema}{39}
+\contentsline {subsubsection}{\numberline {5.4.1}Rendimiento de tiempo}{40}
+\contentsline {paragraph}{\numberline {5.4.1.1}Fibonacci}{40}
+\contentsline {paragraph}{\numberline {5.4.1.2}N-body}{41}
+\contentsline {subsubsection}{\numberline {5.4.2}Espacio de memoria}{44}
+\contentsline {paragraph}{\numberline {5.4.2.1}Nodos l\IeC {\'o}gicos}{45}
+\contentsline {paragraph}{\numberline {5.4.2.2}Nodos aritm\IeC {\'e}ticos}{46}
+\contentsline {paragraph}{\numberline {5.4.2.3}Nodos cadenas de caracteres}{47}
+\contentsline {subsubsection}{\numberline {5.4.3}Seguridad}{47}

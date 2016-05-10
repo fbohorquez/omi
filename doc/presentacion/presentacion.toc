@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{2}{0}{1}
+\beamer@sectionintoc {2}{Estado del arte}{10}{0}{2}
+\beamer@sectionintoc {3}{Planificaci\IeC {\'o}n}{11}{0}{3}
+\beamer@sectionintoc {4}{Requisitos del sistema}{17}{0}{4}
+\beamer@sectionintoc {5}{An\IeC {\'a}lisis del sistema}{22}{0}{5}
+\beamer@sectionintoc {6}{Dise\IeC {\~n}o del Sistema}{28}{0}{6}
+\beamer@sectionintoc {7}{Construcci\IeC {\'o}n del sistema}{35}{0}{7}
+\beamer@sectionintoc {8}{Pruebas del sistema}{36}{0}{8}
+\beamer@sectionintoc {9}{Manual de implantaci\IeC {\'o}n}{37}{0}{9}
+\beamer@sectionintoc {10}{Manual de usuario}{38}{0}{10}
+\beamer@sectionintoc {11}{Conclusiones}{39}{0}{11}
+\beamer@sectionintoc {12}{Bibliograf\IeC {\'\i }a}{40}{0}{12}
+\beamer@sectionintoc {13}{Licencia}{41}{0}{13}

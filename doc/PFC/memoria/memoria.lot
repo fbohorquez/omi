@@ -1,0 +1,50 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Lenguajes compilados e interpretados\relax }}{19}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Lenguajes seg\IeC {\'u}n sistema de tipos\relax }}{20}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Lenguajes seg\IeC {\'u}n tipo de datos soportados\relax }}{21}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Lenguajes imperativos\relax }}{22}{table.2.4}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Lenguajes orientados a objetos\relax }}{23}{table.2.5}
+\contentsline {table}{\numberline {2.6}{\ignorespaces Lenguajes orientados a objetos basados en prototipos\relax }}{23}{table.2.6}
+\contentsline {table}{\numberline {2.7}{\ignorespaces Lenguajes dirigidos por eventos\relax }}{24}{table.2.7}
+\contentsline {table}{\numberline {2.8}{\ignorespaces Lenguajes basados en aut\IeC {\'o}matas\relax }}{24}{table.2.8}
+\contentsline {table}{\numberline {2.9}{\ignorespaces Lenguajes orientados a aspectos\relax }}{25}{table.2.9}
+\contentsline {table}{\numberline {2.10}{\ignorespaces Lenguajes declarativos\relax }}{25}{table.2.10}
+\contentsline {table}{\numberline {2.11}{\ignorespaces Lenguajes funcionales\relax }}{26}{table.2.11}
+\contentsline {table}{\numberline {2.12}{\ignorespaces Lenguajes l\IeC {\'o}gicos\relax }}{26}{table.2.12}
+\contentsline {table}{\numberline {2.13}{\ignorespaces Lenguajes dirigidos por restricciones\relax }}{27}{table.2.13}
+\contentsline {table}{\numberline {2.14}{\ignorespaces Lenguajes concurrentes\relax }}{27}{table.2.14}
+\contentsline {table}{\numberline {2.15}{\ignorespaces Lenguajes distribuidos\relax }}{28}{table.2.15}
+\contentsline {table}{\numberline {2.16}{\ignorespaces Lenguajes seg\IeC {\'u}n operadores\relax }}{28}{table.2.16}
+\contentsline {table}{\numberline {2.17}{\ignorespaces Lenguajes seg\IeC {\'u}n DSL\relax }}{29}{table.2.17}
+\contentsline {table}{\numberline {2.18}{\ignorespaces Lenguajes seg\IeC {\'u}n depuraci\IeC {\'o}n\relax }}{30}{table.2.18}
+\contentsline {table}{\numberline {2.19}{\ignorespaces Lenguajes autodocumentados\relax }}{30}{table.2.19}
+\contentsline {table}{\numberline {2.20}{\ignorespaces Lenguajes seg\IeC {\'u}n otras caracter\IeC {\'\i }sticas funcionales\relax }}{31}{table.2.20}
+\contentsline {table}{\numberline {2.21}{\ignorespaces Lenguajes seg\IeC {\'u}n modularidad de recursos\relax }}{31}{table.2.21}
+\contentsline {table}{\numberline {2.22}{\ignorespaces Lenguajes seg\IeC {\'u}n modularidad del propio lenguaje\relax }}{32}{table.2.22}
+\contentsline {table}{\numberline {2.23}{\ignorespaces Lenguajes seg\IeC {\'u}n licencia\relax }}{33}{table.2.23}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Salarios\relax }}{40}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Costes totales\relax }}{41}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Equipos\relax }}{41}{table.3.3}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Riesgos tecnol\IeC {\'o}gicos\relax }}{42}{table.3.4}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Riesgos de requisitos\relax }}{44}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Riesgos de soluciones\relax }}{45}{table.3.6}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Riesgos de costes, tiempos y recursos\relax }}{46}{table.3.7}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Tiempos Fibonacci OMI\relax }}{241}{table.8.1}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Tiempos Fibonacci PHP\relax }}{241}{table.8.2}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Tiempos Fibonacci Python\relax }}{241}{table.8.3}
+\contentsline {table}{\numberline {8.4}{\ignorespaces Tiempos N-body OMI\relax }}{241}{table.8.4}
+\contentsline {table}{\numberline {8.5}{\ignorespaces Tiempos N-body PHP\relax }}{241}{table.8.5}
+\contentsline {table}{\numberline {8.6}{\ignorespaces Tiempos N-body Python\relax }}{242}{table.8.6}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsfinish 

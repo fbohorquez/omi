@@ -1,0 +1,87 @@
+\hypertarget{classarraydeleteNode}{\section{Referencia de la Clase arraydelete\-Node}
+\label{classarraydeleteNode}\index{arraydelete\-Node@{arraydelete\-Node}}
+}
+
+
+Nodo función eliminar elemento de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de arraydelete\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarraydeleteNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarraydeleteNode_abd17e65ebd9704157cb3f431f3dbcf97}{arraydelete\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array, \hyperlink{classrunNode}{run\-Node} $\ast$index)
+\item 
+void \hyperlink{classarraydeleteNode_a0ce9f89cbb1485472f071b3573f0477d}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarraydeleteNode_a31ba9b73f9e6266042779eb8b8bffb01}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo función eliminar elemento de array. 
+
+Este nodo se encarga de eliminar el elemento que ocupa una determinada posición dentro de un array. Si la posición se encuentra fuera de rango se produce un error. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarraydeleteNode_abd17e65ebd9704157cb3f431f3dbcf97}{\index{arraydelete\-Node@{arraydelete\-Node}!arraydelete\-Node@{arraydelete\-Node}}
+\index{arraydelete\-Node@{arraydelete\-Node}!arraydeleteNode@{arraydelete\-Node}}
+\subsubsection[{arraydelete\-Node}]{\setlength{\rightskip}{0pt plus 5cm}arraydelete\-Node\-::arraydelete\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array, }
+\item[{{\bf run\-Node} $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}\label{classarraydeleteNode_abd17e65ebd9704157cb3f431f3dbcf97}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que representa el array \\
+\hline
+{\em index} & Nodo que representa la posición \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarraydeleteNode_a31ba9b73f9e6266042779eb8b8bffb01}{\index{arraydelete\-Node@{arraydelete\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arraydeleteNode@{arraydelete\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arraydelete\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarraydeleteNode_a31ba9b73f9e6266042779eb8b8bffb01}
+Devuelve un nodo eliminar elemento de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método delete. 
+\end{DoxyReturn}
+\hypertarget{classarraydeleteNode_a0ce9f89cbb1485472f071b3573f0477d}{\index{arraydelete\-Node@{arraydelete\-Node}!run@{run}}
+\index{run@{run}!arraydeleteNode@{arraydelete\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void arraydelete\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarraydeleteNode_a0ce9f89cbb1485472f071b3573f0477d}
+Método que ejecuta el nodo. Elimina el elemento que ocuapa la posición dada dentro del array. Toma como valor una referencia al array con el elemento eliminado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+Reimplementado en \hyperlink{classarraypopNode_a5a96f6ab8867ca653bbe74ec8f4c1d4b}{arraypop\-Node} y \hyperlink{classarrayshiftNode_a2a34028d6f0763c7df0220ef2c624580}{arrayshift\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

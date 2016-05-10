@@ -1,0 +1,56 @@
+#!/usr/local/bin/omi
+/* 
+ * Casos para expresiones booleanas basicas:
+ * - Constantes
+ * - Impresión
+ * - Asignación
+ */
+<< "-- Constantes";
+true;
+false;
+<< "-- Impresión";
+<< true;
+<< false;
+<< "-- Asignación a variable";
+a = true;
+<< a;
+<< b = true; 
+a = false;
+<< a;
+<< b = false;
+for (i = 0; i < 10; ++i) a = true;
+<< a;
+a = b = true;
+<< a; << b;
+<< "-- Asignación a posición de array";
+array[0] = true;
+array[1] = false;
+<< array;
+for (i = 0; i < 10; ++i) array[i] = true;
+<< array;
+<< "-- Asignación a posición de cadena";
+str = "ABCDEF";
+<< str[0] = false;
+<< str;
+str = "ABCDEF";
+<< str[0] = true;
+<< str;
+while (size str) str[0] = false;
+<< str;
+str = "ABCDEFG";
+for (i = 0; i < 7; i ++) str[i] =  str[6 - i];
+<< str;
+<< "-- Asignación a referencia";
+a = false;
+b = &a;
+<< a; << b;
+a = true;
+<< a; << b;
+# CASOS DE ERROR:
+<< "-- ERROR[";
+<< true = true;
+<< true = false;
+<< a = true = true;
+<< "ABCDEF"[0] = false;
+for (i = 0; i < 6; ++i) << "ABCDEF"[i] = false;
+<< "]";

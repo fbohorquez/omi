@@ -1,0 +1,166 @@
+\hypertarget{classisymTable}{\section{Referencia de la Clase isym\-Table}
+\label{classisymTable}\index{isym\-Table@{isym\-Table}}
+}
+
+
+Iterador de tabla de símbolos.  
+
+
+
+
+{\ttfamily \#include $<$symbols.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisymTable_acf5e41652ff2cf18a1da8f4495ed5dba}{isym\-Table} ()
+\item 
+\hyperlink{classisymTable_ad04189ea0dc999015f14b1cc2670d6bb}{isym\-Table} (const \hyperlink{classsymbolsTable}{symbols\-Table} $\ast$sym, unsigned int pos)
+\item 
+bool \hyperlink{classisymTable_aca68c12e7f3a31c9388555ce9a79ed36}{operator==} (const \hyperlink{classisymTable}{isym\-Table} \&elem) const 
+\item 
+bool \hyperlink{classisymTable_a37ab3100bc72407cb3cd113d9f080e9e}{operator!=} (const \hyperlink{classisymTable}{isym\-Table} \&elem) const 
+\item 
+\hyperlink{classisymTable}{isym\-Table} \& \hyperlink{classisymTable_a0683f710cec56bba6f51948bb84ab9b4}{operator++} ()
+\item 
+\hyperlink{classisymTable}{isym\-Table} \& \hyperlink{classisymTable_a0744c09a77ed9333b69c3a0018bc172b}{operator-\/-\/} ()
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classisymTable_a2025c24526c2c22bdbec4de6abf29259}{operator++} (int)
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classisymTable_a58e0f9a55653b0ca7958b9ee1658a726}{operator-\/-\/} (int)
+\item 
+unsigned int \hyperlink{classisymTable_a6754473e849e3336cbeed51dc855575e}{get\-Pos} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classisymTable_ac68f0998e071800e96f90150cee06cbc}{first}
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classisymTable_a34ea5520bff342eef9a3770e9dad1073}{second}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Iterador de tabla de símbolos. 
+
+Un iterador de tabla de símbolos permite recorrer la tabla secuencialmente.
+
+El iterador representa una posición de la tabla de símbolos y se compone de dos referencias, una a la referencia correspondiente en la tabla de símbolos y otra a su valor.
+
+Al incrementar o decrementar el iterador este puede desplazarse por la tabla. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisymTable_acf5e41652ff2cf18a1da8f4495ed5dba}{\index{isym\-Table@{isym\-Table}!isym\-Table@{isym\-Table}}
+\index{isym\-Table@{isym\-Table}!isymTable@{isym\-Table}}
+\subsubsection[{isym\-Table}]{\setlength{\rightskip}{0pt plus 5cm}isym\-Table\-::isym\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_acf5e41652ff2cf18a1da8f4495ed5dba}
+Método constructor vacío. \hypertarget{classisymTable_ad04189ea0dc999015f14b1cc2670d6bb}{\index{isym\-Table@{isym\-Table}!isym\-Table@{isym\-Table}}
+\index{isym\-Table@{isym\-Table}!isymTable@{isym\-Table}}
+\subsubsection[{isym\-Table}]{\setlength{\rightskip}{0pt plus 5cm}isym\-Table\-::isym\-Table (
+\begin{DoxyParamCaption}
+\item[{const {\bf symbols\-Table} $\ast$}]{sym, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_ad04189ea0dc999015f14b1cc2670d6bb}
+Constructor de la clase. Crea un iterador en una determinada posición de una tabla de símbolos. 
+\begin{DoxyParams}{Parámetros}
+{\em sym} & Tabla de símbolos. \\
+\hline
+{\em pos} & Posición. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisymTable_a6754473e849e3336cbeed51dc855575e}{\index{isym\-Table@{isym\-Table}!get\-Pos@{get\-Pos}}
+\index{get\-Pos@{get\-Pos}!isymTable@{isym\-Table}}
+\subsubsection[{get\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int isym\-Table\-::get\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_a6754473e849e3336cbeed51dc855575e}
+Obtiene la posición numérica del iterador \begin{DoxyReturn}{Devuelve}
+Posición del iterador. 
+\end{DoxyReturn}
+\hypertarget{classisymTable_a37ab3100bc72407cb3cd113d9f080e9e}{\index{isym\-Table@{isym\-Table}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!isymTable@{isym\-Table}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool isym\-Table\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf isym\-Table} \&}]{elem}
+\end{DoxyParamCaption}
+) const}}\label{classisymTable_a37ab3100bc72407cb3cd113d9f080e9e}
+Sobrecarga de operador de desigualdad. Compara el iterador con otro dado mediante la relación de desigualdad. 
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Iterador a comparar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classisymTable_a0683f710cec56bba6f51948bb84ab9b4}{\index{isym\-Table@{isym\-Table}!operator++@{operator++}}
+\index{operator++@{operator++}!isymTable@{isym\-Table}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} \& isym\-Table\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_a0683f710cec56bba6f51948bb84ab9b4}
+Sobrecarga del operador de incremento y asignación. Avanza el iterador una posición en la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Devuelve el iterador en la nueva posición. 
+\end{DoxyReturn}
+\hypertarget{classisymTable_a2025c24526c2c22bdbec4de6abf29259}{\index{isym\-Table@{isym\-Table}!operator++@{operator++}}
+\index{operator++@{operator++}!isymTable@{isym\-Table}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} isym\-Table\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_a2025c24526c2c22bdbec4de6abf29259}
+Sobrecarga del operador de asignación e incremento. Avanza el iterador una posición en la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Devuelve el iterador en la nueva posición. 
+\end{DoxyReturn}
+\hypertarget{classisymTable_a0744c09a77ed9333b69c3a0018bc172b}{\index{isym\-Table@{isym\-Table}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!isymTable@{isym\-Table}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} \& isym\-Table\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_a0744c09a77ed9333b69c3a0018bc172b}
+Sobrecarga del operador de decremento y asignación. Retrocede el iterador una posición en la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Devuelve el iterador en la nueva posición. 
+\end{DoxyReturn}
+\hypertarget{classisymTable_a58e0f9a55653b0ca7958b9ee1658a726}{\index{isym\-Table@{isym\-Table}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!isymTable@{isym\-Table}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} isym\-Table\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{classisymTable_a58e0f9a55653b0ca7958b9ee1658a726}
+Sobrecarga del operador de asignación e decremento. Retrocede el iterador una posición en la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Devuelve el iterador en la nueva posición. 
+\end{DoxyReturn}
+\hypertarget{classisymTable_aca68c12e7f3a31c9388555ce9a79ed36}{\index{isym\-Table@{isym\-Table}!operator==@{operator==}}
+\index{operator==@{operator==}!isymTable@{isym\-Table}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool isym\-Table\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf isym\-Table} \&}]{elem}
+\end{DoxyParamCaption}
+) const}}\label{classisymTable_aca68c12e7f3a31c9388555ce9a79ed36}
+Sobrecarga de operador de igualdad. Compara el iterador con otro dado mediante la relación de igualdad. 
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Iterador a comparar. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classisymTable_ac68f0998e071800e96f90150cee06cbc}{\index{isym\-Table@{isym\-Table}!first@{first}}
+\index{first@{first}!isymTable@{isym\-Table}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node}$\ast$ isym\-Table\-::first}}\label{classisymTable_ac68f0998e071800e96f90150cee06cbc}
+Referencia del iterador. \hypertarget{classisymTable_a34ea5520bff342eef9a3770e9dad1073}{\index{isym\-Table@{isym\-Table}!second@{second}}
+\index{second@{second}!isymTable@{isym\-Table}}
+\subsubsection[{second}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ isym\-Table\-::second}}\label{classisymTable_a34ea5520bff342eef9a3770e9dad1073}
+Valor de la referencia del iterador. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{symbols_8h}{symbols.\-h}\item 
+trunk/src/run/table/symbols.\-cpp\end{DoxyCompactItemize}

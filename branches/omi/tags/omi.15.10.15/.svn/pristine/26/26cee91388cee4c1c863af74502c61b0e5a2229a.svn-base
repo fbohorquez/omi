@@ -1,0 +1,85 @@
+//interpreter.h
+//----------------------------------------------------------------------
+/*
+ * Fco. Javier Bohórquez Ogalla
+ * 75766599-E
+ * Puerto Real (Cádiz)
+ * powersgame@gmail.com
+ */
+//----------------------------------------------------------------------
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+#ifndef _INTERPRETER_
+#define _INTERPRETER_
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
+#include <stdlib.h>
+#include <unistd.h>
+#include <getopt.h>
+#include <readline/readline.h>
+#include <readline/history.h>
+
+
+
+#define INTERPRETER_NAME "omi"
+#define INTERPRETER_DESCRIPTION "Open Modular Interpreter"
+#define INTERPRETER_VERSION "0.1"
+#define INTERPRETER_LICENSE "GNU General Public License version 2"
+#define HISTORY_FILE string(getenv("HOME")) + "/." + string(INTERPRETER_NAME)  + "_history" 
+#define PS1 INTERPRETER_NAME + string(" |> ")
+#define PS2 INTERPRETER_NAME + string(" {> ")
+
+using namespace std;
+
+extern bool inline_param;
+extern string infile;
+
+class interpreter {
+   public:
+      void run ();
+      void scan_string(const char* str);
+      static interpreter *init (int argc, char *argv[]) {
+         if (!interpreter_) 
+            interpreter_ = new interpreter (argc, argv);
+         return interpreter_;
+      }
+      static interpreter *get () {
+         return interpreter_;
+      }
+   private:
+      interpreter (int argc, char *argv[]);
+      void generateClass ();
+      void parseOptions (int argc, char *argv[]);
+      void parseArgs ();
+      void caseScript ();
+      void caseCode ();
+      void caseInline ();
+      void caseStdin ();
+      void printVersion ();
+      string getLine ();
+      vector<string> args_;
+      string file_;
+      string code_;
+      bool inl_, error_opt_;
+      static interpreter* interpreter_;
+};
+#endif

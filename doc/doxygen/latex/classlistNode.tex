@@ -1,0 +1,137 @@
+\hypertarget{classlistNode}{\section{Referencia de la Clase list\-Node}
+\label{classlistNode}\index{list\-Node@{list\-Node}}
+}
+
+
+Nodo lista de elementos.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de list\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlistNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlistNode_ab518d74745655516bd8eeddef412678e}{list\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$ele1, \hyperlink{classrunNode}{run\-Node} $\ast$ele2=N\-U\-L\-L)
+\item 
+void \hyperlink{classlistNode_a27cfebeda882dbf8d3129ac0f6761835}{run} ()
+\item 
+int \hyperlink{classlistNode_aafdccbdea18f5e61503519c99007375d}{size} ()
+\item 
+vector$<$ \hyperlink{classrunNode}{run\-Node} $\ast$ $>$ \hyperlink{classlistNode_a781eda85c9775ae8a8bd9c29efb7199a}{listvalue} () const 
+\item 
+bool \hyperlink{classlistNode_a6dd4045f85a4405463b8ebd8b98b2b64}{is\-Asig\-List} ()
+\item 
+\hyperlink{classlistNode}{list\-Node} $\ast$ \hyperlink{classlistNode_a63dc73f986bde022c2b10160a0eb03fe}{quit\-Asig} ()
+\item 
+bool \hyperlink{classlistNode_a91043dbc59fa1d3ffe2e7447353e4745}{is\-\_\-runlist} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo lista de elementos. 
+
+Una lista de elementos se representa mediante un vector de nodos ejecutables.
+
+Un nodo lista se enlaza con otros dos nodos ejecutables. En la práctica uno de estos nodos será otro nodo lista o N\-U\-L\-L, mientras que él otro será de cualquier otro tipo, formándose así una lista de nodos. Cada nodo en la lista ocupará una posición en función de los nodos listas anidados.
+
+Tras la ejecución de una lista de nodos de este tipo, cada nodo guarda un vector con los valores de los nodos hijos y el suyo mismo. Así el primero de la lista guardará un vector con todos los valores de la lista. Esto hace posible que cada nodo hijo se libere tras la ejecución del padre ya que este ya hará referencia a los elementos que guardaban su hijos. Gracias ha esto la ejecución de un nodo lista sólo se lleva a cabo una vez. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classlistNode_ab518d74745655516bd8eeddef412678e}{\index{list\-Node@{list\-Node}!list\-Node@{list\-Node}}
+\index{list\-Node@{list\-Node}!listNode@{list\-Node}}
+\subsubsection[{list\-Node}]{\setlength{\rightskip}{0pt plus 5cm}list\-Node\-::list\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{ele1, }
+\item[{{\bf run\-Node} $\ast$}]{ele2 = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classlistNode_ab518d74745655516bd8eeddef412678e}
+Método constructor. 
+\begin{DoxyParams}{Parámetros}
+{\em ele1} & Nodo primer elemento . \\
+\hline
+{\em ele2} & Nodo segundo elemento. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classlistNode_a91043dbc59fa1d3ffe2e7447353e4745}{\index{list\-Node@{list\-Node}!is\-\_\-runlist@{is\-\_\-runlist}}
+\index{is\-\_\-runlist@{is\-\_\-runlist}!listNode@{list\-Node}}
+\subsubsection[{is\-\_\-runlist}]{\setlength{\rightskip}{0pt plus 5cm}bool list\-Node\-::is\-\_\-runlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlistNode_a91043dbc59fa1d3ffe2e7447353e4745}
+Sobre carga este método para que la lista sea ejecutada de forma recursiva. \begin{DoxyReturn}{Devuelve}
+Devuelve el valor booleano true. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classrunNode_a231638d0fc5b436c5e4a664fe7d5126a}{run\-Node}.
+
+\hypertarget{classlistNode_a6dd4045f85a4405463b8ebd8b98b2b64}{\index{list\-Node@{list\-Node}!is\-Asig\-List@{is\-Asig\-List}}
+\index{is\-Asig\-List@{is\-Asig\-List}!listNode@{list\-Node}}
+\subsubsection[{is\-Asig\-List}]{\setlength{\rightskip}{0pt plus 5cm}bool list\-Node\-::is\-Asig\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlistNode_a6dd4045f85a4405463b8ebd8b98b2b64}
+Comprueba si algunos de los elementos de la lista es una asignación. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si algunos de los elementos de la lista es una asignación. 
+\end{DoxyReturn}
+\hypertarget{classlistNode_a781eda85c9775ae8a8bd9c29efb7199a}{\index{list\-Node@{list\-Node}!listvalue@{listvalue}}
+\index{listvalue@{listvalue}!listNode@{list\-Node}}
+\subsubsection[{listvalue}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf run\-Node} $\ast$ $>$ list\-Node\-::listvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classlistNode_a781eda85c9775ae8a8bd9c29efb7199a}
+Obtiene el valor de la lista como un vector de nodos ejecutables. \begin{DoxyReturn}{Devuelve}
+Lista de valores como vector de nodos. 
+\end{DoxyReturn}
+\hypertarget{classlistNode_a63dc73f986bde022c2b10160a0eb03fe}{\index{list\-Node@{list\-Node}!quit\-Asig@{quit\-Asig}}
+\index{quit\-Asig@{quit\-Asig}!listNode@{list\-Node}}
+\subsubsection[{quit\-Asig}]{\setlength{\rightskip}{0pt plus 5cm}{\bf list\-Node} $\ast$ list\-Node\-::quit\-Asig (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlistNode_a63dc73f986bde022c2b10160a0eb03fe}
+Devuelve el nodo lista donde los nodos asignaciones presentes son el valor asignado en los mismos. \begin{DoxyReturn}{Devuelve}
+Lista sin nodos asignaciones. 
+\end{DoxyReturn}
+\hypertarget{classlistNode_a27cfebeda882dbf8d3129ac0f6761835}{\index{list\-Node@{list\-Node}!run@{run}}
+\index{run@{run}!listNode@{list\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void list\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlistNode_a27cfebeda882dbf8d3129ac0f6761835}
+Ejecuta el nodo, para ello ejecuta sus hijos. Luego, en el caso de que alguno sea otro nodo lista guarda el contenido del vector de este en el suyo propio, luego elimina el nodo lista. En el caso contrario introduce el nodo en su propio vector. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classlistNode_aafdccbdea18f5e61503519c99007375d}{\index{list\-Node@{list\-Node}!size@{size}}
+\index{size@{size}!listNode@{list\-Node}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int list\-Node\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlistNode_aafdccbdea18f5e61503519c99007375d}
+Devuelve el número de elementos del nodo lista una vez ejecutado. \begin{DoxyReturn}{Devuelve}
+Número de elementos. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

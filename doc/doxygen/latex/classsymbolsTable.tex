@@ -1,0 +1,446 @@
+\hypertarget{classsymbolsTable}{\section{Referencia de la Clase symbols\-Table}
+\label{classsymbolsTable}\index{symbols\-Table@{symbols\-Table}}
+}
+
+
+Tabla de símbolos.  
+
+
+
+
+{\ttfamily \#include $<$symbols.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsymbolsTable_a9a6e7802e446e8902ea850c94f1a10bd}{symbols\-Table} ()
+\item 
+\hyperlink{classsymbolsTable_ae7753ebe94000f6440a9f13ce174846c}{symbols\-Table} (const \hyperlink{classsymbolsTable}{symbols\-Table} $\ast$table)
+\item 
+\hyperlink{classsymbolsTable_a1a1e095ea56925b2932a72caebf5f7b4}{symbols\-Table} (\hyperlink{classsymbolsTable}{symbols\-Table} $\ast$table)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$\& \hyperlink{classsymbolsTable_a519d5bfed68a2d2d93c9dba7b4e877ff}{push\-\_\-back} (\hyperlink{classrefNode}{ref\-Node} $\ast$node)
+\item 
+void \hyperlink{classsymbolsTable_a12abb82234dadb898ab7e7beda487a27}{pop\-\_\-back} ()
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classsymbolsTable_a268924344725d21450d31e0e7538b7b4}{begin} ()
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classsymbolsTable_a00b865b64083f375f734ff5b6a9d6659}{end} ()
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classsymbolsTable_a6d55b62ea700a80144f80cb41b3af474}{begin} () const 
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classsymbolsTable_a6cfc5bdad1b1297371b7da0582c0fc39}{end} () const 
+\item 
+\hyperlink{classisymTable}{isym\-Table} \hyperlink{classsymbolsTable_ae90d26824150c4573dd53730187e742e}{find} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsymbolsTable_a2018d3971bd0fb65878e8d378c519320}{find\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$node, \hyperlink{classrunNode}{run\-Node} $\ast$default\-\_\-node=N\-U\-L\-L)
+\item 
+void \hyperlink{classsymbolsTable_a55a96b31c88df6eca606d84013e1f580}{clear} ()
+\item 
+void \hyperlink{classsymbolsTable_a1bf4ad22533d92d422e7f6691875d118}{clear\-Ref} ()
+\item 
+bool \hyperlink{classsymbolsTable_aae5d6585aaa7eaa2202708c15b33fc4d}{empty} ()
+\item 
+int \hyperlink{classsymbolsTable_a72a408962416eeea6555b6c11a396d6f}{size} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$\& \hyperlink{classsymbolsTable_a3c0e01f4c039713ad0ba22939ac4828a}{operator\mbox{[}$\,$\mbox{]}} (const string key)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsymbolsTable_a940e94aacbfd0d986450cef1e40859f0}{find\-Key} (string key) const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$\& \hyperlink{classsymbolsTable_aeb92f6558212eebc8177a96f54eaaa6d}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classrefNode}{ref\-Node} $\ast$key)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$\& \hyperlink{classsymbolsTable_aa9c3af63a1bdd221ad4a0d3075789752}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$\& \hyperlink{classsymbolsTable_ad6b641fd0059cebe19567bcff9be5aba}{operator\mbox{[}$\,$\mbox{]}} (int val)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$\& \hyperlink{classsymbolsTable_a721b39ab8b58ed80297d847103fc77c9}{get\-Ref} (int val)
+\item 
+void \hyperlink{classsymbolsTable_a4e4e8b92f9a02430923bc3bf0b51528f}{erase} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classsymbolsTable_ad8cd21aa6ed7089a06c64458d926ce9f}{erase\-\_\-position} (unsigned int i)
+\item 
+void \hyperlink{classsymbolsTable_a7cf87d654443c053aa10bab7de16340d}{print} ()
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsymbolsTable_ac974b6dcd3255b609d62a6d468df8531}{last} ()
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsymbolsTable_a01d8d5006dd3a20bb1501255fa6404c7}{first} ()
+\item 
+void \hyperlink{classsymbolsTable_a79b0198ef35c8a82bdb509960cae3091}{insert} (\hyperlink{classisymTable}{isym\-Table} i, \hyperlink{classrefNode}{ref\-Node} $\ast$element)
+\item 
+void \hyperlink{classsymbolsTable_a5c91259a0aa1eccc1d5efb03ba3deff8}{insert} (int pos, \hyperlink{classrefNode}{ref\-Node} $\ast$element)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsymbolsTable}{symbols\-Table} \hyperlink{classsymbolsTable_a320acaa976beb549c47ae99b57ad1047}{copy\-Ref} (\hyperlink{classsymbolsTable}{symbols\-Table} $\ast$sym)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Tabla de símbolos. 
+
+Una tabla de símbolos es una estructura de datos que guarda una serie de referencias que apunta a otros nodos. Generalmente los nodos referenciados por la tabla de símbolos serán creados de forma dinámica, fruto de la ejecución del árbol sintáctico.
+
+Las tablas de símbolos pueden contener nodos que guarden cierta relación. Por ejemplo se puede utilizar una tabla para las variables, otras paras las funciones...
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classrefNode}{ref\-Node} 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsymbolsTable_a9a6e7802e446e8902ea850c94f1a10bd}{\index{symbols\-Table@{symbols\-Table}!symbols\-Table@{symbols\-Table}}
+\index{symbols\-Table@{symbols\-Table}!symbolsTable@{symbols\-Table}}
+\subsubsection[{symbols\-Table}]{\setlength{\rightskip}{0pt plus 5cm}symbols\-Table\-::symbols\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a9a6e7802e446e8902ea850c94f1a10bd}
+Constructor de la clase. Crea una tabla de símbolos vacía. \hypertarget{classsymbolsTable_ae7753ebe94000f6440a9f13ce174846c}{\index{symbols\-Table@{symbols\-Table}!symbols\-Table@{symbols\-Table}}
+\index{symbols\-Table@{symbols\-Table}!symbolsTable@{symbols\-Table}}
+\subsubsection[{symbols\-Table}]{\setlength{\rightskip}{0pt plus 5cm}symbols\-Table\-::symbols\-Table (
+\begin{DoxyParamCaption}
+\item[{const {\bf symbols\-Table} $\ast$}]{table}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_ae7753ebe94000f6440a9f13ce174846c}
+Constructor de la clase. Crea una tabla de símbolos a partir de otra con el atributo de constante. 
+\begin{DoxyParams}{Parámetros}
+{\em table} & Tabla de símbolos constante. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsymbolsTable_a1a1e095ea56925b2932a72caebf5f7b4}{\index{symbols\-Table@{symbols\-Table}!symbols\-Table@{symbols\-Table}}
+\index{symbols\-Table@{symbols\-Table}!symbolsTable@{symbols\-Table}}
+\subsubsection[{symbols\-Table}]{\setlength{\rightskip}{0pt plus 5cm}symbols\-Table\-::symbols\-Table (
+\begin{DoxyParamCaption}
+\item[{{\bf symbols\-Table} $\ast$}]{table}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a1a1e095ea56925b2932a72caebf5f7b4}
+Constructor de la clase. Crea una tabla de símbolos a partir de otra. 
+\begin{DoxyParams}{Parámetros}
+{\em table} & Tabla de símbolos. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsymbolsTable_a268924344725d21450d31e0e7538b7b4}{\index{symbols\-Table@{symbols\-Table}!begin@{begin}}
+\index{begin@{begin}!symbolsTable@{symbols\-Table}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} symbols\-Table\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a268924344725d21450d31e0e7538b7b4}
+Obtiene un iterador de tabla de símbolos a la primera referencia. \begin{DoxyReturn}{Devuelve}
+Obtiene un iterador de la tabla de símbolos que apunta a la primera referencia. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a6d55b62ea700a80144f80cb41b3af474}{\index{symbols\-Table@{symbols\-Table}!begin@{begin}}
+\index{begin@{begin}!symbolsTable@{symbols\-Table}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} symbols\-Table\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsymbolsTable_a6d55b62ea700a80144f80cb41b3af474}
+Obtiene un iterador de tabla de símbolos a la primera referencia. \begin{DoxyReturn}{Devuelve}
+Obtiene un iterador de la tabla de símbolos que apunta a la primera referencia. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a55a96b31c88df6eca606d84013e1f580}{\index{symbols\-Table@{symbols\-Table}!clear@{clear}}
+\index{clear@{clear}!symbolsTable@{symbols\-Table}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a55a96b31c88df6eca606d84013e1f580}
+Vacia la tabla de símbolos eliminado las referencias. \hypertarget{classsymbolsTable_a1bf4ad22533d92d422e7f6691875d118}{\index{symbols\-Table@{symbols\-Table}!clear\-Ref@{clear\-Ref}}
+\index{clear\-Ref@{clear\-Ref}!symbolsTable@{symbols\-Table}}
+\subsubsection[{clear\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::clear\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a1bf4ad22533d92d422e7f6691875d118}
+Vacia la tabla de símbolo sin eliminar las referencias. \hypertarget{classsymbolsTable_a320acaa976beb549c47ae99b57ad1047}{\index{symbols\-Table@{symbols\-Table}!copy\-Ref@{copy\-Ref}}
+\index{copy\-Ref@{copy\-Ref}!symbolsTable@{symbols\-Table}}
+\subsubsection[{copy\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols\-Table} symbols\-Table\-::copy\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf symbols\-Table} $\ast$}]{sym}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsymbolsTable_a320acaa976beb549c47ae99b57ad1047}
+Crea y devuelve una tabla de símbolos cuyas referencias han sido copiadas a partir de otras. 
+\begin{DoxyParams}{Parámetros}
+{\em sym} & Tabla de símbolos base. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nueva tabla de símbolos con las referencias de la tabla facilitada. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_aae5d6585aaa7eaa2202708c15b33fc4d}{\index{symbols\-Table@{symbols\-Table}!empty@{empty}}
+\index{empty@{empty}!symbolsTable@{symbols\-Table}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool symbols\-Table\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_aae5d6585aaa7eaa2202708c15b33fc4d}
+Determina si la tabla de símbolos está vacía. \begin{DoxyReturn}{Devuelve}
+Booleano que determina si la tabla está vacía. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a00b865b64083f375f734ff5b6a9d6659}{\index{symbols\-Table@{symbols\-Table}!end@{end}}
+\index{end@{end}!symbolsTable@{symbols\-Table}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} symbols\-Table\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a00b865b64083f375f734ff5b6a9d6659}
+Obtiene un iterador de tabla de símbolos al final de la tabla \begin{DoxyReturn}{Devuelve}
+Obtiene un iterador de la tabla de símbolos que apunta al final de la tabla. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a6cfc5bdad1b1297371b7da0582c0fc39}{\index{symbols\-Table@{symbols\-Table}!end@{end}}
+\index{end@{end}!symbolsTable@{symbols\-Table}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} symbols\-Table\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsymbolsTable_a6cfc5bdad1b1297371b7da0582c0fc39}
+Obtiene un iterador de tabla de símbolos al final de la tabla. \begin{DoxyReturn}{Devuelve}
+Obtiene un iterador de la tabla de símbolos que apunta al final de la tabla. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a4e4e8b92f9a02430923bc3bf0b51528f}{\index{symbols\-Table@{symbols\-Table}!erase@{erase}}
+\index{erase@{erase}!symbolsTable@{symbols\-Table}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a4e4e8b92f9a02430923bc3bf0b51528f}
+Elimina la referencia determinada por un nodo que hace de clave. Si no existe no se lleva a cabo ninguna acción. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo que hace de clave. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsymbolsTable_ad8cd21aa6ed7089a06c64458d926ce9f}{\index{symbols\-Table@{symbols\-Table}!erase\-\_\-position@{erase\-\_\-position}}
+\index{erase\-\_\-position@{erase\-\_\-position}!symbolsTable@{symbols\-Table}}
+\subsubsection[{erase\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::erase\-\_\-position (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_ad8cd21aa6ed7089a06c64458d926ce9f}
+Elimina la referencia que ocupa una determinada posición de la tabla de símbolos. Si está fuera de rango no se lleva a cabo ninguna acción. 
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posición. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsymbolsTable_ae90d26824150c4573dd53730187e742e}{\index{symbols\-Table@{symbols\-Table}!find@{find}}
+\index{find@{find}!symbolsTable@{symbols\-Table}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf isym\-Table} symbols\-Table\-::find (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_ae90d26824150c4573dd53730187e742e}
+Busca y devuelve un iterador posicionado en el elemento de la tabla de símbolos que apunta al nodo dado, según la función de comparación de nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Iterador a la referencia del elemento buscado. Al final de la tabla si no se encuentra. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a940e94aacbfd0d986450cef1e40859f0}{\index{symbols\-Table@{symbols\-Table}!find\-Key@{find\-Key}}
+\index{find\-Key@{find\-Key}!symbolsTable@{symbols\-Table}}
+\subsubsection[{find\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ symbols\-Table\-::find\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classsymbolsTable_a940e94aacbfd0d986450cef1e40859f0}
+Permite acceder a una referencia de la tabla de símbolos a partir de una clave. Si la clave no es encontrada devuelve un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave correspondiente a la referencia a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo al que apunta la referencia dada por la clave. Si no existe una referencia se devuelve el nodo nulo. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a2018d3971bd0fb65878e8d378c519320}{\index{symbols\-Table@{symbols\-Table}!find\-Ref@{find\-Ref}}
+\index{find\-Ref@{find\-Ref}!symbolsTable@{symbols\-Table}}
+\subsubsection[{find\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ symbols\-Table\-::find\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{{\bf run\-Node} $\ast$}]{default\-\_\-node = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a2018d3971bd0fb65878e8d378c519320}
+Busca y devuelve la referencia de la tabla que apunta a un nodo dado, según la función de comparación de nodos. Si no es encontrado se crea una referencia en la tabla cuyo valor es el nodo por defecto. Si es encontrado el nodo por defecto es liberado. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a buscar. \\
+\hline
+{\em default\-\_\-node} & Valor por defecto si no es encontrado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al nodo buscado o al nodo por defecto si no es encontrado. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a01d8d5006dd3a20bb1501255fa6404c7}{\index{symbols\-Table@{symbols\-Table}!first@{first}}
+\index{first@{first}!symbolsTable@{symbols\-Table}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ symbols\-Table\-::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a01d8d5006dd3a20bb1501255fa6404c7}
+Obtiene la primera referencia de la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Primera referencia de la tabla. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a721b39ab8b58ed80297d847103fc77c9}{\index{symbols\-Table@{symbols\-Table}!get\-Ref@{get\-Ref}}
+\index{get\-Ref@{get\-Ref}!symbolsTable@{symbols\-Table}}
+\subsubsection[{get\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$\& symbols\-Table\-::get\-Ref (
+\begin{DoxyParamCaption}
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a721b39ab8b58ed80297d847103fc77c9}
+Obtiene la referencia de la tabla de símbolos en la posición dada. Si está fuera de rango se devuelve N\-U\-L\-L. 
+\begin{DoxyParams}{Parámetros}
+{\em val} & Posición. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia que ocupa la posición dada. N\-U\-L\-L si fuera de rango. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a79b0198ef35c8a82bdb509960cae3091}{\index{symbols\-Table@{symbols\-Table}!insert@{insert}}
+\index{insert@{insert}!symbolsTable@{symbols\-Table}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf isym\-Table}}]{i, }
+\item[{{\bf ref\-Node} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a79b0198ef35c8a82bdb509960cae3091}
+Inserta una referencia tras un iterador dado. 
+\begin{DoxyParams}{Parámetros}
+{\em i} & Iterador tras el cual se realizará la operación. \\
+\hline
+{\em element} & Referencia a insertar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsymbolsTable_a5c91259a0aa1eccc1d5efb03ba3deff8}{\index{symbols\-Table@{symbols\-Table}!insert@{insert}}
+\index{insert@{insert}!symbolsTable@{symbols\-Table}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::insert (
+\begin{DoxyParamCaption}
+\item[{int}]{pos, }
+\item[{{\bf ref\-Node} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a5c91259a0aa1eccc1d5efb03ba3deff8}
+Inserta una referencia en una posición dada. 
+\begin{DoxyParams}{Parámetros}
+{\em pos} & Posición en la cual se realizará la operación. \\
+\hline
+{\em element} & Referencia a insertar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsymbolsTable_ac974b6dcd3255b609d62a6d468df8531}{\index{symbols\-Table@{symbols\-Table}!last@{last}}
+\index{last@{last}!symbolsTable@{symbols\-Table}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ symbols\-Table\-::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_ac974b6dcd3255b609d62a6d468df8531}
+Obtiene al última referencia de la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Última referencia de la tabla de símbolos. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a3c0e01f4c039713ad0ba22939ac4828a}{\index{symbols\-Table@{symbols\-Table}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!symbolsTable@{symbols\-Table}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$\& symbols\-Table\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const string}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a3c0e01f4c039713ad0ba22939ac4828a}
+Sobrecarga el operador de acceso. Permite acceder a una referencia de la tabla de símbolos a partir de una clave. Si la clave no es encontrada devuelve un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave correspondiente a la referencia a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo al que apunta la referencia dada por la clave. Si no existe una referencia se devuelve el nodo nulo. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_aeb92f6558212eebc8177a96f54eaaa6d}{\index{symbols\-Table@{symbols\-Table}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!symbolsTable@{symbols\-Table}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$\& symbols\-Table\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf ref\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_aeb92f6558212eebc8177a96f54eaaa6d}
+Sobrecarga el operador de acceso. Permite acceder a una referencia de la tabla de símbolos a partir otra referencia, comparándose las claves. Si no es encontrada devuelve un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave correspodiente a la referencia a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo al que apunta la referencia dada por la clave. Si no se encuentra una referencia se devuelve el nodo nulo. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_aa9c3af63a1bdd221ad4a0d3075789752}{\index{symbols\-Table@{symbols\-Table}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!symbolsTable@{symbols\-Table}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$\& symbols\-Table\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_aa9c3af63a1bdd221ad4a0d3075789752}
+Sobrecarga el operador de acceso. Permite acceder a una referencia de la tabla de símbolos a partir un nodo que hará de referencia, comparándose las claves. Si no es encontrada devuelve un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Referencia a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo al que apunta la referencia dada por la clave. Si no se encuentra una referencia se devuelve el nodo nulo. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_ad6b641fd0059cebe19567bcff9be5aba}{\index{symbols\-Table@{symbols\-Table}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!symbolsTable@{symbols\-Table}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$\& symbols\-Table\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_ad6b641fd0059cebe19567bcff9be5aba}
+Sobrecarga el operador de acceso. Permite acceder a una referencia de la tabla de símbolos a partir una posición. Si no es encontrada devuelve un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo que representa la referencia a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo al que apunta la referencia dada por la clave. Si no se encuentra una referencia se devuelve el nodo nulo. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a12abb82234dadb898ab7e7beda487a27}{\index{symbols\-Table@{symbols\-Table}!pop\-\_\-back@{pop\-\_\-back}}
+\index{pop\-\_\-back@{pop\-\_\-back}!symbolsTable@{symbols\-Table}}
+\subsubsection[{pop\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::pop\-\_\-back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a12abb82234dadb898ab7e7beda487a27}
+Elimina de la tabla de símbolos la última referencia . \hypertarget{classsymbolsTable_a7cf87d654443c053aa10bab7de16340d}{\index{symbols\-Table@{symbols\-Table}!print@{print}}
+\index{print@{print}!symbolsTable@{symbols\-Table}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void symbols\-Table\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a7cf87d654443c053aa10bab7de16340d}
+Imprime la tabla de símbolos por la salida estándar. \hypertarget{classsymbolsTable_a519d5bfed68a2d2d93c9dba7b4e877ff}{\index{symbols\-Table@{symbols\-Table}!push\-\_\-back@{push\-\_\-back}}
+\index{push\-\_\-back@{push\-\_\-back}!symbolsTable@{symbols\-Table}}
+\subsubsection[{push\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$\& symbols\-Table\-::push\-\_\-back (
+\begin{DoxyParamCaption}
+\item[{{\bf ref\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsymbolsTable_a519d5bfed68a2d2d93c9dba7b4e877ff}
+Añade una referencia al final de la tabla de símbolos. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia recién añadida. 
+\end{DoxyReturn}
+\hypertarget{classsymbolsTable_a72a408962416eeea6555b6c11a396d6f}{\index{symbols\-Table@{symbols\-Table}!size@{size}}
+\index{size@{size}!symbolsTable@{symbols\-Table}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int symbols\-Table\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsymbolsTable_a72a408962416eeea6555b6c11a396d6f}
+Obtiene el tamaño de la tabla de símbolos. \begin{DoxyReturn}{Devuelve}
+Entero que representa el tamaño. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{symbols_8h}{symbols.\-h}\item 
+trunk/src/run/table/symbols.\-cpp\end{DoxyCompactItemize}

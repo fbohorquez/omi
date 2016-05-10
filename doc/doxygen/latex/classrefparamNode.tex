@@ -1,0 +1,77 @@
+\hypertarget{classrefparamNode}{\section{Referencia de la Clase refparam\-Node}
+\label{classrefparamNode}\index{refparam\-Node@{refparam\-Node}}
+}
+
+
+Nodo de parámetro por referencia.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+Diagrama de herencias de refparam\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrefparamNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrefparamNode_a9d26156b01e304bc7e8323f935a79648}{refparam\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$value)
+\item 
+void \hyperlink{classrefparamNode_aab9b41790c37b398dfc05794b05722b3}{run} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classrefparamNode_ae004ff3cebf8ae785631341b0f453ff9}{get\-Value} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de parámetro por referencia. 
+
+Internamente estos nodos guardan una referencia a un nodo que hace de identificador.
+
+Esta clase de nodos es utilizada en lista de parámetros de la declaración de una función. En la llamada a la función, cuando los parámetros son pasados, si se detecta un nodo de este tipo en la definición se hará por referencia y no por valor. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classrefparamNode_a9d26156b01e304bc7e8323f935a79648}{\index{refparam\-Node@{refparam\-Node}!refparam\-Node@{refparam\-Node}}
+\index{refparam\-Node@{refparam\-Node}!refparamNode@{refparam\-Node}}
+\subsubsection[{refparam\-Node}]{\setlength{\rightskip}{0pt plus 5cm}refparam\-Node\-::refparam\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{classrefparamNode_a9d26156b01e304bc7e8323f935a79648}
+Constructor. 
+\begin{DoxyParams}{Parámetros}
+{\em value} & Identificador que se utilizará para el paso por referencia. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classrefparamNode_ae004ff3cebf8ae785631341b0f453ff9}{\index{refparam\-Node@{refparam\-Node}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!refparamNode@{refparam\-Node}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ refparam\-Node\-::get\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classrefparamNode_ae004ff3cebf8ae785631341b0f453ff9}
+Método observador que obtiene el identificador asociado. \hypertarget{classrefparamNode_aab9b41790c37b398dfc05794b05722b3}{\index{refparam\-Node@{refparam\-Node}!run@{run}}
+\index{run@{run}!refparamNode@{refparam\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void refparam\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrefparamNode_aab9b41790c37b398dfc05794b05722b3}
+Este nodo solo sirve para que otros nodos cambien su comportamiento, por lo que su ejecución es vacía. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

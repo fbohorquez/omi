@@ -1,0 +1,99 @@
+\hypertarget{classsprintfNode}{\section{Referencia de la Clase sprintf\-Node}
+\label{classsprintfNode}\index{sprintf\-Node@{sprintf\-Node}}
+}
+
+
+Nodo función cadena con formato.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de sprintf\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classsprintfNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsprintfNode_ac4cf673616622fb93d647cf3c05e68aa}{sprintf\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$list)
+\item 
+void \hyperlink{classsprintfNode_ad572656a67da5d4df98bce0eeb2affd5}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función cadena con formato. 
+
+Este nodo se encarga producir una cadena de texto formatada a partir de una cadena que utiliza cierta sintaxis para especificar un formato, y una serie de valores que serán formateados.
+
+La cadena de formato conciste en una cadena de texto que incluye directivas de formatos. Estas directivas serán sustituidas por el valor correspondiente, según posición, de la lista de parámetros. Cuando se reliza cada sustitución el valor es formateado según la directiva.
+
+Las directivas de formato tienen el siguiente formato
+
+\%\mbox{[}operador\mbox{]}\mbox{[}presición\mbox{]}\mbox{[}formato\mbox{]}
+
+Los opreadores son los siguientes\-:
+\begin{DoxyItemize}
+\item + Fuerza la impresión del símbolo + cuando se formatean números positivos
+\item $^\wedge$ Convierte el carácteres a mayúsculas cuando se formatean cadenas de texto
+\item \# Añade el caracter 0x cuando se formatean números hexadecimales y el carácter 0 cuando se formatean octales
+\end{DoxyItemize}
+
+La presición se refiere al número de decimales que se imprimirán en el caso de formatear números o el número de carácteres en el caso de formatear cadenas
+
+El carácter de formato indica que tipo de formato se le dará al valor. Liesh interpreta los siguientes tipos de formato\-:
+\begin{DoxyItemize}
+\item i$\vert$d Número entero
+\item u Sin signo
+\item f Coma flotante
+\item \% Carácter \%
+\item e Notación científica
+\item o Octal
+\item x Hexadecimal
+\item s$\vert$c Cadena de texto
+\end{DoxyItemize}
+
+Para inicializar un nodo de este tipo es necesario una lista de nodos ejecutables, donde el primer nodo de la lista será la cadena de formato y los siguientes serán los valores. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsprintfNode_ac4cf673616622fb93d647cf3c05e68aa}{\index{sprintf\-Node@{sprintf\-Node}!sprintf\-Node@{sprintf\-Node}}
+\index{sprintf\-Node@{sprintf\-Node}!sprintfNode@{sprintf\-Node}}
+\subsubsection[{sprintf\-Node}]{\setlength{\rightskip}{0pt plus 5cm}sprintf\-Node\-::sprintf\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{classsprintfNode_ac4cf673616622fb93d647cf3c05e68aa}
+Constructor principal.
+
+Recibe una lista de nodos ejecutables, donde el primer nodo es la cadena formato y los sucesivos son los valores a formatear 
+\begin{DoxyParams}{Parámetros}
+{\em list} & Lista de parámetros \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsprintfNode_ad572656a67da5d4df98bce0eeb2affd5}{\index{sprintf\-Node@{sprintf\-Node}!run@{run}}
+\index{run@{run}!sprintfNode@{sprintf\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void sprintf\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsprintfNode_ad572656a67da5d4df98bce0eeb2affd5}
+Lleva a cabo la ejecución del nodo ejecutable. Realiza las sustituciones en la cadena de formato.
+
+Toma como valor el resultado de la operación 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

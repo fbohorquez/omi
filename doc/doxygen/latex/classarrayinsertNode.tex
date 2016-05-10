@@ -1,0 +1,90 @@
+\hypertarget{classarrayinsertNode}{\section{Referencia de la Clase arrayinsert\-Node}
+\label{classarrayinsertNode}\index{arrayinsert\-Node@{arrayinsert\-Node}}
+}
+
+
+Nodo función insertar elemento en array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de arrayinsert\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarrayinsertNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarrayinsertNode_a018b6d84b64e515eea1016810ed335ac}{arrayinsert\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array, \hyperlink{classrunNode}{run\-Node} $\ast$index, \hyperlink{classrunNode}{run\-Node} $\ast$element)
+\item 
+void \hyperlink{classarrayinsertNode_a1a72ddaf1ade1ee8a535ae1ca1fc2861}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayinsertNode_ab9edbaa7c002c24e3bedf5d2bd8ca5be}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo función insertar elemento en array. 
+
+Se encarga de insertar un eleemtno en una posición dada de un array. Si la posición se encuentra fuera de rango se produce un error. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarrayinsertNode_a018b6d84b64e515eea1016810ed335ac}{\index{arrayinsert\-Node@{arrayinsert\-Node}!arrayinsert\-Node@{arrayinsert\-Node}}
+\index{arrayinsert\-Node@{arrayinsert\-Node}!arrayinsertNode@{arrayinsert\-Node}}
+\subsubsection[{arrayinsert\-Node}]{\setlength{\rightskip}{0pt plus 5cm}arrayinsert\-Node\-::arrayinsert\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array, }
+\item[{{\bf run\-Node} $\ast$}]{index, }
+\item[{{\bf run\-Node} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{classarrayinsertNode_a018b6d84b64e515eea1016810ed335ac}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que representa el array \\
+\hline
+{\em index} & Nodo que representa la posicion en la que se llevará a cabo la inserción \\
+\hline
+{\em element} & Nodo que representa el elemento que será insertado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarrayinsertNode_ab9edbaa7c002c24e3bedf5d2bd8ca5be}{\index{arrayinsert\-Node@{arrayinsert\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arrayinsertNode@{arrayinsert\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arrayinsert\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarrayinsertNode_ab9edbaa7c002c24e3bedf5d2bd8ca5be}
+Devuelve un nodo insertar elemento en array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método insert. 
+\end{DoxyReturn}
+\hypertarget{classarrayinsertNode_a1a72ddaf1ade1ee8a535ae1ca1fc2861}{\index{arrayinsert\-Node@{arrayinsert\-Node}!run@{run}}
+\index{run@{run}!arrayinsertNode@{arrayinsert\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void arrayinsert\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayinsertNode_a1a72ddaf1ade1ee8a535ae1ca1fc2861}
+Método que lleva a cabo la ejecución del nodo. Inserta el elemento en la posicón dada y toma como valor una referencia al array con el elemento insertado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+Reimplementado en \hyperlink{classarraypushNode_a6eb706763d3f8cc7715706005d4bf049}{arraypush\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

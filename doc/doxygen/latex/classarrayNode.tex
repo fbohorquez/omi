@@ -1,0 +1,462 @@
+\hypertarget{classarrayNode}{\section{Referencia de la Clase array\-Node}
+\label{classarrayNode}\index{array\-Node@{array\-Node}}
+}
+
+
+Nodo array.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de array\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarrayNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarrayNode_aec5963f3935e85c4a08705ec96ee4a4e}{array\-Node} (\hyperlink{classlistNode}{list\-Node} $\ast$list)
+\item 
+\hyperlink{classarrayNode_a088c20eb41de79e7f787e8a965e1f3f1}{array\-Node} ()
+\item 
+\hyperlink{classarrayNode_aecbe93c9bc3651585e1cf8951cae40ed}{array\-Node} (\hyperlink{classarrayNode}{array\-Node} $\ast$array)
+\item 
+\hyperlink{classarrayNode_afbaaec4d754c215fbb8513170d0e282a}{array\-Node} (\hyperlink{classarrayNode}{array\-Node} $\ast$array, \hyperlink{classrefNode}{ref\-Node} $\ast$\&ref\-Search)
+\item 
+void \hyperlink{classarrayNode_a5ead9863a0f9478798c7777a0c03b1a5}{run} ()
+\item 
+string \hyperlink{classarrayNode_a7d68669075eec824abc4400f18670075}{print} () const 
+\item 
+\hyperlink{classsymbolsTable}{symbols} $\ast$ \hyperlink{classarrayNode_a95eea3900dfa813fba8f25dba0f8456c}{get\-Array} ()
+\item 
+void \hyperlink{classarrayNode_a2ccdc9126f6e778d5623b4e3a6539d19}{insert} (\hyperlink{classrunNode}{run\-Node} $\ast$key, \hyperlink{classrunNode}{run\-Node} $\ast$val, bool str=false)
+\item 
+void \hyperlink{classarrayNode_a15ff4fc8cc43321084be7c38f9e9ae43}{del} (\hyperlink{classrunNode}{run\-Node} $\ast$key, bool str=false, bool force\-\_\-position=false)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayNode_ac45e2ad7a922801ac99e4650d2351c96}{get} (\hyperlink{classrunNode}{run\-Node} $\ast$key, bool str=false)
+\item 
+int \hyperlink{classarrayNode_a0fc0d195f693f8ec2884726eec7211cf}{size} () const 
+\item 
+bool \hyperlink{classarrayNode_a7d5003af8f4e70e65c5b8ca7cdd5a842}{compare} (\hyperlink{classrunNode}{run\-Node} $\ast$node, int op=0)
+\item 
+int \hyperlink{classarrayNode_a507607cad03ce0c2d0e1de5f80b71362}{get\-Count} () const 
+\item 
+void \hyperlink{classarrayNode_a38fced3677c6aced8b37cc9510711970}{c\-All} (\hyperlink{classrunNode}{run\-Node} $\ast$node\-\_\-search, \hyperlink{classrunNode}{run\-Node} $\ast$node\-\_\-new)
+\item 
+bool \hyperlink{classarrayNode_a9e58c867215bef0ab3dfd4db78d6b2f2}{isref} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classarrayNode_a8e37cc53c47cf7c264757e25d50af586}{clear} ()
+\item 
+void \hyperlink{classarrayNode_a907ba507d3fa9e402499dfb13cfec835}{clear\-Ref} ()
+\item 
+void \hyperlink{classarrayNode_ac478825dc6f392ed96fc81cbc61758ca}{set\-Array} (\hyperlink{classsymbolsTable}{symbols} array)
+\item 
+void \hyperlink{classarrayNode_a88cd3c520d82d253fee5d7b5f5c857f9}{push} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+virtual \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayNode_aa2a23e8d7e23dfc039ecdd17badf2324}{copy\-Array} (\hyperlink{classarrayNode}{array\-Node} $\ast$a)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayNode_adb8aba7525e34c7aec375f58be182bd8}{get\-Class} ()
+\item 
+bool \hyperlink{classarrayNode_af18a8d4f5e369713a01387bad022db72}{boolvalue} () const 
+\item 
+num \hyperlink{classarrayNode_a8a862493dfcab500edd9acf4f4c55348}{numvalue} () const 
+\item 
+string \hyperlink{classarrayNode_a3e5771d0cf67476bfe19683d504327d1}{strvalue} () const 
+\item 
+\hyperlink{classarrayNode_a9076d616c925d5b6dfee1164279f3763}{$\sim$array\-Node} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classarrayNode_a4e87dab3b6a894b583aa47199bf64741}{generate\-Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classarrayNode_aedc687b42ca8accbc226bce834a7a7d5}{print\-Level} (short int level) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo array. 
+
+Representa un vector de elementos. Los array son nodos que presenta una tabla de símbolos interna en la que almacena referencias a cada uno de los elementos en el array.
+
+En la inicialización del árbol de ejecución el nodo array se asocia con una lista de nodos de listas (\hyperlink{classlistNode}{list\-Node}).
+
+En la ejecución del nodo array los valores de la lista son guardados en la tabla de símbolos del array. En el caso de que los valores sean nodos asociativos (\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classmapNode}{map\-Node}) se establece la clave como referencia. En caso contrario se utiliza como referencia un entero correspondiente a la posición \hyperlink{classarrayNode_a15ff4fc8cc43321084be7c38f9e9ae43}{del} elemento en la lista.
+\end{DoxySeeAlso}
+Todo nodo array tiene asociado un nodo clase \char`\"{}array\-Class\char`\"{}. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarrayNode_aec5963f3935e85c4a08705ec96ee4a4e}{\index{array\-Node@{array\-Node}!array\-Node@{array\-Node}}
+\index{array\-Node@{array\-Node}!arrayNode@{array\-Node}}
+\subsubsection[{array\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Node\-::array\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf list\-Node} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_aec5963f3935e85c4a08705ec96ee4a4e}
+Constructor de clase. 
+\begin{DoxyParams}{Parámetros}
+{\em list} & Nodo lista. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a088c20eb41de79e7f787e8a965e1f3f1}{\index{array\-Node@{array\-Node}!array\-Node@{array\-Node}}
+\index{array\-Node@{array\-Node}!arrayNode@{array\-Node}}
+\subsubsection[{array\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Node\-::array\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a088c20eb41de79e7f787e8a965e1f3f1}
+Constructor de array vacío. \hypertarget{classarrayNode_aecbe93c9bc3651585e1cf8951cae40ed}{\index{array\-Node@{array\-Node}!array\-Node@{array\-Node}}
+\index{array\-Node@{array\-Node}!arrayNode@{array\-Node}}
+\subsubsection[{array\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Node\-::array\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf array\-Node} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_aecbe93c9bc3651585e1cf8951cae40ed}
+Constructor copia. 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo array para la copia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_afbaaec4d754c215fbb8513170d0e282a}{\index{array\-Node@{array\-Node}!array\-Node@{array\-Node}}
+\index{array\-Node@{array\-Node}!arrayNode@{array\-Node}}
+\subsubsection[{array\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Node\-::array\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf array\-Node} $\ast$}]{array, }
+\item[{{\bf ref\-Node} $\ast$\&}]{ref\-Search}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_afbaaec4d754c215fbb8513170d0e282a}
+Constructor copia. Durante la creación del objeto busca una referencia en el nodo copiado que toma el valor de la nueva referencia en el nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo array para la copia. \\
+\hline
+{\em ref\-Search} & Valor que será buscado. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a9076d616c925d5b6dfee1164279f3763}{\index{array\-Node@{array\-Node}!$\sim$array\-Node@{$\sim$array\-Node}}
+\index{$\sim$array\-Node@{$\sim$array\-Node}!arrayNode@{array\-Node}}
+\subsubsection[{$\sim$array\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Node\-::$\sim$array\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a9076d616c925d5b6dfee1164279f3763}
+Método destructor del array. El cual consiste en la eliminación de los elementos en la tabla de símbolos. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarrayNode_af18a8d4f5e369713a01387bad022db72}{\index{array\-Node@{array\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!arrayNode@{array\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool array\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_af18a8d4f5e369713a01387bad022db72}
+Obtiene el valor booleano del array. El cual indica si este es vacío. \begin{DoxyReturn}{Devuelve}
+Valor booleano del array. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{dexp\-Node}.
+
+\hypertarget{classarrayNode_a38fced3677c6aced8b37cc9510711970}{\index{array\-Node@{array\-Node}!c\-All@{c\-All}}
+\index{c\-All@{c\-All}!arrayNode@{array\-Node}}
+\subsubsection[{c\-All}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::c\-All (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node\-\_\-search, }
+\item[{{\bf run\-Node} $\ast$}]{node\-\_\-new}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a38fced3677c6aced8b37cc9510711970}
+Busca en los elementos del array toda referencia al nodo node\-\_\-search y la cambia por una referencia a node\-\_\-new.
+
+Si algún elemento es otro array se busca de igual forma en el mismo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node\-\_\-search} & Nodo a buscar. \\
+\hline
+{\em node\-\_\-new} & Nodo nuevo. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a8e37cc53c47cf7c264757e25d50af586}{\index{array\-Node@{array\-Node}!clear@{clear}}
+\index{clear@{clear}!arrayNode@{array\-Node}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a8e37cc53c47cf7c264757e25d50af586}
+Elimina todos los elementos del array. \hypertarget{classarrayNode_a907ba507d3fa9e402499dfb13cfec835}{\index{array\-Node@{array\-Node}!clear\-Ref@{clear\-Ref}}
+\index{clear\-Ref@{clear\-Ref}!arrayNode@{array\-Node}}
+\subsubsection[{clear\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::clear\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a907ba507d3fa9e402499dfb13cfec835}
+Elimina únicamente las referencias en el array. \hypertarget{classarrayNode_a7d5003af8f4e70e65c5b8ca7cdd5a842}{\index{array\-Node@{array\-Node}!compare@{compare}}
+\index{compare@{compare}!arrayNode@{array\-Node}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}bool array\-Node\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{int}]{op = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a7d5003af8f4e70e65c5b8ca7cdd5a842}
+Compara elemento a elemento el nodo array con el nodo pasado como parámetro.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a comparar. \\
+\hline
+{\em op.} & Operador a aplicar case 0\-: == case 1\-: != case 2\-: $>$ case 3\-: $<$ case 4\-: $>$= case 5\-: $<$= case 6\-: === \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano resultado de la operación. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_aa2a23e8d7e23dfc039ecdd17badf2324}{\index{array\-Node@{array\-Node}!copy\-Array@{copy\-Array}}
+\index{copy\-Array@{copy\-Array}!arrayNode@{array\-Node}}
+\subsubsection[{copy\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ array\-Node\-::copy\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf array\-Node} $\ast$}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_aa2a23e8d7e23dfc039ecdd17badf2324}
+Copia el contenido de un array en otro nuevo. 
+\begin{DoxyParams}{Parámetros}
+{\em a} & Array a copiar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Array resultado de la copia. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_a15ff4fc8cc43321084be7c38f9e9ae43}{\index{array\-Node@{array\-Node}!del@{del}}
+\index{del@{del}!arrayNode@{array\-Node}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::del (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{bool}]{str = {\ttfamily false}, }
+\item[{bool}]{force\-\_\-position = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a15ff4fc8cc43321084be7c38f9e9ae43}
+Elimina un elemento del array. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo clave. \\
+\hline
+{\em str} & Determina si las clave será forzada a tomarse como cadena. \\
+\hline
+{\em force\-\_\-position} & Fuerza a que la clave sea tomada como posición numérica. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a4e87dab3b6a894b583aa47199bf64741}{\index{array\-Node@{array\-Node}!generate\-Class@{generate\-Class}}
+\index{generate\-Class@{generate\-Class}!arrayNode@{array\-Node}}
+\subsubsection[{generate\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::generate\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarrayNode_a4e87dab3b6a894b583aa47199bf64741}
+Genera la clase \char`\"{}array\-Class\char`\"{} asociada a todo array. \hypertarget{classarrayNode_ac45e2ad7a922801ac99e4650d2351c96}{\index{array\-Node@{array\-Node}!get@{get}}
+\index{get@{get}!arrayNode@{array\-Node}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ array\-Node\-::get (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{bool}]{str = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_ac45e2ad7a922801ac99e4650d2351c96}
+Obtiene un elemento a partir de una clave. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo clave. \\
+\hline
+{\em str} & Determina si las clave será forzada a tomarse como cadena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo correspondiente a la clave. N\-U\-L\-L si no existe. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_a95eea3900dfa813fba8f25dba0f8456c}{\index{array\-Node@{array\-Node}!get\-Array@{get\-Array}}
+\index{get\-Array@{get\-Array}!arrayNode@{array\-Node}}
+\subsubsection[{get\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} $\ast$ array\-Node\-::get\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a95eea3900dfa813fba8f25dba0f8456c}
+Obtiene la tabla de símbolos interna del nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em Tabla} & de símbolos interna. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_adb8aba7525e34c7aec375f58be182bd8}{\index{array\-Node@{array\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!arrayNode@{array\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ array\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_adb8aba7525e34c7aec375f58be182bd8}
+Obtiene el nodo clase asociado a la clase. \begin{DoxyReturn}{Devuelve}
+Nodo clase. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{object\-Type\-Node}.
+
+
+
+Reimplementado en \hyperlink{classobjectNode_a09303f23cd355cf6c404db07f0b4428c}{object\-Node}.
+
+\hypertarget{classarrayNode_a507607cad03ce0c2d0e1de5f80b71362}{\index{array\-Node@{array\-Node}!get\-Count@{get\-Count}}
+\index{get\-Count@{get\-Count}!arrayNode@{array\-Node}}
+\subsubsection[{get\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int array\-Node\-::get\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classarrayNode_a507607cad03ce0c2d0e1de5f80b71362}
+Obtiene el índice numérico actual. \begin{DoxyReturn}{Devuelve}
+Numérico que indica el índice mayor. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_a2ccdc9126f6e778d5623b4e3a6539d19}{\index{array\-Node@{array\-Node}!insert@{insert}}
+\index{insert@{insert}!arrayNode@{array\-Node}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{{\bf run\-Node} $\ast$}]{val, }
+\item[{bool}]{str = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a2ccdc9126f6e778d5623b4e3a6539d19}
+Inserta un elemento en el array. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nodo clave del elemento. \\
+\hline
+{\em val} & Nodo valor del elemento. \\
+\hline
+{\em str} & Determina si las clave será forzada a tomarse como cadena. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a9e58c867215bef0ab3dfd4db78d6b2f2}{\index{array\-Node@{array\-Node}!isref@{isref}}
+\index{isref@{isref}!arrayNode@{array\-Node}}
+\subsubsection[{isref}]{\setlength{\rightskip}{0pt plus 5cm}bool array\-Node\-::isref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a9e58c867215bef0ab3dfd4db78d6b2f2}
+Dado un nodo ejecutable devuelve un booleano que indica si en el array se encuentra alguna referencia a dicho nodo.
+
+Si algún elemento es otro array se busca de igual forma en el mismo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano que indica si el array mantiene alguna referencia. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_a8a862493dfcab500edd9acf4f4c55348}{\index{array\-Node@{array\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!arrayNode@{array\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num array\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_a8a862493dfcab500edd9acf4f4c55348}
+Obtiene el valor numérico del array el cual es 0. \begin{DoxyReturn}{Devuelve}
+Valor numérico del array. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{dexp\-Node}.
+
+\hypertarget{classarrayNode_a7d68669075eec824abc4400f18670075}{\index{array\-Node@{array\-Node}!print@{print}}
+\index{print@{print}!arrayNode@{array\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string array\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_a7d68669075eec824abc4400f18670075}
+Determina cómo se imprime un nodo array. \begin{DoxyReturn}{Devuelve}
+Valor cadena del array. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+
+
+Reimplementado en \hyperlink{classobjectNode_a6e191a70f60856612791b319b62461f9}{object\-Node}.
+
+\hypertarget{classarrayNode_aedc687b42ca8accbc226bce834a7a7d5}{\index{array\-Node@{array\-Node}!print\-Level@{print\-Level}}
+\index{print\-Level@{print\-Level}!arrayNode@{array\-Node}}
+\subsubsection[{print\-Level}]{\setlength{\rightskip}{0pt plus 5cm}string array\-Node\-::print\-Level (
+\begin{DoxyParamCaption}
+\item[{short int}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classarrayNode_aedc687b42ca8accbc226bce834a7a7d5}
+Imprime un objeto J\-S\-O\-N correspondiente a la tabla de símbolos del array. \hypertarget{classarrayNode_a88cd3c520d82d253fee5d7b5f5c857f9}{\index{array\-Node@{array\-Node}!push@{push}}
+\index{push@{push}!arrayNode@{array\-Node}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::push (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_a88cd3c520d82d253fee5d7b5f5c857f9}
+Añade un nodo al final del array con el siguiente índice numérico. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que será añadido. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a5ead9863a0f9478798c7777a0c03b1a5}{\index{array\-Node@{array\-Node}!run@{run}}
+\index{run@{run}!arrayNode@{array\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_a5ead9863a0f9478798c7777a0c03b1a5}
+La ejecución de un array consiste en recorrer la lista de elementos asociadas al mismo y guardarlos en la tabla de símbolos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+Reimplementado en \hyperlink{classarrayConstNode_a84b4ae603b7c24d96f16a8acc94a0403}{array\-Const\-Node}.
+
+\hypertarget{classarrayNode_ac478825dc6f392ed96fc81cbc61758ca}{\index{array\-Node@{array\-Node}!set\-Array@{set\-Array}}
+\index{set\-Array@{set\-Array}!arrayNode@{array\-Node}}
+\subsubsection[{set\-Array}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Node\-::set\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf symbols}}]{array}
+\end{DoxyParamCaption}
+)}}\label{classarrayNode_ac478825dc6f392ed96fc81cbc61758ca}
+Establece una tabla de símbolos como la tabla del array. 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Tabla de símbolos . \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayNode_a0fc0d195f693f8ec2884726eec7211cf}{\index{array\-Node@{array\-Node}!size@{size}}
+\index{size@{size}!arrayNode@{array\-Node}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int array\-Node\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classarrayNode_a0fc0d195f693f8ec2884726eec7211cf}
+Obtiene el número de elementos del array. \begin{DoxyReturn}{Devuelve}
+Tamaño del array. 
+\end{DoxyReturn}
+\hypertarget{classarrayNode_a3e5771d0cf67476bfe19683d504327d1}{\index{array\-Node@{array\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!arrayNode@{array\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string array\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayNode_a3e5771d0cf67476bfe19683d504327d1}
+Obtiene el valor cadena de caracteres del array. \begin{DoxyReturn}{Devuelve}
+Valor cadena del array. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{dexp\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\hypertarget{classdexpNode}{\section{Referencia de la Clase dexp\-Node}
+\label{classdexpNode}\index{dexp\-Node@{dexp\-Node}}
+}
+
+
+Nodo expresión de tipo definido.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de dexp\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classdexpNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{boolvalue} () const 
+\item 
+virtual num \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{numvalue} () const 
+\item 
+virtual string \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{strvalue} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo expresión de tipo definido. 
+
+Los nodos de expresión de tipo definido tienen un valor o conjunto de valores asociados. Estos valores son de un tipo concreto, conocido y definido.
+
+Toda expresión definida podrá realizar una conversión de su valor interno a los tipos booleano, numérico y cadena de caracteres.
+
+Estos nodos se dividen en dos grupos\-:
+
+
+\begin{DoxyItemize}
+\item Nodos tipos\-: Definen los tipos de datos básicos\-: booleanos, numéricos, cadenas, arrays ...
+\end{DoxyItemize}
+
+-\/\-Nodos operadores definidos\-: Definen operaciones cuyo tipo de valor es conocido. Por ejemplo\-: la operación suma tiene un valor numérico asociado. la comparación de igualdad un valor booleano; 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{\index{dexp\-Node@{dexp\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!dexpNode@{dexp\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool dexp\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdexpNode_a18781e07cc3390c04b6905249755ccc8}
+Obtiene el valor booleano del nodo. \begin{DoxyReturn}{Devuelve}
+Booleano que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classregexpNode_a10a587695cb42fa6f9d867e05e26068f}{regexp\-Node}, \hyperlink{classarrayNode_af18a8d4f5e369713a01387bad022db72}{array\-Node}, \hyperlink{classstringNode_ae1fe6ea419679a0a0402beb47fabcea2}{string\-Node}, \hyperlink{classarithNode_a7f3634eba193b245af5e3ba8081c017b}{arith\-Node} y \hyperlink{classlogicNode_a802078f6b9ec9f96e01c91ac1704099b}{logic\-Node}.
+
+\hypertarget{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{\index{dexp\-Node@{dexp\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!dexpNode@{dexp\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num dexp\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}
+Obtiene el valor numérico del nodo. \begin{DoxyReturn}{Devuelve}
+Numérico que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classregexpNode_a6d6e4d51eaedec3def49747e4da3b03b}{regexp\-Node}, \hyperlink{classarrayNode_a8a862493dfcab500edd9acf4f4c55348}{array\-Node}, \hyperlink{classstringNode_ae66cab7ddc65acc8541d88baaebf47fb}{string\-Node}, \hyperlink{classarithNode_a3914e65779e61750f1ffd528deabd120}{arith\-Node} y \hyperlink{classlogicNode_a8fbc68e3cd354745e0e34ab4027bb8cc}{logic\-Node}.
+
+\hypertarget{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{\index{dexp\-Node@{dexp\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!dexpNode@{dexp\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string dexp\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}
+Obtiene el valor cadena de caracteres del nodo. \begin{DoxyReturn}{Devuelve}
+Cadena de caracteres que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classregexpNode_a223644545a3ec0258c6083fa8686a3cb}{regexp\-Node}, \hyperlink{classarrayNode_a3e5771d0cf67476bfe19683d504327d1}{array\-Node}, \hyperlink{classstringNode_adbc47d59c690cbd5a231d9a44384e1ba}{string\-Node}, \hyperlink{classarithNode_a01f251d6cdc918309873c7443c694510}{arith\-Node} y \hyperlink{classlogicNode_a5a5daf0f2b1295126998ac3a9fe0cc77}{logic\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

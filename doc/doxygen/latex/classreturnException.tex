@@ -1,0 +1,68 @@
+\hypertarget{classreturnException}{\section{Referencia de la Clase return\-Exception}
+\label{classreturnException}\index{return\-Exception@{return\-Exception}}
+}
+
+
+Exepcion return.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+
+
+Herencias exception.
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreturnException_ae1de225d6df023f89a345312746d20d8}{return\-Exception} (\hyperlink{classrunNode}{run\-Node} $\ast$resp)
+\item 
+const char $\ast$ \hyperlink{classreturnException_a4988b4dbc6fda037eda84818157705ac}{what} () const   throw ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classreturnException_a1627b1b22a4c6fc8e8bdcdfc874df7d1}{val} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Exepcion return. 
+
+Se lanza en la ejecución de un nodo return. Esto hace que se detenga la ejecución de una función y se guarde el valor especificado en el nodo return. Este valor será el que tome el nodo de llamada a función 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classreturnException_ae1de225d6df023f89a345312746d20d8}{\index{return\-Exception@{return\-Exception}!return\-Exception@{return\-Exception}}
+\index{return\-Exception@{return\-Exception}!returnException@{return\-Exception}}
+\subsubsection[{return\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}return\-Exception\-::return\-Exception (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{resp}
+\end{DoxyParamCaption}
+)}}\label{classreturnException_ae1de225d6df023f89a345312746d20d8}
+Constructor. 
+\begin{DoxyParams}{Parámetros}
+{\em resp} & Nodo ejecutable que se desea devolver. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classreturnException_a1627b1b22a4c6fc8e8bdcdfc874df7d1}{\index{return\-Exception@{return\-Exception}!val@{val}}
+\index{val@{val}!returnException@{return\-Exception}}
+\subsubsection[{val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ return\-Exception\-::val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classreturnException_a1627b1b22a4c6fc8e8bdcdfc874df7d1}
+Obtiene el valor de la excepción. \hypertarget{classreturnException_a4988b4dbc6fda037eda84818157705ac}{\index{return\-Exception@{return\-Exception}!what@{what}}
+\index{what@{what}!returnException@{return\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ return\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) }}\label{classreturnException_a4988b4dbc6fda037eda84818157705ac}
+Método que se ejecuta cuando la excepción no es atrapada. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

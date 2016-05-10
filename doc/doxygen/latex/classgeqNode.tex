@@ -1,0 +1,94 @@
+\hypertarget{classgeqNode}{\section{Referencia de la Clase geq\-Node}
+\label{classgeqNode}\index{geq\-Node@{geq\-Node}}
+}
+
+
+Nodo operador mayor o igual que.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de geq\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classgeqNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgeqNode_a24bc49ed3dced5ad95773035bc715209}{geq\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classgeqNode_ad2bee104bed0c28534a3c3c8d8998436}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classgeqNode_a18c5160eb87509152d0bc60b19b3f920}{do\-\_\-geq} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador mayor o igual que. 
+
+Este nodo implementa la operación mayor o igual que sobre dos nodos asociados.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgeqNode_a24bc49ed3dced5ad95773035bc715209}{\index{geq\-Node@{geq\-Node}!geq\-Node@{geq\-Node}}
+\index{geq\-Node@{geq\-Node}!geqNode@{geq\-Node}}
+\subsubsection[{geq\-Node}]{\setlength{\rightskip}{0pt plus 5cm}geq\-Node\-::geq\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classgeqNode_a24bc49ed3dced5ad95773035bc715209}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgeqNode_a18c5160eb87509152d0bc60b19b3f920}{\index{geq\-Node@{geq\-Node}!do\-\_\-geq@{do\-\_\-geq}}
+\index{do\-\_\-geq@{do\-\_\-geq}!geqNode@{geq\-Node}}
+\subsubsection[{do\-\_\-geq}]{\setlength{\rightskip}{0pt plus 5cm}bool geq\-Node\-::do\-\_\-geq (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classgeqNode_a18c5160eb87509152d0bc60b19b3f920}
+Ejecuta la operación mayor o igual que sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classgeqNode_ad2bee104bed0c28534a3c3c8d8998436}{\index{geq\-Node@{geq\-Node}!run@{run}}
+\index{run@{run}!geqNode@{geq\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void geq\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgeqNode_ad2bee104bed0c28534a3c3c8d8998436}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación mayor o igual que entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

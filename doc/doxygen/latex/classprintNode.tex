@@ -1,0 +1,73 @@
+\hypertarget{classprintNode}{\section{Referencia de la Clase print\-Node}
+\label{classprintNode}\index{print\-Node@{print\-Node}}
+}
+
+
+Nodo sentencia print.  
+
+
+
+
+{\ttfamily \#include $<$io\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de print\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classprintNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprintNode_a87721b3cb28bb525095945005334b0fc}{print\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp, bool newline=false)
+\item 
+void \hyperlink{classprintNode_a5a3da53743a7d8be8641672478eaad4c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia print. 
+
+Esta clase define el nodo correspondiente a la sentencia \char`\"{}print\char`\"{}.
+
+La sentencia \char`\"{}print\char`\"{} se encarga de imprimir la cadena asociada a un nodo imprimible. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classprintNode_a87721b3cb28bb525095945005334b0fc}{\index{print\-Node@{print\-Node}!print\-Node@{print\-Node}}
+\index{print\-Node@{print\-Node}!printNode@{print\-Node}}
+\subsubsection[{print\-Node}]{\setlength{\rightskip}{0pt plus 5cm}print\-Node\-::print\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{bool}]{newline = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classprintNode_a87721b3cb28bb525095945005334b0fc}
+Constructor de clase.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo sobre el que se ejecutará la sentencia print. \\
+\hline
+{\em newline} & Booleano que determina si se ha de imprimir un salto de línea al final.\\
+\hline
+\end{DoxyParams}
+El nodo asociado debe ser un nodo imprimible, en caso contrario se producirá un error de tipos. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classprintNode_a5a3da53743a7d8be8641672478eaad4c}{\index{print\-Node@{print\-Node}!run@{run}}
+\index{run@{run}!printNode@{print\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classprintNode_a5a3da53743a7d8be8641672478eaad4c}
+Función de ejecución del nodo. Ejecuta el nodo imprimible asociado e imprime la cadena interna de este en la salida estándar. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{ioStmtNode_8h}{io\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/io\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

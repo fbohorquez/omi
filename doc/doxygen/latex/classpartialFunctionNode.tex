@@ -1,0 +1,114 @@
+\hypertarget{classpartialFunctionNode}{\section{Referencia de la Clase partial\-Function\-Node}
+\label{classpartialFunctionNode}\index{partial\-Function\-Node@{partial\-Function\-Node}}
+}
+
+
+Nodo aplicación parcial.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+Diagrama de herencias de partial\-Function\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classpartialFunctionNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpartialFunctionNode_a403908a0e927bba828aabdb21e3b213f}{partial\-Function\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$params, \hyperlink{classrunNode}{run\-Node} $\ast$id, bool isrun=false)
+\item 
+void \hyperlink{classpartialFunctionNode_a02ef7f91a539de04d3ca4d05b53111f7}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classpartialFunctionNode_a6ac68a2d60925dee64f8b237e66bc0a2}{diff\-Params} (\hyperlink{classrunNode}{run\-Node} $\ast$pparams, \hyperlink{classrunNode}{run\-Node} $\ast$fparams)
+\item 
+static bool \hyperlink{classpartialFunctionNode_a60ff4c3690cb9565faa881cbf80d05ff}{exist\-All\-Params} (\hyperlink{classrunNode}{run\-Node} $\ast$pparams, \hyperlink{classrunNode}{run\-Node} $\ast$fparams)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo aplicación parcial. 
+
+Nodo que lleva a cabo la aplicación parcial de una función. A partir de la función se obtiene otra donde un subconjunto de sus parámetros tienen un valor dado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classpartialFunctionNode_a403908a0e927bba828aabdb21e3b213f}{\index{partial\-Function\-Node@{partial\-Function\-Node}!partial\-Function\-Node@{partial\-Function\-Node}}
+\index{partial\-Function\-Node@{partial\-Function\-Node}!partialFunctionNode@{partial\-Function\-Node}}
+\subsubsection[{partial\-Function\-Node}]{\setlength{\rightskip}{0pt plus 5cm}partial\-Function\-Node\-::partial\-Function\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{params, }
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{bool}]{isrun = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classpartialFunctionNode_a403908a0e927bba828aabdb21e3b213f}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em params} & Lista de parámetros que tendrán un valor en la función generada. Tiene que estar formada por asignaciones. \\
+\hline
+{\em id} & I\-D de la función a partir de la cual se obtendrá la función con los valores dados. \\
+\hline
+{\em isrun} & Determina si la función debe ser ejecutada tras ser obtenida. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classpartialFunctionNode_a6ac68a2d60925dee64f8b237e66bc0a2}{\index{partial\-Function\-Node@{partial\-Function\-Node}!diff\-Params@{diff\-Params}}
+\index{diff\-Params@{diff\-Params}!partialFunctionNode@{partial\-Function\-Node}}
+\subsubsection[{diff\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ partial\-Function\-Node\-::diff\-Params (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{pparams, }
+\item[{{\bf run\-Node} $\ast$}]{fparams}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classpartialFunctionNode_a6ac68a2d60925dee64f8b237e66bc0a2}
+Obtiene un nodo lista que contiene los parámetros de fparams que no se encuentran en pparams. 
+\begin{DoxyParams}{Parámetros}
+{\em pparams} & Listado de subconjunto. \\
+\hline
+{\em fparams} & Listado de conjunto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de elementos de fparams que no se encuentran en pparams. 
+\end{DoxyReturn}
+\hypertarget{classpartialFunctionNode_a60ff4c3690cb9565faa881cbf80d05ff}{\index{partial\-Function\-Node@{partial\-Function\-Node}!exist\-All\-Params@{exist\-All\-Params}}
+\index{exist\-All\-Params@{exist\-All\-Params}!partialFunctionNode@{partial\-Function\-Node}}
+\subsubsection[{exist\-All\-Params}]{\setlength{\rightskip}{0pt plus 5cm}bool partial\-Function\-Node\-::exist\-All\-Params (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{pparams, }
+\item[{{\bf run\-Node} $\ast$}]{fparams}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classpartialFunctionNode_a60ff4c3690cb9565faa881cbf80d05ff}
+Obtiene un valor booleano que determina si todos los parámetros de pparams se encuentran en fparams. 
+\begin{DoxyParams}{Parámetros}
+{\em pparams} & Listado de subconjunto. \\
+\hline
+{\em fparams} & Listado de conjunto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano que indica si todos los parámetros de pparams se encuentran en fparams 
+\end{DoxyReturn}
+\hypertarget{classpartialFunctionNode_a02ef7f91a539de04d3ca4d05b53111f7}{\index{partial\-Function\-Node@{partial\-Function\-Node}!run@{run}}
+\index{run@{run}!partialFunctionNode@{partial\-Function\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void partial\-Function\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpartialFunctionNode_a02ef7f91a539de04d3ca4d05b53111f7}
+Tras la ejecución, el nodo toma como valor la función correspondiente a la aplicación parcial de la función según el id dado y con los parámetros facilitados 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

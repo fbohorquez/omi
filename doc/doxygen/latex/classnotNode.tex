@@ -1,0 +1,85 @@
+\hypertarget{classnotNode}{\section{Referencia de la Clase not\-Node}
+\label{classnotNode}\index{not\-Node@{not\-Node}}
+}
+
+
+Nodo operador N\-O\-T.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de not\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classnotNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnotNode_ac3ba7950c8866c62cfae4b4c729ed4de}{not\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$op)
+\item 
+void \hyperlink{classnotNode_a1a0cfd8402c4223615b1333998e7b13d}{run} ()
+\item 
+bool \hyperlink{classnotNode_a6d06adfb17e49e7853fbdf834bafafc9}{do\-\_\-not} (\hyperlink{classrunNode}{run\-Node} $\ast$op)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador N\-O\-T. 
+
+Este nodo implementa una operación lógica N\-O\-T aplicada a un nodo.
+
+Un nodo operador N\-O\-T es un nodo lógico ya que tiene un valor interno de tipo booleano, obtenido a partir de llevar a cabo la operación N\-O\-T sobre el nodo asociado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnotNode_ac3ba7950c8866c62cfae4b4c729ed4de}{\index{not\-Node@{not\-Node}!not\-Node@{not\-Node}}
+\index{not\-Node@{not\-Node}!notNode@{not\-Node}}
+\subsubsection[{not\-Node}]{\setlength{\rightskip}{0pt plus 5cm}not\-Node\-::not\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op}
+\end{DoxyParamCaption}
+)}}\label{classnotNode_ac3ba7950c8866c62cfae4b4c729ed4de}
+Constructor de la clase. Asocia el nodo operando. 
+\begin{DoxyParams}{Parámetros}
+{\em op} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnotNode_a6d06adfb17e49e7853fbdf834bafafc9}{\index{not\-Node@{not\-Node}!do\-\_\-not@{do\-\_\-not}}
+\index{do\-\_\-not@{do\-\_\-not}!notNode@{not\-Node}}
+\subsubsection[{do\-\_\-not}]{\setlength{\rightskip}{0pt plus 5cm}bool not\-Node\-::do\-\_\-not (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op}
+\end{DoxyParamCaption}
+)}}\label{classnotNode_a6d06adfb17e49e7853fbdf834bafafc9}
+Ejecuta la operación N\-O\-T sobre un nodo dado. 
+\begin{DoxyParams}{Parámetros}
+{\em op} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classnotNode_a1a0cfd8402c4223615b1333998e7b13d}{\index{not\-Node@{not\-Node}!run@{run}}
+\index{run@{run}!notNode@{not\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void not\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnotNode_a1a0cfd8402c4223615b1333998e7b13d}
+Función de ejecución. Procede a la ejecución del nodo asociado. Luego asigna el valor booleano según la operación N\-O\-T. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+@MISC{une27002,
+title = "Agencia Española de Normalización",
+author = "Norma UNE-ISO/IEC 27002",
+note = "\\Guía de buenas prácticas que describe los objetivos de control
+y controles recomendables en cuanto a seguridad",
+year = 2009
+}
+
+@MISC{LOPD,
+title = "Agencia Española de Normalización",
+author = "Ley orgánica 15/1999 de Protección de Datos de Carácter Personal",
+note = "\\Se encarga de garantizar y proteger, en lo que concierne al
+tratamiento de los datos personales, las libertades públicas
+y los derechos fundamentales de las personas físicas y,
+especialmente, de su honor e intimidad personal y familiar",
+year = 1999
+}
+
+@MISC{rd994,
+title = "Agencia Española de Normalización",
+author = "Real Decreto 994",
+note = "\\A través de este Real Decreto se aprueba el Reglamento de medidas de seguridad de los ficheros automatizados que contengan datos de carácter personal",
+year = 1999
+}
+
+@MISC{MAGERIT,
+author = "MAGERIT versión 2",
+title = "Ministerio de Política Territorial y Administración Pública",
+note = "\\Método formal para investigar los riesgos que soportan los Sistemas de Información  y para recomendar las medidas apropiadas que deberían adoptarse para controlar estos riesgos",
+howpublished = "\\Accesible desde \url{http://administracionelectronica.gob.es/?_nfpb=true&_pageLabel=PAE_PG_CTT_General&langPae=es&iniciativa=184}"
+}
+
+@MISC{iso17799,
+title = "Agencia Española de Normalización",
+author = "Norma ISO-17799",
+note = "\\Guía de buenas prácticas para la seguridad de la información"
+}
+
+@MISC{une71501,
+title = "Agencia Española de Normalización",
+author = "Norma UNE 71501",
+note = "\\Guía para la gestión de la seguridad de las tecnologías de la información"
+}
+
+@MISC{apa-citations,
+  author = "Land, T.",
+  year = "1998",
+  title = "{Est\'{a}ndar para hacer referencia a documentos de red en publicaciones cient\'{i}ficas}",
+  howpublished = "\url{http://www2.udec.cl/~gnavarro/2000_2/weapas.html}"
+}
+
+@MISC{makebst,
+  author = "Daly, P. W.",
+  year = "2003",
+  title = "{Customizing Bibliographic Style Files}",
+  howpublished = "\url{http://www.ctex.org/documents/packages/bibref/makebst.pdf}"
+}
+
+@MISC{paslaboral,
+  author = "CCOO",
+  year = "2010",
+  title = "{Tablas salariales 2010 IV Convenio Colectivo}",
+  howpublished = "\url{http://www.uca.es/sindicato/ccoo/documentos/tabla-salarial-pas-laboral-2010.pdf}"
+}
+
+@article{hevner2004,
+author = {Hevner, Alan R and March, Salvatore T and Park, Jinsoo and Ram, Sudha},
+journal = {MIS Quarterly},
+number = {1},
+pages = {75--105},
+title = {{Design Science in Information Systems Research}},
+volume = {28},
+year = {2004}
+}

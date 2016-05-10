@@ -1,0 +1,125 @@
+\hypertarget{classgetNode}{\section{Referencia de la Clase get\-Node}
+\label{classgetNode}\index{get\-Node@{get\-Node}}
+}
+
+
+Nodo de acceso.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de get\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classgetNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgetNode_ae27f630984831b4d2d7185ac23736826}{get\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array, \hyperlink{classrunNode}{run\-Node} $\ast$key, bool \hyperlink{classnexpNode_a84b5403ba034c1e195c031e074384576}{resolv}=true)
+\item 
+void \hyperlink{classgetNode_a17b811df8eff8890188d21aeb817b11d}{run} ()
+\item 
+void \hyperlink{classgetNode_af0885fa5c30183deff1e1bd4d6d70419}{noderef} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classgetNode_a0930b35a0097ba831cd9cb3710f9f0b1}{set\-Function\-Call} ()
+\item 
+bool \hyperlink{classgetNode_a03a2278fda21fd1bf3ac1a122a86fbde}{get\-Function\-Call} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classgetNode_aabd5a9edf287c83bb86bd8f859feb1be}{get\-Key} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de acceso. 
+
+Obtiene una referencia concreta dentro de la tabla de símbolos interna de un nodo. Para ello se parte de una clave o índice.
+
+Los nodos sobre los que se le puede aplicar el operador de acceso son aquellos que representan arrays, cadenas, objetos o clases. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgetNode_ae27f630984831b4d2d7185ac23736826}{\index{get\-Node@{get\-Node}!get\-Node@{get\-Node}}
+\index{get\-Node@{get\-Node}!getNode@{get\-Node}}
+\subsubsection[{get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}get\-Node\-::get\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array, }
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{bool}]{resolv = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classgetNode_ae27f630984831b4d2d7185ac23736826}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que reresenta el elemento al que se accederá \\
+\hline
+{\em key} & Nodo que representa la clave que se usará \\
+\hline
+{\em resolv} & Indica si la clave debe ser resuelta para el acceso \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgetNode_a03a2278fda21fd1bf3ac1a122a86fbde}{\index{get\-Node@{get\-Node}!get\-Function\-Call@{get\-Function\-Call}}
+\index{get\-Function\-Call@{get\-Function\-Call}!getNode@{get\-Node}}
+\subsubsection[{get\-Function\-Call}]{\setlength{\rightskip}{0pt plus 5cm}bool get\-Node\-::get\-Function\-Call (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgetNode_a03a2278fda21fd1bf3ac1a122a86fbde}
+Obtiene si el nodo se ejecuta dentro del contexto de una llamada a función \begin{DoxyReturn}{Devuelve}
+Booleano que indica si el nodo se ejecuta en el contexto de una llamada a función 
+\end{DoxyReturn}
+\hypertarget{classgetNode_aabd5a9edf287c83bb86bd8f859feb1be}{\index{get\-Node@{get\-Node}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!getNode@{get\-Node}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ get\-Node\-::get\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgetNode_aabd5a9edf287c83bb86bd8f859feb1be}
+Obtiene el nodo que hace de clave \begin{DoxyReturn}{Devuelve}
+Nodo clave 
+\end{DoxyReturn}
+\hypertarget{classgetNode_af0885fa5c30183deff1e1bd4d6d70419}{\index{get\-Node@{get\-Node}!noderef@{noderef}}
+\index{noderef@{noderef}!getNode@{get\-Node}}
+\subsubsection[{noderef}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-::noderef (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode_af0885fa5c30183deff1e1bd4d6d70419}
+Método que cambia el valor de la referencia del nodo 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que representa el nuevo valor \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{nexp\-Node}.
+
+\hypertarget{classgetNode_a17b811df8eff8890188d21aeb817b11d}{\index{get\-Node@{get\-Node}!run@{run}}
+\index{run@{run}!getNode@{get\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode_a17b811df8eff8890188d21aeb817b11d}
+Método que ejecuta el nodo. Consiste en acceder a la referencia dada por la clave en el elemento. Si la clave no existe se toma una referencia a un nodo nulo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classgetNode_a0930b35a0097ba831cd9cb3710f9f0b1}{\index{get\-Node@{get\-Node}!set\-Function\-Call@{set\-Function\-Call}}
+\index{set\-Function\-Call@{set\-Function\-Call}!getNode@{get\-Node}}
+\subsubsection[{set\-Function\-Call}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-::set\-Function\-Call (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classgetNode_a0930b35a0097ba831cd9cb3710f9f0b1}
+Establece que el nodo se encuentra dentro del contexto de una llamada a función 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

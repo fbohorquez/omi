@@ -1,0 +1,573 @@
+#!/usr/local/bin/omi
+#include "arrays.lsh";
+#-----------------------------------------------------------------------
+<< "#declaraciones de funciones";
+#-----------------------------------------------------------------------
+<< "#empty_fun(){}";
+~empty_fun () {a;}  
+#-----------------------------------------------------------------------
+<< "#empty_fun(a){}";
+~empty_fun (a) {}  
+#-----------------------------------------------------------------------
+<< "#min(aa, bb)";
+~min(aa, bb){
+   datinfo bb;
+	if (aa < bb){
+      << "A es menor que B";
+		return aa;
+	}else {
+      << "B es menor que A";
+		return bb;
+	}
+    << "NI UNO NI OTRO" . aa . bb . (int (aa < bb));
+}
+#-----------------------------------------------------------------------
+<< "#max(aaa,bbb)";
+~max(aaa, bbb){
+	if (aaa > bbb){
+		return aaa;
+	}else {
+		return bbb;
+	}
+}
+<< "<<<<";
+#-----------------------------------------------------------------------
+<< "#array (a, b)";
+~array(a, b){
+	resp = {};
+	for (i = 0; i < a; i++){
+		resp[] = b;
+	}
+	<< resp;
+	return resp;
+}
+#-----------------------------------------------------------------------
+<< "#exa(a,b)";
+~exa(a,b){
+	<< min(a,b);
+	if ( min(a,b) == max(a,b)){
+		return a." = ".b;
+	}
+	return a." != ".b;
+}
+#-----------------------------------------------------------------------
+<< "#sum (a, b)";
+~sum (a, b) {
+	a = a + b;
+	return a;
+}
+#-----------------------------------------------------------------------
+<< "#sum_ref (&a, b)";
+~sum_ref (a, b){
+   << "_______";
+	a = a + b;
+	b = a;
+	return a;
+}
+#-----------------------------------------------------------------------
+<< "#identity (a)";
+~identity (a){
+  return a;
+}
+#-----------------------------------------------------------------------
+<< "#way0 => way1()";
+~way1 () {
+  return "Funciones anidadas";
+  
+}
+~way0 () {
+  return way1();
+} 
+#-----------------------------------------------------------------------
+<< "#recursive (val)";
+~recursive (val) {
+   << val;
+  if (val != 1){
+    << "Llamada recursiva".val;
+    return ~> (val - 1) + 2;
+  }else{
+    << "Fin de ejecución recuriva";
+    return 0;
+  }
+}
+#-----------------------------------------------------------------------
+<< "#sum_array(a)";
+~sum_array (a) {
+  n = size(a);
+  sum = 0;
+ 
+  for (i = 0; i < n; i ++) {
+    sum += a[i];
+  }
+  
+  a[] = sum;
+   
+  return sum;
+}
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
+<< "#sum_array_ref(&a)";
+~sum_array_ref (&a) {
+  n = size(a);
+  sum = 0;
+  for (i = 0; i < n; i ++) {
+    sum += a[i];
+  }
+  a[] = sum;
+  
+  return sum;
+}
+#-----------------------------------------------------------------------
+#~ << "#Llamadas a funciones";
+#~ a = "El mínimo de 4 y 6 es ".min(6,4);
+#~ << a;
+#~ b = "El máximo de 4 y 6 es ".max(6,4);
+#~ << b;
+#~ << "array de 4 elementos completados con valor 6~";
+#~ array(4,6);
+#~ << exa(a,b);
+#~ << exa(3,3);
+#~ << identity (2);
+#~ << "#funciones y expresiones";
+#~ << "6 + 4 = ".(max(6,4) + min (4,5));
+#~ << "#Paso de parámetros";
+#~ op1 = 10;
+#~ op2 = 20;
+#~ << sum(4, 5);
+#~ << op1;
+#~ << op2;
+#~ <<  "AAAAAAAAAA";
+#~ << sum_ref (op1, op2);
+#~ << op1; 
+#~ << op2; 
+#~ << sum (max(3,2), min(3,2));
+<< "=============================================================================================================================" ;
+#~ << sum(sum (max(3,2), min(3,2)), min(min(8,6),5));
+<< min(min(8,6),5);
+<< "=============================================================================================================================" ;
+#<< http@protocol;
+<< "#funciones anidadas";
+<< way0 ();
+<< recursive (6);
+<< "#funciones como variables";
+in_var = ~() {
+  return 'Esto es una funcion asignada a una variable';
+};
+aux = in_var ();
+#~ 
+<< aux;
+in_var2 = in_var;
+<< in_var2();
+<< str_replace(in_var2(), `funcion `, 'funcion en variable ');
+<< "#funciones en arrays";
+in_var = ~() {return "Esto son dos funciones ";};
+in_array = { 'function0' : in_var, 'function1' :~() { return "en un Array"; } };
+<< in_array->function0();
+<< sprintf("%s%s", in_array['function0'](), in_array['function1']());
+a = {'a' : 5, 'b' : 7};
+<< a;
+a = { 
+  ~(a, b) { return a + b; },
+  ~(a, b) { return a - b; },
+  ~(a, b) { return a * b; },
+  ~(a, b) { return a / b; }
+};
+#~ 
+<< a[0](8, 2);
+<< a[1](8, 2);
+<< a[2](8, 2);
+<< a[3](8, 2);
+#~ 
+a = {'a' : 5, 'b' : 7,};
+<< a;
+a = { 
+  'sum':~(a, b) { 
+    return a + b; 
+  },
+  'res':~(a, b) { 
+    return a - b; 
+  },
+  'mul':~(a, b) { 
+    return a * b; 
+  },
+  'div':~(a, b) { 
+    return a / b; 
+  }
+};
+<< a['sum'](8, 2);
+<< a['res'](8, 2);
+<< a['mul'](8, 2);
+<< a['div'](8, 2);
+<< "#Funciones como parámetros";
+fun1 = ~() {  return 'Invocando fun1'; };
+fun2 = ~() {  return 'Invocando fun2'; };
+funA = ~(f) {
+  return f(); 
+};
+funB = ~(f) {
+  f = "Asignación sobre parametro función por valor";
+  return f;
+};
+funC = ~(&f) {
+  f = "Asignación sobre parametro función por referencia";
+  return f;
+};
+funD = ~(&f) {
+  
+  f = ~() { << "Función sobrescrita dentro de otra"; };
+};
+funE = ~() {
+  return ~() { return "Devolviendo una función";};
+};
+<< funA(fun1);
+<< funA(fun2);
+<< funB(fun1);
+#~ 
+<< fun1();
+<< funC(fun1);
+<< "ERROR [";
+<< fun1();
+<< "]";
+<< fun1;
+
+funD (fun2);
+#~ 
+fun2();
+<< "#return de función como llamada a funcion";
+fun3 = funE();
+<< fun3();
+fun4 =~(){return "Funcion como parámetro de una funcioón que devuelve una función que es ejecutada";};
+<< identity(fun4)();
+<< "#Variables globales";
+global g_var;
+g_var = 2;
+<< "Antes: ".g_var;
+~g_fun () {
+  g_var = 4;
+  << "Durante: ".g_var;
+}
+g_fun();
+<< "Después: ".g_var;
+<< "Aún más tarde: ".(g_var = 6);
+global g;
+~g_fun2 (only_ini) {
+  
+  << "Valor inicial: ".g;
+  if (only_ini) {
+    return 0;
+  }
+  << "Global dentro de función: ".(g = 2);
+  g_fun3();
+  << "AAAA";
+}
+~g_fun3() {
+  << "Valor en segunda función: ".g;
+  << "Cambio en segunda función: ".(g = 3);
+}
+g_fun2(false);
+<< "------";
+<< "AAAA".g;
+
+
+#~ datInfo (g);
+
+
+#~ << "Valor en el primer nivel: ".g;
+g = 4;
+#~ << "_______";
+g_fun2(true);
+#~ << "________";
+<< "#Paso de valores constantes como parámetros referenciados";
+<< "AAAAAXXXXXXXXxAAAAAA";
+<< sum_ref;
+<< sum_ref (max(2,5), max(1,44));
+<< "BBBBBBBBBBBBBBB";
+<< "Arrays como parámetros";
+a = {2,3};
+<< sum_array (a);
+<< a;
+<< sum_array ({3,3,3});
+<< sum_array ({});
+<< sum_array_ref (a);
+<< a;
+<< sum(a[0], a[1]);
+<< "#Parámetros con valores por defecto";
+~p_fun0 (p0 = 6, p1= 5) {
+  << p0." - ".p1;
+}
+~p_fun1 (p0 = 2, p1= 1) {
+  << p0." x ".p1;
+  p_fun0 ();
+}
+p_fun0 (9);
+p_fun0 (2,2);
+p_fun0 ();
+<< p0;
+p_fun1 (); 
+#~ << identity(8);
+p_fun1 (identity(8));
+
+<< "Objetos como arrays";
+var_inicializada = 'op1';
+a = { 
+  ~sum(a, b) { 
+    return a + b; 
+  },
+  ~res(a, b) { 
+     
+    return a - b; 
+  },
+  'mul':~(a, b) { 
+    return a * b; 
+  },
+  div:~(a, b) { 
+    return a / b; 
+  },
+  var_sin_inicializar:8,
+  var_inicializada:99,
+};
+
+b = { 
+  ~sum(a, b = 2) { 
+    return b + a; 
+  },
+  ~res (a, b = 2) { 
+     
+    return b - a; 
+  },
+  ~mul(a, b = 2) { 
+    return b * a; 
+  },
+  ~div(a, b = 2) { 
+    return b / a; 
+  },
+  var_sin_inicializar:8,
+  var_inicializada:0,
+  'hystorics': {
+    {
+      'entrada': {
+        'calcular':~(){
+          return "Entrada";
+        }
+      }
+    }
+  },
+};
+<< b['hystorics'][0]['entrada']['calcular']();
+fun1 = ~(a, b, f){
+  return f['res'](a,b);
+};
+#~ 
+<< fun1(2,3,a);
+<< fun1(2,3,b);
+<< a['var_sin_inicializar'];
+a['var_sin_inicializar'] = 5;
+<< a['var_sin_inicializar'];
+<< a['var_inicializada'];
+<< a['op1'];
+<< "funciones globales y locales";
+global p_;
+p_ = "global global";
+~global_ () {
+  << p_;
+}
+global_ =  {
+    ~global_ () {
+      << "global_ local ";
+    }
+};
+global_aux = {
+  ~global_ () {
+    << "global_ local aux";
+  }
+};
+global_();
+global_['global_']();
+global_aux['global_']();
+<< "<<<<<<<<<<<<<<<<<<<";
+#~ 
+example = { example_param : 2 };
+<< example ['example_param'];
+#~ 
+<< "Método de impresión";
+printable_mth = {
+  ~_str () {
+    return "Soy un objeto dibujable según un método";
+  }
+};
+printable_atr = {
+  _str :  "Soy un objeto dibujable según un atributo"
+};
+no_printable = {
+  str :  "No soy dibujable"
+};
+echo global_aux;
+<< "¿Quién soy? ".printable_mth;
+<< "¿Quién soy? ".printable_atr;
+<< "ERROR [";
+<< "¿Quién soy? ".no_printable;
+<< "]";
+#~ 
+<< "Funciones lambda";
+a = ~x,y:x+y;
+a = ~ (x, y) { return x + y; };
+<< a(2,4);
+<< (~x,y:x*y)(2,5);
+n = 40;
+a = n < 400  && (~x,y=2:x*y) || (~x,y=1:x+y);
+<< a(5,10);
+<< a(7);
+#~ 
+<< "#Operador conversor a cadena <~~~~ Implementar";
+<< "#Sobrecarga size";
+<< "#Sobrecarga operador de flujo << ";
+<< "#Utilizar elementos de array de forma local";
+<< "#Sobre carga: class A {}, A = {} ";
+echo k['k'];
+#~ 
+<< "Currificación:";
+~ sumc (x) {
+	return ~(y) { 
+      return x + y; 
+	};
+}
+inc4 = sumc (4);
+<< inc4 (2);
+#~ 
+~ contenido1 (y) {
+	<< "Soy el contenido 1: ".y;
+}
+#~ 
+contenido2 = ~ (y) {
+	<< "Soy el contenido 2: ".y;
+};
+
+~ decorado (x) {
+   << "PPPPPPPPPPP";
+	return ~(y) {
+		<< "Esto es la cabecera de ".y; 
+		x (y); 
+		<< "Esto es el pie de ".y;
+	};
+}
+#~ 
+<< "#Decoradores";
+dc1 = decorado (~&contenido1);
+dc1("CHIPI WAY");
+<< "______----";
+decorado (contenido2)("CHIPI MOLON");
+<< "______----";
+~~ decorar(y) {
+	<< "Esto es la cabecera decorador";
+	~>(y);
+	<< "Esto es el pie decorador";
+}
+#~ 
+#~ 
+decorar (contenido2) ("CHIPI WAY");
+#~ 
+#~ 
+<< "#Todo es un objeto"; #Llevar a testing de clases
+~ pow (x, y) {
+	if (y != 0){
+      a = ~>(x, y - 1);
+		return x * a;
+	}else{ 
+		return 1;
+   }
+}
+#~ 
+<< pow (2,4);
+a = {
+	'exp' : ~ (exp) {
+		return {
+			'beta' : exp
+		};
+	}
+};
+a2 = {
+	{10,9},
+	{10,9}
+};
+<< a->exp("PPP")->beta;
+<< a2[0][1];
+<< "A1|A2xB1|B2xC1|C2"->explode("x");
+<< "A1|A2xB1|B2xC1|C2"->explode("x")[0]->explode("|");
+a = "A1|A2xB1|B2xC1|C2";
+<< a->explode("x")[0]->explode("|");
+func = a->explode;
+<< "_------";
+<< func("x");
+<< "_------";
+<< {1,2,3,4}->implode(",");
+
+
+<< "#Aplicación parcial";
+~ concatComplete (a, b, c) {
+   return a . b . c;
+}
+#~ 
+aux = ~&concatComplete;
+#~ 
+concatPartial = P[b = "B", a = "A"] concatComplete;
+<< concatPartial("C");
+#~ 
+<< (P[b = "B", a = "A"] concatComplete) ("C");
+<< (P[b = "B", a = "A"] ~ (a, b, c) { return a . b . c; }) ("C");
+<< (P[b = "B"] aux) ("A", "C");
+<< (P[c = "C"] aux) ("A", "B");
+<< (P[b = "B", a = "A"] ~ a, b, c: a . b . c) ("C");
+#~ 
+<< [c = "C", b = "B", a = "A"] concatComplete;
+<< [c = "C", b = "B", a = "A"] aux;
+<< [c = "C", b = "B", a = "A"] ~ (a, b, c) { return a . b . c; };
+<< [c = "C", b = "B", a = "A"] ~ a, b, c: a . b . c;
+
+#~ a = {1,2,3};
+#~ << a[1];
+#~ 
+with_var = {
+   ~method() {
+      << "JAJAJA";
+   }
+}; //<<< FALLA AQUI
+#~ 
+with (with_var) {
+   method ();
+}
+<< "ERROR[";
+method ();
+<< "]";
+with_var->method();
+#~ 
+with "AxAxA" {
+   << explode ("x");
+}
+
+<< str_explode ("AxAxA", "x");
+
+#~ 
+#~ omi |> a[0][0] = 1
+#~ omi |> a[0][1] = 2
+#~ omi |> a[1] = 10
+#~ omi |> << a;
+#~ [0] => {
+	#~ [0] => 1
+	#~ [1] => 2
+#~ }
+#~ [1] => 10
+#~ omi |> b = a;
+#~ omi |> datinfo a[0]
+#~ ptr(0x1284340), type(Array (2)), refs(1)
+#~ omi |> datinfo b[0]
+#~ ptr(0x1284340), type(Array (2)), refs(1)
+#~ omi |> b[0] = 10;
+#~ omi |> datinfo b[0]
+#~ ptr(0x1286430), type(Arithmetic: 10), refs(1)
+#~ omi |> datinfo a[0]
+#~ Violación de segmento

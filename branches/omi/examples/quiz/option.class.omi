@@ -1,0 +1,11 @@
+#option.class.omi
+#=======================================================================
+class Option {
+   title = "";
+   correct = "";
+   ~ Option (title, correct){
+      this->title = title;
+      this->correct = correct;
+   }
+}
+#=======================================================================

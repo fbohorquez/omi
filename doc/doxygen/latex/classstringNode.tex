@@ -1,0 +1,224 @@
+\hypertarget{classstringNode}{\section{Referencia de la Clase string\-Node}
+\label{classstringNode}\index{string\-Node@{string\-Node}}
+}
+
+
+Nodos cadenas de texto.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de string\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classstringNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classstringNode_a28cd0e5daa43661788e8f0660140991a}{print} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classstringNode_a74056d81ccff202bb0b9937b35754bac}{nodeval} () const 
+\item 
+string \hyperlink{classstringNode_adbc47d59c690cbd5a231d9a44384e1ba}{strvalue} () const 
+\item 
+string $\ast$ \hyperlink{classstringNode_a75852c89ba104d54a86a821ff3ddf226}{strref} ()
+\item 
+num \hyperlink{classstringNode_ae66cab7ddc65acc8541d88baaebf47fb}{numvalue} () const 
+\item 
+bool \hyperlink{classstringNode_a4d9cd113086d5599cbd895da5b2cfb7d}{is\-\_\-numvalue} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classstringNode_a9677c9a0529af401efad50376c7f0a78}{get\-Class} ()
+\item 
+void \hyperlink{classstringNode_a3671dc0b4f5b6a91306095338bd0010b}{set\-Str\-Value} (string s)
+\item 
+void \hyperlink{classstringNode_af8d6ed0d5b9be3db1c7be9a905c25f67}{set\-Node\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+bool \hyperlink{classstringNode_ae1fe6ea419679a0a0402beb47fabcea2}{boolvalue} () const 
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classstringNode_ae2758536a67c5d8de820331945f2d1fd}{to\-\_\-str} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+static void \hyperlink{classstringNode_a41104e730bd5bf34b46c227d0cf5e0d9}{generate\-Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classstringNode_a12b6d153d3484e73282fd4b939546e8b}{strvalue\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodos cadenas de texto. 
+
+Los nodos cadenas tienen un valor texto asociado.
+
+Todo nodo cadena está asociado al nodo clase \char`\"{}string\-Class\char`\"{}. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classstringNode_ae1fe6ea419679a0a0402beb47fabcea2}{\index{string\-Node@{string\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!stringNode@{string\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool string\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_ae1fe6ea419679a0a0402beb47fabcea2}
+Obtiene el valor booleano del nodo. \begin{DoxyReturn}{Devuelve}
+Booleano que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{dexp\-Node}.
+
+\hypertarget{classstringNode_a41104e730bd5bf34b46c227d0cf5e0d9}{\index{string\-Node@{string\-Node}!generate\-Class@{generate\-Class}}
+\index{generate\-Class@{generate\-Class}!stringNode@{string\-Node}}
+\subsubsection[{generate\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void string\-Node\-::generate\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classstringNode_a41104e730bd5bf34b46c227d0cf5e0d9}
+Genera la clase \char`\"{}string\-Class\char`\"{} asociada a toda cadena de caracteres. \hypertarget{classstringNode_a9677c9a0529af401efad50376c7f0a78}{\index{string\-Node@{string\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!stringNode@{string\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ string\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_a9677c9a0529af401efad50376c7f0a78}
+Obtiene el nodo clase asociado a los nodos cadenas de caracteres. \begin{DoxyReturn}{Devuelve}
+Nodo clase. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{object\-Type\-Node}.
+
+\hypertarget{classstringNode_a4d9cd113086d5599cbd895da5b2cfb7d}{\index{string\-Node@{string\-Node}!is\-\_\-numvalue@{is\-\_\-numvalue}}
+\index{is\-\_\-numvalue@{is\-\_\-numvalue}!stringNode@{string\-Node}}
+\subsubsection[{is\-\_\-numvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool string\-Node\-::is\-\_\-numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classstringNode_a4d9cd113086d5599cbd895da5b2cfb7d}
+Comprueba si la cadena de caracteres representa un número. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la cadena es numérica. 
+\end{DoxyReturn}
+\hypertarget{classstringNode_a74056d81ccff202bb0b9937b35754bac}{\index{string\-Node@{string\-Node}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!stringNode@{string\-Node}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ string\-Node\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classstringNode_a74056d81ccff202bb0b9937b35754bac}
+Método que devuelve un nodo de tipo cadena de caracteres con el mismo valor del nodo. \begin{DoxyReturn}{Devuelve}
+Nodo cadena de caracteres. 
+\end{DoxyReturn}
+\hypertarget{classstringNode_ae66cab7ddc65acc8541d88baaebf47fb}{\index{string\-Node@{string\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!stringNode@{string\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num string\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_ae66cab7ddc65acc8541d88baaebf47fb}
+Método que obtiene el valor numérico del string. Si el string es un número devuelve su valor, en caso contrario devuelve 0.
+
+print \char`\"{}3\char`\"{} + 8 \#11 print 4 -\/ \char`\"{}str\char`\"{} \#0 
+
+Reimplementado de \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{dexp\-Node}.
+
+\hypertarget{classstringNode_a28cd0e5daa43661788e8f0660140991a}{\index{string\-Node@{string\-Node}!print@{print}}
+\index{print@{print}!stringNode@{string\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string string\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_a28cd0e5daa43661788e8f0660140991a}
+Devuelve la cadena asociada al nodo. \begin{DoxyReturn}{Devuelve}
+Cadena de caracteres que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classstringNode_af8d6ed0d5b9be3db1c7be9a905c25f67}{\index{string\-Node@{string\-Node}!set\-Node\-Value@{set\-Node\-Value}}
+\index{set\-Node\-Value@{set\-Node\-Value}!stringNode@{string\-Node}}
+\subsubsection[{set\-Node\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void string\-Node\-::set\-Node\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_af8d6ed0d5b9be3db1c7be9a905c25f67}
+Establece el valor de la cadena de caracteres interna a partir de un nodo ejecutable. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que representa la cadena de caracteres que se establecerá como valor. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classexpNode_aedb96104889212bae315a6381f8e0219}{exp\-Node}.
+
+\hypertarget{classstringNode_a3671dc0b4f5b6a91306095338bd0010b}{\index{string\-Node@{string\-Node}!set\-Str\-Value@{set\-Str\-Value}}
+\index{set\-Str\-Value@{set\-Str\-Value}!stringNode@{string\-Node}}
+\subsubsection[{set\-Str\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void string\-Node\-::set\-Str\-Value (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{classstringNode_a3671dc0b4f5b6a91306095338bd0010b}
+Establece el valor de la cadena de caracteres interna. 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Cadena que se establecerá como valor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classstringNode_a75852c89ba104d54a86a821ff3ddf226}{\index{string\-Node@{string\-Node}!strref@{strref}}
+\index{strref@{strref}!stringNode@{string\-Node}}
+\subsubsection[{strref}]{\setlength{\rightskip}{0pt plus 5cm}string $\ast$ string\-Node\-::strref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classstringNode_a75852c89ba104d54a86a821ff3ddf226}
+Método modificador que devuelve una referencia al valor string del nodo. \begin{DoxyReturn}{Devuelve}
+Referencia al valor texto del nodo. 
+\end{DoxyReturn}
+\hypertarget{classstringNode_adbc47d59c690cbd5a231d9a44384e1ba}{\index{string\-Node@{string\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!stringNode@{string\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string string\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstringNode_adbc47d59c690cbd5a231d9a44384e1ba}
+Método observador que devuelve el valor string del nodo. \begin{DoxyReturn}{Devuelve}
+Valor textual del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{dexp\-Node}.
+
+\hypertarget{classstringNode_ae2758536a67c5d8de820331945f2d1fd}{\index{string\-Node@{string\-Node}!to\-\_\-str@{to\-\_\-str}}
+\index{to\-\_\-str@{to\-\_\-str}!stringNode@{string\-Node}}
+\subsubsection[{to\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}string string\-Node\-::to\-\_\-str (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classstringNode_ae2758536a67c5d8de820331945f2d1fd}
+Convierte un nodo a una cadena de caracteres. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a convertir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Cadena de caracteres. 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classstringNode_a12b6d153d3484e73282fd4b939546e8b}{\index{string\-Node@{string\-Node}!strvalue\-\_\-@{strvalue\-\_\-}}
+\index{strvalue\-\_\-@{strvalue\-\_\-}!stringNode@{string\-Node}}
+\subsubsection[{strvalue\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string string\-Node\-::strvalue\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classstringNode_a12b6d153d3484e73282fd4b939546e8b}
+Atributo que representa el valor texto del nodo. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

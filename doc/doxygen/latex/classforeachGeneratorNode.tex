@@ -1,0 +1,102 @@
+\hypertarget{classforeachGeneratorNode}{\section{Referencia de la Clase foreach\-Generator\-Node}
+\label{classforeachGeneratorNode}\index{foreach\-Generator\-Node@{foreach\-Generator\-Node}}
+}
+
+
+Nodo para la lista por compresión.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de foreach\-Generator\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classforeachGeneratorNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classforeachGeneratorNode_af80083b17f10891c36164b3a07118736}{foreach\-Generator\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$elem, \hyperlink{classrunNode}{run\-Node} $\ast$val, \hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$rb, \hyperlink{classrunNode}{run\-Node} $\ast$key=N\-U\-L\-L, \hyperlink{classrunNode}{run\-Node} $\ast$if\-\_\-cond=N\-U\-L\-L, \hyperlink{classrunNode}{run\-Node} $\ast$elem\-\_\-key=N\-U\-L\-L)
+\item 
+void \hyperlink{classforeachGeneratorNode_a2769b5956850366b99fa9f9d0e89ec37}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo para la lista por compresión. 
+
+Representa una expresión cuyo valor es obtenido a partir de una sentencia iterativa.
+
+La forma más simple de crear una lista por compresión es mediante una expresión de generación y una variable que iterará sobre una expresión conjunto. En cada iteración la variable iteradora tomará un valor del conjunto. Para cada elemento se calculará el valor de la expresión generadora, la cual normalmente contendrá la variable iteradora, y será introducido en un array que será tomado como valor.
+
+El conjunto sobre el que se itera dependerá del tipo de dato obtenido al evaluar la expresión conjunto\-:
+\begin{DoxyItemize}
+\item Booleano\-: Se itera hasta que se evalúa como falso. En cada iteración se asigna el entero correspondiente al número de la misma.
+\item Numérico\-: Si es positivo se itera desde cero hasta el valor sin incluirlo. Si es negativo no se itera.
+\item Cadena de caracteres\-: Se itera por cada carácter en la cadena.
+\item Array\-: Se itera por cada elemento en el array.
+\end{DoxyItemize}
+
+Es posible filtrar los datos que serán incluidos en el array, añadiendo una condición que se deba cumplir.
+
+También se puede especificar una identificador que guarde la clave de la referencia del elemento iterado.
+
+El array resultado puede ser generado mediante la expresión de generación y otra expresión que se corresponda con la clave del elemento creado.
+
+Antes de generar el elemento del array que se tomará como valor es posible ejecutar un bloque de sentencias. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classforeachGeneratorNode_af80083b17f10891c36164b3a07118736}{\index{foreach\-Generator\-Node@{foreach\-Generator\-Node}!foreach\-Generator\-Node@{foreach\-Generator\-Node}}
+\index{foreach\-Generator\-Node@{foreach\-Generator\-Node}!foreachGeneratorNode@{foreach\-Generator\-Node}}
+\subsubsection[{foreach\-Generator\-Node}]{\setlength{\rightskip}{0pt plus 5cm}foreach\-Generator\-Node\-::foreach\-Generator\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{elem, }
+\item[{{\bf run\-Node} $\ast$}]{val, }
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{rb, }
+\item[{{\bf run\-Node} $\ast$}]{key = {\ttfamily NULL}, }
+\item[{{\bf run\-Node} $\ast$}]{if\-\_\-cond = {\ttfamily NULL}, }
+\item[{{\bf run\-Node} $\ast$}]{elem\-\_\-key = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classforeachGeneratorNode_af80083b17f10891c36164b3a07118736}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Nodo que representa el conjunto de elementos. \\
+\hline
+{\em val} & Nodo que hace de identificador para el valor de cada iteración. \\
+\hline
+{\em exp} & Nodo que hace de expresión generadora. \\
+\hline
+{\em rb} & Nodo que representa el bloque de sentencias que será ejecutada en cada iteración. \\
+\hline
+{\em key} & Nodo que hace de identificador para la clave de cada itereación. \\
+\hline
+{\em if\-\_\-cond} & Nodo que hace de condición para que se lleve a cabo la insercción de los elementos de la iteración. \\
+\hline
+{\em elem\-\_\-key} & Nodo que representa la expresión generadora de la clave del elemento en la iteración. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classforeachGeneratorNode_a2769b5956850366b99fa9f9d0e89ec37}{\index{foreach\-Generator\-Node@{foreach\-Generator\-Node}!run@{run}}
+\index{run@{run}!foreachGeneratorNode@{foreach\-Generator\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void foreach\-Generator\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classforeachGeneratorNode_a2769b5956850366b99fa9f9d0e89ec37}
+Método que lleva a cabo la ejecución del modo. Toma como valor el array generado de forma iterativa. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

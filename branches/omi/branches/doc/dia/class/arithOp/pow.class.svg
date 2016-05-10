@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="12cm" height="12cm" viewBox="170 135 224 223" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="156" width="222" height="200.8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="156" width="222" height="200.8"/>
+    <rect style="fill: #ffffff" x="172" y="136" width="42.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="136" width="42.5" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="151"> pow </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="182.9" y="246.4" width="99.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="182.9" y="246.4" width="99.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="232.875" y="265.4">arithNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="232.7,220.636 232.7,232.4 232.875,232.4 232.875,246.4 "/>
+    <polygon style="fill: #ffffff" points="240.7,220.636 232.7,204.636 224.7,220.636 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="240.7,220.636 232.7,204.636 224.7,220.636 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="189" y="174.4" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="174.4" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="232.7" y="193.4">runNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="305.122,313.6 323,313.6 323,202.4 276.4,202.4 "/>
+    <polygon style="fill: #ffffff" points="279.95,313.6 293.95,308.8 307.95,313.6 293.95,318.4 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="279.95,313.6 293.95,308.8 307.95,313.6 293.95,318.4 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="325" y="255">op1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="311.95" y="310.6"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="280.4" y="199.4">1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="186" y="313.6" width="93.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="186" y="313.6" width="93.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="232.975" y="332.6">powNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="232.875,292.636 232.875,302 232.975,302 232.975,313.6 "/>
+    <polygon style="fill: #ffffff" points="240.875,292.636 232.875,276.636 224.875,292.636 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="240.875,292.636 232.875,276.636 224.875,292.636 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="305.122,327.6 359,327.6 359,188.4 276.4,188.4 "/>
+    <polygon style="fill: #ffffff" points="279.95,327.6 293.95,322.8 307.95,327.6 293.95,332.4 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="279.95,327.6 293.95,322.8 307.95,327.6 293.95,332.4 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="361" y="255">op2</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="311.95" y="324.6"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="280.4" y="185.4">1</text>
+  </g>
+</svg>

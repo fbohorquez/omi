@@ -1,0 +1,40 @@
+<div id="container">
+<div class="border">
+<div class="border-2">
+   <div id="content">
+      <div class="row">
+         <div class="col">
+            <p>OMI es un lenguaje de programación creado para ayudar en el estudio de la teoría de autómatas y los lenguajes formales. Utiliza los conceptos y recursos definidos en estas 
+            materias en la aplicación práctica mediante la creación de un interprete. </p>
+            <p>OMI es un interprete abierto y libre, totalmente disponible para su uso, modificación o distribución.</p>
+            <p>OMI es un intérprete modular. Su funcionalidad y características pueden ser extendida mediante módulos.</p>
+         </div>
+         <div class="col">
+            <div id="diagram">
+               <img src="<?=URL?>src/images/diagram.png" style="height: 150px;" />
+               <div id="diagram-gradient"></div>
+            </div>
+            
+         </div>
+      </div>
+      <div class="row">
+         <div class="col">
+            <h1>Noticias</h1>
+            <p>OMI es un lenguaje de programación creado para ayudar en el estudio de la teoría de autómatas y los lenguajes formales. Utiliza los conceptos y recursos definidos en estas 
+            materias en la aplicación práctica mediante la creación de un interprete. </p>
+            <p>OMI es un interprete abierto y libre, totalmente disponible para su uso, modificación o distribución.</p>
+            <p>OMI es un intérprete modular. Su funcionalidad y características pueden ser extendida mediante módulos.</p>
+         </div>
+         <div class="col">
+            <h1>Descargas</h1>
+            <p>OMI es un lenguaje de programación creado para ayudar en el estudio de la teoría de autómatas y los lenguajes formales. Utiliza los conceptos y recursos definidos en estas 
+            materias en la aplicación práctica mediante la creación de un interprete. </p>
+            <p>OMI es un interprete abierto y libre, totalmente disponible para su uso, modificación o distribución.</p>
+            <p>OMI es un intérprete modular. Su funcionalidad y características pueden ser extendida mediante módulos.</p>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<div class="clear"></div>
+</div>

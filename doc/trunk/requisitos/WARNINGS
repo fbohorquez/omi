@@ -1,0 +1,18 @@
+No implementation found for style `fancyhdr'
+No implementation found for style `dsfont'
+No implementation found for style `graphicx'
+No implementation found for style `listings'
+No implementation found for style `placeins'
+No implementation found for style `framed'
+No implementation found for style `titlesec'
+No implementation found for style `amsthm'
+No implementation found for style `fancybox'
+No implementation found for style `fontenc'
+No implementation found for style `geometry'
+No implementation found for style `hyperref'
+No implementation found for style `tikz'
+No implementation found for style `etoolbox'
+No implementation found for style `titletoc'
+
+? brace missing for \paragraph
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/requisitos/./logo-doc.png to tree: 

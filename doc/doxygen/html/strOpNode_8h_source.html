@@ -1,0 +1,378 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_3d2a09a3943fe18c0a3426b22a84d239.html">operators</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">strOpNode.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="strOpNode_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//srrOpNode.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef _RUN_OPERATORS_STROPNODE_</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_OPERATORS_STROPNODE_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../tree/typeNode.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classcatNode.html">   61</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classcatNode.html">catNode</a> :</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <a class="code" href="classcatNode.html#a1ea19392b499f9383534fd26ccc9a6c8">catNode</a> (<a class="code" href="classrunNode.html">runNode</a>* node1, <a class="code" href="classrunNode.html">runNode</a>* node2, <span class="keywordtype">bool</span> newline = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classcatNode.html#af6735016b3cb2477a94de79d7e1e1c62">run</a> ();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="classcatNode.html#ae861e45f75270c8ba63e9bffd6bb7806">do_cat</a> (<a class="code" href="classrunNode.html">runNode</a> *op1, <a class="code" href="classrunNode.html">runNode</a> *op2, <span class="keywordtype">bool</span> newline = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *node1_, *node2_;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   <span class="keywordtype">bool</span> newline_;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classexplodeNode.html">  107</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classexplodeNode.html">explodeNode</a> : <span class="keyword">public</span> <a class="code" href="classnexpNode.html">nexpNode</a> {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;   <a class="code" href="classexplodeNode.html#a90c920b30840535e2ad7c27913e91f7c">explodeNode</a> (<a class="code" href="classrunNode.html">runNode</a>* substr, <a class="code" href="classrunNode.html">runNode</a>* str);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classexplodeNode.html#a1bb7df027458cb1e63d5b0898540b114">run</a> ();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classexplodeNode.html#aea0516f602785514e0a709b4f0867774">asMethod</a> ();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *substr_, *str_;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> **ref_;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classsprintfNode.html">  176</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classsprintfNode.html">sprintfNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;   <a class="code" href="classsprintfNode.html#ac4cf673616622fb93d647cf3c05e68aa">sprintfNode</a> (<a class="code" href="classrunNode.html">runNode</a>* list);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classsprintfNode.html#ad572656a67da5d4df98bce0eeb2affd5">run</a> ();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *list_;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classfindNode.html">  214</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classfindNode.html">findNode</a> : <span class="keyword">public</span> <a class="code" href="classarithNode.html">arithNode</a> {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;   <a class="code" href="classfindNode.html#ac09b97ca401c04472c4da0fd277bdcc9">findNode</a> (<a class="code" href="classrunNode.html">runNode</a>* cad, <a class="code" href="classrunNode.html">runNode</a> *subcad, <a class="code" href="classrunNode.html">runNode</a>* ini_pos);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classfindNode.html#a50ac36a34f93eb0facbd1b3c240bffc6">run</a> ();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classfindNode.html#a6d65e85c3ee20fa14e240932dab11aa6">asMethod</a> ();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *cad_, *ini_pos_, *subcad_;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;};</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="classreplaceNode.html">  271</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classreplaceNode.html">replaceNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;   <a class="code" href="classreplaceNode.html#a0a8599660f34e20c1dffdc4dba61ed84">replaceNode</a> (<a class="code" href="classrunNode.html">runNode</a>* search, <a class="code" href="classrunNode.html">runNode</a> *replace, <a class="code" href="classrunNode.html">runNode</a> *cad, <a class="code" href="classrunNode.html">runNode</a>* num_replace);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classreplaceNode.html#a1bf20f6a4f26f339050837fce45ede44">run</a> ();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classreplaceNode.html#aa464dc5a26255e2bf4792f751fb1cd35">asMethod</a> ();</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* search_, *replace_, *cad_,  *num_replace_;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;};</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="classsubreplaceNode.html">  309</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classsubreplaceNode.html">subreplaceNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <a class="code" href="classsubreplaceNode.html#a9398100d18db77e5fc85f3d6d134aaa5">subreplaceNode</a> (<a class="code" href="classrunNode.html">runNode</a>* ini, <a class="code" href="classrunNode.html">runNode</a> *len, <a class="code" href="classrunNode.html">runNode</a> *replace, <a class="code" href="classrunNode.html">runNode</a>* str);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classsubreplaceNode.html#a145d05be6f2fec48b084dabd35599e20">run</a> ();</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;      <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classsubreplaceNode.html#a1f8f3f3176aaeb58f5d633a00db7fdf0">asMethod</a> ();</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      <a class="code" href="classrunNode.html">runNode</a>* ini_, *len_, *replace_, * str_;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;};</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno"><a class="line" href="classupperNode.html">  348</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classupperNode.html">upperNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;   <a class="code" href="classupperNode.html#adf506d723bdebd69295a636535373a52">upperNode</a> (<a class="code" href="classrunNode.html">runNode</a>* cad);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classupperNode.html#ab8cb550c4e8645bf27789f01d53a6b89">run</a> ();</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classupperNode.html#a76620cf64e0b01eb1a89d10b7cc7b5d9">asMethod</a> ();</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *cad_;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;};</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">//------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">//------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno"><a class="line" href="classlowerNode.html">  382</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classlowerNode.html">lowerNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;   <a class="code" href="classlowerNode.html#a7bb870eca74faa41f3d376feae7f7f98">lowerNode</a> (<a class="code" href="classrunNode.html">runNode</a>* cad);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classlowerNode.html#a791d630f65f89ba5329cd7beaeb5f3c7">run</a> ();</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classlowerNode.html#a697433594fc31646302b1e561eb047db">asMethod</a> ();</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *cad_;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;};</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="ttc" id="classlowerNode_html_a697433594fc31646302b1e561eb047db"><div class="ttname"><a href="classlowerNode.html#a697433594fc31646302b1e561eb047db">lowerNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:757</div></div>
+<div class="ttc" id="classreplaceNode_html_aa464dc5a26255e2bf4792f751fb1cd35"><div class="ttname"><a href="classreplaceNode.html#aa464dc5a26255e2bf4792f751fb1cd35">replaceNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:518</div></div>
+<div class="ttc" id="classcatNode_html"><div class="ttname"><a href="classcatNode.html">catNode</a></div><div class="ttdoc">Nodo función concatenación. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:61</div></div>
+<div class="ttc" id="classreplaceNode_html_a1bf20f6a4f26f339050837fce45ede44"><div class="ttname"><a href="classreplaceNode.html#a1bf20f6a4f26f339050837fce45ede44">replaceNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:535</div></div>
+<div class="ttc" id="classfindNode_html_ac09b97ca401c04472c4da0fd277bdcc9"><div class="ttname"><a href="classfindNode.html#ac09b97ca401c04472c4da0fd277bdcc9">findNode::findNode</a></div><div class="ttdeci">findNode(runNode *cad, runNode *subcad, runNode *ini_pos)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:447</div></div>
+<div class="ttc" id="classsprintfNode_html_ad572656a67da5d4df98bce0eeb2affd5"><div class="ttname"><a href="classsprintfNode.html#ad572656a67da5d4df98bce0eeb2affd5">sprintfNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:136</div></div>
+<div class="ttc" id="classupperNode_html_a76620cf64e0b01eb1a89d10b7cc7b5d9"><div class="ttname"><a href="classupperNode.html#a76620cf64e0b01eb1a89d10b7cc7b5d9">upperNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:726</div></div>
+<div class="ttc" id="classsubreplaceNode_html_a1f8f3f3176aaeb58f5d633a00db7fdf0"><div class="ttname"><a href="classsubreplaceNode.html#a1f8f3f3176aaeb58f5d633a00db7fdf0">subreplaceNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:671</div></div>
+<div class="ttc" id="classexplodeNode_html_aea0516f602785514e0a709b4f0867774"><div class="ttname"><a href="classexplodeNode.html#aea0516f602785514e0a709b4f0867774">explodeNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:122</div></div>
+<div class="ttc" id="classupperNode_html"><div class="ttname"><a href="classupperNode.html">upperNode</a></div><div class="ttdoc">Nodo función conversión a mayúsculas. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:348</div></div>
+<div class="ttc" id="classsprintfNode_html_ac4cf673616622fb93d647cf3c05e68aa"><div class="ttname"><a href="classsprintfNode.html#ac4cf673616622fb93d647cf3c05e68aa">sprintfNode::sprintfNode</a></div><div class="ttdeci">sprintfNode(runNode *list)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:133</div></div>
+<div class="ttc" id="classarithNode_html"><div class="ttname"><a href="classarithNode.html">arithNode</a></div><div class="ttdoc">Nodos aritméticos. </div><div class="ttdef"><b>Definition:</b> expNode.h:351</div></div>
+<div class="ttc" id="classexplodeNode_html"><div class="ttname"><a href="classexplodeNode.html">explodeNode</a></div><div class="ttdoc">Nodo operador explode. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:107</div></div>
+<div class="ttc" id="classsubreplaceNode_html_a145d05be6f2fec48b084dabd35599e20"><div class="ttname"><a href="classsubreplaceNode.html#a145d05be6f2fec48b084dabd35599e20">subreplaceNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:688</div></div>
+<div class="ttc" id="classfindNode_html_a6d65e85c3ee20fa14e240932dab11aa6"><div class="ttname"><a href="classfindNode.html#a6d65e85c3ee20fa14e240932dab11aa6">findNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:435</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="classlowerNode_html"><div class="ttname"><a href="classlowerNode.html">lowerNode</a></div><div class="ttdoc">Nodo función conversión minúsculas. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:382</div></div>
+<div class="ttc" id="classcatNode_html_af6735016b3cb2477a94de79d7e1e1c62"><div class="ttname"><a href="classcatNode.html#af6735016b3cb2477a94de79d7e1e1c62">catNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:47</div></div>
+<div class="ttc" id="classsubreplaceNode_html"><div class="ttname"><a href="classsubreplaceNode.html">subreplaceNode</a></div><div class="ttdoc">Nodo función replazo de subcadena. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:309</div></div>
+<div class="ttc" id="classcatNode_html_a1ea19392b499f9383534fd26ccc9a6c8"><div class="ttname"><a href="classcatNode.html#a1ea19392b499f9383534fd26ccc9a6c8">catNode::catNode</a></div><div class="ttdeci">catNode(runNode *node1, runNode *node2, bool newline=false)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:42</div></div>
+<div class="ttc" id="classfindNode_html_a50ac36a34f93eb0facbd1b3c240bffc6"><div class="ttname"><a href="classfindNode.html#a50ac36a34f93eb0facbd1b3c240bffc6">findNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:450</div></div>
+<div class="ttc" id="classupperNode_html_ab8cb550c4e8645bf27789f01d53a6b89"><div class="ttname"><a href="classupperNode.html#ab8cb550c4e8645bf27789f01d53a6b89">upperNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:733</div></div>
+<div class="ttc" id="classreplaceNode_html_a0a8599660f34e20c1dffdc4dba61ed84"><div class="ttname"><a href="classreplaceNode.html#a0a8599660f34e20c1dffdc4dba61ed84">replaceNode::replaceNode</a></div><div class="ttdeci">replaceNode(runNode *search, runNode *replace, runNode *cad, runNode *num_replace)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:530</div></div>
+<div class="ttc" id="classsubreplaceNode_html_a9398100d18db77e5fc85f3d6d134aaa5"><div class="ttname"><a href="classsubreplaceNode.html#a9398100d18db77e5fc85f3d6d134aaa5">subreplaceNode::subreplaceNode</a></div><div class="ttdeci">subreplaceNode(runNode *ini, runNode *len, runNode *replace, runNode *str)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:681</div></div>
+<div class="ttc" id="classreplaceNode_html"><div class="ttname"><a href="classreplaceNode.html">replaceNode</a></div><div class="ttdoc">Nodo función de remplazo. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:271</div></div>
+<div class="ttc" id="classlowerNode_html_a7bb870eca74faa41f3d376feae7f7f98"><div class="ttname"><a href="classlowerNode.html#a7bb870eca74faa41f3d376feae7f7f98">lowerNode::lowerNode</a></div><div class="ttdeci">lowerNode(runNode *cad)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:754</div></div>
+<div class="ttc" id="classfindNode_html"><div class="ttname"><a href="classfindNode.html">findNode</a></div><div class="ttdoc">Nodo función búsqueda de subcadena. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:214</div></div>
+<div class="ttc" id="classexplodeNode_html_a90c920b30840535e2ad7c27913e91f7c"><div class="ttname"><a href="classexplodeNode.html#a90c920b30840535e2ad7c27913e91f7c">explodeNode::explodeNode</a></div><div class="ttdeci">explodeNode(runNode *substr, runNode *str)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:79</div></div>
+<div class="ttc" id="classcatNode_html_ae861e45f75270c8ba63e9bffd6bb7806"><div class="ttname"><a href="classcatNode.html#ae861e45f75270c8ba63e9bffd6bb7806">catNode::do_cat</a></div><div class="ttdeci">static string do_cat(runNode *op1, runNode *op2, bool newline=false)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:67</div></div>
+<div class="ttc" id="classstringNode_html"><div class="ttname"><a href="classstringNode.html">stringNode</a></div><div class="ttdoc">Nodos cadenas de texto. </div><div class="ttdef"><b>Definition:</b> expNode.h:418</div></div>
+<div class="ttc" id="classsprintfNode_html"><div class="ttname"><a href="classsprintfNode.html">sprintfNode</a></div><div class="ttdoc">Nodo función cadena con formato. </div><div class="ttdef"><b>Definition:</b> strOpNode.h:176</div></div>
+<div class="ttc" id="classlowerNode_html_a791d630f65f89ba5329cd7beaeb5f3c7"><div class="ttname"><a href="classlowerNode.html#a791d630f65f89ba5329cd7beaeb5f3c7">lowerNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:764</div></div>
+<div class="ttc" id="classupperNode_html_adf506d723bdebd69295a636535373a52"><div class="ttname"><a href="classupperNode.html#adf506d723bdebd69295a636535373a52">upperNode::upperNode</a></div><div class="ttdeci">upperNode(runNode *cad)</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:723</div></div>
+<div class="ttc" id="classexplodeNode_html_a1bb7df027458cb1e63d5b0898540b114"><div class="ttname"><a href="classexplodeNode.html#a1bb7df027458cb1e63d5b0898540b114">explodeNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> strOpNode.cpp:84</div></div>
+<div class="ttc" id="classnexpNode_html"><div class="ttname"><a href="classnexpNode.html">nexpNode</a></div><div class="ttdoc">Nodo expresión de tipo no definido. </div><div class="ttdef"><b>Definition:</b> expNode.h:164</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

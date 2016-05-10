@@ -1,0 +1,72 @@
+\hypertarget{classifNode}{\section{Referencia de la Clase if\-Node}
+\label{classifNode}\index{if\-Node@{if\-Node}}
+}
+
+
+Nodo setencia if.  
+
+
+
+
+{\ttfamily \#include $<$cond\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de if\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classifNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classifNode_a9c0285b9abc0601e11746f6307f5663f}{if\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$ifb, \hyperlink{classrunNode}{run\-Node} $\ast$elseb)
+\item 
+void \hyperlink{classifNode_af136e318ac35eaab32770bebe8c039a1}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo setencia if. 
+
+Este nodo consiste en una sentencia if formada por una condición, un caso positivo y un caso negativo. Se evalúa la condición y se ejecuta el caso correspondiente. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classifNode_a9c0285b9abc0601e11746f6307f5663f}{\index{if\-Node@{if\-Node}!if\-Node@{if\-Node}}
+\index{if\-Node@{if\-Node}!ifNode@{if\-Node}}
+\subsubsection[{if\-Node}]{\setlength{\rightskip}{0pt plus 5cm}if\-Node\-::if\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{ifb, }
+\item[{{\bf run\-Node} $\ast$}]{elseb}
+\end{DoxyParamCaption}
+)}}\label{classifNode_a9c0285b9abc0601e11746f6307f5663f}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo condición. \\
+\hline
+{\em ifb} & Nodo caso positivo. \\
+\hline
+{\em elseb} & Nodo caso negativo. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classifNode_af136e318ac35eaab32770bebe8c039a1}{\index{if\-Node@{if\-Node}!run@{run}}
+\index{run@{run}!ifNode@{if\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void if\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classifNode_af136e318ac35eaab32770bebe8c039a1}
+Método de ejecución del nodo. La ejecución consiste en la evaluación de la condición y se ejecuta el nodo de caso positivo o el nodo de caso negativo según el resultado de la evaluación. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{condStmtNode_8h}{cond\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/cond\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

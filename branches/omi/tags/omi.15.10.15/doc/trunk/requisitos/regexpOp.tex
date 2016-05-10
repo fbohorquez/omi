@@ -1,0 +1,55 @@
+\subsection{Operadores sobre expresiones regulares}
+
+\subsubsection{Crear expresión regular}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador creador de expresión regular.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un operador que convierta esta en una expresión regular. El
+		valor del operador será la expresión regular.
+	\end {description}
+\end{framed}
+
+\subsubsection{Comprobar expresión regular}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador comprobación de expresión regular.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Se precisa un operador que, dada una expresión regular y una cadena de caracteres,
+		compruebe si esta pertenece al lenguaje definido por la expresión regular. El operador
+		tomará como valor un dato de tipo lógico resultado de la operación.
+		
+		Para que el resultado sea positivo la cadena debe pertenecer al conjunto de palabras delimitadas
+		por la expresión regular. Si tan solo existe correspondencia parcial el resultado será negativo.
+	\end {description}
+\end{framed}
+
+\subsubsection{Buscar mediante expresión regular}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador de búsqueda estructurada.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Se precisa de un mecanismo que lleve a cabo una búsqueda estructurada, es decir,
+		obtener una estructura de datos array condicionada por una expresión regular denominada
+		``patrón de búsqueda'' y una cadena de caracteres ``texto'' sobre la que se comprueba.
+
+		En la ejecución de este operador se deberá
+		buscar en ``texto'' subcadenas que pertenezcan al conjunto definido por la expresión regular, originando
+		un array con cada una de las coincidencias, que será el valor que tome la operación.
+		
+		Adicionalmente la expresión regular podría estar formada por subexpresiones delimitadas
+		por ``()''. En dicho caso se buscará en ``texto'' subcadenas que pertenezcan al
+		conjunto delimitado por la expresión regular. Por cada subcadena encontrada se creará un array
+		con las correspondencias de cada subexpresión. Cada uno de los arrays resultantes se
+		deberán guardar en otro que será el valor que tome la operación.
+		
+		Si se utiliza una expresión regular formada por subexpresiones los arrays correspondientes
+		a cada subcadena deberán tener índices numéricos. Sin embargo debe darse la posibilidad de
+		especificar una lista ordenada de cadenas claves para crear un array asociativo.
+ 
+		Además se ha de contemplar la búsqueda estructurada sobre un array de cadenas ``texto''.
+	\end {description}
+\end{framed}

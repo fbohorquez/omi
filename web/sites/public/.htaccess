@@ -1,0 +1,26 @@
+#general config
+#--------------------------------------------------------
+RewriteEngine On
+
+
+#sites config
+#--------------------------------------------------------
+RewriteRule ^doc/?$ doc-index.php [L]
+RewriteRule ^doc/introduccion/?$ doc-content.php?content=docIntro [L]
+RewriteRule ^doc/planificacion/?$ doc-content.php?content=docPlan [L]
+RewriteRule ^doc/requisitos/?$ doc-content.php?content=docRequisites [L]
+RewriteRule ^doc/analisis/?$ doc-content.php?content=docAnalysis [L]
+RewriteRule ^doc/diseño/?$ doc-content.php?content=docDesign [L]
+RewriteRule ^doc/construccion/?$ doc-content.php?content=docDev [L]
+RewriteRule ^doc/pruebas/?$ doc-content.php?content=docTest [L]
+RewriteRule ^doc/implantacion/?$ doc-content.php?content=docImplant [L]
+RewriteRule ^doc/conclusiones/?$ doc-content.php?content=docConclusions [L]
+RewriteRule ^doc/bibliografia/?$ doc-content.php?content=docBiblio [L]
+RewriteRule ^doc/manual/?$ doc-content.php?content=docUserManual [L]
+RewriteRule ^licencia/?$ doc-content.php?content=docLicense [L]
+RewriteRule ^sobre-omi/?$ about.php [L]
+RewriteRule ^contacto/?$ contact.php [L]
+RewriteRule ^download/?$ download.php [L]
+RewriteRule ^download/(.*)$ ../../resources/download/$1 [L]
+RewriteRule ^(.*)$ $1 [L]
+

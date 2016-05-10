@@ -1,0 +1,72 @@
+\hypertarget{classincloopNode}{\section{Referencia de la Clase incloop\-Node}
+\label{classincloopNode}\index{incloop\-Node@{incloop\-Node}}
+}
+
+
+Nodo sentencia iterativa de incremento.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de incloop\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classincloopNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classincloopNode_a6de0992c830a9ed142a39c6e03bbcd09}{incloop\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$max, \hyperlink{classrunNode}{run\-Node} $\ast$stmt)
+\item 
+void \hyperlink{classincloopNode_a32835d32147f653d0f04cdf4e94b5180}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia iterativa de incremento. 
+
+Ejecuta un bloque de sentencias tantas veces como se establezca. Para ello se precisa de un nodo que establece el número máximo de iteraciones, un identificador que referenciará el valor numérico de cada iteración, y el bloque de sentencias. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classincloopNode_a6de0992c830a9ed142a39c6e03bbcd09}{\index{incloop\-Node@{incloop\-Node}!incloop\-Node@{incloop\-Node}}
+\index{incloop\-Node@{incloop\-Node}!incloopNode@{incloop\-Node}}
+\subsubsection[{incloop\-Node}]{\setlength{\rightskip}{0pt plus 5cm}incloop\-Node\-::incloop\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{max, }
+\item[{{\bf run\-Node} $\ast$}]{stmt}
+\end{DoxyParamCaption}
+)}}\label{classincloopNode_a6de0992c830a9ed142a39c6e03bbcd09}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nodo que representa un identificador \\
+\hline
+{\em max} & Nodo que representa el número máximo de iteraciones \\
+\hline
+{\em stmt} & Nodo que representa el bloque de sentencias \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classincloopNode_a32835d32147f653d0f04cdf4e94b5180}{\index{incloop\-Node@{incloop\-Node}!run@{run}}
+\index{run@{run}!incloopNode@{incloop\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void incloop\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classincloopNode_a32835d32147f653d0f04cdf4e94b5180}
+Método que ejecuta el nodo. Ejecuta el bloque de sentencias tantas veces como se haya establecido. Asignando el valor numérico de la iteración al identificador dado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

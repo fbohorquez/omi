@@ -1,0 +1,90 @@
+\hypertarget{classmatchNode}{\section{Referencia de la Clase match\-Node}
+\label{classmatchNode}\index{match\-Node@{match\-Node}}
+}
+
+
+Nodo función comprobación cadena sobre expresión regular.  
+
+
+
+
+{\ttfamily \#include $<$regexp\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de match\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classmatchNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmatchNode_ae145629a42d2a63e4d60c410253fe4db}{match\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$regexp)
+\item 
+void \hyperlink{classmatchNode_a216cb0810f679bab31aa61eeaad86f9a}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classmatchNode_aedff64c835d3552a937e3f6ab38996e1}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función comprobación cadena sobre expresión regular. 
+
+Este nodo comprueba si una determinada cadena de texto pertenece al lenguaje definido por una expresión regular dada.
+
+El nodo toma como valor interno un booleano que indica si la cadena pertenece al lenguaje definido por la expresión regular.
+
+Para que el resultado sea positivo la cadena debe pertenecer al conjunto de palabras delimitadas por la expresión regular. Si tan solo existe correspondencia parcial el resultado será negativo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classmatchNode_ae145629a42d2a63e4d60c410253fe4db}{\index{match\-Node@{match\-Node}!match\-Node@{match\-Node}}
+\index{match\-Node@{match\-Node}!matchNode@{match\-Node}}
+\subsubsection[{match\-Node}]{\setlength{\rightskip}{0pt plus 5cm}match\-Node\-::match\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{regexp}
+\end{DoxyParamCaption}
+)}}\label{classmatchNode_ae145629a42d2a63e4d60c410253fe4db}
+Constructor principal
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena que se comprobará \\
+\hline
+{\em regexp} & Expresión regular que se utilizará en la comprobación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classmatchNode_aedff64c835d3552a937e3f6ab38996e1}{\index{match\-Node@{match\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!matchNode@{match\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ match\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmatchNode_aedff64c835d3552a937e3f6ab38996e1}
+Devuelve un nodo match como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método match. 
+\end{DoxyReturn}
+\hypertarget{classmatchNode_a216cb0810f679bab31aa61eeaad86f9a}{\index{match\-Node@{match\-Node}!run@{run}}
+\index{run@{run}!matchNode@{match\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void match\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmatchNode_a216cb0810f679bab31aa61eeaad86f9a}
+Lleva a cabo la ejecución del nodo. Para ello comprueba si la cadena pertenece al conjunto de palabras determinado por la expresión regular. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-h\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-cpp\end{DoxyCompactItemize}

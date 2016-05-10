@@ -1,0 +1,195 @@
+\subsection{Sentencias de control de flujo}
+\subsubsection{Inclusión de ficheros}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Inclusión de ficheros.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] Se ha de facilitar un mecanismo para incluir en un punto de la ejecución contenido fuente localizado en recurso
+		externo. El recurso consistirá en un fichero con sentencias interpretables.
+	\end {description}
+\end{framed}
+
+\subsubsection{Saltar a etiqueta}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Saltar a etiqueta.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] Se ha de facilitar un mecanismo para llevar el flujo de ejecución a la sentencia  
+		referenciada por una etiqueta.
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia if} 
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia if.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] Deben de existir una serie de sentencias condicionales que alteren el flujo de ejecución. Las  
+		sentencias if deberán estar construidas por bloques de sentencias y una serie de expresiones denominadas ``condiciones''.
+		La interpretación de una sentencia de este tipo debe consistir en la evaluación lógica de las ``condiciones'' para determinar el
+		bloque de sentencias que se ejecutará. Las formas de la sentencia if que el interprete debe aceptar son las siguientes:
+		\begin{itemize}
+			\item if (cond) stmts
+			\item if (cond) stmts else stmts
+			\item if (cond) stmts elif (cond) stmts ... else stmts
+		\end{itemize}
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia switch}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia switch.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo switch case. Estas
+		constan de una lista de bloques de sentencias precedidas de una expresión denominada ``caso''. Dada una expresión base
+		esta debe ser comparada mediante la operación de igualdad con cada uno de los casos, ejecutando el bloque correspondiente al ``caso''
+		cuya comparación sea positiva y todos los bloques siguientes. Se deberá poder especificar un bloque denominado ``default''
+		que no dispondrá de expresión ``caso'' y será ejecutado sin aplicar condición alguna.
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia while}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia while.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo while. Esta es una sentencia de control
+		iterativa que consta de una expresión denominada ``condición'' y un bloque de sentencias. El bloque de sentencias debe ser ejecutado
+	    mientras que ``condición'' permanezca verdadera.
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia do...while}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia do...while.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo do while. Esta es una sentencia de control
+		iterativa que consta de una expresión denominada ``condición'' y un bloque de sentencias. El bloque de sentencias debe ser ejecutado
+	    mientras que ``condición'' permanezca verdadera, llevándose a cabo la ejecución al menos una vez.
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia for}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia for.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo for. Esta es una sentencia de control
+		iterativa que consta de tres expresiones denominadas ``inicialización'', ``condición'' y ``paso'', además de un bloque de sentencias.
+		Primero se ha de evaluar la expresión ``inicialización'', luego el bloque de sentencias se ejecutará mientras ``condición'' se
+		valore como verdadera. La expresión ``paso'' se deberá ejecutar al finalizar cada iteración.   %GENERADORES DE EXPRESIONES
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia foreach}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia foreach.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se han de de interpretar sentencias del tipo forearch. Esta es una sentencia de control
+		iterativa que consta un bloque de sentencias, de una expresión denominada ``conjunto'' y  un identificador denominado ``valor''.
+		Se debe poder, aunque de forma opcional, especificar otro identificador que se denominará ``clave''.
+		El bloque de sentencias será ejecutado de forma iterativa en función el tipo de dato y valor de ``conjunto''.  El ``conjunto''
+		será evaluado para determinar el número de iteraciones y el valor que se le asignará como variables a los identificadores en
+		cada iteración. Dependiendo del tipo de la expresión ``conjunto'' la sentencia foreach deberá actuar como sigue:
+		
+		\begin{description}
+			\item [Tipo lógico:] El bloque de sentencias se ejecutará mientras ``conjunto'' sea verdadero. El identificador ``valor'' tomará
+			el valor verdadero. En el caso en el que se especifique un identificador ``clave'' a este no se le asignará ningún valor.
+			\item [Tipo aritmético:] Si ``conjunto'' representa un número mayor que cero el bloque de sentencias se ejecutará
+			tantas veces como el valor numérico que representa. En cada iteración ``valor'' se le asignará el número de la iteración
+			comenzando por cero. Si se presenta un identificador ``clave'' a este no se le asignará ningún valor.
+			Si el valor de ``conjunto'' es menor o igual a cero el bloque no deberá ejecutarse.
+			\item [Tipo cadena de caracteres:] Si ``conjunto'' es una cadena de caracteres que representa un número racional la
+			ejecución deberá ser como si de un tipo aritmético se tratase. Si el ``conjunto'' es una cadena que no representa un número racional
+			el bloque de sentencias se ejecutará por cada carácter en la cadena. En este último caso a ``valor'' se le asignará el carácter
+			contemplado en cada iteración. Si se dio un identificador ``clave'' este no será asignado.
+			\item [Tipo array:] Si ``conjunto'' es un array, u otro tipo de dato derivado de este como un objeto, el bloque de sentencias
+			se ejecuta por cada elemento en el mismo. Al identificador ``valor'' se le asignará el valor del elemento en el array correspondiente
+			a la iteración. En el caso de que se facilite un identificador ``clave'' este deberá tomar la clave del elemento en el array.
+			\item [Otros tipos:] No se llevará a cabo ninguna operación.
+		\end{description}
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentención de iteración ágil}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia de iteración ágil.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de facilitar una sentencia de control que permita
+		iterar un bloque de sentencias en función una expresión ``conjunto'' de forma ágil y sencilla.
+		Para ello esta sentencia deberá operar igual que la sentencia foreach pero sin ser necesario, aunque posible,
+		dar un identificador ``valor'' sobre el que se realizará la asignación. En lugar de ello la asignación que se produce
+		en cada iteración se deberá realizar sobre un símbolo con identificador fijo y contenido variable denominado iterador.
+		El iterador debe ser accesible desde el bloque de sentencias. Además se debe contemplar el acceso al iterador de 
+      varias sentencias de ciclo ágil cuando estas se presentan de forma anidada. 
+	\end {description}
+\end{framed}
+
+\subsubsection{Sentencia with}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia with.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se deberá facilitar un mecanismo que permita establecer una estrucutra compuesta como contexto. Así todo acceso que se
+      realice, y cuya definición no exista, se deberá hacer sobre los elementos que de la estructura compuesta utilizada como contexto. 
+      Esta sentencia se deberá construir a partir del dato compuesto y un bloque de sentencias sobre el que se aplicará el contexto.
+	\end{description}
+\end{framed}
+
+\subsubsection{Finalizar bloque de sentencias}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Finalizar bloque de sentencias.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] Se ha de disponer de un mecanismo para indicar que el flujo debe salir de una sentencia de control. Se ha de contemplar
+		las sentencias anidadas.
+	\end {description}
+\end{framed}
+
+
+
+\subsubsection{Finalizar iteración}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Finalizar iteración.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] El sistema debe facilitar algún recurso que permita finalizar la iteración actual
+		de una sentencia de control en ejecución y comenzar con la siguiente. Este
+		mecanismo debe contemplar la posibilidad de salir de varias sentencias de control anidadas.
+	\end {description}
+\end{framed}
+
+\subsubsection{Finalizar ejecución}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Finalizar ejecución.
+		\item [Categoría:] Sentencias de control de flujo.
+		\item [Descripción:] Se ha de disponer de un mecanismo para que el sistema finalice de forma inmediata de
+		interpretar el contenido fuente.
+	\end {description}
+\end{framed}
+
+\subsubsection{Capturar excepción}
+
+Aún por completar.
+
+\subsubsection{Lanzar excepción}
+
+Aún por completar.

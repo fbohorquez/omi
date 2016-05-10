@@ -1,0 +1,83 @@
+\hypertarget{classarrayChunkNode}{\section{Referencia de la Clase array\-Chunk\-Node}
+\label{classarrayChunkNode}\index{array\-Chunk\-Node@{array\-Chunk\-Node}}
+}
+
+
+Nodo division de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de array\-Chunk\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classarrayChunkNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarrayChunkNode_a2f1eb4437b5ac66ccd8909af51fc8ec8}{array\-Chunk\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array, \hyperlink{classrunNode}{run\-Node} $\ast$size)
+\item 
+void \hyperlink{classarrayChunkNode_afaeae0c90a08aa29b23ff3852a089489}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayChunkNode_a7b458328d01121dcaf5d432e37972c3a}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo division de array. 
+
+Nodo cuya ejecución consiste en la división de un array en varios fragmentos determinados por un tamaño 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarrayChunkNode_a2f1eb4437b5ac66ccd8909af51fc8ec8}{\index{array\-Chunk\-Node@{array\-Chunk\-Node}!array\-Chunk\-Node@{array\-Chunk\-Node}}
+\index{array\-Chunk\-Node@{array\-Chunk\-Node}!arrayChunkNode@{array\-Chunk\-Node}}
+\subsubsection[{array\-Chunk\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Chunk\-Node\-::array\-Chunk\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array, }
+\item[{{\bf run\-Node} $\ast$}]{size}
+\end{DoxyParamCaption}
+)}}\label{classarrayChunkNode_a2f1eb4437b5ac66ccd8909af51fc8ec8}
+Constructor de la clase. Este nodo se inicializa a partir de un array y el tamaño de cada fragmento. 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que hace de Array \\
+\hline
+{\em size} & Nodo que hace de tamaño \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarrayChunkNode_a7b458328d01121dcaf5d432e37972c3a}{\index{array\-Chunk\-Node@{array\-Chunk\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arrayChunkNode@{array\-Chunk\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ array\-Chunk\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarrayChunkNode_a7b458328d01121dcaf5d432e37972c3a}
+Devuelve un nodo división de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método chunk. 
+\end{DoxyReturn}
+\hypertarget{classarrayChunkNode_afaeae0c90a08aa29b23ff3852a089489}{\index{array\-Chunk\-Node@{array\-Chunk\-Node}!run@{run}}
+\index{run@{run}!arrayChunkNode@{array\-Chunk\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Chunk\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayChunkNode_afaeae0c90a08aa29b23ff3852a089489}
+Método que ejecuta el nodo. Se encarga de dividir el array de elementos en varios fragmentos segun el tamaño dado. Toma como valor otro array cuyos elementos son cada uno de los fragmentos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

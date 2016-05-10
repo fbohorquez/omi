@@ -1,0 +1,927 @@
+% ======================================================================
+\section{Modelo conceptual}
+El presente documento representa un análisis de los datos que construyen
+el sistema OMI y cómo estos se relacionan. El documento describe el 
+modelo conceptual de datos del sistema mediante diagramas de clases. Las 
+clases son organizadas en paquetes para facilitar la modularidad del sistema
+y su entendimiento. 
+
+El proceso de interpretar consiste en tomar código fuente, procesarlo y ejecutar 
+su significado semántico. Por tanto el modelo de datos estará constituido por
+entidades que guardan un significado concreto y preciso dentro del lenguaje.
+Estos elementos, que representan la unidad semántica mínima, 
+son denominados nodos ejecutables, debido a que cuando 
+son ejecutados producen el resultado semántico asociado.  Muchos nodos ejecutables
+por si solos no presentan un resultado semántico completo, por lo que precisan de otros
+nodos. 
+
+El diagrama general de paquetes describe los paquetes que componen el 
+sistema según el carácter funcional de las entidades que contienen. Un 
+paquete podrá contener clases u otros paquetes.
+
+El paquete ``interpreter'' describe las entidades que procesan  
+el contenido fuente según el léxico y la gramática del lenguaje OMI. 
+El objetivo es generar el árbol de nodos ejecutables correspondiente al
+programa. Al procesarse este árbol se aplicará la semántica que encierran 
+las líneas de código del contenido fuente, produciéndose de esta forma la ejecución del programa.
+
+El paquete ``runNode'' describe el nodo ejecutable y aquellos tipos de nodos derivados
+de este, que son abstractos y que serán extendidos por tipos más específicos.
+
+El paquete ``typeData'' describe los nodos correspondientes a los tipos de datos básicos 
+que pueden ser manipulados por el sistema. 
+
+El paquete ``error'' describe el sistema de errores y los nodos ejecutables que permiten
+su control.
+
+El paquete ``extensions'' describe el sistema de extensiones del interprete, el cual
+permite extender la funcionalidades del lenguaje de una forma dinámica. Además contiene dos
+el modelado de dos extensiones concretas.  
+
+Los paquetes siguientes categorizan y agrupan nodos ejecutables según la funcionalidad 
+que encierran y el tipo de dato sobre el que operan. 
+
+El último paquete ``rtree'' describe el modelo de datos correspondiente al sistema 
+software cliente. Una aplicación web que hace uso del interprete de forma online
+y representa el estado de este.
+
+\begin{center}
+\includegraphics[scale=0.3]{package-omi.png} \\
+\end{center}
+% ======================================================================
+\pagebreak
+\subsection{Intérprete}
+El sistema OMI se corresponde con un interprete que opera sobre 
+un contenido fuente escrito en el lenguaje con el mismo nombre. 
+El interprete se compone de un analizador sintáctico que encierra la 
+gramática del lenguaje, esta es descrita a partir de una serie de tokens.
+
+El analizador sintáctico se vale de un analizador léxico que validará 
+y obtendrá los tokens (bajo petición) desde el código fuente.
+El analizador léxico debe controlar el fichero que contiene el código fuente, 
+así como la línea y posición que se encuentra procesando en el mismo.
+
+Los tokens obtenidos se definen por un identificador y la línea del código fuente en la que se generó,
+además pueden tener asociado un valor que puede ser numérico o cadena. Serán utilizados 
+por el analizador sintáctico para determinar las reglas gramaticales que se deben aplicar y
+construir el árbol sintáctico correspondiente. Este árbol está formado 
+por nodos denominados ejecutables, dado que al ser procesados en profundidad se llevará 
+a cabo la ejecución del programa. Los nodos ejecutables dan singnificado semántico a 
+cada una de las sentencias que componen el contenido fuente.
+
+El interprete se compone además de un contexto denominado principal, que será sobre el que 
+opere de forma predeterminada. Un contexto está formado por una serie de tablas de símbolos 
+que serán manipuladas por ciertos nodos ejecutables cuando sean procesados. Estas tablas guardan 
+referencias a nodos ejecutables correspondientes a símbolos variables, funciones y clases de objetos 
+que son definidos en el código fuente. Existen determinados nodos que al ser ejecutados pueden 
+cambiar el contexto en uso.
+
+El interprete es ejecutado con una serie de argumentos que alteran su funcionamiento.
+
+\begin{center}
+\includegraphics[scale=0.3]{interpreter.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection{Nodos ejecutables}
+Se definen un nodo ejecutable para cada aspecto o funcionalidad que contemple el lenguaje.
+Cada sentencia se corresponde con un nodo ejecutable, que a su vez puede estar compuestos de otros
+nodos. Cada nodo ejecutable guarda el número de nodos que lo referencian para que se pueda hacer un uso 
+óptimo del mismo.
+
+Las expresiones son nodos ejecutables que tomarán un valor tras ser procesados. Generalmente forman parte de otros 
+nodos correspondientes a sentencias u otras expresiones. El valor que toman pueden ser de un tipo determinado y conocido (numérico, lógico, etc), 
+o de tipo indeterminado o no conocido hasta que el nodo es procesado. 
+
+Las expresiones de tipo determinado son extendidas por cada tipo de dato soportado por el lenguaje. Además 
+pueden ser consideradas tipos de objetos y estar así asociadas a una clase. De esta forma toda expresión puede disponer
+de métodos y atributos según el tipo de dato que guarde.
+
+Las expresiones de tipo indeterminado se componen de una referencia al nodo que guarda el valor tras la ejecución, este podrá ser una 
+expresión de tipo determinado.
+
+Las expresiones son nodos imprimibles lo que significa que tienen una representación gráfica asociada que puede ser volcada en la
+salida estándar.
+
+\begin{center}
+\includegraphics[scale=0.4]{runNode.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection{Tipos de datos}
+Este paquete contiene los nodos que representan expresiones con tipos de datos definidos.
+Se describe cada tipo de dato como un nodo con un valor asociado (en algunos casos el tipo puede comprender un único valor).
+
+Muchos nodos son especializaciones de tipos de datos, correspondiéndose con expresiones que 
+guardan un valor del tipo de dato al que extienden. Así por ejemplo los nodos de operaciones aritméticas
+generalmente extenderán al nodo del mismo tipo de dato. 
+
+Algunos nodos de tipos datos son concretados por nodos que representan un valor constante de dicho tipo de dato.
+ 
+\begin{center}
+\includegraphics[scale=0.4]{typeData.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection{Sentencias de control de flujo}
+\begin{center}
+\includegraphics[scale=0.4]{flowstmts.png} \\
+\end{center}
+
+\subsubsection{Sentencia}
+\begin{center}
+\includegraphics[scale=0.4]{stmt.png} \\
+\end{center}
+
+\subsubsection{Sentencia vacía}
+\begin{center}
+\includegraphics[scale=0.4]{emptyStmt.png} \\
+\end{center}
+
+\subsubsection{include}
+\begin{center}
+\includegraphics[scale=0.4]{include.png} \\
+\end{center}
+
+\subsubsection{exit}
+\begin{center}
+\includegraphics[scale=0.4]{exit.png} \\
+\end{center}
+
+\subsubsection{goto}
+\begin{center}
+\includegraphics[scale=0.4]{goto.png} \\
+\end{center}
+
+\subsubsection{if}
+\begin{center}
+\includegraphics[scale=0.4]{if.png} \\
+\end{center}
+
+\subsubsection{switch}
+\begin{center}
+\includegraphics[scale=0.4]{switch.png} \\
+\end{center}
+
+\subsubsection{while}
+\begin{center}
+\includegraphics[scale=0.4]{while.png} \\
+\end{center}
+
+
+\subsubsection{do...while}
+\begin{center}
+\includegraphics[scale=0.4]{dowhile.png} \\
+\end{center}
+
+\subsubsection{for}
+\begin{center}
+\includegraphics[scale=0.4]{for.png} \\
+\end{center}
+
+\subsubsection{foreach}
+\begin{center}
+\includegraphics[scale=0.4]{foreach.png} \\
+\end{center}
+
+\subsubsection{iloop}
+\begin{center}
+\includegraphics[scale=0.4]{iloop.png} \\
+\end{center}
+
+
+\subsubsection{continue}
+\begin{center}
+\includegraphics[scale=0.4]{continue.png} \\
+\end{center}
+
+\subsubsection{break}
+\begin{center}
+\includegraphics[scale=0.4]{break.png} \\
+\end{center}
+
+\subsubsection{try}
+\begin{center}
+\includegraphics[scale=0.4]{try.png} \\
+\end{center}
+
+\subsubsection{throw}
+\begin{center}
+\includegraphics[scale=0.4]{throw.png} \\
+\end{center}
+
+
+\subsubsection{with}
+\begin{center}
+\includegraphics[scale=0.4]{with.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Definiciones}
+\begin{center}
+\includegraphics[scale=0.4]{definitions.png} \\
+\end{center}
+
+\subsubsection {Variables}
+\begin{center}
+\includegraphics[scale=0.4]{id.png} \\
+\end{center}
+
+\subsubsection {Funciones}
+\begin{center}
+\includegraphics[scale=0.4]{functions.png} \\
+\end{center}
+
+\subsubsection {Clases}
+\begin{center}
+\includegraphics[scale=0.4]{class.png} \\
+\end{center}
+
+\subsubsection {Objetos}
+\begin{center}
+\includegraphics[scale=0.4]{object.png} \\
+\end{center}
+
+\subsubsection {Listas}
+\begin{center}
+\includegraphics[scale=0.4]{list.png} \\
+\end{center}
+
+\subsubsection {Pares clave/valor}
+\begin{center}
+\includegraphics[scale=0.4]{map.png} \\
+\end{center}
+
+\subsubsection {Etiquetas}
+\begin{center}
+\includegraphics[scale=0.4]{label.png} \\
+\end{center}
+
+\subsubsection {Definiciones globales}
+\begin{center}
+\includegraphics[scale=0.4]{global.png} \\
+\end{center}
+
+\subsubsection {Generadores}
+\begin{center}
+\includegraphics[scale=0.4]{generator.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Asignaciones}
+\begin{center}
+\includegraphics[scale=0.4]{assig-package.png} \\
+\end{center}
+
+\subsubsection {Asignación}
+\begin{center}
+\includegraphics[scale=0.4]{assigNode.png} \\
+\end{center}
+
+\subsubsection {Asignación de referencia}
+\begin{center}
+\includegraphics[scale=0.4]{assigRef.png} \\
+\end{center}
+
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Operadores aritméticos}
+\begin{center}
+\includegraphics[scale=0.4]{arithOp-package.png} \\
+\end{center}
+
+\subsubsection {Suma}
+\begin{center}
+\includegraphics[scale=0.4]{add.png} \\
+\end{center}
+
+\subsubsection {Diferencia}
+\begin{center}
+\includegraphics[scale=0.4]{sub.png} \\
+\end{center}
+
+\subsubsection {Producto}
+\begin{center}
+\includegraphics[scale=0.4]{prod.png} \\
+\end{center}
+
+\subsubsection {División}
+\begin{center}
+\includegraphics[scale=0.4]{div.png} \\
+\end{center}
+
+\subsubsection {Potencia}
+\begin{center}
+\includegraphics[scale=0.4]{pow.png} \\
+\end{center}
+
+\subsubsection {Módulo}
+\begin{center}
+\includegraphics[scale=0.4]{mod.png} \\
+\end{center}
+
+\subsubsection {Tamaño}
+\begin{center}
+\includegraphics[scale=0.4]{size.png} \\
+\end{center}
+
+\subsubsection {Incremento y asignación}
+\begin{center}
+\includegraphics[scale=0.4]{incAssig.png} \\
+\end{center}
+
+\subsubsection {Asignación e incremento}
+\begin{center}
+\includegraphics[scale=0.4]{assigInc.png} \\
+\end{center}
+
+\subsubsection {Decremento y asignación}
+\begin{center}
+\includegraphics[scale=0.4]{decAssig.png} \\
+\end{center}
+
+\subsubsection {Asignación y decremento}
+\begin{center}
+\includegraphics[scale=0.4]{assigDec.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Operadores lógicos}
+\begin{center}
+\includegraphics[scale=0.4]{logicOp-package.png} \\
+\end{center}
+
+\subsubsection {Or}
+\begin{center}
+\includegraphics[scale=0.4]{or.png} \\
+\end{center}
+
+\subsubsection {And}
+\begin{center}
+\includegraphics[scale=0.4]{and.png} \\
+\end{center}
+
+\subsubsection {Negación}
+\begin{center}
+\includegraphics[scale=0.4]{not.png} \\
+\end{center}
+
+
+\subsubsection {Igual que}
+\begin{center}
+\includegraphics[scale=0.4]{eq.png} \\
+\end{center}
+
+\subsubsection {Distinto que}
+\begin{center}
+\includegraphics[scale=0.4]{neq.png} \\
+\end{center}
+
+\subsubsection {Menor que}
+\begin{center}
+\includegraphics[scale=0.4]{lth.png} \\
+\end{center}
+
+\subsubsection {Menor o igual que}
+\begin{center}
+\includegraphics[scale=0.4]{leq.png} \\
+\end{center}
+
+\subsubsection {Mayor que}
+\begin{center}
+\includegraphics[scale=0.4]{gth.png} \\
+\end{center}
+
+\subsubsection {Mayor o igual que}
+\begin{center}
+\includegraphics[scale=0.4]{geq.png} \\
+\end{center}
+
+
+\subsubsection {Idéntico a}
+\begin{center}
+\includegraphics[scale=0.4]{iden.png} \\
+\end{center}
+
+\subsubsection {No idéntico a}
+\begin{center}
+\includegraphics[scale=0.4]{niden.png} \\
+\end{center}
+
+\subsubsection {Es nulo}
+\begin{center}
+\includegraphics[scale=0.4]{isNull.png} \\
+\end{center}
+
+\subsubsection {Vacío}
+\begin{center}
+\includegraphics[scale=0.4]{empty.png} \\
+\end{center}
+
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Operadores sobre cadenas}
+\begin{center}
+\includegraphics[scale=0.4]{stringOp-package.png} \\
+\end{center}
+
+\subsubsection {Concatenación}
+\begin{center}
+\includegraphics[scale=0.4]{cat.png} \\
+\end{center}
+
+\subsubsection {explode}
+\begin{center}
+\includegraphics[scale=0.4]{explode.png} \\
+\end{center}
+
+\subsubsection {implode}
+\begin{center}
+\includegraphics[scale=0.4]{implode.png} \\
+\end{center}
+
+\subsubsection {sprintf}
+\begin{center}
+\includegraphics[scale=0.4]{sprintf.png} \\
+\end{center}
+
+\subsubsection {Buscar subcadena}
+\begin{center}
+\includegraphics[scale=0.4]{find.png} \\
+\end{center}
+
+\subsubsection {Buscar y remplazar}
+\begin{center}
+\includegraphics[scale=0.4]{replace.png} \\
+\end{center}
+
+\subsubsection {Remplazar subcadena}
+\begin{center}
+\includegraphics[scale=0.4]{subreplace.png} \\
+\end{center}
+
+\subsubsection {Convertir a mayúsculas}
+\begin{center}
+\includegraphics[scale=0.4]{upper.png} \\
+\end{center}
+
+\subsubsection {Convertir a minúsculas}
+\begin{center}
+\includegraphics[scale=0.4]{lower.png} \\
+\end{center}
+
+%~ \subsubsection {Concatenación y asignación}
+%~ Diagrama aún por realizar.
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{lower.png} \\
+%~ \end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Operadores sobre array}
+\begin{center}
+\includegraphics[scale=0.4]{arrayOp-package.png} \\
+\end{center}
+
+\subsubsection {Dividir en fragmentos}
+\begin{center}
+\includegraphics[scale=0.4]{chunk.png} \\
+\end{center}
+
+\subsubsection {Reducir mediante función}
+\begin{center}
+\includegraphics[scale=0.4]{reduce.png} \\
+\end{center}
+
+\subsubsection {Obtener último}
+\begin{center}
+\includegraphics[scale=0.4]{last.png} \\
+\end{center}
+
+\subsubsection {Obtener primero}
+\begin{center}
+\includegraphics[scale=0.4]{first.png} \\
+\end{center}
+
+\subsubsection {Insertar en posición}
+\begin{center}
+\includegraphics[scale=0.4]{insert.png} \\
+\end{center}
+
+\subsubsection {Eliminar posición}
+\begin{center}
+\includegraphics[scale=0.4]{delete.png} \\
+\end{center}
+
+\subsubsection {Insertar al inicio}
+\begin{center}
+\includegraphics[scale=0.4]{unshift.png} \\
+\end{center}
+
+\subsubsection {Insertar al final}
+\begin{center}
+\includegraphics[scale=0.4]{push.png} \\
+\end{center}
+
+\subsubsection {Eliminar del inicio}
+\begin{center}
+\includegraphics[scale=0.4]{shift.png} \\
+\end{center}
+
+\subsubsection {Eliminar del final}
+\begin{center}
+\includegraphics[scale=0.4]{pop.png} \\
+\end{center}
+
+
+
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Operadores sobre expresiones regulares}
+\begin{center}
+\includegraphics[scale=0.4]{regexpOp-package.png} \\
+\end{center}
+
+\subsubsection {Crear expresión regular}
+\begin{center}
+\includegraphics[scale=0.4]{newRegExp.png} \\
+\end{center}
+
+\subsubsection {match}
+\begin{center}
+\includegraphics[scale=0.4]{match.png} \\
+\end{center}
+
+\subsubsection {search}
+\begin{center}
+\includegraphics[scale=0.4]{search.png} \\
+\end{center}
+
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Conversión de tipos}
+\begin{center}
+\includegraphics[scale=0.4]{convOp-package.png} \\
+\end{center}
+
+\subsubsection {Conversión a lógico}
+\begin{center}
+\includegraphics[scale=0.4]{boolconv.png} \\
+\end{center}
+
+\subsubsection {Conversión a entero}
+\begin{center}
+\includegraphics[scale=0.4]{intconv.png} \\
+\end{center}
+
+\subsubsection {Conversión a flotante}
+\begin{center}
+\includegraphics[scale=0.4]{floatconv.png} \\
+\end{center}
+
+\subsubsection {Conversión a cadena}
+\begin{center}
+\includegraphics[scale=0.4]{strconv.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Operadores de acceso}
+\begin{center}
+\includegraphics[scale=0.4]{accessOp-package.png} \\
+\end{center}
+
+\subsubsection {Acceso a clave} 
+\begin{center}
+\includegraphics[scale=0.4]{get.png} \\
+\end{center}
+
+\subsubsection {Acceso a función} 
+\begin{center}
+\includegraphics[scale=0.4]{getFunc.png} \\
+\end{center}
+
+\subsubsection {Acceso a variable de entorno} 
+\begin{center}
+\includegraphics[scale=0.4]{getEnvSys.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Operadores condicionales} 
+\begin{center}
+\includegraphics[scale=0.4]{condOp-package.png} \\
+\end{center}
+
+\subsubsection {Ternario} 
+\begin{center}
+\includegraphics[scale=0.4]{tern.png} \\
+\end{center}
+
+\subsubsection {Fusión de nulos} 
+\begin{center}
+\includegraphics[scale=0.4]{nullCoalescing.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Operadores de entrada/salida} 
+\begin{center}
+\includegraphics[scale=0.4]{ioOp-package.png} \\
+\end{center}
+\subsubsection {Salida estándar} 
+\begin{center}
+\includegraphics[scale=0.4]{output.png} \\
+\end{center}
+\subsubsection {Entrada estándar} 
+\begin{center}
+\includegraphics[scale=0.4]{input.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\pagebreak
+\subsection {Operadores informativos} 
+\begin{center}
+\includegraphics[scale=0.4]{infoOp-package.png} \\
+\end{center}
+
+\subsubsection {Tipo de} 
+\begin{center}
+\includegraphics[scale=0.4]{typeOf.png} \\
+\end{center}
+
+\subsubsection {Tamaño de} 
+\begin{center}
+\includegraphics[scale=0.4]{sizeOf.png} \\
+\end{center}
+
+\subsubsection {Información sobre} 
+\begin{center}
+\includegraphics[scale=0.4]{datInfo.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Procesos} 
+\begin{center}
+\includegraphics[scale=0.4]{processOp-package.png} \\
+\end{center}
+
+\begin{multicols}{2}
+   \subsubsection {Crear proceso} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fork.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Esperar finalización} 
+   \begin{center}
+   \includegraphics[scale=0.4]{wait.png} \\
+   \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+   \subsubsection {Obtener identificador } 
+   \begin{center}
+   \includegraphics[scale=0.4]{getpid.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Obtener identificador padre} 
+   \begin{center}
+   \includegraphics[scale=0.4]{getppid.png} \\
+   \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+   \subsubsection {Ejecutar como proceso} 
+   \begin{center}
+   \includegraphics[scale=0.4]{process.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Salir de proceso} 
+   \begin{center}
+   \includegraphics[scale=0.4]{exitProcess.png} \\
+   \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+   \subsubsection {Señal a proceso} 
+   \begin{center}
+   \includegraphics[scale=0.4]{signal.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Manejador de señales} 
+   \begin{center}
+   \includegraphics[scale=0.4]{signalhandler.png} \\
+   \end{center}
+\end{multicols}
+
+
+\begin{multicols}{2}
+   \subsubsection {Evaluar cadena} 
+   \begin{center}
+   \includegraphics[scale=0.4]{eval.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Ejecutar comando del sistema} 
+   \begin{center}
+   \includegraphics[scale=0.4]{exec.png} \\
+   \end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Ficheros} 
+\begin{center}
+\includegraphics[scale=0.4]{fileOp-package.png} \\
+\end{center}
+
+\begin{multicols}{2}
+   \subsubsection {Obtener un flujo a fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{file.png} \\
+   \end{center}
+
+   \subsubsection {Escribir en flujo a fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fput.png} \\
+   \end{center}
+
+   \subsubsection {Leer de flujo a fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fget.png} \\
+   \end{center}
+
+   \subsubsection {Cambiar posición en fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fseek.png} \\
+   \end{center}
+\columnbreak
+\subsubsection {Obtener posición en flujo a fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{ftell.png} \\
+   \end{center}
+
+   \subsubsection {Cerrar flujo a fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fclose.png} \\
+   \end{center}
+
+   \subsubsection {Leer fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fread.png} \\
+   \end{center}
+
+   \subsubsection {Escribir en fichero} 
+   \begin{center}
+   \includegraphics[scale=0.4]{fwrite.png} \\
+   \end{center}
+\end{multicols}
+
+\subsubsection {Escribir al final de fichero} 
+\begin{center}
+\includegraphics[scale=0.4]{fappend.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+ 
+\begin{multicols}{2}
+\subsection {Fechas}
+   \begin{center}
+   \includegraphics[scale=0.4]{dateOp-package.png} \\
+   \end{center}
+   \subsubsection {Tiempo Unix} 
+   \begin{center}
+   \includegraphics[scale=0.4]{time.png} \\
+   \end{center}
+\columnbreak
+   \subsubsection {Fecha y hora con formato} 
+   \begin{center}
+   \includegraphics[scale=0.4]{date.png} \\
+   \end{center}
+
+   \subsubsection {sleep} 
+   \begin{center}
+   \includegraphics[scale=0.4]{sleep.png} \\
+   \end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\subsection {Errores} 
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{error-package.png} \\
+%~ \end{center}
+%~ 
+%~ \subsubsection {Error} 
+\begin{center}
+\includegraphics[scale=0.4]{errorException.png} \\
+\end{center}
+
+%~ \subsubsection {Manejador de errores } 
+%~ Diagrama aún por realizar
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{errorhandler.png} \\
+%~ \end{center}
+
+%~ \subsubsection {Manejador de excepciones no capturadas} 
+%~ Diagrama aún por realizar
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{errorhandler.png} \\
+%~ \end{center}
+% ----------------------------------------------------------------------
+
+\pagebreak
+\subsection {Extensiones} 
+\begin{center}
+\includegraphics[scale=0.4]{extensions-package.png} \\
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.4]{plugins.png} \\
+\end{center}
+
+\subsubsection{Biblioteca GNU de internacionalización (gettext)}
+\begin{center}
+\includegraphics[scale=0.4]{gettext-ext-package.png} \\
+\end{center}
+\paragraph {gettext}
+\begin{center}
+\includegraphics[scale=0.4]{gettext.png} \\
+\end{center}
+\begin{multicols}{2}
+\paragraph {setlocale}
+\begin{center}
+\includegraphics[scale=0.4]{setlocale.png} \\
+\end{center}
+\paragraph {dgettext}
+\begin{center}
+\includegraphics[scale=0.4]{dgettext.png} \\
+\end{center}
+\columnbreak
+\paragraph {bindtextdomain}
+\begin{center}
+\includegraphics[scale=0.4]{bindtextdomain.png} \\
+\end{center}
+\paragraph {textdomain}
+\begin{center}
+\includegraphics[scale=0.4]{textdomain.png} \\
+\end{center}
+\end{multicols}
+
+\subsection {rTree} 
+El intérprete OMI tiene la capacidad de generar una salida relativa
+a su estado y funcionamiento. Para completar el proyecto se precisa 
+de una herramienta capaz de interpretar y representar este estado 
+interno de forma gráfica y textual. 
+
+El modelo de datos del cliente OMI se define de forma similar al intérprete.
+La principal diferencia es que en el intérprete este modelo de datos se usa para procesar y 
+ejecutar el código fuente, mientras que en el cliente se usa para representar gráficamente 
+el proceso llevado a cabo. Es por ello que el modelo de datos del cliente es más abstracto. 
+
+\begin{center}
+\includegraphics[scale=0.6]{rtree.png} \\
+\end{center}
+
+%~ \subsubsection {Operaciones sobre un SGBD Mysql}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{mysql-ext-package.png} \\
+%~ \end{center}
+%~ \paragraph {Abrir conexión}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{db.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Consulta}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbQuery.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Cerrar conexión}
+%~ Diagrama aún por realizar.
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbClose.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Insertar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbInsert.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Seleccionar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbSelect.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Actualizar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbUpdate.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Eliminar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{dbDelete.png} \\
+%~ \end{center}
+%~ 
+%~ % ----------------------------------------------------------------------

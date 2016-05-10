@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="12cm" height="12cm" viewBox="187 210 222 222" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="188" y="232" width="219" height="200"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="188" y="232" width="219" height="200"/>
+    <rect style="fill: #ffffff" x="188" y="212" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="188" y="212" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190" y="227"> eval </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="217" y="247" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="217" y="247" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="260.7" y="266">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="211" y="315" width="100.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="211" y="315" width="100.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="261.35" y="334">nexpNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="260.7,293.236 260.7,303 261.35,303 261.35,315 "/>
+    <polygon style="fill: #ffffff" points="268.7,293.236 260.7,277.236 252.7,293.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="268.7,293.236 260.7,277.236 252.7,293.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="214" y="382" width="94.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="214" y="382" width="94.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="261.15" y="401">evalNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="261.35,361.236 261.35,370.5 261.15,370.5 261.15,382 "/>
+    <polygon style="fill: #ffffff" points="269.35,361.236 261.35,345.236 253.35,361.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="269.35,361.236 261.35,345.236 253.35,361.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="333.472,396 357,396 357,261 304.4,261 "/>
+    <polygon style="fill: #ffffff" points="308.3,396 322.3,391.2 336.3,396 322.3,400.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="308.3,396 322.3,391.2 336.3,396 322.3,400.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359" y="325.5">str</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="340.3" y="393"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="308.4" y="258">1</text>
+  </g>
+</svg>

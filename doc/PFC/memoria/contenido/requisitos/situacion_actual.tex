@@ -1,0 +1,87 @@
+\section {Visión general}
+En esta sección se lleva a cabo un análisis de la situación actual en el estudio de la teoría de autómatas y los lenguajes formales. 
+Se describirán las necesidades presentes en este campo, y que serán objetivo de las soluciones planteadas. A partir de estos objetivos se llevará 
+acabo una descripción de los requisitos que debe cumplir la solución tomada. 
+
+\section{Situación actual}
+
+El estudio de los lenguajes formales es anterior a la concepción de las computadoras. Las matemáticas, la lógica y otras ciencias venían haciendo 
+uso de los conceptos de los lenguajes formales para la solución de problemas. 
+
+Una computadora desde un punto de vista teórico es un autómata o máquina de estados, que es capaz de ejecutar una serie de instrucciones descritas
+en lenguaje máquina. Por tanto fueron los avances en la rama de la teoría de autómata y los lenguajes formales, entre otros campos, los que permitieron la concepción de 
+las primeras computadoras. Actualmente la mayoría de las ingenierías de la información se estudian los conceptos teóricos detrás de las computadoras 
+y los lenguajes de programación.
+
+Lo más común es que un estudiante de informática comience sus estudios en estos campos con los autómatas: los tipos que existen, cómo se definen 
+y para qué se utilizan. Llegando a comprender conceptos como el de estado, alfabeto, etc. Incluso estudiando definiciones de algunos tipos de lenguajes 
+formales como los lenguajes regulares.  
+
+Posteriormente el alumno podría utilizar los conceptos aprendidos para estudiar distintos modelos de computación, los cuales son definidos formalmente y desde un punto de vista teórico.
+La máquina de turing y el cálculo lambda son piezas esenciales en este punto del aprendizaje. 
+
+Una vez que se es poseedor del conocimiento base en la teoría de autómatas y los lenguajes formales, el alumno puede aplicar estos conocimientos para estudiar las estructuras, mecanismos 
+y demás conceptos detrás de los lenguajes de programación. En este punto se estudian los interpretes y compiladores, y los 
+conceptos básicos que hay detrás estos. Conceptos como el léxico, sintaxis y la semántica de los lenguajes de programación, las tablas de símbolos, o las distintos tipos de gramáticas. 
+
+Hasta aquí se habrá obtenido los conocimientos teóricos necesarios y el alumno podría comenzar a dar soluciones prácticas a problemas, aplicando así los conocimientos obtenidos. Así es
+común que se comience con el desarrollo de analizadores léxicos y sintácticos sencillos y concretos, para luego aplicarles una semántica. Ejercicios como el desarrollo de 
+una calculadora suelen ser habituales. Además se estudian algunas de las herramientas que asisten al proceso del desarrollo de este tipo de tecnologías.
+
+Después del proceso descrito al alumno se le ha brindado la oportunidad de profundizar en un campo con multitud de ramas, técnicas, metodologías y conceptos, que son fruto de años de 
+estudio de expertos y apasionados. Podría profundizar en el proceso de compilación o traducción, en las distintas gramáticas, en técnicas de optimización o diseñar sus propias herramientas 
+de traducción o interpretación de lenguajes formales.
+
+Por otro lado, en la industria de la tecnología de la información se hace uso de lenguajes muy completos, con gran diversidad de mecanismos y bien consolidados, que son efecto de la evolución 
+y las necesidades en el sector. En la mayoría de cursos académicos se estudian estas herramientas desde un punto de vista práctico y de uso. 
+
+La teoría de autómatas y lenguajes formales presenta la base para el estudio de los compiladores e interpretes que son parte fundamental de la industrial 
+actual. A pesar de ello no existen herramientas divulgativas, colaborativas e interactivas que, a partir de los conocimientos básicos, ayude a comprender cómo se desarrollan los distintos 
+mecanismos y herramientas presentes en la tecnología actual.
+
+Los lenguajes de programación han evolucionado mucho desde que comenzaron a alejarse del lenguaje máquina. El alumnado actual trabaja sobre los conceptos que le ayudan a entender esta evolución, 
+pero no dispone de herramientas o medios para ver cómo estos conceptos son trasladados a un producto real y presente en el día a día de un programador actual. 
+
+\section{Necesidades}
+Dada la situación actual se precisa de una herramienta que ayude a comprender cómo se implementa y construye un intérprete para un lenguaje de programación. Es condición necesaria que 
+este proceso quede correctamente documentado. La herramienta elaborada deberá ser accesible por cualquier interesado en el tema, que desee profundizar en la práctica del desarrollo
+de interpretes y lenguajes de programación. 
+
+Se partirá de los conceptos básicos de la teoría de autómatas y los lenguajes formales, así como de la teoría de compiladores e intérpretes. Se asume pues que el usuario dispone
+de este conocimiento.
+
+\section{Objetivos}
+Se llegará a construir un lenguaje de programación completo con características presente en la tecnología actual. Este proceso quedará correctamente documentado y se pondrá a disposición pública.
+Las características que serán contempladas son:
+
+\begin{itemize}
+\item Distintos tipos de datos simples y compuestos.
+\item Expresiones lógicas y aritméticas.
+\item Expresiones y funciones sobre cadenas.
+\item Expresiones y funciones sobre vectores de datos.
+\item Expresiones y funciones sobre expresiones regulares.
+\item Operadores de conversión de tipos.
+\item Mecanismos de entrada/salida.
+\item Creación de procesos.
+\item Manipulación de ficheros.
+\item Funciones de fecha y tiempo.
+\item Definición y uso de variables de tipado dinámico.
+\item Ámbito de variables.
+\item Sentencias de control de flujo condicionales e iterativas.
+\item Definición y uso de funciones y procedimientos.
+\item Mecanismos y técnicas de la programación funcional.
+\item Definición y uso de clases de objetos.
+\item Mecanismos y técnicas de la programación orientada a objeto.
+\item Integración de módulos que extienden el lenguaje.
+\end{itemize} \hfill 
+
+El interprete desarrollado podrá ser usado de una forma interactiva, permitiendo así la ejecución de
+instrucciones bajo demanda. Además deberá tener la capacidad de dar información
+estructurada de todo el proceso de interpretación. Otros sistemas podrán utilizar
+esta información para ilustrar este proceso de una forma flexible. El intérprete también 
+se deberá poder ejecutar en modo servidor, recibiendo así cualquier cadena que hace de código fuente por un puerto TCP e interpretándola.  
+
+Toda la documentación generada a partir del proceso de desarrollo deberá ser estructurada y cumplimentada para 
+formar una parte de una aplicación web que la haga accesible. La aplicación web además permitirá el uso online del intérprete, y mostrará información relativa al proceso de interpretación.
+
+El proyecto presentará una licencia de uso libre para que pueda ser usado abiertamente por la comunidad,  a la vez que se nutrirá de las contribuciones de la misma. 

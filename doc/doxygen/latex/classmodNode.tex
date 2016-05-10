@@ -1,0 +1,96 @@
+\hypertarget{classmodNode}{\section{Referencia de la Clase mod\-Node}
+\label{classmodNode}\index{mod\-Node@{mod\-Node}}
+}
+
+
+Nodo operador módulo.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de mod\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classmodNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodNode_a6144ce3aa3d7532d20bd6054ce41bed2}{mod\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classmodNode_a0cebb0d5dcfd939c63be542ff45f2be8}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classmodNode_ae2e462dbe58c905df80ca78c7663da31}{do\-\_\-mod} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador módulo. 
+
+Este nodo implementa la operación módulo sobre dos nodos asociados.
+
+Si algún nodo es de tipo no aritmético fuerza la conversión a un tipo aritmético para realizar la operación
+
+El resultado de evaluar la expresión es un valor aritmético. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classmodNode_a6144ce3aa3d7532d20bd6054ce41bed2}{\index{mod\-Node@{mod\-Node}!mod\-Node@{mod\-Node}}
+\index{mod\-Node@{mod\-Node}!modNode@{mod\-Node}}
+\subsubsection[{mod\-Node}]{\setlength{\rightskip}{0pt plus 5cm}mod\-Node\-::mod\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classmodNode_a6144ce3aa3d7532d20bd6054ce41bed2}
+Constructor de la clase. Asocia el nodo operador a dos nodos aritméticos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classmodNode_ae2e462dbe58c905df80ca78c7663da31}{\index{mod\-Node@{mod\-Node}!do\-\_\-mod@{do\-\_\-mod}}
+\index{do\-\_\-mod@{do\-\_\-mod}!modNode@{mod\-Node}}
+\subsubsection[{do\-\_\-mod}]{\setlength{\rightskip}{0pt plus 5cm}num mod\-Node\-::do\-\_\-mod (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmodNode_ae2e462dbe58c905df80ca78c7663da31}
+Ejecuta la operación módulo sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación. 
+\end{DoxyReturn}
+\hypertarget{classmodNode_a0cebb0d5dcfd939c63be542ff45f2be8}{\index{mod\-Node@{mod\-Node}!run@{run}}
+\index{run@{run}!modNode@{mod\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void mod\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmodNode_a0cebb0d5dcfd939c63be542ff45f2be8}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor aritmético del nodo mediante la operación módulo entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

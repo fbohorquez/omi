@@ -1,0 +1,1772 @@
+%~ \section{Diseño de la gramática}
+%~ En esta sección se presenta la gramática del lenguaje, para ello 
+%~ se procede a una descripción de las reglas gramaticales
+ %~ mediante el lenguaje EBNF (Extended Backus–Naur Form) 
+%~ usado para expresar gramáticas libres de contexto. Además cada regla se acompaña de un
+%~ diagrama sintáctico o diagrama de carril. 
+%~ 
+%~ Una gramática $G$ se define formalmente como sigue:
+%~ 
+%~ $$G = (V_t,V_n, P, S)$$
+%~ 
+%~ De forma que:
+%~ 
+%~ \begin{description}
+%~ \item[$V_t$] es un conjunto finito de símbolos no terminales
+%~ \item[$V_n$] es un conjunto finito de símbolos terminales
+%~ \item[$P$] es un conjunto finito de reglas de producción
+%~ \item[$S\ \epsilon\ V_n$] es el símbolo inicial
+%~ \end{description}
+%~ 
+%~ Las reglas de producción de una grmática libre de contexto tiene la forma siguiente forma:
+%~ 
+%~ $$V_n\ \rightarrow\ (V_t\ \cup\ V_n)^*$$ 
+%~ 
+%~ La gramática libre de contexto abordada tiene como símbolo inicial 
+%~ el no terminal $program$. Se comienza pues describiendo las reglas de producción 
+%~ relicionadas con este símbolo, siguiendo con las reglas de producción derivadas 
+%~ de esta. 
+%~ 
+%~ Las reglas de producción se organizan en niveles como sigue:
+%~ 
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/omi.png} \\
+%~ \end{center}
+%~ 
+%~ Estos niveles son dados a partir del nivel de abstracción del significado 
+%~ semántico que encierran las reglas de producción contenidas en los mismos.
+%~ 
+%~ Las reglas de producción correspondientes al nivel de programa 
+%~ son las más genéricas y se valen de las de la siguiente nivel para 
+%~ su definición. Estas definen el programa como una secuencia de
+%~ sentencias. La gramática descrita contempla el programa vacío, es decir,
+%~ el programa que no contiene ninguna sentencia.
+%~ 
+%~ Las reglas de producción del nivel de sentencia se definen a 
+%~ partir de expresiones o de otras sentencias. Una sentencia contiene un significado semántico
+%~ operativo de valor para el programa. Cabe decir que una expresión por si sola 
+%~ puede constituir una sentencia. La gramática expuesta describe la sentencia
+%~ vacía, esta es una sentencia que no tienen ningún significado semántico.
+%~ 
+%~ Las expresiones son la unidad mínima con significado semántico atribuido por 
+%~ el lenguaje. La mayoría de expresiones se definen a partir de identidades, 
+%~ sin embargo algunos tipos de expresiones, como las funciones, pueden formarse
+%~ a partir de reglas de más alto nivel de abstracción semantica. Por otro lado las 
+%~ reglas de producción correspondiente a las expresiones están organizadas en niveles según
+%~ la prioridad atribuida en su resolución.
+%~ 
+%~ Las identidades son reglas de producción atómicas, componiéndose únicamente de símblos no terminales. 
+%~ Tienen un significado semántico asociado de forma directa. Normalmente este valor viene dado por 
+%~ el análisis léxico.  
+ %~ 
+%~ % ----------------------------------------------------------------------
+%~ \subsection{Programa}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ program  ::=  stmts
+            %~ | empty
+%~ \end{lstlisting}  
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/program.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ % ----------------------------------------------------------------------
+%~ \subsection{Sentencias}
+%~ \subsubsection{Secuecia de sentencias}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ stmts    ::=   stmt ";" stmts
+            %~ |  stmt ";"?
+            %~ |  stmtb 
+            %~ |  label stmts
+            %~ |  ";"
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/stmts.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \pagebreak
+%~ \subsubsection{Sentencia de bloque}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ stmtb ::=   if
+         %~ |  while
+         %~ |  dowhile
+         %~ |  for
+         %~ |  foreach
+         %~ |  break
+         %~ |  switch
+         %~ |  iloop
+         %~ |  trycatch
+         %~ |  class
+         %~ |  with
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/stmtb.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \paragraph{Sentencia de control: if}
+%~ \begin{lstlisting}[style=nonumbers,
+    %~ basicstyle=\tiny, %or \small or \footnotesize etc.
+%~ ]
+%~ if ::= "if" exp ("{" stmts? "}" | stmt ";" | stmtb) elif* ("else" ("{" stmts? "}" | stmt ";" | stmtb))?
+%~ 
+%~ elif ::=  "elif" exp ( "{" stmts? "}" | stmt ";" | stmtb ) 
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/if.png} \\
+%~ \end{center}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/elif.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Sentencia de control: while}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers,
+    %~ basicstyle=\tiny]
+%~ while ::= 
+   %~ "while" exp ("{" stmts? "}" | stmt ";" | stmtb)
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/while.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Sentencia de control: do...while}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ dowhile ::=  "do" ( "{" stmts? "}" | stmt ";" | stmtb ) "while" exp ";"
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/dowhile.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Sentencia de control: for}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ for ::= "for" "("? exp? ";" exp? ";" exp? ")"? ( "{" stmts? "}" | stmt ";" | stmtb )
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/for.png} \\
+%~ \end{center}
+%~ \paragraph{Sentencia de control: forearch}
+%~ \begin{lstlisting}[style=nonumbers,basicstyle=\tiny]
+%~ foreach ::= 
+   %~ "for" "("?(id (":" id)? "in" exp | exp "as" id (":" id)?)")"? ("{" stmts? "}" | stmt ";" | stmtb)
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/foreach.png} \\
+%~ \end{center}
+%~ \pagebreak
+%~ \paragraph{Sentencia de control: switch}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ switch ::= "switch" "(" exp ")" "{" cases? "}"
+%~ 
+%~ cases ::= "case" exp ":" ( stmts cases | stmts | cases )
+   %~ |  "default" ":" stmts
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/switch.png} \\
+%~ \end{center}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/cases.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Sentencia de control: iloop}
+%~ \begin{lstlisting}[style=nonumbers,basicstyle=\tiny]
+%~ iloop ::= "$" "(" exp ( "as" id (":" id)? )? ("," exp )? ")" ( "{" stmts? "}" | stmt ";" | stmtb )
+%~ 
+%~ iloop_access ::=  "$"
+               %~ |  "$" "{" NUM "}"
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/iloop.png} \\
+%~ \end{center}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/iloop_access.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Sentencia de control: try...catch}
+%~ 
+%~ \begin{lstlisting}[style=nonumbers,basicstyle=\tiny]
+%~ trycatch ::= 
+ %~ "try" ( "{" stmts? "}" | stmt ";" | stmtb ) catch "(" id ")" ( "{" stmts? "}" | stmt ";" |  stmtb )
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/trycatch.png} \\
+%~ \end{center}
+%~ 
+%~ \pagebreak
+%~ \paragraph{Sentencia de control: with}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers,basicstyle=\tiny]
+%~ with ::= 
+ %~ "with" exp ( "{" stmts? "}" | stmt ";" | stmtb )
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/with.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ 
+%~ \subsubsection{Sentencia simple}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ stmt  ::=   exp
+         %~ |  "<<" exp
+         %~ |  ">>" ("[" exp "]")? id
+         %~ |  "goto" exp
+         %~ |  "include" exp
+         %~ |  "return" exp?
+         %~ |  "sleep" exp 
+         %~ |  "load" exp 
+         %~ |  "typeof" id 
+         %~ |  "datinfo" exp
+         %~ |  "exit"
+         %~ |  "throw" exp
+         %~ |  "global" identity
+         %~ |  "break" num? ";"
+         %~ |  "continue" num? ";"
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.6]{diagram/stmt.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Etiquetas}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ label ::=   id ":"
+%~ \end{lstlisting}  	
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/label.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \pagebreak
+%~ \subsubsection{Nombres de espacios}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ namespace ::=  namespace "::" id
+            %~ |  id "::" id
+            %~ |  "parent" "::" id
+            %~ |  "static" "::" id
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/namespace.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \subsubsection{Clases}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ class ::= "class" id ("extends" id )? "{" class_stmts? "}"
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.6]{diagram/class_gramatic.png} \\
+%~ \end{center}
+%~ \paragraph{Métodos y atributos}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ class_stmts ::= 
+   %~ (("static"|"private"|"private" "static"|"static" "private")? (function|id|assig))*
+%~ 
+%~ \end{lstlisting}  	
+%~ \begin{center}
+%~ \includegraphics[scale=0.7]{diagram/class_stmts.png} \\
+%~ \end{center}
+%~ % ----------------------------------------------------------------------
+%~ % ----------------------------------------------------------------------
+%~ \subsection {Expresiones}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ exp ::= op1
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/exp.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \subsubsection{Operadores lógicos}
+%~ \paragraph{Or lógico}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op1 ::=  op1 ( "||" | "or" ) op2
+      %~ |  op2
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.6]{diagram/lop1.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{And lógico}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op2 ::=  op2 ( "&&" | "and" ) op3
+      %~ |  op3
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.6]{diagram/op2.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Negación lógica}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op3 ::=  "!" op3 
+      %~ |  op4
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.6]{diagram/op3.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Comparaciones}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op4 ::=  op4 "<" op5
+      %~ |  op4 "<=" op5
+      %~ |  op4 ">" op5
+      %~ |  op4 ">=" op5
+      %~ |  op4 "==" op5
+      %~ |  op4 "!=" op5
+      %~ |  op4 "===" op5
+      %~ |  op4 "!==" op5
+      %~ |  op5
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op4.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Operadores aritméticos}
+%~ \paragraph{Suma y diferencia}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op5 ::= op5 "+" op6
+      %~ |  op5  "-" op6
+      %~ |  op6
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op5.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Producto y división}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op6  ::= op6 "*" op7
+      %~ |  op6 "/" op7
+      %~ |  op7
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op6.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Potencia y módulo}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op7  ::= op7 "^" op8
+      %~ |  op7 "%" op8
+      %~ |  op8
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op7.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Operadores cadenas de caracteres}
+%~ \paragraph{Concatenación}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op8 ::=  op8 "." op9
+      %~ |  op9
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op8.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \paragraph{Flujo}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ op9  ::= call "<<" op9
+      %~ |  call
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/op9.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Llamadas}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ call ::= call "(" list? ")"
+      %~ |  opc
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/call.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Operadores condicionales}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ opc ::=  tern
+      %~ |  nullcoalescing
+      %~ |  unity
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/opc.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \paragraph{Operador ternario}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ tern ::= exp "?" exp? ":" exp
+   %~ |  exp "?" exp
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/tern.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \paragraph{Null coalescing}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ nullcoalescing ::= "[[" list "]]"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/nullcoalescing.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \pagebreak
+%~ \subsubsection{Operadores unitarios}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ unity ::=   inc_dec
+         %~ |  assignation_exp
+         %~ |  cast
+         %~ |  logical_func
+         %~ |  arith_func
+         %~ |  array_func
+         %~ |  string_func
+         %~ |  regexp_func
+         %~ |  iloop_access
+         %~ |  class_exp
+         %~ |  func_exp
+         %~ |  file
+         %~ |  date
+         %~ |  process
+         %~ |  generator
+         %~ |  environments
+         %~ |  array
+         %~ |  identity
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/unity.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Incrementos y decrementos}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ inc_dec ::= "++" exp
+         %~ |  exp "++"
+         %~ |  "--" exp
+         %~ |  exp "--"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/inc_dec.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \pagebreak
+%~ \paragraph{Conversión de tipos}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ cast ::= "int" exp
+      %~ |  "float" exp
+      %~ |  "bool" exp
+      %~ |  "str" exp
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/cast.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ 
+%~ 
+%~ \paragraph{Accesos}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ access ::=  access "->" id
+         %~ |  access "[" exp? "]"
+         %~ |  call "->" id
+         %~ |  call "[" exp? "]"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/access.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Asignaciones}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ assignation ::=   
+ %~ (id | assignation | access)  "=" "&"? exp
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/assignation.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \subsubsection{Funciones}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ function ::= "~" id "(" params_val? ")" "{" stmts? "}"
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/function.png} \\
+%~ \end{center}
+%~ \paragraph {Función lambda}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ function_lambda ::= "~" "(" params_val? ")" "{" stmts? "}"
+    %~ | "~" params_val ":" exp
+    %~ | "~&" id
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/function_lambda.png} \\
+%~ \end{center}
+%~ \paragraph {Cálculo parcial}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ function_partial ::= "P" "[" params_val "]" "(" id ")"
+   %~ |  "P" "[" params_val "]" "(" function_exp ")"
+   %~ |  "P" "[" params_val "]" "(" arrayexp ")"
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/function_partial.png} \\
+%~ \end{center}
+%~ \paragraph {Función de contexto}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ function_context ::= "~>"
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/function_context.png} \\
+%~ \end{center}
+%~ 
+%~ 
+%~ \subsubsection{Decoradores}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ decorator ::= "~~" id "(" params_val? ")" "{" stmts? "}"
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/decorator.png} \\
+%~ \end{center}
+%~ \paragraph{Decorador lambda}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ decorator_lambda ::= "~~" "(" params_val? ")" "{" stmts? "}"
+%~ \end{lstlisting}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/function_decorator.png} \\
+%~ \end{center}
+%~ 
+%~ 
+%~ 
+%~ 
+%~ \pagebreak
+%~ \subsubsection{Operadores clases y objetos}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ class_exp ::=  "new" id ("(" list? ")")?
+            %~ |  "this" 
+            %~ |  "parent"
+            %~ |  namespace
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/class_exp.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Funciones del lenguaje}
+%~ \paragraph{Funciones lógicas}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ logical_func ::=  "isnull" exp
+               %~ |  "empty" exp
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/logical_func.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Funciones aritméticas}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ arith_func ::= "size" exp
+            %~ |  "sizeof" exp
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/arith_func.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Funciones cadenas de caracteres}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ string_func ::=   "sprintf" "(" exp "," exp ")"
+               %~ |  "str_replace" "(" exp "," exp "," exp ("," exp)? ")"
+               %~ |  "str_subreplace" "(" exp "," exp "," exp "," exp ")"
+               %~ |  "str_find" "(" exp "," exp ("," exp)? ")"
+               %~ |  "str_upper" "(" exp ")"
+               %~ |  "str_lower" "(" exp ")"
+%~ \end{lstlisting}  
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/string_func.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Funciones arrays}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ array_func ::= 
+ %~ "array_explode" "(" exp "," exp ")"
+ %~ |  "array_implode" "(" exp "," exp ")"
+ %~ |  "array_chunck" "(" exp "," exp ")"
+ %~ |  "array_reduce" "(" exp "," exp ")"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/array_func.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Funciones expresiones regulares}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ regexp_func ::=   "regexp" "(" exp ")"
+               %~ |  "search" "(" exp "," exp ("," list)? ")"
+               %~ |  "match" "(" exp "," exp ")"
+%~ \end{lstlisting}  
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/regexp_func.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph{Funciones fechas y tiempo}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ date ::= "date" "(" exp ")"
+      %~ |  "time" ("(" ")")
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/date.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Funciones acceso a entorno}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ environment ::= "getenv" "(" exp ")"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/environment.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \pagebreak
+%~ \paragraph{Funciones ficheros}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ file ::= "file" "(" exp ("," exp)? ")"
+   %~ |  "fput" "(" exp "," exp ")"
+   %~ |  "fwrite" "(" exp "," exp ")"
+   %~ |  "fappend" "(" exp "," exp ")"
+   %~ |  "fget" "(" exp ("," exp)? ")"
+   %~ |  "fread" "(" exp ")"
+   %~ |  "fclose" "(" exp ")"
+   %~ |  "fseek" "(" exp "," exp ("," fposs)? ")"
+   %~ |  "ftell" "(" exp ")"
+%~ 
+%~ fpos ::= FSET
+      %~ |  FCUR
+      %~ |  FEND
+%~ \end{lstlisting}  
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/fpos.png} \\
+%~ \end{center}
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/file.png} \\
+%~ \end{center}
+%~ 
+%~ \end{multicols}
+%~ 
+%~ \paragraph{Funciones procesos}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ process ::= "exec" "(" exp ")"
+         %~ |  "eval" "(" exp ")"
+         %~ |  "fork" "(" ")"
+         %~ |  "wait" "(" exp? ")"
+         %~ |  "signal" "(" exp "," exp ")"
+         %~ |  "signalhandler" "(" exp "," exp ")"
+         %~ |  "exitProcess" "(" ")"
+         %~ |  "getpid" "(" ")"
+         %~ |  "getppid" "(" ")"
+         %~ |  "process" "(" exp ("," list)? ")"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/process.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Generadores}
+%~ \begin{lstlisting}[style=nonumbers, basicstyle=\tiny]      
+%~ generator ::= "(" exp (":" exp)? "for" id (":" id )? "in" exp ( "if" exp )? ("{" stmts "}")? ")"
+   %~ | "(" exp (":" exp)? "for" "(" id (":" id )? "in" exp ")" ( "if" exp )? ("{" stmts "}")? ")"
+%~ \end{lstlisting}  
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/generator.png} \\
+%~ \end{center}
+%~ % ----------------------------------------------------------------------
+%~ \subsection{Identidades}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ identity ::=   num
+            %~ |  "true"
+            %~ |  "false"
+            %~ |  "null"
+            %~ |  str
+            %~ |  rexp
+            %~ |  id 
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/identity.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \subsubsection{Parámetros}
+%~ \begin{lstlisting}[style=nonumbers]
+%~ params_val ::= params_val "," id "=" identity 
+   %~ |  params "," id "=" identity 
+   %~ |  id "=" identity 
+   %~ |  params
+   %~ 
+%~ params ::= params "," "&"? id
+   %~ |  "&"? id
+%~ \end{lstlisting}
+%~ \begin{multicols}{2}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/params_val.png} \\
+%~ \end{center}
+%~ \columnbreak
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/params.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection {Listas y pares}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ list ::= list "," exp?
+      %~ |  exp
+%~ \end{lstlisting}  
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ map ::=  map "," pair?
+      %~ |  pair
+   %~ 
+%~ pair ::= exp ":" exp
+%~ \end{lstlisting}  
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/pair.png} \\
+%~ \end{center}
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/list.png} \\
+%~ \end{center}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/map.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \pagebreak
+%~ \subsubsection{Identificador}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ id ::= [a-zA-Z_][a-zA-Z0-9_]*
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/id.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Números}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ num ::=  ("+"|"-"|) [0-9]+(.[0-9]+)?
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{diagram/num.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ \subsubsection{Cadenas de caracteres}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ str ::= "'".* "'"
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/str.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Array}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ array ::=   "{" list "}"
+         %~ |  "{" map "}"
+         %~ |  "{""}"
+         %~ |  "arrayop"
+         %~ |  access
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/array.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Expresión regular}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ regexp ::= "`".*"`" 
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/regexp.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ \subsubsection{Comentarios}
+%~ \begin{multicols}{2}
+%~ \begin{lstlisting}[style=nonumbers]      
+%~ comments ::=   "/*" [^*]* "*/"
+            %~ |  "//"[^\n]
+            %~ |  "#" [^#]
+%~ \end{lstlisting}  
+%~ \columnbreak	
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{diagram/comments.png} \\
+%~ \end{center}
+%~ \end{multicols}
+%~ 
+%~ 
+%~ 
+%~ 
+\section{Diseño de la gramática}
+En esta sección se presenta la gramática del lenguaje, para ello 
+se procede a una descripción de las reglas gramaticales
+ mediante el lenguaje EBNF (Extended Backus–Naur Form) 
+usado para expresar gramáticas libres de contexto. Además cada regla se acompaña de un
+diagrama sintáctico o diagrama de carril. 
+
+Una gramática $G$ se define formalmente como sigue:
+
+$$G = (V_t,V_n, P, S)$$
+
+De forma que:
+
+\begin{description}
+\item[$V_t$] es un conjunto finito de símbolos no terminales
+\item[$V_n$] es un conjunto finito de símbolos terminales
+\item[$P$] es un conjunto finito de reglas de producción
+\item[$S\ \epsilon\ V_n$] es el símbolo inicial
+\end{description}
+
+Las reglas de producción de una grmática libre de contexto tiene la forma siguiente forma:
+
+$$V_n\ \rightarrow\ (V_t\ \cup\ V_n)^*$$ 
+
+La gramática libre de contexto abordada tiene como símbolo inicial 
+el no terminal $program$. Se comienza pues describiendo las reglas de producción 
+relicionadas con este símbolo, siguiendo con las reglas de producción derivadas 
+de esta. 
+
+Las reglas de producción se organizan en niveles como sigue:
+
+\begin{center}
+\includegraphics[scale=0.7]{diagram/omi.png} \\
+\end{center}
+
+Estos niveles son dados a partir del nivel de abstracción del significado 
+semántico que encierran las reglas de producción contenidas en los mismos.
+
+Las reglas de producción correspondientes al nivel de programa 
+son las más genéricas y se valen de las de la siguiente nivel para 
+su definición. Estas definen el programa como una secuencia de
+sentencias. La gramática descrita contempla el programa vacío, es decir,
+el programa que no contiene ninguna sentencia.
+
+Las reglas de producción del nivel de sentencia se definen a 
+partir de expresiones o de otras sentencias. Una sentencia contiene un significado semántico
+operativo de valor para el programa. Cabe decir que una expresión por si sola 
+puede constituir una sentencia. La gramática expuesta describe la sentencia
+vacía, esta es una sentencia que no tienen ningún significado semántico.
+
+Las expresiones son la unidad mínima con significado semántico atribuido por 
+el lenguaje. La mayoría de expresiones se definen a partir de identidades, 
+sin embargo algunos tipos de expresiones, como las funciones, pueden formarse
+a partir de reglas de más alto nivel de abstracción semantica. Por otro lado las 
+reglas de producción correspondiente a las expresiones están organizadas en niveles según
+la prioridad atribuida en su resolución.
+
+Las identidades son reglas de producción atómicas, componiéndose únicamente de símblos no terminales. 
+Tienen un significado semántico asociado de forma directa. Normalmente este valor viene dado por 
+el análisis léxico.  
+ 
+% ----------------------------------------------------------------------
+\subsection{Programa}
+\begin{multicols}{2}
+\begin{myverbatim}
+program  ::=  stmts
+            | empty
+\end{myverbatim}  
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.7]{diagram/program.png} \\
+\end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+\subsection{Sentencias}
+\subsubsection{Secuecia de sentencias}
+\begin{multicols}{2}
+\begin{myverbatim}
+stmts    ::=   stmt ";" stmts
+            |  stmt ";"?
+            |  stmtb 
+            |  label stmts
+            |  ";"
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.7]{diagram/stmts.png} \\
+\end{center}
+\end{multicols}
+\pagebreak
+\subsubsection{Sentencia de bloque}
+\begin{multicols}{2}
+\begin{myverbatim}
+stmtb ::=   if
+         |  while
+         |  dowhile
+         |  for
+         |  foreach
+         |  break
+         |  switch
+         |  iloop
+         |  trycatch
+         |  class
+         |  with
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.7]{diagram/stmtb.png} \\
+\end{center}
+\end{multicols}
+\paragraph{Sentencia de control: if}
+\begin{myverbatim}[style=nonumbers,
+    basicstyle=\tiny, %or \small or \footnotesize etc.
+]
+if ::= "if" exp ("{" stmts? "}" | stmt ";" | stmtb) elif* ("else" ("{" stmts? "}" | stmt ";" | stmtb))?
+
+elif ::=  "elif" exp ( "{" stmts? "}" | stmt ";" | stmtb ) 
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/if.png} \\
+\end{center}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/elif.png} \\
+\end{center}
+
+\paragraph{Sentencia de control: while}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers,
+    basicstyle=\tiny]
+while ::= 
+   "while" exp ("{" stmts? "}" | stmt ";" | stmtb)
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.5]{diagram/while.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Sentencia de control: do...while}
+\begin{myverbatim}
+dowhile ::=  "do" ( "{" stmts? "}" | stmt ";" | stmtb ) "while" exp ";"
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/dowhile.png} \\
+\end{center}
+
+\paragraph{Sentencia de control: for}
+\begin{myverbatim}
+for ::= "for" "("? exp? ";" exp? ";" exp? ")"? ( "{" stmts? "}" | stmt ";" | stmtb )
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/for.png} \\
+\end{center}
+\paragraph{Sentencia de control: forearch}
+\begin{myverbatim}[style=nonumbers,basicstyle=\tiny]
+foreach ::= 
+   "for" "("?(id (":" id)? "in" exp | exp "as" id (":" id)?)")"? ("{" stmts? "}" | stmt ";" | stmtb)
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/foreach.png} \\
+\end{center}
+\pagebreak
+\paragraph{Sentencia de control: switch}
+\begin{myverbatim}
+switch ::= "switch" "(" exp ")" "{" cases? "}"
+
+cases ::= "case" exp ":" ( stmts cases | stmts | cases )
+   |  "default" ":" stmts
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/switch.png} \\
+\end{center}
+\begin{center}
+\includegraphics[scale=0.4]{diagram/cases.png} \\
+\end{center}
+
+\paragraph{Sentencia de control: iloop}
+\begin{myverbatim}[style=nonumbers,basicstyle=\tiny]
+iloop ::= "$" "(" exp ( "as" id (":" id)? )? ("," exp )? ")" ( "{" stmts? "}" | stmt ";" | stmtb )
+
+iloop_access ::=  "$"
+               |  "$" "{" NUM "}"
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/iloop.png} \\
+\end{center}
+\begin{center}
+\includegraphics[scale=0.4]{diagram/iloop_access.png} \\
+\end{center}
+
+\paragraph{Sentencia de control: try...catch}
+
+\begin{myverbatim}[style=nonumbers,basicstyle=\tiny]
+trycatch ::= 
+ "try" ( "{" stmts? "}" | stmt ";" | stmtb ) catch "(" id ")" ( "{" stmts? "}" | stmt ";" |  stmtb )
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/trycatch.png} \\
+\end{center}
+
+\pagebreak
+\paragraph{Sentencia de control: with}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers,basicstyle=\tiny]
+with ::= 
+ "with" exp ( "{" stmts? "}" | stmt ";" | stmtb )
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.4]{diagram/with.png} \\
+\end{center}
+\end{multicols}
+
+
+\subsubsection{Sentencia simple}
+\begin{multicols}{2}
+\begin{myverbatim}
+stmt  ::=   exp
+         |  "<<" exp
+         |  ">>" ("[" exp "]")? id
+         |  "goto" exp
+         |  "include" exp
+         |  "return" exp?
+         |  "sleep" exp 
+         |  "load" exp 
+         |  "typeof" id 
+         |  "datinfo" exp
+         |  "exit"
+         |  "throw" exp
+         |  "global" identity
+         |  "break" num? ";"
+         |  "continue" num? ";"
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.6]{diagram/stmt.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Etiquetas}
+\begin{multicols}{2}
+\begin{myverbatim}
+label ::=   id ":"
+\end{myverbatim}  	
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.7]{diagram/label.png} \\
+\end{center}
+\end{multicols}
+\pagebreak
+\subsubsection{Nombres de espacios}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+namespace ::=  namespace "::" id
+            |  id "::" id
+            |  "parent" "::" id
+            |  "static" "::" id
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/namespace.png} \\
+\end{center}
+\end{multicols}
+\subsubsection{Clases}
+\begin{myverbatim}
+class ::= "class" id ("extends" id )? "{" class_stmts? "}"
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.6]{diagram/class_gramatic.png} \\
+\end{center}
+\paragraph{Métodos y atributos}
+\begin{myverbatim}
+class_stmts ::= 
+   (("static"|"private"|"private" "static"|"static" "private")? (function|id|assig))*
+
+\end{myverbatim}  	
+\begin{center}
+\includegraphics[scale=0.7]{diagram/class_stmts.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+% ----------------------------------------------------------------------
+\subsection {Expresiones}
+\begin{multicols}{2}
+\begin{myverbatim}      
+exp ::= op1
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/exp.png} \\
+\end{center}
+\end{multicols}
+\subsubsection{Operadores lógicos}
+\paragraph{Or lógico}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op1 ::=  op1 ( "||" | "or" ) op2
+      |  op2
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.6]{diagram/lop1.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{And lógico}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op2 ::=  op2 ( "&&" | "and" ) op3
+      |  op3
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.6]{diagram/op2.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Negación lógica}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op3 ::=  "!" op3 
+      |  op4
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.6]{diagram/op3.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Comparaciones}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op4 ::=  op4 "<" op5
+      |  op4 "<=" op5
+      |  op4 ">" op5
+      |  op4 ">=" op5
+      |  op4 "==" op5
+      |  op4 "!=" op5
+      |  op4 "===" op5
+      |  op4 "!==" op5
+      |  op5
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op4.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Operadores aritméticos}
+\paragraph{Suma y diferencia}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op5 ::= op5 "+" op6
+      |  op5  "-" op6
+      |  op6
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op5.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Producto y división}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op6  ::= op6 "*" op7
+      |  op6 "/" op7
+      |  op7
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op6.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Potencia y módulo}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op7  ::= op7 "^" op8
+      |  op7 "%" op8
+      |  op8
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op7.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Operadores cadenas de caracteres}
+\paragraph{Concatenación}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op8 ::=  op8 "." op9
+      |  op9
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op8.png} \\
+\end{center}
+\end{multicols}
+\paragraph{Flujo}
+\begin{multicols}{2}
+\begin{myverbatim}      
+op9  ::= call "<<" op9
+      |  call
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/op9.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Llamadas}
+\begin{multicols}{2}
+\begin{myverbatim}      
+call ::= call "(" list? ")"
+      |  opc
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/call.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Operadores condicionales}
+\begin{multicols}{2}
+\begin{myverbatim}      
+opc ::=  tern
+      |  nullcoalescing
+      |  unity
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/opc.png} \\
+\end{center}
+\end{multicols}
+\paragraph{Operador ternario}
+\begin{multicols}{2}
+\begin{myverbatim}      
+tern ::= exp "?" exp? ":" exp
+   |  exp "?" exp
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/tern.png} \\
+\end{center}
+\end{multicols}
+\paragraph{Null coalescing}
+\begin{multicols}{2}
+\begin{myverbatim}      
+nullcoalescing ::= "[[" list "]]"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/nullcoalescing.png} \\
+\end{center}
+\end{multicols}
+
+\pagebreak
+\subsubsection{Operadores unitarios}
+\begin{multicols}{2}
+\begin{myverbatim}      
+unity ::=   inc_dec
+         |  assignation_exp
+         |  cast
+         |  logical_func
+         |  arith_func
+         |  array_func
+         |  string_func
+         |  regexp_func
+         |  iloop_access
+         |  class_exp
+         |  func_exp
+         |  file
+         |  date
+         |  process
+         |  generator
+         |  environments
+         |  array
+         |  identity
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/unity.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Incrementos y decrementos}
+\begin{multicols}{2}
+\begin{myverbatim}      
+inc_dec ::= "++" exp
+         |  exp "++"
+         |  "--" exp
+         |  exp "--"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/inc_dec.png} \\
+\end{center}
+\end{multicols}
+\pagebreak
+\paragraph{Conversión de tipos}
+\begin{multicols}{2}
+\begin{myverbatim}      
+cast ::= "int" exp
+      |  "float" exp
+      |  "bool" exp
+      |  "str" exp
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/cast.png} \\
+\end{center}
+\end{multicols}
+
+
+
+\paragraph{Accesos}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+access ::=  access "->" id
+         |  access "[" exp? "]"
+         |  call "->" id
+         |  call "[" exp? "]"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/access.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Asignaciones}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+assignation ::=   
+ (id | assignation | access)  "=" "&"? exp
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/assignation.png} \\
+\end{center}
+\end{multicols}
+\subsubsection{Funciones}
+\begin{myverbatim}
+function ::= "~" id "(" params_val? ")" "{" stmts? "}"
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/function.png} \\
+\end{center}
+\paragraph {Función lambda}
+\begin{myverbatim}
+function_lambda ::= "~" "(" params_val? ")" "{" stmts? "}"
+    | "~" params_val ":" exp
+    | "~&" id
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/function_lambda.png} \\
+\end{center}
+\paragraph {Cálculo parcial}
+\begin{myverbatim}
+function_partial ::= "P" "[" params_val "]" "(" id ")"
+   |  "P" "[" params_val "]" "(" function_exp ")"
+   |  "P" "[" params_val "]" "(" arrayexp ")"
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/function_partial.png} \\
+\end{center}
+\paragraph {Función de contexto}
+\begin{myverbatim}
+function_context ::= "~>"
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/function_context.png} \\
+\end{center}
+
+
+\subsubsection{Decoradores}
+\begin{myverbatim}
+decorator ::= "~~" id "(" params_val? ")" "{" stmts? "}"
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/decorator.png} \\
+\end{center}
+\paragraph{Decorador lambda}
+\begin{myverbatim}
+decorator_lambda ::= "~~" "(" params_val? ")" "{" stmts? "}"
+\end{myverbatim}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/function_decorator.png} \\
+\end{center}
+
+
+
+
+\pagebreak
+\subsubsection{Operadores clases y objetos}
+\begin{multicols}{2}
+\begin{myverbatim}      
+class_exp ::=  "new" id ("(" list? ")")?
+            |  "this" 
+            |  "parent"
+            |  namespace
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/class_exp.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Funciones del lenguaje}
+\paragraph{Funciones lógicas}
+\begin{multicols}{2}
+\begin{myverbatim}      
+logical_func ::=  "isnull" exp
+               |  "empty" exp
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/logical_func.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Funciones aritméticas}
+\begin{multicols}{2}
+\begin{myverbatim}      
+arith_func ::= "size" exp
+            |  "sizeof" exp
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/arith_func.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Funciones cadenas de caracteres}
+\begin{myverbatim}      
+string_func ::=   "sprintf" "(" exp "," exp ")"
+               |  "str_replace" "(" exp "," exp "," exp ("," exp)? ")"
+               |  "str_subreplace" "(" exp "," exp "," exp "," exp ")"
+               |  "str_find" "(" exp "," exp ("," exp)? ")"
+               |  "str_upper" "(" exp ")"
+               |  "str_lower" "(" exp ")"
+\end{myverbatim}  
+\begin{center}
+\includegraphics[scale=0.4]{diagram/string_func.png} \\
+\end{center}
+
+\paragraph{Funciones arrays}
+\begin{multicols}{2}
+\begin{myverbatim}      
+array_func ::= 
+ "array_explode" "(" exp "," exp ")"
+ |  "array_implode" "(" exp "," exp ")"
+ |  "array_chunck" "(" exp "," exp ")"
+ |  "array_reduce" "(" exp "," exp ")"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/array_func.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Funciones expresiones regulares}
+\begin{myverbatim}      
+regexp_func ::=   "regexp" "(" exp ")"
+               |  "search" "(" exp "," exp ("," list)? ")"
+               |  "match" "(" exp "," exp ")"
+\end{myverbatim}  
+\begin{center}
+\includegraphics[scale=0.5]{diagram/regexp_func.png} \\
+\end{center}
+
+\paragraph{Funciones fechas y tiempo}
+\begin{multicols}{2}
+\begin{myverbatim}      
+date ::= "date" "(" exp ")"
+      |  "time" ("(" ")")
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/date.png} \\
+\end{center}
+\end{multicols}
+
+\paragraph{Funciones acceso a entorno}
+\begin{multicols}{2}
+\begin{myverbatim}      
+environment ::= "getenv" "(" exp ")"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/environment.png} \\
+\end{center}
+\end{multicols}
+
+\pagebreak
+\paragraph{Funciones ficheros}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+file ::= "file" "(" exp ("," exp)? ")"
+   |  "fput" "(" exp "," exp ")"
+   |  "fwrite" "(" exp "," exp ")"
+   |  "fappend" "(" exp "," exp ")"
+   |  "fget" "(" exp ("," exp)? ")"
+   |  "fread" "(" exp ")"
+   |  "fclose" "(" exp ")"
+   |  "fseek" "(" exp "," exp ("," fposs)? ")"
+   |  "ftell" "(" exp ")"
+
+fpos ::= FSET
+      |  FCUR
+      |  FEND
+\end{myverbatim}  
+\begin{center}
+\includegraphics[scale=0.4]{diagram/fpos.png} \\
+\end{center}
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/file.png} \\
+\end{center}
+
+\end{multicols}
+
+\paragraph{Funciones procesos}
+\begin{multicols}{2}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+process ::= "exec" "(" exp ")"
+         |  "eval" "(" exp ")"
+         |  "fork" "(" ")"
+         |  "wait" "(" exp? ")"
+         |  "signal" "(" exp "," exp ")"
+         |  "signalhandler" "(" exp "," exp ")"
+         |  "exitProcess" "(" ")"
+         |  "getpid" "(" ")"
+         |  "getppid" "(" ")"
+         |  "process" "(" exp ("," list)? ")"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/process.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Generadores}
+\begin{myverbatim}[style=nonumbers, basicstyle=\tiny]      
+generator ::= "(" exp (":" exp)? "for" id (":" id )? "in" exp ( "if" exp )? ("{" stmts "}")? ")"
+   | "(" exp (":" exp)? "for" "(" id (":" id )? "in" exp ")" ( "if" exp )? ("{" stmts "}")? ")"
+\end{myverbatim}  
+\begin{center}
+\includegraphics[scale=0.4]{diagram/generator.png} \\
+\end{center}
+% ----------------------------------------------------------------------
+\subsection{Identidades}
+\begin{multicols}{2}
+\begin{myverbatim}      
+identity ::=   num
+            |  "true"
+            |  "false"
+            |  "null"
+            |  str
+            |  rexp
+            |  id 
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/identity.png} \\
+\end{center}
+\end{multicols}
+\subsubsection{Parámetros}
+\begin{myverbatim}
+params_val ::= params_val "," id "=" identity 
+   |  params "," id "=" identity 
+   |  id "=" identity 
+   |  params
+   
+params ::= params "," "&"? id
+   |  "&"? id
+\end{myverbatim}
+\begin{multicols}{2}
+\begin{center}
+\includegraphics[scale=0.4]{diagram/params_val.png} \\
+\end{center}
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.4]{diagram/params.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection {Listas y pares}
+\begin{multicols}{2}
+\begin{myverbatim}      
+list ::= list "," exp?
+      |  exp
+\end{myverbatim}  
+\begin{myverbatim}      
+map ::=  map "," pair?
+      |  pair
+   
+pair ::= exp ":" exp
+\end{myverbatim}  
+\begin{center}
+\includegraphics[scale=0.5]{diagram/pair.png} \\
+\end{center}
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/list.png} \\
+\end{center}
+\begin{center}
+\includegraphics[scale=0.5]{diagram/map.png} \\
+\end{center}
+\end{multicols}
+
+\pagebreak
+\subsubsection{Identificador}
+\begin{multicols}{2}
+\begin{myverbatim}      
+id ::= [a-zA-Z_][a-zA-Z0-9_]*
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/id.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Números}
+\begin{multicols}{2}
+\begin{myverbatim}      
+num ::=  ("+"|"-"|) [0-9]+(.[0-9]+)?
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.5]{diagram/num.png} \\
+\end{center}
+\end{multicols}
+\subsubsection{Cadenas de caracteres}
+\begin{multicols}{2}
+\begin{myverbatim}      
+str ::= "'".* "'"
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/str.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Array}
+\begin{multicols}{2}
+\begin{myverbatim}      
+array ::=   "{" list "}"
+         |  "{" map "}"
+         |  "{""}"
+         |  "arrayop"
+         |  access
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/array.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Expresión regular}
+\begin{multicols}{2}
+\begin{myverbatim}      
+regexp ::= "`".*"`" 
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/regexp.png} \\
+\end{center}
+\end{multicols}
+
+\subsubsection{Comentarios}
+\begin{multicols}{2}
+\begin{myverbatim}      
+comments ::=   "/*" [^*]* "*/"
+            |  "//"[^\n]
+            |  "#" [^#]
+\end{myverbatim}  
+\columnbreak	
+\begin{center}
+\includegraphics[scale=0.4]{diagram/comments.png} \\
+\end{center}
+\end{multicols}
+
+
+
+

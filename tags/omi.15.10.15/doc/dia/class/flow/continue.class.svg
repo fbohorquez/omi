@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="27cm" height="10cm" viewBox="187 127 524 186" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="189" y="148" width="522" height="164"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="148" width="522" height="164"/>
+    <rect style="fill: #ffffff" x="189" y="128" width="81" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="128" width="81" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="191" y="143"> continue </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="522" y="170" width="135.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522" y="170" width="135.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="589.7" y="189">continueNode</text>
+    <rect style="fill: #ffffff" x="522" y="198" width="135.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522" y="198" width="135.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="525" y="212">+level: int = 1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="367" y="169.8" width="94.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="367" y="169.8" width="94.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="414.175" y="188.8">flowNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="208" y="169.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="208" y="169.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="251.7" y="188.8">runNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="313.636,183.8 312.4,183.8 366,183.8 367,183.8 "/>
+    <polygon style="fill: #ffffff" points="313.636,175.8 297.636,183.8 313.636,191.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="313.636,175.8 297.636,183.8 313.636,191.8 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="480.592,183.8 500.178,183.8 500.178,184 522,184 "/>
+    <polygon style="fill: #ffffff" points="480.592,175.8 464.592,183.8 480.592,191.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="480.592,175.8 464.592,183.8 480.592,191.8 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="501" y="262" width="177.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="501" y="262" width="177.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="589.65" y="281">continueException</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="589.7,218 589.7,236 589.65,236 589.65,255.295 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="584.65,242.647 589.65,258.647 594.65,242.647 "/>
+  </g>
+</svg>

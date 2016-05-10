@@ -1,0 +1,218 @@
+\hypertarget{classidgetNode}{\section{Referencia de la Clase idget\-Node}
+\label{classidgetNode}\index{idget\-Node@{idget\-Node}}
+}
+
+
+Nodo identificador obtenido.  
+
+
+
+
+{\ttfamily \#include $<$id\-Node.\-h$>$}
+
+Diagrama de herencias de idget\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classidgetNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classidgetNode_a3e222fd67271c678e2aad6297b29ef88}{idget\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp)
+\item 
+void \hyperlink{classidgetNode_a9423b08e0755a0432b47dde32e7c473f}{run} ()
+\item 
+void \hyperlink{classidgetNode_a5064c05a1e080cf66fbc754b2f76f111}{run} (bool resolvkey)
+\item 
+virtual void \hyperlink{classidgetNode_a116329895e687e16356ee3aba892fc04}{runf} ()
+\item 
+void \hyperlink{classidgetNode_a6f3d7453fa18e1faba1b1ba06492096f}{runc} ()
+\item 
+void \hyperlink{classidgetNode_ab399b394c1f81f725bdf6cd315577a41}{clear} ()
+\item 
+bool \hyperlink{classidgetNode_ab17484e81265f876d0fd2babf2186765}{exist} (bool func=true)
+\item 
+bool \hyperlink{classidgetNode_a2f92ff2c5c01a90bd05764182a8c5e9d}{existf} () const 
+\item 
+bool \hyperlink{classidgetNode_a17a0ea08ac721346d46db409dd5d894e}{existc} () const 
+\item 
+string \hyperlink{classidgetNode_a49f8984f744fec5f136bab98246a8890}{name} () const 
+\item 
+bool \hyperlink{classidgetNode_a26c065b2595bfebe90106db2c2e45643}{existfunction} ()
+\item 
+\hyperlink{classidNode}{id\-Node} $\ast$ \hyperlink{classidgetNode_af71a95561ebcc1869a78db7bcdfb026d}{get\-Id} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo identificador obtenido. 
+
+Este nodo es un nodo identificador tal que su nombre es obtenido mediante la evaluación de un nodo ejecutable.
+
+Su ejecución implica obtener el nombre del identificador, para luego acceder a una la tabla de símbolos del contexto actual para obtener la clave, y por tanto el valor, que se corresponde al nombre obtenido. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classidgetNode_a3e222fd67271c678e2aad6297b29ef88}{\index{idget\-Node@{idget\-Node}!idget\-Node@{idget\-Node}}
+\index{idget\-Node@{idget\-Node}!idgetNode@{idget\-Node}}
+\subsubsection[{idget\-Node}]{\setlength{\rightskip}{0pt plus 5cm}idget\-Node\-::idget\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp}
+\end{DoxyParamCaption}
+)}}\label{classidgetNode_a3e222fd67271c678e2aad6297b29ef88}
+Constructor del nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo ejecutable correspondiente, cuya ejecución determina el nombre del identificador. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classidgetNode_ab399b394c1f81f725bdf6cd315577a41}{\index{idget\-Node@{idget\-Node}!clear@{clear}}
+\index{clear@{clear}!idgetNode@{idget\-Node}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void idget\-Node\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classidgetNode_ab399b394c1f81f725bdf6cd315577a41}
+Limpia el valor de la referencia, borrándola de la tabla de variables. \hypertarget{classidgetNode_ab17484e81265f876d0fd2babf2186765}{\index{idget\-Node@{idget\-Node}!exist@{exist}}
+\index{exist@{exist}!idgetNode@{idget\-Node}}
+\subsubsection[{exist}]{\setlength{\rightskip}{0pt plus 5cm}bool idget\-Node\-::exist (
+\begin{DoxyParamCaption}
+\item[{bool}]{func = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_ab17484e81265f876d0fd2babf2186765}
+Tras la ejecución del nodo devuelve si existía la referencia en el nivel actual de la tabla de símbolos de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em func} & Comprueba además si existe como función. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano que indica si la variable existe. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classidNode_a54667580929eab413d46ff5d3c7b3345}{id\-Node}.
+
+\hypertarget{classidgetNode_a17a0ea08ac721346d46db409dd5d894e}{\index{idget\-Node@{idget\-Node}!existc@{existc}}
+\index{existc@{existc}!idgetNode@{idget\-Node}}
+\subsubsection[{existc}]{\setlength{\rightskip}{0pt plus 5cm}bool idget\-Node\-::existc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidgetNode_a17a0ea08ac721346d46db409dd5d894e}
+Tras la ejecución del nodo devuelve si existía la referencia en la tabla de símbolos de clases. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la clase existe. 
+\end{DoxyReturn}
+\hypertarget{classidgetNode_a2f92ff2c5c01a90bd05764182a8c5e9d}{\index{idget\-Node@{idget\-Node}!existf@{existf}}
+\index{existf@{existf}!idgetNode@{idget\-Node}}
+\subsubsection[{existf}]{\setlength{\rightskip}{0pt plus 5cm}bool idget\-Node\-::existf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidgetNode_a2f92ff2c5c01a90bd05764182a8c5e9d}
+Tras la ejecución del nodo devuelve si existía la referencia en la tabla de símbolos de funciones. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la función existe. 
+\end{DoxyReturn}
+\hypertarget{classidgetNode_a26c065b2595bfebe90106db2c2e45643}{\index{idget\-Node@{idget\-Node}!existfunction@{existfunction}}
+\index{existfunction@{existfunction}!idgetNode@{idget\-Node}}
+\subsubsection[{existfunction}]{\setlength{\rightskip}{0pt plus 5cm}bool idget\-Node\-::existfunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_a26c065b2595bfebe90106db2c2e45643}
+Comprueba si existe la referencia correspondiente al nodo en la tabla de funciones. No necesita ejecutar el nodo. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si la función existe. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classidNode_a70123074df6f875c8308a4f5854b033d}{id\-Node}.
+
+\hypertarget{classidgetNode_af71a95561ebcc1869a78db7bcdfb026d}{\index{idget\-Node@{idget\-Node}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!idgetNode@{idget\-Node}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf id\-Node} $\ast$ idget\-Node\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classidgetNode_af71a95561ebcc1869a78db7bcdfb026d}
+Obtiene el Identificador relativo al nombre calculado en la ejecución del nodo. \begin{DoxyReturn}{Devuelve}
+Nodo identificador. 
+\end{DoxyReturn}
+\hypertarget{classidgetNode_a49f8984f744fec5f136bab98246a8890}{\index{idget\-Node@{idget\-Node}!name@{name}}
+\index{name@{name}!idgetNode@{idget\-Node}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string idget\-Node\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classidgetNode_a49f8984f744fec5f136bab98246a8890}
+Obtiene el nombre calculado en la ejecución del nodo. \begin{DoxyReturn}{Devuelve}
+Nombre 
+\end{DoxyReturn}
+\hypertarget{classidgetNode_a9423b08e0755a0432b47dde32e7c473f}{\index{idget\-Node@{idget\-Node}!run@{run}}
+\index{run@{run}!idgetNode@{idget\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void idget\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_a9423b08e0755a0432b47dde32e7c473f}
+Ejecuta el nodo asociado como expresión para obtener el nombre del identificador.
+
+Accede a la tabla de símbolos de variables en el nivel actual y toma como valor la referencia correspondiente al nombre.
+
+Si no existe una referencia en la tabla de símbolos correspondiente al nombre del identificador esta es creada y apuntada a un nodo de tipo nulo.
+
+Si la referencia tomada como valor es otra referencia, toma esta última como valor, procediendo de la misma forma hasta que la referencia tomada como valor no apunte ha otra referencia. Este proceso se denomina resolver la referencia o clave. 
+
+Reimplementado de \hyperlink{classidNode_a720f6ab623192e93743e0098db5d7af7}{id\-Node}.
+
+\hypertarget{classidgetNode_a5064c05a1e080cf66fbc754b2f76f111}{\index{idget\-Node@{idget\-Node}!run@{run}}
+\index{run@{run}!idgetNode@{idget\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void idget\-Node\-::run (
+\begin{DoxyParamCaption}
+\item[{bool}]{resolvkey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_a5064c05a1e080cf66fbc754b2f76f111}
+Ejecuta el nodo asociado como expresión para obtener el nombre del identificador.
+
+Accede a la tabla de símbolos de variables en el nivel actual y toma como valor la referencia correspondiente al nombre. 
+\begin{DoxyParams}{Parámetros}
+{\em resolvkey} & Si es verdadero resuelve la referencia. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classidNode_a4492461c45b78b905757f2ecf97fc393}{id\-Node}.
+
+\hypertarget{classidgetNode_a6f3d7453fa18e1faba1b1ba06492096f}{\index{idget\-Node@{idget\-Node}!runc@{runc}}
+\index{runc@{runc}!idgetNode@{idget\-Node}}
+\subsubsection[{runc}]{\setlength{\rightskip}{0pt plus 5cm}void idget\-Node\-::runc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_a6f3d7453fa18e1faba1b1ba06492096f}
+Ejecuta el nodo asociado como expresión para obtener el nombre del identificador.
+
+Accede a la tabla de símbolos de clases y toma como valor la referencia correspondiente al nombre. 
+
+Reimplementado de \hyperlink{classidNode_af1376fbb468dea9a953ce499a0e94d3d}{id\-Node}.
+
+\hypertarget{classidgetNode_a116329895e687e16356ee3aba892fc04}{\index{idget\-Node@{idget\-Node}!runf@{runf}}
+\index{runf@{runf}!idgetNode@{idget\-Node}}
+\subsubsection[{runf}]{\setlength{\rightskip}{0pt plus 5cm}void idget\-Node\-::runf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classidgetNode_a116329895e687e16356ee3aba892fc04}
+Ejecuta el nodo asociado como expresión para obtener el nombre del identificador.
+
+Accede a la tabla de símbolos de funciones y toma como valor la referencia correspondiente al nombre. 
+
+Reimplementado de \hyperlink{classidNode_a61b9528de4bb06f924dc60e9b682705e}{id\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{idNode_8h}{id\-Node.\-h}\item 
+trunk/src/run/table/id\-Node.\-cpp\end{DoxyCompactItemize}

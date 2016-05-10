@@ -1,0 +1,68 @@
+\hypertarget{classasigdecNode}{\section{Referencia de la Clase asigdec\-Node}
+\label{classasigdecNode}\index{asigdec\-Node@{asigdec\-Node}}
+}
+
+
+Nodo operador asignación y decremento.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de asigdec\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classasigdecNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classasigdecNode_ac3ec554aeeee40c2ecd063f856796af8}{asigdec\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classasigdecNode_a64dcc521a5b122854a4736943823e82c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador asignación y decremento. 
+
+Este nodo implementa la operación asignación e decremento. Se toma el valor de el nodo asociado, que normalmente representará un símbolo variable, luego se decrementa el valor de este.
+
+El resultado de evaluar la expresión es el valor antes de decrementar. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classasigdecNode_ac3ec554aeeee40c2ecd063f856796af8}{\index{asigdec\-Node@{asigdec\-Node}!asigdec\-Node@{asigdec\-Node}}
+\index{asigdec\-Node@{asigdec\-Node}!asigdecNode@{asigdec\-Node}}
+\subsubsection[{asigdec\-Node}]{\setlength{\rightskip}{0pt plus 5cm}asigdec\-Node\-::asigdec\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classasigdecNode_ac3ec554aeeee40c2ecd063f856796af8}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classasigdecNode_a64dcc521a5b122854a4736943823e82c}{\index{asigdec\-Node@{asigdec\-Node}!run@{run}}
+\index{run@{run}!asigdecNode@{asigdec\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void asigdec\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classasigdecNode_a64dcc521a5b122854a4736943823e82c}
+Método que ejecuta el nodo. Asocia el valor del nodo operando como valor interno del operador. Luego procede a incrementar el valor del nodo asociado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{classnidenNode}{\section{Referencia de la Clase niden\-Node}
+\label{classnidenNode}\index{niden\-Node@{niden\-Node}}
+}
+
+
+Nodo operador no identico.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de niden\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classnidenNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnidenNode_a2977be762f52ed61efe495c037657461}{niden\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classnidenNode_afa39f3a84cd19576a8cdc9d08e482186}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classnidenNode_ab795f47b92d1cdf459b37328c09481a6}{do\-\_\-niden} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador no identico. 
+
+Este nodo implementa la operación no idéntico sobre dos nodos asociados.
+
+Para determinar el valor de la operación se comparan tanto el valor simbóico de los operandos como su tipo.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnidenNode_a2977be762f52ed61efe495c037657461}{\index{niden\-Node@{niden\-Node}!niden\-Node@{niden\-Node}}
+\index{niden\-Node@{niden\-Node}!nidenNode@{niden\-Node}}
+\subsubsection[{niden\-Node}]{\setlength{\rightskip}{0pt plus 5cm}niden\-Node\-::niden\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classnidenNode_a2977be762f52ed61efe495c037657461}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnidenNode_ab795f47b92d1cdf459b37328c09481a6}{\index{niden\-Node@{niden\-Node}!do\-\_\-niden@{do\-\_\-niden}}
+\index{do\-\_\-niden@{do\-\_\-niden}!nidenNode@{niden\-Node}}
+\subsubsection[{do\-\_\-niden}]{\setlength{\rightskip}{0pt plus 5cm}bool niden\-Node\-::do\-\_\-niden (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnidenNode_ab795f47b92d1cdf459b37328c09481a6}
+Ejecuta la operación no idéntico sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación . 
+\end{DoxyReturn}
+\hypertarget{classnidenNode_afa39f3a84cd19576a8cdc9d08e482186}{\index{niden\-Node@{niden\-Node}!run@{run}}
+\index{run@{run}!nidenNode@{niden\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void niden\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnidenNode_afa39f3a84cd19576a8cdc9d08e482186}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación no identico entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

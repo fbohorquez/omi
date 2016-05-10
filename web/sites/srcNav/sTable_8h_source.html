@@ -1,0 +1,328 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_51b78ddddcd8c3a02f14de8ea3f9179c.html">table</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sTable.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sTable_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//sTable.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifndef _RUN_TABLE_STABLE_</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_TABLE_STABLE_</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="symbols_8h.html">symbols.h</a>&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">class </span><a class="code" href="classclassNode.html">classNode</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classsTable.html">  121</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classsTable.html">sTable</a> {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;   <a class="code" href="classsTable.html">sTable</a> ();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   <a class="code" href="classsTable.html">sTable</a> (<a class="code" href="classsTable.html">sTable</a>* s);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;   <span class="keywordtype">void</span> mklevel (<a class="code" href="classsymbolsTable.html">symbols</a> *default_level = NULL );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a> *currentlevel ();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   <span class="keywordtype">void</span> rmlevel ();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <span class="keywordtype">void</span> add (<a class="code" href="classrunNode.html">runNode</a>* str, <a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;   <span class="keywordtype">void</span> addfunction (<a class="code" href="classrunNode.html">runNode</a>* str, <a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;   <span class="keywordtype">void</span> addclass (<a class="code" href="classrunNode.html">runNode</a> *str, <a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;   <a class="code" href="classrefNode.html">refNode</a> *access (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;   <a class="code" href="classrefNode.html">refNode</a> *accessfunction (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* accessclass (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   <span class="keywordtype">void</span> clear (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;   <span class="keywordtype">bool</span> exist (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;   <span class="keywordtype">bool</span> existfunction (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   <span class="keywordtype">bool</span> existclass (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;   <span class="keywordtype">int</span> getLevel () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;   <span class="keywordtype">int</span> getLevelTop () <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;   <span class="keywordtype">void</span> setLevel (<span class="keywordtype">int</span> l);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;   <span class="keywordtype">void</span> print ();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;   <span class="keywordtype">void</span> fprint ();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;   <span class="keywordtype">void</span> cprint ();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a> *getTable ();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a> getFunctions ();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* getFunction (<a class="code" href="classrunNode.html">runNode</a> *key);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* getFunctionRef (<a class="code" href="classrunNode.html">runNode</a> *key);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;   <span class="keywordtype">void</span> setFunction (<a class="code" href="classrunNode.html">runNode</a> *key, <a class="code" href="classrunNode.html">runNode</a>* exp);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* getElement (<a class="code" href="classrunNode.html">runNode</a> *key);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* getElementRef (<a class="code" href="classrunNode.html">runNode</a> *key);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;   <span class="keywordtype">void</span> setNodeUse (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* getNodeUse () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;   <span class="keywordtype">void</span> setPrivate (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;   <span class="keywordtype">bool</span> isPrivate (<a class="code" href="classrunNode.html">runNode</a> *str);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;   <span class="keyword">static</span> <a class="code" href="classsTable.html">sTable</a>* sys_sTable ();</div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classsTable.html#a80ddd01254b180d81bf0264e353bf7eb">  332</a></span>&#160;   <span class="keyword">static</span> <a class="code" href="classsTable.html">sTable</a>* <a class="code" href="classsTable.html#a80ddd01254b180d81bf0264e353bf7eb">sTable_use</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="classsTable.html#a8c9904b43ec79f00b72d19b7e93fe80e">  336</a></span>&#160;   <span class="keyword">static</span> <a class="code" href="classsTable.html">sTable</a>* <a class="code" href="classsTable.html#a8c9904b43ec79f00b72d19b7e93fe80e">sTable_ini</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;   <span class="keyword">static</span> <a class="code" href="classsTable.html">sTable</a>* new_sTable (<span class="keywordtype">bool</span> level_default = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;   <span class="keyword">static</span> <a class="code" href="classsTable.html">sTable</a>* new_sTable (<a class="code" href="classsTable.html">sTable</a>* s, <span class="keywordtype">bool</span> level_default = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;   <span class="keyword">static</span> <span class="keywordtype">void</span> add_sTable (<a class="code" href="classsTable.html">sTable</a>* s);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;   <span class="keyword">static</span> <span class="keywordtype">int</span> search_sTable (<a class="code" href="classsTable.html">sTable</a>* s);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;   <span class="keyword">static</span> <span class="keywordtype">void</span> setGlobal (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;   <span class="keywordtype">void</span> setDeleteCurrentLevel (<span class="keywordtype">bool</span> del);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;   <span class="keywordtype">bool</span> isref (<a class="code" href="classrunNode.html">runNode</a>* node, <span class="keywordtype">int</span> level_see);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;   <span class="keywordtype">bool</span> isrefAll (<a class="code" href="classrunNode.html">runNode</a>* node, <span class="keywordtype">int</span> level_see);</div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="classsTable.html#a826fb8438b2b8475ef3328b0f0342fd2">  392</a></span>&#160;   vector&lt;symbols *&gt; <a class="code" href="classsTable.html#a826fb8438b2b8475ef3328b0f0342fd2">tables_</a>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="classsTable.html#a549ab9d5d0aad41d8289c693de39d328">  396</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classsTable.html#a549ab9d5d0aad41d8289c693de39d328">level_</a>;</div>
+<div class="line"><a name="l00400"></a><span class="lineno"><a class="line" href="classsTable.html#ac39633c58e4f659879f0292af0a3ea48">  400</a></span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a> <a class="code" href="classsTable.html#ac39633c58e4f659879f0292af0a3ea48">functions_</a>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;   vector&lt;runNode*&gt; private_;</div>
+<div class="line"><a name="l00405"></a><span class="lineno"><a class="line" href="classsTable.html#ae3ed8713b34d93d63addf914333c9766">  405</a></span>&#160;   <span class="keyword">static</span> <a class="code" href="classsymbolsTable.html">symbols</a> <a class="code" href="classsTable.html#ae3ed8713b34d93d63addf914333c9766">class_</a>;</div>
+<div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="classsTable.html#a4f5d3240bb31d3f77e72e81d4c18cdf4">  409</a></span>&#160;   <span class="keyword">static</span> vector&lt;sTable*&gt; <a class="code" href="classsTable.html#a4f5d3240bb31d3f77e72e81d4c18cdf4">sTables_</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="classsTable.html#a1f57f04be1d59b8c5ac8c58afc2a2687">  413</a></span>&#160;   <span class="keyword">static</span> map&lt;runNode*, refNode*, cmp_runNode&gt; <a class="code" href="classsTable.html#a1f57f04be1d59b8c5ac8c58afc2a2687">globals_</a>;</div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="classsTable.html#a7f0eed1e3a2f06e80900d4034d7c7e25">  420</a></span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *<a class="code" href="classsTable.html#a7f0eed1e3a2f06e80900d4034d7c7e25">node_use_</a>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="keyword">private</span>:   </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;   <span class="keywordtype">bool</span> delete_current_level_;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;};</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
+<div class="ttc" id="classsTable_html_a8c9904b43ec79f00b72d19b7e93fe80e"><div class="ttname"><a href="classsTable.html#a8c9904b43ec79f00b72d19b7e93fe80e">sTable::sTable_ini</a></div><div class="ttdeci">static sTable * sTable_ini</div><div class="ttdef"><b>Definition:</b> sTable.h:336</div></div>
+<div class="ttc" id="classsTable_html_a549ab9d5d0aad41d8289c693de39d328"><div class="ttname"><a href="classsTable.html#a549ab9d5d0aad41d8289c693de39d328">sTable::level_</a></div><div class="ttdeci">int level_</div><div class="ttdef"><b>Definition:</b> sTable.h:396</div></div>
+<div class="ttc" id="classclassNode_html"><div class="ttname"><a href="classclassNode.html">classNode</a></div><div class="ttdoc">Nodo clase. </div><div class="ttdef"><b>Definition:</b> classNode.h:89</div></div>
+<div class="ttc" id="classsymbolsTable_html"><div class="ttname"><a href="classsymbolsTable.html">symbolsTable</a></div><div class="ttdoc">Tabla de símbolos. </div><div class="ttdef"><b>Definition:</b> symbols.h:65</div></div>
+<div class="ttc" id="classsTable_html_a80ddd01254b180d81bf0264e353bf7eb"><div class="ttname"><a href="classsTable.html#a80ddd01254b180d81bf0264e353bf7eb">sTable::sTable_use</a></div><div class="ttdeci">static sTable * sTable_use</div><div class="ttdef"><b>Definition:</b> sTable.h:332</div></div>
+<div class="ttc" id="classsTable_html_a4f5d3240bb31d3f77e72e81d4c18cdf4"><div class="ttname"><a href="classsTable.html#a4f5d3240bb31d3f77e72e81d4c18cdf4">sTable::sTables_</a></div><div class="ttdeci">static vector&lt; sTable * &gt; sTables_</div><div class="ttdef"><b>Definition:</b> sTable.h:409</div></div>
+<div class="ttc" id="classsTable_html_ac39633c58e4f659879f0292af0a3ea48"><div class="ttname"><a href="classsTable.html#ac39633c58e4f659879f0292af0a3ea48">sTable::functions_</a></div><div class="ttdeci">symbols functions_</div><div class="ttdef"><b>Definition:</b> sTable.h:400</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="symbols_8h_html"><div class="ttname"><a href="symbols_8h.html">symbols.h</a></div><div class="ttdoc">Tabla de símbolos. </div></div>
+<div class="ttc" id="classsTable_html_a826fb8438b2b8475ef3328b0f0342fd2"><div class="ttname"><a href="classsTable.html#a826fb8438b2b8475ef3328b0f0342fd2">sTable::tables_</a></div><div class="ttdeci">vector&lt; symbols * &gt; tables_</div><div class="ttdef"><b>Definition:</b> sTable.h:392</div></div>
+<div class="ttc" id="classsTable_html"><div class="ttname"><a href="classsTable.html">sTable</a></div><div class="ttdoc">Contexto de tablas de símbolos. </div><div class="ttdef"><b>Definition:</b> sTable.h:121</div></div>
+<div class="ttc" id="classsTable_html_a1f57f04be1d59b8c5ac8c58afc2a2687"><div class="ttname"><a href="classsTable.html#a1f57f04be1d59b8c5ac8c58afc2a2687">sTable::globals_</a></div><div class="ttdeci">static map&lt; runNode *, refNode *, cmp_runNode &gt; globals_</div><div class="ttdef"><b>Definition:</b> sTable.h:413</div></div>
+<div class="ttc" id="classrefNode_html"><div class="ttname"><a href="classrefNode.html">refNode</a></div><div class="ttdoc">Nodo referencia. </div><div class="ttdef"><b>Definition:</b> runTree.h:279</div></div>
+<div class="ttc" id="classsTable_html_ae3ed8713b34d93d63addf914333c9766"><div class="ttname"><a href="classsTable.html#ae3ed8713b34d93d63addf914333c9766">sTable::class_</a></div><div class="ttdeci">static symbols class_</div><div class="ttdef"><b>Definition:</b> sTable.h:405</div></div>
+<div class="ttc" id="classsTable_html_a7f0eed1e3a2f06e80900d4034d7c7e25"><div class="ttname"><a href="classsTable.html#a7f0eed1e3a2f06e80900d4034d7c7e25">sTable::node_use_</a></div><div class="ttdeci">runNode * node_use_</div><div class="ttdef"><b>Definition:</b> sTable.h:420</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

@@ -1,0 +1,115 @@
+\hypertarget{classsearchNode}{\section{Referencia de la Clase search\-Node}
+\label{classsearchNode}\index{search\-Node@{search\-Node}}
+}
+
+
+Nodo función búsqueda estructurada.  
+
+
+
+
+{\ttfamily \#include $<$regexp\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de search\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classsearchNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsearchNode_a0d38f0ec41707bc09dd659e763c2e4c8}{search\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$regexp)
+\item 
+\hyperlink{classsearchNode_ac169cce12ddc6f263f3f75caa1e3f90d}{search\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$regexp, \hyperlink{classrunNode}{run\-Node} $\ast$keys)
+\item 
+void \hyperlink{classsearchNode_aee137a8b956e6582c22588117efbc366}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsearchNode_a655e0f65fc124e090347020d3ac6c703}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo función búsqueda estructurada. 
+
+Este nodo realiza una búsqueda estructurada, es decir, obtiene una estructura de datos condicionada por los patrones de búsqueda y el elemento sobre el que se realiza.
+
+En el caso básico de ejección de este nodo operará buscando en una cadena de texto subcadenas que pertenezcan al conjunto definido por una expresión regular, introduciendo cada subcadena en un array.
+
+Adicionalmente la expresión regular puede estar formada por subexpresiones delimitadas por \char`\"{}()\char`\"{}. En dicho caso se buscará en la cadena principal subcadenas que pertenezcan al conjunto delimitado por la expresión regular. Por cada subcadena encontrada se creará un array con las correspondencias de cada subexpresión. Cada uno de los arrays resultantes se guardan en otro que será el que tome como valor interno el nodo.
+
+Si se utiliza una expresión regular formada por subexpresiones los arrays correspondientes a cada subcadena tendrán índices numéricos. Es posible, sin embargo, especificar una lista ordenada de claves para crear un array asociativo.
+
+También es posible ampliar la búsqueda sobre un array de cadenas. En este caso se aplicará el algoritmo de búsqueda recursivamente en cada elemento del array 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsearchNode_a0d38f0ec41707bc09dd659e763c2e4c8}{\index{search\-Node@{search\-Node}!search\-Node@{search\-Node}}
+\index{search\-Node@{search\-Node}!searchNode@{search\-Node}}
+\subsubsection[{search\-Node}]{\setlength{\rightskip}{0pt plus 5cm}search\-Node\-::search\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{regexp}
+\end{DoxyParamCaption}
+)}}\label{classsearchNode_a0d38f0ec41707bc09dd659e763c2e4c8}
+Constructor inicializa el nodo de búsqueda estructurada a partir de una cadena o array de cadenas y una expresión regular
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena de texto o array de cadenas \\
+\hline
+{\em regexp} & Expresión regular. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsearchNode_ac169cce12ddc6f263f3f75caa1e3f90d}{\index{search\-Node@{search\-Node}!search\-Node@{search\-Node}}
+\index{search\-Node@{search\-Node}!searchNode@{search\-Node}}
+\subsubsection[{search\-Node}]{\setlength{\rightskip}{0pt plus 5cm}search\-Node\-::search\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{regexp, }
+\item[{{\bf run\-Node} $\ast$}]{keys}
+\end{DoxyParamCaption}
+)}}\label{classsearchNode_ac169cce12ddc6f263f3f75caa1e3f90d}
+Constructor que inicializa el nodo de búsqueda estructurada a partir de una cadena o array de cadenas, una expresión regular y una lista de claves que serán utilizado par crear un array asociativo
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena de texto o array de cadenas \\
+\hline
+{\em regexp} & Expresión regular \\
+\hline
+{\em keys} & Lista de claves para el array asociativo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsearchNode_a655e0f65fc124e090347020d3ac6c703}{\index{search\-Node@{search\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!searchNode@{search\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ search\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsearchNode_a655e0f65fc124e090347020d3ac6c703}
+Devuelve un nodo search como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método search. 
+\end{DoxyReturn}
+\hypertarget{classsearchNode_aee137a8b956e6582c22588117efbc366}{\index{search\-Node@{search\-Node}!run@{run}}
+\index{run@{run}!searchNode@{search\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void search\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsearchNode_aee137a8b956e6582c22588117efbc366}
+Lleva a cabo la búsqueda estructura. Tras la ejecución del nodo este toma como valor interno el array resultado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-h\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-cpp\end{DoxyCompactItemize}

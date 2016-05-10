@@ -1,0 +1,71 @@
+\hypertarget{classfputNode}{\section{Referencia de la Clase fput\-Node}
+\label{classfputNode}\index{fput\-Node@{fput\-Node}}
+}
+
+
+Node función escribir en descriptor de fichero .  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fput\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfputNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfputNode_a86bc8a68a443cf689a4631d4aaddb8a8}{fput\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file, \hyperlink{classrunNode}{run\-Node} $\ast$val)
+\item 
+void \hyperlink{classfputNode_ac1e5fdc58f9d57e1b7782b1eda9e273f}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node función escribir en descriptor de fichero . 
+
+Este nodo se encarga escribir en la posición en la que se encuentra un descriptor de fichero una cadena. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfputNode_a86bc8a68a443cf689a4631d4aaddb8a8}{\index{fput\-Node@{fput\-Node}!fput\-Node@{fput\-Node}}
+\index{fput\-Node@{fput\-Node}!fputNode@{fput\-Node}}
+\subsubsection[{fput\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fput\-Node\-::fput\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file, }
+\item[{{\bf run\-Node} $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}\label{classfputNode_a86bc8a68a443cf689a4631d4aaddb8a8}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que reresenta el descriptor de fichero \\
+\hline
+{\em val.} & Nodo que representa la cadena a escribir \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfputNode_ac1e5fdc58f9d57e1b7782b1eda9e273f}{\index{fput\-Node@{fput\-Node}!run@{run}}
+\index{run@{run}!fputNode@{fput\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fput\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfputNode_ac1e5fdc58f9d57e1b7782b1eda9e273f}
+Método de ejecución. Escribe en la posición en la que se enncuentra el descriptor de fichero la cadena dada.
+
+Toma como valor el número de caracteres escritos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

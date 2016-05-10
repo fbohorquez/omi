@@ -1,0 +1,83 @@
+\hypertarget{classarraypushNode}{\section{Referencia de la Clase arraypush\-Node}
+\label{classarraypushNode}\index{arraypush\-Node@{arraypush\-Node}}
+}
+
+
+Nodo funcion inserta al final del array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de arraypush\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarraypushNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarraypushNode_ae2b0715919f55da61278a0469db2d1dd}{arraypush\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array, \hyperlink{classrunNode}{run\-Node} $\ast$element)
+\item 
+void \hyperlink{classarraypushNode_a6eb706763d3f8cc7715706005d4bf049}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarraypushNode_afa60c2664e930e0f6328ad9f4086d65e}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo funcion inserta al final del array. 
+
+Este nodo se encarga de insertar un elemento al final de un array de elementos 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarraypushNode_ae2b0715919f55da61278a0469db2d1dd}{\index{arraypush\-Node@{arraypush\-Node}!arraypush\-Node@{arraypush\-Node}}
+\index{arraypush\-Node@{arraypush\-Node}!arraypushNode@{arraypush\-Node}}
+\subsubsection[{arraypush\-Node}]{\setlength{\rightskip}{0pt plus 5cm}arraypush\-Node\-::arraypush\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array, }
+\item[{{\bf run\-Node} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{classarraypushNode_ae2b0715919f55da61278a0469db2d1dd}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que representa el array de elementos \\
+\hline
+{\em element} & Nodo que representa el elemento a insertar \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarraypushNode_afa60c2664e930e0f6328ad9f4086d65e}{\index{arraypush\-Node@{arraypush\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arraypushNode@{arraypush\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arraypush\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarraypushNode_afa60c2664e930e0f6328ad9f4086d65e}
+Devuelve un nodo inserta al final del array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método push. 
+\end{DoxyReturn}
+\hypertarget{classarraypushNode_a6eb706763d3f8cc7715706005d4bf049}{\index{arraypush\-Node@{arraypush\-Node}!run@{run}}
+\index{run@{run}!arraypushNode@{arraypush\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void arraypush\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarraypushNode_a6eb706763d3f8cc7715706005d4bf049}
+Método que ejecuta el nodo. Inserta el elemento al final del array. Se toma como valor una referencia al array con el elemento insertado, 
+
+Reimplementado de \hyperlink{classarrayinsertNode_a1a72ddaf1ade1ee8a535ae1ca1fc2861}{arrayinsert\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

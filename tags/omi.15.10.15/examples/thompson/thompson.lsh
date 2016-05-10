@@ -1,0 +1,194 @@
+#!/usr/local/bin/omi
+#=======================================================================
+~ generate (t) {
+   ret = {
+      0 : {
+         t : 'T',
+         '@': 'F',
+      }
+   };
+   return ret; 
+}
+
+~ op0 (t1, t2) {
+   n1 = size (t1);
+   n2 = size (t2);
+   keys = {};
+   for (k:v in t1[0] ) 
+      keys[] = k;
+   for (k:v in t2[0] ){
+      if (k != '@')
+         keys[] = k;
+   }
+   nk = size (keys);
+   for (i = 0; i < n1; ++i){ 
+      for (j = 0; j < nk; j ++) {
+         if (!t1[i][keys[j]]){
+            t1[i][keys[j]] = 'F';
+         }
+         elif (t1[i][keys[j]] == 'T'){
+            t1[i][keys[j]] = n1;
+         }
+      }
+   }
+   for (i = 0; i < n2; ++i){
+      for (j = 0; j < nk; j ++) {
+         if (!t2[i][keys[j]]){
+            t2[i][keys[j]] = 'F';
+         }elif (t2[i][keys[j]] != 'T' && t2[i][keys[j]] != 'F'){
+            t2[i][keys[j]] += n1 + 1;
+         }
+      }
+   }
+   level = {};
+   for (i = 0; i < nk; ++i) {
+      if (keys[i] == '@')
+         level [keys[i]] = n1 + 1;
+      else
+         level [keys[i]] = 'F';
+   }
+   t1[] = level;
+   for (i = 0; i < n2; ++i){
+      t1[] = t2[i];
+   }
+   return t1;
+}
+
+~ op1 (t1, t2) {
+   n1 = size (t1);
+   n2 = size (t2);
+   keys = {};
+   aux_keys = {};
+   resp = {};
+   for (k:v in t1[0] ) {
+      keys[] = k;
+      aux_keys[k] = true;
+   }
+   for (k:v in t2[0] ){
+      if (!aux_keys[k])
+         keys[] = k;
+   }
+   nk = size (keys);
+   line = {};
+   for (i = 0; i < nk; ++i) {
+      if (keys[i] == '@')
+         line[keys[i]] = {1, n1 + 2};
+      else 
+         line[keys[i]] = 'F';
+   }
+   resp [] = line;
+   for (i = 0; i < n1; ++i){
+      for (j = 0; j < nk; ++j){
+         if (!t1[i][keys[j]] || (t1[i][keys[j]] == 'F')){
+            t1[i][keys[j]] = 'F';
+         }
+         elif (t1[i][keys[j]] == 'T'){
+            t1[i][keys[j]] = n1 + 1;
+         }
+         elif (isarray (t1[i][keys[j]])){
+            nm = size (t1[i][keys[j]]);
+            for (k = 0; k < nm; ++k){
+               t1[i][keys[j]][k] += 1;
+            }
+         }
+         else {
+            t1[i][keys[j]] += 1;
+         }
+      }
+      resp [] = t1[i];
+   }
+   line['@'] = n1 + n2 + 3;
+   resp [] = line;
+   for (i = 0; i < n2; ++i){
+      for (j = 0; j < nk; ++j){
+         if (!t2[i][keys[j]] || t2[i][keys[j]] == 'F'){
+            t2[i][keys[j]] = 'F';
+         }
+         else if (t2[i][keys[j]] == 'T'){
+            t2[i][keys[j]] = n1 + n2 + 2
+         }
+         elif (isarray (t1[i][keys[j]])){
+            nm = size (t1[i][keys[j]]);
+            for (k = 0; k < nm; ++k){
+               t1[i][keys[j]][k] += n1 + 2;
+            }
+         }
+         else {
+            t2[i][keys[j]] += n1 + 2;
+         }
+      }
+      resp [] = t2[i];
+   }
+   line['@'] = n1 + n2 + 3;
+   resp [] = line;
+   line['@'] = 'T';
+   resp [] = line;
+   return resp;
+}
+
+~ op2 (t) {
+   << "Operador * " << t;
+   return  t << "*";
+}
+
+~ processStr (text) {
+   t = text;
+   a = {text};
+   n = size (t);
+   ant = op = null;
+   total = {};
+   for (i = 0; i < n; ++i){
+      if (t[i] != "("){
+         current = generate (t[i]);
+      }else {
+         j = i + 1;
+         str = "";
+         while (j < n && t[j] != ")"){
+            str .= t[j];
+            j++;
+         }
+         if ( j != n) {
+            i = j;
+            current = processStr (str);
+         }else{
+            << "ERROR";
+         }
+      }
+      if (i + 1 < n) {
+         if (t[i+1] == "|") {
+            op = 1;
+            i ++;
+         }
+         elif (t[i+1] == "*") {
+            last_op = op;
+            op = 2;
+            current = op2 (current);
+            op = last_op;
+            i ++;
+         }
+         else {
+            op = 0;
+         }
+      }
+      last = current;
+      
+      if (total && last){
+         if (op == 0){
+            total = op0 (total, last); 
+         }
+         elif (op == 1) {
+            total = op1 (total, last);
+         }
+      }
+      if (!total) {
+         total = current;
+      } 
+   }
+   return total;
+}
+
+#~ automata = processStr ("A(CD)B(FGH)PH10");
+automata = processStr ("C|A|B");
+
+<< automata;
+

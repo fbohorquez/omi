@@ -1,0 +1,24 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visi\IeC {\'o}n general}{4}
+\contentsline {section}{\numberline {2}Actores}{4}
+\contentsline {section}{\numberline {3}Int\IeC {\'e}rprete}{5}
+\contentsline {subsection}{\numberline {3.1}Interpretar entrada est\IeC {\'a}ndar}{5}
+\contentsline {subsection}{\numberline {3.2}Interpretar fichero}{6}
+\contentsline {subsection}{\numberline {3.3}Interpretar l\IeC {\'\i }nea}{7}
+\contentsline {subsection}{\numberline {3.4}Interpretar}{7}
+\contentsline {subsection}{\numberline {3.5}Ver ayuda}{8}
+\contentsline {subsection}{\numberline {3.6}Cargar extensi\IeC {\'o}n}{9}
+\contentsline {subsection}{\numberline {3.7}Listar extensiones}{9}
+\contentsline {subsection}{\numberline {3.8}Iniciar interpretaci\IeC {\'o}n red}{10}
+\contentsline {subsection}{\numberline {3.9}Obtener pasos interpretaci\IeC {\'o}n red}{10}
+\contentsline {section}{\numberline {4}runTree}{12}
+\contentsline {subsection}{\numberline {4.1}Enviar c\IeC {\'o}digo fuente}{12}
+\contentsline {subsection}{\numberline {4.2}Siguiente paso}{13}
+\contentsline {subsection}{\numberline {4.3}Siguiente sentencia}{14}
+\contentsline {subsection}{\numberline {4.4}Activar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{15}
+\contentsline {subsection}{\numberline {4.5}Desactivar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{15}
+\contentsline {subsection}{\numberline {4.6}Limpiar salida}{16}
+\contentsline {subsection}{\numberline {4.7}Ver informaci\IeC {\'o}n de nodo}{17}
+\contentsline {subsection}{\numberline {4.8}Ver contenido de la tabla de s\IeC {\'\i }mbolos}{17}
+\contentsline {subsection}{\numberline {4.9}Guardar c\IeC {\'o}digo fuente}{18}
+\contentsline {subsection}{\numberline {4.10}Abrir c\IeC {\'o}digo fuente}{18}

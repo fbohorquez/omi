@@ -1,0 +1,80 @@
+\hypertarget{classarraypopNode}{\section{Referencia de la Clase arraypop\-Node}
+\label{classarraypopNode}\index{arraypop\-Node@{arraypop\-Node}}
+}
+
+
+Nodo función elimina y devuelve el último elemento de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de arraypop\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarraypopNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarraypopNode_a728f90285d083e62396e4d6b72684d90}{arraypop\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array)
+\item 
+void \hyperlink{classarraypopNode_a5a96f6ab8867ca653bbe74ec8f4c1d4b}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarraypopNode_a5a6ac267a6db71b6d3e0b64657e81d34}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo función elimina y devuelve el último elemento de array. 
+
+La ejecución de este nodo elimina el último elemento de un array tras tomarlo como valor. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarraypopNode_a728f90285d083e62396e4d6b72684d90}{\index{arraypop\-Node@{arraypop\-Node}!arraypop\-Node@{arraypop\-Node}}
+\index{arraypop\-Node@{arraypop\-Node}!arraypopNode@{arraypop\-Node}}
+\subsubsection[{arraypop\-Node}]{\setlength{\rightskip}{0pt plus 5cm}arraypop\-Node\-::arraypop\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classarraypopNode_a728f90285d083e62396e4d6b72684d90}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que representa el array de elementos. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarraypopNode_a5a6ac267a6db71b6d3e0b64657e81d34}{\index{arraypop\-Node@{arraypop\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arraypopNode@{arraypop\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arraypop\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarraypopNode_a5a6ac267a6db71b6d3e0b64657e81d34}
+Devuelve un nodo elimina y devuelve el último elemento de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método pop. 
+\end{DoxyReturn}
+\hypertarget{classarraypopNode_a5a96f6ab8867ca653bbe74ec8f4c1d4b}{\index{arraypop\-Node@{arraypop\-Node}!run@{run}}
+\index{run@{run}!arraypopNode@{arraypop\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void arraypop\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarraypopNode_a5a96f6ab8867ca653bbe74ec8f4c1d4b}
+Método que ejecuta el nodo. Toma como valor el último elemento de un array y lo elimina del mismo. Si el array está vacío toma como valor un nodo nulo. 
+
+Reimplementado de \hyperlink{classarraydeleteNode_a0ce9f89cbb1485472f071b3573f0477d}{arraydelete\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

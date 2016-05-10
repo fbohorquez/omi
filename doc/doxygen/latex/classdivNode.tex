@@ -1,0 +1,96 @@
+\hypertarget{classdivNode}{\section{Referencia de la Clase div\-Node}
+\label{classdivNode}\index{div\-Node@{div\-Node}}
+}
+
+
+Nodo operador división.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de div\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classdivNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdivNode_aaf5444aa1b13960627066006f1a1ed5c}{div\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classdivNode_a56aa027a86b596362a5741bed8b8eb51}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classdivNode_a6ecab675baf7410067278bf0a1734f0e}{do\-\_\-div} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador división. 
+
+Este nodo implementa la operación división sobre dos nodos asociados.
+
+Si algún nodo es de tipo no aritmético fuerza la conversión a un tipo aritmético para realizar la operación
+
+El resultado de evaluar la expresión es un valor aritmético. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classdivNode_aaf5444aa1b13960627066006f1a1ed5c}{\index{div\-Node@{div\-Node}!div\-Node@{div\-Node}}
+\index{div\-Node@{div\-Node}!divNode@{div\-Node}}
+\subsubsection[{div\-Node}]{\setlength{\rightskip}{0pt plus 5cm}div\-Node\-::div\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classdivNode_aaf5444aa1b13960627066006f1a1ed5c}
+Constructor de la clase. Asocia el nodo operador a dos nodos aritméticos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classdivNode_a6ecab675baf7410067278bf0a1734f0e}{\index{div\-Node@{div\-Node}!do\-\_\-div@{do\-\_\-div}}
+\index{do\-\_\-div@{do\-\_\-div}!divNode@{div\-Node}}
+\subsubsection[{do\-\_\-div}]{\setlength{\rightskip}{0pt plus 5cm}num div\-Node\-::do\-\_\-div (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classdivNode_a6ecab675baf7410067278bf0a1734f0e}
+Ejecuta la operación división sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación. 
+\end{DoxyReturn}
+\hypertarget{classdivNode_a56aa027a86b596362a5741bed8b8eb51}{\index{div\-Node@{div\-Node}!run@{run}}
+\index{run@{run}!divNode@{div\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void div\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdivNode_a56aa027a86b596362a5741bed8b8eb51}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor aritmético del nodo mediante la operación producto entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

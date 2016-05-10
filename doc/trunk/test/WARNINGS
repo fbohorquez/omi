@@ -1,0 +1,17 @@
+No implementation found for style `lmodern'
+No implementation found for style `/usr/share/texlive/texmf-dist/tex/latex/base/bnf'
+No implementation found for style `fancyhdr'
+No implementation found for style `dsfont'
+No implementation found for style `graphicx'
+No implementation found for style `listings'
+No implementation found for style `placeins'
+No implementation found for style `framed'
+No implementation found for style `titlesec'
+No implementation found for style `caption'
+
+? brace missing for \paragraph
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/test/./logo-doc.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/test/./sdl.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/test/./memorySpaceLogic.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/test/./memorySpaceArith.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/test/./memorySpaceStr.png to tree: 

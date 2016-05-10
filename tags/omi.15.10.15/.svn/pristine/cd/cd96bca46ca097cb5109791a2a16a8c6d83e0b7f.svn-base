@@ -1,0 +1,1235 @@
+//operatorNode.cpp
+//----------------------------------------------------------------------
+/*
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+#include "operatorNode.h"
+//~ #include DATABASE
+#include "stmtNode.h"
+#include "componentNode.h"
+#include "../error.h"
+#include <math.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+#include <stdio.h>
+#include "lshParser.h"
+//----------------------------------------------------------------------
+//asigNode
+asigNode::asigNode (runNode* node1, runNode* node2): node1_ (node1), node2_(node2) {}
+
+void asigNode::run () {
+   runNode *node_aux = node2_, *nodeR_ = NULL;
+   ref_ = NULL;
+   nexpNode::resolved (node_aux)->run();
+   nodeR_ = this->isRefNode (node_aux)?node_aux:expNode::clone (node_aux);
+   noderef(nodeR_);
+   setValue (nodeR_);
+}
+
+void asigNode::runLevel () {
+   runNode *node_aux = node2_, *nodeR_ = NULL;
+   ref_ = NULL;
+   sTable::sTable_use->setLevel (sTable::sTable_use->getLevel() - 1);
+   nexpNode::resolved (node_aux)->run();
+   sTable::sTable_use->setLevel (sTable::sTable_use->getLevel() + 1);
+   nodeR_ = this->isRefNode (node_aux)?node_aux:expNode::clone (node_aux);
+   noderef(nodeR_);
+   setValue (nodeR_);
+}
+
+bool asigNode::isRefNode (runNode* node){
+   return dynamic_cast<nexpNode*>(node2_);
+}
+
+void asigNode::setValue (runNode* node) { 
+   if (nexpNode* nexp = dynamic_cast<nexpNode*> (node1_)) {
+      revConnectNode::init("asigNode");
+      nexp->run();
+      nexp->noderef(node);
+      ref_ = nexp->ref();
+      revConnectNode::run_rev ("asigNode", node, 1);
+      revConnectNode::end("asigNode");
+   }else{
+      throw errorException ("assigning constant", "asigNode: Node 1 is const ", 1); 
+   }
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//asigrefNode
+asigrefNode::asigrefNode (runNode* node1, runNode* node2): node1_ (node1), node2_(node2) {}
+
+void asigrefNode::run () {
+   runNode *node_aux = node2_, *nodeR_ = NULL;
+   
+   if (idNode* n_id = dynamic_cast<idNode*> (node_aux)) {
+      n_id->run();
+     noderef(n_id->getRef());
+     nodeR_ = n_id->getRef();
+   } else if (expNode* exp = dynamic_cast<expNode*> (node_aux)) {
+      exp->run();
+      noderef(exp);
+      nodeR_ = exp;
+   }
+   setValue (nodeR_);
+}
+
+void asigrefNode::setValue (runNode* node) { 
+   if (nexpNode* nexp = dynamic_cast<nexpNode*> (node1_)) {
+      nexp->run();
+      if (node != nexp->getRef())
+         nexp->noderef (node);
+      else
+         throw errorException ("Reference to same symbol", "asigrefNode: Reference recursive ", 1); 
+   }
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//orNode
+orNode::orNode (runNode* op1, runNode* op2): op1_ (op1), op2_ (op2) {}
+
+void orNode::run () {
+   runNode* op1 = op1_;
+   runNode* op2 = op2_;
+   nexpNode::resolved (op1)->run();
+   if (logicNode::to_bool(op1)) {
+      noderef(op1);
+   } else {
+      nexpNode::resolved (op2)->run();
+      noderef(op2);
+   }
+}
+
+bool orNode::do_or (runNode* op1, runNode* op2) {
+   return logicNode::to_bool(op1) || logicNode::to_bool (op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//andNode
+andNode::andNode (runNode* op1, runNode* op2): op1_ (op1), op2_ (op2) {}
+
+void andNode::run () {
+   runNode* op1 = op1_;
+   runNode* op2 = op2_;
+   nexpNode::resolved (op1)->run();
+   if (logicNode::to_bool(op1)) {
+      nexpNode::resolved (op2)->run();
+      noderef(op2);
+   } else {
+      noderef(op1);
+   }
+}
+
+bool andNode::do_and (runNode* op1, runNode* op2) {
+   return logicNode::to_bool(op1) && logicNode::to_bool (op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//notNode
+notNode::notNode (runNode* op): op_ (op) {}
+
+void notNode::run () {
+   runNode* op = op_;
+   nexpNode::resolved (op)->run();
+   boolvalue_ = notNode::do_not (op);
+}
+
+bool notNode::do_not (runNode* op) {
+   return !logicNode::to_bool(op);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//lthNode
+lthNode::lthNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void lthNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = lthNode::do_lth (op1, op2);
+}
+
+bool lthNode::do_lth (runNode *op1, runNode *op2) {
+   if (dynamic_cast<regexpNode*>(op1) || dynamic_cast<regexpNode*>(op2)) {
+      return (stringNode::to_str (op1) < stringNode::to_str (op2)) && !eqNode::do_eq (op1,op2);
+   } 
+   else if (dynamic_cast<nullNode*>(op1) || dynamic_cast<nullNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->boolvalue () < node2->boolvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<logicNode*>(op1) || dynamic_cast<logicNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->boolvalue () < node2->boolvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<arithNode*>(op1) || dynamic_cast<arithNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->numvalue () < node2->numvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<stringNode*>(op1) || dynamic_cast<stringNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->strvalue () < node2->strvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<arrayNode*>(op1) || dynamic_cast<arrayNode*>(op2)) {
+      if (arrayNode *node2 = dynamic_cast<arrayNode*>(op2)){
+         if (arrayNode * node1 = dynamic_cast<arrayNode*>(op1)){
+            return node1->numvalue () < node2->numvalue();;
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//leqNode
+leqNode::leqNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void leqNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = leqNode::do_leq (op1, op2);
+}
+
+bool leqNode::do_leq (runNode *op1, runNode *op2) {
+   return lthNode::do_lth(op1, op2) || eqNode::do_eq(op1,op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//gthNode
+gthNode::gthNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void gthNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = gthNode::do_gth (op1, op2);
+}
+
+bool gthNode::do_gth (runNode *op1, runNode *op2) {
+   return !leqNode::do_leq(op1,op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//geqNode
+geqNode::geqNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void geqNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = geqNode::do_geq (op1, op2);
+}
+
+bool geqNode::do_geq (runNode *op1, runNode *op2) {
+   return !lthNode::do_lth(op1,op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//eqNode
+eqNode::eqNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void eqNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = eqNode::do_eq (op1, op2);
+}
+#include "operatorRegexpNode.h"
+bool eqNode::do_eq (runNode *op1, runNode* op2) {
+   if (dynamic_cast<regexpNode*>(op1)) {
+      if (dynamic_cast<regexpNode*>(op2))
+         return stringNode::to_str (op1) == stringNode::to_str (op2);
+      strNode str (stringNode::to_str(op2));
+      matchNode m (&str, op1);
+      m.run();
+      return m.boolvalue();
+   } 
+   else if (dynamic_cast<regexpNode*>(op2)) {
+      strNode str (stringNode::to_str(op1));
+      matchNode m (&str, op2);
+      m.run();
+      return m.boolvalue();
+   } 
+   else if (dynamic_cast<nullNode*>(op1) || dynamic_cast<nullNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->boolvalue () == node2->boolvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<logicNode*>(op1) || dynamic_cast<logicNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->boolvalue () == node2->boolvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<arithNode*>(op1) || dynamic_cast<arithNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->numvalue () == node2->numvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<stringNode*>(op1) || dynamic_cast<stringNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return node1->strvalue () == node2->strvalue();
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<arrayNode*>(op1) && dynamic_cast<arrayNode*>(op2)) {
+      if (arrayNode *node2 = dynamic_cast<arrayNode*>(op2)){
+         if (arrayNode * node1 = dynamic_cast<arrayNode*>(op1)){
+            return node1->compare (node2);
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+   else if (dynamic_cast<arrayNode*>(op1) || dynamic_cast<arrayNode*>(op2)) {
+      if (dexpNode *node2 = dynamic_cast<dexpNode*>(op2)){
+         if (dexpNode * node1 = dynamic_cast<dexpNode*>(op1)){
+            return false;
+         }else
+            throw errorException ("Unknown operand", "eqNode: node 1 is unknown operand ", 1);
+      }else
+         throw errorException ("Unknown operand", "eqNode: node 2 is unknown operand ", 1);
+   } 
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//idenNode
+idenNode::idenNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void idenNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = idenNode::do_iden (op1, op2);
+}
+
+bool idenNode::do_iden (runNode* op1, runNode* op2) {
+   if (eqNode::do_eq (op1, op2)) {
+      if (dynamic_cast<nullNode*>(op1))
+         return (bool)dynamic_cast<nullNode*>(op2);
+      if (dynamic_cast<stringNode*>(op1))
+         return (bool)dynamic_cast<stringNode*>(op2);
+      else if (dynamic_cast<arithNode*>(op1))
+         return (bool) dynamic_cast<arithNode*>(op2);
+      else if (dynamic_cast<logicNode*>(op1))
+         return (bool) dynamic_cast<logicNode*>(op2);
+      else if (dynamic_cast<arrayNode*>(op1))
+         return (bool) dynamic_cast<arrayNode*>(op2);
+   }
+   return false;
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//neqNode
+neqNode::neqNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void neqNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = neqNode::do_neq (op1, op2);
+}
+
+bool neqNode::do_neq (runNode* op1, runNode* op2) {
+   return !eqNode::do_eq (op1, op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//nidenNode
+nidenNode::nidenNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void nidenNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   boolvalue_ = nidenNode::do_niden (op1, op2);
+}
+
+bool nidenNode::do_niden (runNode* op1, runNode* op2) {
+   return !idenNode::do_iden (op1, op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//addNode
+addNode::addNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void addNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = addNode::do_add (op1, op2);
+}
+
+num addNode::do_add (runNode *op1, runNode *op2) {
+   return arithNode::to_num(op1) + arithNode::to_num(op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//catNode
+catNode::catNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void catNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   strvalue_ = catNode::do_cat (op1,op2);
+}
+
+string catNode::do_cat (runNode *op1, runNode *op2) {
+   ostringstream oss;
+   oss << stringNode::to_str(op1) << stringNode::to_str(op2);
+   return oss.str();
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//sizeNode
+sizeNode::sizeNode (runNode* node):
+   node_ (node) {}
+
+void sizeNode::run () {
+   runNode* node = node_;
+   nexpNode::resolved(node)->run();
+   numvalue_ = sizeNode::do_size (node);
+}
+
+num sizeNode::do_size (runNode* node) {
+   if (stringNode *s = dynamic_cast<stringNode*>(node))
+      return s->strvalue().length();
+   else if (arithNode *n = dynamic_cast<arithNode*>(node)) {
+      int count = 0;
+      num aux = n->numvalue();
+      while (aux >= 1) {
+         aux /= 10;
+         count ++;
+      }
+      return count;
+   } else if (logicNode *l = dynamic_cast<logicNode*>(node))
+      return l->boolvalue();
+   else if (arrayNode *a = dynamic_cast<arrayNode*>(node))
+      return a->size();
+   else
+      throw errorException ("Unknown operand", "sizeNode: node is unknown operand ", 1);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//subNode
+subNode::subNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void subNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = subNode::do_sub (op1, op2);
+}
+
+num subNode::do_sub (runNode *op1, runNode *op2) {
+   return arithNode::to_num(op1) - arithNode::to_num(op2);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//prodNode
+prodNode::prodNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void prodNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = prodNode::do_prod (op1, op2);
+}
+
+num prodNode::do_prod (runNode *op1, runNode *op2) {
+   return arithNode::to_num(op1) * arithNode::to_num(op2);
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//divNode
+divNode::divNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void divNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = divNode::do_div (op1, op2);
+}
+
+num divNode::do_div (runNode *op1, runNode *op2) {
+   if (num op2_d = arithNode::to_num(op2))
+      return arithNode::to_num(op1) / op2_d;
+   throw errorException ("Division by zero", "modNode: node 2 is 0");
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//powNode
+powNode::powNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void powNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = powNode::do_pow (op1, op2);
+}
+
+num powNode::do_pow (runNode *op1, runNode *op2) {
+   return pow (arithNode::to_num(op1) , arithNode::to_num(op2));
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//modNode
+modNode::modNode (runNode* node1, runNode*node2):
+   node1_ (node1),
+   node2_(node2) {}
+
+void modNode::run () {
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1)->run();
+   nexpNode::resolved (op2)->run();
+   numvalue_ = modNode::do_mod (op1, op2);
+}
+
+num modNode::do_mod (runNode *op1, runNode *op2) {
+   if (num op2_d = arithNode::to_num(op2))
+      return ((int)arithNode::to_num(op1)) % (int)op2_d;
+   throw errorException ("Division by zero", "modNode: node 2 is 0");
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//incasigNode
+incasigNode::incasigNode (runNode* node1):
+   node1_ (node1) {}
+
+void incasigNode::run () {
+   if (nexpNode * nexp = dynamic_cast<nexpNode*> (node1_)) {
+      numNode num (1);
+      addNode exp (nexp, &num);
+      asigNode asig (nexp, &exp);
+      asig.run ();
+      nexp->run();
+      nexp->nodeval()->run();
+      if (arithNode *n = dynamic_cast<arithNode*>(nexp->nodeval())) {
+         numvalue_ = (n->numvalue());
+      } else
+         throw errorException ("Unknown operand", "incasigNode: node is unknown operand ", 1);
+   } else
+      throw errorException ("Unknown operand", "incasigNode: node is unknown operand ", 1);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//asigincNode
+asigincNode::asigincNode (runNode* node1):
+   node1_ (node1) {}
+
+void asigincNode::run () {
+   runNode *node_aux = node1_;
+   if (nexpNode* nexp = dynamic_cast<nexpNode*>(node_aux)) {
+      nexp->run();
+      node_aux = nexp->nodeval();
+      if (arithNode *n1 = dynamic_cast<arithNode*>(node_aux)) {
+         numvalue_ = (n1->numvalue());
+         numNode num (1);
+         addNode exp (node1_, &num);
+         asigNode asig (node1_, &exp);
+         asig.run ();
+      } else
+         throw errorException ("Unknown operand", "asigincNode: node is unknown operand ", 1);
+   } else
+      throw errorException ("Unknown operand", "asigincNode: node is unknown operand ", 1);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//decasigNode
+decasigNode::decasigNode (runNode* node1):
+   node1_ (node1) {}
+
+void decasigNode::run () {
+   if (nexpNode * nexp = dynamic_cast<nexpNode*> (node1_)) {
+      numNode num (1);
+      subNode exp (nexp, &num);
+      asigNode asig (nexp, &exp);
+      asig.run ();
+      nexp->run();
+      nexp->nodeval()->run();
+      if (arithNode *n = dynamic_cast<arithNode*>(nexp->nodeval())) {
+         numvalue_ = (n->numvalue());
+      } else
+         throw errorException ("Unknown operand", "decasigNode: node is unknown operand ", 1);
+   } else
+      throw errorException ("Unknown operand", "decasigNode: node is unknown operand ", 1);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//asigincNode
+asigdecNode::asigdecNode (runNode* node1):
+   node1_ (node1) {}
+
+void asigdecNode::run () {
+   runNode *node_aux = node1_;
+   if (nexpNode* nexp = dynamic_cast<nexpNode*>(node_aux)) {
+      nexp->run();
+      node_aux = nexp->nodeval();
+      if (arithNode *n = dynamic_cast<arithNode*>(node_aux)) {
+         numvalue_ = (n->numvalue());
+         numNode num (1);
+         subNode exp (node1_, &num);
+         asigNode asig (node1_, &exp);
+         asig.run ();
+      } else
+         throw errorException ("Unknown operand", "asigdecNode: node is unknown operand ", 1);
+   } else
+      throw errorException ("Unknown operand", "asigdecNode: node is unknown operand ", 1);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//intconvNode
+intconvNode::intconvNode (runNode* node): node_ (node) {}
+
+void intconvNode::run () {
+   runNode* node = node_;
+   nexpNode::resolved(node)->run();
+   numvalue_ = intconvNode::do_intconv (node);
+}
+
+int intconvNode::do_intconv (runNode *node) {
+   return (int)arithNode::to_num (node);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//floatconvNode
+floatconvNode::floatconvNode (runNode* node): node_ (node) {}
+
+void floatconvNode::run () {
+   runNode* node = node_;
+   nexpNode::resolved(node)->run();
+   numvalue_ = floatconvNode::do_floatconv (node);
+}
+
+num floatconvNode::do_floatconv (runNode *node) {
+   return (int)arithNode::to_num (node);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//boolconvNode
+boolconvNode::boolconvNode (runNode* node): node_ (node) {}
+
+void boolconvNode::run () {
+   runNode* node = node_;
+   nexpNode::resolved(node)->run();
+   boolvalue_ = boolconvNode::do_boolconv (node);
+}
+
+num boolconvNode::do_boolconv (runNode *node) {
+   return (bool)arithNode::to_num (node);
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//strconvNode
+strconvNode::strconvNode (runNode* node): node_ (node) {}
+
+void strconvNode::run () {
+   runNode* node = node_;
+   nexpNode::resolved(node)->run();
+   strvalue_ = stringNode::to_str (node);
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//getNode_strInterface
+getNode_strInterface::getNode_strInterface (stringNode* node, bool is_const): refn_ (0), is_const_ (is_const) {
+   strref_ = node->strref();
+}
+
+void getNode_strInterface::run () {}
+
+runNode* getNode_strInterface::nodeval () const {
+   if (refn_ >= strref_->size())
+         throw errorException ("wrong string index", "string index is out of range", 1); 
+   char c[] = {(*strref_)[refn_]};
+   string a (c);
+   return  new strNode (a);
+}
+
+void getNode_strInterface::noderef (runNode* node) {
+   if (!is_const_){
+      if (!ref_) ref_ = new refNode ();
+      if (refn_ >= strref_->size())
+         throw errorException ("wrong string index", "string index is out of range", 1);
+      if (stringNode* str = dynamic_cast<stringNode*> (node)) {
+         string s = str->strvalue();
+         if (s.length () == 1)
+            (*strref_)[refn_]  = str->strvalue()[0];
+         else
+            strref_->replace (refn_, 1,str->strvalue());
+      }
+      else if (arithNode* arith = dynamic_cast<arithNode*> (node)) {
+         strNode s (arith);
+         if (s.strvalue().length () == 1)
+            (*strref_)[refn_]  = s.strvalue()[0];
+         else
+            strref_->replace (refn_, 1,s.strvalue());
+           
+      }else if (logicNode* l = dynamic_cast<logicNode*> (node)) {
+         string s = (l->boolvalue())?"1":"";
+         node = nexpNode::clone (node);
+         if (s.length () == 1)
+            (*strref_)[refn_]  = s[0];
+         else
+            strref_->replace (refn_, 1,s);
+           
+      }else {
+         string s = stringNode::to_str(node);
+         
+        
+         if (s.length () == 1)
+            (*strref_)[refn_]  = s[0];
+         else
+            strref_->replace (refn_, 1,s);
+      }
+    }else{
+      throw errorException ("Change reference of const node", "getNode_strInterface: node must be symbol", 1);
+    }  
+}
+
+void getNode_strInterface::setn ( int n) {
+   refn_ = n;
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//getNode
+getNode::getNode (runNode* array, runNode* key, bool resolv): array_ (array), key_ (key), next_ (NULL), exec_ (true), resolv_(resolv), is_const_ (false) { }
+
+void getNode::run () {
+   
+   idNode* id = NULL;
+   expNode * exp = NULL;
+   stringNode * key_str = NULL;
+   runNode *array = array_, *key = key_;
+   runNode* method = NULL;
+   sTable *aux = NULL;
+   is_this_node_ = false;
+   if (thisNode * thisn = dynamic_cast<thisNode*>(array)){
+      is_this_node_ = true;
+   }
+   isym iter;
+   if(getNode* get = dynamic_cast<getNode*>(array)) {
+      get->next_ = this;
+   }
+   
+   if (parentNode * parent = dynamic_cast<parentNode*> (array)){ //Parent
+      type_ = 0;
+      idNode::resolvedAsStr (key, false, !is_this_node_, NULL, true);
+      nexpNode::resolved (key)->run();
+      if (runNode *r = parent->get(key)){
+         noderef(r);
+         return;
+      }else{
+         thisNode thisn;
+         thisn.run();
+         array = dynamic_cast<arrayNode*>(thisn.nodeval());
+      }
+   }else {
+      runNode *node_ini = array;
+      idNode::resolved (array, new arrayNode ());
+      nexpNode::resolved (array);
+      is_const_ = (node_ini == array);
+      
+      if (objectNode * obj = dynamic_cast<objectNode*> (array)){ // OBJETO DENTRO DE UN METODO DE LA MISMA CLASE 
+         if (classNode* c = dynamic_cast<classNode*>(obj->getClass ())){
+            
+            if (functionNode::class_link && c->name() == functionNode::class_link->name())
+               is_this_node_ = true;
+            else
+               aux = c->insideTable();
+         }
+      }      
+      idNode::resolvedAsStr (key, false, !is_this_node_, aux, !resolv_);
+      nexpNode::resolved (key)->run();
+      
+   }
+   
+   
+   if (arrayNode * array_aux = dynamic_cast<arrayNode*> (array)) {
+      type_ = 0;
+      if (!dynamic_cast<dataCNode*>(array)) array_aux->run();
+      run_case_array(array_aux, key);
+   } else if(
+      (exp = dynamic_cast<expNode*>(array)) &&
+      (key_str = dynamic_cast<stringNode*> (key)) &&
+      (method = exp->getMethod (key_str))
+   ) {
+      type_ = 3; //???
+      noderef(method);
+      objectTypeNode *obj  = NULL;
+      functionNode * func = NULL;
+      if ((obj = dynamic_cast<objectTypeNode*> (array)) && (func = dynamic_cast<functionNode*>(method))) {
+         func->setObj (obj);
+         if (classNode * c = dynamic_cast<classNode*>(obj->getClass())){
+            func->setParent (c->getExtendClass ());
+         }
+      }
+   } else if (strNode* str = dynamic_cast<strNode*> (array)) {
+      type_ = 1;
+      run_case_str (str, key);
+   } else
+      throw errorException ("Wrong type data", "getNode: node must be array or string", 1);
+}
+
+void getNode::run_case_array (arrayNode* array, runNode* key) { //array[x]
+   if (dynamic_cast<getNode_endValue*> (key))
+      key = new numNode (array->size());
+     
+   setNodeValue(array, key);
+}
+
+void getNode::run_case_str (strNode* str, runNode* num) { //string[n]
+   getNode_strInterface* istr = NULL;
+   if (dexpNode *exp = dynamic_cast<dexpNode*>(num)){
+      if (!(istr = dynamic_cast<getNode_strInterface*>(nodeval())))
+          istr = new getNode_strInterface (str, is_const_);
+      istr->setn (exp->numvalue());
+      istr->run();
+      if (!ref_) ref_ = new refNode();
+      ref_->setRef(istr);
+   }
+}
+
+void getNode::setNodeValue (arrayNode *array, runNode * key) {
+   expNode * exp = NULL;
+   stringNode * key_str = NULL;
+   refNode* method = NULL;
+   symbols *map = array->getArray ();
+   //dataCNode
+   if (dataCNode * data = dynamic_cast<dataCNode*> (array)) {
+      //Accede a los datos de un componente
+      // Configura una llama inversa para la asignación de atributos
+      data->run_get (); //llamada inversa
+      data->runArray();
+      data->last_access_key = key;
+      defCNode * def = listC::get_defCNode (new strNode(data->getNameTable()));
+      if (def && (map->find(key) != map->end())) {
+
+         runNode *type = def->getElement (key);
+         if (def = dynamic_cast<defCNode*> (type)) {
+            noderef(dataCNode::getById (def, (*map)[key]));
+            return;
+         }
+      }
+   } else if (relCNode *rel = dynamic_cast<relCNode *> (array)) {
+      //Accede a uno de los datos de una relación
+      //Configura una llamada inversa para la asignación de un componente en la relación
+      rel->run_getData (key);
+   }
+
+   if (map->find(key) != map->end()) {
+      ref_ = map->findRef(key);
+   } 
+   else if(
+      (exp = dynamic_cast<expNode*>(array)) &&
+      (key_str = dynamic_cast<stringNode*> (key)) &&
+      (method = exp->getMethodRef (key_str))
+   ) {
+      ref_ = method;
+      
+   }
+   else {
+      if (dynamic_cast<stringNode*> (key))
+         key = new strNode (stringNode::to_str(key));
+      runNode *value = ((this->next_)?((runNode*)new arrayNode()):((runNode*)new strNode ("")));
+      value->addRef();
+      (*map)[key] = value;
+      ref_ = map->findRef(key);
+   }
+   if (relCNode *rel = dynamic_cast<relCNode*> (nodeval())) {
+      //Accede a los datos de una relación
+      //Configura una llamada inversa para la asignación de la relación
+      rel->run_get ();
+      stringNode *str;
+      if (next_ && (str = dynamic_cast<stringNode*>(next_->key_))) {
+         if (!str->is_numvalue ()) {
+            rel->setWhere (next_->key_);
+            next_->exec_ = false;
+         }
+      }
+      //Realiza una busqueda para obtener la relación
+      rel->processData ();
+   }
+   
+   objectTypeNode *obj  = NULL;
+   functionNode * func = NULL;
+   if ((obj = dynamic_cast<objectTypeNode*> (array)) && (func = dynamic_cast<functionNode*>(nodeval()))) {
+      func->setObj (obj);
+      if (classNode * c = dynamic_cast<classNode*>(obj->getClass())){
+         func->setParent (c->getExtendClass ());
+      }
+   }
+}
+
+void getNode::noderef (runNode* node) {
+   if (!ref_) ref_ = new refNode();
+   node->addRef();
+   if (type_ == 1) {
+      if (getNode_strInterface *istr = dynamic_cast<getNode_strInterface*> (ref_->getRef()))
+         istr->noderef(node);
+      else
+         ref_->setRef(node);
+   } else if (type_ == 3){
+      ref_->setRef(node);
+   }else {
+      runNode * before = NULL;
+      if (refNode *aux = noderefAnidate ())
+         ref_ = aux;
+      else
+         before = ref_->getRef();
+      ref_->setRef(node);
+      if (before) before->rmRef();
+   }
+}
+
+refNode * getNode::noderefAnidate (){
+   if (nexpNode *nexp = dynamic_cast<nexpNode*>(array_)){
+         if(refNode *ref = nexp->ref()){
+            if(runNode* before = ref->getRef()){
+               if (before->ref_count_ > 1){
+                  if (arrayNode* a = dynamic_cast<arrayNode*>(before)){
+                     refNode *nr = ref_;
+                     arrayNode * na = new arrayNode (a, nr);
+                     na->addRef();
+                     ref->setRef (na);
+                     before->rmRef();
+                     return nr;
+                  }else{
+                     //~ cerr << "No es Array" << endl;
+                  }
+               }else{
+                  if (getNode* lget = dynamic_cast<getNode*>(array_)){
+                     refNode *newref = lget->noderefAnidate ();
+                     if (newref) {
+                        if (arrayNode* a = dynamic_cast<arrayNode*>(before)){
+                           refNode *nr = ref_;
+                           arrayNode * na = new arrayNode (a, nr);
+                           na->addRef();
+                           newref->setRef (na);
+                           return nr;
+                        }else{
+                           //~ cerr << "No es Array" << endl;
+                        }
+                     }
+                     return newref;
+                  }
+                  if (idNode *lid = dynamic_cast<idNode*>(array_)){
+                     return NULL;
+                  } 
+                  else{
+                     //No se me ocurre el caso
+                  }
+               }
+            }
+         } 
+      }else{
+         //~ cerr << "CASO CONSTANTE" << endl; 
+      }
+      return NULL;
+}
+
+//----------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------
+emptyNode::emptyNode (runNode* elem): elem_(elem) {}
+
+void emptyNode::run () {
+   runNode* node_aux = elem_;
+   nexpNode::resolved (node_aux)->run();
+   if (logicNode *b = dynamic_cast<logicNode*> (node_aux))
+      boolvalue_ = !b->boolvalue ();
+   else if (arithNode *n = dynamic_cast<arithNode*> (node_aux))
+      boolvalue_ = !n->boolvalue ();
+   else if (stringNode *str = dynamic_cast<stringNode*> (node_aux))
+      boolvalue_ = !str->boolvalue();
+   else if (arrayNode *a = dynamic_cast<arrayNode*> (node_aux))
+      boolvalue_ = !a->size();
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+ternNode::ternNode (runNode* cond, runNode* yes, runNode* no ): cond_(cond), yes_(yes), no_(no) {}
+
+void ternNode::run () {
+   runNode* cond = nexpNode::resolv(cond_);
+   cond->run();
+   if (logicNode::to_bool(cond)) {
+      if (yes_)
+         this->asig(yes_);
+      else
+         this->asig(cond, false);
+   } else {
+      if (no_)
+         this->asig(no_);
+      else {
+         runNode* b = new boolNode (false);
+         this->asig(b);
+      }
+   }
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+getiNode::getiNode (runNode *node): node_ (node) {}
+
+void getiNode::run () {
+   runNode *elem ;
+   numNode * n_node;
+   if (!node_ && iloopNode::get_ielement ())
+      elem = iloopNode::get_ielement();
+   else if (node_ && (n_node = dynamic_cast<numNode*>(node_)))
+      elem = iloopNode::get_ielement_n(n_node->numvalue());
+   else
+      ;//Exc
+   this->asig(elem, false);
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+execNode::execNode (runNode* node) : node_(node) {}
+
+void execNode::run () {
+   runNode *node = node_;
+   nexpNode::resolved (node)->run();
+   string cmd = stringNode::to_str (node);
+   FILE* pipe = popen(cmd.c_str(), "r");
+   if (!pipe) cerr << "ERROR" << endl;
+   char buffer[128];
+   std::string result = "";
+   while(!feof(pipe)) {
+      if(fgets(buffer, 128, pipe) != NULL)
+         result += buffer;
+   }
+   pclose(pipe);
+   strvalue_ = result;
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+
+#include "../interpreter.h"
+
+evalNode::evalNode (runNode* node) : node_(node) {}
+
+void evalNode::run () {
+   runNode *node = node_;
+   nexpNode::resolved (node)->run();
+   try {
+      string code = stringNode::to_str (node);
+      interpreter::get()->scan_string(code.c_str());
+      yyparse();
+      nullNode*s = new nullNode ();
+      noderef(s);
+   } catch (returnException& e) {
+      noderef(e.val());
+   }
+}
+
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+notnullNode::notnullNode (runNode* list) : list_(list) {}
+
+void notnullNode::run () {
+   if (listNode *list = dynamic_cast<listNode*> (list_)) {
+      runNode* key;
+      list->run();
+      vector<runNode*> v = list->listvalue ();
+      vector<runNode*>::iterator iter;
+      for (iter = v.begin(); iter != v.end(); iter ++) {
+         key = *iter;
+         nexpNode::resolved(key)->run();
+         if (expNode* exp = dynamic_cast<expNode*>(key)) {
+            if (logicNode* log = dynamic_cast<logicNode*>(exp)) {
+               if (log->boolvalue()) {
+                  noderef(key);
+                  break;
+               }
+            }
+         }
+      }
+      if (!ref_->getRef()) {
+         boolNode* b = new boolNode (false);
+         b->run();
+         noderef(b->nodeval());
+      }
+   }
+}
+//----------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------
+getEnvNode::getEnvNode (runNode* node) : node_ (node) {}
+
+void getEnvNode::run () {
+   runNode * node = node_;
+   nexpNode::resolved (node)->run();
+   string str = stringNode::to_str (node);
+   if (char* c = getenv (str.c_str()))
+      this->strvalue_ = c;
+   else
+      this->strvalue_ = "";
+}
+
+//----------------------------------------------------------------------
+reduceNode::reduceNode (runNode* elem, runNode* func) : elem_ (elem), func_(func) {}
+
+void reduceNode::run (){
+   runNode *elem = elem_, *func = func_;
+   nexpNode::resolvedAsFunction (func)->run();
+   nexpNode::resolved (elem)->run();
+   if (arrayNode* array = dynamic_cast<arrayNode*> (elem)){
+      if (functionNode* f = dynamic_cast<functionNode*> (func)){
+         runNode *partial = NULL;
+         symbols *m = array->getArray();
+         isym i = m->begin();
+         if (i != m->end()){
+            partial = i.second;
+            i ++;
+         }
+         for (;i != m->end(); ++i){
+            listNode *list = new listNode (partial, i.second);
+            partial = f->call (list);
+            delete list;
+         }
+         noderef(partial);
+      }
+   }else{
+      throw errorException ("Unknown operand", "reduceNode: node is unknown operand ", 1); 
+   }
+}
+
+//----------------------------------------------------------------------

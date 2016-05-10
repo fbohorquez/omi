@@ -1,0 +1,1056 @@
+<?xml version="1.0"?>
+<project name="" company="" manager="" phase="" project-start="20141103T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Jornada laboral" description="Un d&#xED;a de trabajo predeterminado"/>
+      <day-type id="1" name="Jornada de descanso" description="Un d&#xED;a de descanso predeterminado"/>
+      <day-type id="2" name="Usar base" description="Usar d&#xED;a del calendario base"/>
+    </day-types>
+    <calendar id="1" name="Predeterminado">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="General (3 d&#xED;as)" note="" work="86400" start="20141103T000000Z" end="20141105T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="Objetivos, alcance y requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="3" name="An&#xE1;lisis de riesgos" note="" work="28800" start="20141103T170000Z" end="20141104T170000Z" work-start="20141104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="2" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="4" name="Planificaci&#xF3;n inicial" note="" work="28800" start="20141104T170000Z" end="20141105T170000Z" work-start="20141105T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="5" name="Expresiones l&#xF3;gicas (1 semana)" note="" work="594000" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Objetivos" note="" work="75600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="7" name="Definir objetivos" note="" work="18000" start="20141103T000000Z" end="20141103T140000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="8" name="Determinar Alcance" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="9" name="Capturar requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="10" name="Riesgos" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="11" name="An&#xE1;lisis de  riesgos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="12" name="Listado de alternativas" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="13" name="Desarrollo" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="14" name="An&#xE1;lisis" note="" work="144000" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="15" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="16" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="17" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="18" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="19" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="20" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="21" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="22" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="23" name="Dise&#xF1;o" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="24" name="Gram&#xE1;tica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="25" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="26" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="27" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="28" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="29" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="30" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="31" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="32" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="33" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="34" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="35" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="36" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="37" name="Planificaci&#xF3;n" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="38" name="Revisi&#xF3;n de estado y productos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="39" name="Planificaci&#xF3;n de siguiente iteraci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="40" name="Sentencias I/O (3 d&#xED;as)" note="" work="604800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="41" name="Objetivos" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="42" name="Objetivos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="43" name="Alcance" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="44" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="45" name="Riesgos" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="46" name="An&#xE1;lisis de riesgos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="47" name="Listado de alternativas" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="48" name="Desarrollo" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="49" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="50" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="51" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="52" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="53" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="54" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="55" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="56" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="57" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+            <task id="58" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="59" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="60" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="61" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+          <task id="62" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <task id="63" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          </task>
+        </task>
+        <task id="64" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="65" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="66" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="67" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="68" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="69" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="70" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="71" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="72" name="Planificaci&#xF3;n" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="73" name="Revisi&#xF3;n de estado y productos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="74" name="Planificaci&#xF3;n de siguiente iteraci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="75" name="Sistema de errores (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="76" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="77" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="78" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="79" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="80" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="81" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="82" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="83" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="84" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="85" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="86" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="87" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="88" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="89" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="90" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="91" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="92" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="93" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="94" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="95" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="96" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="97" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="98" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="99" name="Expresiones aritm&#xE9;ticas (1 semana + 3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="100" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="101" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="102" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="103" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="104" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="105" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="106" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="107" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="108" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="109" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="110" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="111" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="112" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="113" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="114" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="115" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="116" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="117" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="118" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="119" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="120" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="121" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="122" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="123" name="S&#xED;mbolos variables (2 semanas)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="124" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="125" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="126" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="127" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="128" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="129" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="130" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="131" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="132" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="133" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="134" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="135" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="136" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="137" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="138" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="139" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="140" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="141" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="142" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="143" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="144" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="145" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="146" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="147" name="Sentencias control I (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="148" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="149" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="150" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="151" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="152" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="153" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="154" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="155" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="156" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="157" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="158" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="159" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="160" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="161" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="162" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="163" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="164" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="165" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="166" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="167" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="168" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="169" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="170" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="171" name="Interfaz de usuario I (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="172" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="173" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="174" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="175" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="176" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="177" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="178" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="179" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="180" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="181" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="182" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="183" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="184" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="185" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="186" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="187" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="188" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="189" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="190" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="191" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="192" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="193" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="194" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="195" name="Expresiones cadenas (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="196" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="197" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="198" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="199" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="200" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="201" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="202" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="203" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="204" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="205" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="206" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="207" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="208" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="209" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="210" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="211" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="212" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="213" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="214" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="215" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="216" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="217" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="218" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="219" name="Conversi&#xF3;n de tipos (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="220" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="221" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="222" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="223" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="224" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="225" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="226" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="227" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="228" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="229" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="230" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="231" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="232" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="233" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="234" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="235" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="236" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="237" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="238" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="239" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="240" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="241" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="242" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="243" name="Funciones cadenas (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="244" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="245" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="246" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="247" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="248" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="249" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="250" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="251" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="252" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="253" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="254" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="255" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="256" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="257" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="258" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="259" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="260" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="261" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="262" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="263" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="264" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="265" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="266" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="267" name="Expresiones array (2 semanas)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="268" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="269" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="270" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="271" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="272" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="273" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="274" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="275" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="276" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="277" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="278" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="279" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="280" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="281" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="282" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="283" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="284" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="285" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="286" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="287" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="288" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="289" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="290" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="291" name="S&#xED;mbolos funciones I (2 semanas)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="292" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="293" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="294" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="295" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="296" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="297" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="298" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="299" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="300" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="301" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="302" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="303" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="304" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="305" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="306" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="307" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="308" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="309" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="310" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="311" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="312" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="313" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="314" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="315" name="Expresiones regulares (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="316" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="317" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="318" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="319" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="320" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="321" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="322" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="323" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="324" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="325" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="326" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="327" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="328" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="329" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="330" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="331" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="332" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="333" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="334" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="335" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="336" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="337" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="338" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="339" name="S&#xED;mbolos clases I (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="340" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="341" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="342" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="343" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="344" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="345" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="346" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="347" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="348" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="349" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="350" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="351" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="352" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="353" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="354" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="355" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="356" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="357" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="358" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="359" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="360" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="361" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="362" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="363" name="Operadores condicionales (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="364" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="365" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="366" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="367" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="368" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="369" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="370" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="371" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="372" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="373" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="374" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="375" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="376" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="377" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="378" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="379" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="380" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="381" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="382" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="383" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="384" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="385" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="386" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="387" name="Funciones depuraci&#xF3;n (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="388" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="389" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="390" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="391" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="392" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="393" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="394" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="395" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="396" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="397" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="398" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="399" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="400" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="401" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="402" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="403" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="404" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="405" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="406" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="407" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="408" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="409" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="410" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="411" name=" Optimizaci&#xF3;n de memoria (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="412" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="413" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="414" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="415" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="416" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="417" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="418" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="419" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="420" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="421" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="422" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="423" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="424" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="425" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="426" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="427" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="428" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="429" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="430" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="431" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="432" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="433" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="434" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="435" name="Sentencias control II (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="436" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="437" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="438" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="439" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="440" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="441" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="442" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="443" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="444" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="445" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="446" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="447" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="448" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="449" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="450" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="451" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="452" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="453" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="454" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="455" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="456" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="457" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="458" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="459" name="Paso de argumentos y entorno (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="460" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="461" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="462" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="463" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="464" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="465" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="466" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="467" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="468" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="469" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="470" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="471" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="472" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="473" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="474" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="475" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="476" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="477" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="478" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="479" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="480" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="481" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="482" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="483" name="Interfaz de usuario II (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="484" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="485" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="486" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="487" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="488" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="489" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="490" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="491" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="492" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="493" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="494" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="495" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="496" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="497" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="498" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="499" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="500" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="501" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="502" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="503" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="504" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="505" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="506" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="507" name="Funciones procesos I (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="508" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="509" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="510" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="511" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="512" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="513" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="514" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="515" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="516" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="517" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="518" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="519" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="520" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="521" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="522" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="523" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="524" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="525" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="526" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="527" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="528" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="529" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="530" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="531" name="Funciones fechas (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="532" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="533" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="534" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="535" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="536" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="537" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="538" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="539" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="540" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="541" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="542" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="543" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="544" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="545" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="546" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="547" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="548" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="549" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="550" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="551" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="552" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="553" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="554" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="555" name="Funciones ficheros (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="556" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="557" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="558" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="559" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="560" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="561" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="562" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="563" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="564" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="565" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="566" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="567" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="568" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="569" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="570" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="571" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="572" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="573" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="574" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="575" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="576" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="577" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="578" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="579" name="Extensiones (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="580" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="581" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="582" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="583" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="584" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="585" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="586" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="587" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="588" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="589" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="590" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="591" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="592" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="593" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="594" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="595" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="596" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="597" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="598" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="599" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="600" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="601" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="602" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="603" name="Extensi&#xF3;n gettext (2 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="604" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="605" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="606" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="607" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="608" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="609" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="610" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="611" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="612" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="613" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="614" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="615" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="616" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="617" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="618" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="619" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="620" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="621" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="622" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="623" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="624" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="625" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="626" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="627" name="Funciones procesos II (2 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="628" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="629" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="630" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="631" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="632" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="633" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="634" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="635" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="636" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="637" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="638" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="639" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="640" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="641" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="642" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="643" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="644" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="645" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="646" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="647" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="648" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="649" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="650" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="651" name="S&#xED;mbolos clases II (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="652" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="653" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="654" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="655" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="656" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="657" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="658" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="659" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="660" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="661" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="662" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="663" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="664" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="665" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="666" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="667" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="668" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="669" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="670" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="671" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="672" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="673" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="674" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="675" name="S&#xED;mbolos funciones II (1 semana)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="676" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="677" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="678" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="679" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="680" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="681" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="682" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="683" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="684" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="685" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="686" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="687" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="688" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="689" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="690" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="691" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="692" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="693" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="694" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="695" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="696" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="697" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="698" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+    <task id="699" name="Extensi&#xF3;n mysql (3 d&#xED;as)" note="" work="403200" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="700" name="An&#xE1;lisis" note="" work="172800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="701" name="Requisitos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="702" name="Modelo casos de uso" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="703" name="Diagrama casos de usos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="704" name="Descripci&#xF3;n casos de uso" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="705" name="Modelo conceptual de datos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="706" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="707" name="Modelo de comportamiento" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="708" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="709" name="Descripci&#xF3;n contratos" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="710" name="Dise&#xF1;o" note="" work="57600" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="711" name="Arquitectura" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="712" name="Diagrama clases" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+        <task id="713" name="Componentes" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="714" name="Diagrama secuencia" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        </task>
+      </task>
+      <task id="715" name="Codificaci&#xF3;n" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="716" name="L&#xE9;xico " note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="717" name="Sint&#xE1;xis" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="718" name="Sem&#xE1;ntica" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+      <task id="719" name="Pruebas" note="" work="86400" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="720" name="Casos de prueba" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="721" name="Pruebas unitarias" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="722" name="Verificaci&#xF3;n" note="" work="28800" start="20141103T000000Z" end="20141103T170000Z" work-start="20141103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      </task>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>

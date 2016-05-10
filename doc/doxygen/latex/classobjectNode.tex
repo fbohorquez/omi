@@ -1,0 +1,149 @@
+\hypertarget{classobjectNode}{\section{Referencia de la Clase object\-Node}
+\label{classobjectNode}\index{object\-Node@{object\-Node}}
+}
+
+
+Nodo objeto.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de object\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classobjectNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classobjectNode_a924c50a260e1e237d2f878ff1bd0841d}{object\-Node} (\hyperlink{classclassNode}{class\-Node} $\ast$c=N\-U\-L\-L)
+\item 
+\hyperlink{classobjectNode_a10c1b39302a06372c2bace771503d716}{object\-Node} (\hyperlink{classsymbolsTable}{symbols} $\ast$s, \hyperlink{classclassNode}{class\-Node} $\ast$c=N\-U\-L\-L)
+\item 
+\hyperlink{classobjectNode_a4dbc45b00f1d165aabfdcb11d392209d}{object\-Node} (\hyperlink{classlistNode}{list\-Node} $\ast$l, \hyperlink{classclassNode}{class\-Node} $\ast$c=N\-U\-L\-L)
+\item 
+\hyperlink{classobjectNode_af455d01c22c12c41a7623212658f0a1b}{object\-Node} (\hyperlink{classarrayNode}{array\-Node} $\ast$a)
+\item 
+\hyperlink{classobjectNode_aefa62a54f0a0b568c864d17cad540a69}{object\-Node} (\hyperlink{classobjectNode}{object\-Node} $\ast$a)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classobjectNode_a09303f23cd355cf6c404db07f0b4428c}{get\-Class} ()
+\item 
+string \hyperlink{classobjectNode_a6e191a70f60856612791b319b62461f9}{print} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo objeto. 
+
+Un nodo objeto es como uno array en el sentido de que tiene una tabla de símbolos asociada. Pero a diferencia de este la clase a la que se asocia es dada en tiempo de ejecución.
+
+Los objetos son creados mediante instanciación de clases. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classobjectNode_a924c50a260e1e237d2f878ff1bd0841d}{\index{object\-Node@{object\-Node}!object\-Node@{object\-Node}}
+\index{object\-Node@{object\-Node}!objectNode@{object\-Node}}
+\subsubsection[{object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Node\-::object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf class\-Node} $\ast$}]{c = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classobjectNode_a924c50a260e1e237d2f878ff1bd0841d}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em c} & Clase a la que queda asociado el objeto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classobjectNode_a10c1b39302a06372c2bace771503d716}{\index{object\-Node@{object\-Node}!object\-Node@{object\-Node}}
+\index{object\-Node@{object\-Node}!objectNode@{object\-Node}}
+\subsubsection[{object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Node\-::object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf symbols} $\ast$}]{s, }
+\item[{{\bf class\-Node} $\ast$}]{c = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classobjectNode_a10c1b39302a06372c2bace771503d716}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Tabla de símbolos a la que queda asociado el objeto. \\
+\hline
+{\em c} & Clase a la que queda asociado el objeto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classobjectNode_a4dbc45b00f1d165aabfdcb11d392209d}{\index{object\-Node@{object\-Node}!object\-Node@{object\-Node}}
+\index{object\-Node@{object\-Node}!objectNode@{object\-Node}}
+\subsubsection[{object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Node\-::object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf list\-Node} $\ast$}]{l, }
+\item[{{\bf class\-Node} $\ast$}]{c = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classobjectNode_a4dbc45b00f1d165aabfdcb11d392209d}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em l} & Nodo lista a partir del cual se establecerán los atributos del objeto. \\
+\hline
+{\em c} & Clase a la que queda asociado el objeto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classobjectNode_af455d01c22c12c41a7623212658f0a1b}{\index{object\-Node@{object\-Node}!object\-Node@{object\-Node}}
+\index{object\-Node@{object\-Node}!objectNode@{object\-Node}}
+\subsubsection[{object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Node\-::object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf array\-Node} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classobjectNode_af455d01c22c12c41a7623212658f0a1b}
+Constructor que crea un objeto a partir de un array. 
+\begin{DoxyParams}{Parámetros}
+{\em a} & Array que dará valor al objeto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classobjectNode_aefa62a54f0a0b568c864d17cad540a69}{\index{object\-Node@{object\-Node}!object\-Node@{object\-Node}}
+\index{object\-Node@{object\-Node}!objectNode@{object\-Node}}
+\subsubsection[{object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}object\-Node\-::object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf object\-Node} $\ast$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classobjectNode_aefa62a54f0a0b568c864d17cad540a69}
+Constructor que crea un objeto a partir de otro. 
+\begin{DoxyParams}{Parámetros}
+{\em a} & Objeto que será copiado. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classobjectNode_a09303f23cd355cf6c404db07f0b4428c}{\index{object\-Node@{object\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!objectNode@{object\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ object\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classobjectNode_a09303f23cd355cf6c404db07f0b4428c}
+Obtiene la clase asociada al objeto. \begin{DoxyReturn}{Devuelve}
+Clase asociada al objeto. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classarrayNode_adb8aba7525e34c7aec375f58be182bd8}{array\-Node}.
+
+\hypertarget{classobjectNode_a6e191a70f60856612791b319b62461f9}{\index{object\-Node@{object\-Node}!print@{print}}
+\index{print@{print}!objectNode@{object\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string object\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classobjectNode_a6e191a70f60856612791b319b62461f9}
+Método de impresión. Obtiene una cadena de caracteres correspondiente a la representación textual del objeto. Si el objeto dispone de un método \char`\"{}\-\_\-str\char`\"{} se llamará a dicho método. \begin{DoxyReturn}{Devuelve}
+Cadena de caracteres correspondiente a la representación textual. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classarrayNode_a7d68669075eec824abc4400f18670075}{array\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

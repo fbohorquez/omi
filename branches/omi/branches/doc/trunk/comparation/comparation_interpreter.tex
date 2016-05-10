@@ -1,0 +1,685 @@
+
+\section{Introducción}
+En el presente documento se realiza una comparativa sobre los lenguajes de programación presentes en el mercado actual y sus principales 
+características. El objetivo es determinar las carencias que estos presentan y que podrían ser cubiertas por el lenguaje de programación OMI.
+Para ello se tomará una muestra significativa y se estudiarán aquellas características consideradas de valor para el análisis.
+
+Los lenguajes de programación tomados son de ámbito general, interpretados y con tipado dinámico:
+
+\begin{itemize}
+   \item PHP
+   \item Python
+   \item Ruby
+   \item JavaScript \& Node.js (JS)
+   \item OMI
+\end{itemize}
+
+\section{Tipos de datos}
+Los tipos de datos que se pueden describir y manejar en los lenguajes de 
+programación suponen un factor diferenciador de importancia entre estos.
+
+Muchos lenguajes presentan tipos de datos que han sido modelados e integrados atendiendo
+al paradigma orientado a objetos. Sin embargo muchos tipos de datos pueden ser definidos
+de una forma más ágil o descriptiva usando un léxico y gramática propios.   
+
+Existen tipos de datos como las pilas, colas o árboles que son simplificaciones u otras 
+implementaciones de otros tipos.
+
+La solución que dan algunos lenguajes para determinados tipos de datos (como los rangos) son en forma 
+de otras construcciones del lenguajes como funciones u objetos.
+
+Para profundizar en el tema se podría analizar la representación interna de los
+datos en cada lenguaje, para comparar atributos como la optimización de espacio o rangos permitidos. 
+
+ \FloatBarrier
+\begin{table}[h]
+ \begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI \\ \hline
+Booleanos & X & X & X & X & X \\ \hline
+Enteros & X & X & X & X & X \\ \hline
+Flotantes & X & X & X & X & X \\ \hline
+Cadenas de caracteres & X & X & X & X & X \\ \hline
+Vectores  & X & X & X & X & X \\ \hline
+Vectores asociativos & X & X & X & (*) & X \\ \hline 
+Expresiones regulares & X & X & X & X & X \\ \hline
+Nulo & X & X & X & X & X \\ \hline
+Funciones & X & X & X & X & X \\ \hline
+Objetos & X & X & X & X & X \\ \hline
+Referencias & X & & & & X \\ \hline
+Símbolos o identidades & & & X &  & ? \\ \hline
+Rangos  & X & X & X & X & ? \\ \hline
+Bloques de sentencias & & & X & & ? \\ \hline 
+Tupla  & & X & & & ? \\ \hline
+Tablas &  &  &  &  & X \\ \hline
+Grafos &  &  &  &  & ? \\ \hline
+\end{tabular}
+
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+
+\section{Paradigmas de programación}
+
+Los lenguajes de programación presentan cierto grado de enfoque en un determinado paradigma. Los hay así 
+que son enfocados totalmente a uno único, tratando la mayoría de conceptos según ese criterio. Mientras 
+que otros son multiparadigma, presentando  así características, recursos y conceptos de varios de ellos. 
+
+El grado de enfoque en un determinado paradigma de un lenguaje de programación se puede determinar 
+por la forma de tratar o modelar los distintos conceptos, y por la cantidad de recursos y características que 
+presente a la hora de afrontar problemas según marco que el paradigma supone. 
+
+Los paradigmas no son independientes entre si, es muy común que un determinado paradigma se 
+base en otros para su definición y tome parte de sus características. Se consideran así
+los paradigmas más comunes o que supongan una base para otros más concretos.
+
+Algunas de las características que serán analizadas pueden ser 
+implementadas en determinados lenguajes mediante la concreción de otra más general o mediante el uso de otras más simples. 
+Por otro lado existirán lenguajes que contemplen ciertos
+conceptos de una forma más directa, integrada en la gramática y más próxima a lo que persigue modelar.
+
+Es común que algunos lenguajes implementen soluciones propias de un determinado paradigma pero en una forma y estilo
+propios de otro.
+
+
+No formará parte del análisis aquellas características que
+son comunes en muchos lenguajes actuales: sentencias condicionales, sentencias iterativas, inclusión de ficheros, operadores con
+asignación, saltos a etiquetas ...
+
+\subsection {Imperativo}
+Describe la programación en términos de un flujo de instrucciones que operan sobre el estado del programa. Los lenguajes
+imperativos constan de sentencias que permiten controlar este flujo.
+
+Existen paradigmas que toman el imperativo como base, por ejemplo la programación
+estructurada, por procedimientos o la modular. 
+
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Variables de ámbito global  & X & X & X & X & X \\ \hline
+Foreach & X & X & X & X & X \\ \hline
+Iteración ágil & &  &  &  & X \\ \hline
+Paso de parámetros por defecto & X & X & X & & X  \\ \hline
+Keyword arguments &  & X & X & & X  \\ \hline
+Número de parámetros arbitrarios & X & X & X & X & ?  \\ \hline
+Llamada sin respetar signatura  &  &  &  & X & ?  \\ \hline
+Desempaquetado de parámetros & & X & & & ? \\ \hline
+Acceso a variables no locales & & X & & & ? \\ \hline
+Toda sentencia tiene un valor & & & X & & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Orientado a objeto}
+Describe la programación en términos de objetos que se relacionan entre si. Los objetos son 
+estructuras que encapsulan un estado y una funcionalidad. 
+
+La programación orientada a objetos se basa en la programación imperativa.
+
+Los lenguajes programación orientado a objetos normalmente utilizan clases 
+para definir un conjunto de objetos que tendrán un comportamiento y estructura afín. 
+Los objetos se consideran instancias o materializaciones de las clases.
+
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Visibilidad & X &  & X &  & X \\ \hline
+Definiciones estáticas & X & X & X &  & X \\ \hline
+Polimorfismo & X & X & X & X & X \\ \hline
+Duck typing & X & X & X & X & X \\ \hline
+Herencia simple  & X & X & X &  & X \\ \hline
+Herencia múltiple  &  & X &  &  & ? \\ \hline
+Enlace estático dinámico & X &  &  &  &  X \\ \hline
+Interfaces & X &  &  &  &  ? \\ \hline
+Traits o Mixins & X & X & X &  &  ? \\ \hline
+Name mangling & & X & & & ? \\ \hline
+Métodos mágicos & X & X & X & X & X \\ \hline 
+Todo dato es un objeto  &  & X & X & X & X \\ \hline 
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsubsection{POO basada en prototipos}
+
+En los lenguajes basados en prototipos los objetos son creados directamente o mediante
+la copia de otros objetos. En estos lenguajes no se precisa del concepto de clase.
+
+Los prototipos son objetos que serán clonados y de los cuales otros heredarán su
+comportamiento y propiedades.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Creación directa de objetos &  &  &  & X & X \\ \hline
+Construcción de prototipos &  &  &  & X & ? \\ \hline
+Herencia entre prototipos &  &  &  & X & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Dirigida por eventos}
+En la programación dirigidas por evento el flujo que sigue la ejecución de un programa viene 
+determinado por los sucesos que ocurren en el sistema. Estos se pueden dar por acciones del usuario
+o por el propio programa.
+
+Cabe decir que una programación dirigidas por evento no tiene porqué darse en un 
+entorno de concurrencia. Un gestor de eventos denominado``event loop" puede operar sobre 
+una cola de estos y ejecutarlos secuencialmente.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Detección de eventos & & & & X & ? \\ \hline
+Asociación de eventos & & & & X & ? \\ \hline  
+Creación de eventos & & & & X & ? \\ \hline  
+Lanzador de eventos & & & & X & ? \\ \hline  
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Basada en autómatas}
+En la programación basada en autómatas el sistema se modela
+como una máquina de estados fina. Es un tipo de paradigma imperativo.
+
+El concepto primario de este paradigma es el estado. Un estado captura 
+un momento actual del sistema ($t_0$). Además a partir de un estado se 
+deberá conocer todos los estados pasados ($t < t_0$), distinguiéndolos 
+así de los futuros ($ t > t_0$). A partir de un conjunto finito 
+de estados y una serie de acciones de entradas se conforma un 
+autómata.
+
+Aunque con la mayoría de lenguajes imperativos se puede seguir este paradigma no es 
+común que ofrezcan características enfocadas en el mismo.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Definición de estados & & & &  & ? \\ \hline
+Tabla de transiciones & & & &  & ? \\ \hline
+Construcción de autómatas & & & &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Orientado a Aspectos}
+
+Describe la programación valiéndose del concepto de aspecto. Un aspecto es una
+funcionalidad que se presenta de forma transversal, ya sea en la totalidad 
+del sistema o de una forma dispersa. 
+
+La programación orientada a aspectos persigue la correcta modularización del sistema, separando
+aquellas funcionalidades que son comunes a lo largo de toda la aplicación de aquellas
+que quedan encapsuladas en componentes. 
+
+Aunque es común ver la programación orientada a aspectos junto la orientada a objetos es posible 
+aplicarla junto a otros paradigmas. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Aspectos &  &  &  &  & ? \\ \hline
+Puntos de corte & &  &  &  & ? \\ \hline
+Consejos   & & & & & ? \\ \hline
+Decoradores   & & X & & & X \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection {Declarativo}
+Los lenguajes declarativos utilizan expresiones matemáticas para describir el problema y así obtener la solución.  
+
+En los lenguajes declarativos puros se cumple una transparencia referencial en todo el sistema por lo
+que se evitan efectos colaterales. Además no existen las asignaciones destructivas. Esto marca una diferencia 
+con los lenguajes imperativos y es que las funciones declarativas no pueden depender o cambiar el estado del 
+programa. Los lenguajes multiparadigma pueden ofrecer estructuras que garanticen estos principios.
+
+Otros paradigmas son concreciones del paradigma declarativo.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Estructuras con transparencia referencial &  &  &  &  & ? \\ \hline
+Estructuras con asignaciones no destructivas &  &  &  &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection {Funcional}
+Describe la programación en términos de funciones. Los lenguajes que atienden a 
+estos paradigma generalmente son más cercanos al lenguaje matemático que al máquina.
+Es un paradigma declarativo. 
+
+Algunos lenguajes integran soluciones características de la programación funcional pero de una forma más próxima a la imperativa.
+
+Cabe decir que algunas características funcionales pueden ser implementadas 
+si el lenguaje dispone de otras características básicas, 
+por ejemplo la currificación o la aplicación parcial pueden 
+ser implementadas si se dispone de funciones de orden superior y de clausura. En estos casos 
+no se considera que el lenguaje integre estas características de forma directa.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Función de orden superior & X & X & X & X & X \\ \hline
+Clausura  & X & X & X & X & X \\ \hline
+Funciones Lambda    & X & X & X & X & X \\ \hline
+Pliegues & X & X & X & X & X \\ \hline
+Mapeo de vectores & X & X & X & X & X \\ \hline
+Filtro de vectores & X & X & X & X & X \\ \hline
+Continuations & X & X & X & X & ? \\ \hline
+Generadores & X & X & X & X & ? \\ \hline
+Lista por comprensión &  & X & &  & X \\ \hline
+Currificación  &  &  &  &  & ? \\ \hline
+Aplicación parcial & & & & & X \\ \hline
+Ajuste de patrones & & & & & ? \\ \hline
+Guardas & & & & & ? \\ \hline
+Composición de funciones & & & & & ? \\ \hline
+Notación de infijo para funciones binarias & & & & & ? \\ \hline
+Mapeo y pliegue $$(x ==OR \{1,2,3\})$$ & & & & & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Lógico}
+Describe la programación en términos de reglas lógicas  que serán sometidas
+a un motor de inferencias para resolver los problemas planteados. 
+Es un paradigma declarativo. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Hechos & & & & & ? \\ \hline
+Reglas & & & & & ? \\ \hline
+Motor de inferencias & & & & & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Programación por restricciones}
+La programación se describe en términos de restricciones que toda solución debe cumplir, luego el
+sistema se encarga de buscar la solución. La programación por restricciones se puede dar sobre distintos
+dominios de datos. Es un tipo de paradigma declarativo inicialmente derivado de la programación lógica.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Restricciones sobre booleanos& & & & & ? \\ \hline
+Restricciones sobre enteros y racionales& & & & & ? \\ \hline
+Restricciones sobre conjuntos finitos & & & & & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Programación concurrente}
+La programación concurrente ofrece soluciones para expresar paralelismo en la ejecución de 
+tareas, permitiendo resolver problemas que se dan cuando varios procesos comparten o compiten
+por recursos.
+
+La programación concurrente está muy presente en sistemas distribuidos y en interfaces de
+usuario.
+
+La programación concurrente estudia y dispone de una serie de técnicas para la sincronización 
+y comunicación entre procesos y/o hilos. Estas técnicas pueden ser implementadas o añadidas en forma de recursos externos en todos los lenguajes analizados, pero se estudia la integración de estas con la gramática del lenguaje.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Procesos & X & X & X  & X & X \\ \hline
+Hilos & X & X & X &  & ? \\ \hline
+Mutex &  &  & &  & ? \\ \hline
+Semáforos &  &  & &  & ? \\ \hline
+Monitores & & & &  & ? \\ \hline
+Bloques sincronizados & & & &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+
+\subsection{Programación distribuida}
+En la programación distribuida el sistema software se despliega 
+en varias máquinas que pueden no estar próximas físicamente.  
+
+La programación distribuida ofrece soluciones a problemas de 
+comunicación y sincronización entre sistemas que no se
+ejecutan bajo un mismo entorno. 
+
+La programación distribuida se produce en un entorno de concurrencia por lo
+que ambos paradigmas se encuentran muy relacionados. Ofrece una serie de técnicas para la comunicación entre procesos distribuidos mediante el uso de un canal de comunicación 
+denominado socket. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Sockets & X & X & X  & X & ? \\ \hline
+Paso de mensajes &  &  &  &  & ? \\ \hline
+Llamada a Procedimiento Remoto &  &  &  &  & ? \\ \hline
+Modelos de objetos distribuidos &  &  &  &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\section{Operadores}
+Los lenguajes de programación proporcionan una serie de operadores sobre los
+tipos de datos que define: lógicos, aritméticos, acceso...
+
+En en el análisis se tomarán aquellos operadores que supongan un factor 
+diferenciador.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Potencia & X & X & X  &  & X \\ \hline
+División parte entera &  & X &   &  & ? \\ \hline
+Unión de array & X & X & X  &  & ? \\ \hline
+Intersección de array &  &  & X  &  & ? \\ \hline
+Diferencia de array &  &  & X  &  & ? \\ \hline
+Fusión de Nulos  & X &  &   &  & X \\ \hline
+Operadores de cortocircuito booleanos  & X &  &   &  &  \\ \hline
+Operadores de cortocircuito último valor  & & X & X  & X & X \\ \hline
+Ternario reducido  & X &  &   &  & X \\ \hline
+Operador de comparación combinada & X &  & X  &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+
+\section{Funciones y clases de objetos}
+Los lenguajes generales ofrecen conjuntos de funciones y clases de objetos para afrontar problemas de muy distinta naturaleza. Estos pueden 
+ser propios del lenguaje o ser añadidas mediante el uso de bibliotecas, módulos, extensiones... 
+
+Cada problema puede requerir soluciones propias. Los lenguajes de programación ofrecen gran variedad de recursos en
+forma de funciones o clases de objetos para dar solución a problemas comunes. No es objetivo de este análisis profundizar en este aspecto. 
+No obstante cabe decir que existen determinadas categorías de recursos que pueden ser útiles en gran variedad de escenarios:
+
+\begin{itemize}
+   \item Llamadas al sistema
+   \item Fechas
+   \item Ficheros
+   \item Procesos
+   \item i18n/l10n
+   \item Bases de datos ?
+   \item Matemáticas ?
+   \item Sistema de ficheros ?
+   \item Aleatoriedad ?
+   \item Protocolos y formatos de internet ?
+\end{itemize}
+
+\section{Definición de lenguajes específicos de dominio}
+Los lenguajes específicos de dominio son lenguajes enfocados a un problema
+o marco de problemas concretos. Existen lenguajes generales que permiten definir 
+otros lenguajes destinados a un dominio específico. 
+
+Los DSL internos son lenguajes especificados a partir de la gramática y forma del
+lenguaje base sobre el que se escribe. La flexibilidad a la hora de escribir DSL internos depende en 
+gran medida de la gramática y forma del lenguaje genérico. Existen lenguajes cuya 
+gramática es muy flexible en este aspecto.
+
+Los DSL externos son lenguajes que no están sujetos a la gramática y forma del 
+lenguaje base. Debido a esto son más flexibles que los internos.
+
+Aunque es posible escribir un DSL interno o externo en cada uno de los lenguajes referenciados,
+muchos de ellos no presentan características destinadas a tal fin y/o constan de ciertas limitaciones.
+
+Es posible atribuirle a una gramática características como herencia, modularidad...
+
+Existen lenguajes especializados en escribir gramáticas como bison o ANTLR.
+
+El léxico de muchos lenguajes está conformado por cadena de caracteres que serán reconocidos,
+no obstante un lenguaje puede utilizar un léxico de otra naturaleza como sonidos,
+secuencia de eventos, grupos de píxeles, componentes de un diagrama...
+
+Los DSL generados pueden ser creados e interpretados en tiempo de ejecución o añadidos
+mediante módulos compilados al interprete base.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+DSL interno &  &  &  X &   & ? \\ \hline
+DSL externo &  &  &  &  & ? \\ \hline
+Léxico flexible &  &  &  &  & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\section{Depuración}
+Algunos lenguajes presentan características para la depuración de los programas que se escriben 
+sobre ellos. Muchos pueden ser depurados mediante herramientas u otros recursos 
+externos. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Asertos   & X & X &  X & X  & ? \\ \hline
+Depurador integrado  & X & X & X & X & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+\section{Docencia} 
+Un lenguaje puede tener la capacidad de autoexplicarse, por ejemplo puede dar información 
+paso a paso sobre el proceso llevado a cabo para la interpretación, permitir 
+seguir el flujo de ejecución o dibujar gráficas de rendimiento y espacio consumidos.
+
+Para que el interprete sea útil en la docencia debe ser capaz de dar información sobre todo 
+el proceso. Además si integra mecanismo para generar DSL deberá documentar también los procesos
+aplicados a estos. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Análisis léxico  &  &  &   &   & ? \\ \hline
+Autómata léxico  &  &  &   &   & ? \\ \hline
+Análisis sintáctico  &  &  &   &   & ? \\ \hline
+Árbol sintáctico  &  &  &   &   & ? \\ \hline
+Aplicación semántica  &  &  &   &   & ? \\ \hline
+Árbol de análisis decorado &  &  &   &   & ? \\ \hline
+Estados de la tabla de símbolos  &  &  &   &   & ? \\ \hline
+Tiempos de ejecución  &  &  &   &   & ? \\ \hline
+Espacio de memoria ocupado &  &  &   &   & ? \\ \hline
+Depurador integrado  &  &  &   &   & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+
+\section{Otras características funcionales}
+En este punto se presentan funciones que cumplen algunos lenguajes
+y que no han sido categorizadas, pero que aportan 
+valor al análisis.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+ 
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Extensiones & X & X & X &   & X \\ \hline
+Reflexión & X & X & X & X & ? \\ \hline
+Introspección de tipos & X & X & X & & ? \\ \hline
+Incrustable en otros documentos & X &  & & & ? \\ \hline
+Acceso a estructuras de bajo nivel &  &  &  &  & ? \\ \hline
+Docstring integrado &  & X &   &  & ? \\ \hline
+Interprete interactivo & X & X & X & X & X \\ \hline
+Excepciones  & X & X & X & X & X \\ \hline
+Espacio de nombres & X & X & X & X & ? \\ \hline
+IPC integrado &  &  &  &  & ? \\ \hline
+ORM integrado & & & & & X \\ \hline
+Patrones de diseño integrados & & & & & X \\ \hline
+Recolección de Basura & X & X & X & X & X \\ \hline 
+Declaraciones e implementaciones separadas & X & & & & ? \\ \hline
+Varios niveles de aviso y manejo de errores & X & & & & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\section {Características no funcionales}
+\subsection{Modularidad}
+Un interprete se puede presentar de forma modular según diferentes criterios:
+
+\subsubsection{Modularidad de recursos}
+Un lenguaje es modular en este sentido si tiene la capacidad de ampliar o configurar los recursos que brinda mediante módulos 
+que encapsulan construcciones del lenguaje. Las construcciones 
+(funciones y clases generalmente) encapsuladas en un módulo cumplen un propósito específico
+que puede ser útil en determinados problemas. Este tipo de módulos
+generalmente serán compilados de forma independiente y cargados dinámicamente, pero 
+también pueden ser compilados junto el binario que representa el interprete.
+
+La mayoría de lenguajes actuales son ampliable en recursos. 
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Modularización de recursos & X & X & X &   & X \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsubsection{Modularidad del lenguaje}
+El interprete puede tener una arquitectura interna modular, de forma que el 
+lenguaje que representa puede ser extendido o personalizado tanto 
+en léxico, como en gramática o en semántica.  Estos módulos, que definen
+el lenguaje, pueden ser cargados en tiempo de ejecución o compilados junto 
+al interprete.
+
+Un lenguaje modular no es un lenguaje en si, sino un una base para construir otros 
+lenguajes. A partir de un lenguaje de este tipo se pueden construir otros lenguajes,
+por ejemplo si se toma los módulos adecuados para construir el interprete
+se puede obtener un lenguaje puramente matemático.
+
+Se ha de aclara que aunque el interprete tenga la capacidad de generar e interpretar lenguajes
+específicos de dominio, no quiere decir que brinde un lenguaje modular ya que las gramáticas
+generadas de esta forma se pueden ver como recursos del propio lenguaje. Un lenguaje capaz de generar 
+DSL es modular en este sentido si el interprete que lo procesa puede compilarse sin esta característica.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Modularización del lenguaje &  &  &  &   & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+
+\subsection{Licencia}
+Todos los interpretes tomados en el análisis presentan licencias propias, pero es
+posible analizar las características de estas:
+
+En este análisis se considerará únicamente la licencia de Node.js como JS
+dado que cada motor JavaScript dispone de su propia licencia.
+
+\FloatBarrier
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|} \hline
+ & PHP  & Python & Ruby & JS & OMI\\ \hline
+Software libre  & X & X & X & X  & ? \\ \hline
+Compatible con DFSG &  & X & X & X  & ? \\ \hline
+Aprobada por OSI & X & X & X &  X & ? \\ \hline
+Compatible GPL &  & X & X  & X  & ?  \\ \hline
+Copyleft &  & & X &   & ? \\ \hline
+Utilizable junto con otras licencias &  & X & X &  X & ? \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\FloatBarrier
+
+\subsection{Rendimiento}
+El rendimiento supone una característica muy valorada en los lenguajes de programación. 
+Debido a la gran cantidad de algoritmos que pueden ser codificados y la diversidad de estos, se hace difícil un análisis exhaustivo del rendimiento.
+No obstante existen una serie de benchmarks muy popularizados y estandarizados. Incluso se pueden ver proyectos dedicados a someter 
+a los lenguajes de programación a un conjunto de estos benchmark (The Computer Language Benchmarks Game).
+
+\subsection{Productividad}
+Los lenguajes de programación deben perseguir la productividad de sus usuarios, para ello deben presentar: 
+\begin{itemize}
+\item Léxico estándar, uniforme y sencillo.
+\item Gramática clara y directa.
+\item Estructuras estándar y uniforme.
+\end{itemize}
+
+Aunque todos los lenguajes analizados presentan estas características en mayor o menor grado, no es objetivo 
+de este análisis entrar en discusión al respecto.
+
+\subsection{Portabilidad}
+Una característica común en muchos interpretes y compiladores es que se presentan como software multiplataforma,
+siendo posible su uso en la mayoría de sistemas operativos actuales. 
+
+La portabilidad es una característica muy valorada, pero que no supone un factor diferenciador dado que la mayoría 
+lo cumplen. 

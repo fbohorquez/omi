@@ -1,0 +1,261 @@
+\hypertarget{classnexpNode}{\section{Referencia de la Clase nexp\-Node}
+\label{classnexpNode}\index{nexp\-Node@{nexp\-Node}}
+}
+
+
+Nodo expresión de tipo no definido.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de nexp\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classnexpNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}{ref} ()
+\item 
+virtual void \hyperlink{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{noderef} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+virtual \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_a964e408c8f55df1aa02269087914e538}{nodeval} () const 
+\item 
+virtual void \hyperlink{classnexpNode_a98b2fe44e5704b444c85d5c081f392ec}{set\-Ref} (\hyperlink{classrefNode}{ref\-Node} $\ast$node)
+\item 
+virtual \hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classnexpNode_a5fde05f8b5ae65645b06cae3be20b449}{get\-Ref} ()
+\item 
+void \hyperlink{classnexpNode_a9d84683887ea9e00b2c2e85aa8484073}{asig} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node, bool \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run}=true)
+\item 
+void \hyperlink{classnexpNode_a34ab900122b2790d5f5893c033ed333a}{set\-Val} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+string \hyperlink{classnexpNode_a123e568513157222f0faf89c1e415b4f}{print} () const 
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_a4430d227ba9162fe6361e44d6b683445}{resolved} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_a155b43d9cdaadd5c99738cb5bb2b4a21}{resolved\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_a50cc8b05927a8b70542a45d137f144ab}{resolved} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node, \hyperlink{classrunNode}{run\-Node} $\ast$\&\hyperlink{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}{ref})
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_aa4fa13afe75b5eb15968596b97030711}{resolved\-As\-Function} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_ad3c52fe03ab859afdfcd307d0f3db99f}{resolved\-As\-Function} (\hyperlink{classrunNode}{run\-Node} $\ast$\&node, \hyperlink{classrunNode}{run\-Node} $\ast$\&\hyperlink{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}{ref})
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classnexpNode_a84b5403ba034c1e195c031e074384576}{resolv} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo expresión de tipo no definido. 
+
+No tienen un valor definido. Su valor interno es una referencia a un nodo ejecutable de cualquier tipo. Aunque generalmente el tipo del nodo al que referencia será una expresion de tipo definido, es posible que una expresión de tipo no definido apunte a otra de la misma naturaleza. Esto hace posible que una determinada rama del árbol de ejecución este compuesta de varios nodos de tipo no definido, aunque siempre se deberá cumplir que los nodos finales de cada rama sean de tipo definido.
+
+Las expresiones no definidas representan datos variables cuyo valor puede variar. Estos datos suelen ser referenciados mediante la tabla de símbolos (\hyperlink{classsTable}{s\-Table}) para ser accesibles desde cualquier parte del árbol de ejecución.
+
+El ejemplo más claro de expresión no definida es el de variable. Una variable puede contener cualquier tipo de elemento (string, arrays, enteros...).
+
+Todos los nodos expresiones no definidas implementan este concepto con determinados matices, el nodo operador acceso a array, por ejemplo, guarda una referencia a la referencia del elemento concreto dentro del array. El operador asignación guarda una referencia al elemento recién asignado.
+
+Todo nodo expresión no definido debe implementar los métodos de observación y modificación de su referencia. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnexpNode_a9d84683887ea9e00b2c2e85aa8484073}{\index{nexp\-Node@{nexp\-Node}!asig@{asig}}
+\index{asig@{asig}!nexpNode@{nexp\-Node}}
+\subsubsection[{asig}]{\setlength{\rightskip}{0pt plus 5cm}void nexp\-Node\-::asig (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node, }
+\item[{bool}]{run = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classnexpNode_a9d84683887ea9e00b2c2e85aa8484073}
+Establece el valor del nodo al de un nodo dado tras resolver todas las referencias. El nodo asignado puede ser ejecutado. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a asignar. \\
+\hline
+{\em run} & Determina si se debe ejecutar el nodo asignado. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classnexpNode_a5fde05f8b5ae65645b06cae3be20b449}{\index{nexp\-Node@{nexp\-Node}!get\-Ref@{get\-Ref}}
+\index{get\-Ref@{get\-Ref}!nexpNode@{nexp\-Node}}
+\subsubsection[{get\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ nexp\-Node\-::get\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_a5fde05f8b5ae65645b06cae3be20b449}
+Obtiene la referencia de la expresión no definida \begin{DoxyReturn}{Devuelve}
+Referencia de la expresión. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{\index{nexp\-Node@{nexp\-Node}!noderef@{noderef}}
+\index{noderef@{noderef}!nexpNode@{nexp\-Node}}
+\subsubsection[{noderef}]{\setlength{\rightskip}{0pt plus 5cm}void nexp\-Node\-::noderef (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}
+Modifica la referencia de la expresión no definida. 
+
+Reimplementado en \hyperlink{classgetNode__strInterface_a90e1e044d69c5af4deab5f93075df7d0}{get\-Node\-\_\-str\-Interface}, \hyperlink{classthisNode_a808f69385aa1ac68ec18dc2ac412449d}{this\-Node}, \hyperlink{classgetNode_af0885fa5c30183deff1e1bd4d6d70419}{get\-Node} y \hyperlink{classidNode_a718cba1385de599875f8cc14f52f6c84}{id\-Node}.
+
+\hypertarget{classnexpNode_a964e408c8f55df1aa02269087914e538}{\index{nexp\-Node@{nexp\-Node}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!nexpNode@{nexp\-Node}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_a964e408c8f55df1aa02269087914e538}
+Modifica la referencia de la expresión no definida. 
+
+Reimplementado en \hyperlink{classgetNode__strInterface_aaebee470663c3ed0c7fd063e704f77a1}{get\-Node\-\_\-str\-Interface} y \hyperlink{classidNode_a69900402f8bfbe33559854cddf1bd0f9}{id\-Node}.
+
+\hypertarget{classnexpNode_a123e568513157222f0faf89c1e415b4f}{\index{nexp\-Node@{nexp\-Node}!print@{print}}
+\index{print@{print}!nexpNode@{nexp\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string nexp\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_a123e568513157222f0faf89c1e415b4f}
+Devuelve una cadena de caracteres que se corresponde con la representación textual del nodo que es referenciado. \begin{DoxyReturn}{Devuelve}
+Cadena que representa el valor de la referencia. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}{\index{nexp\-Node@{nexp\-Node}!ref@{ref}}
+\index{ref@{ref}!nexpNode@{nexp\-Node}}
+\subsubsection[{ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ nexp\-Node\-::ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_a9cfb7bb942f2c522cd43cd4cf344796e}
+Método virtual que debe ser implementado por las clases herederas. Obtiene la referencia de la expresión no definida. 
+
+Reimplementado en \hyperlink{classidNode_ae46892d8bd8e5521922f7090f3336839}{id\-Node}.
+
+\hypertarget{classnexpNode_a84b5403ba034c1e195c031e074384576}{\index{nexp\-Node@{nexp\-Node}!resolv@{resolv}}
+\index{resolv@{resolv}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolv (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_a84b5403ba034c1e195c031e074384576}
+Resuelve un nodo ejecutable. Si el nodo dado como parámetro presenta una referencia obtiene el valor de esta, repitiendo el proceso hasta que se obtiene un nodo de tipo definido. 
+\begin{DoxyParams}{Parámetros}
+{\em Nodo} & que será resuelto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo resultado del proceso. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_a4430d227ba9162fe6361e44d6b683445}{\index{nexp\-Node@{nexp\-Node}!resolved@{resolved}}
+\index{resolved@{resolved}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolved}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolved (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_a4430d227ba9162fe6361e44d6b683445}
+Resuelve un nodo ejecutable. Si el nodo dado como parámetro presenta una referencia obtiene el valor de esta, repitiendo el proceso hasta que se obtiene un nodo de tipo definido. El nodo dado como parámetro será modificado por el valor obtenido. El nodo obtenido es además ejecutado 
+\begin{DoxyParams}{Parámetros}
+{\em Nodo} & que será resuelto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo resultado del proceso. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_a50cc8b05927a8b70542a45d137f144ab}{\index{nexp\-Node@{nexp\-Node}!resolved@{resolved}}
+\index{resolved@{resolved}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolved}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolved (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node, }
+\item[{{\bf run\-Node} $\ast$\&}]{ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_a50cc8b05927a8b70542a45d137f144ab}
+Resuelve un nodo ejecutable. Si el nodo dado como parámetro presenta una referencia obtiene el valor de esta, repitiendo el proceso hasta que se obtiene un nodo de tipo definido. El nodo dado como parámetro será modificado por el valor obtenido. El nodo dado como parámetro referencia tomará el valor de la última referencia resuelta. 
+\begin{DoxyParams}{Parámetros}
+{\em Nodo} & que será resuelto. \\
+\hline
+{\em Nodo} & que contendrá la última referencia resuelta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo resultado del proceso. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_aa4fa13afe75b5eb15968596b97030711}{\index{nexp\-Node@{nexp\-Node}!resolved\-As\-Function@{resolved\-As\-Function}}
+\index{resolved\-As\-Function@{resolved\-As\-Function}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolved\-As\-Function}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolved\-As\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_aa4fa13afe75b5eb15968596b97030711}
+Resuelve el nodo ejecutable como un función. Se busca el nodo dado en la tabla de funciones y se devuelve la función correspondiente si existe, N\-U\-L\-L en caso contrario. El parámetro toma como valor la función. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que será resulto como función. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo función. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_ad3c52fe03ab859afdfcd307d0f3db99f}{\index{nexp\-Node@{nexp\-Node}!resolved\-As\-Function@{resolved\-As\-Function}}
+\index{resolved\-As\-Function@{resolved\-As\-Function}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolved\-As\-Function}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolved\-As\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node, }
+\item[{{\bf run\-Node} $\ast$\&}]{ref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_ad3c52fe03ab859afdfcd307d0f3db99f}
+Resuelve el nodo ejecutable como una función. Se busca el nodo dado en la tabla de funciones y se devuelve la función correspondiente si existe, N\-U\-L\-L en caso contrario. El parámetro toma como valor la función. El parámetro dado como referencia tomará el valor de la última referencia resuelta. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que será resulto como función. \\
+\hline
+{\em ref} & Tomará como valor la última referencia resuelta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo función. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_a155b43d9cdaadd5c99738cb5bb2b4a21}{\index{nexp\-Node@{nexp\-Node}!resolved\-Ref@{resolved\-Ref}}
+\index{resolved\-Ref@{resolved\-Ref}!nexpNode@{nexp\-Node}}
+\subsubsection[{resolved\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ nexp\-Node\-::resolved\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$\&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classnexpNode_a155b43d9cdaadd5c99738cb5bb2b4a21}
+Resuelve un nodo ejecutable. Si el nodo dado como parámetro presenta una referencia obtiene el valor de esta, repitiendo el proceso hasta que se obtiene un nodo de tipo definido. El nodo dado como parámetro será modificado por el valor obtenido. El nodo obtenido no es ejecutado 
+\begin{DoxyParams}{Parámetros}
+{\em Nodo} & que será resuelto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo resultado del proceso. 
+\end{DoxyReturn}
+\hypertarget{classnexpNode_a98b2fe44e5704b444c85d5c081f392ec}{\index{nexp\-Node@{nexp\-Node}!set\-Ref@{set\-Ref}}
+\index{set\-Ref@{set\-Ref}!nexpNode@{nexp\-Node}}
+\subsubsection[{set\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void nexp\-Node\-::set\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf ref\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnexpNode_a98b2fe44e5704b444c85d5c081f392ec}
+Modifica la referencia de la expresión no definida. \hypertarget{classnexpNode_a34ab900122b2790d5f5893c033ed333a}{\index{nexp\-Node@{nexp\-Node}!set\-Val@{set\-Val}}
+\index{set\-Val@{set\-Val}!nexpNode@{nexp\-Node}}
+\subsubsection[{set\-Val}]{\setlength{\rightskip}{0pt plus 5cm}void nexp\-Node\-::set\-Val (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classnexpNode_a34ab900122b2790d5f5893c033ed333a}
+Establece el valor del nodo al de un nodo dado. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a tomar como valor. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,696 @@
+//stmtNode.cpp
+//----------------------------------------------------------------------
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+#include "stmtNode.h"
+#include "operatorStrNode.h"
+//----------------------------------------------------------------------
+//stmtNode
+int stmtNode::row_ = 2;
+stmtNode::stmtNode (runNode* node1, runNode* node2, YYLTYPE bloq ): node1_ (node1), node2_ (node2), line_(bloq.first_line) {}
+stmtNode::stmtNode (runNode* node1, runNode* node2): node1_ (node1), node2_ (node2), line_(0) {}
+
+void stmtNode::run () {
+   if (!compile_error) {
+      try {
+         if (node1_) {
+            node1_->run();
+         }
+      } catch (errorException& e) {
+         e.error(infile, line_);
+      }
+      warningQueue::warning (infile, line_);
+      try {
+         if (node2_)  node2_->run();
+      } catch (errorException& e) {
+         e.error(infile ,line_);
+      }
+   }
+}
+bool stmtNode::compile_error = false;
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+//printNode
+printNode::printNode (runNode* exp): exp_ (exp) {}
+
+void printNode::run () {
+   printableNode *pn;
+   runNode *aux;
+   arrayNode *a;
+   if (exp_) {
+      aux = exp_;
+      nexpNode::resolved(aux)->run();
+      if (pn = dynamic_cast<printableNode*>(aux)) {
+         
+         cout << pn->print () << endl;
+      }
+   }
+}
+//----------------------------------------------------------------------
+void labelNode::run () {
+   node1_->run ();
+
+   idNode* id = dynamic_cast<idNode*> (node1_);
+   if (id) {
+      id->noderef(node2_);
+   } else
+      throw errorException ("Wrong label", "labelNode: node 2 is unknown operand ", 0);
+   node2_->run();
+}
+
+void whileNode::run () {
+   bool exit = false;
+   runNode* exp = exp_;
+   nexpNode::resolved(exp)->run();
+   try {
+      while (logicNode::to_bool(exp) && !exit) {
+         try {
+            rb_->run();
+         } catch (continueException& c) {
+            c.end();
+         }
+         exp = nexpNode::resolv(exp_);
+         exp->run();
+      }
+   } catch (breakException& b) {
+      b.end();
+      exit = true;
+   }
+}
+
+
+void dowhileNode::run () {
+   bool exit = false;
+   runNode* exp = exp_;
+   nexpNode::resolved(exp)->run();
+   try {
+      do {
+         try {
+            rb_->run();
+         } catch (continueException& c) {
+            c.end();
+         }
+         exp = nexpNode::resolv(exp_);
+         exp->run();
+      } while (logicNode::to_bool(exp) && !exit);
+   } catch (breakException& b) {
+      b.end();
+      exit = true;
+   }
+}
+
+void inputNode::run () {
+   string aux0, aux1;
+   char c, e;
+   if (prompt_) {
+      runNode *prompt = prompt_;
+      nexpNode::resolved(prompt)->run();
+      if (stringNode *s = dynamic_cast<stringNode*>(prompt)) {
+         cout << s->strvalue ();
+      } else if (arithNode *n = dynamic_cast<arithNode*>(prompt)) {
+         ostringstream oss;
+         oss << n->numvalue ();
+         cout << oss.str();
+      } else if (logicNode *l = dynamic_cast<logicNode*>(prompt)) {
+         ostringstream oss;
+         oss << l->boolvalue ();
+         cout << oss.str();
+      } else {
+         throw errorException ("Wrong data type", "inputNode: prompt is a wrong type", 1);
+      }
+      switch (type_) {
+      default:
+      case 0:
+         cout << endl;
+         break;
+      case 1:
+         cout << " ";
+         break;
+      }
+   }
+   switch (type_) {
+   default:
+   case 0:
+      getline(cin, aux0);;
+      while (true) {
+         getline(cin, aux1);
+         if (aux1.empty()) {
+            break;
+         } else {
+            aux0 += ('\n' + aux1);
+         }
+      }
+      break;
+   case 1:
+      getline(cin, aux0);
+      break;
+   }
+   strNode s (aux0);
+   asigNode asig (id_, &s);
+   asig.run ();
+   strvalue_ = aux0;
+}
+
+void ifNode::run () {
+   runNode* exp = exp_;
+   nexpNode::resolved(exp)->run();
+   bool chck = logicNode::to_bool(exp);
+   
+   if (chck && ifb_){
+      try {
+         ifb_->run();
+      } catch(breakException& b) {
+         b.end();
+      }
+   }
+   
+   if (!chck && elseb_)
+      elseb_->run();
+}
+
+vector <runNode*> iloopNode::ielement;
+int iloopNode::icount = 0;
+
+runNode * iloopNode::get_ielement () {
+
+   if (iloopNode::icount > 0) {
+      runNode* node = iloopNode::ielement[iloopNode::icount - 1];
+      return node;
+   }
+   return NULL; //Exc
+}
+
+runNode * iloopNode::get_ielement_n (int i) {
+   if (i >= 0 && i < iloopNode::icount)
+      return iloopNode::ielement[i];
+   throw errorException ("Wrong index", "get_ielement_n: overflow iloop cache", 1);
+}
+
+runNode * iloopNode::set_ielement (runNode* node) {
+   runNode * back = iloopNode::pop_ielement();
+   iloopNode::push_ielement (node);
+   return back;
+}
+
+runNode * iloopNode::push_ielement (runNode* node) {
+   node->addRef();
+   iloopNode::ielement.push_back (node);
+   iloopNode::icount ++;
+}
+
+runNode * iloopNode::pop_ielement () {
+   runNode * back = iloopNode::ielement.back();
+   //~ back->rmRef();
+   iloopNode::icount --;
+   iloopNode::ielement.pop_back ();
+   return back;
+}
+
+void iloopNode::run () {
+   runNode * iter = iter_;
+   nexpNode::resolved(iter)->run();
+   try {
+      if (numNode * n = dynamic_cast<numNode*> (iter))
+         this->run_case_num (n);
+      else if (arrayNode* a = dynamic_cast<arrayNode*>(iter))
+         this->run_case_array (a);
+      else if (stringNode* s = dynamic_cast<stringNode*>(iter))
+         this->run_case_str (s);
+      else if (logicNode* l = dynamic_cast<logicNode*>(iter))
+         this->run_case_bool (l);
+   } catch (breakException& b) {
+      b.end();
+   }
+}
+
+void iloopNode::run_case_num ( numNode * n) {
+   if (n->numvalue () > 0) {
+      runNode * inode =  new numNode ((float)0);
+      iloopNode::push_ielement (inode);
+      int inc = (inc_)?arithNode::to_num (nexpNode::resolv(inc_), true):(num) 1;
+      for (int i = 0; i < n->numvalue(); i+= inc) {
+         numNode *num = new numNode ((float)i);
+         this->setId (num);
+         iloopNode::set_ielement (num);
+         try {
+            stmt_->run();
+         } catch (continueException& c) {
+            if (!c.islast()) {
+               iloopNode::pop_ielement();
+            }
+            c.end();
+         }
+         delete num;
+      }
+      iloopNode::pop_ielement();
+   }
+}
+
+void iloopNode::run_case_str ( stringNode * s) {
+   int len = s->numvalue ();
+   if (stringNode* sep = dynamic_cast<stringNode*>(nexpNode::resolv(inc_))) {
+      explodeNode* expl = new explodeNode (sep,  s);
+      expl->run();
+      if (arrayNode* a = dynamic_cast<arrayNode*>(expl->nodeval()))
+         return this->run_case_array (a);
+   }
+   int inc = (inc_)?arithNode::to_num (nexpNode::resolv(inc_), true):(num)1;
+   getNode_strInterface* istr = new getNode_strInterface (s);
+   for (int i = 0; i < len; i+= inc) {
+      istr->setn (i);
+      istr->run();
+      this->setId (istr);
+      if (!i)
+         iloopNode::push_ielement (istr);
+      else
+         iloopNode::set_ielement (istr);
+      try {
+         stmt_->run();
+      } catch (continueException& c) {
+         if (!c.islast()) {
+            iloopNode::pop_ielement();
+         }
+         c.end();
+      }
+   }
+   if (len) {
+      iloopNode::pop_ielement();
+   }
+}
+
+void iloopNode::run_case_bool ( logicNode * l) {
+   iloopNode::push_ielement (l);
+   while (l->boolvalue ()) {
+      try {
+         stmt_->run();
+      } catch (continueException& c) {
+         if (!c.islast()) {
+            iloopNode::pop_ielement();
+         }
+         c.end();
+      }
+      l->run();
+      this->setId (l);
+      iloopNode::set_ielement (l);
+   }
+   iloopNode::pop_ielement();
+}
+
+void iloopNode::run_case_array ( arrayNode * a) {
+   symbols *a_map = a->getArray ();
+   isym m_iter;
+   int inc = (inc_)?arithNode::to_num (nexpNode::resolv(inc_), true):(num)1;
+
+   for (m_iter  = a_map->begin(); m_iter != a_map->end(); ) {
+      if (m_iter == a_map->begin()) {
+         iloopNode::push_ielement (m_iter.second);
+      } else
+         iloopNode::set_ielement (m_iter.second);
+      this->setId (m_iter.second);
+      this->setId (m_iter.first, true);
+      try {
+         stmt_->run();
+      } catch (continueException& c) {
+         if (!c.islast()) {
+            iloopNode::pop_ielement();
+         }
+         c.end();
+      }
+      for (int i = 0; i < inc; ++i) m_iter ++;
+   }
+   if (m_iter != a_map->begin())
+      iloopNode::pop_ielement();
+}
+
+void iloopNode::setId (runNode * node, bool second) {
+   if (idNode* id = dynamic_cast<idNode*> ((!second)?id_:second_id_)) {
+      asigNode* asig = new asigNode (id, node);
+      asig->run ();
+      delete asig;
+   }
+}
+
+void incloopNode::run () {
+   idNode* id = dynamic_cast<idNode*> (id_);
+   runNode *exp;
+   if (id) exp = nexpNode::resolv(id);
+   asigNode* asig = NULL;
+   if (numNode* max = dynamic_cast<numNode*> (max_)) {
+      num ini = arithNode::to_num (id?exp:id_, false);
+      runNode * inode =  new numNode ((float)ini);
+      if (id) {
+         asig = new asigNode (id, inode);
+         asig->run ();
+      }
+      iloopNode::push_ielement (inode);
+      for (int i = ini; i < max->numvalue(); ++i) {
+
+         numNode *num = new numNode ((float)i);
+         if (id) {
+            asig = new asigNode (id, num);
+            asig->run ();
+         }
+         iloopNode::set_ielement (num);
+         stmt_->run();
+      }
+      iloopNode::pop_ielement();
+   }
+}
+
+string typeofNode::type (runNode *r) {
+   refNode* ref;
+   logicNode* l;
+   arithNode* a;
+   stringNode* s;
+   arrayNode* array;
+   nexpNode  *id;
+   relCNode *rel;
+   dataCNode *data;
+   defCNode *def;
+   id = dynamic_cast<nexpNode*> (r);
+   ostringstream os;
+   if (dynamic_cast<fexpNode*> (r)) {
+      os << "Function";
+      return os.str();
+   }
+   if (id = dynamic_cast<nexpNode*> (r)) {
+      os << "ID: ";
+      id->run();
+      r = id->nodeval();
+   }
+   if (ref = dynamic_cast<refNode*>(r))
+      os << "Ref: " << ref->strvalue() ;
+   else if (nullNode* nu = dynamic_cast<nullNode*>(r))
+      os << "NULL" ;
+   else if (s = dynamic_cast<stringNode*>(r))
+      os << "String: " << s->strvalue() ;
+   else if (a = dynamic_cast<arithNode*>(r))
+      os << "Arithmetic: " << a->numvalue() ;
+   else if (l = dynamic_cast<logicNode*>(r))
+      os << "Boolean: " << l->boolvalue();
+   else if (def = dynamic_cast<defCNode*>(r))
+      os << "DefC (" << def->getArray()->size() << ")" ;
+   else if (data = dynamic_cast<dataCNode*>(r))
+      os << "DataC (" << data->getArray()->size() << ")" ;
+   else if (rel = dynamic_cast<relCNode*>(r))
+      os << "RelC (" << rel->getArray()->size() << ")" ;
+   else if (array = dynamic_cast<arrayNode*>(r))
+      os << "Array (" << array->getArray()->size() << ")" ;
+   else if (dynamic_cast<functionNode*>(r))
+      os << "Function" ;
+   else if (dynamic_cast<listNode*>(r))
+      os << "List" ;
+   else if (dynamic_cast<expNode*>(r))
+      os << "Expresion" ;
+   else if (dynamic_cast<printableNode*>(r))
+      os << "Printable" ;
+   return os.str();
+}
+
+void foreachNode::run () {
+   runNode * exp = exp_;
+   nexpNode::resolved(exp)->run();
+   try {
+      if (numNode * n = dynamic_cast<numNode*> (exp))
+         this->run_case_num (n);
+      else if (arrayNode* a = dynamic_cast<arrayNode*>(exp))
+         this->run_case_array (a);
+      else if (stringNode* s = dynamic_cast<stringNode*>(exp)) {
+         if (s->is_numvalue()) {
+            numNode n (s->numvalue());
+            this->run_case_num (&n);
+         } else
+            this->run_case_str (s);
+      } else if (logicNode* l = dynamic_cast<logicNode*>(exp))
+         this->run_case_bool (l);
+   } catch (breakException& b) {
+      b.end();
+   }
+}
+
+void foreachNode::run_case_num ( numNode * n) {
+   if (n->numvalue () > 0) {
+      for (int i = 0; i < n->numvalue(); i+= 1) {
+         numNode num ((float)i);
+         asigNode (val_, &num).run();
+         try {
+            rb_->run();
+         } catch (continueException& c) {
+            c.end();
+         }
+      }
+   }
+}
+
+void foreachNode::run_case_str ( stringNode * s) {
+   int len = s->numvalue ();
+   getNode_strInterface* istr = new getNode_strInterface (s);
+   for (int i = 0; i < len; i+= 1) {
+      istr->setn (i);
+      istr->run();
+      asigNode (val_, istr).run();
+      try {
+         rb_->run();
+      } catch (continueException& c) {
+         c.end();
+      }
+   }
+}
+
+void foreachNode::run_case_bool ( logicNode * l) {
+   runNode * exp = exp_;
+   while (l->boolvalue ()) {
+      boolNode b = boolNode (true);
+      asigNode (val_, &b).run();
+      try {
+         rb_->run();
+      } catch (continueException& c) {
+         c.end();
+      }
+      nexpNode::resolved(exp)->run();
+      if (l = dynamic_cast<logicNode*>(exp))
+         l->run();
+      else
+         break;
+   }
+}
+
+void foreachNode::run_case_array ( arrayNode * a) {
+   symbols *a_map = a->getArray ();
+   isym m_iter;
+   for (m_iter  = a_map->begin(); m_iter != a_map->end(); ++ m_iter) {
+      asigNode (val_, m_iter.second).run();
+      if (key_) asigNode (key_, m_iter.first).run();
+      try {
+         rb_->run();
+      } catch (continueException& c) {
+         c.end();
+      }
+   }
+}
+
+void foreachGeneratorNode::run () {
+   runNode * exp = exp_;
+   nexpNode::resolved(exp)->run();
+   if (numNode * n = dynamic_cast<numNode*> (exp))
+      this->run_case_num (n);
+   else if (arrayNode* a = dynamic_cast<arrayNode*>(exp))
+      this->run_case_array (a);
+   else if (stringNode* s = dynamic_cast<stringNode*>(exp))
+      this->run_case_str (s);
+   else if (logicNode* l = dynamic_cast<logicNode*>(exp))
+      this->run_case_bool (l);
+}
+
+void foreachGeneratorNode::run_case_num ( numNode * n) {
+   if (n->numvalue () > 0) {
+      for (int i = 0; i < n->numvalue(); i+= 1) {
+         numNode num ((float)i);
+         asigNode (val_, &num).run();
+         if (rb_) rb_->run();
+         if (dynamic_cast<expNode*> (elem_)) {
+            runNode *elem = elem_;
+            nexpNode::resolved(elem)->run ();
+            if (expNode * e = dynamic_cast<expNode*> (elem)) {
+               this->insert (new numNode(this->getCount()), e);
+            }
+         }
+      }
+   }
+}
+
+void foreachGeneratorNode::run_case_str ( stringNode * s) {
+   int len = s->numvalue ();
+   getNode_strInterface* istr = new getNode_strInterface (s);
+   for (int i = 0; i < len; i+= 1) {
+      istr->setn (i);
+      istr->run();
+      asigNode (val_, istr).run();
+      if (rb_) rb_->run();
+      if (dynamic_cast<expNode*> (elem_)) {
+         runNode *elem = elem_;
+         nexpNode::resolved(elem)->run ();
+         if (expNode * e = dynamic_cast<expNode*> (elem)) {
+            this->insert (new numNode(this->getCount()), e);
+         }
+      }
+   }
+}
+
+void foreachGeneratorNode::run_case_bool ( logicNode * l) {
+   runNode * exp = exp_;
+   while (l->boolvalue ()) {
+      boolNode b = boolNode (true);
+      asigNode (val_, &b).run();
+      if (rb_) rb_->run();
+      nexpNode::resolved(exp)->run();
+      if (l = dynamic_cast<logicNode*>(exp))
+         l->run();
+      else
+         break;
+      if (dynamic_cast<expNode*> (elem_)) {
+         runNode *elem = elem_;
+         nexpNode::resolved(elem)->run ();
+         if (expNode * e = dynamic_cast<expNode*> (elem)) {
+            this->insert (new numNode(this->getCount()), e);
+         }
+      }
+   }
+}
+
+void foreachGeneratorNode::run_case_array ( arrayNode * a) {
+   symbols *a_map = a->getArray ();
+   isym m_iter;
+   for (m_iter  = a_map->begin(); m_iter != a_map->end(); ++ m_iter) {
+      asigNode (val_, m_iter.second).run();
+      if (key_) asigNode (key_, new strNode(m_iter.first->strvalue())).run();
+      if (rb_) rb_->run();
+      this->generator ();
+   }
+
+}
+
+void foreachGeneratorNode::generator () {
+   bool ch = true;
+   if (if_cond_) {
+      runNode * if_ =  if_cond_;
+      nexpNode::resolved (if_)->run();
+      ch = logicNode::to_bool (if_);
+   }
+   if (ch && dynamic_cast<expNode*> (elem_)) {
+      runNode *elem = elem_;
+      runNode * key = elem_key_;
+      expNode * e, *ek;
+      nexpNode::resolved(elem)->run ();
+      if (key)
+         nexpNode::resolved(key)->run ();
+      else
+         key = new numNode(this->getCount());
+      if ((e = dynamic_cast<expNode*> (elem)) && (ek = dynamic_cast<expNode*> (key))) {
+         this->insert (ek, nexpNode::clone(e) );
+      }
+   }
+}
+//----------------------------------------------------------------------
+vector<runNode *> withNode::stack_with;
+
+int withNode::top_with = -1;
+
+withNode::withNode (runNode* node, runNode *stmts) : node_ (node), stmts_(stmts) {}
+
+void withNode::run(){
+   push_with(node_);
+   stmts_->run();
+   pop_with ();
+}
+
+void withNode::push_with (runNode* node_) {
+   stack_with.push_back (node_);
+   top_with ++;
+}
+
+runNode *withNode::get_with () {
+   if (!stack_with.empty())
+      return stack_with[top_with];
+   return NULL;
+}
+
+void withNode::pop_with () {
+   if (!stack_with.empty()){
+      stack_with.pop_back ();
+      top_with --;
+   }
+}
+
+//----------------------------------------------------------------------
+
+void sizeOfNode::run () {
+   runNode * node = node_;
+   if (node){ 
+      nexpNode::resolved (node)->run();
+      numvalue_ = sizeof (*node);
+   }else {
+      cerr << "symbols: " << sizeof(symbols) << endl;
+      cerr << "sTable: " << sizeof(sTable) << endl;
+      cerr << "runNode: " << sizeof(runNode) << endl;
+      cerr << "\tobjectTypeNode: " << sizeof (objectTypeNode) << endl;
+      cerr << "\t\tprintableNode: " << sizeof (printableNode) << endl;
+      cerr << "\t\t\texpNode: " << sizeof (expNode) << endl;
+      cerr << "\t\t\t\tdexpNode: " << sizeof (dexpNode) << endl;
+      cerr << "\t\t\t\t\tlogicNode: " << sizeof (logicNode) << endl;
+      cerr << "\t\t\t\t\tarithNode: " << sizeof (arithNode) << endl;
+      cerr << "\t\t\t\t\tstringNode: " << sizeof (stringNode) << endl;
+      cerr << "\t\t\t\tnexpNode: " << sizeof (nexpNode) << endl;
+      cerr << "\t\t\t\tarrayNode: " << sizeof (arrayNode) << endl;
+      cerr << "\t\t\trefNode: " << sizeof (refNode) << endl;
+      cerr << "\t\t\tvector<refNode*>: " << sizeof (vector<refNode*>) << endl;
+      numvalue_ = 0;
+   }
+}
+
+//----------------------------------------------------------------------
+
+void datInfoNode::run () {
+   runNode * node = node_;
+   nexpNode::resolved (node)->run();
+   cerr << "ptr(" << node << "), type(" << typeofNode::type (node) << "), refs(" << node->ref_count_ << ")" << endl; 
+}
+//----------------------------------------------------------------------
+
+void tryNode::run () {
+  try {
+   tryblock_->run();
+  }catch (throwException& r) {
+   runNode * obj = r.val();
+   asigNode asig (id_, obj);
+   asig.run();
+   catchblock_->run();
+  } 
+}
+//----------------------------------------------------------------------
+
+void throwNode::run () {
+  runNode * obj = obj_;
+  nexpNode::resolved (obj)->run();
+  throw throwException(expNode::clone(obj)); 
+}
+
+const char* throwException::what() const throw() {
+      return "throw statement out of try block";
+   }

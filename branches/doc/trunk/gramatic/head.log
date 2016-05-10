@@ -1,0 +1,1091 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.2)  4 JUL 2015 00:52
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**head.tex
+(./head.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 14 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/09/25 3.9l The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/09/25 3.9l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\es@quottoks=\toks16
+\es@quotdepth=\count88
+Package babel Info: Making " an active character on input line 516.
+Package babel Info: Making . an active character on input line 617.
+Package babel Info: Making < an active character on input line 662.
+Package babel Info: Making > an active character on input line 662.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/bnf.sty
+Style-Option: `bnf' v1.1a <92/01/30> (Hugh Osborne/br)
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+(/usr/share/texlive/texmf-dist/tex/latex/anysize/anysize.sty
+Package: anysize 1994/08/13 setting margin sizes
+
+document style option `anysize' loaded
+Michael Salzenberg, Thomas Esser, Dirk Hillbrecht
+Version 1.0, Aug 13, 1994
+\@Leftmargin=\dimen104
+\@Rightmargin=\dimen105
+\@Topmargin=\dimen106
+\@Bottommargin=\dimen107
+) (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2014/10/28 v1.8i multicolumn formatting (FMi)
+\c@tracingmulticols=\count90
+\mult@box=\box26
+\multicol@leftmargin=\dimen110
+\c@unbalance=\count91
+\c@collectmore=\count92
+\doublecol@number=\count93
+\multicoltolerance=\count94
+\multicolpretolerance=\count95
+\full@width=\dimen111
+\page@free=\dimen112
+\premulticols=\dimen113
+\postmulticols=\dimen114
+\multicolsep=\skip52
+\multicolbaselineskip=\skip53
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen115
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count96
+\c@finalcolumnbadness=\count97
+\last@try=\dimen116
+\multicolovershoot=\dimen117
+\multicolundershoot=\dimen118
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count98
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count99
+\lst@gtempboxa=\box52
+\lst@token=\toks18
+\lst@length=\count100
+\lst@currlwidth=\dimen119
+\lst@column=\count101
+\lst@pos=\count102
+\lst@lostspace=\dimen120
+\lst@width=\dimen121
+\lst@newlines=\count103
+\lst@lineno=\count104
+\lst@maxwidth=\dimen122
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count105
+\lst@skipnumbers=\count106
+\lst@framebox=\box53
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+\openout3 = `head.idx'.
+
+
+Writing index file head.idx
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count107
+\float@exts=\toks19
+\float@box=\box54
+\@float@everytoks=\toks20
+\@floatcapt=\box55
+)
+\@float@every@table=\toks21
+
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip54
+\fb@frw=\dimen123
+\fb@frh=\dimen124
+\FrameRule=\dimen125
+\FrameSep=\dimen126
+)
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen127
+\epsfframethickness=\dimen128
+\epsfrsize=\dimen129
+\epsftmp=\dimen130
+\epsftsize=\dimen131
+\epsfxsize=\dimen132
+\epsfysize=\dimen133
+\pspoints=\dimen134
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box56
+\beforetitleunit=\skip55
+\aftertitleunit=\skip56
+\ttl@plus=\dimen135
+\ttl@minus=\dimen136
+\ttl@toksa=\toks22
+\titlewidth=\dimen137
+\titlewidthlast=\dimen138
+\titlewidthfirst=\dimen139
+) (./head.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
+\openout1 = `head.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 232.
+LaTeX Font Info:    ... okay on input line 232.
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+34.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen140
+\scratchbox=\box57
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen141
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks24
+)
+\c@lstlisting=\count114
+ <logo-doc.png, id=1, 485.012pt x 189.508pt>
+File: logo-doc.png Graphic file (type png)
+ <use logo-doc.png>
+Package pdftex.def Info: logo-doc.png used on input line 234.
+(pdftex.def)             Requested size: 242.5054pt x 94.75375pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 234.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 234.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo-doc.png>] (./head.t
+oc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+ [2]
+[3])
+\tf@toc=\write4
+\openout4 = `head.toc'.
+
+ [4] [5] (./gramatic.tex <diagram/omi.png, id=23, 473.98703pt x 48.18pt>
+File: diagram/omi.png Graphic file (type png)
+
+<use diagram/omi.png>
+Package pdftex.def Info: diagram/omi.png used on input line 33.
+(pdftex.def)             Requested size: 331.78865pt x 33.72574pt.
+ [6 <./diagram/omi.png>]
+<diagram/program.png, id=32, 125.3237pt x 64.33284pt>
+File: diagram/program.png Graphic file (type png)
+
+<use diagram/program.png>
+Package pdftex.def Info: diagram/program.png used on input line 71.
+(pdftex.def)             Requested size: 87.72598pt x 45.03267pt.
+
+<diagram/stmts.png, id=33, 211.91034pt x 188.02449pt>
+File: diagram/stmts.png Graphic file (type png)
+ <use diagram/stmts.png>
+Package pdftex.def Info: diagram/stmts.png used on input line 87.
+(pdftex.def)             Requested size: 148.33621pt x 131.61623pt.
+
+[7 <./diagram/program.png> <./diagram/stmts.png>]
+<diagram/stmtb.png, id=41, 134.904pt x 382.16376pt>
+File: diagram/stmtb.png Graphic file (type png)
+ <use diagram/stmtb.png>
+Package pdftex.def Info: diagram/stmtb.png used on input line 108.
+(pdftex.def)             Requested size: 94.43214pt x 267.51279pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 115.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+
+<diagram/if.png, id=42, 681.79245pt x 156.81227pt>
+File: diagram/if.png Graphic file (type png)
+ <use diagram/if.png>
+Package pdftex.def Info: diagram/if.png used on input line 120.
+(pdftex.def)             Requested size: 340.89539pt x 78.40593pt.
+
+<diagram/elif.png, id=43, 330.17471pt x 117.61588pt>
+File: diagram/elif.png Graphic file (type png)
+ <use diagram/elif.png>
+Package pdftex.def Info: diagram/elif.png used on input line 123.
+(pdftex.def)             Requested size: 165.08694pt x 58.80779pt.
+
+[8 <./diagram/stmtb.png> <./diagram/if.png> <./diagram/elif.png>]
+<diagram/while.png, id=52, 341.81757pt x 117.1946pt>
+File: diagram/while.png Graphic file (type png)
+ <use diagram/while.png>
+Package pdftex.def Info: diagram/while.png used on input line 135.
+(pdftex.def)             Requested size: 170.90836pt x 58.59715pt.
+
+<diagram/dowhile.png, id=53, 420.97275pt x 116.8365pt>
+File: diagram/dowhile.png Graphic file (type png)
+
+<use diagram/dowhile.png>
+Package pdftex.def Info: diagram/dowhile.png used on input line 144.
+(pdftex.def)             Requested size: 210.48586pt x 58.4181pt.
+ <diagram/for.png, id=54, 915.42pt x 146.5475pt>
+File: diagram/for.png Graphic file (type png)
+
+<use diagram/for.png>
+Package pdftex.def Info: diagram/for.png used on input line 152.
+(pdftex.def)             Requested size: 366.16151pt x 58.61795pt.
+ <diagram/foreach.png, id=55, 861.2175pt x 146.5475pt>
+File: diagram/foreach.png Graphic file (type png)
+
+<use diagram/foreach.png>
+Package pdftex.def Info: diagram/foreach.png used on input line 160.
+(pdftex.def)             Requested size: 344.4809pt x 58.61795pt.
+ [9 <./diagram/while.png> <./diagram/dowhile.png> <./diagram/for.png> <./diagra
+m/foreach.png>]
+<diagram/switch.png, id=63, 487.8225pt x 52.195pt>
+File: diagram/switch.png Graphic file (type png)
+ <use diagram/switch.png>
+Package pdftex.def Info: diagram/switch.png used on input line 171.
+(pdftex.def)             Requested size: 195.12553pt x 20.87762pt.
+
+<diagram/cases.png, id=64, 445.665pt x 168.63pt>
+File: diagram/cases.png Graphic file (type png)
+ <use diagram/cases.png>
+Package pdftex.def Info: diagram/cases.png used on input line 174.
+(pdftex.def)             Requested size: 178.26283pt x 67.45079pt.
+
+<diagram/iloop.png, id=65, 917.4275pt x 146.5475pt>
+File: diagram/iloop.png Graphic file (type png)
+ <use diagram/iloop.png>
+Package pdftex.def Info: diagram/iloop.png used on input line 185.
+(pdftex.def)             Requested size: 366.96451pt x 58.61795pt.
+
+<diagram/iloop_access.png, id=66, 291.0875pt x 80.3pt>
+File: diagram/iloop_access.png Graphic file (type png)
+
+<use diagram/iloop_access.png>
+Package pdftex.def Info: diagram/iloop_access.png used on input line 188.
+(pdftex.def)             Requested size: 116.43292pt x 32.11942pt.
+
+<diagram/trycatch.png, id=67, 813.0375pt x 146.5475pt>
+File: diagram/trycatch.png Graphic file (type png)
+
+<use diagram/trycatch.png>
+Package pdftex.def Info: diagram/trycatch.png used on input line 198.
+(pdftex.def)             Requested size: 325.20924pt x 58.61795pt.
+ [10 <./diagram/switch.png> <./diagram/cases.png> <./diagram/iloop.png> <./diag
+ram/iloop_access.png> <./diagram/trycatch.png>]
+<diagram/with.png, id=76, 419.5675pt x 146.5475pt>
+File: diagram/with.png Graphic file (type png)
+ <use diagram/with.png>
+Package pdftex.def Info: diagram/with.png used on input line 210.
+(pdftex.def)             Requested size: 167.82402pt x 58.61795pt.
+
+<diagram/stmt.png, id=77, 307.53192pt x 590.97383pt>
+File: diagram/stmt.png Graphic file (type png)
+ <use diagram/stmt.png>
+Package pdftex.def Info: diagram/stmt.png used on input line 236.
+(pdftex.def)             Requested size: 184.52057pt x 354.58702pt.
+
+<diagram/label.png, id=78, 106.05661pt x 28.93831pt>
+File: diagram/label.png Graphic file (type png)
+ <use diagram/label.png>
+Package pdftex.def Info: diagram/label.png used on input line 247.
+(pdftex.def)             Requested size: 74.23912pt x 20.25667pt.
+
+[11 <./diagram/with.png> <./diagram/stmt.png> <./diagram/label.png>]
+<diagram/namespace.png, id=85, 291.0875pt x 168.63pt>
+File: diagram/namespace.png Graphic file (type png)
+
+<use diagram/namespace.png>
+Package pdftex.def Info: diagram/namespace.png used on input line 261.
+(pdftex.def)             Requested size: 116.43292pt x 67.45079pt.
+ <diagram/class.png, id=86, 594.22pt x 52.195pt>
+File: diagram/class.png Graphic file (type png)
+
+<use diagram/class.png>
+Package pdftex.def Info: diagram/class.png used on input line 269.
+(pdftex.def)             Requested size: 356.53474pt x 31.31723pt.
+
+<diagram/class_stmts.png, id=87, 361.35pt x 173.18756pt>
+File: diagram/class_stmts.png Graphic file (type png)
+
+<use diagram/class_stmts.png>
+Package pdftex.def Info: diagram/class_stmts.png used on input line 278.
+(pdftex.def)             Requested size: 252.94327pt x 121.23045pt.
+ <diagram/exp.png, id=88, 102.3825pt x 36.135pt>
+File: diagram/exp.png Graphic file (type png)
+
+<use diagram/exp.png>
+Package pdftex.def Info: diagram/exp.png used on input line 289.
+(pdftex.def)             Requested size: 51.19112pt x 18.06744pt.
+ [12 <./diagram/namespace.png> <./diagram/class.png> <./diagram/class_stmts.png
+> <./diagram/exp.png>]
+<diagram/lop1.png, id=96, 301.125pt x 124.465pt>
+File: diagram/lop1.png Graphic file (type png)
+ <use diagram/lop1.png>
+Package pdftex.def Info: diagram/lop1.png used on input line 301.
+(pdftex.def)             Requested size: 180.67638pt x 74.67957pt.
+
+<diagram/op2.png, id=97, 311.1625pt x 124.465pt>
+File: diagram/op2.png Graphic file (type png)
+ <use diagram/op2.png>
+Package pdftex.def Info: diagram/op2.png used on input line 313.
+(pdftex.def)             Requested size: 186.69894pt x 74.67957pt.
+
+<diagram/op3.png, id=98, 186.6975pt x 80.3pt>
+File: diagram/op3.png Graphic file (type png)
+ <use diagram/op3.png>
+Package pdftex.def Info: diagram/op3.png used on input line 325.
+(pdftex.def)             Requested size: 112.01935pt x 48.18036pt.
+
+<diagram/op4.png, id=99, 277.035pt x 389.455pt>
+File: diagram/op4.png Graphic file (type png)
+ <use diagram/op4.png>
+Package pdftex.def Info: diagram/op4.png used on input line 344.
+(pdftex.def)             Requested size: 138.51715pt x 194.72702pt.
+ [13 <./diagram/lop1.png> <./diagram/op2.png> <./diagram/op3.png> <./diagram/op
+4.png>]
+<diagram/op5.png, id=108, 256.96pt x 124.465pt>
+File: diagram/op5.png Graphic file (type png)
+ <use diagram/op5.png>
+Package pdftex.def Info: diagram/op5.png used on input line 358.
+(pdftex.def)             Requested size: 128.47968pt x 62.23235pt.
+
+<diagram/op6.png, id=109, 254.9525pt x 124.465pt>
+File: diagram/op6.png Graphic file (type png)
+ <use diagram/op6.png>
+Package pdftex.def Info: diagram/op6.png used on input line 371.
+(pdftex.def)             Requested size: 127.47592pt x 62.23235pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 379.
+
+<diagram/op7.png, id=110, 260.975pt x 124.465pt>
+File: diagram/op7.png Graphic file (type png)
+ <use diagram/op7.png>
+Package pdftex.def Info: diagram/op7.png used on input line 384.
+(pdftex.def)             Requested size: 130.48718pt x 62.23235pt.
+
+<diagram/op8.png, id=111, 250.9375pt x 80.3pt>
+File: diagram/op8.png Graphic file (type png)
+ <use diagram/op8.png>
+Package pdftex.def Info: diagram/op8.png used on input line 397.
+(pdftex.def)             Requested size: 125.46843pt x 40.14989pt.
+
+<diagram/op9.png, id=112, 262.9825pt x 80.3pt>
+File: diagram/op9.png Graphic file (type png)
+ <use diagram/op9.png>
+Package pdftex.def Info: diagram/op9.png used on input line 408.
+(pdftex.def)             Requested size: 131.49092pt x 40.14989pt.
+ [14 <./diagram/op5.png> <./diagram/op6.png> <./diagram/op7.png> <./diagram/op8
+.png> <./diagram/op9.png>] <diagram/call.png, id=121, 329.23pt x 102.3825pt>
+File: diagram/call.png Graphic file (type png)
+
+<use diagram/call.png>
+Package pdftex.def Info: diagram/call.png used on input line 420.
+(pdftex.def)             Requested size: 164.6146pt x 51.19112pt.
+ <diagram/opc.png, id=122, 204.765pt x 124.465pt>
+File: diagram/opc.png Graphic file (type png)
+
+<use diagram/opc.png>
+Package pdftex.def Info: diagram/opc.png used on input line 433.
+(pdftex.def)             Requested size: 102.38223pt x 62.23235pt.
+ <diagram/tern.png, id=123, 395.4775pt x 102.3825pt>
+File: diagram/tern.png Graphic file (type png)
+
+<use diagram/tern.png>
+Package pdftex.def Info: diagram/tern.png used on input line 444.
+(pdftex.def)             Requested size: 197.73827pt x 51.19112pt.
+
+<diagram/nullcoalescing.png, id=124, 200.75pt x 36.135pt>
+File: diagram/nullcoalescing.png Graphic file (type png)
+
+<use diagram/nullcoalescing.png>
+Package pdftex.def Info: diagram/nullcoalescing.png used on input line 454.
+(pdftex.def)             Requested size: 100.37474pt x 18.06744pt.
+ [15 <./diagram/call.png> <./diagram/opc.png> <./diagram/tern.png> <./diagram/n
+ullcoalescing.png>]
+<diagram/unity.png, id=132, 222.8325pt x 786.94pt>
+File: diagram/unity.png Graphic file (type png)
+ <use diagram/unity.png>
+Package pdftex.def Info: diagram/unity.png used on input line 483.
+(pdftex.def)             Requested size: 111.41597pt x 393.46904pt.
+
+<diagram/inc_dec.png, id=133, 200.75pt x 168.63pt>
+File: diagram/inc_dec.png Graphic file (type png)
+ <use diagram/inc_dec.png>
+Package pdftex.def Info: diagram/inc_dec.png used on input line 497.
+(pdftex.def)             Requested size: 100.37474pt x 84.31479pt.
+
+[16 <./diagram/unity.png> <./diagram/inc_dec.png>]
+<diagram/cast.png, id=139, 210.7875pt x 168.63pt>
+File: diagram/cast.png Graphic file (type png)
+ <use diagram/cast.png>
+Package pdftex.def Info: diagram/cast.png used on input line 511.
+(pdftex.def)             Requested size: 105.3935pt x 84.31479pt.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 520.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 520.
+
+<diagram/access.png, id=140, 355.3275pt x 206.7725pt>
+File: diagram/access.png Graphic file (type png)
+ <use diagram/access.png>
+Package pdftex.def Info: diagram/access.png used on input line 527.
+(pdftex.def)             Requested size: 142.12846pt x 82.70752pt.
+
+<diagram/assignation.png, id=141, 314.47217pt x 99.6154pt>
+File: diagram/assignation.png Graphic file (type png)
+
+<use diagram/assignation.png>
+Package pdftex.def Info: diagram/assignation.png used on input line 539.
+(pdftex.def)             Requested size: 157.23569pt x 49.80757pt.
+
+<diagram/function.png, id=142, 594.22pt x 52.195pt>
+File: diagram/function.png Graphic file (type png)
+ <use diagram/function.png>
+Package pdftex.def Info: diagram/function.png used on input line 547.
+(pdftex.def)             Requested size: 297.10927pt x 26.09743pt.
+
+<diagram/function_lambda.png, id=143, 584.1825pt x 146.5475pt>
+File: diagram/function_lambda.png Graphic file (type png)
+
+<use diagram/function_lambda.png>
+Package pdftex.def Info: diagram/function_lambda.png used on input line 556.
+(pdftex.def)             Requested size: 292.09053pt x 73.27356pt.
+ [17 <./diagram/cast.png> <./diagram/access.png> <./diagram/assignation.png> <.
+/diagram/function.png>]
+<diagram/function_partial.png, id=152, 544.0325pt x 124.465pt>
+File: diagram/function_partial.png Graphic file (type png)
+
+<use diagram/function_partial.png>
+Package pdftex.def Info: diagram/function_partial.png used on input line 565.
+(pdftex.def)             Requested size: 272.01558pt x 62.23235pt.
+
+<diagram/function_context.png, id=153, 98.3675pt x 36.135pt>
+File: diagram/function_context.png Graphic file (type png)
+
+<use diagram/function_context.png>
+Package pdftex.def Info: diagram/function_context.png used on input line 572.
+(pdftex.def)             Requested size: 49.18361pt x 18.06744pt.
+
+<diagram/decorator.png, id=154, 604.2575pt x 52.195pt>
+File: diagram/decorator.png Graphic file (type png)
+
+<use diagram/decorator.png>
+Package pdftex.def Info: diagram/decorator.png used on input line 581.
+(pdftex.def)             Requested size: 302.128pt x 26.09743pt.
+
+<diagram/function_decorator.png, id=155, 554.07pt x 52.195pt>
+File: diagram/function_decorator.png Graphic file (type png)
+
+<use diagram/function_decorator.png>
+Package pdftex.def Info: diagram/function_decorator.png used on input line 588.
+
+(pdftex.def)             Requested size: 277.03432pt x 26.09743pt.
+ [18 <./diagram/function_lambda.png> <./diagram/function_partial.png> <./diagra
+m/function_context.png> <./diagram/decorator.png> <./diagram/function_decorator
+.png>]
+<diagram/class_exp.png, id=164, 427.5975pt x 206.7725pt>
+File: diagram/class_exp.png Graphic file (type png)
+
+<use diagram/class_exp.png>
+Package pdftex.def Info: diagram/class_exp.png used on input line 605.
+(pdftex.def)             Requested size: 213.79822pt x 103.38599pt.
+
+<diagram/logical_func.png, id=165, 220.825pt x 80.3pt>
+File: diagram/logical_func.png Graphic file (type png)
+
+<use diagram/logical_func.png>
+Package pdftex.def Info: diagram/logical_func.png used on input line 618.
+(pdftex.def)             Requested size: 110.41222pt x 40.14989pt.
+
+<diagram/arith_func.png, id=166, 218.8175pt x 80.3pt>
+File: diagram/arith_func.png Graphic file (type png)
+
+<use diagram/arith_func.png>
+Package pdftex.def Info: diagram/arith_func.png used on input line 630.
+(pdftex.def)             Requested size: 109.40848pt x 40.14989pt.
+
+<diagram/string_func.png, id=167, 708.6475pt x 301.125pt>
+File: diagram/string_func.png Graphic file (type png)
+
+<use diagram/string_func.png>
+Package pdftex.def Info: diagram/string_func.png used on input line 644.
+(pdftex.def)             Requested size: 283.45398pt x 120.44786pt.
+ [19 <./diagram/class_exp.png> <./diagram/logical_func.png> <./diagram/arith_fu
+nc.png> <./diagram/string_func.png>]
+<diagram/array_func.png, id=176, 475.7775pt x 168.63pt>
+File: diagram/array_func.png Graphic file (type png)
+
+<use diagram/array_func.png>
+Package pdftex.def Info: diagram/array_func.png used on input line 658.
+(pdftex.def)             Requested size: 237.88815pt x 84.31479pt.
+
+Overfull \hbox (15.2661pt too wide) in paragraph at lines 658--658
+ [] 
+ []
+
+<diagram/regexp_func.png, id=177, 566.115pt x 146.5475pt>
+File: diagram/regexp_func.png Graphic file (type png)
+
+<use diagram/regexp_func.png>
+Package pdftex.def Info: diagram/regexp_func.png used on input line 669.
+(pdftex.def)             Requested size: 283.05681pt x 73.27356pt.
+ <diagram/date.png, id=178, 301.125pt x 80.3pt>
+File: diagram/date.png Graphic file (type png)
+
+<use diagram/date.png>
+Package pdftex.def Info: diagram/date.png used on input line 680.
+(pdftex.def)             Requested size: 150.56212pt x 40.14989pt.
+ <diagram/environment.png, id=179, 277.035pt x 36.135pt>
+File: diagram/environment.png Graphic file (type png)
+
+<use diagram/environment.png>
+Package pdftex.def Info: diagram/environment.png used on input line 691.
+(pdftex.def)             Requested size: 110.81203pt x 14.45372pt.
+ [20 <./diagram/array_func.png> <./diagram/regexp_func.png> <./diagram/date.png
+> <./diagram/environment.png>]
+<diagram/fpos.png, id=187, 150.5625pt x 124.465pt>
+File: diagram/fpos.png Graphic file (type png)
+ <use diagram/fpos.png>
+Package pdftex.def Info: diagram/fpos.png used on input line 714.
+(pdftex.def)             Requested size: 60.22392pt x 49.78511pt.
+
+<diagram/file.png, id=188, 574.145pt x 455.7025pt>
+File: diagram/file.png Graphic file (type png)
+ <use diagram/file.png>
+Package pdftex.def Info: diagram/file.png used on input line 718.
+(pdftex.def)             Requested size: 229.65393pt x 182.27776pt.
+
+Overfull \hbox (7.03188pt too wide) in paragraph at lines 718--718
+ [] 
+ []
+
+<diagram/process.png, id=189, 467.7475pt x 471.7625pt>
+File: diagram/process.png Graphic file (type png)
+
+<use diagram/process.png>
+Package pdftex.def Info: diagram/process.png used on input line 739.
+(pdftex.def)             Requested size: 187.09567pt x 188.70164pt.
+
+<diagram/generator.png, id=190, 1190.4475pt x 118.4425pt>
+File: diagram/generator.png Graphic file (type png)
+
+<use diagram/generator.png>
+Package pdftex.def Info: diagram/generator.png used on input line 749.
+(pdftex.def)             Requested size: 476.17056pt x 47.37614pt.
+
+Overfull \hbox (20.92645pt too wide) in paragraph at lines 749--749
+ [] 
+ []
+
+[21 <./diagram/fpos.png> <./diagram/file.png> <./diagram/process.png> <./diagra
+m/generator.png>] <diagram/identity.png, id=198, 150.5625pt x 301.125pt>
+File: diagram/identity.png Graphic file (type png)
+
+<use diagram/identity.png>
+Package pdftex.def Info: diagram/identity.png used on input line 765.
+(pdftex.def)             Requested size: 60.22392pt x 120.44786pt.
+
+<diagram/params_val.png, id=199, 421.575pt x 168.63pt>
+File: diagram/params_val.png Graphic file (type png)
+
+<use diagram/params_val.png>
+Package pdftex.def Info: diagram/params_val.png used on input line 780.
+(pdftex.def)             Requested size: 168.627pt x 67.45079pt.
+
+<diagram/params.png, id=200, 349.305pt x 118.4425pt>
+File: diagram/params.png Graphic file (type png)
+ <use diagram/params.png>
+Package pdftex.def Info: diagram/params.png used on input line 784.
+(pdftex.def)             Requested size: 139.71951pt x 47.37614pt.
+
+<diagram/pair.png, id=201, 206.7725pt x 36.135pt>
+File: diagram/pair.png Graphic file (type png)
+ <use diagram/pair.png>
+Package pdftex.def Info: diagram/pair.png used on input line 801.
+(pdftex.def)             Requested size: 103.38599pt x 18.06744pt.
+
+<diagram/list.png, id=202, 283.0575pt x 102.3825pt>
+File: diagram/list.png Graphic file (type png)
+ <use diagram/list.png>
+Package pdftex.def Info: diagram/list.png used on input line 805.
+(pdftex.def)             Requested size: 141.5284pt x 51.19112pt.
+
+<diagram/map.png, id=203, 293.095pt x 102.3825pt>
+File: diagram/map.png Graphic file (type png)
+ <use diagram/map.png>
+Package pdftex.def Info: diagram/map.png used on input line 808.
+(pdftex.def)             Requested size: 146.54713pt x 51.19112pt.
+
+[22 <./diagram/identity.png> <./diagram/params_val.png> <./diagram/params.png> 
+<./diagram/pair.png> <./diagram/list.png> <./diagram/map.png>]
+<diagram/id.png, id=213, 279.0425pt x 291.0875pt>
+File: diagram/id.png Graphic file (type png)
+ <use diagram/id.png>
+Package pdftex.def Info: diagram/id.png used on input line 820.
+(pdftex.def)             Requested size: 111.615pt x 116.43292pt.
+
+<diagram/num.png, id=214, 362.65216pt x 89.84918pt>
+File: diagram/num.png Graphic file (type png)
+ <use diagram/num.png>
+Package pdftex.def Info: diagram/num.png used on input line 831.
+(pdftex.def)             Requested size: 181.32564pt x 44.92447pt.
+
+<diagram/str.png, id=215, 210.7875pt x 70.2625pt>
+File: diagram/str.png Graphic file (type png)
+ <use diagram/str.png>
+Package pdftex.def Info: diagram/str.png used on input line 841.
+(pdftex.def)             Requested size: 84.3135pt x 28.10449pt.
+
+<diagram/array.png, id=216, 240.9pt x 212.795pt>
+File: diagram/array.png Graphic file (type png)
+ <use diagram/array.png>
+Package pdftex.def Info: diagram/array.png used on input line 856.
+(pdftex.def)             Requested size: 96.35828pt x 85.11649pt.
+
+<diagram/regexp.png, id=217, 218.8175pt x 70.2625pt>
+File: diagram/regexp.png Graphic file (type png)
+ <use diagram/regexp.png>
+Package pdftex.def Info: diagram/regexp.png used on input line 867.
+(pdftex.def)             Requested size: 87.52544pt x 28.10449pt.
+
+[23 <./diagram/id.png> <./diagram/num.png> <./diagram/str.png> <./diagram/array
+.png> <./diagram/regexp.png>]
+<diagram/comments.png, id=226, 349.305pt x 162.6075pt>
+File: diagram/comments.png Graphic file (type png)
+
+<use diagram/comments.png>
+Package pdftex.def Info: diagram/comments.png used on input line 880.
+(pdftex.def)             Requested size: 139.71951pt x 65.04184pt.
+) [24 <./diagram/comments.png>] (./head.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+) ) 
+Here is how much of TeX's memory you used:
+ 5333 strings out of 494428
+ 73908 string characters out of 6170781
+ 356944 words of memory out of 5000000
+ 8418 multiletter control sequences out of 15000+600000
+ 8976 words of font info for 32 fonts, out of 8000000 for 9000
+ 456 hyphenation exceptions out of 8191
+ 38i,7n,43p,243b,1351s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt8.pfb>
+Output written on head.pdf (24 pages, 1026548 bytes).
+PDF statistics:
+ 264 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
+

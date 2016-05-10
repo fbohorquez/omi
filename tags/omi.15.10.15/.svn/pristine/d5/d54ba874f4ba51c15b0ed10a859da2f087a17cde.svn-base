@@ -1,0 +1,72 @@
+#!/usr/local/bin/omi
+if (f = file("prueba.file.b", "a+")) {
+	f:> (f, "HOLA");
+	f:> (f, ", YO SOY");
+	f:> (f, " TU PARE\n");
+	f:> (f, "HOLA");
+	f:> (f, ", YO SOY");
+	f:> (f, " TU PARE\n");
+	begin = ftell(f);
+	<< "Se ha añadido al fichero ".f:>(f, "Bytes")." Bytes";
+	<< "Por ftell son ".(ftell(f) - begin)." Bytes";
+	f:>(f, "\n");
+	fseek(f, -40, fEND);
+	fseek(f, 2, fCUR);
+	<< ftell(f);
+	while(s = f<:(f)) {
+      << s;
+   }
+	<< ftell(f);
+	<< "-----------";
+	fseek(f, 0, fEND);
+	<< ftell(f);
+   f:> (f, "HOLA");
+	f:> (f, ", YO SOY");
+	f:> (f, " TU PARE\n");
+   f:> (f, "HOLA");
+	f:> (f, ", YO SOY");
+	f:> (f, " TU PARE\n");
+   f:> (f, "HOLA");
+	f:> (f, ", YO SOY");
+	f:> (f, " TU PARE\n");
+	fseek(f, 0, fSET);
+	<< ftell(f);
+	while(s = f<:(f,200)) {
+      << "ITER______";
+      << s;
+   }
+	<< ftell(f);
+	fseek(f,0);
+	<< fclose (f);
+}else
+	<< "FILE NOT OPEN";
+<< "______________-------------------_________________";
+if (f = file ("prueba.file", "r")) {
+	<< fread (f);
+	fclose (f);
+}else{
+	<< "FILE NOT OPEN";
+}
+<< "______________-------------------_________________";
+<< fread ("/etc/hosts");
+
+f = 10;
+if ( f < 20 ) << "A";
+
+a = "ESTO ES ALGO MUY LARGO";
+<< fwrite("prueba2.file", a);
+
+if (f = fopen ("prueba2.file", "a+")) {
+	<< fapp (f, ", AUN MÁS LARGO");
+	fclose (f);
+}else{
+	<< "FILE NOT OPEN";
+}
+
+<< fapp ("prueba2.file", ", MUCHO MÁS LARGO");
+
+if (f = file("prueba.file.b", "a+")) {
+   << fwrite(f, "AAAAAAAAA");
+   << fwrite(f, {1,2});
+   << fwrite(f, "AAAAAAAAA");
+}

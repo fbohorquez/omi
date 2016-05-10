@@ -1,0 +1,117 @@
+#AI.omi
+#=======================================================================
+~primerosMov (tablero) {
+   if (!tablero[1][1]) 
+      return {1,1};
+   do {
+      col = row = time () % 2;
+      if (row == 1) row = 2;
+      if (col == 1) col = 2;
+   }while (tablero[row][col] !== 0);
+   return {row, col};
+}
+#-----------------------------------------------------------------------
+~ miniMax (A, turno){
+	mejor = turno * -1; 
+   minMov = 9; 
+   poda = 1;
+   Mov = 0;
+   posicion = {0, 0};
+	if (!(t_ganador = procesarTablero (A)) && !tableroLleno (A)){
+		for (cont = 0; cont < 3 && poda; cont ++)
+			for (cont2 = 0; cont2 < 3 && poda; cont2 ++){
+				if ( A [cont] [cont2] == 0){
+					A [cont] [cont2] = turno;
+					actual = miniMax_R (A, turno * -1,0,Mov);
+					if (turno == 1 ){
+						if ( actual  >= mejor && Mov <= minMov){
+							mejor =actual;
+							posicion [0] = cont;
+							posicion [1] = cont2;
+							if (mejor == turno){
+								minMov = Mov;
+								if (mejor == 1 && minMov == 0)
+									poda = 0;
+							}
+						}
+					} else
+						if ( actual <= mejor && Mov <= minMov){
+							mejor =actual;
+							posicion [0] = cont;
+							posicion [1] = cont2;
+							if (mejor == turno){
+								minMov = Mov;
+								if (mejor == 1 && minMov == 0)
+									poda = 0;
+							}
+						}
+					A [cont] [cont2] = 0;
+				}
+			}
+	}
+   return posicion;
+}
+#-----------------------------------------------------------------------
+~ miniMax_R (&A, turno, nMov, &Mov){
+	mejor = turno * -1;
+   poda = 1; 
+   minMov = 9 ;
+	if (!(t_ganador = procesarTablero (A)) && !tableroLleno (A)){
+		for (cont = 0; cont < 3 && poda; cont ++){
+			for (cont2 = 0; cont2 < 3 && poda; cont2 ++){
+				if ( A [cont] [cont2] == 0){
+					A [cont] [cont2] = turno;
+					actual = miniMax_R (A, turno * -1, nMov +1, Mov);
+					if (turno == 1 ){
+						if ( actual  >= mejor && Mov <= minMov){
+							mejor =actual;
+							if (mejor == turno){ 		
+								minMov = Mov;
+								if (mejor == 1 && minMov == 0)
+									poda = 0;
+							}
+						}
+					} else
+						if ( actual <= mejor && Mov <= minMov){
+								mejor =actual;
+								if (mejor == turno){ 	
+									minMov = Mov;
+									if (mejor == 1 && minMov == 0)
+										poda = 0;
+							}
+						}
+					A [cont] [cont2] = 0;
+				}
+			}
+		}
+		Mov = minMov;
+		return mejor;
+	}
+	Mov = nMov;
+	return  t_ganador;
+}
+#-----------------------------------------------------------------------
+~procesarTablero (A) {
+   ganador = 0;
+   cont = 0;
+	for (cont = 0; cont < 3 && ganador == 0; cont ++){
+		if (A [cont] [0] == A[cont] [1] && A [cont] [1] == A [cont] [2])
+			ganador = A [cont] [1];
+   }
+	for (cont = 0; cont < 3 && ganador == 0; cont ++)
+		if (A [0] [cont] == A [1] [cont] && A [1] [cont] == A [2] [cont])
+			ganador = A [0] [cont];
+	if (A [0][0] == A [1][1] && A [1][1] == A [2][2]  && ganador == 0 )
+		ganador = A [0][0];
+	if (A [0][2] == A [1][1] && A [1][1] == A [2][0] && ganador == 0)
+		ganador = A [0][2];
+	return ganador;
+}
+~ tableroLleno (A){
+	resp = 1;
+	for (cont = 0; cont < 3 && resp; cont ++)
+		for (cont2 = 0; cont2 < 3 && resp; cont2 ++)
+			resp = A [cont] [cont2] != 0;
+	return resp;
+}
+#=======================================================================

@@ -1,0 +1,75 @@
+\hypertarget{classforNode}{\section{Referencia de la Clase for\-Node}
+\label{classforNode}\index{for\-Node@{for\-Node}}
+}
+
+
+Nodo sentencia iterativa for.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de for\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classforNode_a1a300d8edd6016fe323b3bf4ec2f34fc}{for\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$asig, \hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$inc, \hyperlink{classrunNode}{run\-Node} $\ast$rb)
+\item 
+void \hyperlink{classforNode_aaec3e2c55e856503df16c17c1ae1f254}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia iterativa for. 
+
+Este nodo consta de una expresión de asignación, una condición, una expresión de incremento y un bloque de sentencias. Se ejecuta la expresión de asignación, luego mientras se cumpla la condición se ejecuta el bloque de sentencias y la expresión de incremento. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classforNode_a1a300d8edd6016fe323b3bf4ec2f34fc}{\index{for\-Node@{for\-Node}!for\-Node@{for\-Node}}
+\index{for\-Node@{for\-Node}!forNode@{for\-Node}}
+\subsubsection[{for\-Node}]{\setlength{\rightskip}{0pt plus 5cm}for\-Node\-::for\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{asig, }
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{inc, }
+\item[{{\bf run\-Node} $\ast$}]{rb}
+\end{DoxyParamCaption}
+)}}\label{classforNode_a1a300d8edd6016fe323b3bf4ec2f34fc}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em asig} & Nodo que representa la expresión de asignación. \\
+\hline
+{\em exp} & Nodo que representa la expresión de condición. \\
+\hline
+{\em inc} & Nodo que representa la expresión de incremento. \\
+\hline
+{\em rb} & Nodo que representa el bloque de sentencias. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classforNode_aaec3e2c55e856503df16c17c1ae1f254}{\index{for\-Node@{for\-Node}!run@{run}}
+\index{run@{run}!forNode@{for\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void for\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classforNode_aaec3e2c55e856503df16c17c1ae1f254}
+Método que ejecuta el nodo. Ejecuta el nodo que hace de la expresión de asignación. Luego ejecuta y evalua la condición. Si se da un resultado verdadero se ejecuta el bloque de sentencias y la expresión de incremento. Entonces la condición se vuelve a evaluar repitiéndose el proceso desde este punto hasta que es evaluada como falsa. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

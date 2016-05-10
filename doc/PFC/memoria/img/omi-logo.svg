@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="34mm"
+   height="17mm"
+   viewBox="0 0 120.47236 60.23619"
+   id="svg3495"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="/home/franj/projects/omi/doc/trunk/intro/logo-doc.png"
+   inkscape:export-xdpi="764.47614"
+   inkscape:export-ydpi="764.47614"
+   sodipodi:docname="omi-logo.svg">
+  <defs
+     id="defs3497" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="72.207831"
+     inkscape:cy="15.279138"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="992"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3500">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-992.12672)">
+    <text
+       y="1002.0311"
+       x="48.103619"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.42481613px;line-height:125%;font-family:Dosis;-inkscape-font-specification:'Dosis, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start"
+       id="text83"
+       sodipodi:linespacing="125%"
+       transform="scale(0.97201236,1.0287935)">OMI</text>
+    <text
+       y="1049.6504"
+       x="0.95050424"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:Dosis;-inkscape-font-specification:'Dosis, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start"
+       id="text85"
+       sodipodi:linespacing="125%">Open Modular Interpreter</text>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#e50647"
+       d="m 9.4080963,1013.8927 c 0,2.3 -1.9,4.3 -4.3,4.3 l 0,0 c -2.3000005,0 -4.30000049,-1.9 -4.30000049,-4.3 l 0,-16.99991 c 0,-2.3 1.89999999,-4.3 4.30000049,-4.3 l 0,0 c 2.3,0 4.3,1.9 4.3,4.3 l 0,16.99991 z"
+       id="path87" />
+    <circle
+       style="fill:#575756"
+       cx="5.2081037"
+       cy="1026.6929"
+       r="4.3000002"
+       id="circle89" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#1199d6"
+       d="m 26.508096,1009.6927 c 0,-2.3 1.9,-4.3 4.3,-4.3 l 0,0 c 2.3,0 4.3,1.9 4.3,4.3 l 0,17 c 0,2.3 -1.9,4.3 -4.3,4.3 l 0,0 c -2.3,0 -4.3,-1.9 -4.3,-4.3 l 0,-17 z"
+       id="path91" />
+    <circle
+       style="fill:#575756"
+       cx="30.708105"
+       cy="996.89276"
+       r="4.3000002"
+       id="circle93" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffde00"
+       d="m 22.208096,1026.6927 c 0,2.3 -1.9,4.3 -4.3,4.3 l 0,0 c -2.3,0 -4.3,-1.9 -4.3,-4.3 l 0,-8.5 c 0,-2.3 1.9,-4.3 4.3,-4.3 l 0,0 c 2.3,0 4.3,1.9 4.3,4.3 l 0,8.5 z"
+       id="path95" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#d0c83d"
+       d="m 22.208096,1005.3927 c 0,2.3 -1.9,4.3 -4.3,4.3 l 0,0 c -2.3,0 -4.3,-1.9 -4.3,-4.3 l 0,-8.49991 c 0,-2.3 1.9,-4.3 4.3,-4.3 l 0,0 c 2.3,0 4.3,1.9 4.3,4.3 l 0,8.49991 z"
+       id="path97" />
+  </g>
+</svg>

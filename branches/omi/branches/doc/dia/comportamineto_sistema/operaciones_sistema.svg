@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="11.765cm" height="6.500cm" viewBox="26.150 7.350 37.915 13.850"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="26.200" y="7.400" width="11.665" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="26.200" y="7.400" width="11.665" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="32.032" y="8.350"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Sistema</text>
+<rect x="26.200" y="8.800" width="11.665" height="5.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="26.200" y="8.800" width="11.665" height="5.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="26.350" y="9.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++interpretar_stdin()</text>
+<text x="26.350" y="10.300"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++interpretar_fichero(fichero)</text>
+<text x="26.350" y="11.100"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++interpretar_linea(std)</text>
+<text x="26.350" y="11.900"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++ver_ayuda()</text>
+<text x="26.350" y="12.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++cargar_extension(ext)</text>
+<text x="26.350" y="13.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++listar_extensiones()</text>
+</svg>

@@ -1,0 +1,96 @@
+\hypertarget{classeqNode}{\section{Referencia de la Clase eq\-Node}
+\label{classeqNode}\index{eq\-Node@{eq\-Node}}
+}
+
+
+Nodo operador igual que.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de eq\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classeqNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeqNode_a8feacf312abba75d46dd634b41719656}{eq\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classeqNode_a9cbc94f2bc737f97bce1de0acb14c73d}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classeqNode_a7f5ea925683b1d110927db796b3643b1}{do\-\_\-eq} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador igual que. 
+
+Este nodo implementa la operación igual que sobre dos nodos asociados.
+
+Realmente la operación de igualdad se realiza sobre el valor simbólico de los operandos y no sobre el tipo de dato. De esta forma \char`\"{}2\char`\"{} == 2 es verdadero.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classeqNode_a8feacf312abba75d46dd634b41719656}{\index{eq\-Node@{eq\-Node}!eq\-Node@{eq\-Node}}
+\index{eq\-Node@{eq\-Node}!eqNode@{eq\-Node}}
+\subsubsection[{eq\-Node}]{\setlength{\rightskip}{0pt plus 5cm}eq\-Node\-::eq\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classeqNode_a8feacf312abba75d46dd634b41719656}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classeqNode_a7f5ea925683b1d110927db796b3643b1}{\index{eq\-Node@{eq\-Node}!do\-\_\-eq@{do\-\_\-eq}}
+\index{do\-\_\-eq@{do\-\_\-eq}!eqNode@{eq\-Node}}
+\subsubsection[{do\-\_\-eq}]{\setlength{\rightskip}{0pt plus 5cm}bool eq\-Node\-::do\-\_\-eq (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classeqNode_a7f5ea925683b1d110927db796b3643b1}
+Ejecuta la operación igual que sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classeqNode_a9cbc94f2bc737f97bce1de0acb14c73d}{\index{eq\-Node@{eq\-Node}!run@{run}}
+\index{run@{run}!eqNode@{eq\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void eq\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classeqNode_a9cbc94f2bc737f97bce1de0acb14c73d}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación igual que entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

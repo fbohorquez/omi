@@ -1,0 +1,90 @@
+\hypertarget{classnumNode}{\section{Referencia de la Clase num\-Node}
+\label{classnumNode}\index{num\-Node@{num\-Node}}
+}
+
+
+Nodo numérico.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de num\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{classnumNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnumNode_ade0b564b8b9b95ed2a269ff25c23536c}{num\-Node} (num data)
+\item 
+\hyperlink{classnumNode_ae1932d610b2d50c7f3d9ba2a79b012a8}{num\-Node} (string data)
+\item 
+\hyperlink{classnumNode_a31951adec25719df1503263ec7d46645}{num\-Node} (\hyperlink{classnumNode}{num\-Node} $\ast$data)
+\item 
+void \hyperlink{classnumNode_a631d65e358f2103268827f6274d381c2}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo numérico. 
+
+Tiene un valor numérico asociado. Internamente este valor se representa mediante el tipo num, el cual es establecido en tiempo de compilación. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnumNode_ade0b564b8b9b95ed2a269ff25c23536c}{\index{num\-Node@{num\-Node}!num\-Node@{num\-Node}}
+\index{num\-Node@{num\-Node}!numNode@{num\-Node}}
+\subsubsection[{num\-Node}]{\setlength{\rightskip}{0pt plus 5cm}num\-Node\-::num\-Node (
+\begin{DoxyParamCaption}
+\item[{num}]{data}
+\end{DoxyParamCaption}
+)}}\label{classnumNode_ade0b564b8b9b95ed2a269ff25c23536c}
+Constructor a partir de dato numérico. \hypertarget{classnumNode_ae1932d610b2d50c7f3d9ba2a79b012a8}{\index{num\-Node@{num\-Node}!num\-Node@{num\-Node}}
+\index{num\-Node@{num\-Node}!numNode@{num\-Node}}
+\subsubsection[{num\-Node}]{\setlength{\rightskip}{0pt plus 5cm}num\-Node\-::num\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{data}
+\end{DoxyParamCaption}
+)}}\label{classnumNode_ae1932d610b2d50c7f3d9ba2a79b012a8}
+Constructor a partir de un string.
+
+Si el string es numérico guarda el significado simbólico del mismo, así la cadena \char`\"{}2.\-3\char`\"{} es igual al numérico 2.\-3 de esta forma se puede operar con cadenas como si fueran números.
+
+Si el string no es numérico se guarda el tamaño del mismo. \hypertarget{classnumNode_a31951adec25719df1503263ec7d46645}{\index{num\-Node@{num\-Node}!num\-Node@{num\-Node}}
+\index{num\-Node@{num\-Node}!numNode@{num\-Node}}
+\subsubsection[{num\-Node}]{\setlength{\rightskip}{0pt plus 5cm}num\-Node\-::num\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf num\-Node} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classnumNode_a31951adec25719df1503263ec7d46645}
+Constructor de copia 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nodo numérico \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnumNode_a631d65e358f2103268827f6274d381c2}{\index{num\-Node@{num\-Node}!run@{run}}
+\index{run@{run}!numNode@{num\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void num\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnumNode_a631d65e358f2103268827f6274d381c2}
+Función de ejecución vacía.
+
+Esta función no realiza ninguna acción ya que el valor del nodo es asignado en la construcción. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{classcaseNode}{\section{Referencia de la Clase case\-Node}
+\label{classcaseNode}\index{case\-Node@{case\-Node}}
+}
+
+
+Nodo casos switch.  
+
+
+
+
+{\ttfamily \#include $<$cond\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de case\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaseNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaseNode_a60431935cac670348d1af79dbc3fb58f}{case\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$cb, \hyperlink{classrunNode}{run\-Node} $\ast$cases)
+\item 
+void \hyperlink{classcaseNode_a10345cc86f9dec3ead3a71cc4d2fb2fa}{run} (\hyperlink{classrunNode}{run\-Node} $\ast$eval)
+\item 
+void \hyperlink{classcaseNode_a257a849756f7bcd0ccb0dc41a62783d9}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo casos switch. 
+
+Este nodo representa una lista de casos switch. Un caso switch se define mediante una expresión para la comparación, un bloque de sentencias y un enlace al siguiente caso.
+
+Para que el caso sea evaluado se ha de facilitar una expresión a evaluar. Se comprobará si la esta es igual a la expresión de comparación. Si lo es se ejecuta el bloque de sentencias de el caso y todos los casos siguientes. Si la evaluación dio un resultado negativo se comprueba el siguiente caso.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classswitchNode}{switch\-Node} 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classcaseNode_a60431935cac670348d1af79dbc3fb58f}{\index{case\-Node@{case\-Node}!case\-Node@{case\-Node}}
+\index{case\-Node@{case\-Node}!caseNode@{case\-Node}}
+\subsubsection[{case\-Node}]{\setlength{\rightskip}{0pt plus 5cm}case\-Node\-::case\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{cb, }
+\item[{{\bf run\-Node} $\ast$}]{cases}
+\end{DoxyParamCaption}
+)}}\label{classcaseNode_a60431935cac670348d1af79dbc3fb58f}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo que representa la expresión de comparación. \\
+\hline
+{\em cb} & Nodo que representa el bloque de sentencias del caso. \\
+\hline
+{\em cases} & Nodo que representa el siguiente caso. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classcaseNode_a10345cc86f9dec3ead3a71cc4d2fb2fa}{\index{case\-Node@{case\-Node}!run@{run}}
+\index{run@{run}!caseNode@{case\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void case\-Node\-::run (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{eval}
+\end{DoxyParamCaption}
+)}}\label{classcaseNode_a10345cc86f9dec3ead3a71cc4d2fb2fa}
+Método de ejecución del nodo. Evalúa un nodo dado como parámetro comparándolo con la expresión de comparación. Si el resultado es positivo se ejecuta el bloque de sentencias y los bloques de los casos siguientes. Si el resultado es falso se ejecuta la evaluación del caso siguiente. 
+\begin{DoxyParams}{Parámetros}
+{\em eval} & Nodo que representa la expresión que será comparada con la expresión del caso. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcaseNode_a257a849756f7bcd0ccb0dc41a62783d9}{\index{case\-Node@{case\-Node}!run@{run}}
+\index{run@{run}!caseNode@{case\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void case\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcaseNode_a257a849756f7bcd0ccb0dc41a62783d9}
+Método de ejecución. Ejecuta el caso sin llevar a cabo la evaluación, lo que conlleva la ejecución del bloque de sentencias y el caso siguiente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{condStmtNode_8h}{cond\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/cond\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

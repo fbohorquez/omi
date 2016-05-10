@@ -1,0 +1,69 @@
+\hypertarget{classthisNode}{\section{Referencia de la Clase this\-Node}
+\label{classthisNode}\index{this\-Node@{this\-Node}}
+}
+
+
+Nodo referencia al objeto.  
+
+
+
+
+{\ttfamily \#include $<$class\-Node.\-h$>$}
+
+Diagrama de herencias de this\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classthisNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classthisNode_a40982d7b797f87d4c99fc2938783df6d}{run} ()
+\item 
+virtual void \hyperlink{classthisNode_a808f69385aa1ac68ec18dc2ac412449d}{noderef} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo referencia al objeto. 
+
+Este nodo es del tipo expresión no definida. Toma como valor el objeto que opera sobre la tabla de símbolos actual, que se corresponderá con el nodo en uso del contexto actual. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classthisNode_a808f69385aa1ac68ec18dc2ac412449d}{\index{this\-Node@{this\-Node}!noderef@{noderef}}
+\index{noderef@{noderef}!thisNode@{this\-Node}}
+\subsubsection[{noderef}]{\setlength{\rightskip}{0pt plus 5cm}void this\-Node\-::noderef (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classthisNode_a808f69385aa1ac68ec18dc2ac412449d}
+Asigna el nodo dado como valor de la referencia interna. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que será asignado. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{nexp\-Node}.
+
+\hypertarget{classthisNode_a40982d7b797f87d4c99fc2938783df6d}{\index{this\-Node@{this\-Node}!run@{run}}
+\index{run@{run}!thisNode@{this\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void this\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classthisNode_a40982d7b797f87d4c99fc2938783df6d}
+Busca en el contexto activo el nodo en uso y toman dicho valor.
+
+Si el contexto activo no tiene un nodo en uso se produce un error. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{classNode_8h}{class\-Node.\-h}\item 
+trunk/src/run/table/class\-Node.\-cpp\end{DoxyCompactItemize}

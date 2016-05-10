@@ -1,0 +1,96 @@
+#!/usr/local/bin/omi
+#~ var = "before";
+#~ ~ printProcessID (pID){
+	#~ << "My process ID is ".pID;
+#~ }
+#~ pID = fork ();
+#~ if ( pID ==  0){
+	#~ var = "after";
+	#~ << "My pID: ".getpid ();
+	#~ << "My ppID: ".getppid ();
+	#~ << "Value pID: ".pID;
+	#~ << "Value var: ".var;
+	#~ printProcessID (pID);
+	#~ $(100) << "Child (".$.")";
+	#~ _exit();
+#~ }else {
+	#~ << "My pID: ".getpid ();
+	#~ << "My ppID: ".getppid ();
+	#~ 
+	#~ << wait (pID);
+	#~ << "B";
+	#~ << "Value pID: ".pID;
+	#~ << "Value var: ".var;
+	#~ printProcessID (pID);
+	#~ $(100) << "Parent (".$.")";
+	#~ << var;
+#~ }
+#~ global g;
+#~ process (
+	#~ ~(a) {
+		#~ << "process 1 ini";
+		#~ for(i = 0; i < 100; ++i) {
+			#~ << "process 1 iter ini";
+			#~ g = 1;
+			#~ aux = a;
+			#~ a = 1;
+			#~ a = aux;
+			#~ << a;
+			#~ a ++;
+			#~ << a < 100;
+			#~ << "Global en 1: ".g;
+			#~ << "process 1 iter end";
+		#~ }
+		#~ << "process 1 end";
+	#~ }, 100
+#~ );
+#~ 
+#~ process (
+	#~ ~() {
+		#~ << "process 2 ini";
+		#~ while (b < 100) {
+			#~ << "process 2 iter ini";
+			#~ g = 2;
+			#~ aux = b;
+			#~ b = 2;
+			#~ b = aux;
+			#~ << b;
+			#~ b ++;
+			#~ << b < 100;
+			#~ << "Global en 2: ".g;
+			#~ << "process 2 iter end";
+		#~ }
+		#~ << "process 2 end";
+	#~ }
+#~ );
+#~ 
+#~ for(j = 0; j < 100; ++j){
+	 #~ g = 10;
+	 #~ << "Global en P: ".g;
+	 #~ << "Parent ".j;
+ #~ }
+#~ 
+#~ ~ example_func (n) {
+	#~ $(n)
+	#~ << "LLAMANDO A FUNC ".$;
+#~ }
+#~ << "ESPERANDO";
+#~ process (example_func, 100);
+#~ process (example_func, 100);
+#~ 
+#~ $(100) << "ESPERANDO A FUNC ".$;
+#~ wait ( );
+#~ x = 10;
+#~ if (piD = fork()) {
+	#~ wait();
+	#~ x += 4;
+	#~ $(50) << "Soy la iteración ".$." del proceso padre";
+   #~ kill (piD, 2);
+	#~ << x;
+#~ }else{
+	#~ << x;
+   #~ shandler (2, ~() {<< "Evento de señal";});
+	#~ $(200) << "Soy la iteración ".$." del proceso hijo";
+#~ }
+process ( ~() { $(100) << "P1:".$; } );
+process ( ~(i) { $(i) << "P2:".$; }, 100 );  

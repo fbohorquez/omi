@@ -1,0 +1,19 @@
+No implementation found for style `doclicense'
+No implementation found for style `fancyhdr'
+No implementation found for style `dsfont'
+No implementation found for style `graphicx'
+No implementation found for style `listings'
+No implementation found for style `placeins'
+No implementation found for style `framed'
+No implementation found for style `titlesec'
+
+redefining command \abstractname 
+
+? brace missing for \paragraph
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/licencia/./logo-doc.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/licencia/./by-nc-sa.png to tree: 
+
+? brace missing for \setlength
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/licencia/./by.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/licencia/./nc.png to tree: 
+\includegraphics couldn't copy /home/franj/projects/omi/doc/trunk/licencia/./sa.png to tree: 

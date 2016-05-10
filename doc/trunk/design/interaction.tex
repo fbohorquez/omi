@@ -1,0 +1,72 @@
+% ======================================================================
+\section{Diseño de componentes}
+El presente documento constituye el modelo de comportamiento básico.
+Este detalla cómo los distintos objetos interaccionan y se comunican entre sí para
+analizar la entrada del usuario, correspondiente el código fuente, e interpretarlo
+para su ejecución.
+
+Se presenta un diagrama de secuencia para la operación interpretación
+de un código fuente. Luego se presenta diagramas de comunicación correspondientes
+a algunas sentencias escritas en el lenguaje.
+
+
+% ======================================================================
+\subsection{Interpretar código fuente}
+Para la interpretación de código fuente el sistema crea los objetos 
+encargados del análisis léxico y sintáctico del mismo. El objeto principal
+del sistema se encarga de crear e inicializar el analizador sintáctico (parser) a
+partir del código fuente, a su vez este crea el analizador léxico (scanner)
+que crea una estructura correspondiente al código fuente que será interpretado.
+
+El sistema envía un mensaje para que el parser analice el código fuente.
+El analizador sintáctico define una serie de reglas gramaticales e irá comprobando que 
+el código fuente cumple estas reglas a la vez que las utiliza para crear un árbol de derivación 
+denominado árbol sintáctico. Para ello hace uso de una serie de tokens que irá solicitando 
+al analizador léxico. Este último obtendrá los tokens a partir del código fuente, mediante 
+una serie de reglas léxicas formadas a partir de lenguajes regulares. Por cada regla 
+gramatical que se cumpla en el parser, este habrá obtenido del scanner tantos tokens como 
+componentes léxicos sean necesarios para cumplir la regla. Además por cada regla gramatical se
+construirá un nodo ejecutable formado a partir del valor asociado a una serie de tokens, o 
+a partir de otros nodos ejecutables construidos por reglas de mayor prioridad y creados en 
+anteriores interacciones. Esto formará un árbol sintáctico formado por nodos ejecutables que 
+contienen la semántica que encierran las construcciones del código fuente.
+
+A partir del nodo raíz del árbol de nodos ejecutables comienza un recorrido en profundidad del
+árbol que conllevará la ejecución del código fuente, produciéndose así el resultado semántico 
+esperado.
+
+En el caso de que no se de una regla gramatical que se corresponda con el código analizado se 
+producirá un error sintáctico. Por otro lado, en el caso de que alguna cadena contenida
+en el código fuente no se corresponda con los lenguajes regulares que define el scanner
+se producirá un error léxico.
+
+
+\begin{center}
+\includegraphics[scale=0.32]{interaction.png} \\
+\end{center}
+
+\subsection{Sentencias}
+\subsubsection {Sentencia de control condicional }
+\begin{center}
+\includegraphics[scale=0.38]{if.png} \\
+\end{center}
+
+\subsubsection {Operaciones aritméticas }
+\begin{center}
+\includegraphics[scale=0.38]{arith.png} \\
+\end{center}
+
+\subsubsection {Asignaciones }
+\begin{center}
+\includegraphics[scale=0.38]{asig.png} \\
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.38]{asig2.png} \\
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.38]{asig3.png} \\
+\end{center}
+
+% ----------------------------------------------------------------------

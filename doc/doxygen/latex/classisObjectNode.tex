@@ -1,0 +1,70 @@
+\hypertarget{classisObjectNode}{\section{Referencia de la Clase is\-Object\-Node}
+\label{classisObjectNode}\index{is\-Object\-Node@{is\-Object\-Node}}
+}
+
+
+Nodo operador comprobación de objeto.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de is\-Object\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classisObjectNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisObjectNode_a4d6aed43426db8a992d0bb8515285fe8}{is\-Object\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classisObjectNode_aa88000acc716f0b07adf772d33003385}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador comprobación de objeto. 
+
+Este nodo implementa la operación de comprobación del tipo para el caso objeto.
+
+Para determinar el valor de la operación se comprueba si el valor del operando es de tipo objeto.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisObjectNode_a4d6aed43426db8a992d0bb8515285fe8}{\index{is\-Object\-Node@{is\-Object\-Node}!is\-Object\-Node@{is\-Object\-Node}}
+\index{is\-Object\-Node@{is\-Object\-Node}!isObjectNode@{is\-Object\-Node}}
+\subsubsection[{is\-Object\-Node}]{\setlength{\rightskip}{0pt plus 5cm}is\-Object\-Node\-::is\-Object\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classisObjectNode_a4d6aed43426db8a992d0bb8515285fe8}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisObjectNode_aa88000acc716f0b07adf772d33003385}{\index{is\-Object\-Node@{is\-Object\-Node}!run@{run}}
+\index{run@{run}!isObjectNode@{is\-Object\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void is\-Object\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classisObjectNode_aa88000acc716f0b07adf772d33003385}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado. Comprueba si el tipo del nodo asociado es objeto para tomar el valor lógico correspondiente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

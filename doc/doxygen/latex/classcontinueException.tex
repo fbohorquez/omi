@@ -1,0 +1,82 @@
+\hypertarget{classcontinueException}{\section{Referencia de la Clase continue\-Exception}
+\label{classcontinueException}\index{continue\-Exception@{continue\-Exception}}
+}
+
+
+Excepción lanzada cuando se produce una sentencia continue.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+
+
+Herencias exception.
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcontinueException_a025267d9810bc2d480353adb6ee43d86}{continue\-Exception} (int n=1)
+\item 
+const char $\ast$ \hyperlink{classcontinueException_acf175be01b6e026c7e1354e587459f75}{what} () const   throw ()
+\item 
+void \hyperlink{classcontinueException_aa379e96a9c81362522a9d8535ce7ad05}{end} ()
+\item 
+bool \hyperlink{classcontinueException_a3ba0b14f7e927fe2dced4624bbfe90fc}{islast} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Excepción lanzada cuando se produce una sentencia continue. 
+
+Esta excepción es lanzada cuando se ejecuta una sentencia continue, será atrapada por una sentencia iterativa y producirá que esta avance hasta la siguiente iteración.
+
+Es posible indicar mediante un entero el número de sentencias iterativas anidadas que serán saltadas 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classcontinueException_a025267d9810bc2d480353adb6ee43d86}{\index{continue\-Exception@{continue\-Exception}!continue\-Exception@{continue\-Exception}}
+\index{continue\-Exception@{continue\-Exception}!continueException@{continue\-Exception}}
+\subsubsection[{continue\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}continue\-Exception\-::continue\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classcontinueException_a025267d9810bc2d480353adb6ee43d86}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em n} & Número de sentencias iterativas anidadas que serán saltadas. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classcontinueException_aa379e96a9c81362522a9d8535ce7ad05}{\index{continue\-Exception@{continue\-Exception}!end@{end}}
+\index{end@{end}!continueException@{continue\-Exception}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void continue\-Exception\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontinueException_aa379e96a9c81362522a9d8535ce7ad05}
+Si el número de bloques anidados es mayor que uno lanza una excepción continue decrementando el número de bloques anidados. \hypertarget{classcontinueException_a3ba0b14f7e927fe2dced4624bbfe90fc}{\index{continue\-Exception@{continue\-Exception}!islast@{islast}}
+\index{islast@{islast}!continueException@{continue\-Exception}}
+\subsubsection[{islast}]{\setlength{\rightskip}{0pt plus 5cm}bool continue\-Exception\-::islast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontinueException_a3ba0b14f7e927fe2dced4624bbfe90fc}
+Comprueba si es el último de los bloques anidados \begin{DoxyReturn}{Devuelve}
+Booleano que indica si el bloque es el últimos de los bloques anidados que se desean saltar. 
+\end{DoxyReturn}
+\hypertarget{classcontinueException_acf175be01b6e026c7e1354e587459f75}{\index{continue\-Exception@{continue\-Exception}!what@{what}}
+\index{what@{what}!continueException@{continue\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ continue\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) }}\label{classcontinueException_acf175be01b6e026c7e1354e587459f75}
+Método que será llamado si la excepción no es capturada. Produciéndose un error 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+#!/usr/local/bin/omi
+#!/home/franj/projects/omi/omi/trunk/translator/omi
+echo "# Asignación de array vacio : a = {}";
+a = {};
+echo "# Asignación simple, array de enteros: a = {0,1} ";
+a = {0,1};
+echo a;
+echo "# Asignación simple, array de string: a = {'LIESH',':','Lenguaje Interpretado de Explotación de Servicios HTTP'};";
+a = {"LIESH",":","Lenguaje Interpretado de Explotación de Servicios HTTP"};
+echo a;
+echo "# Lectura de posición: a[0]";
+echo a[0];
+echo "# Lectura y uso en expresión: (a[0].a[1].' '.a[2])";
+echo a[0].a[1]." ".a[2];
+echo "# Asignacion en varios niveles a = {{4,1}, 9}";
+a = {{4,1}, 9};
+echo "# Lectura y uso en expresión (a[1] + a[0][1] - a[0][0])"; 
+echo a[1] + (a[0][1] - a[0][0]);
+echo "# Asignación de varible con array: b = a"; 
+b = a;
+echo "# Lectura compleja (a[b[0][1]])";
+echo a[b[0][1]]; 
+echo "# Asignación múltiple: c = b = a";
+c = b = a;
+echo "b:";
+echo b;
+echo "c:";
+echo c;
+echo "# Escritura en posición c[0] = 10";
+echo c[0] = 10;
+echo "a:";
+echo a; 
+echo "c:";
+echo c;
+echo "# Array asociativo: b = { 'es' : 'hola', 'en' : 'hello'}";
+b = {"es" : "hola", "en" : "adios"};
+echo b;
+echo "# Imprime asignación: echo d = b = {0,1}";
+echo d = b = {0,1};
+echo "# Incremento de posicion b[0]++";
+b[0] ++;
+echo b;
+echo "# Decremento de posición --b[1]";
+--b[1];
+echo b;
+echo "# Incremento en expresión compleja: echo 5 + (++b[0]) - 1";
+echo 5 + (++b[0]) - 1;
+echo "# Decrementos con cadenas echo \"b[0]: \".(b[0]--)";
+echo "b[0]: ".(b[0]--);
+echo "b:";
+echo b;
+echo '# Decrementos con cadenas echo \'b[0]: \'.(--b[0])';
+echo "b[0]: ".(--b[0]);
+echo b;
+echo "# Arrays y bucles: Las tablas de multiplicar";
+c = {};
+for(i = 0; i < 10; i ++) {
+	for (k = 0; k < 10; k ++){
+		c["Tabla del ".i.":"][i."x".k] = i * k;
+	}
+}
+
+echo c;
+d = {};
+for(i = 0; i < 10; i ++) {
+		d["Tabla del ".i.":"] = i;
+}
+echo d;
+
+r = {10,1,1,1,1};
+
+<< reduce ( r, ~(x, y){ return x - y; });
+<< reduce ( r, ~x, y: x + y );
+
+sizeof;
+a = { 
+   function _str () { return "A"; }
+};
+
+<< a;
+
+class Example {
+   ~ _str () {
+      return "STR";
+   }
+}
+
+a = new Example();
+<< a;

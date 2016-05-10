@@ -1,0 +1,66 @@
+\hypertarget{classgotoNode}{\section{Referencia de la Clase goto\-Node}
+\label{classgotoNode}\index{goto\-Node@{goto\-Node}}
+}
+
+
+Nodo de salto.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de goto\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgotoNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgotoNode_ae43c3a2ab896742001d9a52f8620d325}{goto\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classgotoNode_a41280bd7c75f0112336cc2a539433c97}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de salto. 
+
+Este nodo permite saltar a una línea del código especificada por una etiqueta. Para ello obtiene de la tabla de símbolos la sentencia a la que hace referencia el identificador pasado en su inicialización. Luego ejecuta el nodo sentencia. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgotoNode_ae43c3a2ab896742001d9a52f8620d325}{\index{goto\-Node@{goto\-Node}!goto\-Node@{goto\-Node}}
+\index{goto\-Node@{goto\-Node}!gotoNode@{goto\-Node}}
+\subsubsection[{goto\-Node}]{\setlength{\rightskip}{0pt plus 5cm}goto\-Node\-::goto\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classgotoNode_ae43c3a2ab896742001d9a52f8620d325}
+Constructor de clase 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que se corresponde con el identificador de la etiqueta. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgotoNode_a41280bd7c75f0112336cc2a539433c97}{\index{goto\-Node@{goto\-Node}!run@{run}}
+\index{run@{run}!gotoNode@{goto\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void goto\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgotoNode_a41280bd7c75f0112336cc2a539433c97}
+Método que ejecuta el nodo. Accede al nodo sentencia referenciado por el identificador de etiqueta pasado en la inicialización y lo ejecuta. Tras la ejecución lanza una excepción para que no se siga las sentencias siguientes. Si la etiqueta no existe no se hace ninguna acción 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

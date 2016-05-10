@@ -1,0 +1,183 @@
+\hypertarget{classarithNode}{\section{Referencia de la Clase arith\-Node}
+\label{classarithNode}\index{arith\-Node@{arith\-Node}}
+}
+
+
+Nodos aritméticos.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de arith\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classarithNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classarithNode_a8550d65d4f403ef6526bc7be240879b3}{print} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarithNode_a5a8581334f3d1757085fb88278103dc9}{nodeval} () const 
+\item 
+num \hyperlink{classarithNode_a3914e65779e61750f1ffd528deabd120}{numvalue} () const 
+\item 
+bool \hyperlink{classarithNode_a7f3634eba193b245af5e3ba8081c017b}{boolvalue} () const 
+\item 
+string \hyperlink{classarithNode_a01f251d6cdc918309873c7443c694510}{strvalue} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarithNode_a870a354180acd033140f1d2c2fcde5a6}{get\-Class} ()
+\item 
+virtual void \hyperlink{classarithNode_aa10435f1e329336baee9334df7a8b0cf}{set\-Node\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classarithNode_a40e00712940d8de007c8fde31ff8837f}{to\-\_\-num} (\hyperlink{classrunNode}{run\-Node} $\ast$node, bool exception=true)
+\item 
+static void \hyperlink{classarithNode_a87b5618fdfee87decabfd1ec6aa1de51}{generate\-Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+num \hyperlink{classarithNode_a975a7d0704b4e450c6aaa2616dfc09e7}{numvalue\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodos aritméticos. 
+
+Los nodos aritméticos tienen un valor numérico asociado. Para la representación interna de un número se utiliza el tipo num que puede ser dado en tiempo de compilación. Normalmente este tipo contemplará los números que pueden ser representados por una expresión en coma flotante.
+
+Todo nodo aritmético está asociado a un nodo clase \char`\"{}arith\-Class\char`\"{} 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarithNode_a7f3634eba193b245af5e3ba8081c017b}{\index{arith\-Node@{arith\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!arithNode@{arith\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool arith\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_a7f3634eba193b245af5e3ba8081c017b}
+Convierte un nodo a su valor booleano. \begin{DoxyReturn}{Devuelve}
+Valor booleano. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{dexp\-Node}.
+
+\hypertarget{classarithNode_a87b5618fdfee87decabfd1ec6aa1de51}{\index{arith\-Node@{arith\-Node}!generate\-Class@{generate\-Class}}
+\index{generate\-Class@{generate\-Class}!arithNode@{arith\-Node}}
+\subsubsection[{generate\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void arith\-Node\-::generate\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarithNode_a87b5618fdfee87decabfd1ec6aa1de51}
+Genera la clase \char`\"{}arith\-Class\char`\"{} y la añade a la tabla de símbolos clases. \hypertarget{classarithNode_a870a354180acd033140f1d2c2fcde5a6}{\index{arith\-Node@{arith\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!arithNode@{arith\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arith\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_a870a354180acd033140f1d2c2fcde5a6}
+Obtienen el nodo clase asociado al nodo aritmético. \begin{DoxyReturn}{Devuelve}
+Nodo clase. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{object\-Type\-Node}.
+
+\hypertarget{classarithNode_a5a8581334f3d1757085fb88278103dc9}{\index{arith\-Node@{arith\-Node}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!arithNode@{arith\-Node}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arith\-Node\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classarithNode_a5a8581334f3d1757085fb88278103dc9}
+Método que devuelve un nodo de tipo booleano con el mismo valor del nodo lógico. \begin{DoxyReturn}{Devuelve}
+Nodo booleano. 
+\end{DoxyReturn}
+\hypertarget{classarithNode_a3914e65779e61750f1ffd528deabd120}{\index{arith\-Node@{arith\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!arithNode@{arith\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num arith\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_a3914e65779e61750f1ffd528deabd120}
+Método observador que devuelve el valor numérico del nodo. \begin{DoxyReturn}{Devuelve}
+Valor numérico del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{dexp\-Node}.
+
+\hypertarget{classarithNode_a8550d65d4f403ef6526bc7be240879b3}{\index{arith\-Node@{arith\-Node}!print@{print}}
+\index{print@{print}!arithNode@{arith\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string arith\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_a8550d65d4f403ef6526bc7be240879b3}
+Devuelve la cadena de caracteres asociada al nodo que representa el valor numérico del mismo. \begin{DoxyReturn}{Devuelve}
+Cadena de caracteres que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classarithNode_aa10435f1e329336baee9334df7a8b0cf}{\index{arith\-Node@{arith\-Node}!set\-Node\-Value@{set\-Node\-Value}}
+\index{set\-Node\-Value@{set\-Node\-Value}!arithNode@{arith\-Node}}
+\subsubsection[{set\-Node\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void arith\-Node\-::set\-Node\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_aa10435f1e329336baee9334df7a8b0cf}
+Establece el valor del nodo a partir de otro nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a partir del cual se tomará el valor. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classexpNode_aedb96104889212bae315a6381f8e0219}{exp\-Node}.
+
+\hypertarget{classarithNode_a01f251d6cdc918309873c7443c694510}{\index{arith\-Node@{arith\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!arithNode@{arith\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string arith\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarithNode_a01f251d6cdc918309873c7443c694510}
+Convierte un nodo a su valor cadena de caracteres. \begin{DoxyReturn}{Devuelve}
+Valor cadena de caracteres. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{dexp\-Node}.
+
+\hypertarget{classarithNode_a40e00712940d8de007c8fde31ff8837f}{\index{arith\-Node@{arith\-Node}!to\-\_\-num@{to\-\_\-num}}
+\index{to\-\_\-num@{to\-\_\-num}!arithNode@{arith\-Node}}
+\subsubsection[{to\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}num arith\-Node\-::to\-\_\-num (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{bool}]{exception = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarithNode_a40e00712940d8de007c8fde31ff8837f}
+Convierte un nodo a su valor aritmético. \begin{DoxyReturn}{Devuelve}
+Valor numérico. 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classarithNode_a975a7d0704b4e450c6aaa2616dfc09e7}{\index{arith\-Node@{arith\-Node}!numvalue\-\_\-@{numvalue\-\_\-}}
+\index{numvalue\-\_\-@{numvalue\-\_\-}!arithNode@{arith\-Node}}
+\subsubsection[{numvalue\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}num arith\-Node\-::numvalue\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classarithNode_a975a7d0704b4e450c6aaa2616dfc09e7}
+Atributo que representa el valor numérico del nodo. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

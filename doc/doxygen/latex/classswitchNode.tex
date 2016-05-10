@@ -1,0 +1,74 @@
+\hypertarget{classswitchNode}{\section{Referencia de la Clase switch\-Node}
+\label{classswitchNode}\index{switch\-Node@{switch\-Node}}
+}
+
+
+Nodo sentencia switch.  
+
+
+
+
+{\ttfamily \#include $<$cond\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de switch\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classswitchNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classswitchNode_a689b5159d9232747121a510fb0e4c6c6}{switch\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$eval, \hyperlink{classrunNode}{run\-Node} $\ast$cases)
+\item 
+void \hyperlink{classswitchNode_a7376e88757e30536bd26878d58bc2069}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia switch. 
+
+Se compone de un nodo que representa una expresión evaluación y un nodo que representa una lista de casos. El nodo evaluación será comparado con cada uno de los casos, si uno de estos da un resultado de comparación positivo se ejecuta su bloque de sentencias y todos los bloques de sentencias de los casos siguientes.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classcaseNode}{case\-Node} 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classswitchNode_a689b5159d9232747121a510fb0e4c6c6}{\index{switch\-Node@{switch\-Node}!switch\-Node@{switch\-Node}}
+\index{switch\-Node@{switch\-Node}!switchNode@{switch\-Node}}
+\subsubsection[{switch\-Node}]{\setlength{\rightskip}{0pt plus 5cm}switch\-Node\-::switch\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{eval, }
+\item[{{\bf run\-Node} $\ast$}]{cases}
+\end{DoxyParamCaption}
+)}}\label{classswitchNode_a689b5159d9232747121a510fb0e4c6c6}
+Constructor de clase. 
+\begin{DoxyParams}{Parámetros}
+{\em eval} & Nodo que representa la expresión a evaluar. \\
+\hline
+{\em cases} & Nodo que representa el listado de casos. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classswitchNode_a7376e88757e30536bd26878d58bc2069}{\index{switch\-Node@{switch\-Node}!run@{run}}
+\index{run@{run}!switchNode@{switch\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void switch\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classswitchNode_a7376e88757e30536bd26878d58bc2069}
+Método que lleva a cabo la ejecución del nodo. Ejecuta el listado de casos comparándolos con la expresión de evaluación. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{condStmtNode_8h}{cond\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/cond\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

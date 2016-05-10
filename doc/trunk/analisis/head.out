@@ -1,0 +1,207 @@
+\BOOKMARK [1][-]{section.1}{Modelo conceptual}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Int\351rprete}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Nodos ejecutables}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Tipos de datos}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Sentencias de control de flujo}{section.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Sentencia}{subsection.1.4}% 6
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Sentencia vac\355a}{subsection.1.4}% 7
+\BOOKMARK [3][-]{subsubsection.1.4.3}{include}{subsection.1.4}% 8
+\BOOKMARK [3][-]{subsubsection.1.4.4}{exit}{subsection.1.4}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.5}{goto}{subsection.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.6}{if}{subsection.1.4}% 11
+\BOOKMARK [3][-]{subsubsection.1.4.7}{switch}{subsection.1.4}% 12
+\BOOKMARK [3][-]{subsubsection.1.4.8}{while}{subsection.1.4}% 13
+\BOOKMARK [3][-]{subsubsection.1.4.9}{do...while}{subsection.1.4}% 14
+\BOOKMARK [3][-]{subsubsection.1.4.10}{for}{subsection.1.4}% 15
+\BOOKMARK [3][-]{subsubsection.1.4.11}{foreach}{subsection.1.4}% 16
+\BOOKMARK [3][-]{subsubsection.1.4.12}{iloop}{subsection.1.4}% 17
+\BOOKMARK [3][-]{subsubsection.1.4.13}{continue}{subsection.1.4}% 18
+\BOOKMARK [3][-]{subsubsection.1.4.14}{break}{subsection.1.4}% 19
+\BOOKMARK [3][-]{subsubsection.1.4.15}{try}{subsection.1.4}% 20
+\BOOKMARK [3][-]{subsubsection.1.4.16}{throw}{subsection.1.4}% 21
+\BOOKMARK [3][-]{subsubsection.1.4.17}{with}{subsection.1.4}% 22
+\BOOKMARK [2][-]{subsection.1.5}{Definiciones}{section.1}% 23
+\BOOKMARK [3][-]{subsubsection.1.5.1}{Variables}{subsection.1.5}% 24
+\BOOKMARK [3][-]{subsubsection.1.5.2}{Funciones}{subsection.1.5}% 25
+\BOOKMARK [3][-]{subsubsection.1.5.3}{Clases}{subsection.1.5}% 26
+\BOOKMARK [3][-]{subsubsection.1.5.4}{Objetos}{subsection.1.5}% 27
+\BOOKMARK [3][-]{subsubsection.1.5.5}{Listas}{subsection.1.5}% 28
+\BOOKMARK [3][-]{subsubsection.1.5.6}{Pares clave/valor}{subsection.1.5}% 29
+\BOOKMARK [3][-]{subsubsection.1.5.7}{Etiquetas}{subsection.1.5}% 30
+\BOOKMARK [3][-]{subsubsection.1.5.8}{Definiciones globales}{subsection.1.5}% 31
+\BOOKMARK [3][-]{subsubsection.1.5.9}{Generadores}{subsection.1.5}% 32
+\BOOKMARK [2][-]{subsection.1.6}{Asignaciones}{section.1}% 33
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Asignaci\363n}{subsection.1.6}% 34
+\BOOKMARK [3][-]{subsubsection.1.6.2}{Asignaci\363n de referencia}{subsection.1.6}% 35
+\BOOKMARK [2][-]{subsection.1.7}{Operadores aritm\351ticos}{section.1}% 36
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Suma}{subsection.1.7}% 37
+\BOOKMARK [3][-]{subsubsection.1.7.2}{Diferencia}{subsection.1.7}% 38
+\BOOKMARK [3][-]{subsubsection.1.7.3}{Producto}{subsection.1.7}% 39
+\BOOKMARK [3][-]{subsubsection.1.7.4}{Divisi\363n}{subsection.1.7}% 40
+\BOOKMARK [3][-]{subsubsection.1.7.5}{Potencia}{subsection.1.7}% 41
+\BOOKMARK [3][-]{subsubsection.1.7.6}{M\363dulo}{subsection.1.7}% 42
+\BOOKMARK [3][-]{subsubsection.1.7.7}{Tama\361o}{subsection.1.7}% 43
+\BOOKMARK [3][-]{subsubsection.1.7.8}{Incremento y asignaci\363n}{subsection.1.7}% 44
+\BOOKMARK [3][-]{subsubsection.1.7.9}{Asignaci\363n e incremento}{subsection.1.7}% 45
+\BOOKMARK [3][-]{subsubsection.1.7.10}{Decremento y asignaci\363n}{subsection.1.7}% 46
+\BOOKMARK [3][-]{subsubsection.1.7.11}{Asignaci\363n y decremento}{subsection.1.7}% 47
+\BOOKMARK [2][-]{subsection.1.8}{Operadores l\363gicos}{section.1}% 48
+\BOOKMARK [3][-]{subsubsection.1.8.1}{Or}{subsection.1.8}% 49
+\BOOKMARK [3][-]{subsubsection.1.8.2}{And}{subsection.1.8}% 50
+\BOOKMARK [3][-]{subsubsection.1.8.3}{Negaci\363n}{subsection.1.8}% 51
+\BOOKMARK [3][-]{subsubsection.1.8.4}{Igual que}{subsection.1.8}% 52
+\BOOKMARK [3][-]{subsubsection.1.8.5}{Distinto que}{subsection.1.8}% 53
+\BOOKMARK [3][-]{subsubsection.1.8.6}{Menor que}{subsection.1.8}% 54
+\BOOKMARK [3][-]{subsubsection.1.8.7}{Menor o igual que}{subsection.1.8}% 55
+\BOOKMARK [3][-]{subsubsection.1.8.8}{Mayor que}{subsection.1.8}% 56
+\BOOKMARK [3][-]{subsubsection.1.8.9}{Mayor o igual que}{subsection.1.8}% 57
+\BOOKMARK [3][-]{subsubsection.1.8.10}{Id\351ntico a}{subsection.1.8}% 58
+\BOOKMARK [3][-]{subsubsection.1.8.11}{No id\351ntico a}{subsection.1.8}% 59
+\BOOKMARK [3][-]{subsubsection.1.8.12}{Es nulo}{subsection.1.8}% 60
+\BOOKMARK [3][-]{subsubsection.1.8.13}{Vac\355o}{subsection.1.8}% 61
+\BOOKMARK [2][-]{subsection.1.9}{Operadores sobre cadenas}{section.1}% 62
+\BOOKMARK [3][-]{subsubsection.1.9.1}{Concatenaci\363n}{subsection.1.9}% 63
+\BOOKMARK [3][-]{subsubsection.1.9.2}{explode}{subsection.1.9}% 64
+\BOOKMARK [3][-]{subsubsection.1.9.3}{implode}{subsection.1.9}% 65
+\BOOKMARK [3][-]{subsubsection.1.9.4}{sprintf}{subsection.1.9}% 66
+\BOOKMARK [3][-]{subsubsection.1.9.5}{Buscar subcadena}{subsection.1.9}% 67
+\BOOKMARK [3][-]{subsubsection.1.9.6}{Buscar y remplazar}{subsection.1.9}% 68
+\BOOKMARK [3][-]{subsubsection.1.9.7}{Remplazar subcadena}{subsection.1.9}% 69
+\BOOKMARK [3][-]{subsubsection.1.9.8}{Convertir a may\372sculas}{subsection.1.9}% 70
+\BOOKMARK [3][-]{subsubsection.1.9.9}{Convertir a min\372sculas}{subsection.1.9}% 71
+\BOOKMARK [2][-]{subsection.1.10}{Operadores sobre array}{section.1}% 72
+\BOOKMARK [3][-]{subsubsection.1.10.1}{Dividir en fragmentos}{subsection.1.10}% 73
+\BOOKMARK [3][-]{subsubsection.1.10.2}{Reducir mediante funci\363n}{subsection.1.10}% 74
+\BOOKMARK [3][-]{subsubsection.1.10.3}{Obtener \372ltimo}{subsection.1.10}% 75
+\BOOKMARK [3][-]{subsubsection.1.10.4}{Obtener primero}{subsection.1.10}% 76
+\BOOKMARK [3][-]{subsubsection.1.10.5}{Insertar en posici\363n}{subsection.1.10}% 77
+\BOOKMARK [3][-]{subsubsection.1.10.6}{Eliminar posici\363n}{subsection.1.10}% 78
+\BOOKMARK [3][-]{subsubsection.1.10.7}{Insertar al inicio}{subsection.1.10}% 79
+\BOOKMARK [3][-]{subsubsection.1.10.8}{Insertar al final}{subsection.1.10}% 80
+\BOOKMARK [3][-]{subsubsection.1.10.9}{Eliminar del inicio}{subsection.1.10}% 81
+\BOOKMARK [3][-]{subsubsection.1.10.10}{Eliminar del final}{subsection.1.10}% 82
+\BOOKMARK [2][-]{subsection.1.11}{Operadores sobre expresiones regulares}{section.1}% 83
+\BOOKMARK [3][-]{subsubsection.1.11.1}{Crear expresi\363n regular}{subsection.1.11}% 84
+\BOOKMARK [3][-]{subsubsection.1.11.2}{match}{subsection.1.11}% 85
+\BOOKMARK [3][-]{subsubsection.1.11.3}{search}{subsection.1.11}% 86
+\BOOKMARK [2][-]{subsection.1.12}{Conversi\363n de tipos}{section.1}% 87
+\BOOKMARK [3][-]{subsubsection.1.12.1}{Conversi\363n a l\363gico}{subsection.1.12}% 88
+\BOOKMARK [3][-]{subsubsection.1.12.2}{Conversi\363n a entero}{subsection.1.12}% 89
+\BOOKMARK [3][-]{subsubsection.1.12.3}{Conversi\363n a flotante}{subsection.1.12}% 90
+\BOOKMARK [3][-]{subsubsection.1.12.4}{Conversi\363n a cadena}{subsection.1.12}% 91
+\BOOKMARK [2][-]{subsection.1.13}{Operadores de acceso}{section.1}% 92
+\BOOKMARK [3][-]{subsubsection.1.13.1}{Acceso a clave}{subsection.1.13}% 93
+\BOOKMARK [3][-]{subsubsection.1.13.2}{Acceso a funci\363n}{subsection.1.13}% 94
+\BOOKMARK [3][-]{subsubsection.1.13.3}{Acceso a variable de entorno}{subsection.1.13}% 95
+\BOOKMARK [2][-]{subsection.1.14}{Operadores condicionales}{section.1}% 96
+\BOOKMARK [3][-]{subsubsection.1.14.1}{Ternario}{subsection.1.14}% 97
+\BOOKMARK [3][-]{subsubsection.1.14.2}{Fusi\363n de nulos}{subsection.1.14}% 98
+\BOOKMARK [2][-]{subsection.1.15}{Operadores de entrada/salida}{section.1}% 99
+\BOOKMARK [3][-]{subsubsection.1.15.1}{Salida est\341ndar}{subsection.1.15}% 100
+\BOOKMARK [3][-]{subsubsection.1.15.2}{Entrada est\341ndar}{subsection.1.15}% 101
+\BOOKMARK [2][-]{subsection.1.16}{Operadores informativos}{section.1}% 102
+\BOOKMARK [3][-]{subsubsection.1.16.1}{Tipo de}{subsection.1.16}% 103
+\BOOKMARK [3][-]{subsubsection.1.16.2}{Tama\361o de}{subsection.1.16}% 104
+\BOOKMARK [3][-]{subsubsection.1.16.3}{Informaci\363n sobre}{subsection.1.16}% 105
+\BOOKMARK [2][-]{subsection.1.17}{Procesos}{section.1}% 106
+\BOOKMARK [3][-]{subsubsection.1.17.1}{Crear proceso}{subsection.1.17}% 107
+\BOOKMARK [3][-]{subsubsection.1.17.2}{Esperar finalizaci\363n}{subsection.1.17}% 108
+\BOOKMARK [3][-]{subsubsection.1.17.3}{Obtener identificador }{subsection.1.17}% 109
+\BOOKMARK [3][-]{subsubsection.1.17.4}{Obtener identificador padre}{subsection.1.17}% 110
+\BOOKMARK [3][-]{subsubsection.1.17.5}{Ejecutar como proceso}{subsection.1.17}% 111
+\BOOKMARK [3][-]{subsubsection.1.17.6}{Salir de proceso}{subsection.1.17}% 112
+\BOOKMARK [3][-]{subsubsection.1.17.7}{Se\361al a proceso}{subsection.1.17}% 113
+\BOOKMARK [3][-]{subsubsection.1.17.8}{Manejador de se\361ales}{subsection.1.17}% 114
+\BOOKMARK [3][-]{subsubsection.1.17.9}{Evaluar cadena}{subsection.1.17}% 115
+\BOOKMARK [3][-]{subsubsection.1.17.10}{Ejecutar comando del sistema}{subsection.1.17}% 116
+\BOOKMARK [2][-]{subsection.1.18}{Ficheros}{section.1}% 117
+\BOOKMARK [3][-]{subsubsection.1.18.1}{Obtener un flujo a fichero}{subsection.1.18}% 118
+\BOOKMARK [3][-]{subsubsection.1.18.2}{Escribir en flujo a fichero}{subsection.1.18}% 119
+\BOOKMARK [3][-]{subsubsection.1.18.3}{Leer de flujo a fichero}{subsection.1.18}% 120
+\BOOKMARK [3][-]{subsubsection.1.18.4}{Cambiar posici\363n en fichero}{subsection.1.18}% 121
+\BOOKMARK [3][-]{subsubsection.1.18.5}{Obtener posici\363n en flujo a fichero}{subsection.1.18}% 122
+\BOOKMARK [3][-]{subsubsection.1.18.6}{Cerrar flujo a fichero}{subsection.1.18}% 123
+\BOOKMARK [3][-]{subsubsection.1.18.7}{Leer fichero}{subsection.1.18}% 124
+\BOOKMARK [3][-]{subsubsection.1.18.8}{Escribir en fichero}{subsection.1.18}% 125
+\BOOKMARK [3][-]{subsubsection.1.18.9}{Escribir al final de fichero}{subsection.1.18}% 126
+\BOOKMARK [2][-]{subsection.1.19}{Fechas}{section.1}% 127
+\BOOKMARK [3][-]{subsubsection.1.19.1}{Tiempo Unix}{subsection.1.19}% 128
+\BOOKMARK [3][-]{subsubsection.1.19.2}{Fecha y hora con formato}{subsection.1.19}% 129
+\BOOKMARK [3][-]{subsubsection.1.19.3}{sleep}{subsection.1.19}% 130
+\BOOKMARK [2][-]{subsection.1.20}{Errores}{section.1}% 131
+\BOOKMARK [2][-]{subsection.1.21}{Extensiones}{section.1}% 132
+\BOOKMARK [3][-]{subsubsection.1.21.1}{Biblioteca GNU de internacionalizaci\363n \(gettext\)}{subsection.1.21}% 133
+\BOOKMARK [4][-]{paragraph.1.21.1.1}{gettext}{subsubsection.1.21.1}% 134
+\BOOKMARK [4][-]{paragraph.1.21.1.2}{setlocale}{subsubsection.1.21.1}% 135
+\BOOKMARK [4][-]{paragraph.1.21.1.3}{dgettext}{subsubsection.1.21.1}% 136
+\BOOKMARK [4][-]{paragraph.1.21.1.4}{bindtextdomain}{subsubsection.1.21.1}% 137
+\BOOKMARK [4][-]{paragraph.1.21.1.5}{textdomain}{subsubsection.1.21.1}% 138
+\BOOKMARK [2][-]{subsection.1.22}{rTree}{section.1}% 139
+\BOOKMARK [1][-]{section.2}{Modelo de casos de uso}{}% 140
+\BOOKMARK [2][-]{subsection.2.1}{Actores}{section.2}% 141
+\BOOKMARK [2][-]{subsection.2.2}{Int\351rprete}{section.2}% 142
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Interpretar entrada est\341ndar}{subsection.2.2}% 143
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Interpretar fichero}{subsection.2.2}% 144
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Interpretar l\355nea}{subsection.2.2}% 145
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Interpretar}{subsection.2.2}% 146
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Ver ayuda}{subsection.2.2}% 147
+\BOOKMARK [3][-]{subsubsection.2.2.6}{Cargar extensi\363n}{subsection.2.2}% 148
+\BOOKMARK [3][-]{subsubsection.2.2.7}{Listar extensiones}{subsection.2.2}% 149
+\BOOKMARK [3][-]{subsubsection.2.2.8}{Iniciar interpretaci\363n red}{subsection.2.2}% 150
+\BOOKMARK [3][-]{subsubsection.2.2.9}{Obtener pasos interpretaci\363n red}{subsection.2.2}% 151
+\BOOKMARK [2][-]{subsection.2.3}{runTree}{section.2}% 152
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Enviar c\363digo fuente}{subsection.2.3}% 153
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Siguiente paso}{subsection.2.3}% 154
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Siguiente sentencia}{subsection.2.3}% 155
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Activar ejecuci\363n autom\341tica}{subsection.2.3}% 156
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Desactivar ejecuci\363n autom\341tica}{subsection.2.3}% 157
+\BOOKMARK [3][-]{subsubsection.2.3.6}{Limpiar salida}{subsection.2.3}% 158
+\BOOKMARK [3][-]{subsubsection.2.3.7}{Ver informaci\363n de nodo}{subsection.2.3}% 159
+\BOOKMARK [3][-]{subsubsection.2.3.8}{Ver contenido de la tabla de s\355mbolos}{subsection.2.3}% 160
+\BOOKMARK [3][-]{subsubsection.2.3.9}{Guardar c\363digo fuente}{subsection.2.3}% 161
+\BOOKMARK [3][-]{subsubsection.2.3.10}{Abrir c\363digo fuente}{subsection.2.3}% 162
+\BOOKMARK [1][-]{section.3}{Visi\363n general}{}% 163
+\BOOKMARK [1][-]{section.4}{Diagramas de secuencia del sistema}{}% 164
+\BOOKMARK [2][-]{subsection.4.1}{Int\351rprete}{section.4}% 165
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Interpretar entrada est\341ndar}{subsection.4.1}% 166
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Interpretar l\355nea}{subsection.4.1}% 167
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Interpretar fichero}{subsection.4.1}% 168
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Ver ayuda}{subsection.4.1}% 169
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Cargar extensi\363n}{subsection.4.1}% 170
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Listar extensiones}{subsection.4.1}% 171
+\BOOKMARK [3][-]{subsubsection.4.1.7}{Iniciar interpretaci\363n red}{subsection.4.1}% 172
+\BOOKMARK [3][-]{subsubsection.4.1.8}{Obtener pasos interpretaci\363n red}{subsection.4.1}% 173
+\BOOKMARK [2][-]{subsection.4.2}{runTree}{section.4}% 174
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Enviar c\363digo fuente}{subsection.4.2}% 175
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Siguiente paso}{subsection.4.2}% 176
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Siguiente sentencia}{subsection.4.2}% 177
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Activar ejecuci\363n autom\341tica}{subsection.4.2}% 178
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Desctivar ejecuci\363n autom\341tica}{subsection.4.2}% 179
+\BOOKMARK [3][-]{subsubsection.4.2.6}{Limpiar salida}{subsection.4.2}% 180
+\BOOKMARK [3][-]{subsubsection.4.2.7}{Ver infomaci\363n de nodo}{subsection.4.2}% 181
+\BOOKMARK [3][-]{subsubsection.4.2.8}{Ver contenido tabla de s\355mbolo}{subsection.4.2}% 182
+\BOOKMARK [3][-]{subsubsection.4.2.9}{Guardar c\363digo fuente}{subsection.4.2}% 183
+\BOOKMARK [3][-]{subsubsection.4.2.10}{Abrir c\363digo fuente}{subsection.4.2}% 184
+\BOOKMARK [1][-]{section.5}{Contratos de operaciones del sistema}{}% 185
+\BOOKMARK [2][-]{subsection.5.1}{Int\351rprete}{section.5}% 186
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Operaci\363n inicio\137interprete\137stdin}{subsection.5.1}% 187
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Operaci\363n inicio\137interprete\137linea}{subsection.5.1}% 188
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Operaci\363n interpretar\137cadena}{subsection.5.1}% 189
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Operaci\363n interpretar\137fichero}{subsection.5.1}% 190
+\BOOKMARK [3][-]{subsubsection.5.1.5}{Operaci\363n iniciar\137interpretacion\137red}{subsection.5.1}% 191
+\BOOKMARK [3][-]{subsubsection.5.1.6}{Operaci\363n obtener\137paso\137interpretacion\137red}{subsection.5.1}% 192
+\BOOKMARK [2][-]{subsection.5.2}{runTree}{section.5}% 193
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Operaci\363n enviar\137codigo\137fuente}{subsection.5.2}% 194
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Operaci\363n siguiente\137paso}{subsection.5.2}% 195
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Operaci\363n siguiente\137sentencia}{subsection.5.2}% 196
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Operaci\363n activar\137ejecucion\137automatica}{subsection.5.2}% 197
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Operaci\363n desactivar\137ejecucion\137automatica}{subsection.5.2}% 198
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Operaci\363n limpiar\137salida}{subsection.5.2}% 199
+\BOOKMARK [3][-]{subsubsection.5.2.7}{Operaci\363n ver\137informacion\137nodo}{subsection.5.2}% 200
+\BOOKMARK [3][-]{subsubsection.5.2.8}{Operaci\363n ver\137tabla\137simbolos}{subsection.5.2}% 201
+\BOOKMARK [1][-]{section.6}{Modelo de interfaz de usuario}{}% 202
+\BOOKMARK [2][-]{subsection.6.1}{Int\351rprete}{section.6}% 203
+\BOOKMARK [2][-]{subsection.6.2}{runTree}{section.6}% 204
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Wireframe}{subsection.6.2}% 205
+\BOOKMARK [2][-]{subsection.6.3}{Sitio web}{section.6}% 206
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Wireframe}{subsection.6.3}% 207

@@ -1,0 +1,72 @@
+\hypertarget{classfseekNode}{\section{Referencia de la Clase fseek\-Node}
+\label{classfseekNode}\index{fseek\-Node@{fseek\-Node}}
+}
+
+
+Nodo función cambiar puntero de descriptor de fichero.  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fseek\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfseekNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfseekNode_a15a163ad45fe50710ce3a9b2c7032160}{fseek\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file, \hyperlink{classrunNode}{run\-Node} $\ast$offset, int pos=0)
+\item 
+void \hyperlink{classfseekNode_aec2f6985f9df3761c36d063d7d32b59c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función cambiar puntero de descriptor de fichero. 
+
+Este nodo se encarga de cambiar la posición del puntero que representa el descriptor a un fichero. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfseekNode_a15a163ad45fe50710ce3a9b2c7032160}{\index{fseek\-Node@{fseek\-Node}!fseek\-Node@{fseek\-Node}}
+\index{fseek\-Node@{fseek\-Node}!fseekNode@{fseek\-Node}}
+\subsubsection[{fseek\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fseek\-Node\-::fseek\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file, }
+\item[{{\bf run\-Node} $\ast$}]{offset, }
+\item[{int}]{pos = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classfseekNode_a15a163ad45fe50710ce3a9b2c7032160}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que representa el descrtiptor de fichero \\
+\hline
+{\em offset.} & Offset aplicado en bytes \\
+\hline
+{\em pos.} & Posición que se toma como referencia. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfseekNode_aec2f6985f9df3761c36d063d7d32b59c}{\index{fseek\-Node@{fseek\-Node}!run@{run}}
+\index{run@{run}!fseekNode@{fseek\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fseek\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfseekNode_aec2f6985f9df3761c36d063d7d32b59c}
+Método que ejecuta el nodo. Cambia la posición del puntero que representa el descriptor de un fichero. Toma como valor un booleano que indica si el proceso se realizó correctamente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\newcommand{\initcn} {
+	\newcounter{cn}
+	\stepcounter{cn}
+}
+\newcommand{\cn}{
+	\ifnum\value{cn}<10
+		000\arabic{cn}
+	\else
+		\ifnum\value{cn}<100
+			00\arabic{cn}
+		\else
+			0\arabic{cn}
+		\fi
+	\fi
+	\stepcounter{cn}
+}
+\endinput

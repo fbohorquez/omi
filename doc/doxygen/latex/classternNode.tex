@@ -1,0 +1,74 @@
+\hypertarget{classternNode}{\section{Referencia de la Clase tern\-Node}
+\label{classternNode}\index{tern\-Node@{tern\-Node}}
+}
+
+
+Node operador ternario.  
+
+
+
+
+{\ttfamily \#include $<$cond\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de tern\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classternNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classternNode_abd4214c0157e53f60e538b04249545ad}{tern\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$cond, \hyperlink{classrunNode}{run\-Node} $\ast$yes, \hyperlink{classrunNode}{run\-Node} $\ast$no)
+\item 
+void \hyperlink{classternNode_a5ba4c96a74db8179e190d2ae60958be4}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador ternario. 
+
+El operdador ternario se inicializa a partir de un nodo condición, un nodo de caso positivo y un nodo de caso negativo.
+
+El operador evalua de forma lógica el nodo condición y toma como valor el nodo correspondiente al resultado de la evaluación. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classternNode_abd4214c0157e53f60e538b04249545ad}{\index{tern\-Node@{tern\-Node}!tern\-Node@{tern\-Node}}
+\index{tern\-Node@{tern\-Node}!ternNode@{tern\-Node}}
+\subsubsection[{tern\-Node}]{\setlength{\rightskip}{0pt plus 5cm}tern\-Node\-::tern\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{cond, }
+\item[{{\bf run\-Node} $\ast$}]{yes, }
+\item[{{\bf run\-Node} $\ast$}]{no}
+\end{DoxyParamCaption}
+)}}\label{classternNode_abd4214c0157e53f60e538b04249545ad}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em cond} & Nodo de condición \\
+\hline
+{\em yes} & Nodo de caso positivo \\
+\hline
+{\em no} & Nodo de caso negativo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classternNode_a5ba4c96a74db8179e190d2ae60958be4}{\index{tern\-Node@{tern\-Node}!run@{run}}
+\index{run@{run}!ternNode@{tern\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void tern\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classternNode_a5ba4c96a74db8179e190d2ae60958be4}
+Método que ejecuta el nodo. Procede a la ejecución del nodo condición y evalúa el valor lógico de este. Toma como valor el nodo de caso positivo o de caso negativo según el resultado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{condOpNode_8h}{cond\-Op\-Node.\-h}\item 
+trunk/src/run/operators/cond\-Op\-Node.\-cpp\end{DoxyCompactItemize}

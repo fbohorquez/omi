@@ -1,0 +1,254 @@
+\hypertarget{classclassNode}{\section{Referencia de la Clase class\-Node}
+\label{classclassNode}\index{class\-Node@{class\-Node}}
+}
+
+
+Nodo clase.  
+
+
+
+
+{\ttfamily \#include $<$class\-Node.\-h$>$}
+
+Diagrama de herencias de class\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classclassNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclassNode_aae32a053594c335e954a065152583727}{class\-Node} (\hyperlink{classclassNode}{class\-Node} $\ast$node)
+\item 
+\hyperlink{classclassNode_a7b5f4a91590e3aaf8b4271b157052d25}{class\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$body, \hyperlink{classrunNode}{run\-Node} $\ast$extends=N\-U\-L\-L)
+\item 
+void \hyperlink{classclassNode_a65ea61be38e2ecbec6c7766951819939}{run} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classclassNode_a5c58494486e9d1a856d8cdd271875867}{newcall} (\hyperlink{classrunNode}{run\-Node} $\ast$params)
+\item 
+\hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classclassNode_abe7e603b04e733ebdbd0b8816b157cdc}{inside\-Table} () const 
+\item 
+\hyperlink{classclassNode}{class\-Node} $\ast$ \hyperlink{classclassNode_ab30594178fcfc96d0ce492323b9d3fbd}{get\-Extend\-Class} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classclassNode_aad765264cfeff116c3155dc666fd6fb1}{get\-I\-D} ()
+\item 
+string \hyperlink{classclassNode_adee266b216dc087f11dd8adc6ea8ad5a}{name} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classclassNode_a19f2361cff152d4d98176ea835f9baa1}{get\-Method} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classclassNode_a19369f3ce811e8f24ef8bc2e11bbe4d0}{get\-Method\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classclassNode_ae3e5d11def9f49cc359bc40d2e77eabb}{set\-Method} (\hyperlink{classrunNode}{run\-Node} $\ast$key, \hyperlink{classrunNode}{run\-Node} $\ast$func)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classclassNode_aa73ab0f885a76cfb42cb15baa983c0d6}{get\-From\-Static} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classclassNode_ae78654f623cfe5de2e421bd84f8d41f0}{set\-From\-Static} (\hyperlink{classrunNode}{run\-Node} $\ast$key, \hyperlink{classrunNode}{run\-Node} $\ast$val)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classclassNode_a12cf5820b06a161bdb04c7a5fe430658}{to\-Object} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo clase. 
+
+Un nodo clase representa la definición de una clase. Una clase es una estructura funcional utilizada en la programación orientada a objetos.
+
+Un nodo clase sirve como interfaz para definir y manipular las clases en ejecución.
+
+Todo nodo clase tiene un contexto de tablas de símbolos donde se referencia a los atributos y métodos de la misma.
+
+Para inicializar un nodo clase se precisa del identificador de la misma y un cuerpo.
+
+El cuerpo de la clase consiste en una serie de sentencias, que por limitaciones de gramática sólo pueden ser declaraciones de funciones o variables.
+
+La ejecución de un nodo clase se corresponde con la declaración de la misma. Primero crea una referencia a si misma en la tabla de clases activa. Luego crea un nuevo contexto de tablas de símbolos, que usará de forma interna. Para finalizar cambia el contexto activo al interno y se lleva a cabo la ejecución del cuerpo.
+
+Los nodos funciones declarados en el cuerpo de la clase serán referenciados desde la tabla de funciones de la clase y son considerados los métodos de la misma. De igual forma las variables son referenciadas mediante la tabla de variables y son consideradas como los atributos.
+
+Una determinada clase puede extender a otra, lo que significa que heredará sus métodos y atributos.
+
+Los nodos clase presentan un mecanismo para crear nuevas instancias de los mismos denominadas objetos. Este mecanismo es utilizado por nodos como el nodo \char`\"{}nueva instancia\char`\"{} (\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classnewNode}{new\-Node}). Cuando se crear una nueva instancia se genera una copia de la tabla de símbolos de variables en un nodo de tipo objeto Este objeto además referencia a la clase para acceder a los métodos. El objeto se puede asignar a un nodo id como si fuera un tipo de dato, guardándose asi una referencia en la tabla de variables activa.
+\end{DoxySeeAlso}
+Las clases disponen de un contexto interno con tablas para funciones y variables que será aplicables a los objetos como atributos y métodos. Además disponen de un contexto estático que guarda los métodos y atributos aplicables a la propia clase. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classclassNode_aae32a053594c335e954a065152583727}{\index{class\-Node@{class\-Node}!class\-Node@{class\-Node}}
+\index{class\-Node@{class\-Node}!classNode@{class\-Node}}
+\subsubsection[{class\-Node}]{\setlength{\rightskip}{0pt plus 5cm}class\-Node\-::class\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf class\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_aae32a053594c335e954a065152583727}
+Constructor copia. Crea un nodo clase a partir de otro. Para ello referencia al cuerpo y al identificador del nodo clase dado, y copia la tabla de símbolos interna. \hypertarget{classclassNode_a7b5f4a91590e3aaf8b4271b157052d25}{\index{class\-Node@{class\-Node}!class\-Node@{class\-Node}}
+\index{class\-Node@{class\-Node}!classNode@{class\-Node}}
+\subsubsection[{class\-Node}]{\setlength{\rightskip}{0pt plus 5cm}class\-Node\-::class\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{body, }
+\item[{{\bf run\-Node} $\ast$}]{extends = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_a7b5f4a91590e3aaf8b4271b157052d25}
+Constructor que inicializa un nodo clase a partir de un nodo identificador y un nodo cuerpo. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador de la clase. \\
+\hline
+{\em body} & Cuerpo de la clase. \\
+\hline
+{\em extends} & Clase de la que extiende si es el caso. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classclassNode_ab30594178fcfc96d0ce492323b9d3fbd}{\index{class\-Node@{class\-Node}!get\-Extend\-Class@{get\-Extend\-Class}}
+\index{get\-Extend\-Class@{get\-Extend\-Class}!classNode@{class\-Node}}
+\subsubsection[{get\-Extend\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf class\-Node}$\ast$ class\-Node\-::get\-Extend\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classclassNode_ab30594178fcfc96d0ce492323b9d3fbd}
+Obtiene la clase padre con la que fue inicializada. \begin{DoxyReturn}{Devuelve}
+Clase padre. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_aa73ab0f885a76cfb42cb15baa983c0d6}{\index{class\-Node@{class\-Node}!get\-From\-Static@{get\-From\-Static}}
+\index{get\-From\-Static@{get\-From\-Static}!classNode@{class\-Node}}
+\subsubsection[{get\-From\-Static}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ class\-Node\-::get\-From\-Static (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_aa73ab0f885a76cfb42cb15baa983c0d6}
+Obtiene un método estático de la clase a partir de una clave. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nombre del método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Método estático correspondiente a la clave. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_aad765264cfeff116c3155dc666fd6fb1}{\index{class\-Node@{class\-Node}!get\-I\-D@{get\-I\-D}}
+\index{get\-I\-D@{get\-I\-D}!classNode@{class\-Node}}
+\subsubsection[{get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ class\-Node\-::get\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classclassNode_aad765264cfeff116c3155dc666fd6fb1}
+Obtiene el identificador con el que fue inicializada. \begin{DoxyReturn}{Devuelve}
+I\-D de la clase. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_a19f2361cff152d4d98176ea835f9baa1}{\index{class\-Node@{class\-Node}!get\-Method@{get\-Method}}
+\index{get\-Method@{get\-Method}!classNode@{class\-Node}}
+\subsubsection[{get\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ class\-Node\-::get\-Method (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_a19f2361cff152d4d98176ea835f9baa1}
+A partir de una clave obtiene el método cuyo identificador se corresponde con la misma. Si no existe se devuelve N\-U\-L\-L. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nombre del método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Método correspondiente a la clave. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_a19369f3ce811e8f24ef8bc2e11bbe4d0}{\index{class\-Node@{class\-Node}!get\-Method\-Ref@{get\-Method\-Ref}}
+\index{get\-Method\-Ref@{get\-Method\-Ref}!classNode@{class\-Node}}
+\subsubsection[{get\-Method\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ class\-Node\-::get\-Method\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_a19369f3ce811e8f24ef8bc2e11bbe4d0}
+A partir de una clave obtiene la referencia al método cuyo identificador se corresponde con la misma. Si no existe se devuelve N\-U\-L\-L. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Nombre del método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al método correspondietne a la clave. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_abe7e603b04e733ebdbd0b8816b157cdc}{\index{class\-Node@{class\-Node}!inside\-Table@{inside\-Table}}
+\index{inside\-Table@{inside\-Table}!classNode@{class\-Node}}
+\subsubsection[{inside\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table}$\ast$ class\-Node\-::inside\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classclassNode_abe7e603b04e733ebdbd0b8816b157cdc}
+Devuelve el contexto interno del nodo clase. \begin{DoxyReturn}{Devuelve}
+Contexto interno. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_adee266b216dc087f11dd8adc6ea8ad5a}{\index{class\-Node@{class\-Node}!name@{name}}
+\index{name@{name}!classNode@{class\-Node}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string class\-Node\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classclassNode_adee266b216dc087f11dd8adc6ea8ad5a}
+Obtiene el identificador de la clase como una cadena de caracteres. \begin{DoxyReturn}{Devuelve}
+I\-D de la clase como cadena de caracteres. 
+\end{DoxyReturn}
+\hypertarget{classclassNode_a5c58494486e9d1a856d8cdd271875867}{\index{class\-Node@{class\-Node}!newcall@{newcall}}
+\index{newcall@{newcall}!classNode@{class\-Node}}
+\subsubsection[{newcall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ class\-Node\-::newcall (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_a5c58494486e9d1a856d8cdd271875867}
+Crea y devuelve una instancia de la clase. Para ello copia la tabla de variables del contexto de la clase en un nodo objeto, y busca una función en la tabla de funciones correspondiente al nombre de la clase. Esta función, considerada constructor, será ejecutada con los parámetros indicados. \hypertarget{classclassNode_a65ea61be38e2ecbec6c7766951819939}{\index{class\-Node@{class\-Node}!run@{run}}
+\index{run@{run}!classNode@{class\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void class\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classclassNode_a65ea61be38e2ecbec6c7766951819939}
+Lleva a cabo la ejecución del nodo clase correspondiente a la declaración de la misma. Para ello crea una referencia en la tabla de clases activa a si misma, genera el contexto interno, y luego, tras cambiar el contexto en uso, ejecuta el cuerpo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classclassNode_ae78654f623cfe5de2e421bd84f8d41f0}{\index{class\-Node@{class\-Node}!set\-From\-Static@{set\-From\-Static}}
+\index{set\-From\-Static@{set\-From\-Static}!classNode@{class\-Node}}
+\subsubsection[{set\-From\-Static}]{\setlength{\rightskip}{0pt plus 5cm}void class\-Node\-::set\-From\-Static (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{{\bf run\-Node} $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_ae78654f623cfe5de2e421bd84f8d41f0}
+Asocia una función como método estático de la clase con el identificador dado. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave que se utilizará como identificador. \\
+\hline
+{\em func} & Función que se asociará como método estático. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classclassNode_ae3e5d11def9f49cc359bc40d2e77eabb}{\index{class\-Node@{class\-Node}!set\-Method@{set\-Method}}
+\index{set\-Method@{set\-Method}!classNode@{class\-Node}}
+\subsubsection[{set\-Method}]{\setlength{\rightskip}{0pt plus 5cm}void class\-Node\-::set\-Method (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{{\bf run\-Node} $\ast$}]{func}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_ae3e5d11def9f49cc359bc40d2e77eabb}
+Asocia una función como método de la clase con el identificador dado. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave que se utilizará como identificador. \\
+\hline
+{\em func} & Función que se asociará como método. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classclassNode_a12cf5820b06a161bdb04c7a5fe430658}{\index{class\-Node@{class\-Node}!to\-Object@{to\-Object}}
+\index{to\-Object@{to\-Object}!classNode@{class\-Node}}
+\subsubsection[{to\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ class\-Node\-::to\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classclassNode_a12cf5820b06a161bdb04c7a5fe430658}
+Devuelve un objeto con una tabla de símbolos correspondiente a la tabla de variables de la clase. Además asocia la clase al objeto. \begin{DoxyReturn}{Devuelve}
+Objeto instancia de la clase. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{classNode_8h}{class\-Node.\-h}\item 
+trunk/src/run/table/class\-Node.\-cpp\end{DoxyCompactItemize}

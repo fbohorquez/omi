@@ -1,0 +1,35 @@
+#FFF5B4#general config
+#--------------------------------------------------------
+RewriteEngine On
+Options +FollowSymlinks
+Options -Indexes
+
+#ErrorDocument 404 http://novanzia.local/resources/404.php
+#RewriteRule ^404.php$ resources/404.php [L]
+
+#maintain
+#-------------------------------------------------------
+#RewriteCond %{REMOTE_ADDR} !^84\.122\.185\.194$
+#RewriteCond %{REMOTE_ADDR} !^88\.1\.189\.6$
+#RewriteCond %{REMOTE_ADDR} !^84\.123\.175\.132$
+#RewriteCond %{REMOTE_ADDR} !^82\.159\.146\.221$
+#RewriteCond %{REMOTE_ADDR} !^84\.122\.58\.78$
+#RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+#RewriteCond %{REQUEST_URI} !^/next\.php$
+#RewriteCond %{REQUEST_URI} !^(.*)(\.jpg|\.png|\.css|\.js)$
+#RewriteCond %{REQUEST_URI} !^(.*)/TPV/ipn\.php(.*)$
+#RewriteRule ^(.*)$ /next.php [L]
+
+#websubdomine
+#-------------------------------------------------------
+
+#share resourses 
+#-------------------------------------------------------
+RewriteRule ^src/(.*)  resources/$1 [L,END]
+
+#sites config
+#--------------------------------------------------------
+RewriteRule ^rtree/(.*)$ sites/rtree/$1 [L,END]
+
+RewriteRule ^(.*)$ sites/public/$1 [L,END]
+

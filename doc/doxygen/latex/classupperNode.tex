@@ -1,0 +1,85 @@
+\hypertarget{classupperNode}{\section{Referencia de la Clase upper\-Node}
+\label{classupperNode}\index{upper\-Node@{upper\-Node}}
+}
+
+
+Nodo función conversión a mayúsculas.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de upper\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classupperNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classupperNode_adf506d723bdebd69295a636535373a52}{upper\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$cad)
+\item 
+void \hyperlink{classupperNode_ab8cb550c4e8645bf27789f01d53a6b89}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classupperNode_a76620cf64e0b01eb1a89d10b7cc7b5d9}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función conversión a mayúsculas. 
+
+Este nodo se encarga de tomar una cadena de texto y pasar todos los carácteres que la forman a mayúsculas.
+
+Tras su ejecución el nodo toma como valor interno la cadena de texto resultante. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classupperNode_adf506d723bdebd69295a636535373a52}{\index{upper\-Node@{upper\-Node}!upper\-Node@{upper\-Node}}
+\index{upper\-Node@{upper\-Node}!upperNode@{upper\-Node}}
+\subsubsection[{upper\-Node}]{\setlength{\rightskip}{0pt plus 5cm}upper\-Node\-::upper\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{cad}
+\end{DoxyParamCaption}
+)}}\label{classupperNode_adf506d723bdebd69295a636535373a52}
+Constructor de principal.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cad} & Cadena de texto que será transforamda a mayúsculas. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classupperNode_a76620cf64e0b01eb1a89d10b7cc7b5d9}{\index{upper\-Node@{upper\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!upperNode@{upper\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ upper\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classupperNode_a76620cf64e0b01eb1a89d10b7cc7b5d9}
+Devuelve un nodo upper como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método upper. 
+\end{DoxyReturn}
+\hypertarget{classupperNode_ab8cb550c4e8645bf27789f01d53a6b89}{\index{upper\-Node@{upper\-Node}!run@{run}}
+\index{run@{run}!upperNode@{upper\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void upper\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classupperNode_ab8cb550c4e8645bf27789f01d53a6b89}
+Ejecución del nodo. Se encarga de transformar la cadena de texto en mayúsculas. Toma como valor la cadena resultado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

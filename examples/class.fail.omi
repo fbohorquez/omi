@@ -1,0 +1,19 @@
+class pClass {
+   private attr = 0;
+   ~ pClass (n) {
+      this->attr = n;
+   }
+   ~ meth () {
+      << "Soy método padre (" << n << ")";
+   }
+}
+
+class cClass extends pClass {
+   ~ meth () {
+      << "Soy método hijo (" << n << ")";
+      parent->meth();
+
+   }
+}
+obj = new cClass(10);
+obj->meth();

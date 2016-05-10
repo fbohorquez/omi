@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="20cm" height="14cm" viewBox="547 159 400 267" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="548" y="180" width="398" height="245"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="548" y="180" width="398" height="245"/>
+    <rect style="fill: #ffffff" x="548" y="160" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="548" y="160" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="550" y="175">continue </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="628.15" y="222.5">
+      <tspan x="628.15" y="222.5">Interpretar</tspan>
+      <tspan x="628.15" y="238.5">sentencia</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="559" y1="226.6" x2="697.3" y2="226.6"/>
+  <g>
+    <ellipse style="fill: #ffffff" cx="852.65" cy="302.55" rx="85.65" ry="28.55"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="852.65" cy="302.55" rx="85.65" ry="28.55"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="852.65" y="306.45">
+      <tspan x="852.65" y="306.45">Sentencia continue</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="852.65,274 852.65,226.6 704.005,226.6 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="716.653,221.6 700.653,226.6 716.653,231.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="774.975" y="223.6">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="672.425" cy="384" rx="55.425" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="672.425" cy="384" rx="55.425" ry="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="672.425" y="387.9">
+      <tspan x="672.425" y="387.9">Expresión</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="852.65,331.1 852.65,343.55 672.425,343.55 672.425,357.295 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="667.425,344.647 672.425,360.647 677.425,344.647 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="762.537" y="340.55">&lt;&lt;include&gt;&gt;</text>
+  </g>
+</svg>

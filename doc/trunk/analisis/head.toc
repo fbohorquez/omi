@@ -1,0 +1,208 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Modelo conceptual}{12}{section.1}
+\contentsline {subsection}{\numberline {1.1}Int\IeC {\'e}rprete}{14}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Nodos ejecutables}{15}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Tipos de datos}{16}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Sentencias de control de flujo}{17}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Sentencia}{17}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Sentencia vac\IeC {\'\i }a}{17}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}include}{18}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}exit}{18}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}goto}{18}{subsubsection.1.4.5}
+\contentsline {subsubsection}{\numberline {1.4.6}if}{18}{subsubsection.1.4.6}
+\contentsline {subsubsection}{\numberline {1.4.7}switch}{19}{subsubsection.1.4.7}
+\contentsline {subsubsection}{\numberline {1.4.8}while}{19}{subsubsection.1.4.8}
+\contentsline {subsubsection}{\numberline {1.4.9}do...while}{19}{subsubsection.1.4.9}
+\contentsline {subsubsection}{\numberline {1.4.10}for}{19}{subsubsection.1.4.10}
+\contentsline {subsubsection}{\numberline {1.4.11}foreach}{20}{subsubsection.1.4.11}
+\contentsline {subsubsection}{\numberline {1.4.12}iloop}{20}{subsubsection.1.4.12}
+\contentsline {subsubsection}{\numberline {1.4.13}continue}{20}{subsubsection.1.4.13}
+\contentsline {subsubsection}{\numberline {1.4.14}break}{20}{subsubsection.1.4.14}
+\contentsline {subsubsection}{\numberline {1.4.15}try}{21}{subsubsection.1.4.15}
+\contentsline {subsubsection}{\numberline {1.4.16}throw}{21}{subsubsection.1.4.16}
+\contentsline {subsubsection}{\numberline {1.4.17}with}{21}{subsubsection.1.4.17}
+\contentsline {subsection}{\numberline {1.5}Definiciones}{22}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}Variables}{22}{subsubsection.1.5.1}
+\contentsline {subsubsection}{\numberline {1.5.2}Funciones}{23}{subsubsection.1.5.2}
+\contentsline {subsubsection}{\numberline {1.5.3}Clases}{23}{subsubsection.1.5.3}
+\contentsline {subsubsection}{\numberline {1.5.4}Objetos}{24}{subsubsection.1.5.4}
+\contentsline {subsubsection}{\numberline {1.5.5}Listas}{24}{subsubsection.1.5.5}
+\contentsline {subsubsection}{\numberline {1.5.6}Pares clave/valor}{24}{subsubsection.1.5.6}
+\contentsline {subsubsection}{\numberline {1.5.7}Etiquetas}{25}{subsubsection.1.5.7}
+\contentsline {subsubsection}{\numberline {1.5.8}Definiciones globales}{25}{subsubsection.1.5.8}
+\contentsline {subsubsection}{\numberline {1.5.9}Generadores}{25}{subsubsection.1.5.9}
+\contentsline {subsection}{\numberline {1.6}Asignaciones}{26}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Asignaci\IeC {\'o}n}{26}{subsubsection.1.6.1}
+\contentsline {subsubsection}{\numberline {1.6.2}Asignaci\IeC {\'o}n de referencia}{26}{subsubsection.1.6.2}
+\contentsline {subsection}{\numberline {1.7}Operadores aritm\IeC {\'e}ticos}{27}{subsection.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Suma}{27}{subsubsection.1.7.1}
+\contentsline {subsubsection}{\numberline {1.7.2}Diferencia}{27}{subsubsection.1.7.2}
+\contentsline {subsubsection}{\numberline {1.7.3}Producto}{28}{subsubsection.1.7.3}
+\contentsline {subsubsection}{\numberline {1.7.4}Divisi\IeC {\'o}n}{28}{subsubsection.1.7.4}
+\contentsline {subsubsection}{\numberline {1.7.5}Potencia}{28}{subsubsection.1.7.5}
+\contentsline {subsubsection}{\numberline {1.7.6}M\IeC {\'o}dulo}{29}{subsubsection.1.7.6}
+\contentsline {subsubsection}{\numberline {1.7.7}Tama\IeC {\~n}o}{29}{subsubsection.1.7.7}
+\contentsline {subsubsection}{\numberline {1.7.8}Incremento y asignaci\IeC {\'o}n}{29}{subsubsection.1.7.8}
+\contentsline {subsubsection}{\numberline {1.7.9}Asignaci\IeC {\'o}n e incremento}{30}{subsubsection.1.7.9}
+\contentsline {subsubsection}{\numberline {1.7.10}Decremento y asignaci\IeC {\'o}n}{30}{subsubsection.1.7.10}
+\contentsline {subsubsection}{\numberline {1.7.11}Asignaci\IeC {\'o}n y decremento}{31}{subsubsection.1.7.11}
+\contentsline {subsection}{\numberline {1.8}Operadores l\IeC {\'o}gicos}{32}{subsection.1.8}
+\contentsline {subsubsection}{\numberline {1.8.1}Or}{32}{subsubsection.1.8.1}
+\contentsline {subsubsection}{\numberline {1.8.2}And}{32}{subsubsection.1.8.2}
+\contentsline {subsubsection}{\numberline {1.8.3}Negaci\IeC {\'o}n}{33}{subsubsection.1.8.3}
+\contentsline {subsubsection}{\numberline {1.8.4}Igual que}{33}{subsubsection.1.8.4}
+\contentsline {subsubsection}{\numberline {1.8.5}Distinto que}{33}{subsubsection.1.8.5}
+\contentsline {subsubsection}{\numberline {1.8.6}Menor que}{34}{subsubsection.1.8.6}
+\contentsline {subsubsection}{\numberline {1.8.7}Menor o igual que}{34}{subsubsection.1.8.7}
+\contentsline {subsubsection}{\numberline {1.8.8}Mayor que}{34}{subsubsection.1.8.8}
+\contentsline {subsubsection}{\numberline {1.8.9}Mayor o igual que}{35}{subsubsection.1.8.9}
+\contentsline {subsubsection}{\numberline {1.8.10}Id\IeC {\'e}ntico a}{35}{subsubsection.1.8.10}
+\contentsline {subsubsection}{\numberline {1.8.11}No id\IeC {\'e}ntico a}{35}{subsubsection.1.8.11}
+\contentsline {subsubsection}{\numberline {1.8.12}Es nulo}{36}{subsubsection.1.8.12}
+\contentsline {subsubsection}{\numberline {1.8.13}Vac\IeC {\'\i }o}{36}{subsubsection.1.8.13}
+\contentsline {subsection}{\numberline {1.9}Operadores sobre cadenas}{37}{subsection.1.9}
+\contentsline {subsubsection}{\numberline {1.9.1}Concatenaci\IeC {\'o}n}{37}{subsubsection.1.9.1}
+\contentsline {subsubsection}{\numberline {1.9.2}explode}{37}{subsubsection.1.9.2}
+\contentsline {subsubsection}{\numberline {1.9.3}implode}{38}{subsubsection.1.9.3}
+\contentsline {subsubsection}{\numberline {1.9.4}sprintf}{38}{subsubsection.1.9.4}
+\contentsline {subsubsection}{\numberline {1.9.5}Buscar subcadena}{38}{subsubsection.1.9.5}
+\contentsline {subsubsection}{\numberline {1.9.6}Buscar y remplazar}{39}{subsubsection.1.9.6}
+\contentsline {subsubsection}{\numberline {1.9.7}Remplazar subcadena}{39}{subsubsection.1.9.7}
+\contentsline {subsubsection}{\numberline {1.9.8}Convertir a may\IeC {\'u}sculas}{39}{subsubsection.1.9.8}
+\contentsline {subsubsection}{\numberline {1.9.9}Convertir a min\IeC {\'u}sculas}{40}{subsubsection.1.9.9}
+\contentsline {subsection}{\numberline {1.10}Operadores sobre array}{41}{subsection.1.10}
+\contentsline {subsubsection}{\numberline {1.10.1}Dividir en fragmentos}{41}{subsubsection.1.10.1}
+\contentsline {subsubsection}{\numberline {1.10.2}Reducir mediante funci\IeC {\'o}n}{41}{subsubsection.1.10.2}
+\contentsline {subsubsection}{\numberline {1.10.3}Obtener \IeC {\'u}ltimo}{42}{subsubsection.1.10.3}
+\contentsline {subsubsection}{\numberline {1.10.4}Obtener primero}{42}{subsubsection.1.10.4}
+\contentsline {subsubsection}{\numberline {1.10.5}Insertar en posici\IeC {\'o}n}{42}{subsubsection.1.10.5}
+\contentsline {subsubsection}{\numberline {1.10.6}Eliminar posici\IeC {\'o}n}{42}{subsubsection.1.10.6}
+\contentsline {subsubsection}{\numberline {1.10.7}Insertar al inicio}{43}{subsubsection.1.10.7}
+\contentsline {subsubsection}{\numberline {1.10.8}Insertar al final}{43}{subsubsection.1.10.8}
+\contentsline {subsubsection}{\numberline {1.10.9}Eliminar del inicio}{43}{subsubsection.1.10.9}
+\contentsline {subsubsection}{\numberline {1.10.10}Eliminar del final}{43}{subsubsection.1.10.10}
+\contentsline {subsection}{\numberline {1.11}Operadores sobre expresiones regulares}{44}{subsection.1.11}
+\contentsline {subsubsection}{\numberline {1.11.1}Crear expresi\IeC {\'o}n regular}{44}{subsubsection.1.11.1}
+\contentsline {subsubsection}{\numberline {1.11.2}match}{44}{subsubsection.1.11.2}
+\contentsline {subsubsection}{\numberline {1.11.3}search}{45}{subsubsection.1.11.3}
+\contentsline {subsection}{\numberline {1.12}Conversi\IeC {\'o}n de tipos}{46}{subsection.1.12}
+\contentsline {subsubsection}{\numberline {1.12.1}Conversi\IeC {\'o}n a l\IeC {\'o}gico}{46}{subsubsection.1.12.1}
+\contentsline {subsubsection}{\numberline {1.12.2}Conversi\IeC {\'o}n a entero}{46}{subsubsection.1.12.2}
+\contentsline {subsubsection}{\numberline {1.12.3}Conversi\IeC {\'o}n a flotante}{46}{subsubsection.1.12.3}
+\contentsline {subsubsection}{\numberline {1.12.4}Conversi\IeC {\'o}n a cadena}{47}{subsubsection.1.12.4}
+\contentsline {subsection}{\numberline {1.13}Operadores de acceso}{48}{subsection.1.13}
+\contentsline {subsubsection}{\numberline {1.13.1}Acceso a clave}{48}{subsubsection.1.13.1}
+\contentsline {subsubsection}{\numberline {1.13.2}Acceso a funci\IeC {\'o}n}{48}{subsubsection.1.13.2}
+\contentsline {subsubsection}{\numberline {1.13.3}Acceso a variable de entorno}{49}{subsubsection.1.13.3}
+\contentsline {subsection}{\numberline {1.14}Operadores condicionales}{50}{subsection.1.14}
+\contentsline {subsubsection}{\numberline {1.14.1}Ternario}{50}{subsubsection.1.14.1}
+\contentsline {subsubsection}{\numberline {1.14.2}Fusi\IeC {\'o}n de nulos}{50}{subsubsection.1.14.2}
+\contentsline {subsection}{\numberline {1.15}Operadores de entrada/salida}{51}{subsection.1.15}
+\contentsline {subsubsection}{\numberline {1.15.1}Salida est\IeC {\'a}ndar}{51}{subsubsection.1.15.1}
+\contentsline {subsubsection}{\numberline {1.15.2}Entrada est\IeC {\'a}ndar}{51}{subsubsection.1.15.2}
+\contentsline {subsection}{\numberline {1.16}Operadores informativos}{52}{subsection.1.16}
+\contentsline {subsubsection}{\numberline {1.16.1}Tipo de}{52}{subsubsection.1.16.1}
+\contentsline {subsubsection}{\numberline {1.16.2}Tama\IeC {\~n}o de}{52}{subsubsection.1.16.2}
+\contentsline {subsubsection}{\numberline {1.16.3}Informaci\IeC {\'o}n sobre}{52}{subsubsection.1.16.3}
+\contentsline {subsection}{\numberline {1.17}Procesos}{53}{subsection.1.17}
+\contentsline {subsubsection}{\numberline {1.17.1}Crear proceso}{53}{subsubsection.1.17.1}
+\contentsline {subsubsection}{\numberline {1.17.2}Esperar finalizaci\IeC {\'o}n}{53}{subsubsection.1.17.2}
+\contentsline {subsubsection}{\numberline {1.17.3}Obtener identificador }{53}{subsubsection.1.17.3}
+\contentsline {subsubsection}{\numberline {1.17.4}Obtener identificador padre}{53}{subsubsection.1.17.4}
+\contentsline {subsubsection}{\numberline {1.17.5}Ejecutar como proceso}{53}{subsubsection.1.17.5}
+\contentsline {subsubsection}{\numberline {1.17.6}Salir de proceso}{54}{subsubsection.1.17.6}
+\contentsline {subsubsection}{\numberline {1.17.7}Se\IeC {\~n}al a proceso}{54}{subsubsection.1.17.7}
+\contentsline {subsubsection}{\numberline {1.17.8}Manejador de se\IeC {\~n}ales}{54}{subsubsection.1.17.8}
+\contentsline {subsubsection}{\numberline {1.17.9}Evaluar cadena}{54}{subsubsection.1.17.9}
+\contentsline {subsubsection}{\numberline {1.17.10}Ejecutar comando del sistema}{54}{subsubsection.1.17.10}
+\contentsline {subsection}{\numberline {1.18}Ficheros}{55}{subsection.1.18}
+\contentsline {subsubsection}{\numberline {1.18.1}Obtener un flujo a fichero}{55}{subsubsection.1.18.1}
+\contentsline {subsubsection}{\numberline {1.18.2}Escribir en flujo a fichero}{55}{subsubsection.1.18.2}
+\contentsline {subsubsection}{\numberline {1.18.3}Leer de flujo a fichero}{55}{subsubsection.1.18.3}
+\contentsline {subsubsection}{\numberline {1.18.4}Cambiar posici\IeC {\'o}n en fichero}{55}{subsubsection.1.18.4}
+\contentsline {subsubsection}{\numberline {1.18.5}Obtener posici\IeC {\'o}n en flujo a fichero}{56}{subsubsection.1.18.5}
+\contentsline {subsubsection}{\numberline {1.18.6}Cerrar flujo a fichero}{56}{subsubsection.1.18.6}
+\contentsline {subsubsection}{\numberline {1.18.7}Leer fichero}{56}{subsubsection.1.18.7}
+\contentsline {subsubsection}{\numberline {1.18.8}Escribir en fichero}{56}{subsubsection.1.18.8}
+\contentsline {subsubsection}{\numberline {1.18.9}Escribir al final de fichero}{56}{subsubsection.1.18.9}
+\contentsline {subsection}{\numberline {1.19}Fechas}{57}{subsection.1.19}
+\contentsline {subsubsection}{\numberline {1.19.1}Tiempo Unix}{57}{subsubsection.1.19.1}
+\contentsline {subsubsection}{\numberline {1.19.2}Fecha y hora con formato}{57}{subsubsection.1.19.2}
+\contentsline {subsubsection}{\numberline {1.19.3}sleep}{57}{subsubsection.1.19.3}
+\contentsline {subsection}{\numberline {1.20}Errores}{57}{subsection.1.20}
+\contentsline {subsection}{\numberline {1.21}Extensiones}{58}{subsection.1.21}
+\contentsline {subsubsection}{\numberline {1.21.1}Biblioteca GNU de internacionalizaci\IeC {\'o}n (gettext)}{58}{subsubsection.1.21.1}
+\contentsline {paragraph}{\numberline {1.21.1.1}gettext}{59}{paragraph.1.21.1.1}
+\contentsline {paragraph}{\numberline {1.21.1.2}setlocale}{59}{paragraph.1.21.1.2}
+\contentsline {paragraph}{\numberline {1.21.1.3}dgettext}{59}{paragraph.1.21.1.3}
+\contentsline {paragraph}{\numberline {1.21.1.4}bindtextdomain}{59}{paragraph.1.21.1.4}
+\contentsline {paragraph}{\numberline {1.21.1.5}textdomain}{59}{paragraph.1.21.1.5}
+\contentsline {subsection}{\numberline {1.22}rTree}{60}{subsection.1.22}
+\contentsline {section}{\numberline {2}Modelo de casos de uso}{60}{section.2}
+\contentsline {subsection}{\numberline {2.1}Actores}{61}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Int\IeC {\'e}rprete}{61}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Interpretar entrada est\IeC {\'a}ndar}{61}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Interpretar fichero}{62}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Interpretar l\IeC {\'\i }nea}{63}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Interpretar}{63}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Ver ayuda}{64}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Cargar extensi\IeC {\'o}n}{64}{subsubsection.2.2.6}
+\contentsline {subsubsection}{\numberline {2.2.7}Listar extensiones}{65}{subsubsection.2.2.7}
+\contentsline {subsubsection}{\numberline {2.2.8}Iniciar interpretaci\IeC {\'o}n red}{65}{subsubsection.2.2.8}
+\contentsline {subsubsection}{\numberline {2.2.9}Obtener pasos interpretaci\IeC {\'o}n red}{66}{subsubsection.2.2.9}
+\contentsline {subsection}{\numberline {2.3}runTree}{67}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Enviar c\IeC {\'o}digo fuente}{67}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Siguiente paso}{68}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Siguiente sentencia}{69}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Activar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{69}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Desactivar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{70}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Limpiar salida}{70}{subsubsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.7}Ver informaci\IeC {\'o}n de nodo}{71}{subsubsection.2.3.7}
+\contentsline {subsubsection}{\numberline {2.3.8}Ver contenido de la tabla de s\IeC {\'\i }mbolos}{71}{subsubsection.2.3.8}
+\contentsline {subsubsection}{\numberline {2.3.9}Guardar c\IeC {\'o}digo fuente}{72}{subsubsection.2.3.9}
+\contentsline {subsubsection}{\numberline {2.3.10}Abrir c\IeC {\'o}digo fuente}{72}{subsubsection.2.3.10}
+\contentsline {section}{\numberline {3}Visi\IeC {\'o}n general}{73}{section.3}
+\contentsline {section}{\numberline {4}Diagramas de secuencia del sistema}{73}{section.4}
+\contentsline {subsection}{\numberline {4.1}Int\IeC {\'e}rprete}{73}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Interpretar entrada est\IeC {\'a}ndar}{73}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Interpretar l\IeC {\'\i }nea}{74}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Interpretar fichero}{74}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Ver ayuda}{75}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}Cargar extensi\IeC {\'o}n}{75}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Listar extensiones}{76}{subsubsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.7}Iniciar interpretaci\IeC {\'o}n red}{76}{subsubsection.4.1.7}
+\contentsline {subsubsection}{\numberline {4.1.8}Obtener pasos interpretaci\IeC {\'o}n red}{77}{subsubsection.4.1.8}
+\contentsline {subsection}{\numberline {4.2}runTree}{77}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Enviar c\IeC {\'o}digo fuente}{77}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Siguiente paso}{78}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Siguiente sentencia}{78}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Activar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{79}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Desctivar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{79}{subsubsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.6}Limpiar salida}{80}{subsubsection.4.2.6}
+\contentsline {subsubsection}{\numberline {4.2.7}Ver infomaci\IeC {\'o}n de nodo}{80}{subsubsection.4.2.7}
+\contentsline {subsubsection}{\numberline {4.2.8}Ver contenido tabla de s\IeC {\'\i }mbolo}{81}{subsubsection.4.2.8}
+\contentsline {subsubsection}{\numberline {4.2.9}Guardar c\IeC {\'o}digo fuente}{81}{subsubsection.4.2.9}
+\contentsline {subsubsection}{\numberline {4.2.10}Abrir c\IeC {\'o}digo fuente}{82}{subsubsection.4.2.10}
+\contentsline {section}{\numberline {5}Contratos de operaciones del sistema}{82}{section.5}
+\contentsline {subsection}{\numberline {5.1}Int\IeC {\'e}rprete}{82}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Operaci\IeC {\'o}n inicio\_interprete\_stdin}{82}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Operaci\IeC {\'o}n inicio\_interprete\_linea}{83}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Operaci\IeC {\'o}n interpretar\_cadena}{84}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Operaci\IeC {\'o}n interpretar\_fichero}{86}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Operaci\IeC {\'o}n iniciar\_interpretacion\_red}{87}{subsubsection.5.1.5}
+\contentsline {subsubsection}{\numberline {5.1.6}Operaci\IeC {\'o}n obtener\_paso\_interpretacion\_red}{89}{subsubsection.5.1.6}
+\contentsline {subsection}{\numberline {5.2}runTree}{90}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Operaci\IeC {\'o}n enviar\_codigo\_fuente}{90}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Operaci\IeC {\'o}n siguiente\_paso}{91}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Operaci\IeC {\'o}n siguiente\_sentencia}{91}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Operaci\IeC {\'o}n activar\_ejecucion\_automatica}{92}{subsubsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.5}Operaci\IeC {\'o}n desactivar\_ejecucion\_automatica}{93}{subsubsection.5.2.5}
+\contentsline {subsubsection}{\numberline {5.2.6}Operaci\IeC {\'o}n limpiar\_salida}{93}{subsubsection.5.2.6}
+\contentsline {subsubsection}{\numberline {5.2.7}Operaci\IeC {\'o}n ver\_informacion\_nodo}{94}{subsubsection.5.2.7}
+\contentsline {subsubsection}{\numberline {5.2.8}Operaci\IeC {\'o}n ver\_tabla\_simbolos}{94}{subsubsection.5.2.8}
+\contentsline {section}{\numberline {6}Modelo de interfaz de usuario}{95}{section.6}
+\contentsline {subsection}{\numberline {6.1}Int\IeC {\'e}rprete}{95}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}runTree}{96}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Wireframe}{96}{subsubsection.6.2.1}
+\contentsline {subsection}{\numberline {6.3}Sitio web}{96}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Wireframe}{98}{subsubsection.6.3.1}

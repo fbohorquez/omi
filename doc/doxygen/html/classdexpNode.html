@@ -1,0 +1,458 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="classdexpNode-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase dexpNode</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Nodo expresión de tipo definido.  
+ <a href="classdexpNode.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="expNode_8h_source.html">expNode.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de dexpNode</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classdexpNode.png" usemap="#dexpNode_map" alt=""/>
+  <map id="dexpNode_map" name="dexpNode_map">
+<area href="classexpNode.html" title="Nodo de expresión. " alt="expNode" shape="rect" coords="688,168,831,192"/>
+<area href="classobjectTypeNode.html" title="Nodo tipo de objeto. " alt="objectTypeNode" shape="rect" coords="688,112,831,136"/>
+<area href="classprintableNode.html" title="Nodos imprimible. " alt="printableNode" shape="rect" coords="688,56,831,80"/>
+<area href="classrunNode.html" title="Nodo ejecutable. " alt="runNode" shape="rect" coords="688,0,831,24"/>
+<area href="classarithNode.html" title="Nodos aritméticos. " alt="arithNode" shape="rect" coords="0,280,143,304"/>
+<area href="classarrayNode.html" title="Nodo array. " alt="arrayNode" shape="rect" coords="306,280,449,304"/>
+<area href="classlogicNode.html" title="Nodos lógicos. " alt="logicNode" shape="rect" coords="612,280,755,304"/>
+<area href="classnullNode.html" title="Nodo nulo. " alt="nullNode" shape="rect" coords="765,280,908,304"/>
+<area href="classregexpNode.html" title="Nodo expresión regular. " alt="regexpNode" shape="rect" coords="918,280,1061,304"/>
+<area href="classstringNode.html" title="Nodos cadenas de texto. " alt="stringNode" shape="rect" coords="1071,280,1214,304"/>
+<area href="classaddNode.html" title="Nodo operador suma. " alt="addNode" shape="rect" coords="153,336,296,360"/>
+<area href="classasigdecNode.html" title="Nodo operador asignación y decremento. " alt="asigdecNode" shape="rect" coords="153,392,296,416"/>
+<area href="classasigincNode.html" title="Nodo operador asignación e incremento. " alt="asigincNode" shape="rect" coords="153,448,296,472"/>
+<area href="classdecasigNode.html" title="Nodo operador decremento y asignación. " alt="decasigNode" shape="rect" coords="153,504,296,528"/>
+<area href="classdivNode.html" title="Nodo operador división. " alt="divNode" shape="rect" coords="153,560,296,584"/>
+<area href="classfindNode.html" title="Nodo función búsqueda de subcadena. " alt="findNode" shape="rect" coords="153,616,296,640"/>
+<area href="classfloatconvNode.html" title="Nodo de conversión a flotante. " alt="floatconvNode" shape="rect" coords="153,672,296,696"/>
+<area href="classforkNode.html" title="Nodo función fork. " alt="forkNode" shape="rect" coords="153,728,296,752"/>
+<area href="classfputNode.html" title="Node función escribir en descriptor de fichero . " alt="fputNode" shape="rect" coords="153,784,296,808"/>
+<area href="classftellNode.html" title="Nodo función obtener puntero de descriptor de fichero. " alt="ftellNode" shape="rect" coords="153,840,296,864"/>
+<area href="classgetpidNode.html" title="Nodo función obtener identificador de proceso. " alt="getpidNode" shape="rect" coords="153,896,296,920"/>
+<area href="classgetppidNode.html" title="Nodo función obtener identificador de proceso padre. " alt="getppidNode" shape="rect" coords="153,952,296,976"/>
+<area href="classincasigNode.html" title="Nodo operador incremento y asignación. " alt="incasigNode" shape="rect" coords="153,1008,296,1032"/>
+<area href="classintconvNode.html" title="Nodo de conversión a entero. " alt="intconvNode" shape="rect" coords="153,1064,296,1088"/>
+<area href="classmodNode.html" title="Nodo operador módulo. " alt="modNode" shape="rect" coords="153,1120,296,1144"/>
+<area href="classnumNode.html" title="Nodo numérico. " alt="numNode" shape="rect" coords="153,1176,296,1200"/>
+<area href="classpowNode.html" title="Nodo operador potencia. " alt="powNode" shape="rect" coords="153,1232,296,1256"/>
+<area href="classprodNode.html" title="Nodo operador producto. " alt="prodNode" shape="rect" coords="153,1288,296,1312"/>
+<area href="classsizeNode.html" title="Nodo operador de tamaño. " alt="sizeNode" shape="rect" coords="153,1344,296,1368"/>
+<area href="classsizeOfNode.html" title="Nodo sentencia espacio de memoria. " alt="sizeOfNode" shape="rect" coords="153,1400,296,1424"/>
+<area href="classsqrtNode.html" title="Nodo operador raíz cuadrada. " alt="sqrtNode" shape="rect" coords="153,1456,296,1480"/>
+<area href="classsubNode.html" title="Nodo operador diferencia. " alt="subNode" shape="rect" coords="153,1512,296,1536"/>
+<area href="classtimeNode.html" title="Nodo función obtener marca de tiempo. " alt="timeNode" shape="rect" coords="153,1568,296,1592"/>
+<area href="classwaitNode.html" title="Nodo función espera de proceso . " alt="waitNode" shape="rect" coords="153,1624,296,1648"/>
+<area href="classarrayConstNode.html" title="Nodo array constante. " alt="arrayConstNode" shape="rect" coords="459,336,602,360"/>
+<area href="classforeachGeneratorNode.html" title="Nodo para la lista por compresión. " alt="foreachGeneratorNode" shape="rect" coords="459,392,602,416"/>
+<area href="classobjectNode.html" title="Nodo objeto. " alt="objectNode" shape="rect" coords="459,448,602,472"/>
+<area href="classboolconvNode.html" title="Nodo de conversión a booleano. " alt="boolconvNode" shape="rect" coords="765,336,908,360"/>
+<area href="classboolNode.html" title="Nodo booleano. " alt="boolNode" shape="rect" coords="765,392,908,416"/>
+<area href="classemptyNode.html" title="Node operador elemento vacío. " alt="emptyNode" shape="rect" coords="765,448,908,472"/>
+<area href="classeqNode.html" title="Nodo operador igual que. " alt="eqNode" shape="rect" coords="765,504,908,528"/>
+<area href="classexitProcessNode.html" title="Nodo función finalización de proceso. " alt="exitProcessNode" shape="rect" coords="765,560,908,584"/>
+<area href="classfcloseNode.html" title="Nodo función que cierra un descriptor de fichero. " alt="fcloseNode" shape="rect" coords="765,616,908,640"/>
+<area href="classfileNode.html" title="Nodo fichero . " alt="fileNode" shape="rect" coords="765,672,908,696"/>
+<area href="classfseekNode.html" title="Nodo función cambiar puntero de descriptor de fichero. " alt="fseekNode" shape="rect" coords="765,728,908,752"/>
+<area href="classgeqNode.html" title="Nodo operador mayor o igual que. " alt="geqNode" shape="rect" coords="765,784,908,808"/>
+<area href="classgthNode.html" title="Nodo operador mayor que. " alt="gthNode" shape="rect" coords="765,840,908,864"/>
+<area href="classidenNode.html" title="Nodo operador identico. " alt="idenNode" shape="rect" coords="765,896,908,920"/>
+<area href="classisArrayNode.html" title="Nodo operador comprobación de array. " alt="isArrayNode" shape="rect" coords="765,952,908,976"/>
+<area href="classisBoolNode.html" title="Nodo operador comprobación de booleano. " alt="isBoolNode" shape="rect" coords="765,1008,908,1032"/>
+<area href="classisNullNode.html" title="Nodo operador de comprobación de nulo. " alt="isNullNode" shape="rect" coords="765,1064,908,1088"/>
+<area href="classisNumNode.html" title="Nodo operador comprobación de numérico. " alt="isNumNode" shape="rect" coords="765,1120,908,1144"/>
+<area href="classisObjectNode.html" title="Nodo operador comprobación de objeto. " alt="isObjectNode" shape="rect" coords="765,1176,908,1200"/>
+<area href="classisStringNode.html" title="Nodo operador comprobación de cadena de caracteres. " alt="isStringNode" shape="rect" coords="765,1232,908,1256"/>
+<area href="classleqNode.html" title="Nodo operador menor o igual que. " alt="leqNode" shape="rect" coords="765,1288,908,1312"/>
+<area href="classloadNode.html" title="Nodo carga librería dinámica. " alt="loadNode" shape="rect" coords="765,1344,908,1368"/>
+<area href="classlthNode.html" title="Nodo operador menor que. " alt="lthNode" shape="rect" coords="765,1400,908,1424"/>
+<area href="classmatchNode.html" title="Nodo función comprobación cadena sobre expresión regular. " alt="matchNode" shape="rect" coords="765,1456,908,1480"/>
+<area href="classneqNode.html" title="Nodo operador distinto. " alt="neqNode" shape="rect" coords="765,1512,908,1536"/>
+<area href="classnidenNode.html" title="Nodo operador no identico. " alt="nidenNode" shape="rect" coords="765,1568,908,1592"/>
+<area href="classnotNode.html" title="Nodo operador NOT. " alt="notNode" shape="rect" coords="765,1624,908,1648"/>
+<area href="classprocessNode.html" title="Nodo llamada concurrente. " alt="processNode" shape="rect" coords="765,1680,908,1704"/>
+<area href="classsignalhandlerNode.html" title="Nodo función manejadora de señales. " alt="signalhandlerNode" shape="rect" coords="765,1736,908,1760"/>
+<area href="classsignalNode.html" title="Node función envío de señal a proceso . " alt="signalNode" shape="rect" coords="765,1792,908,1816"/>
+<area href="classregexpConstNode.html" title="Nodo expresión regular constante. " alt="regexpConstNode" shape="rect" coords="918,336,1061,360"/>
+<area href="classcatNode.html" title="Nodo función concatenación. " alt="catNode" shape="rect" coords="1224,336,1367,360"/>
+<area href="classdateNode.html" title="Nodo función fecha. " alt="dateNode" shape="rect" coords="1224,392,1367,416"/>
+<area href="classexecNode.html" title="Node operador ejecución de comando. " alt="execNode" shape="rect" coords="1224,448,1367,472"/>
+<area href="classfappendNode.html" title="Nodo función añadir a fichero . " alt="fappendNode" shape="rect" coords="1224,504,1367,528"/>
+<area href="classfgetNode.html" title="Nodo función leer de descriptor de fichero. " alt="fgetNode" shape="rect" coords="1224,560,1367,584"/>
+<area href="classfreadNode.html" title="Node función leer fichero. " alt="freadNode" shape="rect" coords="1224,616,1367,640"/>
+<area href="classfwriteNode.html" title="Node función escribir fichero . " alt="fwriteNode" shape="rect" coords="1224,672,1367,696"/>
+<area href="classgetclassNode.html" title="Nodo operador obtener clase. " alt="getclassNode" shape="rect" coords="1224,728,1367,752"/>
+<area href="classgetEnvNode.html" title="Node operador acceso a variable de entorno. " alt="getEnvNode" shape="rect" coords="1224,784,1367,808"/>
+<area href="classimplodeNode.html" title="Nodo unión de elementos de array. " alt="implodeNode" shape="rect" coords="1224,840,1367,864"/>
+<area href="classinputNode.html" title="Nodo de entrada de usuario. " alt="inputNode" shape="rect" coords="1224,896,1367,920"/>
+<area href="classlowerNode.html" title="Nodo función conversión minúsculas. " alt="lowerNode" shape="rect" coords="1224,952,1367,976"/>
+<area href="classreplaceNode.html" title="Nodo función de remplazo. " alt="replaceNode" shape="rect" coords="1224,1008,1367,1032"/>
+<area href="classsprintfNode.html" title="Nodo función cadena con formato. " alt="sprintfNode" shape="rect" coords="1224,1064,1367,1088"/>
+<area href="classstrconvNode.html" title="Nodo de conversión a cadena de caracteres. " alt="strconvNode" shape="rect" coords="1224,1120,1367,1144"/>
+<area href="classstrNode.html" title="Nodo cadena de caracteres. " alt="strNode" shape="rect" coords="1224,1176,1367,1200"/>
+<area href="classsubreplaceNode.html" title="Nodo función replazo de subcadena. " alt="subreplaceNode" shape="rect" coords="1224,1232,1367,1256"/>
+<area href="classupperNode.html" title="Nodo función conversión a mayúsculas. " alt="upperNode" shape="rect" coords="1224,1288,1367,1312"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a18781e07cc3390c04b6905249755ccc8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdexpNode.html#a18781e07cc3390c04b6905249755ccc8">boolvalue</a> () const </td></tr>
+<tr class="separator:a18781e07cc3390c04b6905249755ccc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d3bfed7e6ebd5e96ddcefaa230c3d2"><td class="memItemLeft" align="right" valign="top">virtual num&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdexpNode.html#ae2d3bfed7e6ebd5e96ddcefaa230c3d2">numvalue</a> () const </td></tr>
+<tr class="separator:ae2d3bfed7e6ebd5e96ddcefaa230c3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf74f4f848f7ec7c3c2ada1aa3bdc66d"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdexpNode.html#adf74f4f848f7ec7c3c2ada1aa3bdc66d">strvalue</a> () const </td></tr>
+<tr class="separator:adf74f4f848f7ec7c3c2ada1aa3bdc66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classexpNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classexpNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classexpNode.html">expNode</a></td></tr>
+<tr class="memitem:aedb96104889212bae315a6381f8e0219 inherit pub_methods_classexpNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpNode.html#aedb96104889212bae315a6381f8e0219">setNodeValue</a> (<a class="el" href="classrunNode.html">runNode</a> *node)</td></tr>
+<tr class="separator:aedb96104889212bae315a6381f8e0219 inherit pub_methods_classexpNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classobjectTypeNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classobjectTypeNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classobjectTypeNode.html">objectTypeNode</a></td></tr>
+<tr class="memitem:af504d6b0b6801db2b712f7dda3dd342f inherit pub_methods_classobjectTypeNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjectTypeNode.html#af504d6b0b6801db2b712f7dda3dd342f">objectTypeNode</a> ()</td></tr>
+<tr class="separator:af504d6b0b6801db2b712f7dda3dd342f inherit pub_methods_classobjectTypeNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c248660eed9ffdd132f075224b82544 inherit pub_methods_classobjectTypeNode"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjectTypeNode.html#a4c248660eed9ffdd132f075224b82544">getMethod</a> (<a class="el" href="classrunNode.html">runNode</a> *key)</td></tr>
+<tr class="separator:a4c248660eed9ffdd132f075224b82544 inherit pub_methods_classobjectTypeNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dbd87c8c646340d2e817c64d94afaf6 inherit pub_methods_classobjectTypeNode"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrefNode.html">refNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjectTypeNode.html#a6dbd87c8c646340d2e817c64d94afaf6">getMethodRef</a> (<a class="el" href="classrunNode.html">runNode</a> *key)</td></tr>
+<tr class="separator:a6dbd87c8c646340d2e817c64d94afaf6 inherit pub_methods_classobjectTypeNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d4efaea6b650ef72807de94d3baa37 inherit pub_methods_classobjectTypeNode"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjectTypeNode.html#a42d4efaea6b650ef72807de94d3baa37">getClass</a> ()</td></tr>
+<tr class="separator:a42d4efaea6b650ef72807de94d3baa37 inherit pub_methods_classobjectTypeNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc36ba9bb3fe82a12c9a50eea11ee94b inherit pub_methods_classobjectTypeNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjectTypeNode.html#adc36ba9bb3fe82a12c9a50eea11ee94b">setClass</a> (<a class="el" href="classrunNode.html">runNode</a> *c)</td></tr>
+<tr class="separator:adc36ba9bb3fe82a12c9a50eea11ee94b inherit pub_methods_classobjectTypeNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classprintableNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classprintableNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classprintableNode.html">printableNode</a></td></tr>
+<tr class="memitem:ae5835e7b9d1a8af621723798137e01f9 inherit pub_methods_classprintableNode"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprintableNode.html#ae5835e7b9d1a8af621723798137e01f9">print</a> () const =0</td></tr>
+<tr class="separator:ae5835e7b9d1a8af621723798137e01f9 inherit pub_methods_classprintableNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrunNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrunNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classrunNode.html">runNode</a></td></tr>
+<tr class="memitem:a39886db07c6112feb82a84ff0d28c29a inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a39886db07c6112feb82a84ff0d28c29a">runNode</a> (string str)</td></tr>
+<tr class="separator:a39886db07c6112feb82a84ff0d28c29a inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3bfbc4522d49085eab96f8129ba9d72 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ac3bfbc4522d49085eab96f8129ba9d72">runNode</a> ()</td></tr>
+<tr class="separator:ac3bfbc4522d49085eab96f8129ba9d72 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c10df8148829b08e04153c93d69eec inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a83c10df8148829b08e04153c93d69eec">run</a> ()=0</td></tr>
+<tr class="separator:a83c10df8148829b08e04153c93d69eec inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a07d831845eadea0d2d088dc106288 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ab4a07d831845eadea0d2d088dc106288">addRef</a> ()</td></tr>
+<tr class="separator:ab4a07d831845eadea0d2d088dc106288 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0761660753ceb2c98836614c526a45 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a8d0761660753ceb2c98836614c526a45">rmRef</a> ()</td></tr>
+<tr class="separator:a8d0761660753ceb2c98836614c526a45 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65c9a22e807dbe18f5c83c84d777d44 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ad65c9a22e807dbe18f5c83c84d777d44">is_print</a> () const </td></tr>
+<tr class="separator:ad65c9a22e807dbe18f5c83c84d777d44 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231638d0fc5b436c5e4a664fe7d5126a inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a231638d0fc5b436c5e4a664fe7d5126a">is_runlist</a> () const </td></tr>
+<tr class="separator:a231638d0fc5b436c5e4a664fe7d5126a inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fda5276a76f39ad12d316794a892b06 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a3fda5276a76f39ad12d316794a892b06">is_string</a> () const </td></tr>
+<tr class="separator:a3fda5276a76f39ad12d316794a892b06 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f789742e86bc7c897defe1073a26c65 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a7f789742e86bc7c897defe1073a26c65">getPtrString</a> ()</td></tr>
+<tr class="separator:a7f789742e86bc7c897defe1073a26c65 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classexpNode"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classexpNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos estáticos heredados desde <a class="el" href="classexpNode.html">expNode</a></td></tr>
+<tr class="memitem:aa3d0a7a138a2fc089232f9fadf33a629 inherit pub_static_methods_classexpNode"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpNode.html#aa3d0a7a138a2fc089232f9fadf33a629">clone</a> (<a class="el" href="classrunNode.html">runNode</a> *node)</td></tr>
+<tr class="separator:aa3d0a7a138a2fc089232f9fadf33a629 inherit pub_static_methods_classexpNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classrunNode"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classrunNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos estáticos heredados desde <a class="el" href="classrunNode.html">runNode</a></td></tr>
+<tr class="memitem:ab54d457f51ddd7254dc9e90e78c69f95 inherit pub_static_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ab54d457f51ddd7254dc9e90e78c69f95">compare</a> (<a class="el" href="classrunNode.html">runNode</a> *node1, <a class="el" href="classrunNode.html">runNode</a> *node2, int op=0)</td></tr>
+<tr class="separator:ab54d457f51ddd7254dc9e90e78c69f95 inherit pub_static_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Nodo expresión de tipo definido. </p>
+<p>Los nodos de expresión de tipo definido tienen un valor o conjunto de valores asociados. Estos valores son de un tipo concreto, conocido y definido.</p>
+<p>Toda expresión definida podrá realizar una conversión de su valor interno a los tipos booleano, numérico y cadena de caracteres.</p>
+<p>Estos nodos se dividen en dos grupos:</p>
+<ul>
+<li>Nodos tipos: Definen los tipos de datos básicos: booleanos, numéricos, cadenas, arrays ...</li>
+</ul>
+<p>-Nodos operadores definidos: Definen operaciones cuyo tipo de valor es conocido. Por ejemplo: la operación suma tiene un valor numérico asociado. la comparación de igualdad un valor booleano; </p>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a18781e07cc3390c04b6905249755ccc8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dexpNode::boolvalue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el valor booleano del nodo. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Booleano que representa el valor del nodo. </dd></dl>
+
+<p>Reimplementado en <a class="el" href="classregexpNode.html#a10a587695cb42fa6f9d867e05e26068f">regexpNode</a>, <a class="el" href="classarrayNode.html#af18a8d4f5e369713a01387bad022db72">arrayNode</a>, <a class="el" href="classstringNode.html#ae1fe6ea419679a0a0402beb47fabcea2">stringNode</a>, <a class="el" href="classarithNode.html#a7f3634eba193b245af5e3ba8081c017b">arithNode</a> y <a class="el" href="classlogicNode.html#a802078f6b9ec9f96e01c91ac1704099b">logicNode</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2d3bfed7e6ebd5e96ddcefaa230c3d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">num dexpNode::numvalue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el valor numérico del nodo. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Numérico que representa el valor del nodo. </dd></dl>
+
+<p>Reimplementado en <a class="el" href="classregexpNode.html#a6d6e4d51eaedec3def49747e4da3b03b">regexpNode</a>, <a class="el" href="classarrayNode.html#a8a862493dfcab500edd9acf4f4c55348">arrayNode</a>, <a class="el" href="classstringNode.html#ae66cab7ddc65acc8541d88baaebf47fb">stringNode</a>, <a class="el" href="classarithNode.html#a3914e65779e61750f1ffd528deabd120">arithNode</a> y <a class="el" href="classlogicNode.html#a8fbc68e3cd354745e0e34ab4027bb8cc">logicNode</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf74f4f848f7ec7c3c2ada1aa3bdc66d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string dexpNode::strvalue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el valor cadena de caracteres del nodo. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Cadena de caracteres que representa el valor del nodo. </dd></dl>
+
+<p>Reimplementado en <a class="el" href="classregexpNode.html#a223644545a3ec0258c6083fa8686a3cb">regexpNode</a>, <a class="el" href="classarrayNode.html#a3e5771d0cf67476bfe19683d504327d1">arrayNode</a>, <a class="el" href="classstringNode.html#adbc47d59c690cbd5a231d9a44384e1ba">stringNode</a>, <a class="el" href="classarithNode.html#a01f251d6cdc918309873c7443c694510">arithNode</a> y <a class="el" href="classlogicNode.html#a5a5daf0f2b1295126998ac3a9fe0cc77">logicNode</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li>trunk/src/run/tree/<a class="el" href="expNode_8h_source.html">expNode.h</a></li>
+<li>trunk/src/run/tree/expNode.cpp</li>
+</ul>
+</div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

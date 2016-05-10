@@ -1,0 +1,9 @@
+#!/usr/local/bin/omi
+str = "ABCDEFG";
+for (i = 0; i < 7; i ++) str[i] =  str[6 - i];
+<< str;
+
+<< "ERROR[";
+str = "ABCDEF";
+str[1000000000000000] = 10;
+<< "]";

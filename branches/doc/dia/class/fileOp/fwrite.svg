@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="14cm" height="13cm" viewBox="170 82 268 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="103.8" width="265" height="238"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="103.8" width="265" height="238"/>
+    <rect style="fill: #ffffff" x="172" y="83.8" width="65.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="83.8" width="65.6" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="98.8"> fwrite </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="205" y="124.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="205" y="124.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.7" y="143.8">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="194" y="193.8" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="194" y="193.8" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="249.05" y="212.8">stringNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.7,171.036 248.7,181.3 249.05,181.3 249.05,193.8 "/>
+    <polygon style="fill: #ffffff" points="256.7,171.036 248.7,155.036 240.7,171.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.7,171.036 248.7,155.036 240.7,171.036 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="194" y="260.8" width="110.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="194" y="260.8" width="110.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="249.175" y="279.8">fwriteNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="249.05,240.036 249.05,249.3 249.175,249.3 249.175,260.8 "/>
+    <polygon style="fill: #ffffff" points="257.05,240.036 249.05,224.036 241.05,240.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="257.05,240.036 249.05,224.036 241.05,240.036 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="329.522,274.8 339.35,274.8 339.35,138.8 292.4,138.8 "/>
+    <polygon style="fill: #ffffff" points="304.35,274.8 318.35,270 332.35,274.8 318.35,279.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="304.35,274.8 318.35,270 332.35,274.8 318.35,279.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="341.35" y="203.8">file</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="336.35" y="271.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="135.8"> 1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="151.8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="329.522,288.8 382,288.8 382,124.8 292.4,124.8 "/>
+    <polygon style="fill: #ffffff" points="304.35,288.8 318.35,284 332.35,288.8 318.35,293.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="304.35,288.8 318.35,284 332.35,288.8 318.35,293.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="384" y="203.8">str</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="336.35" y="285.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="121.8">1</text>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+% ======================================================================
+\section{Visión general}
+OMI puede ser ejecutado de forma que guarde en un fichero una estructura de datos que representa el proceso de interpretación seguido. 
+Esta estructura de datos tiene un formato JSON. En esta sección se presenta la estructura de estos ficheros mediante el esquema de 
+json-schema.org.
+
+Cuando el intérprete se ejecuta en modo servidor se vale de esta misma estructura para devolver el estado del proceso. Otros sistemas
+que hagan de cliente pueden interpretar esta estrucutra de datos para operar con los mismos. 
+% ======================================================================
+\subsection{Esquema JSON}
+
+\subsection{Nodos ejecutables}
+La primera estructura de datos JSON que es guardada representa el árbol fruto del análisis léxico y sintáctico. Esta estructura de datos tiene como elemento
+base un nodo que mantendrá relaciones con otros nodos. A partir del nodo raíz se puede obtener todo el árbol de nodos.
+
+\begin{myverbatim}
+{
+   "$schema": "http://omi-project.com/json-schema/node",
+   "title": "Nodos del |{\color{red}\emph{á}}|rbol sint|{\color{red}\emph{á}}|ctico"
+   "type": "object",
+   "properties": {
+      "id": {
+        "description": "Posici|{\color{red}\emph{ó}}|n de memoria del nodo",
+        "type" : "string", 
+      },
+      "name": {
+         "description": "Nombre del nodo",
+         "type": "string",
+      },
+      "type": {
+         "description": "Tipo del nodo",
+         "type": "string",
+      },
+      "size": {
+         "description": "Tama|{\color{red}\emph{ñ}}|o del nodo en Bytes",
+         "type": "string",
+      },
+      "rel": {
+         "description": "Relaciones con otros nodos",
+         "type": "array",
+         "items": {
+            "ref":  "http://omi-project.com/json-schema/node"
+         }
+      },
+      "relname": {
+         "description": "Nombre de las relaciones con otros nodos",
+         "type": "array",
+         "items": {
+            "type":  "string",
+         }
+      },
+   }
+}
+\end{myverbatim}
+
+\subsection{Acciones}
+Para representar el proceso de interpretación se precisa de una estructura de datos que indique las acciones 
+llevadas a cabo en el proceso.
+
+\begin{myverbatim}
+{
+   "$schema": "http://omi-project.com/json-schema/process",
+   "title": "Proceso de interpretaci|{\color{red}\emph{ó}}|n",
+   "type": "array",
+   "items": {
+      "type": "object",
+        "properties": { 
+            "action": {
+               "description": "Acci|{\color{red}\emph{ó}}|n que se corresponde con un paso",
+               "type": "enum",
+            },
+            "id": {
+               "description": "Id del nodo sobre el que se lleva a cabo la acci|{\color{red}\emph{ó}}|n",
+               "type": "string",
+            },
+            "attrs": {
+               "description": "Atributos de la acci|{\color{red}\emph{ó}}|n. Dependen de la acci|{\color{red}\emph{ó}}|n".
+               "type": "object",
+            }
+      }
+   }
+}
+\end{myverbatim}
+
+Los tipos de acciones son los siguientes:
+\begin{description}
+\item[run:] Ejecución de un nodo.
+\item [runClass:] Ejecución de un nodo clase.
+\item[endClass:] Finaliza la ejecución de una clase.
+\item[setParent:] Establece el padre de un nodo clase.
+\item[setValue:] Establece el valor de un nodo.
+\item[setRef:] Establece el valor de una referencia.
+\item[accessVar:] Accede al valor de una variable.
+\item[accessFunc:] Accede al valor de una funcion.
+\item[accessClass:] Accede al valor de una clase.
+\item[clone:] Clona un nodo.
+\item[newNode:] Crea un nuevo nodo.
+\item[changeRef:] Cambia el valor de una referencia.
+\item[changeValue:] Cambia el valor de un nodo.
+\item[delete:] Elimina un nodo.
+\item[print:] Imprime en la salida estándar.
+\item[input:] Toma valores de la entrada estándar.
+\item[toSymbols:] Añade elementos a la tabla de símbolos interna de un nodo.
+\item[removeLevel:] Elimina un nivel de la tabla de símbolos.
+\item[return:] Se devuelve un valor.
+\item[error:] Se ha producido un error.
+\item[sleep:] Se espera un evento.
+\item[runStatic:] Comienza la ejecución de un elemento estático.
+\item[endStatic:] Finaliza la ejecución de un elemento estático.
+\item[runPrivate:] Comienza la ejecución de un elemento privado.
+\item[endPrivate:] Finaliza la ejecución de un elemento privado.
+\item[runGlobal:] Comienza la ejecución de un elemento global.
+\item[endGlobal:] Finaliza la ejecución de un elemento global.
+\item[line:] Especifica la línea actual del código fuente.
+\end{description}

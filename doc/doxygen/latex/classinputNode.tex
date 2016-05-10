@@ -1,0 +1,80 @@
+\hypertarget{classinputNode}{\section{Referencia de la Clase input\-Node}
+\label{classinputNode}\index{input\-Node@{input\-Node}}
+}
+
+
+Nodo de entrada de usuario.  
+
+
+
+
+{\ttfamily \#include $<$io\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de input\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classinputNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinputNode_a996e71eabef3f228d948bf8698381bad}{input\-Node} (\hyperlink{classidNode}{id\-Node} $\ast$id, int type=0, \hyperlink{classrunNode}{run\-Node} $\ast$prompt=N\-U\-L\-L)
+\item 
+void \hyperlink{classinputNode_a1fa415de6a36c066fbca49e9168b4d61}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de entrada de usuario. 
+
+Lee de la entrada estándar del usuario y guarda el contenido en un nodo string.
+
+La entrada puede ser de dos tipos\-:
+
+tipo 0\-: correspondiente a la sentencia \char`\"{}input id\char`\"{} toma valores del teclado hasta que se hace un doble salto de línea.
+
+tipo 1\-: correspondiente a la sentencia \char`\"{}inputline id\char`\"{} toma valores del teclado hasta que se hace un salto de linea.
+
+Es posible especificar un prompt para la entra mediante la sentencia \char`\"{}input$<$prompt$>$ id\char`\"{} 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classinputNode_a996e71eabef3f228d948bf8698381bad}{\index{input\-Node@{input\-Node}!input\-Node@{input\-Node}}
+\index{input\-Node@{input\-Node}!inputNode@{input\-Node}}
+\subsubsection[{input\-Node}]{\setlength{\rightskip}{0pt plus 5cm}input\-Node\-::input\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf id\-Node} $\ast$}]{id, }
+\item[{int}]{type = {\ttfamily 0}, }
+\item[{{\bf run\-Node} $\ast$}]{prompt = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classinputNode_a996e71eabef3f228d948bf8698381bad}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nodo identificador . \\
+\hline
+{\em type} & Entero que especifica el tipo. \\
+\hline
+{\em prompt} & Nodo que representa la cadena que se usará como prompt. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classinputNode_a1fa415de6a36c066fbca49e9168b4d61}{\index{input\-Node@{input\-Node}!run@{run}}
+\index{run@{run}!inputNode@{input\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void input\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classinputNode_a1fa415de6a36c066fbca49e9168b4d61}
+Imprime el prompt, recibe una cadena del usuario y la guarda en la tabla de símbolos mediante un nodo cadena. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{ioStmtNode_8h}{io\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/io\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

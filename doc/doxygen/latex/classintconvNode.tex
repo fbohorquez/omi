@@ -1,0 +1,88 @@
+\hypertarget{classintconvNode}{\section{Referencia de la Clase intconv\-Node}
+\label{classintconvNode}\index{intconv\-Node@{intconv\-Node}}
+}
+
+
+Nodo de conversión a entero.  
+
+
+
+
+{\ttfamily \#include $<$conv\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de intconv\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classintconvNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classintconvNode_a40e4dfa07c7500d5b58b007620bcc686}{intconv\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classintconvNode_a70bf0fffc52d33f453f3d798f1147d99}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classintconvNode_a0cba67960f9be44ce403581d76c01f30}{do\-\_\-intconv} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de conversión a entero. 
+
+Este nodo fuerza la conversion a entero del valor de un nodo
+
+Si el nodo es booleano toma el valor de 0 ó 1 Si el nodo es aritmético toma el valor entero del nodo Si el nodo es cadena de texto tomo el valor entero significativo de la cadena, en el caso de ser numérico. En caso contario toma el tamaño de la cadena. Si el nodo es array toma el numéro de elementos del mismo 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classintconvNode_a40e4dfa07c7500d5b58b007620bcc686}{\index{intconv\-Node@{intconv\-Node}!intconv\-Node@{intconv\-Node}}
+\index{intconv\-Node@{intconv\-Node}!intconvNode@{intconv\-Node}}
+\subsubsection[{intconv\-Node}]{\setlength{\rightskip}{0pt plus 5cm}intconv\-Node\-::intconv\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classintconvNode_a40e4dfa07c7500d5b58b007620bcc686}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classintconvNode_a0cba67960f9be44ce403581d76c01f30}{\index{intconv\-Node@{intconv\-Node}!do\-\_\-intconv@{do\-\_\-intconv}}
+\index{do\-\_\-intconv@{do\-\_\-intconv}!intconvNode@{intconv\-Node}}
+\subsubsection[{do\-\_\-intconv}]{\setlength{\rightskip}{0pt plus 5cm}int intconv\-Node\-::do\-\_\-intconv (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classintconvNode_a0cba67960f9be44ce403581d76c01f30}
+Convierte un nodo a su valor entero 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classintconvNode_a70bf0fffc52d33f453f3d798f1147d99}{\index{intconv\-Node@{intconv\-Node}!run@{run}}
+\index{run@{run}!intconvNode@{intconv\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void intconv\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classintconvNode_a70bf0fffc52d33f453f3d798f1147d99}
+Tras ser ejecutado el operador toma como valor el resultado de la conversión a entero del nodo asociado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{convOpNode_8h}{conv\-Op\-Node.\-h}\item 
+trunk/src/run/operators/conv\-Op\-Node.\-cpp\end{DoxyCompactItemize}

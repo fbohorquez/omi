@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="10cm" height="12cm" viewBox="331 306 200 223" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="333" y="327" width="197" height="200"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="333" y="327" width="197" height="200"/>
+    <rect style="fill: #ffffff" x="333" y="307" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="333" y="307" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335" y="322"> wait </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="363" y="344" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="363" y="344" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="406.7" y="363">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="357" y="415" width="99.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="357" y="415" width="99.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="406.975" y="434">arithNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="406.7,390.236 406.7,401.5 406.975,401.5 406.975,415 "/>
+    <polygon style="fill: #ffffff" points="414.7,390.236 406.7,374.236 398.7,390.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="414.7,390.236 406.7,374.236 398.7,390.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="359" y="482" width="95.45" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="359" y="482" width="95.45" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="406.725" y="501">waitNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="406.975,461.236 406.975,470.5 406.725,470.5 406.725,482 "/>
+    <polygon style="fill: #ffffff" points="414.975,461.236 406.975,445.236 398.975,461.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="414.975,461.236 406.975,445.236 398.975,461.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="479.622,496 489.45,496 489.45,358 450.4,358 "/>
+    <polygon style="fill: #ffffff" points="454.45,496 468.45,491.2 482.45,496 468.45,500.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="454.45,496 468.45,491.2 482.45,496 468.45,500.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="491.45" y="424">pID</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.45" y="493"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="454.4" y="355">1</text>
+  </g>
+</svg>

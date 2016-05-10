@@ -1,0 +1,32 @@
+\hypertarget{sTable_8h}{\section{Referencia del Archivo trunk/src/run/table/s\-Table.h}
+\label{sTable_8h}\index{trunk/src/run/table/s\-Table.\-h@{trunk/src/run/table/s\-Table.\-h}}
+}
+
+
+Tabla de símbolos.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}symbols.\-h\char`\"{}}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsTable}{s\-Table}
+\begin{DoxyCompactList}\small\item\em Contexto de tablas de símbolos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Tabla de símbolos. Contexto de tablas de símbolos.
+
+La tabla de símbolos es una estructura de datos que contiene referencias al valor de cada variable o función. Se podría decir que la tabla de simbolos es un diccionario de variables.
+
+En este fichero se define un contexto de tabla de símbolos.
+
+Las tablas de símbolos son estructuras de datos que contiene referencias al valor de variables, funciones, clases, objetos y, en definitiva, a cualquier elemento del lenguaje definido por el usuario.
+
+Una tabla de símbolos es un diccionario de referencias a los elementos creados en memoria dinámica, por lo que es importante limpiar los datos a los que hace referencia una determinada clave cunado esta toma un nuevo valor.
+
+Para que sea posible la modificación de una tabla de símbolos se hace uso de una serie de nodos que funcionan como interfaz.
+
+Se crea un contexto de tablas de símbolos donde cada una tiene un propósito o referencian a nodos de diferente tipo. 

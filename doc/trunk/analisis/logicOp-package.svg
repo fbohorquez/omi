@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="24cm" height="9cm" viewBox="170 74 480 165" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="95.4" width="477" height="142.6"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="95.4" width="477" height="142.6"/>
+    <rect style="fill: #ffffff" x="172" y="75.4" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="75.4" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="90.4"> logicOp </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="190" y="129.8" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190" y="129.8" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="190" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="196" y="147.7">
+      <tspan x="196" y="147.7"> or </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="254" y="129.8" width="50.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="254" y="129.8" width="50.5" height="28"/>
+    <rect style="fill: #ffffff" x="254" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="254" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="260" y="147.7">
+      <tspan x="260" y="147.7"> and </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="319" y="129.8" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="129.8" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="319" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="325" y="147.7">
+      <tspan x="325" y="147.7"> not</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="381" y="129.8" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="381" y="129.8" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="381" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="381" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="387" y="147.7">
+      <tspan x="387" y="147.7"> lth</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="443" y="129.8" width="50.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="443" y="129.8" width="50.5" height="28"/>
+    <rect style="fill: #ffffff" x="443" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="443" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="449" y="147.7">
+      <tspan x="449" y="147.7"> leq </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="508" y="129.8" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="508" y="129.8" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="508" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="508" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514" y="147.7">
+      <tspan x="514" y="147.7"> gth</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="190" y="184.7" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190" y="184.7" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="190" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="196" y="202.6">
+      <tspan x="196" y="202.6"> geq</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="254" y="184.7" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="254" y="184.7" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="254" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="254" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="260" y="202.6">
+      <tspan x="260" y="202.6"> eq </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="319" y="184.7" width="50" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="184.7" width="50" height="28"/>
+    <rect style="fill: #ffffff" x="319" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="319" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="325" y="202.6">
+      <tspan x="325" y="202.6"> neq</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="380.02" y="184.7" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="380.02" y="184.7" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="380.02" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="380.02" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="386.02" y="202.6">
+      <tspan x="386.02" y="202.6"> iden </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="450.02" y="184.7" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="450.02" y="184.7" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="450.02" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="450.02" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="456.02" y="202.6">
+      <tspan x="456.02" y="202.6"> niden </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="528.02" y="184.7" width="73.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="528.02" y="184.7" width="73.6" height="28"/>
+    <rect style="fill: #ffffff" x="528.02" y="166.7" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="528.02" y="166.7" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="534.02" y="202.6">
+      <tspan x="534.02" y="202.6"> isNull </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570.02" y="129.8" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="570.02" y="129.8" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="570.02" y="111.8" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="570.02" y="111.8" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="576.02" y="147.7">
+      <tspan x="576.02" y="147.7"> empty </tspan>
+    </text>
+  </g>
+</svg>

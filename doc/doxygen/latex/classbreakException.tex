@@ -1,0 +1,71 @@
+\hypertarget{classbreakException}{\section{Referencia de la Clase break\-Exception}
+\label{classbreakException}\index{break\-Exception@{break\-Exception}}
+}
+
+
+Excepción rotura de bloque.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+
+
+Herencias exception.
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbreakException_ac8ffef90b3602f1216eb7190cf22dc99}{break\-Exception} (int n=1)
+\item 
+const char $\ast$ \hyperlink{classbreakException_a46afaa17ba9edbbcc504f5caa332d8c9}{what} () const   throw ()
+\item 
+void \hyperlink{classbreakException_ab150b42075ee785ed64fea526b107cde}{end} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Excepción rotura de bloque. 
+
+Dados un bloque de sentencias este nodo permite romper la secuencia de ejecución hasta la salida del bloque. Esta excepción es lanzada por la sentencia break (\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classbreakNode}{break\-Node}). 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classbreakException_ac8ffef90b3602f1216eb7190cf22dc99}{\index{break\-Exception@{break\-Exception}!break\-Exception@{break\-Exception}}
+\index{break\-Exception@{break\-Exception}!breakException@{break\-Exception}}
+\subsubsection[{break\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}break\-Exception\-::break\-Exception (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classbreakException_ac8ffef90b3602f1216eb7190cf22dc99}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em init.} & Número de bloques anidados de los que se saldrá. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classbreakException_ab150b42075ee785ed64fea526b107cde}{\index{break\-Exception@{break\-Exception}!end@{end}}
+\index{end@{end}!breakException@{break\-Exception}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void break\-Exception\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classbreakException_ab150b42075ee785ed64fea526b107cde}
+Si el número de boloques anidados es mayor que uno lanza una excepción break decrementando el número de bloques anidados, \hypertarget{classbreakException_a46afaa17ba9edbbcc504f5caa332d8c9}{\index{break\-Exception@{break\-Exception}!what@{what}}
+\index{what@{what}!breakException@{break\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ break\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) }}\label{classbreakException_a46afaa17ba9edbbcc504f5caa332d8c9}
+Método que será llamado cuando no se capture la función, esta situación se dará cuando se produzca una sentencia break fuera de un bloque de sentencias. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

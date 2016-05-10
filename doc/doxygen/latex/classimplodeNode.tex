@@ -1,0 +1,88 @@
+\hypertarget{classimplodeNode}{\section{Referencia de la Clase implode\-Node}
+\label{classimplodeNode}\index{implode\-Node@{implode\-Node}}
+}
+
+
+Nodo unión de elementos de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de implode\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classimplodeNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimplodeNode_a164e30b3b9c2e6246877cc3dba14bdc8}{implode\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$array)
+\item 
+void \hyperlink{classimplodeNode_af08c8e5a3ba8cdd2c1aff5645fe72ad4}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classimplodeNode_afee568f6952d1cb69d800d41a86a923a}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo unión de elementos de array. 
+
+Este nodo une los elementos de un array en una cadena de texto utilizado como separador entre elementos la cadena especificada.
+
+El nodo toma como valor la cadena resultante. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classimplodeNode_a164e30b3b9c2e6246877cc3dba14bdc8}{\index{implode\-Node@{implode\-Node}!implode\-Node@{implode\-Node}}
+\index{implode\-Node@{implode\-Node}!implodeNode@{implode\-Node}}
+\subsubsection[{implode\-Node}]{\setlength{\rightskip}{0pt plus 5cm}implode\-Node\-::implode\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classimplodeNode_a164e30b3b9c2e6246877cc3dba14bdc8}
+Constructor de la clase. Este nodo se inicialia a partir de una cadena separadora y un array de elementos. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Nodo cadena separadora \\
+\hline
+{\em array} & Nodo que hace de array \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classimplodeNode_afee568f6952d1cb69d800d41a86a923a}{\index{implode\-Node@{implode\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!implodeNode@{implode\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ implode\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classimplodeNode_afee568f6952d1cb69d800d41a86a923a}
+Devuelve un nodo unión de elementos de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método implode. 
+\end{DoxyReturn}
+\hypertarget{classimplodeNode_af08c8e5a3ba8cdd2c1aff5645fe72ad4}{\index{implode\-Node@{implode\-Node}!run@{run}}
+\index{run@{run}!implodeNode@{implode\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void implode\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classimplodeNode_af08c8e5a3ba8cdd2c1aff5645fe72ad4}
+Lleva a cabo la ejecución del nodo, uniendo los elementos del array, separdos por la cadena separador, en una única cadena.
+
+Tra la ejecución el nodo toma el valor de la cadena de texto generada 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

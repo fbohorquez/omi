@@ -1,0 +1,72 @@
+\hypertarget{classtryNode}{\section{Referencia de la Clase try\-Node}
+\label{classtryNode}\index{try\-Node@{try\-Node}}
+}
+
+
+Nodo sentencia try...catch.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de try\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtryNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtryNode_aee8959030855b0546d9b1dca2ac624b4}{try\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$tryblock, \hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$catchblock)
+\item 
+void \hyperlink{classtryNode_ac52c2062053f0a58c92d847ec2662d2e}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia try...catch. 
+
+Este nodo permite escribir una sentencia try..catch. Esta sentencia consta de dos bloques. El bloque try se ejecuta normalmente, pero si se lanza una excepción throw esta será capturada y pasará a ejecutarse el bloque catch. Además el bloque catch es precidido de una expresión en el que se especifica un id al que será asignado el valor de la excepción. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classtryNode_aee8959030855b0546d9b1dca2ac624b4}{\index{try\-Node@{try\-Node}!try\-Node@{try\-Node}}
+\index{try\-Node@{try\-Node}!tryNode@{try\-Node}}
+\subsubsection[{try\-Node}]{\setlength{\rightskip}{0pt plus 5cm}try\-Node\-::try\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{tryblock, }
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{catchblock}
+\end{DoxyParamCaption}
+)}}\label{classtryNode_aee8959030855b0546d9b1dca2ac624b4}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em tryblock} & Nodo correspondiente al bloque try \\
+\hline
+{\em id} & Nodo que hace de id al que se le asignará el valro de la excepción \\
+\hline
+{\em catchblock} & Nodo correspondiente al bloque catch \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classtryNode_ac52c2062053f0a58c92d847ec2662d2e}{\index{try\-Node@{try\-Node}!run@{run}}
+\index{run@{run}!tryNode@{try\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void try\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classtryNode_ac52c2062053f0a58c92d847ec2662d2e}
+Método que lleva a cabo la ejecución del nodo. Se ejecuta el bloque de sentencias try y si se produce una excepción se pasa la ejecución al bloque de sentencias catch asignándose el valor de la excepción en el identificador. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

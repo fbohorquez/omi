@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="17cm" height="12cm" viewBox="513 239 335 225" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="514" y="260" width="333" height="201.6"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="514" y="260" width="333" height="201.6"/>
+    <rect style="fill: #ffffff" x="514" y="240" width="119.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="514" y="240" width="119.5" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="516" y="255"> signalhandler </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="573" y="280.4" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="573" y="280.4" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="616.7" y="299.4">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="567" y="351.4" width="99.65" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="567" y="351.4" width="99.65" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="616.825" y="370.4">logicNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="616.7,326.636 616.7,337.9 616.825,337.9 616.825,351.4 "/>
+    <polygon style="fill: #ffffff" points="624.7,326.636 616.7,310.636 608.7,326.636 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="624.7,326.636 616.7,310.636 608.7,326.636 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="527" y="418.4" width="180.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="527" y="418.4" width="180.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="617.075" y="437.4">signalhandlerNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="616.825,397.636 616.825,406.9 617.075,406.9 617.075,418.4 "/>
+    <polygon style="fill: #ffffff" points="624.825,397.636 616.825,381.636 608.825,397.636 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="624.825,397.636 616.825,381.636 608.825,397.636 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="732.322,432.4 742.15,432.4 742.15,294.4 660.4,294.4 "/>
+    <polygon style="fill: #ffffff" points="707.15,432.4 721.15,427.6 735.15,432.4 721.15,437.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="707.15,432.4 721.15,427.6 735.15,432.4 721.15,437.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="744.15" y="360.4">signal</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.15" y="429.4"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="664.4" y="291.4">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="732.322,446.4 798,446.4 798,280.4 660.4,280.4 "/>
+    <polygon style="fill: #ffffff" points="707.15,446.4 721.15,441.6 735.15,446.4 721.15,451.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="707.15,446.4 721.15,441.6 735.15,446.4 721.15,451.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="800" y="360.4">func</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.15" y="443.4"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="664.4" y="277.4">1</text>
+  </g>
+</svg>

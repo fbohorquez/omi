@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="14cm" height="15cm" viewBox="435 292 278 288" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="436" y="313" width="276" height="265"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="436" y="313" width="276" height="265"/>
+    <rect style="fill: #ffffff" x="436" y="293" width="88.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="436" y="293" width="88.7" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="438" y="308"> newRegExp </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="499" y="358" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="499" y="358" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="542.7" y="377">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="493" y="433" width="100.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="493" y="433" width="100.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="543.35" y="452">nexpNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="542.7,404.236 542.7,417.5 543.35,417.5 543.35,433 "/>
+    <polygon style="fill: #ffffff" points="550.7,404.236 542.7,388.236 534.7,404.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.7,404.236 542.7,388.236 534.7,404.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="462" y="500" width="161.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="462" y="500" width="161.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="542.525" y="519">newRegExpNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="543.35,479.236 543.35,488.5 542.525,488.5 542.525,500 "/>
+    <polygon style="fill: #ffffff" points="551.35,479.236 543.35,463.236 535.35,479.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="551.35,479.236 543.35,463.236 535.35,479.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="648.222,514 658.05,514 658.05,372 586.4,372 "/>
+    <polygon style="fill: #ffffff" points="623.05,514 637.05,509.2 651.05,514 637.05,518.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="623.05,514 637.05,509.2 651.05,514 637.05,518.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="660.05" y="440">str</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="655.05" y="511"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590.4" y="369">1</text>
+  </g>
+</svg>

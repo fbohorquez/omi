@@ -1,0 +1,37 @@
+\hypertarget{runTree_8h}{\section{Referencia del Archivo trunk/src/run/tree/run\-Tree.h}
+\label{runTree_8h}\index{trunk/src/run/tree/run\-Tree.\-h@{trunk/src/run/tree/run\-Tree.\-h}}
+}
+
+
+Árbol de ejecución.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classrunNode}{run\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo ejecutable. \end{DoxyCompactList}\item 
+struct \hyperlink{structcmp__runNode}{cmp\-\_\-run\-Node}
+\item 
+class \hyperlink{classprintableNode}{printable\-Node}
+\begin{DoxyCompactList}\small\item\em Nodos imprimible. \end{DoxyCompactList}\item 
+class \hyperlink{classrefNode}{ref\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo referencia. \end{DoxyCompactList}\item 
+class \hyperlink{classobjectTypeNode}{object\-Type\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo tipo de objeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Árbol de ejecución. Un árbol de ejecución es una estructura de datos funcional. Está formado por nodos ejecutables. Existen una gran variedad de especializaciones de nodos ejecutables.
+
+Tras un análisis léxico y sintáctico del código fuente se construye el árbol de ejecución con los nodos correspondientes a las distintas sentencias que forman el programa.
+
+El nodo raíz del árbol será ejecutado, lo que normalmente conllevará la ejecución de sus nodos asociados, que a su vez ejecutarán los suyos propios, y así sucesivamente. Esto produce un recorrido del árbol, donde los nodos son ejecutados. El recorrido tenderá a ser en profundidad, aunque estará muy condicionado por la propia ejecución de los nodos.
+
+Existen gran variedad de tipos de nodos de ejecución, cada uno de los cuales encierra un significado semántico propio y se define a partir de unos datos concretos. El analizador sintáctico forma el árbol con la relación de nodos correspondientes al código fuente procesado, luego la ejecución de estos produce el resultado semántico.
+
+En el fichero \hyperlink{runTree_8h}{run\-Tree.\-h} se define e implementa la clase genérica \hyperlink{classrunNode}{run\-Node} que modela un nodo ejecutable. Además se especifican las clases que derivan inmediatamente de esta y que, aunque siguen teniendo un propósito general, definen subtipos de nodos ejecutables con propiedades afines. 

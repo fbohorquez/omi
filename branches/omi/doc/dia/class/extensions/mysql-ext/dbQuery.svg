@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="20cm" height="13cm" viewBox="230 281 386 247" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="231" y="302" width="384" height="225"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231" y="302" width="384" height="225"/>
+    <rect style="fill: #ffffff" x="231" y="282" width="57.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231" y="282" width="57.9" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="233" y="297">dbQuery</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="386" y="320" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="386" y="320" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="429.7" y="339">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="380" y="387" width="100.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="380" y="387" width="100.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="430.35" y="406">nexpNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="429.7,366.236 429.7,375.5 430.35,375.5 430.35,387 "/>
+    <polygon style="fill: #ffffff" points="437.7,366.236 429.7,350.236 421.7,366.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="437.7,366.236 429.7,350.236 421.7,366.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="363" y="478" width="133.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="363" y="478" width="133.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="429.9" y="497">dbQueryNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="430.35,433.236 430.35,454.5 429.9,454.5 429.9,478 "/>
+    <polygon style="fill: #ffffff" points="438.35,433.236 430.35,417.236 422.35,433.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="438.35,433.236 430.35,417.236 422.35,433.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="521.972,478 536,478 536,348 473.4,348 "/>
+    <polygon style="fill: #ffffff" points="496.8,478 510.8,473.2 524.8,478 510.8,482.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="496.8,478 510.8,473.2 524.8,478 510.8,482.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="538" y="410">db</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="528.8" y="475"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="477.4" y="345"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="521.972,492 561,492 561,334 473.4,334 "/>
+    <polygon style="fill: #ffffff" points="496.8,492 510.8,487.2 524.8,492 510.8,496.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="496.8,492 510.8,487.2 524.8,492 510.8,496.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="563" y="410">query</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="528.8" y="489"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="477.4" y="331"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="245" y="426.8" width="145.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="245" y="426.8" width="145.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="317.575" y="445.8">extensionNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="317.575,473.036 317.575,492 363,492 "/>
+    <polygon style="fill: #ffffff" points="325.575,473.036 317.575,457.036 309.575,473.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="325.575,473.036 317.575,457.036 309.575,473.036 "/>
+  </g>
+</svg>

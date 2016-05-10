@@ -1,0 +1,47 @@
+% ------------------------------------------------------------------------------
+% Este fichero es parte de la plantilla LaTeX para la realización de Proyectos
+% Final de Grado, protegido bajo los términos de la licencia GFDL.
+% Para más información, la licencia completa viene incluida en el
+% fichero fdl-1.3.tex
+
+% Copyright (C) 2012 SPI-FM. Universidad de Cádiz
+% ------------------------------------------------------------------------------
+
+%---------COMANDOS------------------------------
+\setheadsepline{.4pt}
+\parindent = 0mm
+\topmargin = -0.5cm
+\headsep = 1cm
+
+
+
+%---------Contador
+\newcommand{\initcn} {
+	\newcounter{cn}
+	\stepcounter{cn}
+}
+\newcommand{\cn}{
+	\ifnum\value{cn}<10
+		000\arabic{cn}
+	\else
+		\ifnum\value{cn}<100
+			00\arabic{cn}
+		\else
+			0\arabic{cn}
+		\fi
+	\fi
+	\stepcounter{cn}
+}
+
+%---------Párrafo
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%---------Renombrado
+

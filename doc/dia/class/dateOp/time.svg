@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="11cm" height="12cm" viewBox="170 82 214 233" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="103.8" width="212" height="210.6"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="103.8" width="212" height="210.6"/>
+    <rect style="fill: #ffffff" x="172" y="83.8" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="83.8" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="98.8"> time </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="205" y="124.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="205" y="124.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.7" y="143.8">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="199" y="193.8" width="99.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="199" y="193.8" width="99.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.975" y="212.8">arithNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.7,171.036 248.7,181.3 248.975,181.3 248.975,193.8 "/>
+    <polygon style="fill: #ffffff" points="256.7,171.036 248.7,155.036 240.7,171.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.7,171.036 248.7,155.036 240.7,171.036 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="200" y="260.8" width="97.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="200" y="260.8" width="97.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.675" y="279.8">timeNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.975,240.036 248.975,249.3 248.675,249.3 248.675,260.8 "/>
+    <polygon style="fill: #ffffff" points="256.975,240.036 248.975,224.036 240.975,240.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.975,240.036 248.975,224.036 240.975,240.036 "/>
+  </g>
+</svg>

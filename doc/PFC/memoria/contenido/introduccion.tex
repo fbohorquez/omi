@@ -1,0 +1,190 @@
+% ------------------------------------------------------------------------------
+% Este fichero es parte de la plantilla LaTeX para la realización de Proyectos
+% Final de Grado, protegido bajo los términos de la licencia GFDL.
+% Para más información, la licencia completa viene incluida en el
+% fichero fdl-1.3.tex
+
+% Copyright (C) 2012 SPI-FM. Universidad de Cádiz
+% ------------------------------------------------------------------------------
+
+El proyecto OMI ofrece un conjunto de herramientas y recursos que ayudan en el aprendizaje 
+de la teoría de intérpretes y los lenguajes formales. OMI en si mismo es un intérprete desarrollado 
+con la finalidad de servir como caso práctico, aplicando los conceptos estudiados en 
+estos campos. Es un intérprete modular, en el sentido de que su funcionalidad y características puede ser extendida mediante módulos.
+OMI es código abierto y libre, por lo que puede ser utilizado, estudiado, modificado y/o redistribuido libremente.\\
+
+El nombre OMI también hace referencia al lenguaje que es interpretado. Un lenguaje de programación de alto nivel, de tipado dinámico y de propósito general. Fundamentalmente 
+imperativo orientado a objetos, pero que además presenta características propias de otros paradigmas como de la programación funcional. \\
+
+El proyecto OMI pretende facilitar el estudio de los sistemas intérpretes mediante la documentación y la interactividad. Abarcando no solo el diseño y el desarrollo
+de uno de estos sistemas, si no el proceso de interpretación en si. De esta forma se presentan herramientas que permiten hacer uso del intérprete a la vez que ilustran
+su funcionamiento. 
+
+\section{Motivación}
+La teoría de autómatas y los lenguajes formales son la base para la construcción de sistemas intérpretes. Muchos de los conceptos estudiados 
+en estos campos sirven para construir otras ramas de estudio como la teoría de intérpretes y compiladores. 
+
+Normalmente, por limitaciones de tiempo, los cursos académicos relacionados con el estudio de estos campos están enfocados a los conceptos teóricos. 
+Llevándose a cabo tan solo algunas prácticas que refuerzan el aprendizaje y ayudan a ver la aplicación real mediante casos sencillos y simplificados. 
+Sería de gran ayuda en este proceso disponer de un caso práctico completo, que ilustre cómo se define y construye un lenguaje de programación actual, 
+y que pueda ser consultado cuándo, dónde y por quién lo desee. OMI pretende ser una fuente de información que complemente el estudio práctico en estas áreas.\\
+
+Aunque existen herramientas que dan soporte a la construcción de sistemas intérpretes, es difícil encontrar alguna que ayude a comprender cómo estos se construyen y funcionan. 
+Los intérpretes modernos no están enfocados en ilustrar la tarea que llevan a cabo, tienen como propósito ejecutar programas de forma óptima y efectiva. Sería de utilidad disponer de una 
+herramienta que documente los procesos sintácticos y semánticos llevados a cabo durante la interpretación de código fuente. OMI tiene como propósito generar información relativa al proceso 
+de interpretación que muestre el funcionamiento del intérprete. 
+
+La comunidad académica no solo precisa de un objeto de estudio, si no también de un objeto que ayude a formar la comunidad. El proyecto OMI pretende ser una base para crear una comunidad 
+centrada en el estudio de los lenguajes formales, en las que todos puedan contribuir a la vez de beneficiarse.
+
+\section{Alcance}
+
+El proyecto OMI abarca una serie de herramientas y recursos que ayudan a comprender 
+cómo se construye y funciona un sistema intérprete.
+
+\subsection{Intérprete}
+El intérprete OMI es la parte fundamental del proyecto, las demás herramientas y recursos se valen o se construyen a partir de este. 
+Es un sistema software capaz de analizar y ejecutar otros programas escritos en un lenguaje específico con el mismo nombre.
+
+El intérprete puede procesar código fuente recibido mediante la entrada estándar. También es posible ejecutarlo como una terminal interactiva, mostrando un prompt
+e interpretando el código introducido. Por otro lado podrá ser configurado para obtener el código fuente mediante un puerto TCP, funcionando así como un software 
+servidor. El software puede recibir una serie de parámetros que serán pasados como argumentos al programa.  Además puede ser ejecutado de forma que produzca una salida en formato JSON relativa a acciones llevadas a cabo durante el proceso.
+
+El intérprete puede ser extendido mediante módulos lo que permite ampliar las posibilidades del lenguaje subyacente. Por otro lado el software 
+puede ser configurado desde el momento en el que es construido, de forma que puede prescindir y/o alterar algunas de sus características, adaptándose mejor 
+al uso concreto que se le fuera a dar. 
+
+\subsection{Lenguaje} 
+OMI es un lenguaje multiparadigma de alto nivel y de propósito general, que presenta un tipado dinámico. Su sintaxis pretende 
+ser sencilla y similar a los lenguajes de programación modernos. 
+Contempla tipos de datos simples y compuestos, así como un conjunto de operaciones sobre estos. Los tipos de datos que pueden ser 
+manipulados por el intérprete OMI comprenden:
+\begin{itemize}
+  \item Lógicos
+  \item Aritméticos
+  \item Cadena de caracteres
+  \item Array de elementos
+  \item Expresiones regulares
+  \item Funciones
+  \item Referencias
+  \item Objetos
+\end{itemize}
+
+El intérprete OMI soporta variedad de operadores que trabajan sobre los tipos de datos indicados. Estos son aquellos que se pueden encontrar de forma
+nativa en cualquier lenguaje de programación actual, a excepción de los operadores booleanos bit a bit. Esto incluye operadores tales como 
+la suma, la potencia, la negación, la concatenación, el ternario, fusión de nulos... Se dispone además de una serie de operadores para la entrada/salida de datos. 
+
+También permite al usuario asignar valores a símbolos variables, que pueden ser utilizados posteriormente en otras expresiones y construcciones del lenguaje. Las 
+variables pueden ser locales o globales.
+
+El sistema intérprete es capaz de procesar estructuras de control tales como if, while, switch... Además presenta otras sentencias que operan sobre el flujo de ejecución, 
+como por ejemplo la inclusión de ficheros, la rotura de bloques, la continuación de bucle o la parada de la ejecución. También permite la definición de etiquetas y el salto a las mismas.\\
+
+En OMI es posible definir y realizar llamadas a funciones. Estas pueden hacer uso de parámetros por defecto, y estos pueden 
+ser pasados por referencia o valor.
+
+OMI es un lenguaje orientado a objetos. Permite la definición de clases y la instanciación de estas en objetos. Contempla algunas características 
+propias de este paradigma:
+\begin{itemize}
+\item Definición de métodos y atributos
+\item Método constructor
+\item Visibilidad pública y privada
+\item Herencia simple
+\item Métodos y atributos estáticos
+\item Enlace estático en tiempo de ejecución
+\item Métodos mágicos
+\item Duck typing
+\item Tipos de datos básicos como clase de objetos
+\end{itemize}
+
+OMI además presenta características propias de la programación funcional:
+\begin{itemize}
+\item Funciones de primer orden
+\item Clausura de funciones
+\item Decoradores
+\item Pliegues
+\item Aplicación parcial
+\item Funciones anónimas
+\item Listas por compresión
+\end{itemize}
+
+OMI es un lenguaje con mecanismos que favorecen la reflexión y permiten llevar a cabo introspección de tipos. 
+
+El lenguaje ofrece una serie de recursos en forma de funciones destinados a la gestión de
+ficheros, procesos y fechas.
+  
+\subsection{Módulos}
+OMI puede extender su funcionalidad y características mediante el uso de módulos. El proyecto OMI incluye 
+el desarrollo de uno de estos módulos y la documentación de este proceso.
+
+El módulo gettext añade funciones para la internacionalización de programas. Implementa las funciones de la biblioteca de GNU
+con el mismo nombre.
+
+\subsection{Biblioteca de desarrollo}
+La biblioteca de desarrollo OMI incluye todos los recursos de programación necesarios para construir el intérprete. 
+Está escrita en C++, y se puede incluir en cualquier proyecto software escrito en este lenguaje. 
+Esta biblioteca puede ser instalada de forma independiente al intérprete, y puede ser usada para el desarrollo de 
+módulos o cualquier otro sistema software. Permite construir nodos semánticos a partir de los ya definidos e 
+interpretar código fuente escrito en OMI.
+
+\subsection{Sitio web}
+El proyecto OMI incluye un sitio web que sirve como presentación del mismo, además de como medio de acceso a la documentación 
+y el software desarrollado. Todas las páginas web pertenecientes al sitio contienen información relativa al proyecto y a las áreas que este
+ocupa. 
+\begin{description}
+\item [Página de inicio:] Describe e introduce brevemente el proyecto. Contiene enlaces a las demás secciones del sitio web. Además presenta un
+listado de noticias y enlaces de descargas a la última versión del intérprete.
+\item [Índice de documentación:] Página que representa un índice de los documentos que conforman el proyecto.
+\item [Documentos:] Páginas relativas a la documentación del proyecto en si.
+\item [Navegador de clases:] Páginas relativas a la documentación de las clases incluidas en la biblioteca. 
+\item [Navegador de ficheros:] Páginas relativas a la documentación de los ficheros que conforman 
+el código fuente de la biblioteca y el intérprete.
+\item [Navegador de gramática:] Páginas relativas a la documentación gráfica de la gramática del lenguaje.
+\item [Descargas:] Página que enlaza la descarga de las distintas versiones del software que conforma el proyecto, disponibles en varios formatos de instalación.
+\item [Sobre OMI:] Página con información relativa a la motivación y circunstancias en las que se ha dado el proyecto. Además da detalles sobre los autores y los
+organismos implicados en el desarrollo del mismo.
+\item [Contacto:] Página con información de contacto.
+\end{description}
+
+El sitio web también sirve como enlace a herramientas que permiten hacer uso del intérprete de forma online.
+
+%~ El sitio OMI presenta un di seño adaptativo, por lo que su apariencia se adapta al dispositivo que accede al mismo. 
+
+\subsection{RunTree} 
+Herramienta online que permite escribir código OMI e interpretarlo. La herramienta describe el árbol sintáctico resultado del análisis del código fuente, y lleva a cabo la ejecución
+semántica del mismo paso a paso. Además muestra información de todo el proceso, incluyendo su estado interno y la entrada/salida de datos. 
+Esta aplicación representa un cliente del intérprete OMI cuando este es ejecutado como un servidor. Se comunica de forma distribuida con el intérprete y procesa los datos devueltos por el mismo
+para mostrarlos al usuario de una forma gráfica y ordenada.   
+
+\section{Organización del documento}
+La documentación recogida en esta memoria presenta el siguiente contenido y organización:
+
+\begin {description}
+\item [Planificación:] Se describe la gestión del proyecto. Aspectos tales como la metodología, organización, 
+los costes, la planificación, los riesgos y el aseguramiento de la calidad. 
+\item [Requisitos del sistema:] Se describe las necesidades y la situación que han originado el desarrollo del proyecto. Además 
+se detallan los objetivos y los requisitos que debe cumplir el sistema. 
+\item [Análisis del sistema:] Se lleva a cabo el modelado  relativo al análisis del sistema. Haciendo uso de diagramas UML se 
+describe el modelo conceptual de datos, el modelo de casos de uso, el modelo de comportamiento y la interfaz de usuario. 
+\item [Diseño del sistema:] Aborda la arquitectura lógica y física del sistema, la descripción de la gramática, el diseño de componentes y la
+interfaz de usuario.
+\item [Construcción del sistema:] En esta sección se describe el entorno de construcción y la organización del código.
+\item [Pruebas del sistema:] Se presenta el plan de pruebas seguido, especificando la estrategia seguida, el entorno de pruebas y los distintos
+niveles de pruebas realizadas.
+\item [Manual de implantación:] Describe cómo se ha de llevar a cabo la implantación de los distintos sistemas software que 
+conforman el proyecto para la puesta en producción. 
+\item [Manual de usuario:] Representa una guía de referencia para el correcto uso del software.
+\item [Conclusiones:] Se detallan los objetivos alcanzados y las lecciones aprendidas en el desarrollo del proyecto.
+\item [Bibliografía:] Lista y recapitula la bibliografía empleada en el desarrollo del proyecto.
+\item [Información sobre licencia:] Se presenta y detalla información sobre la licencia de uso del software y la documentación.
+\end{description}
+
+Por otro lado el conjunto de software desarrollado estará disponible desde varios canales y formatos:
+\begin{itemize}
+\item CD 
+\item Forja de software
+\item Apartado de descargas en la web
+\end{itemize}
+% ======================================================================
+
+   

@@ -1,0 +1,312 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_3d2a09a3943fe18c0a3426b22a84d239.html">operators</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dateOpNode.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dateOpNode_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//dateOpNode.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef _RUN_OPERATORS_DATEOPNODE_</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_OPERATORS_DATEOPNODE_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../tree/typeNode.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classdateNode.html">   80</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classdateNode.html">dateNode</a> : <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="classdateNode.html#a3227bbfae0a0bdf38bc312a525b4216c">dateNode</a> (<a class="code" href="classrunNode.html">runNode</a> * str, <a class="code" href="classrunNode.html">runNode</a> * timestamp = NULL);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classdateNode.html#ad13a252816fd28e65c027ad49d8c3976">run</a> ();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *str_, *timestamp_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordtype">string</span> run_day (tm *ltm);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   <span class="keywordtype">string</span> run_week3 (tm *ltm);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keywordtype">string</span> run_day_zero (tm *ltm);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="keywordtype">string</span> run_week (tm *ltm);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   <span class="keywordtype">string</span> run_week_num (tm *ltm);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <span class="keywordtype">string</span> run_day_year (tm *ltm);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   <span class="keywordtype">string</span> run_month_str (tm *ltm);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <span class="keywordtype">string</span> run_month_num (tm *ltm);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <span class="keywordtype">string</span> run_month3_str (tm *ltm);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   <span class="keywordtype">string</span> run_month_num_zero (tm *ltm);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   <span class="keywordtype">string</span> run_year (tm *ltm);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   <span class="keywordtype">string</span> run_year2 (tm *ltm);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   <span class="keywordtype">string</span> run_am (tm *ltm);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   <span class="keywordtype">string</span> run_AM (tm *ltm);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <span class="keywordtype">string</span> run_hour_12_zero (tm *ltm);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   <span class="keywordtype">string</span> run_hour_24_zero (tm *ltm);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordtype">string</span> run_hour_12 (tm *ltm);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;   <span class="keywordtype">string</span> run_hour_24 (tm *ltm);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;   <span class="keywordtype">string</span> run_minute (tm *ltm);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;   <span class="keywordtype">string</span> run_second (tm *ltm);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;   <span class="keywordtype">string</span> run_unixtime (time_t now);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classtimeNode.html">  128</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classtimeNode.html">timeNode</a> : <span class="keyword">public</span> <a class="code" href="classarithNode.html">arithNode</a> {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   <a class="code" href="classtimeNode.html#aeb331f70d2b9eca8ec405d939faf920d">timeNode</a> ();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classtimeNode.html#a41b2272aa750223db76fef316e93322e">run</a> ();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;};</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//----------------------------------------------------------------------class sleepNode : public runNode {</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;   <a class="code" href="classsleepNode.html">sleepNode</a> (<a class="code" href="classrunNode.html">runNode</a> * s);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* s_;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;};</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="ttc" id="classtimeNode_html"><div class="ttname"><a href="classtimeNode.html">timeNode</a></div><div class="ttdoc">Nodo función obtener marca de tiempo. </div><div class="ttdef"><b>Definition:</b> dateOpNode.h:128</div></div>
+<div class="ttc" id="classarithNode_html"><div class="ttname"><a href="classarithNode.html">arithNode</a></div><div class="ttdoc">Nodos aritméticos. </div><div class="ttdef"><b>Definition:</b> expNode.h:351</div></div>
+<div class="ttc" id="classtimeNode_html_aeb331f70d2b9eca8ec405d939faf920d"><div class="ttname"><a href="classtimeNode.html#aeb331f70d2b9eca8ec405d939faf920d">timeNode::timeNode</a></div><div class="ttdeci">timeNode()</div><div class="ttdef"><b>Definition:</b> dateOpNode.cpp:245</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="classtimeNode_html_a41b2272aa750223db76fef316e93322e"><div class="ttname"><a href="classtimeNode.html#a41b2272aa750223db76fef316e93322e">timeNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> dateOpNode.cpp:247</div></div>
+<div class="ttc" id="classdateNode_html_ad13a252816fd28e65c027ad49d8c3976"><div class="ttname"><a href="classdateNode.html#ad13a252816fd28e65c027ad49d8c3976">dateNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> dateOpNode.cpp:41</div></div>
+<div class="ttc" id="classsleepNode_html"><div class="ttname"><a href="classsleepNode.html">sleepNode</a></div><div class="ttdoc">Nodo función de espera la ejecución. </div><div class="ttdef"><b>Definition:</b> dateOpNode.h:150</div></div>
+<div class="ttc" id="classdateNode_html_a3227bbfae0a0bdf38bc312a525b4216c"><div class="ttname"><a href="classdateNode.html#a3227bbfae0a0bdf38bc312a525b4216c">dateNode::dateNode</a></div><div class="ttdeci">dateNode(runNode *str, runNode *timestamp=NULL)</div><div class="ttdef"><b>Definition:</b> dateOpNode.cpp:39</div></div>
+<div class="ttc" id="classstringNode_html"><div class="ttname"><a href="classstringNode.html">stringNode</a></div><div class="ttdoc">Nodos cadenas de texto. </div><div class="ttdef"><b>Definition:</b> expNode.h:418</div></div>
+<div class="ttc" id="classdateNode_html"><div class="ttname"><a href="classdateNode.html">dateNode</a></div><div class="ttdoc">Nodo función fecha. </div><div class="ttdef"><b>Definition:</b> dateOpNode.h:80</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

@@ -1,0 +1,184 @@
+\hypertarget{classlogicNode}{\section{Referencia de la Clase logic\-Node}
+\label{classlogicNode}\index{logic\-Node@{logic\-Node}}
+}
+
+
+Nodos lógicos.  
+
+
+
+
+{\ttfamily \#include $<$exp\-Node.\-h$>$}
+
+Diagrama de herencias de logic\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classlogicNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classlogicNode_ab1bacd493fc9e6f302b0f4ee3ed86c55}{print} () const 
+\item 
+bool \hyperlink{classlogicNode_a802078f6b9ec9f96e01c91ac1704099b}{boolvalue} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classlogicNode_a5d3aa05d5ff8fe189e1aae007ea2118c}{nodeval} () const 
+\item 
+num \hyperlink{classlogicNode_a8fbc68e3cd354745e0e34ab4027bb8cc}{numvalue} () const 
+\item 
+string \hyperlink{classlogicNode_a5a5daf0f2b1295126998ac3a9fe0cc77}{strvalue} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classlogicNode_ae7ba9985382ad86048f9c82b3c742147}{get\-Class} ()
+\item 
+virtual void \hyperlink{classlogicNode_a6d3f6e8397d9d0b51b97d681b8380342}{set\-Node\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classlogicNode_a82b1b0c519a59e60556efcf3a0ca023b}{to\-\_\-bool} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+static void \hyperlink{classlogicNode_a92fc3de582be57443ade27dfa2ae27a4}{generate\-Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classlogicNode_a75446461a4686c25786d03f7ec95f8ca}{boolvalue\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodos lógicos. 
+
+Los nodos lógicos tienen un valor booleano asociado.
+
+Los nodos lógicos son una especialización de los nodos de expresión.
+
+Todo nodo lógico está asociado al nodo clase \char`\"{}logic\-Class\char`\"{}. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classlogicNode_a802078f6b9ec9f96e01c91ac1704099b}{\index{logic\-Node@{logic\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!logicNode@{logic\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool logic\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_a802078f6b9ec9f96e01c91ac1704099b}
+Devuelve el valor booleano asociado al nodo. \begin{DoxyReturn}{Devuelve}
+Valor booleano del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{dexp\-Node}.
+
+\hypertarget{classlogicNode_a92fc3de582be57443ade27dfa2ae27a4}{\index{logic\-Node@{logic\-Node}!generate\-Class@{generate\-Class}}
+\index{generate\-Class@{generate\-Class}!logicNode@{logic\-Node}}
+\subsubsection[{generate\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void logic\-Node\-::generate\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classlogicNode_a92fc3de582be57443ade27dfa2ae27a4}
+Genera el nodo clase \char`\"{}logic\-Class\char`\"{} asociado a todo nodo lógico y la añade a la tabla de símbolos clases. \hypertarget{classlogicNode_ae7ba9985382ad86048f9c82b3c742147}{\index{logic\-Node@{logic\-Node}!get\-Class@{get\-Class}}
+\index{get\-Class@{get\-Class}!logicNode@{logic\-Node}}
+\subsubsection[{get\-Class}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ logic\-Node\-::get\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_ae7ba9985382ad86048f9c82b3c742147}
+Obtiene la clase asociada a todo nodo lógico. \begin{DoxyReturn}{Devuelve}
+Nodo clase asociado a los nodos lógicos. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classobjectTypeNode_a42d4efaea6b650ef72807de94d3baa37}{object\-Type\-Node}.
+
+\hypertarget{classlogicNode_a5d3aa05d5ff8fe189e1aae007ea2118c}{\index{logic\-Node@{logic\-Node}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!logicNode@{logic\-Node}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ logic\-Node\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classlogicNode_a5d3aa05d5ff8fe189e1aae007ea2118c}
+Método que devuelve un nodo de tipo booleano con el mismo valor del nodo lógico. \begin{DoxyReturn}{Devuelve}
+Nodo booleano. 
+\end{DoxyReturn}
+\hypertarget{classlogicNode_a8fbc68e3cd354745e0e34ab4027bb8cc}{\index{logic\-Node@{logic\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!logicNode@{logic\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num logic\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_a8fbc68e3cd354745e0e34ab4027bb8cc}
+Devuelve el valor numérico asociado al nodo. \begin{DoxyReturn}{Devuelve}
+Valor numérico del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{dexp\-Node}.
+
+\hypertarget{classlogicNode_ab1bacd493fc9e6f302b0f4ee3ed86c55}{\index{logic\-Node@{logic\-Node}!print@{print}}
+\index{print@{print}!logicNode@{logic\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string logic\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_ab1bacd493fc9e6f302b0f4ee3ed86c55}
+Devuelve la cadena asociada al nodo. Según el valor booleano del mismo devolverá la cadena \char`\"{}true\char`\"{} o \char`\"{}false\char`\"{}. \begin{DoxyReturn}{Devuelve}
+Cadena de caracteres que representa el valor del nodo. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classlogicNode_a6d3f6e8397d9d0b51b97d681b8380342}{\index{logic\-Node@{logic\-Node}!set\-Node\-Value@{set\-Node\-Value}}
+\index{set\-Node\-Value@{set\-Node\-Value}!logicNode@{logic\-Node}}
+\subsubsection[{set\-Node\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void logic\-Node\-::set\-Node\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_a6d3f6e8397d9d0b51b97d681b8380342}
+Establece el valor del nodo a partir de otro nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo a partir del cual se tomará el valor. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classexpNode_aedb96104889212bae315a6381f8e0219}{exp\-Node}.
+
+\hypertarget{classlogicNode_a5a5daf0f2b1295126998ac3a9fe0cc77}{\index{logic\-Node@{logic\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!logicNode@{logic\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string logic\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlogicNode_a5a5daf0f2b1295126998ac3a9fe0cc77}
+Devuelve el valor cadena de caracteres asociado al nodo. \begin{DoxyReturn}{Devuelve}
+Valor cadena del nodo. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{dexp\-Node}.
+
+\hypertarget{classlogicNode_a82b1b0c519a59e60556efcf3a0ca023b}{\index{logic\-Node@{logic\-Node}!to\-\_\-bool@{to\-\_\-bool}}
+\index{to\-\_\-bool@{to\-\_\-bool}!logicNode@{logic\-Node}}
+\subsubsection[{to\-\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}bool logic\-Node\-::to\-\_\-bool (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classlogicNode_a82b1b0c519a59e60556efcf3a0ca023b}
+Convierte un nodo a su valor lógico. \begin{DoxyReturn}{Devuelve}
+valor lógico del nodo. 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classlogicNode_a75446461a4686c25786d03f7ec95f8ca}{\index{logic\-Node@{logic\-Node}!boolvalue\-\_\-@{boolvalue\-\_\-}}
+\index{boolvalue\-\_\-@{boolvalue\-\_\-}!logicNode@{logic\-Node}}
+\subsubsection[{boolvalue\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool logic\-Node\-::boolvalue\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classlogicNode_a75446461a4686c25786d03f7ec95f8ca}
+Atributo que representa el valor booleano del nodo. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{expNode_8h}{exp\-Node.\-h}\item 
+trunk/src/run/tree/exp\-Node.\-cpp\end{DoxyCompactItemize}

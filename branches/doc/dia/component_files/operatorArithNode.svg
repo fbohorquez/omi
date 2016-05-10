@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="25cm" height="19cm" viewBox="248 245 491 361" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="249.002" y="266" width="488.998" height="338.5"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="249.002" y="266" width="488.998" height="338.5"/>
+    <rect style="fill: #ffffff" x="249.002" y="246" width="165.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="249.002" y="246" width="165.7" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="251.002" y="261">  operatorArithNode  </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="288.002" y="286.8" width="193.15" height="86"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="288.002" y="286.8" width="193.15" height="86"/>
+    <rect style="fill: #ffffff" x="268.002" y="308.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="268.002" y="308.8" width="40" height="14"/>
+    <rect style="fill: #ffffff" x="268.002" y="336.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="268.002" y="336.8" width="40" height="14"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="316.002" y="312.7">&lt;&lt;file&gt;&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="316.002" y="328.7">
+      <tspan x="316.002" y="328.7">run/operatorArithNode.h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="280.002" y="484.8" width="208.4" height="86"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="280.002" y="484.8" width="208.4" height="86"/>
+    <rect style="fill: #ffffff" x="260.002" y="506.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260.002" y="506.8" width="40" height="14"/>
+    <rect style="fill: #ffffff" x="260.002" y="534.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="260.002" y="534.8" width="40" height="14"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="308.002" y="510.7">&lt;&lt;file&gt;&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="308.002" y="526.7">
+      <tspan x="308.002" y="526.7">run/operatorArithNode.cpp</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="384.202,484.8 384.202,432.8 384.577,432.8 384.577,379.505 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="389.577,392.153 384.577,376.153 379.577,392.153 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="591.002" y="281.8" width="130.85" height="86"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="591.002" y="281.8" width="130.85" height="86"/>
+    <rect style="fill: #ffffff" x="571.002" y="303.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="571.002" y="303.8" width="40" height="14"/>
+    <rect style="fill: #ffffff" x="571.002" y="331.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="571.002" y="331.8" width="40" height="14"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="619.002" y="307.7">&lt;&lt;file&gt;&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="619.002" y="323.7">
+      <tspan x="619.002" y="323.7">run/expNode.h</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="481.152,329.8 522.077,329.8 522.077,310.8 564.297,310.8 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="551.649,315.8 567.649,310.8 551.649,305.8 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="591.002" y="382.8" width="122" height="86"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="591.002" y="382.8" width="122" height="86"/>
+    <rect style="fill: #ffffff" x="571.002" y="404.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="571.002" y="404.8" width="40" height="14"/>
+    <rect style="fill: #ffffff" x="571.002" y="432.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="571.002" y="432.8" width="40" height="14"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="619.002" y="408.7">&lt;&lt;file&gt;&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="619.002" y="424.7">
+      <tspan x="619.002" y="424.7">run/runTree.h</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="481.152,329.8 522.077,329.8 522.077,411.8 564.297,411.8 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="551.649,416.8 567.649,411.8 551.649,406.8 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="589" y="485.8" width="98.5" height="86"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="589" y="485.8" width="98.5" height="86"/>
+    <rect style="fill: #ffffff" x="569" y="507.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="569" y="507.8" width="40" height="14"/>
+    <rect style="fill: #ffffff" x="569" y="535.8" width="40" height="14"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="569" y="535.8" width="40" height="14"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="617" y="511.7">&lt;&lt;file&gt;&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="617" y="527.7">
+      <tspan x="617" y="527.7">error.h</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="488.402,527.8 524.701,527.8 524.701,514.8 562.295,514.8 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="549.647,519.8 565.647,514.8 549.647,509.8 "/>
+  </g>
+</svg>

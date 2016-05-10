@@ -1,0 +1,76 @@
+\BOOKMARK [-1][-]{part.1}{I Proleg\363meno}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Motivaci\363n}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Alcance}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Glosario de T\351rminos}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Organizaci\363n del documento}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Planificaci\363n}{part.1}% 7
+\BOOKMARK [1][-]{section.2.1}{Metodolog\355a de desarrollo}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Planificaci\363n del proyecto}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Organizaci\363n}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Costes}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Riesgos}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.6}{Aseguramiento de calidad}{chapter.2}% 13
+\BOOKMARK [-1][-]{part.2}{II Desarrollo}{}% 14
+\BOOKMARK [0][-]{chapter.3}{Requisitos del Sistema}{part.2}% 15
+\BOOKMARK [1][-]{section.3.1}{Situaci\363n actual}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Procesos de Negocio}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Entorno Tecnol\363gico}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.3}{Fortalezas y Debilidades}{section.3.1}% 19
+\BOOKMARK [1][-]{section.3.2}{Necesidades de Negocio}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{Objetivos de Negocio}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{Procesos de Negocio}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{Objetivos del Sistema}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Cat\341logo de Requisitos}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.4.1}{Requisitos funcionales}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.2}{Requisitos no funcionales}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.3}{Reglas de negocio}{section.3.4}% 27
+\BOOKMARK [2][-]{subsection.3.4.4}{Requisitos de informaci\363n}{section.3.4}% 28
+\BOOKMARK [1][-]{section.3.5}{Alternativas de Soluci\363n}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.6}{Soluci\363n Propuesta}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{An\341lisis del Sistema}{part.2}% 31
+\BOOKMARK [1][-]{section.4.1}{Modelo Conceptual}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Modelo de Casos de Uso}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.2.1}{Actores}{section.4.2}% 34
+\BOOKMARK [1][-]{section.4.3}{Modelo de Comportamiento}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{Modelo de Interfaz de Usuario}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Dise\361o del Sistema}{part.2}% 37
+\BOOKMARK [1][-]{section.5.1}{Arquitectura del Sistema}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.1.1}{Arquitectura F\355sica}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.2}{Arquitectura L\363gica}{section.5.1}% 40
+\BOOKMARK [1][-]{section.5.2}{Parametrizaci\363n del software base}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{Dise\361o F\355sico de Datos}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.4}{Dise\361o detallado de Componentes}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.5}{Dise\361o detallado de la Interfaz de Usuario}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Construcci\363n del Sistema}{part.2}% 45
+\BOOKMARK [1][-]{section.6.1}{Entorno de Construcci\363n}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{C\363digo Fuente}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.3}{Scripts de Base de datos}{chapter.6}% 48
+\BOOKMARK [0][-]{chapter.7}{Pruebas del Sistema}{part.2}% 49
+\BOOKMARK [1][-]{section.7.1}{Estrategia}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.2}{Entorno de Pruebas}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.3}{Roles}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.4}{Niveles de Pruebas}{chapter.7}% 53
+\BOOKMARK [2][-]{subsection.7.4.1}{Pruebas Unitarias}{section.7.4}% 54
+\BOOKMARK [2][-]{subsection.7.4.2}{Pruebas de Integraci\363n}{section.7.4}% 55
+\BOOKMARK [2][-]{subsection.7.4.3}{Pruebas de Sistema}{section.7.4}% 56
+\BOOKMARK [2][-]{subsection.7.4.4}{Pruebas de Aceptaci\363n}{section.7.4}% 57
+\BOOKMARK [-1][-]{part.3}{III Ep\355logo}{}% 58
+\BOOKMARK [0][-]{chapter.8}{Manual de implantaci\363n y explotaci\363n}{part.3}% 59
+\BOOKMARK [1][-]{section.8.1}{Introducci\363n}{chapter.8}% 60
+\BOOKMARK [1][-]{section.8.2}{Requisitos previos}{chapter.8}% 61
+\BOOKMARK [1][-]{section.8.3}{Inventario de componentes}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.4}{Procedimientos de instalaci\363n}{chapter.8}% 63
+\BOOKMARK [1][-]{section.8.5}{Pruebas de implantaci\363n}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.6}{Procedimientos de operaci\363n y nivel de servicio}{chapter.8}% 65
+\BOOKMARK [0][-]{chapter.9}{Manual de usuario}{part.3}% 66
+\BOOKMARK [1][-]{section.9.1}{Introducci\363n}{chapter.9}% 67
+\BOOKMARK [1][-]{section.9.2}{Caracter\355sticas}{chapter.9}% 68
+\BOOKMARK [1][-]{section.9.3}{Requisitos previos}{chapter.9}% 69
+\BOOKMARK [1][-]{section.9.4}{Uso del sistema}{chapter.9}% 70
+\BOOKMARK [0][-]{chapter.10}{Conclusiones}{part.3}% 71
+\BOOKMARK [1][-]{section.10.1}{Objetivos alcanzados}{chapter.10}% 72
+\BOOKMARK [1][-]{section.10.2}{Lecciones aprendidas}{chapter.10}% 73
+\BOOKMARK [1][-]{section.10.3}{Trabajo futuro}{chapter.10}% 74
+\BOOKMARK [0][-]{chapter*.9}{Bibliograf\355a}{part.3}% 75
+\BOOKMARK [0][-]{section*.10}{Informaci\363n sobre Licencia}{part.3}% 76

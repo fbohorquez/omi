@@ -1,0 +1,70 @@
+\hypertarget{classisStringNode}{\section{Referencia de la Clase is\-String\-Node}
+\label{classisStringNode}\index{is\-String\-Node@{is\-String\-Node}}
+}
+
+
+Nodo operador comprobación de cadena de caracteres.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de is\-String\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classisStringNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisStringNode_a12b137c774428ab645b7fe0b44daf64a}{is\-String\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classisStringNode_a38366ff46223286f941e8d471b56a74c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador comprobación de cadena de caracteres. 
+
+Este nodo implementa la operación de comprobación del tipo para el caso cadena de caracteres.
+
+Para determinar el valor de la operación se comprueba si el valor del operando es de tipo cadena de caracteres.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisStringNode_a12b137c774428ab645b7fe0b44daf64a}{\index{is\-String\-Node@{is\-String\-Node}!is\-String\-Node@{is\-String\-Node}}
+\index{is\-String\-Node@{is\-String\-Node}!isStringNode@{is\-String\-Node}}
+\subsubsection[{is\-String\-Node}]{\setlength{\rightskip}{0pt plus 5cm}is\-String\-Node\-::is\-String\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classisStringNode_a12b137c774428ab645b7fe0b44daf64a}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisStringNode_a38366ff46223286f941e8d471b56a74c}{\index{is\-String\-Node@{is\-String\-Node}!run@{run}}
+\index{run@{run}!isStringNode@{is\-String\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void is\-String\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classisStringNode_a38366ff46223286f941e8d471b56a74c}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado. Comprueba si el tipo del nodo asociado es cadena de caracteres para tomar el valor lógico correspondiente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

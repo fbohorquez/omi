@@ -1,0 +1,7 @@
+Package: omi
+Architecture: all
+Maintainer: Fco. Javier Bohórquez Ogalla
+Depends: libboost-regex-dev, libreadline5, libc6
+Priority: optional
+Version: 1.0.0
+Description: Open Modular Interpreter

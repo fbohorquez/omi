@@ -1,0 +1,129 @@
+\hypertarget{classstrNode}{\section{Referencia de la Clase str\-Node}
+\label{classstrNode}\index{str\-Node@{str\-Node}}
+}
+
+
+Nodo cadena de caracteres.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de str\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{classstrNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstrNode_a11257986dbd5ef6f7baad026546bdcfb}{str\-Node} (string data)
+\item 
+\hyperlink{classstrNode_acde7257189f1d0b71122b55c3271f87e}{str\-Node} (\hyperlink{classstrNode}{str\-Node} $\ast$data)
+\item 
+\hyperlink{classstrNode_a4e4f3dcb4165f922152122eb771a4d10}{str\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$data)
+\item 
+\hyperlink{classstrNode_aa35b5fed0c69d59fe39041007b022f20}{str\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$data, bool id)
+\item 
+void \hyperlink{classstrNode_af11bd0e4f2dff849f90528f01220b811}{run} ()
+\item 
+bool \hyperlink{classstrNode_a8c20866d5b62df101233be5bc11a28a7}{is\-\_\-string} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo cadena de caracteres. 
+
+Representa un nodo cadena de texto. Una cadena de texto se representa mediante un conjunto de caracteres, un valor numérico que se corresponde con la longitud de la misma y un valor booleano que indica si la cadena está vacía. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classstrNode_a11257986dbd5ef6f7baad026546bdcfb}{\index{str\-Node@{str\-Node}!str\-Node@{str\-Node}}
+\index{str\-Node@{str\-Node}!strNode@{str\-Node}}
+\subsubsection[{str\-Node}]{\setlength{\rightskip}{0pt plus 5cm}str\-Node\-::str\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{data}
+\end{DoxyParamCaption}
+)}}\label{classstrNode_a11257986dbd5ef6f7baad026546bdcfb}
+Constructor del nodo a partir de una cadena de caracteres 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nodo cadena de texto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classstrNode_acde7257189f1d0b71122b55c3271f87e}{\index{str\-Node@{str\-Node}!str\-Node@{str\-Node}}
+\index{str\-Node@{str\-Node}!strNode@{str\-Node}}
+\subsubsection[{str\-Node}]{\setlength{\rightskip}{0pt plus 5cm}str\-Node\-::str\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf str\-Node} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classstrNode_acde7257189f1d0b71122b55c3271f87e}
+Constructor de copia. 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nodo cadena de texto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classstrNode_a4e4f3dcb4165f922152122eb771a4d10}{\index{str\-Node@{str\-Node}!str\-Node@{str\-Node}}
+\index{str\-Node@{str\-Node}!strNode@{str\-Node}}
+\subsubsection[{str\-Node}]{\setlength{\rightskip}{0pt plus 5cm}str\-Node\-::str\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classstrNode_a4e4f3dcb4165f922152122eb771a4d10}
+Constructor de conversión. 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nodo cadena de texto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classstrNode_aa35b5fed0c69d59fe39041007b022f20}{\index{str\-Node@{str\-Node}!str\-Node@{str\-Node}}
+\index{str\-Node@{str\-Node}!strNode@{str\-Node}}
+\subsubsection[{str\-Node}]{\setlength{\rightskip}{0pt plus 5cm}str\-Node\-::str\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{data, }
+\item[{bool}]{id}
+\end{DoxyParamCaption}
+)}}\label{classstrNode_aa35b5fed0c69d59fe39041007b022f20}
+Constructor de conversión. 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Nodo cadena de texto. \\
+\hline
+{\em id} & Determina si se debe tomar la clave en el caso de que data sea id. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classstrNode_a8c20866d5b62df101233be5bc11a28a7}{\index{str\-Node@{str\-Node}!is\-\_\-string@{is\-\_\-string}}
+\index{is\-\_\-string@{is\-\_\-string}!strNode@{str\-Node}}
+\subsubsection[{is\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}bool str\-Node\-::is\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstrNode_a8c20866d5b62df101233be5bc11a28a7}
+Sobrecarga este método para devolver verdadero. \begin{DoxyReturn}{Devuelve}
+Devuelve verdadero. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classrunNode_a3fda5276a76f39ad12d316794a892b06}{run\-Node}.
+
+\hypertarget{classstrNode_af11bd0e4f2dff849f90528f01220b811}{\index{str\-Node@{str\-Node}!run@{run}}
+\index{run@{run}!strNode@{str\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void str\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstrNode_af11bd0e4f2dff849f90528f01220b811}
+Función de ejecución vacía.
+
+Esta función no realiza ninguna acción ya que el valor del nodo es asignado en la construcción. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

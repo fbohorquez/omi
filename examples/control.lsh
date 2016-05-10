@@ -1,0 +1,96 @@
+#!/usr/local/bin/omi
+#~ init: << "A";
+$(a¡<10) {
+   << a;
+}
+#~ goto init;
+for ("10" as a) {
+	<< a;
+}
+i = 0;
+while (i<10){
+	<< i;
+	i++;
+	continue;
+	<< "NO SE DEBE MOSTRAR";
+	
+}
+#~ 
+j = 0;
+while (j<10){
+	i = 0;
+	<< j;
+	j ++;
+	while (i<10){
+		<< i;
+		i++;
+		continue 2;
+		<< "NO SE DEBE MOSTRAR";
+	}
+	<< "NO SE DEBE MOSTRAR";
+}
+#~ 
+j = 0;
+do{
+	i = 0;
+	<< j;
+	j ++;
+	do{
+		<< i;
+		i++;
+		continue 2;
+		<< "NO SE DEBE MOSTRAR";
+	}while (i<10);
+	<< "NO SE DEBE MOSTRAR";
+}while (j<10);
+<< "--------------------------";
+$(10){
+	<< "Level 0: ".${0};
+	$(10) {
+		<< "Level 1: ".${1};
+		#~ continue 2;
+		<< "NO SE DEBE MOSTRAR";
+	}
+	<< "NO SE DEBE MOSTRAR";
+}
+
+#~ 
+function f1 () {
+	label1:
+	 << "A";
+	 sleep(1);
+    #~ return "A";
+	 #~ goto label1;
+} 
+f1();
+#~ goto label1;
+
+#~ goto init;
+if (10 == 10) { }
+#~ 
+if (10 != 10) { } else { echo "A";}
+#~ 
+<< 0 + true;
+<< "" . true;
+<< {3} + 2;
+<< size true;
+<< size 1.2;
+a = "AAAAAAAA";
+<< a++;
+<< a = "AAAAAA";
+<< a[0];
+a[0] = "B";
+<< a;
+a = {1,2};
+a[] = "J";
+<< a;
+
+<< sprintf ("%^s %+d", "aaaaa", 4);
+a = 1;
+<< "ERROR[";
+a = &a;
+<< "]";
+a = 10;
+<< a;
+<< a;
+#~ $(100000000000) {}

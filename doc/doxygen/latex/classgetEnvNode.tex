@@ -1,0 +1,66 @@
+\hypertarget{classgetEnvNode}{\section{Referencia de la Clase get\-Env\-Node}
+\label{classgetEnvNode}\index{get\-Env\-Node@{get\-Env\-Node}}
+}
+
+
+Node operador acceso a variable de entorno.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de get\-Env\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classgetEnvNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgetEnvNode_ae8842f8ee50466b6d048e22d6eef9aa3}{get\-Env\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classgetEnvNode_afb268b8afbddf595a70be3338405c4e9}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador acceso a variable de entorno. 
+
+Este nodo sirve como acceso a las variables definidas en el entorno en el que se ejecuta el programa. Toma como valor el de la variable de entorno correspondiente a un nombre dado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgetEnvNode_ae8842f8ee50466b6d048e22d6eef9aa3}{\index{get\-Env\-Node@{get\-Env\-Node}!get\-Env\-Node@{get\-Env\-Node}}
+\index{get\-Env\-Node@{get\-Env\-Node}!getEnvNode@{get\-Env\-Node}}
+\subsubsection[{get\-Env\-Node}]{\setlength{\rightskip}{0pt plus 5cm}get\-Env\-Node\-::get\-Env\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classgetEnvNode_ae8842f8ee50466b6d048e22d6eef9aa3}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nombre de la variable \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgetEnvNode_afb268b8afbddf595a70be3338405c4e9}{\index{get\-Env\-Node@{get\-Env\-Node}!run@{run}}
+\index{run@{run}!getEnvNode@{get\-Env\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Env\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetEnvNode_afb268b8afbddf595a70be3338405c4e9}
+Método que ejecuta el nodo. Procede a la ejecución del nodo que hace de nombre de la variable. Accede al entorno en el que se ejecuta el programa y obtiene el valor de la variable correspondiente. Si la variable no está definida se toma como valor el nodo nulo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

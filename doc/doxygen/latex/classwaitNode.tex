@@ -1,0 +1,66 @@
+\hypertarget{classwaitNode}{\section{Referencia de la Clase wait\-Node}
+\label{classwaitNode}\index{wait\-Node@{wait\-Node}}
+}
+
+
+Nodo función espera de proceso .  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de wait\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classwaitNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwaitNode_a8276a86d50663d11bd6762a144282c20}{wait\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$p\-I\-D=N\-U\-L\-L)
+\item 
+void \hyperlink{classwaitNode_a89cb8462c00751c8c374d6e3b8bf0c4b}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función espera de proceso . 
+
+Para la ejecución del proceso hasta que finaliza la ejecución de todos sus procesos hijos o uno dado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classwaitNode_a8276a86d50663d11bd6762a144282c20}{\index{wait\-Node@{wait\-Node}!wait\-Node@{wait\-Node}}
+\index{wait\-Node@{wait\-Node}!waitNode@{wait\-Node}}
+\subsubsection[{wait\-Node}]{\setlength{\rightskip}{0pt plus 5cm}wait\-Node\-::wait\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{p\-I\-D = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classwaitNode_a8276a86d50663d11bd6762a144282c20}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em p\-I\-D} & Identificador de proceso al que se debe esperar. Si es N\-U\-L\-L se esperan todos los procesos hijos. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classwaitNode_a89cb8462c00751c8c374d6e3b8bf0c4b}{\index{wait\-Node@{wait\-Node}!run@{run}}
+\index{run@{run}!waitNode@{wait\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void wait\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classwaitNode_a89cb8462c00751c8c374d6e3b8bf0c4b}
+Metodo de ejecución. Para la ejecución del proceso hasta que finaliza la ejecución de todos sus procesos hijos o uno dado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

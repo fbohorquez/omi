@@ -1,0 +1,65 @@
+\hypertarget{classparentNode}{\section{Referencia de la Clase parent\-Node}
+\label{classparentNode}\index{parent\-Node@{parent\-Node}}
+}
+
+
+Node referencia a objeto padre.  
+
+
+
+
+{\ttfamily \#include $<$class\-Node.\-h$>$}
+
+Diagrama de herencias de parent\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classparentNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparentNode_a860d77956d36eda0e0ef4946035c2cea}{parent\-Node} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classparentNode_a6fbcd7c62d7d256eaced014785c061da}{get} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node referencia a objeto padre. 
+
+Este nodo es del tipo expresión no definida. Toma como valor la clase padre del objeto que opera sobre la tabla de símbolos actual. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classparentNode_a860d77956d36eda0e0ef4946035c2cea}{\index{parent\-Node@{parent\-Node}!parent\-Node@{parent\-Node}}
+\index{parent\-Node@{parent\-Node}!parentNode@{parent\-Node}}
+\subsubsection[{parent\-Node}]{\setlength{\rightskip}{0pt plus 5cm}parent\-Node\-::parent\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparentNode_a860d77956d36eda0e0ef4946035c2cea}
+Constructor de la clase. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classparentNode_a6fbcd7c62d7d256eaced014785c061da}{\index{parent\-Node@{parent\-Node}!get@{get}}
+\index{get@{get}!parentNode@{parent\-Node}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ parent\-Node\-::get (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classparentNode_a6fbcd7c62d7d256eaced014785c061da}
+Obtiene el método correspondiente a la clave dada de la clase que opera como padre en el contexto actual. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave que se usará para buscar el método. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Método de la clase padre al que se accederá. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{classNode_8h}{class\-Node.\-h}\item 
+trunk/src/run/table/class\-Node.\-cpp\end{DoxyCompactItemize}

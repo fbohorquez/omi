@@ -1,0 +1,66 @@
+\hypertarget{classglobalNode}{\section{Referencia de la Clase global\-Node}
+\label{classglobalNode}\index{global\-Node@{global\-Node}}
+}
+
+
+Nodo identificador global.  
+
+
+
+
+{\ttfamily \#include $<$id\-Node.\-h$>$}
+
+Diagrama de herencias de global\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classglobalNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classglobalNode_a30486dc4cbebff694c840da941f84f7e}{global\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id)
+\item 
+void \hyperlink{classglobalNode_afe7ecb283fb3c4dec0983aff20cbf214}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo identificador global. 
+
+Este nodo establece un identificador como global, lo que permite que la referencia que tiene como valor sea accesible desde cualquier contexto y sea cual sea el nivel de la tabla de símbolos. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classglobalNode_a30486dc4cbebff694c840da941f84f7e}{\index{global\-Node@{global\-Node}!global\-Node@{global\-Node}}
+\index{global\-Node@{global\-Node}!globalNode@{global\-Node}}
+\subsubsection[{global\-Node}]{\setlength{\rightskip}{0pt plus 5cm}global\-Node\-::global\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{classglobalNode_a30486dc4cbebff694c840da941f84f7e}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador que se hará global. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classglobalNode_afe7ecb283fb3c4dec0983aff20cbf214}{\index{global\-Node@{global\-Node}!run@{run}}
+\index{run@{run}!globalNode@{global\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void global\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classglobalNode_afe7ecb283fb3c4dec0983aff20cbf214}
+Ejecución del nodo. Se comprueba que el nodo sea un identificador, se ejecuta y se guarda una referencia de su valor en la tabla de elementos globales. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{idNode_8h}{id\-Node.\-h}\item 
+trunk/src/run/table/id\-Node.\-cpp\end{DoxyCompactItemize}

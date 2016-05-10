@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="15cm" height="11cm" viewBox="175 82 284 220" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="177" y="103.8" width="281.601" height="197.2"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="177" y="103.8" width="281.601" height="197.2"/>
+    <rect style="fill: #ffffff" x="177" y="83.8" width="65.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="177" y="83.8" width="65.6" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="179" y="98.8"> fileOp </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="190.58" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190.58" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="190.58" y="119.078" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190.58" y="119.078" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="196.58" y="154.978">
+      <tspan x="196.58" y="154.978"> file </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="269.3" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="269.3" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="269.3" y="119.078" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="269.3" y="119.078" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="275.3" y="154.978">
+      <tspan x="275.3" y="154.978"> fput </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="343" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="343" y="137.078" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="343" y="119.078" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="343" y="119.078" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="349" y="154.978">
+      <tspan x="349" y="154.978"> fget </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="192" y="197.472" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="192" y="197.472" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="192" y="179.472" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="192" y="179.472" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="198" y="215.372">
+      <tspan x="198" y="215.372"> fread </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="276.7" y="197.472" width="73.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="276.7" y="197.472" width="73.6" height="28"/>
+    <rect style="fill: #ffffff" x="276.7" y="179.472" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="276.7" y="179.472" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="282.7" y="215.372">
+      <tspan x="282.7" y="215.372"> fwrite </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="365.4" y="197.472" width="81.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="365.4" y="197.472" width="81.3" height="28"/>
+    <rect style="fill: #ffffff" x="365.4" y="179.472" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="365.4" y="179.472" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="371.4" y="215.372">
+      <tspan x="371.4" y="215.372"> fappend </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="192.4" y="254.576" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="192.4" y="254.576" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="192.4" y="236.576" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="192.4" y="236.576" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="198.4" y="272.476">
+      <tspan x="198.4" y="272.476"> fseek </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="278.4" y="254.576" width="65.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="278.4" y="254.576" width="65.9" height="28"/>
+    <rect style="fill: #ffffff" x="278.4" y="236.576" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="278.4" y="236.576" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="284.4" y="272.476">
+      <tspan x="284.4" y="272.476"> ftell </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="363.7" y="254.576" width="73.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="363.7" y="254.576" width="73.6" height="28"/>
+    <rect style="fill: #ffffff" x="363.7" y="236.576" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="363.7" y="236.576" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="369.7" y="272.476">
+      <tspan x="369.7" y="272.476"> fclose </tspan>
+    </text>
+  </g>
+</svg>

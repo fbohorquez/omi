@@ -1,0 +1,35 @@
+   
+\section{Introducción}
+\input{introduction_web.tex}
+\section{Características}
+\input{features_web.tex}
+\section{Requisitos previos}
+\input{requisites_web.tex}
+\section {Uso del sistema}
+\input{use_web.tex}
+\subsection{Arquitectura cliente/servidor}
+El intérprete OMI puede funcionar bajo una arquitectura cliente/servidor para ello solo se ha de ejecutar este con la opción ``-s'' y el puerto de
+escucha. 
+
+En este caso el intérprete leerá por el puerto establecido una cadena de caracteres que representa el código a interpretar. El intérprete procesará 
+la cadena y producirá un resultado.
+
+\subsection{Descripción del proceso de interpretación}
+Es posible iniciar el intérprete de forma que produzca una salida en formato JSON que describa los procesos de interpretación llevados a cabo. La estructura 
+de datos JSON devuelta es descrita en su sección correspondiente de diseño del software.
+
+Cuando se ejecuta el intérprete en de esta forma en conjunción con una arquitectura cliente/servidor esta estructura es devuelta por el puerto establecido. 
+
+\subsection{runTree} 
+runTree es un cliente para el intérprete OMI. Lee la estructura JSON producida por este y la representa en una interfaz gráfica. 
+
+La interfaz de runTree se divide como sigue:
+
+\begin{itemize}
+\item Árbol de ejecución: Describe el árbol sintáctico producido y visualiza su procesamiento.
+\item Tablas de símbolos: Describe el contenido de las tablas de símbolos.
+\item Código fuente: Permite al usuario introducir el código fuente que será interpretado.
+\item Consola de entrada/salida: Muestra la salida producida y la recoge la entrada del usuario.
+\item Consola de estado: Describe el estado del proceso o de los elementos seleccionados.
+\item Consola de mandos: Contiene las opciones de control del proceso (avanzar, repetir, cargar código y guardar).
+\end{itemize}

@@ -1,0 +1,97 @@
+\hypertarget{classfindNode}{\section{Referencia de la Clase find\-Node}
+\label{classfindNode}\index{find\-Node@{find\-Node}}
+}
+
+
+Nodo función búsqueda de subcadena.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de find\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfindNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfindNode_ac09b97ca401c04472c4da0fd277bdcc9}{find\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$cad, \hyperlink{classrunNode}{run\-Node} $\ast$subcad, \hyperlink{classrunNode}{run\-Node} $\ast$ini\-\_\-pos)
+\item 
+void \hyperlink{classfindNode_a50ac36a34f93eb0facbd1b3c240bffc6}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfindNode_a6d65e85c3ee20fa14e240932dab11aa6}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función búsqueda de subcadena. 
+
+Este operador busca una subcadena de texto dentro de una cadena dada.
+
+Para la búsqueda se precisa la cadena principal y la subcadena a buscar. Además es posible indicar a partir de qué posición se comenzará la búsqueda.
+
+Tras la ejecución el nodo toma como valor interno el valor de la posición de la primera ocurrencia de la subcadena a partir de la posición indicada. Si la subcadena no se encuentra el nodo tomará el valor -\/1
+
+Adicionalmente es posible utilizar como subcadena una expresión regular. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfindNode_ac09b97ca401c04472c4da0fd277bdcc9}{\index{find\-Node@{find\-Node}!find\-Node@{find\-Node}}
+\index{find\-Node@{find\-Node}!findNode@{find\-Node}}
+\subsubsection[{find\-Node}]{\setlength{\rightskip}{0pt plus 5cm}find\-Node\-::find\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{cad, }
+\item[{{\bf run\-Node} $\ast$}]{subcad, }
+\item[{{\bf run\-Node} $\ast$}]{ini\-\_\-pos}
+\end{DoxyParamCaption}
+)}}\label{classfindNode_ac09b97ca401c04472c4da0fd277bdcc9}
+Constructor del nodo. Toma como argumentos la cadena principal la subcadena de búsqueda, que puede ser una cadena de texto o una expresión regular, y la posición a partir de la cual comenzará la búsqueda. 
+\begin{DoxyParams}{Parámetros}
+{\em Nodo} & cadena \\
+\hline
+{\em Nodo} & subcadena \\
+\hline
+{\em Nodo} & posición \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfindNode_a6d65e85c3ee20fa14e240932dab11aa6}{\index{find\-Node@{find\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!findNode@{find\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ find\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classfindNode_a6d65e85c3ee20fa14e240932dab11aa6}
+Devuelve un nodo find como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método find. 
+\end{DoxyReturn}
+\hypertarget{classfindNode_a50ac36a34f93eb0facbd1b3c240bffc6}{\index{find\-Node@{find\-Node}!run@{run}}
+\index{run@{run}!findNode@{find\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void find\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfindNode_a50ac36a34f93eb0facbd1b3c240bffc6}
+Lleva a cabo la ejecución del nodo, buscando la subcadena dentro de la cadena principal a partir de la posición indicada.
+
+Tras la ejecución el nodo toma como valor interno la primera posición en la que se encuentra la primera ocurrencia de la subcadena.
+
+Si la subcadena no se encuentra se tomará como valor interno el entero -\/1. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\hypertarget{classincasigNode}{\section{Referencia de la Clase incasig\-Node}
+\label{classincasigNode}\index{incasig\-Node@{incasig\-Node}}
+}
+
+
+Nodo operador incremento y asignación.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de incasig\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classincasigNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classincasigNode_a1a97d05ee1921ecf37b95beac39d7f56}{incasig\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classincasigNode_a88e017927106af6dfc6b8305108841c3}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador incremento y asignación. 
+
+Este nodo implementa la operación incremento y asignación. Se lleva a cabo el incremento del nodo asociado, luego el nuevo resultado se utiliza como valor del operador.
+
+El resultado de evaluar la expresión es un valor aritmético correspondiente al incremento. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classincasigNode_a1a97d05ee1921ecf37b95beac39d7f56}{\index{incasig\-Node@{incasig\-Node}!incasig\-Node@{incasig\-Node}}
+\index{incasig\-Node@{incasig\-Node}!incasigNode@{incasig\-Node}}
+\subsubsection[{incasig\-Node}]{\setlength{\rightskip}{0pt plus 5cm}incasig\-Node\-::incasig\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classincasigNode_a1a97d05ee1921ecf37b95beac39d7f56}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classincasigNode_a88e017927106af6dfc6b8305108841c3}{\index{incasig\-Node@{incasig\-Node}!run@{run}}
+\index{run@{run}!incasigNode@{incasig\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void incasig\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classincasigNode_a88e017927106af6dfc6b8305108841c3}
+Método que ejecuta el nodo. Procede a incrementar el valor del nodo operando. Luego asocia el resultado del incremento como valor interno del operador. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

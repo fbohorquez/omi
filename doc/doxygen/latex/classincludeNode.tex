@@ -1,0 +1,66 @@
+\hypertarget{classincludeNode}{\section{Referencia de la Clase include\-Node}
+\label{classincludeNode}\index{include\-Node@{include\-Node}}
+}
+
+
+Nodo sentencia inclusión de fichero.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de include\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classincludeNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classincludeNode_ad5bd6a36e99d79026f3cf6b48b9acd81}{include\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file)
+\item 
+void \hyperlink{classincludeNode_adcaaf58d6c1613abaa8e7c939023945b}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia inclusión de fichero. 
+
+Incluye un fichero que será interpretado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classincludeNode_ad5bd6a36e99d79026f3cf6b48b9acd81}{\index{include\-Node@{include\-Node}!include\-Node@{include\-Node}}
+\index{include\-Node@{include\-Node}!includeNode@{include\-Node}}
+\subsubsection[{include\-Node}]{\setlength{\rightskip}{0pt plus 5cm}include\-Node\-::include\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classincludeNode_ad5bd6a36e99d79026f3cf6b48b9acd81}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file} & Nodo que representa la ruta al fichero. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classincludeNode_adcaaf58d6c1613abaa8e7c939023945b}{\index{include\-Node@{include\-Node}!run@{run}}
+\index{run@{run}!includeNode@{include\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void include\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classincludeNode_adcaaf58d6c1613abaa8e7c939023945b}
+Método de ejecución del nodo. Accede y lee el contenido de un fichero que será tratado como código fuente y será interpretado. Si el fichero no existe se produce un error. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

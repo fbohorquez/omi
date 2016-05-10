@@ -1,0 +1,68 @@
+\hypertarget{classreturnNode}{\section{Referencia de la Clase return\-Node}
+\label{classreturnNode}\index{return\-Node@{return\-Node}}
+}
+
+
+Nodo return.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+Diagrama de herencias de return\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classreturnNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreturnNode_a23cea3401fbaca793938f5995442013a}{return\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$value)
+\item 
+void \hyperlink{classreturnNode_abad8b5f36635ebc83cfc538d265779ff}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo return. 
+
+Todo nodo return tienen un valor asociado que será el que se asigne a la llamada a función cuya ejecución lo originó.
+
+Internamente lanza una excepción return con el valor indicado, haciendo que se detenga la ejecución de la función y que la llamada tome valor 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classreturnNode_a23cea3401fbaca793938f5995442013a}{\index{return\-Node@{return\-Node}!return\-Node@{return\-Node}}
+\index{return\-Node@{return\-Node}!returnNode@{return\-Node}}
+\subsubsection[{return\-Node}]{\setlength{\rightskip}{0pt plus 5cm}return\-Node\-::return\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{classreturnNode_a23cea3401fbaca793938f5995442013a}
+Constructor. 
+\begin{DoxyParams}{Parámetros}
+{\em value} & Valor a ser devuelto. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classreturnNode_abad8b5f36635ebc83cfc538d265779ff}{\index{return\-Node@{return\-Node}!run@{run}}
+\index{run@{run}!returnNode@{return\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void return\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classreturnNode_abad8b5f36635ebc83cfc538d265779ff}
+Lanza una excepción de tipo return con el valor especificado en la inicialización. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

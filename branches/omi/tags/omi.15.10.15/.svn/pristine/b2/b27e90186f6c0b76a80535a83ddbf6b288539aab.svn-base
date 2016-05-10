@@ -1,0 +1,2099 @@
+% ------------------------------------------------------------------------------
+% Este fichero es parte de la plantilla LaTeX para la realización de Proyectos
+% Final de Grado, protegido bajo los términos de la licencia GFDL.
+% Para más información, la licencia completa viene incluida en el
+% fichero fdl-1.3.tex
+
+% Copyright (C) 2012 SPI-FM. Universidad de Cádiz
+% ------------------------------------------------------------------------------
+
+En esta sección se detalla la situación actual de la organización y las necesidades de la misma, que originan el desarrollo o mejora de un sistema informático. Luego se presentan los objetivos y el catálogo de requisitos del nuevo sistema. Finalmente se describen las diferentes alternativas tecnológicas y el análisis de la brecha entre los requisitos planteados y la solución base seleccionada, si aplica.
+
+\section{Situación actual} 
+Esta sección debe contener información sobre la situación actual de la organización para la que se va a desarrollar el sistema software.
+
+\subsection{Procesos de Negocio}
+Esta sección debe contener información sobre los modelos de procesos de negocio actuales, que suelen ser la base de los modelos de procesos de negocio a implantar.
+
+\subsection{Entorno Tecnológico}
+Esta sección debe contener información general sobre el entorno tecnológico en la organización del cliente antes del comienzo del desarrollo del sistema software, incluyendo hardware, redes, software, etc.
+
+\subsection{Fortalezas y Debilidades}
+Esta sección debe contener información sobre los aspectos positivos y negativos del negocio actual de la organización para la que se va a desarrollar el sistema software.
+
+\section{Necesidades de Negocio}
+Esta sección debe contener información sobre los objetivos de negocio de clientes y usuarios, incluyendo los modelos de procesos de negocio a implantar.
+
+\subsection{Objetivos de Negocio}
+Esta sección debe contener los objetivos de negocio que se esperan alcanzar cuando el sistema software a desarrollar esté en producción.
+
+\subsection{Procesos de Negocio}
+Esta sección, debe contener los modelos de procesos de negocio a implantar, que normalmente son los modelos de procesos de negocio actuales con ciertas mejoras.
+
+\section{Objetivos del Sistema}
+Esta sección debe contener la especificación de los objetivos o requisitos generales del sistema.
+
+\section{Catálogo de Requisitos}
+Esta sección debe contener la descripción del conjunto de requisitos específicos del sistema a desarrollar para satisfacer las necesidades de negocio del cliente.
+
+\subsection{Requisitos funcionales}
+En esta subsección se detallan los requisitos funcionales del sistema. Estos se han organizado en distintas categorías, según cuestiones realativas al 
+software como intérprete y según las distintas características del lenguaje. 
+
+
+La especificación de requerimientos funcionales que se presenta es completa y consistente, dado que recoje todos los servicios y necesidades que se 
+pretenden cubrir y evita presentar ambiguedades o definiciones contradictorias.
+
+.\linebreak
+\initcn
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Léxico.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El sistema debe fijar el léxico del lenguaje conformado por una conjunto de palabras y expresiones bien definidas y acotadas.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Gramática.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El sistema debe definir una gramática que representará el lenguaje. La gramática debe ser libre de contexto, clara
+		y uniforme en toda su extensión. Además debe estar libre de ambigüedades.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Comentarios.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Se ha de contemplar un mecanismo para añadir comentarios al contenido fuente que serán ignorados
+		durante la tarea de interpretación. 
+      
+      Los comentarios comprenderán desde un carácter ``\#'', o bien ``\/\/'', hasta fin de línea.
+      
+      Por otro lado se ha de contemplar los comentarios de múltiples líneas, que deerán estar contenidos entre ``\/\*'' y ``\*\/''.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Interpretación semántica.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Dado un contenido fuente el sistema debe analizarlo en función al léxico (análisis léxico) y la gramática (análisis sintáctico)
+		del lenguaje y producir el resultado semántico asociado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde línea de comandos.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde una línea de comandos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde entrada estándar.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde la entrada estándar del sistema.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde fichero.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde un fichero.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Entorno de ejecución.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe definir un entorno de ejecución en
+		el que se controlen parámetros de entrada, variables de entornos del sistema operativo e información sobre
+		el proceso como número de línea actual y los errores producidos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Información de errores.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Si se produce un error el interprete debe informar del tipo y causa del error, así como del contexto en el que se
+		ha producido (nombre y línea de fichero).
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Son las unidades interpretables más pequeña en las que se divide un contenido fuente. Las sentencias están sujetas a
+		unas reglas sintácticas y encierran un significado semántico. El interprete debe definir la gramática de cada sentencia y dotarlas de significado
+		semántico. Toda sentencia debe finalizar con el carácter ``;'', excluyendo las sentencias formadas por bloques de sentencias. Aunque carezca
+		de sentido práctico, para evitar posibles errores de codificación y mantener coherencia en la sintaxis y la definición del lenguaje, se debe
+		contemplar la sentencia vacía que sólo conste del carácter ``;''.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Bloques de sentencias.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Son un conjunto de sentencias que deberán ser interpretadas y ejecutadas secuencialmente. La disposición de
+		sentencias en el bloque determinan el flujo de ejecución que se llevará a cabo cuando se interprete el bloque. El contenido fuente
+		en si mismo es un bloque de sentencias. Todo bloque de sentencias de más de una sentencia (con excepción del contenido fuente en si mismo)
+		debe ir delimitado mediante llaves. Aunque no sea de uso común, para mantener coherencia en la sintaxis y la definición del lenguaje, se debe
+		contemplar el bloque de sentencias vacío.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Elementos imprimibles.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe definir y operar sobre una serie de elementos imprimibles, estos pueden ser
+		datos, expresiones, sentencias u otros elementos del lenguaje. Un elemento imprible debe tener una representación gráfica
+		que permita mostrarlo en pantalla.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Datos.
+		\item [Categoría:] Interprete.
+		\item [Número:] \cn
+		\item [Descripción:] El interprete deberá operar sobre datos. El contenido fuente 
+      definirá cómo se han de construir y/o acceder a los datos y las operaciones que se realizarán sobre ellos durante la ejecución. 
+      
+      Un dato será tratado en función un tipo de dato. El tipo de dato lo dota de una semántica, un significado.
+      Así, todo dato deberá ser considerado un objeto, por lo que tendrán unas propiedades y funcionalidad ligadas al tipo como el que es trarado.
+      
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Expresiones.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de evaluar expresiones. Estas son secuencias de datos, operadores, operandos,
+		elementos de puntuación y/o palabras clave, que especifican una unidad computacional.
+		Generalmente encierran un valor que se asocia a la expresión después de ser evaluada. Una sentencia puede estar formada por una o
+		varias expresiones que deberán ser evaluadas o interpretadas para dotarla de significado. Una sentencia puede constar únicamente
+		de una expresión en ese caso la sentencia es considerada la evaluación de dicha expresión.
+		
+		La expresión más simple equivale a un único dato, en este caso el valor de la expresión será el del dato.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Expresiones de tipo definido.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Son expresiones cuyo valor es de un tipo definido y fijo. El sistema debe interpretar estas expresiones para determinar el valor
+		asociado a la mismas en un momento dado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Expresiones de tipo no definido.
+		\item [Categoría:] Interprete.
+		\item [Número:] \cn
+		\item [Descripción:] Son expresiones cuyo valor no tiene un tipo definido ni fijo, sino que es durante la interpretación cuando se determina el tipo.
+		El sistema debe interpretar estas expresiones para determinar, además del valor asociado a la mismas, el tipo de dato que guardan en un momento
+		dado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Listado de expresiones.
+		\item [Categoría:] Interprete.
+		\item [Número:] \cn
+		\item [Descripción:] Se ha de facilitar un mecanismo que permita agrupar expresiones para darles un significado operacional
+		común. Este deberá consistir en una serie de expresiones separadas por comas.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Nombre:] Pares de expresiones.
+		\item [Categoría:] Interprete.
+		\item [Número:] \cn
+		\item [Descripción:] Se ha de facilitar un mecanismo que permita relacionar un par de expresiones para darles un significado estructural.
+		Este deberá consistir en el par de expresiones separadas por el carácter ``:''.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipos de datos.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre diferentes tipos de datos. Las expresiones
+		pueden tener un tipo de dato asociado que puede o no ser definido y fijo. Los tipos de datos pueden ser simples o compuestos.
+		
+		Un dato debe tratarse como diferente tipo en función el contexto en el que se utilice. Así un dato de un tipo concreto puede ser tratado como
+		otro tipo de dato si fuese necesario. Un dato por si mismo siempre será considerado del tipo de dato con el que se creó, sin embargo
+		cuando interviene en una operación es posible que se precise una conversión o equivalencia de tipos. Para ello debe tomar su valor como si de otro
+		tipo se tratase. Si en la operación no es posible convertir el tipo en el tipo requerido se debe producir un error de tipos.
+      
+		Se debe establecer un mecanismo de conversión de tipos. La relación de conversión de tipo debe ser transitiva, así
+		si un dato de tipo lógico puede verse como un dato de tipo aritmético y un dato aritmético como un cadena de caracteres, entonces el
+		dato de tipo lógico también puede verse como una cadena.
+      
+      Todo tipo de dato representa en s
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato nulo.
+		\item [Categoría:] Tipo de dato simple.
+		\item [Descripción:] Se debe contemplar el tipo de dato nulo. Este tipo de dato tendrá un único valor 
+      posible. El valor nulo deberá representar un elemento no definido. Una expresión puede tomar el
+      valor nulo cuando sea evaluada si se hace uso de elementos no definidos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato lógico.
+		\item [Categoría:] Tipo de dato simple.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo lógicos. Este tipo
+		de dato sólo contempla dos posibles valores: falso y verdadero. Este será el tipo de dato más simple. Un dato lógico
+		puede ser tratado como un tipo de dato aritmético tomándose falso como el valor cero, y verdadero como el valor uno.
+		Los datos de tipo lógico deben ser elementos imprimibles.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato aritmético.
+		\item [Categoría:] Tipo de dato simple.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo aritméticos. Este tipo
+		de dato contempla valores numéricos racionales. Todo dato aritmético además tiene asociado un valor lógico cuando se utiliza como este
+		tipo de dato, tal que cualquier número distinto de cero tiene valor verdadero y el cero tiene el valor falso. Además cuando un dato aritmético
+		es tratado como una cadena de caracteres se tomará la cadena que representa al número. Los datos de tipo aritmético deben
+		ser elementos imprimibles.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato cadenas de caracteres
+		\item [Categoría:] Tipo de dato compuesto
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo cadena de caracteres. Este tipo
+		de dato contempla cualquier sucesión de caracteres alfanuméricos, secuencias de escape, u otros signos o símbolos. Esta sucesión pude
+		ser vacía. Una cadena de caracteres vendrá delimitada mediante comillas dobles o simples. Toda cadena de caracteres además tiene asociado
+		un valor aritmético cuando se utiliza como este tipo de dato, tal que, si la cadena representa un número racional el valor será el del
+		propio número, por otro lado, si la cadena
+		no representa un número racional el valor aritmético de la misma será el número de caracteres que la conforman. Los datos de tipo cadena
+		de caracteres deben ser elementos imprimibles. No se ha de considerar el tipo simple de dato carácter, pudiéndose tratar este como una cadena
+		de un solo elemento.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato expresión regular.
+		\item [Categoría:] Tipo de dato compuesto.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo expresión regular. Una expresión regular
+		consiste en una cadena de caracteres que representan un patrón. Las expresiones regulares tendrán una sintaxis PERL. Una expresión regular
+		se delimita mediante caracteres acento grave (\`\ ). El tipo de dato expresión regular no debe ser tratado como otro tipo de dato.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato array.
+		\item [Categoría:] Tipo de dato compuesto.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo array. Este tipo
+		de dato contempla cualquier sucesión de elementos. Estos elementos pueden ser pares de expresiones clave/valor donde la clave servirá
+		para referenciar el valor dentro de la sucesión. También pueden ser simples expresiones por lo que se tomará automáticamente una clave
+		numérica y secuencial según el orden del array y como valor el de la expresión. El significado semántico de las claves en un array puede
+		ser numérico (array numérico) o cadenas de caracteres (array asociativo).  
+		Los elementos del array serán ordenados por defecto de forma alfabética en función a la clave.
+		Una definición de array se delimita mediante llaves y sus elementos se denotarán mediante un listado de expresiones o pares de estas.
+		Los datos de tipo array deben ser elementos imprimibles. Un dato de tipo array solo puede ser tratado como un tipo de dato booleano,
+		siendo falso si se encuentra vacío y verdadero en caso contrario.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato etiqueta.
+		\item [Categoría:] Tipo de dato funcional.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo etiqueta. Una etiqueta es una referencia
+		a una sentencia concreta dentro del contenido fuente. Las etiquetas dependen quedarán definidas dentro de un contexto determinado por
+		el bloque de sentencias en el que se encuentren.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato función.
+		\item [Categoría:] Tipo de dato funcional.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo funciones. Las funciones se definen mediante
+		una serie de parámetros de entradas y un bloque de sentencias. Tras ser interpretada la función toma un valor que puede ser de cualquiera de
+		los tipos de datos soportados.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato objeto.
+		\item [Categoría:] Tipo de dato funcional.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo objeto. Los objetos serán vistos
+		como estructuras datos funcionales, referenciando tanto datos de diferentes tipos (atributos), como funciones (métodos). Un objeto
+		puede o no pertenecer a una clase de objetos. Estos, los objetos, deberán ser tratados como un tipo especial de array donde ciertos
+		valores son bloques de sentencias (funciones). Dentro del bloque de sentencias que conforma un método es posible hacer
+		referencia a los demás valores del objeto mediante la expresión especial ``this''. Los datos de tipo objeto deben ser
+		elementos imprimibles, además los objetos deberían poder definir su propio método de impresión. Al igual que un array podrán ser tratados
+		como tipos de datos lógicos, pero además, si definen un método de impresión podrán ser tratados como cadenas de caracteres cuyo valor
+		será la cadena devuelta por el método.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato clase de objeto.
+		\item [Categoría:] Tipo de dato funcional.
+		\item [Descripción:] El lenguaje debe contemplar el paradigma de la programación orientada a objetos. Una clase
+      se ha de ver como una definición estática e inmutable que será utilizada para la creación de objetos.
+		Las clases deberán ser vistas como un tipo de datos, siendo representadas por objetos prototipos que serán clonados e inicializados.
+		El usuario podrá crear objetos a partir de una clase ya definida, mediante la clonación de otro objeto, o directamente
+		mediante sentencias y expresiones. Las clases de objetos pueden definir un método constructor que será utilizado cuando se cree un
+		objeto a partir de la misma. Las clases de objetos deben poder relacionarse entre si por una relación de herencia, tomando la
+		clase hija la definición y valores de la padre. 
+	\end {description}
+\end{framed}
+
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Identificadores.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:]  El interprete debe facilitar mecanismos para que el usuario defina e identifique expresiones, datos, bloques de sentencias, y
+		otras construcciones y elementos del lenguaje. Se precisa una manera unívoca de nombrar estos elementos. Un identificador válido debe estar
+		formado por una secuencia de caracteres alfanuméricos de al menos un carácter, donde el primer carácter a de ser una letra.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tabla de símbolos.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:] El interprete debe ser capaz de gestionar tablas de símbolos. Los símbolos
+		hacen referencias a valores, funciones y otras expresiones del lenguajes. Para acceder a estos símbolos
+		se debe utilizar un identificador. Se hace necesario el acceso y uso de los símbolos según el contexto
+		de ejecución, determinado por el ámbito y el tipo símbolo, para ello deben poder coexistir diferentes
+		tablas de símbolos globales. Para evitar conflictos en el uso de identificadores algunos tipos de datos
+		compuestos deben disponer de su propia tabla de símbolos.
+		
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Símbolos variables.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:] El interprete debe ser capaz gestionar una serie de símbolos
+		denominados variables. Estos relacionan un identificador con un valor que puede variar durante el proceso de ejecución. El tipo
+		de una variable dependerá del tipo del valor al que referencia (tipado dinámico), este podría ser de cualquiera de los tipos de
+		datos soportados. La tabla de símbolos de variables debe adaptarse al contexto de ejecución.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Variables globales.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:] Aunque la tabla de símbolos de variables es dependiente del contexto de ejecución se
+		ha de facilitar algún mecanismo para que un dato esté disponible independientemente del contexto en el que
+		se acceda.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Símbolos funciones.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:] El interprete debe ser capaz gestionar una serie de símbolos
+		denominados funciones.  Aunque un dato de tipo función puede ser almacenado en una variable, se debe facilitar una
+		tabla de símbolos especial para funciones, en la cual el programador podrá referenciar solo este tipo de datos. El
+		objetivo de esta tabla es poder utilizar identificadores para funciones sin causar posibles conflictos con otros identificares.
+		La tabla de símbolos de funciones es global e independiente del contexto. %Comentar llamadas a funciones, función lamba, referencia a función
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Símbolos clases.
+		\item [Categoría:] Tabla de símbolos.
+		\item [Descripción:] El interprete debe ser capaz gestionar una serie de símbolos
+		denominados clases. A diferencia de una función, una clase no puede almacenarse en una variable debido
+		a la naturaleza inmutable de la misma. Se ha de facilitar una estructura para almacenar y referenciar las
+		clases definidas por el usuario. La tabla de símbolos de clases es global e independiente del contexto.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia typeof.
+		\item [Categoría:] Sentencia.
+		\item [Descripción:] Debido al tipado dinámico se precisa de un mecanismo para conocer el tipo de dato relacionado
+		con una variable. Este deberá mostrar en la salida estándar el tipo de la variable asociada a un identificador dado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia de salida de datos.
+		\item [Categoría:] Sentencia.
+		\item [Descripción:] Se debe disponer de una sentencia que permita llevar acabo la salida de datos. Estas supondrán un mecanismo para
+		que el contenido fuente pueda mostrar en la salida estándar los datos sobre los que opera. Estos datos
+		debes ser elementos imprimibles.  
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia de entrada de datos.
+		\item [Categoría:] Sentencia.
+		\item [Descripción:] El interprete debe implementar algún recurso que permita que el contenido fuente del usuario
+		obtenga datos de la entrada estándar para operar. Este mecanismo deberá dar la posibilidad de mostrar un prompt.
+		Además debe dar la opción de que la entrada finalice al introducir un salto de línea o al
+		generarse una señal EOF (end-of-file).
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia de finalización de ejecución.
+		\item [Categoría:] Sentencia.
+		\item [Descripción:] Se ha de disponer de un mecanismo para que el sistema finalice de forma inmediata de
+		interpretar el contenido fuente.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia sleep.
+		\item [Categoría:] Sentencia.
+		\item [Descripción:] Se debera de proporcionar un mecanismo que permita suspender o bloquear
+		la ejecución durante un tiempo dado. Constará de una expresión que
+		represente el valor aritmético del tiempo en segundos.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia include.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de facilitar un mecanismo para incluir en un punto de la ejecución contenido fuente localizado en recurso
+		externo. El recurso consistirá en un fichero con sentencias interpretables.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia goto.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de facilitar un mecanismo para llevar el flujo de ejecución a la sentencia  
+		referenciada por una etiqueta.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia if.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Deben de existir una serie de sentencias condicionales que alteren el flujo de ejecución. Las  
+		sentencias if deberán estar construidas por bloques de sentencias y una serie de expresiones denominadas ``condiciones''.
+		La interpretación de una sentencia de este tipo debe consistir en la evaluación lógica de las ``condiciones'' para determinar el
+		bloque de sentencias que se ejecutará. Las formas de la sentencia if que el interprete debe aceptar son las siguientes:
+		\begin{itemize}
+			\item if (cond) stmts
+			\item if (cond) stmts else stmts
+			\item if (cond) stmts elif (cond) stmts ... else stmts
+		\end{itemize}
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia switch case.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo switch case. Estas
+		constan de una lista de bloques de sentencias precedidas de una expresión denominada ``caso''. Dada una expresión base
+		esta debe ser comparada mediante la operación de igualdad con cada uno de los casos, ejecutando el bloque correspondiente al ``caso''
+		cuya comparación sea positiva y todos los bloques siguientes. Se deberá poder especificar un bloque denominado ``default''
+		que no dispondrá de expresión ``caso'' y será ejecutado sin aplicar condición alguna.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia while.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo while. Esta es una sentencia de control
+		iterativa que consta de una expresión denominada ``condición'' y un bloque de sentencias. El bloque de sentencias debe ser ejecutado
+	    mientras que ``condición'' permanezca verdadera.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia do while.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo do while. Esta es una sentencia de control
+		iterativa que consta de una expresión denominada ``condición'' y un bloque de sentencias. El bloque de sentencias debe ser ejecutado
+	    mientras que ``condición'' permanezca verdadera, llevándose a cabo la ejecución al menos una vez.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia for.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] El interprete debe ser capaz de interpretar sentencias del tipo for. Esta es una sentencia de control
+		iterativa que consta de tres expresiones denominadas ``inicialización'', ``condición'' y ``paso'', además de un bloque de sentencias.
+		Primero se ha de evaluar la expresión ``inicialización'', luego el bloque de sentencias se ejecutará mientras ``condición'' se
+		valore como verdadera. La expresión ``paso'' se deberá ejecutar al finalizar cada iteración.   %GENERADORES DE EXPRESIONES
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia break.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de disponer de un mecanismo para indicar que el flujo debe salir de una sentencia de control. Se ha de contemplar
+		las sentencias anidadas.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia foreach.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se han de de interpretar sentencias del tipo forearch. Esta es una sentencia de control
+		iterativa que consta un bloque de sentencias, de una expresión denominada ``conjunto'' y  un identificador denominado ``valor''.
+		Se debe poder, aunque de forma opcional, especificar otro identificador que se denominará ``clave''.
+		El bloque de sentencias será ejecutado de forma iterativa en función el tipo de dato y valor de ``conjunto''.  El ``conjunto''
+		será evaluado para determinar el número de iteraciones y el valor que se le asignará como variables a los identificadores en
+		cada iteración. Dependiendo del tipo de la expresión ``conjunto'' la sentencia foreach deberá actuar como sigue:
+		
+		\begin{description}
+			\item [Tipo lógico:] El bloque de sentencias se ejecutará mientras ``conjunto'' sea verdadero. El identificador ``valor'' tomará
+			el valor verdadero. En el caso en el que se especifique un identificador ``clave'' a este no se le asignará ningún valor.
+			\item [Tipo aritmético:] Si ``conjunto'' representa un número mayor que cero el bloque de sentencias se ejecutará
+			tantas veces como el valor numérico que representa. En cada iteración ``valor'' se le asignará el número de la iteración
+			comenzando por cero. Si se presenta un identificador ``clave'' a este no se le asignará ningún valor.
+			Si el valor de ``conjunto'' es menor o igual a cero el bloque no deberá ejecutarse.
+			\item [Tipo cadena de caracteres:] Si ``conjunto'' es una cadena de caracteres que representa un número racional la
+			ejecución deberá ser como si de un tipo aritmético se tratase. Si el ``conjunto'' es una cadena que no representa un número racional
+			el bloque de sentencias se ejecutará por cada carácter en la cadena. En este último caso a ``valor'' se le asignará el carácter
+			contemplado en cada iteración. Si se dio un identificador ``clave'' este no será asignado.
+			\item [Tipo array:] Si ``conjunto'' es un array, u otro tipo de dato derivado de este como un objeto, el bloque de sentencias
+			se ejecuta por cada elemento en el mismo. Al identificador ``valor'' se le asignará el valor del elemento en el array correspondiente
+			a la iteración. En el caso de que se facilite un identificador ``clave'' este deberá tomar la clave del elemento en el array.
+			\item [Otros tipos:] No se llevará a cabo ninguna operación.
+		\end{description}
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia continue.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] El sistema debe facilitar algún recurso que permita finalizar la iteración actual
+		de una sentencia de control en ejecución y comenzar con la siguiente. Este
+		mecanismo debe contemplar la posibilidad de salir de varias sentencias de control anidadas.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia ciclo incremental.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de facilitar una sentencia de control que permita
+		iterar un bloque de sentencias en función a un rango de números enteros con la forma $[0-n]$.
+		Cada valor del rango en cada iteración deberá asignarse a un identificador como variable,
+		de forma que sea accesible desde el bloque de sentencias.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia ciclo ágil.
+		\item [Categoría:] Sentencia de control de flujo.
+		\item [Descripción:] Se ha de facilitar una sentencia de control que permita
+		iterar un bloque de sentencias en función una expresión ``conjunto'' de forma ágil y sencilla.
+		Para ello esta sentencia deberá operar igual que la sentencia foreach pero sin ser necesario, aunque posible,
+		dar un identificador ``valor'' sobre el que se realizará la asignación. En lugar de ello la asignación que se produce
+		en cada iteración se deberá realizar sobre un símbolo con identificador fijo y contenido variable denominado iterador.
+		El iterador debe ser accesible desde el bloque de sentencias. Además
+		se debe contemplar el acceso al iterador de varias sentencias de ciclo ágil cuando estas se presentan de forma anidada.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operadores.
+		\item [Categoría:] Operadores.
+		\item [Descripción:] Se ha de facilitar una serie de operadores que permitan manipular los datos. Los operadores
+		son en si mismo expresiones, por los que estos tendrán un valor asociado tras ejecutarse. Los operadores constarán
+		de una serie operandos que intervendrán en la operación y que serán a su vez otras expresiones.
+		Los operadores se clasificarán en función del tipo de valor que tendrán tras la ejecución, los tipos de
+		los operandos y/o la naturaleza del operador en si.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a símbolo variable.
+		\item [Categoría:] Operadores sobre símbolos.
+		\item [Descripción:] Se hace necesario la gestión de los símbolos variables creados durante la ejecución, lo que implica el
+		acceso a los datos referenciados por estos. Se deberá poder acceder a los datos referenciados por una variable
+		simplemente mediante una expresión formada por el identificador asociado a la misma. El acceso a una variable debe originar un
+		valor por defecto si esta no tiene un valor asociado. El valor por defecto dependerá del contexto:  
+		\begin{description}
+			\item[Clave de array:] Si la variable se utiliza para la clave de un array, o cualquier tipo
+			derivado de este, el valor por defecto de esta es una cadena de caracteres que representa
+			el identificador con el que se accede a la misma.
+			\item [Cualquier otro:] En cualquier otro contexto el valor por defecto será el valor nulo.
+		\end{description}
+		Una operación de acceso a variable representa una expresión que deberá tener, como valor asociado tras su ejecución, el valor al
+		que referencia el símbolo variable.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Asignación.
+		\item [Categoría:] Operadores sobre símbolos.
+		\item [Descripción:] Se hace necesario la gestión de los símbolos variables creados durante la ejecución, lo que implica
+		la asignación de valores a las variables que serán definidas y utilizadas por el contenido fuente dado por el usuario.
+		El valor que es asignado a una variable puede ser cualquier tipo de dato contemplado, excepto clase de objetos. El valor asignado
+		puede ser determinado a partir de cualquier expresión que tenga un valor asociado después de su ejecución. En esta operación el
+		valor es asignado a la variable mediante una copia del mismo. La operación de asignación debe representar una expresión que toma como
+		valor tras su ejecución el valor asignado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Asignación por referencia.
+		\item [Categoría:] Operadores sobre símbolos.
+		\item [Descripción:] Se debe facilitar un mecanismo para que dos símbolos variables distintos referencien al mismo valor.
+		Para ello se ha de facilitar una operación de asignación por referencia tal que el valor asignado no sea copiado sino referenciado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a símbolo de dato compuesto.
+		\item [Categoría:] Operadores sobre símbolos.
+		\item [Descripción:] Dado a que existen tipos de datos compuestos que deben mantener su propia tabla de símbolos,
+		se precisa de un mecanismo para acceder a estos a partir del propio dato. Este mecanismo deberá devolver el símbolo al que se
+		accede, pudiéndose aplicar cualquiera de las operaciones sobre símbolos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a última posición.
+		\item [Categoría:] Operadores sobre símbolos.
+		\item [Descripción:] La mayoría de datos compuestos consisten en un listado de elementos. Se hace necesario un mecanismo
+		para referenciar el final de este listado. A esta referencia se le podrá asignar algún dato, lo que lo añadirá al final del listado.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] AND lógico.
+		\item [Categoría:] Operadores lógicos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica AND. Para ello se deberá tomar
+		el valor lógico de cada uno de los operandos. La evaluación de la operación lógica AND debe ser de cortocircuito, tomándose el valor del
+		último elemento evaluado. Así, aunque esta expresión se corresponde con un operador lógico, el valor de la misma será el del
+		último elemento evaluado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] OR lógico.
+		\item [Categoría:] Operadores lógicos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica OR. Para ello se deberá tomar
+		el valor lógico de cada uno de los operandos. La evaluación de la operación lógica OR debe ser de cortocircuito, tomándose el valor del
+		último elemento evaluado. Así, aunque esta expresión se corresponde con un operador lógico, el valor de la misma será el del
+		último elemento evaluado.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] NOT lógico.
+		\item [Categoría:] Operadores lógicos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica NOT. Para ello se deberá tomar
+		el valor lógico de su único operando y negarlo. La expresión deberá tomar un valor de tipo booleano tras realizarse la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Vacío.
+		\item [Categoría:] Operadores lógicos.
+		\item [Descripción:] Se necesita de un operador que determine si un dato se considera vacío. Este operador tendrá un
+		único operando y funcionará igual que el operador lógico NOT. El valor que tomará la expresión será lógico.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Es nulo.
+		\item [Categoría:] Operadores lógicos.
+		\item [Descripción:] Se necesita de un operador que determine si dato o expresión contiene el valor nulo.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Menor que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``menor que''. Para ello se deberá tomar
+		el valor aritmético de cada operando. La expresión deberá tomar un valor de tipo booleano tras realizarse la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Menor o igual que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``menor o igual que''. Para ello se deberá tomar
+		el valor aritmético de cada operando. La expresión deberá tomar un valor de tipo booleano tras realizarse la operación.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Mayor que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``mayor que''. Para ello se deberá tomar
+		el valor aritmético de cada operando. La expresión deberá tomar un valor de tipo booleano tras realizarse la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Mayor o igual que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``mayor o igual que''. Para ello se deberá tomar
+		el valor aritmético de cada operando. La expresión deberá tomar un valor de tipo booleano tras realizarse la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Igual que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``igual que''. La operación de igualdad
+		debe ser independiente de los tipos de datos de los operandos, aplicándose en función del tipo de dato más completo que compartan.
+		Por ejemplo si se compara un dato cadena que no representa un número racional con uno aritmético, como el tipo de dato común a ambos
+		es el booleano, ambos tomarán su valor lógico para la comparación.  
+		Si ambos datos son tipos compuestos, se ha de comprobar mediante la operación de igualdad todos los elementos simples que lo componen
+		por pares y de forma posicional.
+		Como valor de la expresión se toma el valor booleano de la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Idéntico que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``idéntico que''. Esta operación
+		se refiere a una operación lógica de igualdad pero contemplando además que los datos tengan el mismo tipo. Como valor
+		de la expresión se debe tomar el valor booleano resultado de aplicar la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Distinto que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``distinto que''. Esta operación
+		debe ser independiente de los tipos de datos de los operandos, aplicándose en función del tipo de dato más completo que compartan.
+		Por ejemplo si se compara un dato cadena que no representa un número racional con uno aritmético, como el valor más completo que
+		ambos pueden tomar es el booleano, tomarán su valor lógico para la comparación.  
+		Si ambos datos son tipos compuestos, se ha de comprobar mediante la operación de igualdad todos los elementos simples que lo componen
+		por pares y de forma posicional.
+		Como valor de la expresión se toma el valor booleano de la operación.
+	\end {description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] No idéntico que.
+		\item [Categoría:] Operadores de comparación.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación lógica ``no idéntico que''. Esta operación
+		se corresponde con la operación inversa de la operación ``idéntico que''. Como valor
+		de la expresión se debe tomar el valor booleano resultado de aplicar la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Suma.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``suma''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. Tras realizarse la operación, el valor de la expresión
+		deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Resta.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``resta''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. Tras realizarse la operación, el valor de la expresión
+		deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Producto.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``producto''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. Tras realizarse la operación, el valor de la expresión
+		deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] División.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``división''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. El segundo operando debe ser
+		distinto de 0. Si el segundo operando tiene valor aritmético 0 se deberá mostrar un error que informe del caso.
+		Tras realizarse la operación, el valor de la expresión
+		deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Potencia.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``potencia''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. Tras realizarse la operación, el valor de la expresión
+		deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Módulo.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se debe contemplar la expresión correspondiente a la operación aritmética ``módulo''. Para realizar
+		esta operación se deberá tomar el valor aritmético de cada operando. El segundo operando debe ser
+		distinto de 0. Si el segundo operando tiene valor aritmético 0 se deberá mostrar un error que informe del caso.
+		Tras realizarse la operación, el valor de la expresión deberá ser el resultado aritmético de la misma.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tamaño.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Se precisa de algún mecanismo que dado un dato calcule el tamaño de este. Este operador calculará el
+		tamaño dependiendo del tipo de dato del operando. Tras ejecutase la expresión el valor que tome será de tipo aritmético.
+		\begin{description}
+			\item[Lógico:] Si es verdadero el tamaño es uno, si es falso será cero.
+			\item[Aritmético:] Tomará el número de dígitos decimales.
+			\item[Cadena:] El tamaño será el número de caracteres de la cadena.
+			\item[Array:] Para el tipo de dato array u otros derivados se el tamaño será el número de elementos contenidos en el mismo.
+			\item[Otro tipo de dato:] Se deberá dar un error de tipos.
+		\end{description}
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Incremento y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, el valor de esta se de poder incrementar y
+		reasignar. Para ello se tomará el valor aritmético de la variable, se incrementará en una unidad y se reasignará a la misma.
+		El valor de la expresión será el de la variable incrementada.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Asignación e incremento.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, el valor de esta se de poder incrementar y
+		reasignar. Para ello se tomará el valor aritmético de la variable, se incrementará en una unidad y se reasignará a la misma.
+		El valor de la expresión será el de la variable antes de ser incrementada.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Decremento y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, el valor de esta se de poder decrementar y
+		reasignar. Para ello se tomará el valor aritmético de la variable, se decrementará en una unidad y se reasignará a la misma.
+		El valor de la expresión será el de la variable decrementada.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Asignación y decremento.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, el valor de esta se de poder decrementar y
+		reasignar. Para ello se tomará el valor aritmético de la variable, se decrementará en una unidad y se reasignará a la misma.
+		El valor de la expresión será el de la variable antes de ser decrementada.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Suma y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder sumar otra expresión
+		y reasignarle el resultado. Para ello se tomará el valor aritmético de la variable, se le sumará el valor aritmético de la expresión
+		y se reasignará a la variable el resultado. El valor de la expresión será el resultado de la suma aritmética.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Resta y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder restar otra expresión
+		y reasignarle el resultado. Para ello se tomará el valor aritmético de la variable, se le restará el valor aritmético de la expresión
+		y se reasignará a la variable el resultado. El valor de la expresión será el resultado de la resta aritmética.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Producto y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder multiplicar
+		otra expresión y reasignarle el resultado. Para ello se tomará el valor aritmético de la variable, se calculará el producto con el valor
+		aritmético de la expresión y se reasignará a la variable el resultado. El valor de la expresión será el resultado del producto aritmético.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] División y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder dividir por
+		otra expresión y reasignarle el resultado. Para ello se tomará el valor aritmético de la variable, se realizará la división por el
+		valor aritmético de la expresión y se reasignará a la variable el resultado. La expresión no puede tener un valor aritmético de cero.
+		El valor de la expresión será el resultado de la división aritmética.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Potencia y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder elevar a
+		otra expresión y reasignarle el resultado. Para ello se tomará el valor aritmético de la variable, se elevará al
+		valor aritmético de la expresión y se reasignará a la variable el resultado. El valor de la expresión será el resultado de la potencia.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Módulo y asignación.
+		\item [Categoría:] Operadores aritméticos.
+		\item [Descripción:] Dado un identificador u expresión que referencia a una dato variable, al valor de esta se ha de poder dividir por
+		otra expresión y reasignarle el resto originado. Para ello se tomará el valor aritmético de la variable, se realizará la división por el
+		valor aritmético de la expresión y se reasignará a la variable el resto obtenido. La expresión no puede tener un valor aritmético de cero.
+		El valor de la expresión será el resultado de la operación módulo.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Conversión a aritmético.
+		\item [Categoría:] Operadores de conversión de tipo.
+		\item [Descripción:] Se ha de facilitar un operador que permita convertir un dato a tipo aritmético. Esta conversión
+		se deberá realizar en función al tipo de dato origen y de la forma descrita en el requisito en el que se hace referencia al mismo.
+		El valor que tomará la operación deberá ser el dato tras la conversión de tipos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Conversión a lógico.
+		\item [Categoría:] Operadores de conversión de tipo.
+		\item [Descripción:] Se ha de facilitar un operador que permita convertir un dato a tipo lógico. Esta conversión
+		se deberá realizar en función al tipo de dato origen y de la forma descrita en el requisito en el que se hace referencia al mismo.
+		El valor que tomará la operación deberá ser el dato tras la conversión de tipos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Conversión a cadena de caracteres.
+		\item [Categoría:] Operadores de conversión de tipo.
+		\item [Descripción:] Se ha de facilitar un operador que permita convertir un dato a tipo cadena de caracteres. Esta se conversión
+		se deberá realizar en función al tipo de dato origen y de la forma descrita en el requisito en el que se hace referencia al mismo.
+		El valor que tomará la operación deberá ser el dato tras la conversión de tipos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador ternario.
+		\item [Categoría:] Operadores condicionales.
+		\item [Descripción:] Se ha de contemplar el operador ``ternario''. Este constará de tres expresiones que se denominarán
+		``condición'', ``caso verdadero'' y ``caso negativo''. Primero se deberá evaluar la expresión ``condición'' como un
+		dato lógico, si esta es positiva el valor de la operación será el de la expresión ``caso verdadero'', si es negativa
+		se tomará el de ``caso falso''.
+		
+		Se debe facilitar formas del operador ternario simplificadas en las que falten algunos
+		de los operandos. Así se contemplará el ternario que carecerá de ``caso verdadero'' tomándose en su lugar
+		el valor de la expresión ``condición'' (sin alterar el tipo de dato). También el ternario que carece de ``caso falso''
+		tomándose en su lugar el valor de la cadena vacía.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador no falso.
+		\item [Categoría:] Operadores condicionales.
+		\item [Descripción:] Se ha de contemplar el operador ``no falso''. Este consistirá en una lista de expresiones que serán
+		evaluadas de forma secuencial y lógica, tomándose como valor el de la primera expresión
+		cuya evaluación sea positiva, o el valor lógico falso si no existe ninguna.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador concatenación.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] La expresión que simboliza una operación de concatenación precisa de dos operandos que serán
+		tratados como cadena de caracteres. El valor que tomará la expresión será la cadena resultante de concatenar ambas.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador explode.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] El operador explode deberá tomar dos cadenas de caracteres como operandos denominadas ``texto'' y ``separador''.
+		El valor de la operación será el array resultante de separar la cadena ``texto'' en diferentes cadenas en función la cadena ``separador''.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador implode.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Representa la operación inversa a explode. El operador implode deberá tomar como operandos un array denominado
+		``listado'' y una cadena denominada ``separador''. El valor de la expresión será una cadena resultado de concatenar cada uno
+		de los elementos de ``listado'' separados por la cadena ``separador''.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador formato.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se hace necesario un mecanismo que permita generar cadenas formateadas. Este deberá consistir
+		en una cadena de caracteres denominada ``formato'' y un listado de expresiones. La cadena formato contendrá una serie de
+		directivas de formato. Estas directivas serán sustituidas por el valor correspondiente, según posición, de la
+		lista de expresiones. Cuando se realiza cada sustitución el valor es formateado según la directiva.
+		
+		Las directivas de formato tienen el siguiente forma:
+		$$\%[operador][precisión][formato]$$
+		
+		Los posibles operadores serán los siguientes:
+		\begin{description}
+			\item[+:] Fuerza la impresión del símbolo + cuando se formatean números positivos.
+			\item[\^\ :] Convierte el caracteres a mayúsculas cuando se formatean cadenas de texto.
+			\item[\#:] Añade el carácter 0x cuando se formatean números hexadecimales y el carácter 0 cuando se formatean octales.
+		\end{description}
+	
+		La precisión se refiere al número de decimales que se imprimirán en el caso de formatear
+		números o el número de caracteres en el caso de formatear cadenas.			
+
+		El carácter de formato indica que tipo de formato se le dará al valor:
+		\begin{description}
+			\item[i|d:] Número entero.
+			\item[u:] Sin signo.
+			\item[f:] Coma flotante.
+			\item[\%:] Carácter \%.
+			\item[e:] Notación científica.
+			\item[o:] Octal.
+			\item[x:] Hexadecimal.
+			\item[s|c:] Cadena de texto.
+		\end{description}
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador de búsqueda de subcadena.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Este es un operador básico en el tratamiento de cadenas. Opera sobre dos operandos
+		que serán tratados como cadenas de caracteres, uno denominado ``texto'' y otro ``subcadena''. El operador
+		toma como valor un dato aritmético relativo a la posición de la primera ocurrencia de ``subcadena'' dentro
+		de ``texto''. Si no se encuentra ningún resultado el se tomará el valor $-1$. Adicionalmente se puede dar otro
+		operando denominado ``offset'' que simbolice la posición dentro de ``texto'' a partir de la cual se comenzará
+		a buscar.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador de remplazo de subcadena.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se necesita de un mecanismo para buscar y remplazar subcadenas dentro de otra.
+		El operador debe buscar las ocurrencias de una subcadena ``búsqueda'' en una
+		cadena ``texto'', sustituyéndolas por una cadena de ``remplazo''. Este operador debe admitir
+		el número máximo de sustituciones que se llevarán a cabo. Tras la ejecución debe tomar como valor la cadena
+		resultante de sustituir en la cadena principal las ocurrencias de la subcadenas por la cadena de remplazo.
+
+		Adicionalmente la subcadena de ``búsqueda'' puede ser una expresión regular, en cuyo caso
+		se buscará subcadenas que pertenezcan al conjunto de las palabras definido por la
+		expresión regular.
+		
+		Si se utiliza una expresión regular como patrón de búsqueda deberá ser posible
+		utilizar en la cadena de remplazo parte de la subcadena
+		que concuerda con la expresión regular. Para ello se forma la expresión regular mediante
+		subexpresiones delimitadas por ``()''. En la cadena de remplazo se debe poder hacer referencia,
+		de forma posicional, a las subcadenas correspondientes a cada una de las subexpresiones.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador de remplazo de subcadena mediante posiciones.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se necesita de un mecanismo para buscar y remplazar subcadenas dentro de otra.
+		El operador debe sustituir en una cadena ``texto'' la subcadena comprendida entre dos posiciones dadas por 
+      expresiones numéricas, sustituyéndo las subcadena correspondiente por una cadena de ``remplazo''. 
+      Tras la ejecución debe tomar como valor la cadena
+		resultante de sustituir, en la cadena principal, la subcadena correspondiente a las posciones dadas, por la cadena de remplazo.
+      
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador conversión a mayúsculas.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un operador que convierta todos los caracteres
+		alfabéticos que la conforman en mayúsculas. El valor que se tomará será la cadena resultante de la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador conversión a minúsculas.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un operador que convierta todos los caracteres
+		alfabéticos que la conforman en minúsculas. El valor que se tomará será la cadena resultante de la operación.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador reducir array.
+		\item [Categoría:] Operadores sobre array.
+		\item [Descripción:] Se necesita de un operador que dado un array y una función reduzca el array a un solo valor.
+      La función de reducción deberá recibir como parámetro dos valores correspondiente al valor acumulado y al nuevo valor. 
+      La función de reducción se ejecutará por cada elemento del array (execpto para el primero) tomando el valor acumulado y el nuevo valor, y devolviendo
+      el próximo valor acumulado. Como valor este operador tomará el valor de la reducción. 
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador creador de expresión regular.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un operador que convierta esta en una expresión regular. El
+		valor del operador será la expresión regular.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador comprobación de expresión regular.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Se precisa un operador que, dada una expresión regular y una cadena de caracteres,
+		compruebe si esta pertenece al lenguaje definido por la expresión regular. El operador
+		tomará como valor un dato de tipo lógico resultado de la operación.
+		
+		Para que el resultado sea positivo la cadena debe pertenecer al conjunto de palabras delimitadas
+		por la expresión regular. Si tan solo existe correspondencia parcial el resultado será negativo.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador de búsqueda estructurada.
+		\item [Categoría:] Operadores sobre expresiones regulares.
+		\item [Descripción:] Se precisa de un mecanismo que lleve a cabo una búsqueda estructurada, es decir,
+		obtener una estructura de datos array condicionada por una expresión regular denominada
+		``patrón de búsqueda'' y una cadena de caracteres ``texto'' sobre la que se comprueba.
+
+		En la ejecución de este operador se deberá
+		buscar en ``texto'' subcadenas que pertenezcan al conjunto definido por la expresión regular, originando
+		un array con cada una de las coincidencias, que será el valor que tome la operación.
+		
+		Adicionalmente la expresión regular podría estar formada por subexpresiones delimitadas
+		por ``()''. En dicho caso se buscará en ``texto'' subcadenas que pertenezcan al
+		conjunto delimitado por la expresión regular. Por cada subcadena encontrada se creará un array
+		con las correspondencias de cada subexpresión. Cada uno de los arrays resultantes se
+		deberán guardar en otro que será el valor que tome la operación.
+		
+		Si se utiliza una expresión regular formada por subexpresiones los arrays correspondientes
+		a cada subcadena deberán tener índices numéricos. Sin embargo debe darse la posibilidad de
+		especificar una lista ordenada de cadenas claves para crear un array asociativo.
+ 
+		Además se ha de contemplar la búsqueda estructurada sobre un array de cadenas ``texto''.
+	\end {description}
+\end{framed}
+%%-----------------------------------------------------------------------
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador fecha.
+		\item [Categoría:] Operadores de tiempo.
+		\item [Descripción:] Es necesario disponer de un operador que dé formato a la fecha/hora local. Este operador 
+		deberá tener como operando una expresión cadena de caracteres que contenga una serie de directivas de 
+		formato. El valor que tomará la operación será una cadena de caracteres que represente la fecha/hora en
+		el formato dado. Las directivas de formato serán las siguientes:
+		\begin{description}
+			\item[\%d:] Día del més con dos dígitos.
+			\item[\%j:] Día del mes sin ceros iniciales.
+			\item[\%l:] Día de la semana de forma alfabética completa.
+			\item[\%D:] Día de la semana de forma alfabética y con tres letras.
+			\item[\%w:] Día de la semana de forma numérica (0-domigo,6-sábado).
+			\item[\%z:] Día del año de forma numérica.
+			\item[\%F:] Mes de forma alfabética.
+			\item[\%m:] Mes de forma numérica con dos dígitos.
+			\item[\%n:] Mes de forma numérica sin ceros iniciales.
+			\item[\%M:] Mes de forma alfabética con tres letras.
+			\item[\%Y:] Año con cuatro dígitos.
+			\item[\%y:] Año con dos dígitos.
+			\item[\%a:] Periodo del día (am/pm) en minúsculas.
+			\item[\%A:] Periodo del día (am/pm) en mayúsculas.
+			\item[\%g:] Hora en formato 12h sin ceros iniciales.
+			\item[\%G:] Hora en formato 24h sin ceros iniciales.
+			\item[\%h:] Hora en formato 12h con dos dígitos.
+			\item[\%H:] Hora en formato 24h con dos dígitos.
+			\item[\%i:] Minutos con dos dígitos.
+			\item[\%U:] Segundos desde la Época Unix (1 de Enero del 1970 00:00:00 GMT).
+			\item[\%\%:] Carácter \%.		
+		\end{description}
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador time.
+		\item [Categoría:] Operadores de tiempo.
+		\item [Descripción:] Se precisa de un operador que calcule el número de segundos desde 
+		la Época Unix (1 de Enero del 1970 00:00:00 GMT). Este operador no tendrá operandos y 
+		tomará el valor aritmético correspondiente.		
+	\end {description}
+\end{framed}
+
+
+
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo puntero a fichero.
+		\item [Categoría:] Tipo de dato simple.
+		\item [Descripción:] El intérprete debe ser capaz de manipular ficheros, para ello se precisa de un tipo de dato
+		que simbolice un puntero a un fichero del sistema de ficheros. Este tipo de dato no debe ser convertido a ningún otro
+		tipo de dato ni viceversa. Además solo será tratado por algunos operadores dedicados. 
+		
+		No se tendrán en cuenta los  ficheros binarios.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Abrir ficheros.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Es necesario un operador que permita abrir ficheros para su manipulación. Este tendrá como operandos
+		una cadena de caracteres que simbolice la ruta al fichero y otra que determine el modo en el que será abierto. El operador 
+		tomára como valor un dato de tipo puntero a fichero. Los posibles modos serán:
+		
+		\begin{description}
+			\item [r:] Lectura.
+			\item [r+:] Lectura y/o escritura.
+			\item [w:] Escritura truncando el contenido del fichero.
+			\item [w+:] Lectura y/o escritura truncando el contendio del fichero.
+			\item [a:] Escritura posicionando el puntero al final el fichero.
+			\item [a+:] Lectura y/o escritura posicionando el puntero al final del fichero.
+		\end{description}
+		
+		Todos los modos a excepción de sólo lectura deberán crear el fichero si este no existe.  
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cerrar ficheros.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Es necesario un operador que permita cerrar ficheros abiertos a partir de un puntero al mismo.
+		Se deberá finalizar cualquier flujo de datos abierto y el fichero quedará cerrado. Como valor se deberá tomar 
+		un dato de tipo lógico que determine si la operación se ha realizado correctamente.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Escribir en fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se hace necesario un operador que, dado un dato de tipo puntero a fichero, pueda escribir datos
+		en la posición referenciada por el mismo. Así este operador trabaja sobre dos operandos, un puntero a fichero y una 
+		cadena de caracteres que simbolizará el contenido a escribir. Como valor el operador toma el número de bytes que 
+		fueron escritos.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Leer de fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se hace necesario un operador que, dado un dato de tipo puntero a fichero, lea desde la
+		posición referencia por el mismo hasta un carácter de nueva línea, o bien un número de carácteres dado. Así el operador deberá tomar como valor 
+		una cadena de caracteres que represente el contenido leído.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cambiar posición de puntero a fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Una operación básica sobre punteros a ficheros es desplazar este dentro del contenido del mismo. 
+		Para ello se precisa de un operador que, dado un puntero a fichero, cambie la posición de este dentro del propio fichero.
+		Así la nueva posición deberá ser una expresión numérica que represente un offset relativo al principio del fichero, el final 
+		o la posicón actual del puntero. La expresión correspondiente al operador deberá tomar un valor booleano que determine si el cambio
+		de posición se ha realizado correctamente.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener la posición actual de puntero a fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se necesita de un operador que dado un puntero a fichero tome el valor aritmético que represente la posición de este 
+		dentro del mismo.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de obtener el contenido completo de un fichero, sin que sea necesario disponer de un 
+		puntero al mismo. Para ello se deberá facilitar una cadena de caracteres que simbolice la ruta completa del fichero. El operador tomará como valor
+		una cadena de caracteres que contenga todo el contendio del fichero. En el caso de que el fichero no exista se deberá tomar como valor la cadena vacía.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cadena como contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de escribir una cadena de caracteres en un fichero, sin que sea necesario 
+		disponer de un puntero al mismo. Si el fichero existe su contenido deberá ser truncado, si no existe será creado. Este operador tendrá como operandos dos cadenas 
+		de caracteres que se correspondan con la ruta del fichero y la cadena a escribir. Como valor se tomára la cadena escrita.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Añadir cadena al contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de añadir una cadena de caracteres al final de un fichero, sin que sea necesario 
+		disponer de un puntero al mismo. Si el fichero no existe será creado. Este operador tendrá como operandos dos cadenas 
+		de caracteres que se correspondan con la ruta del fichero y la cadena a escribir. Como valor se tomára la cadena escrita.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Defición de función
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se necesita de un mecanismo que permita definir y nominar bloques de sentencias. Estos bloques podrán recibir unos valores
+		de entrada y producir una salida. Las sentencias en el bloque podrán operar sobre los parámetros de entrada, representados por
+		unos símbolos variables que tomarán distintos valores en cada ejecución. Tras interpretarse el bloque 
+		de sentencias se podrá tomar un valor considerado de salida. 
+		
+		La definicón de una función representará en si misma un dato, por lo que podrán formar parte de operaciones 
+		y otras expresiones. 
+		Una función se define mediante un bloque de sentencias, una lista de identificadores que nominan a los parámetros de entrada y un 
+		identificador que le da nombre a la propia función, aunque este último no debe ser necesario (funciones anónimas). 
+		
+		 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Llamada a función
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Dada una función, se debe disponer de un mecanismo que permita la ejecución del bloque de 
+		sentencias que la forma, mediante el uso de unos valores concretos como parámetros de entrada, y con la posibilidad de tomar 
+		el valor de salida.
+		
+		Una llamada a función se deberá componer de un identificador relativo a su definición, y una lista de expresiones
+		que determinarán los valores de los parámetros. La llamada deberá ser en si misma una expresión 
+		que tomará como valor la salida de la función tras la ejecución.
+		
+		Los valores de los parámetros se corresponderán con los parámetros de la definición de la función de forma posicional.
+	\end{description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Valor de retorno
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se necesita de un mecanismo en forma de sentencia que, dada una función, determine
+		el valor del salida que se tomará en la llamada a la misma. La sentencia return se compondrá de una 
+		expresión correspondiente al valor salida. Al ser interpretada esta sentencia la ejecución de
+		la función deberá finalizar y esta tomará el valor de la expresión dada.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Valores de parámetros por defecto.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Dada la definición de una función, debe existar un mecanismo para que los parámetros de esta puedan tener 
+		valores por defecto. Estos valores serán asignado a los parámetros cuando en una llamada a función no sean determiidados. 
+		
+		Como la correspondencia entre parámetros en una llamada a función se hace de forma posicional, los valores por defecto deberán ser especificados 
+		desde el final de la lista de parámetros hasta el inicio.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Parámetros por valor.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Cuando una función es ejecutada todos los símbolos variables que se definan y utilicen deben tratarse de forma 
+		local al bloque de sentencias de la función. De esta forma los símbolos variables definidos fuera de la función no serán accesibles
+		desde el cuerpo de la misma y viceversa. Cuando se realice una llamada a función los valores de los parámetros deben ser copiados
+		a los símbolos variables correspondientes.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Parámetros por referencia.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se necesita de un mecanismo que permita que los parámetros de una función referencien valores definidos 
+		fuera del cuerpo de la misma. De esta forma se podrá acceder y/o modificar datos externos a la función. 
+		
+		Cuando en una llamada a función se especifiquen expresiones que sean símbolos variables como algunos de sus parámetros, si estos se definieron en la
+		función como parámetros por referencia, el valor del símbolo en la llamada será referenciado por el símbolo correspondiente de la función.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función lambda.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe dar la posibilidad de crear funciones anónimas. Estas funciones carecerán de nombre y 
+		normalmente se utilizarán en la asignación de variables, como parámetros de otras funciones o como valor de retorno. 
+		Las funciones lambda deberán ser en si misma una expresión que toma como valor el dato correspondiente a la función. 
+	\end{description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función lambda simple.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe de facilitar un mecanismo para crear funciones lambdas simples, que solo consten de una lista de parámetros
+		y de una única expresión que será devuelta y que constiturá el cuerpo de la función. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Referencia a función.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe facilitar un mecanismo para referenciar funciones ya creadas, de forma que puedan ser asignadas a variables, 
+		pasadas como parámetros o devueltas como valor de retorno. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Currificación de funciones.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe contemplar la currificación de funciones, para ello se debe poder definir funciones como valor de retorno de otras.
+      Cuando la función devuelta sea ejecutada esta debe tener en cuenta el contexto en el que se definió. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Aplicacion parcial.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe facilitar un mecanismo que permita, a partir de una función, obtener otra
+      equivalente donde se ha dado valor a un subconjunto de los parámetros.
+    \end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Decoradores.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe facilitar un mecanismo para definir decoradores. Un decorador será un tipo especial de función.
+      Al igual que una función se define mediante un identificador que lo nomina, una lista de parámetros y un bloque de sentencias. 
+      
+      A diferencia de las funciones ordinarias, la llamada a un decorador deberá tener como parámetro una función que será decorada, como
+      resultado se deberá obtener una función que tendrá las siguientes características:
+      
+      \begin{itemize}
+         \item La lista de parámetros que admite será la misma que la lista con la que se definió el decorador
+         \item El bloque de sentencias será el del decorador pero haciendo uso de la función que ha sido decorada
+      \end{itemize}
+      
+      Se debe facilitar un mecanismo para referenciar la función que se va a decorar dentro del decorador. Para ello
+      se utilizará la función de contexto.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función de contexto.
+		\item [Categoría:] Funciones.
+		\item [Descripción:] Se debe facilitar un mecanismo para acceder a la función de contexto. Esta será una función 
+      cuyo valor dependerá del contexto en el que se ejecute:
+      \begin{itemize}
+         \item En el primer nivel de ejecución la función de contexto no estará definida. 
+         \item En el cuerpo de una función será la propia función.  
+         \item En el cuerpo de un decorador será la función que se decorará.
+      \end{itemize}
+	\end{description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Programación orientada a objetos.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe contemplar una programación orientada a objetos basada en prototipos. 
+		Un objeto será creado directamente mediante sentencias o mediante copia de otros objetos. 
+		
+		Además también se deberá contemplar la creación de objetos mediante la instaciación de clases. 
+		
+		Las características de la programación orientada a objetos que se deberán contemplar son:
+		\begin{description}
+			\item [Abstracción:] Un objeto por si mismo representará una entidad abstracta que podrá tener cierta funcionalidad
+			asociada, disponer de atributos que establezcan su estado interno o comunicarse con otros objetos. 
+			\item [Encapsulamiento:] Un objeto podrá contener todos los elementos correspondiente a su definición, estado y funcionalidad.
+         \item [Principio de ocultación:] Un objeto podrá tener atributos y/o métodos privados, de forma que sólo sean
+         accesibles desde el propio objeto. 
+			\item [Polimorfismo:] Se debe permitir a objetos de distinto tipo se le pueda enviar mensajes sintácticamente iguales, de forma
+			que se pueda  llamar un método de objeto sin tener que conocer su tipo.
+			\item [Herencia:] Se debe contemplar la herencia simple entre clases de forma que  una clase se pueda definir mediante otra.
+		\end{description}
+		
+	\end{description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Construcción de objetos.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Un objeto se debe pueder construir de la misma forma que un array. Algunas de las claves 
+		se corresponderán con funciones que representarán los métodos del objeto, mientras que otras se corresponderan 
+		con otros tipos de datos que representarán los atributos. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Copia de objetos.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Los objetos deberán ser copiados mediante la operación de asignación. También debe ser posible
+		la asignación por referencia de objetos. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Definición de clases.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Las clases definirán tipos de objetos que tedrán métodos y atributos comunes. Una clase se construye
+		mediante un identificador que le da nombre y un bloque de sentencias que contendrá una serie de funciones (métodos)
+		y símbolos variables (atributos).   
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Elementos privados.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe failitar un mecanismo para definir atributos y métodos de una clase de objetos como privados. 
+      Estos elementos solo serán accesibles desde métodos del propio objeto. Se deberá contemplar el acceso a estos elementos
+      sobre objetos del mismo tipo dentro de metódos de la clase.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Elementos estáticos.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe failitar un mecanismo para definir atributos y métodos de una clase de objetos pertenecientes
+      a la propia clase. Estos elementos no serán trasladados a los objetos instanciados.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Herencia de clases.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe de disponer de un mecanismo que permita establecer una relación de herencia entre unas clases dadas. 
+		Así será posible la definición de nuevas clases partiendo de otras. La clase derivará de otra extendiendo su funcionalidad y definición. 
+		
+		En la definición de una clase se debe de disponer de un mecanismo que permita especificar la clase que se extenderá. La nueva clase tendrá todos 
+		los atributos y métodos de la extendida y añadirá los suyos propios, pudiendo sobreescribirse los ya existentes.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Instanciación de clases.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Dada una clase, se debe de disponer de un mecanismo que permita crear objetos a partir de la misma.   
+		Para construir un objeto a partir de la instaniación de una clase se deben llevar las funciones y variables definidas en el
+		cuerpo de la clase a métodos y atributos del objeto. 
+		
+		Una clase pude definir un método constructor que deberá ser llamado sobre el objeto recien creado cuando la clase es instanciada.
+		
+		La instanciación se deberá realizar mediante un operador que, a partir de un identificador correspondiente a la clase y una lista de expresiones 
+		correspondientes a los parámetros del método constructor, tome como valor el objeto recien creado.
+	\end{description}
+\end{framed}
+
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso al objeto en ejecución.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe de disponer de un mecanismo que permita acceder a los atibutos y métodos de un objeto desde la ejecución 
+		de un método del mismo. Este mecanismo, correspondiente a una expresión, deberá tomar como valor el objeto en ejecución. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso al objeto en ejecución como clase padre.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe de disponer de un mecanismo que permita acceder a los atibutos y métodos de la clase padre de un objeto desde 
+      la ejecución de un método del mismo. Este mecanismo, correspondiente a una expresión, deberá tomar como valor el objeto en ejecución, pero tomando
+      como métodos y atributos los de la clase padre de la cual deriva. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Enlace estático en tiempo de ejecución.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe de disponer de un mecanismo que permita acceder a los atibutos y métodos estáticos de una clase hija desde un método 
+      estático de la clase padre. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Sentencia with.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se deberá facilitar un mecanismo que permitar establer un objeto como contexto. Así toda llamada a función que
+      se haga, y cuya definición no exista, se deberá hacer como una llamada a un método del objeto. Esta sentencia se deberá construir a partir del
+      objeto y un bloque de sentencias sobre el que se aplicará el contexto.
+	\end{description}
+\end{framed}
+
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Conversión de tipos.
+		\item [Categoría:] Clases de Objetos.
+		\item [Descripción:] Se debe facilitar un mecanisno para que una clase u objeto pueda definir métodos que determinen como llevarse a 
+		cabo la conversión de las instancias a otros tipos de datos.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Ejecutar comando.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Se debe facilitar un operador que ejecute un comando dado. 
+		Para ello se deberá usar el interprete de comandos definido por el entorno del sistema operativo. Este operador contemplará
+		un único operando correspondiente al comando a ejecutar. Como valor se deberá tomar la cedena de caracteres correspondiente 
+		a la salida del comando.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Evaluar cadena.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Deberá existir un operador que utilice el interprete para procesar una cadena de caracteres escrita en 
+		el léxico y con la sintaxis del propio lenguaje. Este operador tomará como valor una cadena de caracteres relativa a la salida 
+		generada por la interpretación.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Bifurcación de proceso.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Se necesita de un mecanismo que bifurque el flujo de ejecución mediante la creación de un proceso hijo.
+		El intérprete deberá crear un proceso clonado de si mismo, cuya ejución prosigirá en el mismo punto. El operador 
+		de bifurcación tomará valor aritmético cero en el proceso hijo, mientras que en el padre tomará el valor aritmético
+		correspondiete al identificador del proceso hijo.    
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Espera entre procesos.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Se necesita de un mecanismo que permita hacer que la ejecución de un proceso padre espere 
+		a que todos o algunos de sus hijos finalicen su ejecución. Así este podrá operar o no sobre un dato aritmético 
+		que referenciará al identificador de proceso del hijo que se ha de esperar. El valor que tomará consistirá en
+		el código correspondiente a la señal de salida producida por el último proceso finalizado.     
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener identificador de proceso.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Todo proceso tiene un identificador único en el sistema sobre el que se ejecuta. Se deberá
+		disponer de un operador que tome el valor del identificador de proceso correspondiente al interprete.     
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener identificador de proceso padre.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Debe existir algún mecanismo que permita obtener el identificador del proceso padre cuando 
+		el interprete se ejecuta como proceso hijo de otro.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Señales entre procesos.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Debe existir algún mecanismo que permita mandar señales entre procesos. Estas señales se corresponderán con
+      señales UNIX. Para mandar una señal a un proceso se deberá dar un identificador de proceso y un entero correspondiente a la
+      señal a enviar.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Manejador de señales a procesos.
+		\item [Categoría:] Procesos.
+		\item [Descripción:] Debe existir algún mecanismo que permita especificar una función que será ejecutada cuando el proceso reciba una 
+      determinada señal.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Llamar a función como proceso
+		\item [Categoría:] Operadores sobre procesos.
+		\item [Descripción:] Se precisa de operador que mediante una función y un listado de parámetros realice una llamada 
+		a la misma mediante la creación de un proceso hijo.
+	\end{description}
+\end{framed}
+
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Parámetros al programa.
+		\item [Categoría:] Entrada.
+		\item [Descripción:] Se debe facilitar un mecanismo para que el contenido fuente pueda recibir parámetros de entrada desde la
+		invocación a su interpretación. Estos parámetros deberán ser copiados a símbolos variables accesibles desde el contenido fuente. 
+		Adicionalmente se tratará otro parametro que se corresponderá con el número de parametros dados.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Variables de entorno.
+		\item [Categoría:] Entrada.
+		\item [Descripción:] Se necesita de un mecanismo para acceder a las variables de entorno definidas en el sistema operativo. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Generador de array.
+		\item [Categoría:] Generadores de expresiones.
+		\item [Descripción:] Se necesita de un mecanismo que sea una expresión por si mismo y que permita generar arrays desde una sentencia iterativa. 
+		Este mecanismo se formará mediante una expresión seguida da una sentencia for. La expresión será ejecutada tras iteración del bucle y será 
+		asignada como último elemento de un array. Al final de la ejecución la expresión tomará el valor del array generado.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Extensiones.
+		\item [Categoría:] Extensiones.
+		\item [Descripción:] La funcionalidad y características del intérprete deben ser extensible mediante módulos dinámicos. 
+      Estos módulos añadirán sentencias, operadores y demás elementos propios de un lenguaje de programación. 
+      
+      Para que un extensión pueda ser utilizada se deberá cargar. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Carga de extensiones mediante fichero de configuración.
+		\item [Categoría:] Extensiones.
+		\item [Descripción:] Se debe facilitar un mecanismo que permita especificar un listado de extensiones que serán cargados al ejecutarse
+      el interprete. Estos modulos serán especificados en un fichero de texto plano separados mediante saltos de línea. Toda ejecución del interprete
+      conllevará la carga de las extensiones especificadas.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Carga de extensiones mediante sentencia.
+		\item [Categoría:] Extensiones.
+		\item [Descripción:] Se debe facilitar un mecanismo que permita cargar una extensión en tiempo de ejecución. Para ello se deberá
+      facilitar la ruta del módulo correspondiente a la extensión como una cadena de caracteres. Tras la carga de la extensión las 
+      características de esta serán añadidas al interprete.
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Extensión gettext.
+		\item [Categoría:] Extensión gettext.
+		\item [Descripción:] Se deberá facilitar a modo de extensión la funcionalidad y características de la 
+      biblioteca GNU de internacionalización (i18n), gettext. 
+	\end{description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Extensión mySQL.
+		\item [Categoría:] Extensión mySQL.
+		\item [Descripción:] Se deberá facilitar una extensión que amplie las capacidades del interprete mediante 
+      sentencias y recursos que permitan la interación con un sistema de gestión de base de datos mySQL.
+	\end{description}
+\end{framed}
+
+\subsection{Requisitos no funcionales}
+Descripción de otros requisitos (relacionados con la calidad del software) que el sistema deberá satisfacer: portabilidad, seguridad, estándares de obligado cumplimiento, accesibilidad, usabilidad, etc.
+
+\subsection{Reglas de negocio}
+En el desarrollo del sistema, hay que tener en cuenta las denominadas reglas de negocio, es decir, el conjunto de restricciones, normas o políticas de la organización que deben ser respetadas por el sistema, las cuales suelen ser cambiantes.
+
+\subsection{Requisitos de información}
+En esta sección se describen los requisitos de gestión de información (datos) que el sistema debe gestionar.
+
+\section{Alternativas de Solución}
+En esta sección, se debe ofrecer un estudio del arte de las diferentes alternativas tecnológicas que permitan satisfacer los requerimientos del sistema, para luego seleccionar (si procede) la herramienta o conjunto de herramientas que utilizaremos como base para el software a desarrollar.
+
+\section{Solución Propuesta}
+Si se ha optado por utilizar un software de base, debemos identificar y medir las diferencias entre lo que proporciona este software y los requisitos definidos para el proyecto.\\
+El resultado de este análisis permitirá identificar cuáles de éstos requisitos ya están solventados total o parcialmente por el sistema base y cuales tendremos que diseñar e implementar la propuesta de solución.

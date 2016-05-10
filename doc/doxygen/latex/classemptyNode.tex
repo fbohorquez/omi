@@ -1,0 +1,68 @@
+\hypertarget{classemptyNode}{\section{Referencia de la Clase empty\-Node}
+\label{classemptyNode}\index{empty\-Node@{empty\-Node}}
+}
+
+
+Node operador elemento vacío.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de empty\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classemptyNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classemptyNode_a79b0e2d5d9eb82467c4c9c5d27f6f2e5}{empty\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$elem)
+\item 
+void \hyperlink{classemptyNode_ab86f4f2c21cd278bf4d1c07b8d7539a3}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador elemento vacío. 
+
+Este nodo determina si un elemento es vacío. Trabaja sobre diversos tipos de datos.
+
+Si el elemento es booleano toma el valor de la negación, si es númerico toma true si el elemento es 0 y false en caso contrario. Para una cadena de texto toma true si la cadena es la cadena vacía, false en otro caso. Si se trata de una array toma el valor verdadero si este está vacio. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classemptyNode_a79b0e2d5d9eb82467c4c9c5d27f6f2e5}{\index{empty\-Node@{empty\-Node}!empty\-Node@{empty\-Node}}
+\index{empty\-Node@{empty\-Node}!emptyNode@{empty\-Node}}
+\subsubsection[{empty\-Node}]{\setlength{\rightskip}{0pt plus 5cm}empty\-Node\-::empty\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{elem}
+\end{DoxyParamCaption}
+)}}\label{classemptyNode_a79b0e2d5d9eb82467c4c9c5d27f6f2e5}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classemptyNode_ab86f4f2c21cd278bf4d1c07b8d7539a3}{\index{empty\-Node@{empty\-Node}!run@{run}}
+\index{run@{run}!emptyNode@{empty\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void empty\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classemptyNode_ab86f4f2c21cd278bf4d1c07b8d7539a3}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado. y toma como valor un booleano que indica si este representa un elemento vacio. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{classleqNode}{\section{Referencia de la Clase leq\-Node}
+\label{classleqNode}\index{leq\-Node@{leq\-Node}}
+}
+
+
+Nodo operador menor o igual que.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de leq\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classleqNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classleqNode_abfe79d9af2fd8a199a96c17a08a22e36}{leq\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classleqNode_a8805e035c0562e4b8974f9ebb346abe5}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classleqNode_a12df6891986dfe4367b7740388e0039e}{do\-\_\-leq} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador menor o igual que. 
+
+Este nodo implementa la operación menor o igual que sobre dos nodos asociados.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classleqNode_abfe79d9af2fd8a199a96c17a08a22e36}{\index{leq\-Node@{leq\-Node}!leq\-Node@{leq\-Node}}
+\index{leq\-Node@{leq\-Node}!leqNode@{leq\-Node}}
+\subsubsection[{leq\-Node}]{\setlength{\rightskip}{0pt plus 5cm}leq\-Node\-::leq\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classleqNode_abfe79d9af2fd8a199a96c17a08a22e36}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classleqNode_a12df6891986dfe4367b7740388e0039e}{\index{leq\-Node@{leq\-Node}!do\-\_\-leq@{do\-\_\-leq}}
+\index{do\-\_\-leq@{do\-\_\-leq}!leqNode@{leq\-Node}}
+\subsubsection[{do\-\_\-leq}]{\setlength{\rightskip}{0pt plus 5cm}bool leq\-Node\-::do\-\_\-leq (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classleqNode_a12df6891986dfe4367b7740388e0039e}
+Ejecuta la operación menor o igual que sobre dos nodos dados. 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classleqNode_a8805e035c0562e4b8974f9ebb346abe5}{\index{leq\-Node@{leq\-Node}!run@{run}}
+\index{run@{run}!leqNode@{leq\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void leq\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classleqNode_a8805e035c0562e4b8974f9ebb346abe5}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación menor o igual que entre el valor numérico de los dos nodos . 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

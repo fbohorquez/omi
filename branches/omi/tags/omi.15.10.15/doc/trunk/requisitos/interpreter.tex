@@ -1,0 +1,103 @@
+
+
+
+\subsection{Interprete}
+
+\subsubsection{Léxico}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Léxico.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El sistema debe fijar el léxico del lenguaje conformado por una conjunto de palabras y expresiones bien definidas y acotadas.
+	\end{description}
+\end{framed}
+
+\subsubsection{Gramática}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Gramática.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El sistema debe definir una gramática que representará el lenguaje. La gramática debe ser libre de contexto, clara
+		y uniforme en toda su extensión. Además debe estar libre de ambigüedades.
+	\end{description}
+\end{framed}
+
+\subsubsection{Semántica}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Interpretación semántica.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Dado un contenido fuente el sistema debe analizarlo en función al léxico (análisis léxico) y la gramática (análisis sintáctico)
+		del lenguaje y producir el resultado semántico asociado.
+	\end {description}
+\end{framed}
+
+\subsubsection{Comentarios}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Comentarios.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] Se ha de contemplar un mecanismo para añadir comentarios al contenido fuente que serán ignorados
+		durante la tarea de interpretación. 
+      
+      Los comentarios comprenderán desde un carácter ``\#'', o bien ``//'', hasta fin de línea.
+      
+      Por otro lado se ha de contemplar los comentarios de múltiples líneas, que deberán estar contenidos entre ``/*'' y ``*/''.
+	\end{description}
+\end{framed}
+
+\subsubsection{Contenido fuente}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde línea de comandos.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde una línea de comandos.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde entrada estándar.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde la entrada estándar del sistema.
+	\end {description}
+\end{framed}
+
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fuente desde fichero.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe ser capaz de obtener contenido fuente desde un fichero.
+	\end {description}
+\end{framed}
+
+\subsubsection{Entorno}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Entorno de ejecución.
+		\item [Categoría:] Interprete.
+		\item [Descripción:] El interprete debe definir un entorno de ejecución en
+		el que se controlen parámetros de entrada, variables de entornos del sistema operativo e información sobre
+		el proceso como número de línea actual y los errores producidos.
+	\end {description}
+\end{framed}
+
+\subsubsection {Parámetros}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Parámetros al programa.
+		\item [Categoría:] Entrada.
+		\item [Descripción:] Se debe facilitar un mecanismo para que el contenido fuente pueda recibir parámetros de entrada desde la
+		invocación a su interpretación. Estos parámetros deberán ser copiados a símbolos variables accesibles desde el contenido fuente. 
+		Adicionalmente se tratará otro parámetro que se corresponderá con el número de parámetros dados.
+	\end{description}
+\end{framed}

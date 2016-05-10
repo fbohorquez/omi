@@ -1,0 +1,300 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_3d2a09a3943fe18c0a3426b22a84d239.html">operators</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">regexpOpNode.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//regexpOpNode.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef _RUN_OPERATORS_REGEXOPNODE_</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_OPERATORS_REGEXOPNODE_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../tree/typeNode.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classmatchNode.html">   62</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classmatchNode.html">matchNode</a> : <span class="keyword">public</span> <a class="code" href="classlogicNode.html">logicNode</a> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <a class="code" href="classmatchNode.html#ae145629a42d2a63e4d60c410253fe4db">matchNode</a> (<a class="code" href="classrunNode.html">runNode</a>* str, <a class="code" href="classrunNode.html">runNode</a>* regexp);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classmatchNode.html#a216cb0810f679bab31aa61eeaad86f9a">run</a> ();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classmatchNode.html#aedff64c835d3552a937e3f6ab38996e1">asMethod</a> ();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *regexp_, *str_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classnewregexpNode.html">   97</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classnewregexpNode.html">newregexpNode</a> : <span class="keyword">public</span> <a class="code" href="classnexpNode.html">nexpNode</a> {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <a class="code" href="classnewregexpNode.html#a86eb66399cb4e8bd53d8d2dbc8c117c7">newregexpNode</a> (<a class="code" href="classrunNode.html">runNode</a>* str);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classnewregexpNode.html#adeeddddbdc4019702b5db58581283a57">run</a> ();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *str_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classsearchNode.html">  143</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classsearchNode.html">searchNode</a> : <span class="keyword">public</span> <a class="code" href="classnexpNode.html">nexpNode</a> {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;   <a class="code" href="classsearchNode.html#a0d38f0ec41707bc09dd659e763c2e4c8">searchNode</a> (<a class="code" href="classrunNode.html">runNode</a>* str, <a class="code" href="classrunNode.html">runNode</a>* regexp);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;   <a class="code" href="classsearchNode.html#a0d38f0ec41707bc09dd659e763c2e4c8">searchNode</a> (<a class="code" href="classrunNode.html">runNode</a>* str, <a class="code" href="classrunNode.html">runNode</a>* regexp, <a class="code" href="classrunNode.html">runNode</a>* keys);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classsearchNode.html#aee137a8b956e6582c22588117efbc366">run</a> ();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classsearchNode.html#a655e0f65fc124e090347020d3ac6c703">asMethod</a> ();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *regexp_, *str_, *key_;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="ttc" id="classmatchNode_html_a216cb0810f679bab31aa61eeaad86f9a"><div class="ttname"><a href="classmatchNode.html#a216cb0810f679bab31aa61eeaad86f9a">matchNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:50</div></div>
+<div class="ttc" id="classlogicNode_html"><div class="ttname"><a href="classlogicNode.html">logicNode</a></div><div class="ttdoc">Nodos lógicos. </div><div class="ttdef"><b>Definition:</b> expNode.h:279</div></div>
+<div class="ttc" id="classsearchNode_html_a0d38f0ec41707bc09dd659e763c2e4c8"><div class="ttname"><a href="classsearchNode.html#a0d38f0ec41707bc09dd659e763c2e4c8">searchNode::searchNode</a></div><div class="ttdeci">searchNode(runNode *str, runNode *regexp)</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:105</div></div>
+<div class="ttc" id="classmatchNode_html_aedff64c835d3552a937e3f6ab38996e1"><div class="ttname"><a href="classmatchNode.html#aedff64c835d3552a937e3f6ab38996e1">matchNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:42</div></div>
+<div class="ttc" id="classnewregexpNode_html_a86eb66399cb4e8bd53d8d2dbc8c117c7"><div class="ttname"><a href="classnewregexpNode.html#a86eb66399cb4e8bd53d8d2dbc8c117c7">newregexpNode::newregexpNode</a></div><div class="ttdeci">newregexpNode(runNode *str)</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:82</div></div>
+<div class="ttc" id="classmatchNode_html"><div class="ttname"><a href="classmatchNode.html">matchNode</a></div><div class="ttdoc">Nodo función comprobación cadena sobre expresión regular. </div><div class="ttdef"><b>Definition:</b> regexpOpNode.h:62</div></div>
+<div class="ttc" id="classsearchNode_html"><div class="ttname"><a href="classsearchNode.html">searchNode</a></div><div class="ttdoc">Nodo función búsqueda estructurada. </div><div class="ttdef"><b>Definition:</b> regexpOpNode.h:143</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="classnewregexpNode_html"><div class="ttname"><a href="classnewregexpNode.html">newregexpNode</a></div><div class="ttdoc">Operador de definición de expresión regular. </div><div class="ttdef"><b>Definition:</b> regexpOpNode.h:97</div></div>
+<div class="ttc" id="classsearchNode_html_aee137a8b956e6582c22588117efbc366"><div class="ttname"><a href="classsearchNode.html#aee137a8b956e6582c22588117efbc366">searchNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:117</div></div>
+<div class="ttc" id="classnewregexpNode_html_adeeddddbdc4019702b5db58581283a57"><div class="ttname"><a href="classnewregexpNode.html#adeeddddbdc4019702b5db58581283a57">newregexpNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:84</div></div>
+<div class="ttc" id="classmatchNode_html_ae145629a42d2a63e4d60c410253fe4db"><div class="ttname"><a href="classmatchNode.html#ae145629a42d2a63e4d60c410253fe4db">matchNode::matchNode</a></div><div class="ttdeci">matchNode(runNode *str, runNode *regexp)</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:40</div></div>
+<div class="ttc" id="classsearchNode_html_a655e0f65fc124e090347020d3ac6c703"><div class="ttname"><a href="classsearchNode.html#a655e0f65fc124e090347020d3ac6c703">searchNode::asMethod</a></div><div class="ttdeci">static runNode * asMethod()</div><div class="ttdef"><b>Definition:</b> regexpOpNode.cpp:109</div></div>
+<div class="ttc" id="classnexpNode_html"><div class="ttname"><a href="classnexpNode.html">nexpNode</a></div><div class="ttdoc">Nodo expresión de tipo no definido. </div><div class="ttdef"><b>Definition:</b> expNode.h:164</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

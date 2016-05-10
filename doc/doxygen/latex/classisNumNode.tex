@@ -1,0 +1,70 @@
+\hypertarget{classisNumNode}{\section{Referencia de la Clase is\-Num\-Node}
+\label{classisNumNode}\index{is\-Num\-Node@{is\-Num\-Node}}
+}
+
+
+Nodo operador comprobación de numérico.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de is\-Num\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classisNumNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisNumNode_a513d37c30bdb83e20e5f49468ec0cd1b}{is\-Num\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classisNumNode_ac5b294788181c892a878214ffaf6b91a}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador comprobación de numérico. 
+
+Este nodo implementa la operación de comprobación del tipo para el caso numérico.
+
+Para determinar el valor de la operación se comprueba si el valor del operando es de tipo numérico.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisNumNode_a513d37c30bdb83e20e5f49468ec0cd1b}{\index{is\-Num\-Node@{is\-Num\-Node}!is\-Num\-Node@{is\-Num\-Node}}
+\index{is\-Num\-Node@{is\-Num\-Node}!isNumNode@{is\-Num\-Node}}
+\subsubsection[{is\-Num\-Node}]{\setlength{\rightskip}{0pt plus 5cm}is\-Num\-Node\-::is\-Num\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classisNumNode_a513d37c30bdb83e20e5f49468ec0cd1b}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisNumNode_ac5b294788181c892a878214ffaf6b91a}{\index{is\-Num\-Node@{is\-Num\-Node}!run@{run}}
+\index{run@{run}!isNumNode@{is\-Num\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void is\-Num\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classisNumNode_ac5b294788181c892a878214ffaf6b91a}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado. Comprueba si el tipo del nodo asociado es numérico para tomar el valor lógico correspondiente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

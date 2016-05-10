@@ -1,0 +1,84 @@
+#!/usr/local/bin/omi
+"";
+a = "Esto es una cadena de texto";
+echo a;
+echo "Ahora vamos a imprimir la cadena vacia";
+echo "";
+b = "Es "."posible "."concatenar";
+c = " dos". " variables";
+echo b.c;
+c .= " o tres";
+echo b.c;
+echo "También contar el número de carácteres ";
+echo "AAA: ".size "AAA";
+echo "BB"."BB".": ".size "BB"."BB";
+echo "###################################";
+echo "Acceso a posición";
+echo a = "0123456789";
+for (i = 0; i < 10; i ++){
+  echo a[i];
+}
+echo "Reasignación";
+for (i = 0; i < 10; i ++){
+  a[i] = 9 - i;
+}
+echo a;
+echo "###################################";
+echo "Formato de cadenas";
+b = "cadena";
+echo sprintf("Esto es una %s formateda.", b);
+echo sprintf("Ya son %2d", 2.003);
+echo sprintf("Y %4s", "tres gatos");
+echo sprintf("Y %+4i", "4");
+echo sprintf("Y %u", -5);
+echo sprintf("Y %+2f", 6.6666);
+echo sprintf("Y %+5e", 777.77777777);
+echo sprintf("Y %F", "88888888888888888888888888");
+echo sprintf("Y %3E", "99.99");
+echo sprintf("Y %^s", "diez");
+echo sprintf("%d en octal es %#o", 31, 31);
+echo sprintf("%d en hexadecimal es %#x o %#X", 31, 31, 31);
+echo sprintf("Texto sin expresiones de formato");
+echo sprintf("%2sdenas %3stas", "Cadiz", "junio");
+echo sprintf("El %s%% de aciertos en %d intentos", 100, 100);
+echo sprintf("%%%%%%");
+echo "###################################";
+cad = "Buscamos en esta cadena las posiciones en la que aparece la subcadena cadena";
+echo cad;
+i = -1;
+while ((i = str_find(cad, "cadena", i + 1)) != -1 ){
+  echo "Posición: ".i;
+}
+echo "El 1 en 012345 está en la posición ".str_pos ("012345", "1");
+echo "###################################";
+echo "Remplazar";
+a = "Esto es la prueba de un programa";
+b = "la prueba";
+c = "un ejemplo";
+d = str_replace (a, b, c);
+echo d;
+cad = "1111111";
+s = "1";
+r = "2";
+for (i = 0; i <= size(cad); ++i){
+  echo str_replace (cad,s, r, i);
+}
+cad = "2222222";
+s = "2";
+r = "1";
+for (i = 0; i <= size(cad); ++i){
+  echo str_replace (cad, s, r, (-1 * i));
+}
+echo "###################################";
+echo "Explode";
+echo str_explode ("a,b,c", ",");
+echo "Implode";
+echo array_implode ({"a","b","c"}, ",");
+echo "###################################";
+echo "Mayúsculas y Minúsculas";
+echo str_upper ("si me gritan");
+echo str_lower ("YO HABLO BAJITO");
+echo "###################################";
+echo "Errores controlados: ";
+echo sprintf ("hola", "g");
+echo str_replace ("AAA", true, false);

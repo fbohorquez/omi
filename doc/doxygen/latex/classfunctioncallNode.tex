@@ -1,0 +1,98 @@
+\hypertarget{classfunctioncallNode}{\section{Referencia de la Clase functioncall\-Node}
+\label{classfunctioncallNode}\index{functioncall\-Node@{functioncall\-Node}}
+}
+
+
+Nodo de llamada a función.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+Diagrama de herencias de functioncall\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classfunctioncallNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfunctioncallNode_ad71a799c62afebe4c50bae79b193cb4b}{functioncall\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$params)
+\item 
+void \hyperlink{classfunctioncallNode_ae9ea903e354c71a78370e893cb8c8c29}{run} (bool excep, \hyperlink{classrunNode}{run\-Node} $\ast$obj=N\-U\-L\-L, \hyperlink{classclassNode}{class\-Node} $\ast$parent=N\-U\-L\-L, \hyperlink{classsTable}{s\-Table} $\ast$context=N\-U\-L\-L)
+\item 
+void \hyperlink{classfunctioncallNode_ab75cccac2ce7de1b68cb725ff24f5381}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de llamada a función. 
+
+Este nodo representa una llamada a función. Parte de un identificador y una lista de valores que hacen de parámetros.
+
+Su ejecución consiste en, haciendo uso del identificador, obtener la función de la tabla de símbolos y ejecutar el cuerpo de esta pasándole la lista de valores como parámetros.
+
+Una llamada a función es un nodo de tipo expresión no definida, que referencia el valor devuelto por la ejecución. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfunctioncallNode_ad71a799c62afebe4c50bae79b193cb4b}{\index{functioncall\-Node@{functioncall\-Node}!functioncall\-Node@{functioncall\-Node}}
+\index{functioncall\-Node@{functioncall\-Node}!functioncallNode@{functioncall\-Node}}
+\subsubsection[{functioncall\-Node}]{\setlength{\rightskip}{0pt plus 5cm}functioncall\-Node\-::functioncall\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{classfunctioncallNode_ad71a799c62afebe4c50bae79b193cb4b}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador de la función. \\
+\hline
+{\em params} & lista de valores para los parámetros. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfunctioncallNode_ae9ea903e354c71a78370e893cb8c8c29}{\index{functioncall\-Node@{functioncall\-Node}!run@{run}}
+\index{run@{run}!functioncallNode@{functioncall\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void functioncall\-Node\-::run (
+\begin{DoxyParamCaption}
+\item[{bool}]{excep, }
+\item[{{\bf run\-Node} $\ast$}]{obj = {\ttfamily NULL}, }
+\item[{{\bf class\-Node} $\ast$}]{parent = {\ttfamily NULL}, }
+\item[{{\bf s\-Table} $\ast$}]{context = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classfunctioncallNode_ae9ea903e354c71a78370e893cb8c8c29}
+Ejecución del nodo. Haciendo uso del identificador obtiene la función de la tabla de símbolos y llama al método call de la misma pasándole la lista de valores como parámetros, lo que significa que se llevará a cabo la ejecución de la función. Como valor se obtiene un nodo ejecutable creado a partir de una excepción return durante la ejecución. En caso de no suceder dicha excepción se toma como valor nulo
+
+
+\begin{DoxyParams}{Parámetros}
+{\em excep} & Determina si se lanza una excepción en el caso de que no exista una función con el identificador dado. \\
+\hline
+{\em obj} & Objeto que se asociará a la función para que sea ejecutada como método. \\
+\hline
+{\em parent} & Clase que se usará como padre en la llamada a función. \\
+\hline
+{\em context} & Contexto del cual se obtendrán las tablas de símbolos. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfunctioncallNode_ab75cccac2ce7de1b68cb725ff24f5381}{\index{functioncall\-Node@{functioncall\-Node}!run@{run}}
+\index{run@{run}!functioncallNode@{functioncall\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void functioncall\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfunctioncallNode_ab75cccac2ce7de1b68cb725ff24f5381}
+Ejecución del nodo. Haciendo uso del identificador para obtener la función de la tabla de símbolos. Luego llama al método call de la misma, pasándole la lista de valores como parámetros, lo que significa que se llevará a cabo la ejecución de la función. Como valor se obtiene un nodo ejecutable creado a partir de una exepción return durante la ejecución. En caso de no suceder dicha excepción se toma como valor nulo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\hypertarget{loopStmtNode_8h}{\section{Referencia del Archivo trunk/src/run/stmts/loop\-Stmt\-Node.h}
+\label{loopStmtNode_8h}\index{trunk/src/run/stmts/loop\-Stmt\-Node.\-h@{trunk/src/run/stmts/loop\-Stmt\-Node.\-h}}
+}
+
+
+Nodos sentencias iterativas.  
+
+
+{\ttfamily \#include \char`\"{}../tree/type\-Node.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../operators/op\-Node.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../../error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../../interpreter.\-h\char`\"{}}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classwhileNode}{while\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia while. \end{DoxyCompactList}\item 
+class \hyperlink{classdowhileNode}{dowhile\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia do..while. \end{DoxyCompactList}\item 
+class \hyperlink{classforeachNode}{foreach\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia foreach. \end{DoxyCompactList}\item 
+class \hyperlink{classforeachGeneratorNode}{foreach\-Generator\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo para la lista por compresión. \end{DoxyCompactList}\item 
+class \hyperlink{classiloopNode}{iloop\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo de sentencia de iteración ágil. \end{DoxyCompactList}\item 
+class \hyperlink{classgetiNode}{geti\-Node}
+\begin{DoxyCompactList}\small\item\em Node operador acceso a iterador. \end{DoxyCompactList}\item 
+class \hyperlink{classincloopNode}{incloop\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia iterativa de incremento. \end{DoxyCompactList}\item 
+class \hyperlink{classcontinueNode}{continue\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia continue. \end{DoxyCompactList}\item 
+class \hyperlink{classcontinueException}{continue\-Exception}
+\begin{DoxyCompactList}\small\item\em Excepción lanzada cuando se produce una sentencia continue. \end{DoxyCompactList}\item 
+class \hyperlink{classforNode}{for\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia iterativa for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodos sentencias iterativas. En este fichero se define los nodos correspondientes a las distintas sentencias de control iterativas. Estos son modelados mediante clases de objetos. 

@@ -1,0 +1,86 @@
+\hypertarget{classsignalhandlerNode}{\section{Referencia de la Clase signalhandler\-Node}
+\label{classsignalhandlerNode}\index{signalhandler\-Node@{signalhandler\-Node}}
+}
+
+
+Nodo función manejadora de señales.  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de signalhandler\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classsignalhandlerNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsignalhandlerNode_a92ee4a27b05f6058e67a717dec164de0}{signalhandler\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$signal, \hyperlink{classrunNode}{run\-Node} $\ast$function)
+\item 
+void \hyperlink{classsignalhandlerNode_a53ba7498168b7ad02d6b34e2557e5e46}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classsignalhandlerNode_a4d58e7c1624d297a71df653b7ac8d9ec}{call\-Handlers} (int signum)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función manejadora de señales. 
+
+Nodo que permite asociar una función como manejador de una determinada señal de proceso. La función no recibirá parámetros algunos. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsignalhandlerNode_a92ee4a27b05f6058e67a717dec164de0}{\index{signalhandler\-Node@{signalhandler\-Node}!signalhandler\-Node@{signalhandler\-Node}}
+\index{signalhandler\-Node@{signalhandler\-Node}!signalhandlerNode@{signalhandler\-Node}}
+\subsubsection[{signalhandler\-Node}]{\setlength{\rightskip}{0pt plus 5cm}signalhandler\-Node\-::signalhandler\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{signal, }
+\item[{{\bf run\-Node} $\ast$}]{function}
+\end{DoxyParamCaption}
+)}}\label{classsignalhandlerNode_a92ee4a27b05f6058e67a717dec164de0}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em signal} & Nodo que representa la señal a la que se le asociará la función \\
+\hline
+{\em function} & Nodo función. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsignalhandlerNode_a4d58e7c1624d297a71df653b7ac8d9ec}{\index{signalhandler\-Node@{signalhandler\-Node}!call\-Handlers@{call\-Handlers}}
+\index{call\-Handlers@{call\-Handlers}!signalhandlerNode@{signalhandler\-Node}}
+\subsubsection[{call\-Handlers}]{\setlength{\rightskip}{0pt plus 5cm}void signalhandler\-Node\-::call\-Handlers (
+\begin{DoxyParamCaption}
+\item[{int}]{signum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsignalhandlerNode_a4d58e7c1624d297a71df653b7ac8d9ec}
+Llama al manejador asociad a la señal dada 
+\begin{DoxyParams}{Parámetros}
+{\em signum} & Idetificador de señal \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsignalhandlerNode_a53ba7498168b7ad02d6b34e2557e5e46}{\index{signalhandler\-Node@{signalhandler\-Node}!run@{run}}
+\index{run@{run}!signalhandlerNode@{signalhandler\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void signalhandler\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsignalhandlerNode_a53ba7498168b7ad02d6b34e2557e5e46}
+Metodo de ejecución. Asocia la función como manejador de la señal de proceso. Como valor se toma un valor booleano que indica si el proceso se llevó a cabo de forma correcta. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

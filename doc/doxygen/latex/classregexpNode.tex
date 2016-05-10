@@ -1,0 +1,162 @@
+\hypertarget{classregexpNode}{\section{Referencia de la Clase regexp\-Node}
+\label{classregexpNode}\index{regexp\-Node@{regexp\-Node}}
+}
+
+
+Nodo expresión regular.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de regexp\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classregexpNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classregexpNode_ab9eef6b08a9f1618fb54f2f2f7ba4e11}{regexp\-Node} (string str)
+\item 
+\hyperlink{classregexpNode_a4a2d233754aa24d0d4083063f274cd4b}{regexp\-Node} (\hyperlink{classregexpNode}{regexp\-Node} $\ast$r)
+\item 
+regex \hyperlink{classregexpNode_a9a461a78de0c0a5932b85b2f1a5759fc}{exvalue} () const 
+\item 
+void \hyperlink{classregexpNode_a6371f51d04fc8c86e6b2ef536b275007}{run} ()
+\item 
+string \hyperlink{classregexpNode_a223644545a3ec0258c6083fa8686a3cb}{strvalue} () const 
+\item 
+bool \hyperlink{classregexpNode_a10a587695cb42fa6f9d867e05e26068f}{boolvalue} () const 
+\item 
+num \hyperlink{classregexpNode_a6d6e4d51eaedec3def49747e4da3b03b}{numvalue} () const 
+\item 
+string \hyperlink{classregexpNode_a59887890d91ffedd957b47794025f133}{print} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo expresión regular. 
+
+Este nodo representa el tipo de dato expresión regular. Las expresiones regulares constituyen una forma de representar lenguajes formales y se construyen utilizando caracteres del alfabeto sobre el cual se define el lenguaje.
+
+Las expresiones regulares presentan la sintaxis de Perl.
+
+Internamente una expresión regular se representa mediante una máquina de estado finita. La inicialización de un nodo de este tipo consistirá en la creación de la máquina de estado a partir de una cadena que denominaremos patrón. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classregexpNode_ab9eef6b08a9f1618fb54f2f2f7ba4e11}{\index{regexp\-Node@{regexp\-Node}!regexp\-Node@{regexp\-Node}}
+\index{regexp\-Node@{regexp\-Node}!regexpNode@{regexp\-Node}}
+\subsubsection[{regexp\-Node}]{\setlength{\rightskip}{0pt plus 5cm}regexp\-Node\-::regexp\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)}}\label{classregexpNode_ab9eef6b08a9f1618fb54f2f2f7ba4e11}
+Constructor principal del nodo expresión regular. Crea la máquina de estado a partir de la cadena str. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena que representa la expresión regular en formato Perl. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classregexpNode_a4a2d233754aa24d0d4083063f274cd4b}{\index{regexp\-Node@{regexp\-Node}!regexp\-Node@{regexp\-Node}}
+\index{regexp\-Node@{regexp\-Node}!regexpNode@{regexp\-Node}}
+\subsubsection[{regexp\-Node}]{\setlength{\rightskip}{0pt plus 5cm}regexp\-Node\-::regexp\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf regexp\-Node} $\ast$}]{r}
+\end{DoxyParamCaption}
+)}}\label{classregexpNode_a4a2d233754aa24d0d4083063f274cd4b}
+Constructor copia. 
+\begin{DoxyParams}{Parámetros}
+{\em r} & Nodo expresión regular para la copia. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classregexpNode_a10a587695cb42fa6f9d867e05e26068f}{\index{regexp\-Node@{regexp\-Node}!boolvalue@{boolvalue}}
+\index{boolvalue@{boolvalue}!regexpNode@{regexp\-Node}}
+\subsubsection[{boolvalue}]{\setlength{\rightskip}{0pt plus 5cm}bool regexp\-Node\-::boolvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classregexpNode_a10a587695cb42fa6f9d867e05e26068f}
+Devuelve el valor booleano del nodo. Que indica la expresión regular que denota el lenguaje formado por la cadena vacía. \begin{DoxyReturn}{Devuelve}
+Valor booleano 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_a18781e07cc3390c04b6905249755ccc8}{dexp\-Node}.
+
+\hypertarget{classregexpNode_a9a461a78de0c0a5932b85b2f1a5759fc}{\index{regexp\-Node@{regexp\-Node}!exvalue@{exvalue}}
+\index{exvalue@{exvalue}!regexpNode@{regexp\-Node}}
+\subsubsection[{exvalue}]{\setlength{\rightskip}{0pt plus 5cm}regex regexp\-Node\-::exvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classregexpNode_a9a461a78de0c0a5932b85b2f1a5759fc}
+Obtiene la expresión regular asociada al nodo. \begin{DoxyReturn}{Devuelve}
+Expresión regular asociada al nodo. 
+\end{DoxyReturn}
+\hypertarget{classregexpNode_a6d6e4d51eaedec3def49747e4da3b03b}{\index{regexp\-Node@{regexp\-Node}!numvalue@{numvalue}}
+\index{numvalue@{numvalue}!regexpNode@{regexp\-Node}}
+\subsubsection[{numvalue}]{\setlength{\rightskip}{0pt plus 5cm}num regexp\-Node\-::numvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classregexpNode_a6d6e4d51eaedec3def49747e4da3b03b}
+Obtiene el valor numérico del nodo correspondiente al número de caracteres que forma la cadena que define la expresión regular. \begin{DoxyReturn}{Devuelve}
+Valor numérico. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_ae2d3bfed7e6ebd5e96ddcefaa230c3d2}{dexp\-Node}.
+
+\hypertarget{classregexpNode_a59887890d91ffedd957b47794025f133}{\index{regexp\-Node@{regexp\-Node}!print@{print}}
+\index{print@{print}!regexpNode@{regexp\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string regexp\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classregexpNode_a59887890d91ffedd957b47794025f133}
+Método de impresión. Obtiene el valor textual del nodo el cual es la cadena vacía. \begin{DoxyReturn}{Devuelve}
+Cadena vacía. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classregexpNode_a6371f51d04fc8c86e6b2ef536b275007}{\index{regexp\-Node@{regexp\-Node}!run@{run}}
+\index{run@{run}!regexpNode@{regexp\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void regexp\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classregexpNode_a6371f51d04fc8c86e6b2ef536b275007}
+Función de ejecución vacía.
+
+Esta función no realiza ninguna acción ya que el valor del nodo es asignado en la construcción. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classregexpNode_a223644545a3ec0258c6083fa8686a3cb}{\index{regexp\-Node@{regexp\-Node}!strvalue@{strvalue}}
+\index{strvalue@{strvalue}!regexpNode@{regexp\-Node}}
+\subsubsection[{strvalue}]{\setlength{\rightskip}{0pt plus 5cm}string regexp\-Node\-::strvalue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classregexpNode_a223644545a3ec0258c6083fa8686a3cb}
+Devuelve el valor cadena caracteres del nodo correspondiente a la cadena que representa la expresión regular. \begin{DoxyReturn}{Devuelve}
+Cadena que representa la expresión regular. 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classdexpNode_adf74f4f848f7ec7c3c2ada1aa3bdc66d}{dexp\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

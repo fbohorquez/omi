@@ -1,0 +1,3 @@
+#!/usr/local/bin/omi
+load ('/home/franj/projects/omi.svn/extensions/gettext/src/libomi_strings.so');
+<< ucfirst ("aaaa", "");

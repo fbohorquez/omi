@@ -1,0 +1,76 @@
+\hypertarget{classlabelNode}{\section{Referencia de la Clase label\-Node}
+\label{classlabelNode}\index{label\-Node@{label\-Node}}
+}
+
+
+Nodo etiqueta.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de label\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlabelNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlabelNode_acdb0918db9375b2784b00867537d0a37}{label\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$stmt)
+\item 
+void \hyperlink{classlabelNode_a9906fc4f7d7088d6ea52660f8e036b41}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo etiqueta. 
+
+Un nodo etiqueta permite el acceso a una rama de árbol de ejecución a partir de un un identificador.
+
+Internamente guarda en la tabla de símbolos una referencia a un nodo sentencia determinado del árbol de ejecución.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classgotoNode}{goto\-Node} 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classlabelNode_acdb0918db9375b2784b00867537d0a37}{\index{label\-Node@{label\-Node}!label\-Node@{label\-Node}}
+\index{label\-Node@{label\-Node}!labelNode@{label\-Node}}
+\subsubsection[{label\-Node}]{\setlength{\rightskip}{0pt plus 5cm}label\-Node\-::label\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{stmt}
+\end{DoxyParamCaption}
+)}}\label{classlabelNode_acdb0918db9375b2784b00867537d0a37}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador de la etiqueta \\
+\hline
+{\em stmt} & Nodo sentencia que será ejecutado la llamarse \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classlabelNode_a9906fc4f7d7088d6ea52660f8e036b41}{\index{label\-Node@{label\-Node}!run@{run}}
+\index{run@{run}!labelNode@{label\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void label\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlabelNode_a9906fc4f7d7088d6ea52660f8e036b41}
+Añade a la tabla de símbolos una referencia al nodo dado como sentencia y prosigue la ejecución del mismo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{classdateNode}{\section{Referencia de la Clase date\-Node}
+\label{classdateNode}\index{date\-Node@{date\-Node}}
+}
+
+
+Nodo función fecha.  
+
+
+
+
+{\ttfamily \#include $<$date\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de date\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classdateNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdateNode_a3227bbfae0a0bdf38bc312a525b4216c}{date\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$timestamp=N\-U\-L\-L)
+\item 
+void \hyperlink{classdateNode_ad13a252816fd28e65c027ad49d8c3976}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función fecha. 
+
+Este nodo genera una caneda que se corresponde a una fecha dada según un formato y una marca de tiempo.
+
+Para la cadena de formato se utiliza las siguentes directivas\-:
+\begin{DoxyItemize}
+\item d\-: Día del mes con dos dígitos.
+\item j\-: Día del mes sin ceros iniciales.
+\item l\-: Día de la semana de forma alfabética completa.
+\item D\-: Día de la semana de forma alfabética y con tres letras.
+\item w\-: Día de la semana de forma numérica (0-\/domingo,6-\/sábado).
+\item z\-: Día del año de forma numérica.
+\item F\-: Mes de forma alfabética.
+\item m\-: Mes de forma numérica con dos dígitos.
+\item n\-: Mes de forma numérica sin ceros iniciales.
+\item M\-: Mes de forma alfabética con tres letras.
+\item Y\-: Año con cuatro dígitos.
+\item y\-: Año con dos dígitos.
+\item a\-: Periodo del día (am/pm) en minúsculas.
+\item A\-: Periodo del día (am/pm) en mayúsculas.
+\item g\-: Hora en formato 12h sin ceros iniciales.
+\item G\-: Hora en formato 24h sin ceros iniciales.
+\item h\-: Hora en formato 12h con dos dígitos.
+\item H\-: Hora en formato 24h con dos dígitos.
+\item i\-: Minutos con dos dígitos.
+\item U\-: Segundos desde la Época Unix (1 de Enero del 1970 00\-:00\-:00 G\-M\-T).
+\item \%\%\-: Carácter \%. 
+\end{DoxyItemize}
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classdateNode_a3227bbfae0a0bdf38bc312a525b4216c}{\index{date\-Node@{date\-Node}!date\-Node@{date\-Node}}
+\index{date\-Node@{date\-Node}!dateNode@{date\-Node}}
+\subsubsection[{date\-Node}]{\setlength{\rightskip}{0pt plus 5cm}date\-Node\-::date\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{timestamp = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classdateNode_a3227bbfae0a0bdf38bc312a525b4216c}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Nodo que representa la cadena de formato \\
+\hline
+{\em timestamp} & Nodo que respresenta la marca de tiempo. Si no se da se toma la marca de tiempo actual. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classdateNode_ad13a252816fd28e65c027ad49d8c3976}{\index{date\-Node@{date\-Node}!run@{run}}
+\index{run@{run}!dateNode@{date\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void date\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdateNode_ad13a252816fd28e65c027ad49d8c3976}
+Método que lleva a cabo la ejecución del nodo. Toma como valor una cadena determinada por la cadena de formato y la marca de tiempo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{dateOpNode_8h}{date\-Op\-Node.\-h}\item 
+trunk/src/run/operators/date\-Op\-Node.\-cpp\end{DoxyCompactItemize}

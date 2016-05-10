@@ -1,0 +1,76 @@
+\hypertarget{classthrowException}{\section{Referencia de la Clase throw\-Exception}
+\label{classthrowException}\index{throw\-Exception@{throw\-Exception}}
+}
+
+
+Excepción de exepción lanzada.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+
+
+Herencias exception.
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classthrowException_a9b3d37eabcdd2841672fdabc6a0ffe65}{throw\-Exception} (\hyperlink{classrunNode}{run\-Node} $\ast$resp)
+\item 
+const char $\ast$ \hyperlink{classthrowException_a2fcd0c26e36f52202b8ae47a7e5492b5}{what} () const   throw ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classthrowException_a5892f51167089867cf41046f1c034cc7}{val} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Excepción de exepción lanzada. 
+
+Esta excepción se produce cuando se ejecuta una sentencia throw (\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classthrowNode}{throw\-Node}). Será atrapada por una sentencia try...catch (
+
+\hyperlink{classtryNode}{try\-Node}), produciendose la ejecución de las sentencias correspondiente al bloque catch.
+\end{DoxySeeAlso}
+La exepción guarda un valor que podra ser usado en el bloque catch. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classthrowException_a9b3d37eabcdd2841672fdabc6a0ffe65}{\index{throw\-Exception@{throw\-Exception}!throw\-Exception@{throw\-Exception}}
+\index{throw\-Exception@{throw\-Exception}!throwException@{throw\-Exception}}
+\subsubsection[{throw\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}throw\-Exception\-::throw\-Exception (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{resp}
+\end{DoxyParamCaption}
+)}}\label{classthrowException_a9b3d37eabcdd2841672fdabc6a0ffe65}
+Constructor de la execpción 
+\begin{DoxyParams}{Parámetros}
+{\em resp} & Valor de la excepción \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classthrowException_a5892f51167089867cf41046f1c034cc7}{\index{throw\-Exception@{throw\-Exception}!val@{val}}
+\index{val@{val}!throwException@{throw\-Exception}}
+\subsubsection[{val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ throw\-Exception\-::val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classthrowException_a5892f51167089867cf41046f1c034cc7}
+Obtiene el valor de la excepción \begin{DoxyReturn}{Devuelve}
+Valor de la excepción 
+\end{DoxyReturn}
+\hypertarget{classthrowException_a2fcd0c26e36f52202b8ae47a7e5492b5}{\index{throw\-Exception@{throw\-Exception}!what@{what}}
+\index{what@{what}!throwException@{throw\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ throw\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) }}\label{classthrowException_a2fcd0c26e36f52202b8ae47a7e5492b5}
+Método que será ejecutado cuando la excepción no es atrapada. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

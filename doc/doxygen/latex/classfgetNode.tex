@@ -1,0 +1,69 @@
+\hypertarget{classfgetNode}{\section{Referencia de la Clase fget\-Node}
+\label{classfgetNode}\index{fget\-Node@{fget\-Node}}
+}
+
+
+Nodo función leer de descriptor de fichero.  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fget\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfgetNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfgetNode_a4d97f7eadb024edf1608a74598d5e472}{fget\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file, \hyperlink{classrunNode}{run\-Node} $\ast$size=N\-U\-L\-L)
+\item 
+void \hyperlink{classfgetNode_a189fa91cf346d112382c333348d1ffcd}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función leer de descriptor de fichero. 
+
+Este nodo se encarga de leer desde la posición en la que se encuentra un descriptor de fichero un número de caracteres. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfgetNode_a4d97f7eadb024edf1608a74598d5e472}{\index{fget\-Node@{fget\-Node}!fget\-Node@{fget\-Node}}
+\index{fget\-Node@{fget\-Node}!fgetNode@{fget\-Node}}
+\subsubsection[{fget\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fget\-Node\-::fget\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file, }
+\item[{{\bf run\-Node} $\ast$}]{size = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classfgetNode_a4d97f7eadb024edf1608a74598d5e472}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo descriptor de fichero \\
+\hline
+{\em size.} & Nodo que representa el número de caracteres que serán leídos. Si no es dado se toma hasta el siguiente salto de línea. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfgetNode_a189fa91cf346d112382c333348d1ffcd}{\index{fget\-Node@{fget\-Node}!run@{run}}
+\index{run@{run}!fgetNode@{fget\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fget\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfgetNode_a189fa91cf346d112382c333348d1ffcd}
+Método de ejecución. Lee del fichero el número de caracteres establecidos. Toma como valor la cadena leída. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

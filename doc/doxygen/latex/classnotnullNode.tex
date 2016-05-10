@@ -1,0 +1,66 @@
+\hypertarget{classnotnullNode}{\section{Referencia de la Clase notnull\-Node}
+\label{classnotnullNode}\index{notnull\-Node@{notnull\-Node}}
+}
+
+
+Node operador fusión de nulos.  
+
+
+
+
+{\ttfamily \#include $<$cond\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de notnull\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classnotnullNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnotnullNode_af700de8b7f9f5ba309212d2819fd9610}{notnull\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$list)
+\item 
+void \hyperlink{classnotnullNode_a5dce7fd752570604933feeadd6e5d973}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador fusión de nulos. 
+
+Este nodo define el operador fusión de nudos que consiste en la evaluación de un listado de nodos, tomando como valor el último nodo evaluado que no sea nulo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnotnullNode_af700de8b7f9f5ba309212d2819fd9610}{\index{notnull\-Node@{notnull\-Node}!notnull\-Node@{notnull\-Node}}
+\index{notnull\-Node@{notnull\-Node}!notnullNode@{notnull\-Node}}
+\subsubsection[{notnull\-Node}]{\setlength{\rightskip}{0pt plus 5cm}notnull\-Node\-::notnull\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{classnotnullNode_af700de8b7f9f5ba309212d2819fd9610}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em list} & Nodo lista de nodos \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnotnullNode_a5dce7fd752570604933feeadd6e5d973}{\index{notnull\-Node@{notnull\-Node}!run@{run}}
+\index{run@{run}!notnullNode@{notnull\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void notnull\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnotnullNode_a5dce7fd752570604933feeadd6e5d973}
+Método que ejecuta el nodo. Procede a la ejecución del nodo lista comprobando cada uno de los nodos contenidos en ella, tomando como valor el último nodo evaluado que no sea nulo 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{condOpNode_8h}{cond\-Op\-Node.\-h}\item 
+trunk/src/run/operators/cond\-Op\-Node.\-cpp\end{DoxyCompactItemize}

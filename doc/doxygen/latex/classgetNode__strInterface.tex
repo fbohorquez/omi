@@ -1,0 +1,129 @@
+\hypertarget{classgetNode__strInterface}{\section{Referencia de la Clase get\-Node\-\_\-str\-Interface}
+\label{classgetNode__strInterface}\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}}
+}
+
+
+Nodo interfaz de acceso a cadena de caracteres.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de get\-Node\-\_\-str\-Interface\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classgetNode__strInterface}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgetNode__strInterface_a685d7151ef5bacd0d06f3f2a5c8d62dc}{get\-Node\-\_\-str\-Interface} (\hyperlink{classstringNode}{string\-Node} $\ast$node, bool is\-\_\-const=false)
+\item 
+void \hyperlink{classgetNode__strInterface_a90e1e044d69c5af4deab5f93075df7d0}{noderef} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classgetNode__strInterface_aaebee470663c3ed0c7fd063e704f77a1}{nodeval} () const 
+\item 
+int \hyperlink{classgetNode__strInterface_ada502d26ea9519984066d1e7633011d6}{getn} () const 
+\item 
+void \hyperlink{classgetNode__strInterface_adeb9e355ff7faff958ad7563e74aa1a5}{setn} (int n)
+\item 
+void \hyperlink{classgetNode__strInterface_ad7ab23855d231a9747a0c89ac392fcd2}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo interfaz de acceso a cadena de caracteres. 
+
+Este nodo crea una referncia a una posición determina de una cadena de carecteres Es utilizado por el operador de acceso para obtener carácteres especificos de una cadena de texto. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgetNode__strInterface_a685d7151ef5bacd0d06f3f2a5c8d62dc}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}}
+\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{get\-Node\-\_\-str\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}get\-Node\-\_\-str\-Interface\-::get\-Node\-\_\-str\-Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-Node} $\ast$}]{node, }
+\item[{bool}]{is\-\_\-const = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classgetNode__strInterface_a685d7151ef5bacd0d06f3f2a5c8d62dc}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Cadena de caracteres \\
+\hline
+{\em is\-\_\-const} & Determina si la cadena es constante \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgetNode__strInterface_ada502d26ea9519984066d1e7633011d6}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!getn@{getn}}
+\index{getn@{getn}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{getn}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Node\-\_\-str\-Interface\-::getn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classgetNode__strInterface_ada502d26ea9519984066d1e7633011d6}
+Obtiene la posición de la cadena a la que se va ha acceder \begin{DoxyReturn}{Devuelve}
+Entero que representa la posición de la cadena 
+\end{DoxyReturn}
+\hypertarget{classgetNode__strInterface_a90e1e044d69c5af4deab5f93075df7d0}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!noderef@{noderef}}
+\index{noderef@{noderef}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{noderef}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-\_\-str\-Interface\-::noderef (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode__strInterface_a90e1e044d69c5af4deab5f93075df7d0}
+Modifica el valor de la referencia 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nuevo valor \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \hyperlink{classnexpNode_aa6dbcdd4ab3cbde54e944fc04891652f}{nexp\-Node}.
+
+\hypertarget{classgetNode__strInterface_aaebee470663c3ed0c7fd063e704f77a1}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!nodeval@{nodeval}}
+\index{nodeval@{nodeval}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{nodeval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ get\-Node\-\_\-str\-Interface\-::nodeval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode__strInterface_aaebee470663c3ed0c7fd063e704f77a1}
+Obtiene el valor al que se hace referencia \begin{DoxyReturn}{Devuelve}
+Nodo que representa el valor al que se hace referencia 
+\end{DoxyReturn}
+
+
+Reimplementado de \hyperlink{classnexpNode_a964e408c8f55df1aa02269087914e538}{nexp\-Node}.
+
+\hypertarget{classgetNode__strInterface_ad7ab23855d231a9747a0c89ac392fcd2}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!run@{run}}
+\index{run@{run}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-\_\-str\-Interface\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetNode__strInterface_ad7ab23855d231a9747a0c89ac392fcd2}
+Accede a la posición de la cadena creando un nuevo nodo cadena de caracteres compuesto por el caracter en dicha posición 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classgetNode__strInterface_adeb9e355ff7faff958ad7563e74aa1a5}{\index{get\-Node\-\_\-str\-Interface@{get\-Node\-\_\-str\-Interface}!setn@{setn}}
+\index{setn@{setn}!getNode_strInterface@{get\-Node\-\_\-str\-Interface}}
+\subsubsection[{setn}]{\setlength{\rightskip}{0pt plus 5cm}void get\-Node\-\_\-str\-Interface\-::setn (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{classgetNode__strInterface_adeb9e355ff7faff958ad7563e74aa1a5}
+Establece la posición de la cadena a la que se va a acceder 
+\begin{DoxyParams}{Parámetros}
+{\em n} & Posición de la cadena \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

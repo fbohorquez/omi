@@ -1,0 +1,66 @@
+\hypertarget{classgetclassNode}{\section{Referencia de la Clase getclass\-Node}
+\label{classgetclassNode}\index{getclass\-Node@{getclass\-Node}}
+}
+
+
+Nodo operador obtener clase.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de getclass\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classgetclassNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgetclassNode_af77e1c528afb86fe84a27ad96a6e7cb6}{getclass\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classgetclassNode_a3f9d4481bce93bc8a3e8442869a331e5}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador obtener clase. 
+
+Dado un nodo objecto, este operador toma como valor la cadena correspondiente al nombre de la clase a la que este pertenece. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classgetclassNode_af77e1c528afb86fe84a27ad96a6e7cb6}{\index{getclass\-Node@{getclass\-Node}!getclass\-Node@{getclass\-Node}}
+\index{getclass\-Node@{getclass\-Node}!getclassNode@{getclass\-Node}}
+\subsubsection[{getclass\-Node}]{\setlength{\rightskip}{0pt plus 5cm}getclass\-Node\-::getclass\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classgetclassNode_af77e1c528afb86fe84a27ad96a6e7cb6}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo objeto \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classgetclassNode_a3f9d4481bce93bc8a3e8442869a331e5}{\index{getclass\-Node@{getclass\-Node}!run@{run}}
+\index{run@{run}!getclassNode@{getclass\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void getclass\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classgetclassNode_a3f9d4481bce93bc8a3e8442869a331e5}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado que hace de objeto. Toma como valor la cadena de caracteres correspondiente al nombre dela clase, si el nodono representa un objeto se toma la cadena vacia. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

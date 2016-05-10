@@ -1,0 +1,108 @@
+\hypertarget{classwithNode}{\section{Referencia de la Clase with\-Node}
+\label{classwithNode}\index{with\-Node@{with\-Node}}
+}
+
+
+Nodo bloque en el contexto de un objeto.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de with\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwithNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwithNode_a7a84072f945d194f5e42c37bf56a4e67}{with\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node, \hyperlink{classrunNode}{run\-Node} $\ast$stmts)
+\item 
+void \hyperlink{classwithNode_afc545ad8ecb12e04bdaecbeccf5e8156}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classwithNode_a074088b10e8b697ea53e91fdcada39e3}{push\-\_\-with} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classwithNode_a9a9cf83e58a35c019fefa10479841aa2}{get\-\_\-with} ()
+\item 
+static void \hyperlink{classwithNode_a039c978c8546a2b4fc14c9af72ca3987}{pop\-\_\-with} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo bloque en el contexto de un objeto. 
+
+Establece un objeto como contexto principal para un bloque de sentencias, de forma que las tablas de símbolos a las que se accederá será a la del objeto, y si el recurso solitado no se encuentra se hará sobre el contexto en uso.
+
+Se mantiene una pila de contextos principles al que se le intruduce los contextos derivados de sentencias with anidadas 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classwithNode_a7a84072f945d194f5e42c37bf56a4e67}{\index{with\-Node@{with\-Node}!with\-Node@{with\-Node}}
+\index{with\-Node@{with\-Node}!withNode@{with\-Node}}
+\subsubsection[{with\-Node}]{\setlength{\rightskip}{0pt plus 5cm}with\-Node\-::with\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{{\bf run\-Node} $\ast$}]{stmts}
+\end{DoxyParamCaption}
+)}}\label{classwithNode_a7a84072f945d194f5e42c37bf56a4e67}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que representa el objeto \\
+\hline
+{\em node} & Nodo que representa el bloque de sentencias \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classwithNode_a9a9cf83e58a35c019fefa10479841aa2}{\index{with\-Node@{with\-Node}!get\-\_\-with@{get\-\_\-with}}
+\index{get\-\_\-with@{get\-\_\-with}!withNode@{with\-Node}}
+\subsubsection[{get\-\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ with\-Node\-::get\-\_\-with (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classwithNode_a9a9cf83e58a35c019fefa10479841aa2}
+Obtiene el objeto en uso de la pila. \begin{DoxyReturn}{Devuelve}
+Objeto en uso 
+\end{DoxyReturn}
+\hypertarget{classwithNode_a039c978c8546a2b4fc14c9af72ca3987}{\index{with\-Node@{with\-Node}!pop\-\_\-with@{pop\-\_\-with}}
+\index{pop\-\_\-with@{pop\-\_\-with}!withNode@{with\-Node}}
+\subsubsection[{pop\-\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}void with\-Node\-::pop\-\_\-with (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classwithNode_a039c978c8546a2b4fc14c9af72ca3987}
+Elimina el último elemento de la pila \hypertarget{classwithNode_a074088b10e8b697ea53e91fdcada39e3}{\index{with\-Node@{with\-Node}!push\-\_\-with@{push\-\_\-with}}
+\index{push\-\_\-with@{push\-\_\-with}!withNode@{with\-Node}}
+\subsubsection[{push\-\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}void with\-Node\-::push\-\_\-with (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classwithNode_a074088b10e8b697ea53e91fdcada39e3}
+Añade un nodo como objeto de contexto principal en la pila de objetos. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que será añadido \\
+\hline
+\end{DoxyParams}
+\hypertarget{classwithNode_afc545ad8ecb12e04bdaecbeccf5e8156}{\index{with\-Node@{with\-Node}!run@{run}}
+\index{run@{run}!withNode@{with\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void with\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classwithNode_afc545ad8ecb12e04bdaecbeccf5e8156}
+Método que ejecuta el nodo. Establece el contenxto del objeto como contexto principal. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

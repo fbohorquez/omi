@@ -1,0 +1,52 @@
+\hypertarget{stmtNode_8h}{\section{Referencia del Archivo trunk/src/run/stmts/stmt\-Node.h}
+\label{stmtNode_8h}\index{trunk/src/run/stmts/stmt\-Node.\-h@{trunk/src/run/stmts/stmt\-Node.\-h}}
+}
+
+
+Nodos de sentencias generales .  
+
+
+{\ttfamily \#include \char`\"{}../tree/run\-Tree.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cond\-Stmt\-Node.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}io\-Stmt\-Node.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}loop\-Stmt\-Node.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../../lsh\-Parser.\-h\char`\"{}}\\*
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classnoNode}{no\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia vacía. \end{DoxyCompactList}\item 
+class \hyperlink{classstmtNode}{stmt\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo de sentencia. \end{DoxyCompactList}\item 
+class \hyperlink{classincludeNode}{include\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia inclusión de fichero. \end{DoxyCompactList}\item 
+class \hyperlink{classtypeofNode}{typeof\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo impresión de tipo. \end{DoxyCompactList}\item 
+class \hyperlink{classbreakException}{break\-Exception}
+\begin{DoxyCompactList}\small\item\em Excepción rotura de bloque. \end{DoxyCompactList}\item 
+class \hyperlink{classbreakNode}{break\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia rotura de bloque. \end{DoxyCompactList}\item 
+class \hyperlink{classexitNode}{exit\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia de finalización. \end{DoxyCompactList}\item 
+class \hyperlink{classlabelNode}{label\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo etiqueta. \end{DoxyCompactList}\item 
+class \hyperlink{classgotoException}{goto\-Exception}
+\begin{DoxyCompactList}\small\item\em Excepción de salto a etiqueta. \end{DoxyCompactList}\item 
+class \hyperlink{classgotoNode}{goto\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo de salto. \end{DoxyCompactList}\item 
+class \hyperlink{classwithNode}{with\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo bloque en el contexto de un objeto. \end{DoxyCompactList}\item 
+class \hyperlink{classsizeOfNode}{size\-Of\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia espacio de memoria. \end{DoxyCompactList}\item 
+class \hyperlink{classdatInfoNode}{dat\-Info\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo información sobre dato. \end{DoxyCompactList}\item 
+class \hyperlink{classthrowException}{throw\-Exception}
+\begin{DoxyCompactList}\small\item\em Excepción de exepción lanzada. \end{DoxyCompactList}\item 
+class \hyperlink{classthrowNode}{throw\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo lazar excepción. \end{DoxyCompactList}\item 
+class \hyperlink{classtryNode}{try\-Node}
+\begin{DoxyCompactList}\small\item\em Nodo sentencia try...catch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodos de sentencias generales . En este fichero se encuentran los nodos ejecutables correspondientes a las sentencias básicas, así como los nodos necesarios para definir el concepto de sentencia . Estos son modelados mediante clases de objetos. 

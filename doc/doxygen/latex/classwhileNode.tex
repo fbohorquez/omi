@@ -1,0 +1,69 @@
+\hypertarget{classwhileNode}{\section{Referencia de la Clase while\-Node}
+\label{classwhileNode}\index{while\-Node@{while\-Node}}
+}
+
+
+Nodo sentencia while.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de while\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwhileNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classwhileNode_a3d0dee0bc3202e77ed416e7af006aec7}{while\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$rb)
+\item 
+void \hyperlink{classwhileNode_ac46ec596fcf2cc2a4ec397de4bcdfef4}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia while. 
+
+Este nodo representa una sentencia iterativa while. Esta consta de una condición y un bloque de sentencias. El bloque de sentencias será ejecutado mientras la evaluación de la condición sea verdadera. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classwhileNode_a3d0dee0bc3202e77ed416e7af006aec7}{\index{while\-Node@{while\-Node}!while\-Node@{while\-Node}}
+\index{while\-Node@{while\-Node}!whileNode@{while\-Node}}
+\subsubsection[{while\-Node}]{\setlength{\rightskip}{0pt plus 5cm}while\-Node\-::while\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{rb}
+\end{DoxyParamCaption}
+)}}\label{classwhileNode_a3d0dee0bc3202e77ed416e7af006aec7}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo que representa la expresión de condición. \\
+\hline
+{\em rb} & Nodo que representa el bloque de sentencias. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classwhileNode_ac46ec596fcf2cc2a4ec397de4bcdfef4}{\index{while\-Node@{while\-Node}!run@{run}}
+\index{run@{run}!whileNode@{while\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void while\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classwhileNode_ac46ec596fcf2cc2a4ec397de4bcdfef4}
+Método que ejecuta el nodo. Ejecuta y evalúa la condición y si esta es positiva ejecuta el bloque de sentencias. Luego vuelve a repetir el proceso hasta que la condición sea evaluada como falsa. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="24cm" height="20cm" viewBox="528 158 477 391" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="529" y="180" width="475" height="369"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="529" y="180" width="475" height="369"/>
+    <rect style="fill: #ffffff" x="529" y="160" width="50.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="529" y="160" width="50.2" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="531" y="175">iloop </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="628.15" y="222.5">
+      <tspan x="628.15" y="222.5">Interpretar</tspan>
+      <tspan x="628.15" y="238.5">sentencia</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="559" y1="226.6" x2="697.3" y2="226.6"/>
+  <g>
+    <ellipse style="fill: #ffffff" cx="840.3" cy="294.433" rx="73.3" ry="24.4333"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="840.3" cy="294.433" rx="73.3" ry="24.4333"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="840.3" y="298.333">
+      <tspan x="840.3" y="298.333">Sentencia iloop</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="840.3,270 840.3,226.6 704.005,226.6 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="716.653,221.6 700.653,226.6 716.653,231.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="768.8" y="226.6">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="767,294.433 745,294.433 745,296 628.15,296 628.15,265.305 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="633.15,277.953 628.15,261.953 623.15,277.953 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="686.575" y="296">&lt;&lt;include&gt;&gt;</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="840.3,318.867 840.3,340.333 638.85,340.333 638.85,363.095 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="633.85,350.447 638.85,366.447 643.85,350.447 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="739.575" y="340.333">&lt;&lt;include&gt;&gt;</text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="638.85" cy="401.8" rx="62.85" ry="32"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="638.85" cy="401.8" rx="62.85" ry="32"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="638.85" y="397.7">
+      <tspan x="638.85" y="397.7">Expresión</tspan>
+      <tspan x="638.85" y="413.7">Valorar</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="576" y1="401.8" x2="701.7" y2="401.8"/>
+  <g>
+    <ellipse style="fill: #ffffff" cx="907.375" cy="401.875" rx="77.625" ry="25.875"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="907.375" cy="401.875" rx="77.625" ry="25.875"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="907.375" y="405.775">
+      <tspan x="907.375" y="405.775">Obtener iterador</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="829.75,401.875 746,401.875 746,401.8 708.405,401.8 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="721.053,396.8 705.053,401.8 721.053,406.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="748" y="401.838">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="865.075" cy="488.692" rx="116.075" ry="38.6917"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="865.075" cy="488.692" rx="116.075" ry="38.6917"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="865.075" y="492.592">
+      <tspan x="865.075" y="492.592">Obtener posición de iterador</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="749,488.692 638.85,488.692 638.85,440.505 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="643.85,453.153 638.85,437.153 633.85,453.153 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="693.925" y="488.692">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+</svg>

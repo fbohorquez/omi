@@ -1,0 +1,91 @@
+\hypertarget{classandNode}{\section{Referencia de la Clase and\-Node}
+\label{classandNode}\index{and\-Node@{and\-Node}}
+}
+
+
+Nodo operador A\-N\-D.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de and\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classandNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classandNode_acb6e360d4b21f6694813dba082a5670f}{and\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\item 
+void \hyperlink{classandNode_a87b7e06b52e72e4f6d08027d59310a7e}{run} ()
+\item 
+bool \hyperlink{classandNode_accc774b3bdd4c0a322b58a0947f06635}{do\-\_\-and} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador A\-N\-D. 
+
+Este nodo implementa una operación lógica A\-N\-D entre dos nodos asociados.
+
+Para llevar a cabo la operación lógica A\-N\-D se realiza una evaluación en cortocircuito, donde el valor del nodo A\-N\-D es el último valor evaluado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classandNode_acb6e360d4b21f6694813dba082a5670f}{\index{and\-Node@{and\-Node}!and\-Node@{and\-Node}}
+\index{and\-Node@{and\-Node}!andNode@{and\-Node}}
+\subsubsection[{and\-Node}]{\setlength{\rightskip}{0pt plus 5cm}and\-Node\-::and\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)}}\label{classandNode_acb6e360d4b21f6694813dba082a5670f}
+Constructor de la clase. Asocia los nodos operandos. 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classandNode_accc774b3bdd4c0a322b58a0947f06635}{\index{and\-Node@{and\-Node}!do\-\_\-and@{do\-\_\-and}}
+\index{do\-\_\-and@{do\-\_\-and}!andNode@{and\-Node}}
+\subsubsection[{do\-\_\-and}]{\setlength{\rightskip}{0pt plus 5cm}bool and\-Node\-::do\-\_\-and (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)}}\label{classandNode_accc774b3bdd4c0a322b58a0947f06635}
+Ejecuta la operación A\-N\-D entre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classandNode_a87b7e06b52e72e4f6d08027d59310a7e}{\index{and\-Node@{and\-Node}!run@{run}}
+\index{run@{run}!andNode@{and\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void and\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classandNode_a87b7e06b52e72e4f6d08027d59310a7e}
+Función de ejecución. Procede a la ejecución de los nodos asociados. Toma como valor una referencia al último nodo evaluado según la operación A\-N\-D. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

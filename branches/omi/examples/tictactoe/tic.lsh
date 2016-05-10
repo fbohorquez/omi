@@ -1,0 +1,33 @@
+#!/usr/local/bin/omi
+#=======================================================================
+include "IO.omi";
+include "AI.omi";
+#-----------------------------------------------------------------------
+~juego () {
+   tablero = {{0,0,0},{0,0,0},{0,0,0}};
+   posicion = {0,0};
+   turno = 0;
+   jugadores = IOJugadores ();
+   while (!(ganador = procesarTablero (tablero)) && !tableroLleno (tablero)){
+      << "----------------------------------------------";
+      IOTablero (tablero);
+      << "\nTurno " . jugadores[turno%2]['nombre'];
+      if (jugadores[turno%2]['tipo'] == 0) {
+         posicion = IOMover (tablero);
+      }else {
+         << "Calculando movimiento...";
+         if (turno <= 1) {
+            posicion = primerosMov (tablero);
+         }else {
+            posicion = miniMax (tablero, jugadores[turno%2]['token']);
+         }
+      }
+      tablero[posicion[0]][posicion[1]] = jugadores[turno%2]['token'];
+      turno ++;
+   }
+   IOTablero (tablero);
+   IOGanador (jugadores, ganador);
+}
+#-----------------------------------------------------------------------
+juego ();
+#=======================================================================

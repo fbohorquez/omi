@@ -1,0 +1,239 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">neqNode Lista de los miembros</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Lista completa de los miembros de <a class="el" href="classneqNode.html">neqNode</a>, incluyendo todos los heredados:</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classrunNode.html#ab4a07d831845eadea0d2d088dc106288">addRef</a>()</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classlogicNode.html#a802078f6b9ec9f96e01c91ac1704099b">boolvalue</a>() const </td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#a75446461a4686c25786d03f7ec95f8ca">boolvalue_</a></td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexpNode.html#aa3d0a7a138a2fc089232f9fadf33a629">clone</a>(runNode *node)</td><td class="entry"><a class="el" href="classexpNode.html">expNode</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrunNode.html#ab54d457f51ddd7254dc9e90e78c69f95">compare</a>(runNode *node1, runNode *node2, int op=0)</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classneqNode.html#aac8835195e639b47e32a61b252bfe0dd">do_neq</a>(runNode *op1, runNode *op2)</td><td class="entry"><a class="el" href="classneqNode.html">neqNode</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#a92fc3de582be57443ade27dfa2ae27a4">generateClass</a>()</td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classlogicNode.html#ae7ba9985382ad86048f9c82b3c742147">getClass</a>()</td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjectTypeNode.html#a4c248660eed9ffdd132f075224b82544">getMethod</a>(runNode *key)</td><td class="entry"><a class="el" href="classobjectTypeNode.html">objectTypeNode</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjectTypeNode.html#a6dbd87c8c646340d2e817c64d94afaf6">getMethodRef</a>(runNode *key)</td><td class="entry"><a class="el" href="classobjectTypeNode.html">objectTypeNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrunNode.html#a7f789742e86bc7c897defe1073a26c65">getPtrString</a>()</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classrunNode.html#ad65c9a22e807dbe18f5c83c84d777d44">is_print</a>() const </td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrunNode.html#a231638d0fc5b436c5e4a664fe7d5126a">is_runlist</a>() const </td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classrunNode.html#a3fda5276a76f39ad12d316794a892b06">is_string</a>() const </td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classneqNode.html#a8a69d8ac9acf08b6c81c1e6b0a3bbccf">neqNode</a>(runNode *node1, runNode *node2)</td><td class="entry"><a class="el" href="classneqNode.html">neqNode</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classlogicNode.html#a5d3aa05d5ff8fe189e1aae007ea2118c">nodeval</a>() const </td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#a8fbc68e3cd354745e0e34ab4027bb8cc">numvalue</a>() const </td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjectTypeNode.html#af504d6b0b6801db2b712f7dda3dd342f">objectTypeNode</a>()</td><td class="entry"><a class="el" href="classobjectTypeNode.html">objectTypeNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#ab1bacd493fc9e6f302b0f4ee3ed86c55">print</a>() const </td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classrunNode.html#a8d0761660753ceb2c98836614c526a45">rmRef</a>()</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classneqNode.html#a88cbbfd96d5962f40fd2d5ea42da9de9">run</a>()</td><td class="entry"><a class="el" href="classneqNode.html">neqNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classrunNode.html#a39886db07c6112feb82a84ff0d28c29a">runNode</a>(string str)</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrunNode.html#ac3bfbc4522d49085eab96f8129ba9d72">runNode</a>()</td><td class="entry"><a class="el" href="classrunNode.html">runNode</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjectTypeNode.html#adc36ba9bb3fe82a12c9a50eea11ee94b">setClass</a>(runNode *c)</td><td class="entry"><a class="el" href="classobjectTypeNode.html">objectTypeNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#a6d3f6e8397d9d0b51b97d681b8380342">setNodeValue</a>(runNode *node)</td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classlogicNode.html#a5a5daf0f2b1295126998ac3a9fe0cc77">strvalue</a>() const </td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classlogicNode.html#a82b1b0c519a59e60556efcf3a0ca023b">to_bool</a>(runNode *node)</td><td class="entry"><a class="el" href="classlogicNode.html">logicNode</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+</table></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

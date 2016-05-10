@@ -1,0 +1,99 @@
+\subsection{Tipos de datos}
+
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipos de datos.
+		\item [Categoría:] Tipos de datos.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre diferentes tipos de datos. Las expresiones
+		pueden tener un tipo de dato asociado que puede o no ser definido y fijo. Los tipos de datos pueden ser simples o compuestos.
+		
+		Un dato debe tratarse como diferente tipo en función del contexto en el que se utilice. Así un dato de un tipo concreto puede ser tratado como
+		otro tipo de dato si fuese necesario. Un dato por si mismo siempre será considerado del tipo de dato con el que se creó, sin embargo
+		cuando interviene en una operación es posible que se precise una conversión o equivalencia de tipos. Para ello debe tomar su valor como si de otro
+		tipo se tratase. Si en la operación no es posible convertir el tipo en el tipo requerido se debe producir un error de tipos.
+      
+		Se debe establecer un mecanismo de conversión de tipos. La relación de conversión de tipo debe ser transitiva, así
+		si un dato de tipo lógico puede verse como un dato de tipo aritmético y un dato aritmético como un cadena de caracteres, entonces el
+		dato de tipo lógico también puede verse como una cadena.
+   \end {description}
+%\end{framed}
+
+\subsubsection{Nulo}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato nulo.
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] Se debe contemplar el tipo de dato nulo. Este tipo de dato tendrá un único valor 
+      posible. El valor nulo deberá representar un elemento no definido. Una expresión puede tomar el
+      valor nulo cuando sea evaluada si se hace uso de elementos no definidos.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Lógico}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato lógico.
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo lógicos. Este tipo
+		de dato sólo contempla dos posibles valores: falso y verdadero. Este será el tipo de dato más simple. Un dato lógico
+		puede ser tratado como un tipo de dato aritmético tomándose falso como el valor cero, y verdadero como el valor uno.
+	\end {description}
+%\end{framed}
+\subsubsection{Aritmético}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato aritmético.
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo aritméticos. Este tipo
+		de dato contempla valores numéricos racionales que puedan ser represetados mediante notación en coma flotante. Todo dato aritmético además tiene asociado un valor lógico cuando se utiliza como este
+		tipo de dato, tal que cualquier número distinto de cero tiene valor verdadero y el cero tiene el valor falso. Además cuando un dato aritmético
+		es tratado como una cadena de caracteres se tomará la cadena que representa al número. El intérprete debe tener la capacidad de configurarse con una representación interna distinta para los datos aritméticos.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Cadena de caracteres}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato cadenas de caracteres
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo cadena de caracteres. Este tipo
+		de dato contempla cualquier sucesión de caracteres alfanuméricos, secuencias de escape, u otros signos o símbolos. Esta sucesión pude
+		ser vacía. Una cadena de caracteres vendrá delimitada mediante comillas dobles o simples. Toda cadena de caracteres además tiene asociado
+		un valor aritmético cuando se utiliza como este tipo de dato, tal que, si la cadena representa un número racional el valor será el del
+		propio número, por otro lado, si la cadena
+		no representa un número racional el valor aritmético de la misma será el número de caracteres que la conforman.  No se ha de considerar el tipo de dato carácter simple, pudiéndose tratar este como una cadena de un solo elemento.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Expresiones regulares}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato expresión regular.
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo expresión regular. Una expresión regular
+		consiste en una cadena de caracteres que representan un patrón. Las expresiones regulares tendrán una sintaxis PERL. Una expresión regular
+		se delimita mediante caracteres acento grave (\`\ ). El tipo de dato expresión regular no debe ser tratado como otro tipo de dato.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Arrays}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Tipo de dato array.
+		\item [Categoría:] Tipo de dato.
+		\item [Descripción:] El sistema debe ser capaz de interpretar y operar sobre datos de tipo array. Este tipo
+		de dato contempla cualquier sucesión de elementos. Estos elementos pueden ser pares de expresiones clave/valor donde la clave servirá
+		para referenciar el valor dentro de la sucesión. También pueden ser simples expresiones, por lo que se tomará automáticamente una clave
+		numérica y secuencial según el orden del array y como valor el de la expresión. El significado semántico de las claves en un array puede
+		ser numérico (array numérico) o cadenas de caracteres (array asociativo).  
+		Una definición de array se delimita mediante llaves y sus elementos se denotarán mediante un listado de expresiones o pares de estas. Un dato de tipo array solo puede ser tratado como un tipo de dato booleano,
+		siendo falso si se encuentra vacío y verdadero en caso contrario.
+	\end {description}
+%\end{framed}

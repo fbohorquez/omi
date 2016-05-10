@@ -1,0 +1,201 @@
+-- Concatenación
+1
+1
+11
+
+-- Comparación
+#false
+false
+#false
+false
+#true
+true
+#true
+true
+#false
+false
+#false
+false
+#false
+false
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#true
+true
+#false
+false
+#false
+false
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#false
+false
+#false
+false
+#true
+true
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#false
+false
+#false
+false
+#false
+false
+#false
+false
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#false
+false
+#true
+true
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#false
+false
+#false
+false
+#false
+false
+#true
+true
+#true
+true
+#true
+true
+#false
+false
+#true
+true
+-- Explode
+[0] => 
+[0] => 
+[1] => 
+[0] => 
+[0] => 1
+[0] => A
+[1] => b
+[2] => A
+[3] => b
+[4] => A
+[5] => b
+[6] => A
+[7] => b
+[8] => A
+[0] => AbAbAbAbA
+[0] => A
+[1] => A
+[2] => A
+[3] => A
+[4] => A
+-- Implode
+ERROR[
+Error: file ./string_operators.lsh line 133 => data type error, Wrong type
+dev: implodeNode: node must be array
+Error: file ./string_operators.lsh line 134 => data type error, Wrong type
+dev: implodeNode: node must be array
+Error: file ./string_operators.lsh line 135 => data type error, Wrong type
+dev: implodeNode: node must be array
+Error: file ./string_operators.lsh line 136 => data type error, Wrong type
+dev: implodeNode: node must be array
+Error: file ./string_operators.lsh line 137 => data type error, Wrong type
+dev: implodeNode: node must be array
+Error: file ./string_operators.lsh line 138 => data type error, Wrong type
+dev: implodeNode: node must be array
+]
+AbAbAbAbAA
+AbAbAbAbA1A
+-- Formato
+1
+
+1
+0
+0 1
+0 1
+ERROR[
+Error: file ./string_operators.lsh line 150 => data type error, number of parameters
+dev: sprintfNode: wrong number of parameters 
+Error: file ./string_operators.lsh line 151 => data type error, number of parameters
+dev: sprintfNode: wrong number of parameters 
+Error: file ./string_operators.lsh line 152 => data type error, number of parameters
+dev: sprintfNode: wrong number of parameters 
+]
+-- Find
+0
+4
+4
+-- Lower
+1
+
+-- Upper
+1
+
+-- Replace
+1
+
+1
+
+
+-- Replace Substr
+
+1
+X
+ERROR [
+Error: file ./string_operators.lsh line 175 => data type error, Wrong index
+dev: subreplaceNode: init index is wrong
+Error: file ./string_operators.lsh line 176 => data type error, Wrong index
+dev: subreplaceNode: init index is wrong
+Error: file ./string_operators.lsh line 177 => data type error, Wrong index
+dev: subreplaceNode: init index is wrong
+Error: file ./string_operators.lsh line 178 => data type error, Wrong index
+dev: subreplaceNode: init index is wrong
+]

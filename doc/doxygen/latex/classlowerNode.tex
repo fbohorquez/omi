@@ -1,0 +1,85 @@
+\hypertarget{classlowerNode}{\section{Referencia de la Clase lower\-Node}
+\label{classlowerNode}\index{lower\-Node@{lower\-Node}}
+}
+
+
+Nodo función conversión minúsculas.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de lower\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classlowerNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlowerNode_a7bb870eca74faa41f3d376feae7f7f98}{lower\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$cad)
+\item 
+void \hyperlink{classlowerNode_a791d630f65f89ba5329cd7beaeb5f3c7}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classlowerNode_a697433594fc31646302b1e561eb047db}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función conversión minúsculas. 
+
+Este nodo se encarga de tomar una cadena de texto y pasar todos los carácteres que la forman a minúsculas
+
+Tras su ejecución el nodo toma como valor interno la cadena de texto resultante. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classlowerNode_a7bb870eca74faa41f3d376feae7f7f98}{\index{lower\-Node@{lower\-Node}!lower\-Node@{lower\-Node}}
+\index{lower\-Node@{lower\-Node}!lowerNode@{lower\-Node}}
+\subsubsection[{lower\-Node}]{\setlength{\rightskip}{0pt plus 5cm}lower\-Node\-::lower\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{cad}
+\end{DoxyParamCaption}
+)}}\label{classlowerNode_a7bb870eca74faa41f3d376feae7f7f98}
+Constructor principal.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cad} & Cadena de texto que será transformada a minúsculas \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classlowerNode_a697433594fc31646302b1e561eb047db}{\index{lower\-Node@{lower\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!lowerNode@{lower\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ lower\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classlowerNode_a697433594fc31646302b1e561eb047db}
+Devuelve un nodo lower como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método lower. 
+\end{DoxyReturn}
+\hypertarget{classlowerNode_a791d630f65f89ba5329cd7beaeb5f3c7}{\index{lower\-Node@{lower\-Node}!run@{run}}
+\index{run@{run}!lowerNode@{lower\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void lower\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classlowerNode_a791d630f65f89ba5329cd7beaeb5f3c7}
+Ejecución del nodo. Se encarga de transformar la cadena de texto en minúsculas. Toma como valor la cadena resultado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

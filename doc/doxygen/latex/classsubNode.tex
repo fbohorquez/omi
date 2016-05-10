@@ -1,0 +1,96 @@
+\hypertarget{classsubNode}{\section{Referencia de la Clase sub\-Node}
+\label{classsubNode}\index{sub\-Node@{sub\-Node}}
+}
+
+
+Nodo operador diferencia.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de sub\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classsubNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsubNode_af93c0654d8ed0c2e16a538a24bb95381}{sub\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classsubNode_add0c5dd4579e62476c941333d5bc1577}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classsubNode_a16a3738092d3d6a1d322064fc3662064}{do\-\_\-sub} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador diferencia. 
+
+Este nodo implementa la operación diferencia sobre dos nodos asociados.
+
+Si algún nodo es de tipo no aritmético fuerza la conversión a un tipo aritmético para realizar la operación
+
+El resultado de evaluar la expresión es un valor aritmético. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsubNode_af93c0654d8ed0c2e16a538a24bb95381}{\index{sub\-Node@{sub\-Node}!sub\-Node@{sub\-Node}}
+\index{sub\-Node@{sub\-Node}!subNode@{sub\-Node}}
+\subsubsection[{sub\-Node}]{\setlength{\rightskip}{0pt plus 5cm}sub\-Node\-::sub\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classsubNode_af93c0654d8ed0c2e16a538a24bb95381}
+Constructor de la clase. Asocia el nodo operador a dos nodos . 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsubNode_a16a3738092d3d6a1d322064fc3662064}{\index{sub\-Node@{sub\-Node}!do\-\_\-sub@{do\-\_\-sub}}
+\index{do\-\_\-sub@{do\-\_\-sub}!subNode@{sub\-Node}}
+\subsubsection[{do\-\_\-sub}]{\setlength{\rightskip}{0pt plus 5cm}num sub\-Node\-::do\-\_\-sub (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsubNode_a16a3738092d3d6a1d322064fc3662064}
+Ejecuta la operación diferencia sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Segundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación. 
+\end{DoxyReturn}
+\hypertarget{classsubNode_add0c5dd4579e62476c941333d5bc1577}{\index{sub\-Node@{sub\-Node}!run@{run}}
+\index{run@{run}!subNode@{sub\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void sub\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsubNode_add0c5dd4579e62476c941333d5bc1577}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor aritmético del nodo mediante la operación diferencia entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

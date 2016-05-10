@@ -1,0 +1,68 @@
+\hypertarget{classbreakNode}{\section{Referencia de la Clase break\-Node}
+\label{classbreakNode}\index{break\-Node@{break\-Node}}
+}
+
+
+Nodo sentencia rotura de bloque.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de break\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbreakNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbreakNode_a59baec750674d27ecd07a6361deaa77d}{break\-Node} (int n=1)
+\item 
+void \hyperlink{classbreakNode_a3fb64fa2dbc0a81922690ad041a40467}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia rotura de bloque. 
+
+Este nodo representa una sentencia break, la cual consiste en finalizar la secuencia de sentencias en un bloque de estas, siguiendo en la siguiente sentencia del bloque. Adicionalmente se puede especificar el número de bloques anidados de los que se desea salir.
+
+Si se utiliza la sentencia break fuera de un bloque de sentencias se produce un error. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classbreakNode_a59baec750674d27ecd07a6361deaa77d}{\index{break\-Node@{break\-Node}!break\-Node@{break\-Node}}
+\index{break\-Node@{break\-Node}!breakNode@{break\-Node}}
+\subsubsection[{break\-Node}]{\setlength{\rightskip}{0pt plus 5cm}break\-Node\-::break\-Node (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classbreakNode_a59baec750674d27ecd07a6361deaa77d}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em n} & Número de bloques anidados de los que se saldrá \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classbreakNode_a3fb64fa2dbc0a81922690ad041a40467}{\index{break\-Node@{break\-Node}!run@{run}}
+\index{run@{run}!breakNode@{break\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void break\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classbreakNode_a3fb64fa2dbc0a81922690ad041a40467}
+Método que ejecuta el nodo. Finaliza la ejecución del bloque de sentencias determinado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

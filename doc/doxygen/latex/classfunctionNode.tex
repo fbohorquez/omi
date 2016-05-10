@@ -1,0 +1,228 @@
+\hypertarget{classfunctionNode}{\section{Referencia de la Clase function\-Node}
+\label{classfunctionNode}\index{function\-Node@{function\-Node}}
+}
+
+
+Nodo función.  
+
+
+
+
+{\ttfamily \#include $<$func\-Node.\-h$>$}
+
+Diagrama de herencias de function\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classfunctionNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfunctionNode_a0e21e8443c73a4276be01ac9a6d57044}{function\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$params, \hyperlink{classrunNode}{run\-Node} $\ast$body, bool priv=false)
+\item 
+void \hyperlink{classfunctionNode_acfd33517bb4dfab471fe0d1ec72ffb11}{run} ()
+\item 
+string \hyperlink{classfunctionNode_ac6aa475befa6f47e952f62498bc2f281}{print} () const 
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfunctionNode_a0913005fb75aeddbdfbbae42cbff5144}{call} (\hyperlink{classrunNode}{run\-Node} $\ast$params, \hyperlink{classsTable}{s\-Table} $\ast$context=N\-U\-L\-L)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfunctionNode_a63cc8e4df75714b2119e19a97bddf6c0}{get\-I\-D} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfunctionNode_a7833ab934ebe4b4778cbeca42a14db29}{set\-I\-D} (\hyperlink{classrunNode}{run\-Node} $\ast$id)
+\item 
+string \hyperlink{classfunctionNode_a43185069f96043c02d1abeabc180136b}{name} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfunctionNode_a6cf11701b16c963ceb3f19414ab4a9c4}{get\-Params} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classfunctionNode_abbd9f7f09e5c77af6235ac28d4c04a0e}{get\-Body} ()
+\item 
+void \hyperlink{classfunctionNode_aa729a39e2117eda4ab538da400bad7fc}{set\-Obj} (\hyperlink{classrunNode}{run\-Node} $\ast$obj)
+\item 
+void \hyperlink{classfunctionNode_a8ea36d3033eb1355e82f68c2770764b8}{set\-Static\-Link} (\hyperlink{classrunNode}{run\-Node} $\ast$static\-\_\-link)
+\item 
+void \hyperlink{classfunctionNode_abb3ca7cfcc00da1e41f68b564e6bd67a}{set\-Parent} (\hyperlink{classclassNode}{class\-Node} $\ast$parent)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función. 
+
+Un nodo función representa la declaración de una función. Internamente sirve como interfaz tanto para la declaración de funciones en las tablas de símbolos como para tratar las llamadas a estas.
+
+Para su inicialización precisa de un nodo identificador, una lista de parámetros para la declaración y un cuerpo.
+
+La declaración de la función hace uso del nodo identificador para acceder a la tabla de funciones y crear una referencia al propio nodo función.
+
+El cuerpo de la función consistirá en un listado de nodos sentencias, que se ejecutarán en cada llamada
+
+Para la llamada a una función se hace uso de la clase de nodo \char`\"{}llamada a función\char`\"{}. Esta clase de nodo rescata de la tabla de funciones el nodo función referenciado mediante una determinada clave y ejecuta el método call de la misma pasándole los valores de los parámetros. El método call es el encargado de copiar el valor de los parámetros a un nuevo nivel de la tabla de variables usando como clave los identificadores de la lista de parámetros pasada en la inicialización de forma posicional. Después de copiar el valor de los parámetros ejecuta el cuerpo de la función en su totalidad o hasta que se reciba una excepción de tipo return.
+
+La lista de parámetros para la declaración será una lista de nodos identificadores o nodos \hyperlink{classrefparamNode}{refparam\-Node}. Estos últimos son nodos que referencian a un identificador, de forma que cuando el método call lea de la lista de parámetros para la declaración un nodo de este tipo en vez de copiar el valor creará una referencia al mismo.
+
+Los nodos de tipo función son expresiones cuyo valor es la propia función. Esto hace posible que se pueda asignar funciones, permitiendo construir expresiones como \char`\"{}fun = function (a) \{ echo a; \};\char`\"{} o \char`\"{}\{ 'success' \-: function () \{ echo \char`\"{}Ok";\} \}
+
+Internamente los métodos definidos en una clase se representan como funciones que se encuentran referenciadas en la tabla de símbolos interna de la clase. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfunctionNode_a0e21e8443c73a4276be01ac9a6d57044}{\index{function\-Node@{function\-Node}!function\-Node@{function\-Node}}
+\index{function\-Node@{function\-Node}!functionNode@{function\-Node}}
+\subsubsection[{function\-Node}]{\setlength{\rightskip}{0pt plus 5cm}function\-Node\-::function\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{params, }
+\item[{{\bf run\-Node} $\ast$}]{body, }
+\item[{bool}]{priv = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a0e21e8443c73a4276be01ac9a6d57044}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador que se utilizará para manipular al la función en la tabla de símbolos. \\
+\hline
+{\em params} & Lista de parámetros de declaración que podrá contener nodos identificadores o nodos \hyperlink{classrefparamNode}{refparam\-Node} (los identificadores utilizados en la lista serán los nombres de los parámetros de la función). \\
+\hline
+{\em body} & Lista de sentencias que forman el cuerpo de la función. \\
+\hline
+{\em priv} & La función tiene la etiqueta de privada. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfunctionNode_a0913005fb75aeddbdfbbae42cbff5144}{\index{function\-Node@{function\-Node}!call@{call}}
+\index{call@{call}!functionNode@{function\-Node}}
+\subsubsection[{call}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ function\-Node\-::call (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{params, }
+\item[{{\bf s\-Table} $\ast$}]{context = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a0913005fb75aeddbdfbbae42cbff5144}
+Procesa una llamada a la función. Recibe una lista de valores de parámetros que será copiados en un nuevo nivel de la tabla de variables activa. Luego ejecuta en la lista de sentencias que representa el cuerpo de la función en su totalidad o hasta que sucede una excepción return en cuyo caso devolverá el valor de la excepción.
+
+Si la función ha sido configurada con llamada externa los parámetros serán copiados desde el nivel actual de la tabla de variables indicada, al próximo nivel de la tabla de variables activa, luego se volverá a configurar la función con llamada interna.
+
+Si la función se encuentra configurada con llamada interna los parámetros serán copiados o referenciados desde el nivel actual de la tabla de variables activa.
+
+Si algún parámetro de la lista dada en la inicialización de la función es de tipo referencia, la copia del parámetro se realizará por referencia. \hypertarget{classfunctionNode_abbd9f7f09e5c77af6235ac28d4c04a0e}{\index{function\-Node@{function\-Node}!get\-Body@{get\-Body}}
+\index{get\-Body@{get\-Body}!functionNode@{function\-Node}}
+\subsubsection[{get\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ function\-Node\-::get\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_abbd9f7f09e5c77af6235ac28d4c04a0e}
+Obtiene el cuerpo de la función. \begin{DoxyReturn}{Devuelve}
+Cuerpo de la función. 
+\end{DoxyReturn}
+\hypertarget{classfunctionNode_a63cc8e4df75714b2119e19a97bddf6c0}{\index{function\-Node@{function\-Node}!get\-I\-D@{get\-I\-D}}
+\index{get\-I\-D@{get\-I\-D}!functionNode@{function\-Node}}
+\subsubsection[{get\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ function\-Node\-::get\-I\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a63cc8e4df75714b2119e19a97bddf6c0}
+Obtiene el I\-D de la función. \begin{DoxyReturn}{Devuelve}
+I\-D de la función. 
+\end{DoxyReturn}
+\hypertarget{classfunctionNode_a6cf11701b16c963ceb3f19414ab4a9c4}{\index{function\-Node@{function\-Node}!get\-Params@{get\-Params}}
+\index{get\-Params@{get\-Params}!functionNode@{function\-Node}}
+\subsubsection[{get\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ function\-Node\-::get\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a6cf11701b16c963ceb3f19414ab4a9c4}
+Obtiene la lista de parámetros de la función. \begin{DoxyReturn}{Devuelve}
+Parámetros de la función. 
+\end{DoxyReturn}
+\hypertarget{classfunctionNode_a43185069f96043c02d1abeabc180136b}{\index{function\-Node@{function\-Node}!name@{name}}
+\index{name@{name}!functionNode@{function\-Node}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string function\-Node\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a43185069f96043c02d1abeabc180136b}
+Obtiene el nombre del I\-D de la función. \begin{DoxyReturn}{Devuelve}
+Nombre del I\-D. 
+\end{DoxyReturn}
+\hypertarget{classfunctionNode_ac6aa475befa6f47e952f62498bc2f281}{\index{function\-Node@{function\-Node}!print@{print}}
+\index{print@{print}!functionNode@{function\-Node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}string function\-Node\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfunctionNode_ac6aa475befa6f47e952f62498bc2f281}
+Devuelve la cadena que se debe imprimir como la declaración de la función, la cual siempre será la cadena vacía. \begin{DoxyReturn}{Devuelve}
+Cadena vacía. 
+\end{DoxyReturn}
+
+
+Implementa \hyperlink{classprintableNode_ae5835e7b9d1a8af621723798137e01f9}{printable\-Node}.
+
+\hypertarget{classfunctionNode_acfd33517bb4dfab471fe0d1ec72ffb11}{\index{function\-Node@{function\-Node}!run@{run}}
+\index{run@{run}!functionNode@{function\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void function\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfunctionNode_acfd33517bb4dfab471fe0d1ec72ffb11}
+Guarda en la tabla de símbolos activa una referencia al nodo función haciendo uso del identificador pasado en la inicialización. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classfunctionNode_a7833ab934ebe4b4778cbeca42a14db29}{\index{function\-Node@{function\-Node}!set\-I\-D@{set\-I\-D}}
+\index{set\-I\-D@{set\-I\-D}!functionNode@{function\-Node}}
+\subsubsection[{set\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ function\-Node\-::set\-I\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a7833ab934ebe4b4778cbeca42a14db29}
+Modifica el I\-D de la función. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nuevo I\-D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+I\-D asignado. 
+\end{DoxyReturn}
+\hypertarget{classfunctionNode_aa729a39e2117eda4ab538da400bad7fc}{\index{function\-Node@{function\-Node}!set\-Obj@{set\-Obj}}
+\index{set\-Obj@{set\-Obj}!functionNode@{function\-Node}}
+\subsubsection[{set\-Obj}]{\setlength{\rightskip}{0pt plus 5cm}void function\-Node\-::set\-Obj (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_aa729a39e2117eda4ab538da400bad7fc}
+Establece la función como método de un objeto dado. 
+\begin{DoxyParams}{Parámetros}
+{\em obj} & Objeto asociado al método. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfunctionNode_abb3ca7cfcc00da1e41f68b564e6bd67a}{\index{function\-Node@{function\-Node}!set\-Parent@{set\-Parent}}
+\index{set\-Parent@{set\-Parent}!functionNode@{function\-Node}}
+\subsubsection[{set\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void function\-Node\-::set\-Parent (
+\begin{DoxyParamCaption}
+\item[{{\bf class\-Node} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_abb3ca7cfcc00da1e41f68b564e6bd67a}
+Establece el nodo clase asociado como padre durante la llamada a la función. 
+\begin{DoxyParams}{Parámetros}
+{\em parent} & Clase que se usará como padre. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classfunctionNode_a8ea36d3033eb1355e82f68c2770764b8}{\index{function\-Node@{function\-Node}!set\-Static\-Link@{set\-Static\-Link}}
+\index{set\-Static\-Link@{set\-Static\-Link}!functionNode@{function\-Node}}
+\subsubsection[{set\-Static\-Link}]{\setlength{\rightskip}{0pt plus 5cm}void function\-Node\-::set\-Static\-Link (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{static\-\_\-link}
+\end{DoxyParamCaption}
+)}}\label{classfunctionNode_a8ea36d3033eb1355e82f68c2770764b8}
+Establece la el nodo clase asociado como enlace estático. durante la llamada a la función. 
+\begin{DoxyParams}{Parámetros}
+{\em static\-\_\-link} & Clase que se usará como enlace estático. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{funcNode_8h}{func\-Node.\-h}\item 
+trunk/src/run/table/func\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,658 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="classclassNode-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase classNode</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Nodo clase.  
+ <a href="classclassNode.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="classNode_8h_source.html">classNode.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de classNode</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classclassNode.png" usemap="#classNode_map" alt=""/>
+  <map id="classNode_map" name="classNode_map">
+<area href="classrunNode.html" title="Nodo ejecutable. " alt="runNode" shape="rect" coords="0,0,71,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aae32a053594c335e954a065152583727"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#aae32a053594c335e954a065152583727">classNode</a> (<a class="el" href="classclassNode.html">classNode</a> *node)</td></tr>
+<tr class="separator:aae32a053594c335e954a065152583727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5f4a91590e3aaf8b4271b157052d25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a7b5f4a91590e3aaf8b4271b157052d25">classNode</a> (<a class="el" href="classrunNode.html">runNode</a> *id, <a class="el" href="classrunNode.html">runNode</a> *body, <a class="el" href="classrunNode.html">runNode</a> *extends=NULL)</td></tr>
+<tr class="separator:a7b5f4a91590e3aaf8b4271b157052d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ea61be38e2ecbec6c7766951819939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a65ea61be38e2ecbec6c7766951819939">run</a> ()</td></tr>
+<tr class="separator:a65ea61be38e2ecbec6c7766951819939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c58494486e9d1a856d8cdd271875867"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a5c58494486e9d1a856d8cdd271875867">newcall</a> (<a class="el" href="classrunNode.html">runNode</a> *params)</td></tr>
+<tr class="separator:a5c58494486e9d1a856d8cdd271875867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7e603b04e733ebdbd0b8816b157cdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsTable.html">sTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#abe7e603b04e733ebdbd0b8816b157cdc">insideTable</a> () const </td></tr>
+<tr class="separator:abe7e603b04e733ebdbd0b8816b157cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30594178fcfc96d0ce492323b9d3fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classclassNode.html">classNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#ab30594178fcfc96d0ce492323b9d3fbd">getExtendClass</a> ()</td></tr>
+<tr class="separator:ab30594178fcfc96d0ce492323b9d3fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad765264cfeff116c3155dc666fd6fb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#aad765264cfeff116c3155dc666fd6fb1">getID</a> ()</td></tr>
+<tr class="separator:aad765264cfeff116c3155dc666fd6fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee266b216dc087f11dd8adc6ea8ad5a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#adee266b216dc087f11dd8adc6ea8ad5a">name</a> ()</td></tr>
+<tr class="separator:adee266b216dc087f11dd8adc6ea8ad5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f2361cff152d4d98176ea835f9baa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a19f2361cff152d4d98176ea835f9baa1">getMethod</a> (<a class="el" href="classrunNode.html">runNode</a> *key)</td></tr>
+<tr class="separator:a19f2361cff152d4d98176ea835f9baa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19369f3ce811e8f24ef8bc2e11bbe4d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrefNode.html">refNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a19369f3ce811e8f24ef8bc2e11bbe4d0">getMethodRef</a> (<a class="el" href="classrunNode.html">runNode</a> *key)</td></tr>
+<tr class="separator:a19369f3ce811e8f24ef8bc2e11bbe4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e5d11def9f49cc359bc40d2e77eabb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#ae3e5d11def9f49cc359bc40d2e77eabb">setMethod</a> (<a class="el" href="classrunNode.html">runNode</a> *key, <a class="el" href="classrunNode.html">runNode</a> *func)</td></tr>
+<tr class="separator:ae3e5d11def9f49cc359bc40d2e77eabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73ab0f885a76cfb42cb15baa983c0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#aa73ab0f885a76cfb42cb15baa983c0d6">getFromStatic</a> (<a class="el" href="classrunNode.html">runNode</a> *key)</td></tr>
+<tr class="separator:aa73ab0f885a76cfb42cb15baa983c0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78654f623cfe5de2e421bd84f8d41f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#ae78654f623cfe5de2e421bd84f8d41f0">setFromStatic</a> (<a class="el" href="classrunNode.html">runNode</a> *key, <a class="el" href="classrunNode.html">runNode</a> *val)</td></tr>
+<tr class="separator:ae78654f623cfe5de2e421bd84f8d41f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12cf5820b06a161bdb04c7a5fe430658"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassNode.html#a12cf5820b06a161bdb04c7a5fe430658">toObject</a> ()</td></tr>
+<tr class="separator:a12cf5820b06a161bdb04c7a5fe430658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrunNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrunNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="classrunNode.html">runNode</a></td></tr>
+<tr class="memitem:a39886db07c6112feb82a84ff0d28c29a inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a39886db07c6112feb82a84ff0d28c29a">runNode</a> (string str)</td></tr>
+<tr class="separator:a39886db07c6112feb82a84ff0d28c29a inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3bfbc4522d49085eab96f8129ba9d72 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ac3bfbc4522d49085eab96f8129ba9d72">runNode</a> ()</td></tr>
+<tr class="separator:ac3bfbc4522d49085eab96f8129ba9d72 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a07d831845eadea0d2d088dc106288 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ab4a07d831845eadea0d2d088dc106288">addRef</a> ()</td></tr>
+<tr class="separator:ab4a07d831845eadea0d2d088dc106288 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0761660753ceb2c98836614c526a45 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a8d0761660753ceb2c98836614c526a45">rmRef</a> ()</td></tr>
+<tr class="separator:a8d0761660753ceb2c98836614c526a45 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65c9a22e807dbe18f5c83c84d777d44 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ad65c9a22e807dbe18f5c83c84d777d44">is_print</a> () const </td></tr>
+<tr class="separator:ad65c9a22e807dbe18f5c83c84d777d44 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231638d0fc5b436c5e4a664fe7d5126a inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a231638d0fc5b436c5e4a664fe7d5126a">is_runlist</a> () const </td></tr>
+<tr class="separator:a231638d0fc5b436c5e4a664fe7d5126a inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fda5276a76f39ad12d316794a892b06 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a3fda5276a76f39ad12d316794a892b06">is_string</a> () const </td></tr>
+<tr class="separator:a3fda5276a76f39ad12d316794a892b06 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f789742e86bc7c897defe1073a26c65 inherit pub_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#a7f789742e86bc7c897defe1073a26c65">getPtrString</a> ()</td></tr>
+<tr class="separator:a7f789742e86bc7c897defe1073a26c65 inherit pub_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classrunNode"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classrunNode')"><img src="closed.png" alt="-"/>&#160;Métodos públicos estáticos heredados desde <a class="el" href="classrunNode.html">runNode</a></td></tr>
+<tr class="memitem:ab54d457f51ddd7254dc9e90e78c69f95 inherit pub_static_methods_classrunNode"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrunNode.html#ab54d457f51ddd7254dc9e90e78c69f95">compare</a> (<a class="el" href="classrunNode.html">runNode</a> *node1, <a class="el" href="classrunNode.html">runNode</a> *node2, int op=0)</td></tr>
+<tr class="separator:ab54d457f51ddd7254dc9e90e78c69f95 inherit pub_static_methods_classrunNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Nodo clase. </p>
+<p>Un nodo clase representa la definición de una clase. Una clase es una estructura funcional utilizada en la programación orientada a objetos.</p>
+<p>Un nodo clase sirve como interfaz para definir y manipular las clases en ejecución.</p>
+<p>Todo nodo clase tiene un contexto de tablas de símbolos donde se referencia a los atributos y métodos de la misma.</p>
+<p>Para inicializar un nodo clase se precisa del identificador de la misma y un cuerpo.</p>
+<p>El cuerpo de la clase consiste en una serie de sentencias, que por limitaciones de gramática sólo pueden ser declaraciones de funciones o variables.</p>
+<p>La ejecución de un nodo clase se corresponde con la declaración de la misma. Primero crea una referencia a si misma en la tabla de clases activa. Luego crea un nuevo contexto de tablas de símbolos, que usará de forma interna. Para finalizar cambia el contexto activo al interno y se lleva a cabo la ejecución del cuerpo.</p>
+<p>Los nodos funciones declarados en el cuerpo de la clase serán referenciados desde la tabla de funciones de la clase y son considerados los métodos de la misma. De igual forma las variables son referenciadas mediante la tabla de variables y son consideradas como los atributos.</p>
+<p>Una determinada clase puede extender a otra, lo que significa que heredará sus métodos y atributos.</p>
+<p>Los nodos clase presentan un mecanismo para crear nuevas instancias de los mismos denominadas objetos. Este mecanismo es utilizado por nodos como el nodo "nueva instancia" (</p>
+<dl class="section see"><dt>Ver también</dt><dd><a class="el" href="classnewNode.html" title="Nodo nueva instancia. ">newNode</a>). Cuando se crear una nueva instancia se genera una copia de la tabla de símbolos de variables en un nodo de tipo objeto Este objeto además referencia a la clase para acceder a los métodos. El objeto se puede asignar a un nodo id como si fuera un tipo de dato, guardándose asi una referencia en la tabla de variables activa.</dd></dl>
+<p>Las clases disponen de un contexto interno con tablas para funciones y variables que será aplicables a los objetos como atributos y métodos. Además disponen de un contexto estático que guarda los métodos y atributos aplicables a la propia clase. </p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aae32a053594c335e954a065152583727"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">classNode::classNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classclassNode.html">classNode</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor copia. Crea un nodo clase a partir de otro. Para ello referencia al cuerpo y al identificador del nodo clase dado, y copia la tabla de símbolos interna. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b5f4a91590e3aaf8b4271b157052d25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">classNode::classNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>extends</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor que inicializa un nodo clase a partir de un nodo identificador y un nodo cuerpo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador de la clase. </td></tr>
+    <tr><td class="paramname">body</td><td>Cuerpo de la clase. </td></tr>
+    <tr><td class="paramname">extends</td><td>Clase de la que extiende si es el caso. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ab30594178fcfc96d0ce492323b9d3fbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classclassNode.html">classNode</a>* classNode::getExtendClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene la clase padre con la que fue inicializada. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Clase padre. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa73ab0f885a76cfb42cb15baa983c0d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrunNode.html">runNode</a> * classNode::getFromStatic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Obtiene un método estático de la clase a partir de una clave. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Nombre del método. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Método estático correspondiente a la clave. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aad765264cfeff116c3155dc666fd6fb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrunNode.html">runNode</a>* classNode::getID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el identificador con el que fue inicializada. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ID de la clase. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a19f2361cff152d4d98176ea835f9baa1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrunNode.html">runNode</a> * classNode::getMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A partir de una clave obtiene el método cuyo identificador se corresponde con la misma. Si no existe se devuelve NULL. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Nombre del método. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Método correspondiente a la clave. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a19369f3ce811e8f24ef8bc2e11bbe4d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrefNode.html">refNode</a> * classNode::getMethodRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A partir de una clave obtiene la referencia al método cuyo identificador se corresponde con la misma. Si no existe se devuelve NULL. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Nombre del método. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia al método correspondietne a la clave. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abe7e603b04e733ebdbd0b8816b157cdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsTable.html">sTable</a>* classNode::insideTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Devuelve el contexto interno del nodo clase. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Contexto interno. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adee266b216dc087f11dd8adc6ea8ad5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string classNode::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Obtiene el identificador de la clase como una cadena de caracteres. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ID de la clase como cadena de caracteres. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5c58494486e9d1a856d8cdd271875867"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrunNode.html">runNode</a> * classNode::newcall </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Crea y devuelve una instancia de la clase. Para ello copia la tabla de variables del contexto de la clase en un nodo objeto, y busca una función en la tabla de funciones correspondiente al nombre de la clase. Esta función, considerada constructor, será ejecutada con los parámetros indicados. </p>
+
+</div>
+</div>
+<a class="anchor" id="a65ea61be38e2ecbec6c7766951819939"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classNode::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Lleva a cabo la ejecución del nodo clase correspondiente a la declaración de la misma. Para ello crea una referencia en la tabla de clases activa a si misma, genera el contexto interno, y luego, tras cambiar el contexto en uso, ejecuta el cuerpo. </p>
+
+<p>Implementa <a class="el" href="classrunNode.html#a83c10df8148829b08e04153c93d69eec">runNode</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae78654f623cfe5de2e421bd84f8d41f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classNode::setFromStatic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Asocia una función como método estático de la clase con el identificador dado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clave que se utilizará como identificador. </td></tr>
+    <tr><td class="paramname">func</td><td>Función que se asociará como método estático. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae3e5d11def9f49cc359bc40d2e77eabb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void classNode::setMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrunNode.html">runNode</a> *&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Asocia una función como método de la clase con el identificador dado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clave que se utilizará como identificador. </td></tr>
+    <tr><td class="paramname">func</td><td>Función que se asociará como método. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a12cf5820b06a161bdb04c7a5fe430658"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrunNode.html">runNode</a> * classNode::toObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Devuelve un objeto con una tabla de símbolos correspondiente a la tabla de variables de la clase. Además asocia la clase al objeto. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto instancia de la clase. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li>trunk/src/run/table/<a class="el" href="classNode_8h_source.html">classNode.h</a></li>
+<li>trunk/src/run/table/classNode.cpp</li>
+</ul>
+</div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

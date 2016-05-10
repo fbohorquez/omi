@@ -1,0 +1,30 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{4}
+\contentsline {section}{\numberline {2}Tipos de datos}{4}
+\contentsline {section}{\numberline {3}Paradigmas de programaci\IeC {\'o}n}{5}
+\contentsline {subsection}{\numberline {3.1}Imperativo}{6}
+\contentsline {subsection}{\numberline {3.2}Orientado a objeto}{6}
+\contentsline {subsubsection}{\numberline {3.2.1}POO basada en prototipos}{7}
+\contentsline {subsection}{\numberline {3.3}Dirigida por eventos}{7}
+\contentsline {subsection}{\numberline {3.4}Basada en aut\IeC {\'o}matas}{8}
+\contentsline {subsection}{\numberline {3.5}Orientado a Aspectos}{8}
+\contentsline {subsection}{\numberline {3.6}Declarativo}{9}
+\contentsline {subsection}{\numberline {3.7}Funcional}{9}
+\contentsline {subsection}{\numberline {3.8}L\IeC {\'o}gico}{10}
+\contentsline {subsection}{\numberline {3.9}Programaci\IeC {\'o}n por restricciones}{10}
+\contentsline {subsection}{\numberline {3.10}Programaci\IeC {\'o}n concurrente}{11}
+\contentsline {subsection}{\numberline {3.11}Programaci\IeC {\'o}n distribuida}{11}
+\contentsline {section}{\numberline {4}Operadores}{12}
+\contentsline {section}{\numberline {5}Funciones y clases de objetos}{12}
+\contentsline {section}{\numberline {6}Definici\IeC {\'o}n de lenguajes espec\IeC {\'\i }ficos de dominio}{13}
+\contentsline {section}{\numberline {7}Depuraci\IeC {\'o}n}{14}
+\contentsline {section}{\numberline {8}Docencia}{14}
+\contentsline {section}{\numberline {9}Otras caracter\IeC {\'\i }sticas funcionales}{14}
+\contentsline {section}{\numberline {10}Caracter\IeC {\'\i }sticas no funcionales}{15}
+\contentsline {subsection}{\numberline {10.1}Modularidad}{15}
+\contentsline {subsubsection}{\numberline {10.1.1}Modularidad de recursos}{15}
+\contentsline {subsubsection}{\numberline {10.1.2}Modularidad del lenguaje}{16}
+\contentsline {subsection}{\numberline {10.2}Licencia}{16}
+\contentsline {subsection}{\numberline {10.3}Rendimiento}{17}
+\contentsline {subsection}{\numberline {10.4}Productividad}{17}
+\contentsline {subsection}{\numberline {10.5}Portabilidad}{17}

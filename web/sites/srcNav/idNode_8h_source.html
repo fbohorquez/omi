@@ -1,0 +1,377 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_51b78ddddcd8c3a02f14de8ea3f9179c.html">table</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">idNode.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="idNode_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//idNode.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef _RUN_TABLE_IDNODE_</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_TABLE_IDNODE_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sTable_8h.html">sTable.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;../tree/expNode.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classidNode.html">   59</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classidNode.html">idNode</a> :</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keyword">public</span> <a class="code" href="classnexpNode.html">nexpNode</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <a class="code" href="classidNode.html#a0babfa8cabd86c11c3a4f625732d4c8d">idNode</a> (<span class="keywordtype">string</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a720f6ab623192e93743e0098db5d7af7">run</a> ();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a720f6ab623192e93743e0098db5d7af7">run</a> (<span class="keywordtype">bool</span> resolvkey);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a61b9528de4bb06f924dc60e9b682705e">runf</a> ();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classidNode.html#af1376fbb468dea9a953ce499a0e94d3d">runc</a> ();</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classidNode.html#ae46892d8bd8e5521922f7090f3336839">  101</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#ae46892d8bd8e5521922f7090f3336839">ref</a> () {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">return</span> ref_;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   }</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classidNode.html#a7c354169bc6e38d433d11be645bb64a9">  108</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#a7c354169bc6e38d433d11be645bb64a9">reff</a> () { <span class="keywordflow">return</span> reff_; }</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classidNode.html#a806975a98cecd6fc2e416fff4b356ea1">  113</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#a806975a98cecd6fc2e416fff4b356ea1">refc</a> () { <span class="keywordflow">return</span> refc_; }</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classidNode.html#a69900402f8bfbe33559854cddf1bd0f9">  119</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classidNode.html#a69900402f8bfbe33559854cddf1bd0f9">nodeval</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ref_?ref_-&gt;<a class="code" href="classrefNode.html#af3287bf7b98a88d97bf7076cbae2e50b">getRef</a>():NULL; }</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classidNode.html#a93d0147c1fd593831162bcb9a8dce671">  125</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classidNode.html#a93d0147c1fd593831162bcb9a8dce671">nodevalf</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> reff_?reff_-&gt;<a class="code" href="classrefNode.html#af3287bf7b98a88d97bf7076cbae2e50b">getRef</a>():NULL; }</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classidNode.html#a1b7033729a1e2857eb0f18690aa616bb">  131</a></span>&#160;   <span class="keyword">inline</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classidNode.html#a1b7033729a1e2857eb0f18690aa616bb">nodevalc</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">return</span> refc_?refc_-&gt;<a class="code" href="classrefNode.html#af3287bf7b98a88d97bf7076cbae2e50b">getRef</a>():NULL;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;   }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classidNode.html#aed42c343bc2be05c7b15114600cee491">clear</a> ();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a718cba1385de599875f8cc14f52f6c84">noderef</a> (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a866c23e34133608ff9bd902e4561535d">nodereff</a> (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classidNode.html#a96747b61c1ea4c75e055485bc3fe678b">noderefc</a> (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classidNode.html#a54667580929eab413d46ff5d3c7b3345">exist</a> (<span class="keywordtype">bool</span> func = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classidNode.html#acaa38cc6ad44035f2229b82d7609b941">  168</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classidNode.html#acaa38cc6ad44035f2229b82d7609b941">existf</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> existf_;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;   }</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classidNode.html#afff9130fd75f482fdb9f1c3ab0cb98c5">  176</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classidNode.html#afff9130fd75f482fdb9f1c3ab0cb98c5">existc</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">return</span> existc_;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;   }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classidNode.html#a70123074df6f875c8308a4f5854b033d">existfunction</a> ();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classidNode.html#a9737789aa39604d013608f4d7fb9e60a">resolved</a> (<a class="code" href="classrunNode.html">runNode</a>* &amp;<span class="keywordtype">id</span>, <a class="code" href="classrunNode.html">runNode</a>* default_val=NULL, <span class="keywordtype">bool</span> check_privat = <span class="keyword">false</span>, <a class="code" href="classsTable.html">sTable</a>* check_table = NULL);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a>* <a class="code" href="classidNode.html#a70be10ae0c1bc5d1f4e6c142baeef403">resolvedAsStr</a> (<a class="code" href="classrunNode.html">runNode</a>* &amp;<span class="keywordtype">id</span>, <span class="keywordtype">bool</span> isfunc = <span class="keyword">true</span>, <span class="keywordtype">bool</span> check_private = <span class="keyword">false</span>, <a class="code" href="classsTable.html">sTable</a>* check_table = NULL, <span class="keywordtype">bool</span> force_str = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classidNode.html#a6b2f2759674e4757d4ec8a5812fabd51">  214</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">string</span> <a class="code" href="classidNode.html#a6b2f2759674e4757d4ec8a5812fabd51">name</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> id_; }</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classidNode.html#ad63a31b677af72e2ad7924b9a63fc4cd">  219</a></span>&#160;   <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classidNode.html#ad63a31b677af72e2ad7924b9a63fc4cd">setName</a> (<span class="keywordtype">string</span> <a class="code" href="classidNode.html#a6b2f2759674e4757d4ec8a5812fabd51">name</a>) { id_ = <a class="code" href="classidNode.html#a6b2f2759674e4757d4ec8a5812fabd51">name</a>; }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#a9a18e57d85c325a95aa2e490d5831622">getRef</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#aa64b9b4361c1f1e6cbf0533ac09bd7eb">getReff</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* <a class="code" href="classidNode.html#a697af0deaf3fff0438df5c6356b64dd7">getRefc</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;   <span class="keywordtype">string</span> id_;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;   <span class="keywordtype">bool</span> exist_;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* reff_;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;   <span class="keywordtype">bool</span> existf_;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;   <a class="code" href="classrefNode.html">refNode</a>* refc_;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;   <span class="keywordtype">bool</span> existc_;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> * key_point_;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;};</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="classidgetNode.html">  258</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classidgetNode.html">idgetNode</a>: <span class="keyword">public</span> <a class="code" href="classidNode.html">idNode</a> {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      <a class="code" href="classidgetNode.html#a3e222fd67271c678e2aad6297b29ef88">idgetNode</a> (<a class="code" href="classrunNode.html">runNode</a> *exp);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classidgetNode.html#a9423b08e0755a0432b47dde32e7c473f">run</a> ();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classidgetNode.html#a9423b08e0755a0432b47dde32e7c473f">run</a> (<span class="keywordtype">bool</span> resolvkey);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classidgetNode.html#a116329895e687e16356ee3aba892fc04">runf</a> ();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classidgetNode.html#a6f3d7453fa18e1faba1b1ba06492096f">runc</a> ();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="classidgetNode.html#ab399b394c1f81f725bdf6cd315577a41">clear</a> ();</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classidgetNode.html#ab17484e81265f876d0fd2babf2186765">exist</a> (<span class="keywordtype">bool</span> func = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classidgetNode.html#a2f92ff2c5c01a90bd05764182a8c5e9d">existf</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classidgetNode.html#a17a0ea08ac721346d46db409dd5d894e">existc</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      <span class="keywordtype">string</span> <a class="code" href="classidgetNode.html#a49f8984f744fec5f136bab98246a8890">name</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="classidgetNode.html#a26c065b2595bfebe90106db2c2e45643">existfunction</a> ();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      <a class="code" href="classidNode.html">idNode</a>* <a class="code" href="classidgetNode.html#af71a95561ebcc1869a78db7bcdfb026d">getId</a> ();</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;   <span class="keyword">private</span>: </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      <span class="keywordtype">void</span> setId ();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      <a class="code" href="classrunNode.html">runNode</a> *exp_;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <a class="code" href="classidNode.html">idNode</a> *id_;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;};</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="classglobalNode.html">  366</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classglobalNode.html">globalNode</a> :</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;   <span class="keyword">public</span> <a class="code" href="classrunNode.html">runNode</a> {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;   <a class="code" href="classglobalNode.html#a30486dc4cbebff694c840da941f84f7e">globalNode</a> (<a class="code" href="classrunNode.html">runNode</a>* <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classglobalNode.html#afe7ecb283fb3c4dec0983aff20cbf214">run</a> ();</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *id_;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;};</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="ttc" id="classglobalNode_html_afe7ecb283fb3c4dec0983aff20cbf214"><div class="ttname"><a href="classglobalNode.html#afe7ecb283fb3c4dec0983aff20cbf214">globalNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:299</div></div>
+<div class="ttc" id="classidNode_html"><div class="ttname"><a href="classidNode.html">idNode</a></div><div class="ttdoc">Nodo identificador. </div><div class="ttdef"><b>Definition:</b> idNode.h:59</div></div>
+<div class="ttc" id="classidNode_html_a6b2f2759674e4757d4ec8a5812fabd51"><div class="ttname"><a href="classidNode.html#a6b2f2759674e4757d4ec8a5812fabd51">idNode::name</a></div><div class="ttdeci">string name() const </div><div class="ttdef"><b>Definition:</b> idNode.h:214</div></div>
+<div class="ttc" id="classrefNode_html_af3287bf7b98a88d97bf7076cbae2e50b"><div class="ttname"><a href="classrefNode.html#af3287bf7b98a88d97bf7076cbae2e50b">refNode::getRef</a></div><div class="ttdeci">runNode * getRef() const </div><div class="ttdef"><b>Definition:</b> runTree.cpp:417</div></div>
+<div class="ttc" id="classidgetNode_html_ab399b394c1f81f725bdf6cd315577a41"><div class="ttname"><a href="classidgetNode.html#ab399b394c1f81f725bdf6cd315577a41">idgetNode::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:256</div></div>
+<div class="ttc" id="classidNode_html_aa64b9b4361c1f1e6cbf0533ac09bd7eb"><div class="ttname"><a href="classidNode.html#aa64b9b4361c1f1e6cbf0533ac09bd7eb">idNode::getReff</a></div><div class="ttdeci">refNode * getReff() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:212</div></div>
+<div class="ttc" id="classidgetNode_html_ab17484e81265f876d0fd2babf2186765"><div class="ttname"><a href="classidgetNode.html#ab17484e81265f876d0fd2babf2186765">idgetNode::exist</a></div><div class="ttdeci">bool exist(bool func=true)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:261</div></div>
+<div class="ttc" id="classidgetNode_html_a26c065b2595bfebe90106db2c2e45643"><div class="ttname"><a href="classidgetNode.html#a26c065b2595bfebe90106db2c2e45643">idgetNode::existfunction</a></div><div class="ttdeci">bool existfunction()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:269</div></div>
+<div class="ttc" id="classidgetNode_html_a3e222fd67271c678e2aad6297b29ef88"><div class="ttname"><a href="classidgetNode.html#a3e222fd67271c678e2aad6297b29ef88">idgetNode::idgetNode</a></div><div class="ttdeci">idgetNode(runNode *exp)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:225</div></div>
+<div class="ttc" id="classidgetNode_html_af71a95561ebcc1869a78db7bcdfb026d"><div class="ttname"><a href="classidgetNode.html#af71a95561ebcc1869a78db7bcdfb026d">idgetNode::getId</a></div><div class="ttdeci">idNode * getId()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:292</div></div>
+<div class="ttc" id="classidNode_html_aed42c343bc2be05c7b15114600cee491"><div class="ttname"><a href="classidNode.html#aed42c343bc2be05c7b15114600cee491">idNode::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:155</div></div>
+<div class="ttc" id="classidgetNode_html_a49f8984f744fec5f136bab98246a8890"><div class="ttname"><a href="classidgetNode.html#a49f8984f744fec5f136bab98246a8890">idgetNode::name</a></div><div class="ttdeci">string name() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:286</div></div>
+<div class="ttc" id="classidgetNode_html_a116329895e687e16356ee3aba892fc04"><div class="ttname"><a href="classidgetNode.html#a116329895e687e16356ee3aba892fc04">idgetNode::runf</a></div><div class="ttdeci">virtual void runf()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:244</div></div>
+<div class="ttc" id="classidNode_html_a7c354169bc6e38d433d11be645bb64a9"><div class="ttname"><a href="classidNode.html#a7c354169bc6e38d433d11be645bb64a9">idNode::reff</a></div><div class="ttdeci">refNode * reff()</div><div class="ttdef"><b>Definition:</b> idNode.h:108</div></div>
+<div class="ttc" id="classglobalNode_html_a30486dc4cbebff694c840da941f84f7e"><div class="ttname"><a href="classglobalNode.html#a30486dc4cbebff694c840da941f84f7e">globalNode::globalNode</a></div><div class="ttdeci">globalNode(runNode *id)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:297</div></div>
+<div class="ttc" id="classidNode_html_a70123074df6f875c8308a4f5854b033d"><div class="ttname"><a href="classidNode.html#a70123074df6f875c8308a4f5854b033d">idNode::existfunction</a></div><div class="ttdeci">virtual bool existfunction()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:76</div></div>
+<div class="ttc" id="classidNode_html_a96747b61c1ea4c75e055485bc3fe678b"><div class="ttname"><a href="classidNode.html#a96747b61c1ea4c75e055485bc3fe678b">idNode::noderefc</a></div><div class="ttdeci">void noderefc(runNode *node)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:141</div></div>
+<div class="ttc" id="classidNode_html_a718cba1385de599875f8cc14f52f6c84"><div class="ttname"><a href="classidNode.html#a718cba1385de599875f8cc14f52f6c84">idNode::noderef</a></div><div class="ttdeci">void noderef(runNode *node)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:109</div></div>
+<div class="ttc" id="classidgetNode_html_a9423b08e0755a0432b47dde32e7c473f"><div class="ttname"><a href="classidgetNode.html#a9423b08e0755a0432b47dde32e7c473f">idgetNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:227</div></div>
+<div class="ttc" id="classidNode_html_ad63a31b677af72e2ad7924b9a63fc4cd"><div class="ttname"><a href="classidNode.html#ad63a31b677af72e2ad7924b9a63fc4cd">idNode::setName</a></div><div class="ttdeci">void setName(string name)</div><div class="ttdef"><b>Definition:</b> idNode.h:219</div></div>
+<div class="ttc" id="classidNode_html_a69900402f8bfbe33559854cddf1bd0f9"><div class="ttname"><a href="classidNode.html#a69900402f8bfbe33559854cddf1bd0f9">idNode::nodeval</a></div><div class="ttdeci">runNode * nodeval() const </div><div class="ttdef"><b>Definition:</b> idNode.h:119</div></div>
+<div class="ttc" id="classidNode_html_a720f6ab623192e93743e0098db5d7af7"><div class="ttname"><a href="classidNode.html#a720f6ab623192e93743e0098db5d7af7">idNode::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:41</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="classidNode_html_acaa38cc6ad44035f2229b82d7609b941"><div class="ttname"><a href="classidNode.html#acaa38cc6ad44035f2229b82d7609b941">idNode::existf</a></div><div class="ttdeci">bool existf() const </div><div class="ttdef"><b>Definition:</b> idNode.h:168</div></div>
+<div class="ttc" id="classidNode_html_a9a18e57d85c325a95aa2e490d5831622"><div class="ttname"><a href="classidNode.html#a9a18e57d85c325a95aa2e490d5831622">idNode::getRef</a></div><div class="ttdeci">refNode * getRef() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:207</div></div>
+<div class="ttc" id="classidNode_html_a866c23e34133608ff9bd902e4561535d"><div class="ttname"><a href="classidNode.html#a866c23e34133608ff9bd902e4561535d">idNode::nodereff</a></div><div class="ttdeci">void nodereff(runNode *node)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:127</div></div>
+<div class="ttc" id="classidNode_html_a9737789aa39604d013608f4d7fb9e60a"><div class="ttname"><a href="classidNode.html#a9737789aa39604d013608f4d7fb9e60a">idNode::resolved</a></div><div class="ttdeci">static runNode * resolved(runNode *&amp;id, runNode *default_val=NULL, bool check_privat=false, sTable *check_table=NULL)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:160</div></div>
+<div class="ttc" id="classidNode_html_a806975a98cecd6fc2e416fff4b356ea1"><div class="ttname"><a href="classidNode.html#a806975a98cecd6fc2e416fff4b356ea1">idNode::refc</a></div><div class="ttdeci">refNode * refc()</div><div class="ttdef"><b>Definition:</b> idNode.h:113</div></div>
+<div class="ttc" id="classidNode_html_a1b7033729a1e2857eb0f18690aa616bb"><div class="ttname"><a href="classidNode.html#a1b7033729a1e2857eb0f18690aa616bb">idNode::nodevalc</a></div><div class="ttdeci">runNode * nodevalc() const </div><div class="ttdef"><b>Definition:</b> idNode.h:131</div></div>
+<div class="ttc" id="classidNode_html_afff9130fd75f482fdb9f1c3ab0cb98c5"><div class="ttname"><a href="classidNode.html#afff9130fd75f482fdb9f1c3ab0cb98c5">idNode::existc</a></div><div class="ttdeci">bool existc() const </div><div class="ttdef"><b>Definition:</b> idNode.h:176</div></div>
+<div class="ttc" id="classidNode_html_af1376fbb468dea9a953ce499a0e94d3d"><div class="ttname"><a href="classidNode.html#af1376fbb468dea9a953ce499a0e94d3d">idNode::runc</a></div><div class="ttdeci">virtual void runc()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:96</div></div>
+<div class="ttc" id="classidgetNode_html_a2f92ff2c5c01a90bd05764182a8c5e9d"><div class="ttname"><a href="classidgetNode.html#a2f92ff2c5c01a90bd05764182a8c5e9d">idgetNode::existf</a></div><div class="ttdeci">bool existf() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:274</div></div>
+<div class="ttc" id="classsTable_html"><div class="ttname"><a href="classsTable.html">sTable</a></div><div class="ttdoc">Contexto de tablas de símbolos. </div><div class="ttdef"><b>Definition:</b> sTable.h:121</div></div>
+<div class="ttc" id="classidNode_html_a54667580929eab413d46ff5d3c7b3345"><div class="ttname"><a href="classidNode.html#a54667580929eab413d46ff5d3c7b3345">idNode::exist</a></div><div class="ttdeci">virtual bool exist(bool func=true)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:69</div></div>
+<div class="ttc" id="classrefNode_html"><div class="ttname"><a href="classrefNode.html">refNode</a></div><div class="ttdoc">Nodo referencia. </div><div class="ttdef"><b>Definition:</b> runTree.h:279</div></div>
+<div class="ttc" id="classidgetNode_html"><div class="ttname"><a href="classidgetNode.html">idgetNode</a></div><div class="ttdoc">Nodo identificador obtenido. </div><div class="ttdef"><b>Definition:</b> idNode.h:258</div></div>
+<div class="ttc" id="classidgetNode_html_a17a0ea08ac721346d46db409dd5d894e"><div class="ttname"><a href="classidgetNode.html#a17a0ea08ac721346d46db409dd5d894e">idgetNode::existc</a></div><div class="ttdeci">bool existc() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:280</div></div>
+<div class="ttc" id="classidNode_html_a697af0deaf3fff0438df5c6356b64dd7"><div class="ttname"><a href="classidNode.html#a697af0deaf3fff0438df5c6356b64dd7">idNode::getRefc</a></div><div class="ttdeci">refNode * getRefc() const </div><div class="ttdef"><b>Definition:</b> idNode.cpp:217</div></div>
+<div class="ttc" id="classidNode_html_a0babfa8cabd86c11c3a4f625732d4c8d"><div class="ttname"><a href="classidNode.html#a0babfa8cabd86c11c3a4f625732d4c8d">idNode::idNode</a></div><div class="ttdeci">idNode(string id)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:39</div></div>
+<div class="ttc" id="sTable_8h_html"><div class="ttname"><a href="sTable_8h.html">sTable.h</a></div><div class="ttdoc">Tabla de símbolos. </div></div>
+<div class="ttc" id="classidNode_html_ae46892d8bd8e5521922f7090f3336839"><div class="ttname"><a href="classidNode.html#ae46892d8bd8e5521922f7090f3336839">idNode::ref</a></div><div class="ttdeci">refNode * ref()</div><div class="ttdef"><b>Definition:</b> idNode.h:101</div></div>
+<div class="ttc" id="classidNode_html_a61b9528de4bb06f924dc60e9b682705e"><div class="ttname"><a href="classidNode.html#a61b9528de4bb06f924dc60e9b682705e">idNode::runf</a></div><div class="ttdeci">virtual void runf()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:81</div></div>
+<div class="ttc" id="classidNode_html_a93d0147c1fd593831162bcb9a8dce671"><div class="ttname"><a href="classidNode.html#a93d0147c1fd593831162bcb9a8dce671">idNode::nodevalf</a></div><div class="ttdeci">runNode * nodevalf() const </div><div class="ttdef"><b>Definition:</b> idNode.h:125</div></div>
+<div class="ttc" id="classidNode_html_a70be10ae0c1bc5d1f4e6c142baeef403"><div class="ttname"><a href="classidNode.html#a70be10ae0c1bc5d1f4e6c142baeef403">idNode::resolvedAsStr</a></div><div class="ttdeci">static runNode * resolvedAsStr(runNode *&amp;id, bool isfunc=true, bool check_private=false, sTable *check_table=NULL, bool force_str=false)</div><div class="ttdef"><b>Definition:</b> idNode.cpp:180</div></div>
+<div class="ttc" id="classidgetNode_html_a6f3d7453fa18e1faba1b1ba06492096f"><div class="ttname"><a href="classidgetNode.html#a6f3d7453fa18e1faba1b1ba06492096f">idgetNode::runc</a></div><div class="ttdeci">void runc()</div><div class="ttdef"><b>Definition:</b> idNode.cpp:250</div></div>
+<div class="ttc" id="classnexpNode_html"><div class="ttname"><a href="classnexpNode.html">nexpNode</a></div><div class="ttdoc">Nodo expresión de tipo no definido. </div><div class="ttdef"><b>Definition:</b> expNode.h:164</div></div>
+<div class="ttc" id="classglobalNode_html"><div class="ttname"><a href="classglobalNode.html">globalNode</a></div><div class="ttdoc">Nodo identificador global. </div><div class="ttdef"><b>Definition:</b> idNode.h:366</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

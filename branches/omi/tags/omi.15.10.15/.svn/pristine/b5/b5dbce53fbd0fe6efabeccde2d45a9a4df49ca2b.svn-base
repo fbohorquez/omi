@@ -1,0 +1,30 @@
+#!/home/franj/projects/omi/omi/trunk/translator/omi
+echo "Boleanos";
+echo false;
+echo true;
+echo (true == false);
+echo (true == true);
+echo (!true);
+echo (!false);
+echo (true == 1);
+echo (true == 10);
+echo (true == 0);
+echo (true > false);
+echo (false > true);
+echo (0 == 1);
+echo (0 != 1);
+echo "";
+
+echo 0;
+echo 0 + 1;
+echo 0;
+print " ";
+echo "";
+echo " ";
+echo "aaaaaaaaaa";
+echo 'ababababbaba';
+echo "\"";
+echo "\"\"";
+echo '""';
+echo "''";
+echo "\n";

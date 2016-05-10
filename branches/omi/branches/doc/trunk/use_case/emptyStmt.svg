@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="19cm" height="11cm" viewBox="541 154 377 210" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="542" y="176" width="375" height="187"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="542" y="176" width="375" height="187"/>
+    <rect style="fill: #ffffff" x="542" y="156" width="81" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="542" y="156" width="81" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="544" y="171">emptyStmt </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="628.15" cy="226.6" rx="69.15" ry="32"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="628.15" y="222.5">
+      <tspan x="628.15" y="222.5">Interpretar</tspan>
+      <tspan x="628.15" y="238.5">sentencia</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="559" y1="226.6" x2="697.3" y2="226.6"/>
+  <g>
+    <ellipse style="fill: #ffffff" cx="823.775" cy="308.925" rx="74.775" ry="24.925"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="823.775" cy="308.925" rx="74.775" ry="24.925"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="823.775" y="312.825">
+      <tspan x="823.775" y="312.825">Sentencia vacía</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="749,308.925 727.15,308.925 727.15,226.6 704.005,226.6 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="716.653,221.6 700.653,226.6 716.653,231.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="729.15" y="267.762">&lt;&lt;extend&gt;&gt;</text>
+  </g>
+</svg>

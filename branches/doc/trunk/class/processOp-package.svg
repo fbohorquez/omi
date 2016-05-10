@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="18cm" height="11cm" viewBox="171 82 342 210" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="172" y="103.8" width="340" height="187.2"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="103.8" width="340" height="187.2"/>
+    <rect style="fill: #ffffff" x="172" y="83.8" width="88.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="172" y="83.8" width="88.7" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="174" y="98.8"> processOp </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="185.1" y="133.454" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="185.1" y="133.454" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="185.1" y="115.454" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="185.1" y="115.454" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="191.1" y="151.354">
+      <tspan x="191.1" y="151.354"> fork </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="257.1" y="133.454" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.1" y="133.454" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="257.1" y="115.454" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.1" y="115.454" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="263.1" y="151.354">
+      <tspan x="263.1" y="151.354"> wait </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="329.8" y="133.453" width="73.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="329.8" y="133.453" width="73.6" height="28"/>
+    <rect style="fill: #ffffff" x="329.8" y="115.453" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="329.8" y="115.453" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335.8" y="151.353">
+      <tspan x="335.8" y="151.353"> getpid </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="417.5" y="133.453" width="81.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="417.5" y="133.453" width="81.3" height="28"/>
+    <rect style="fill: #ffffff" x="417.5" y="115.453" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="417.5" y="115.453" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="423.5" y="151.353">
+      <tspan x="423.5" y="151.353"> getppid </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="184.62" y="189.556" width="81.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="184.62" y="189.556" width="81.3" height="28"/>
+    <rect style="fill: #ffffff" x="184.62" y="171.556" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="184.62" y="171.556" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.62" y="207.456">
+      <tspan x="190.62" y="207.456"> process </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="282.32" y="189.556" width="112.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="282.32" y="189.556" width="112.1" height="28"/>
+    <rect style="fill: #ffffff" x="282.32" y="171.556" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="282.32" y="171.556" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="288.32" y="207.456">
+      <tspan x="288.32" y="207.456"> exitProcess </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="410.02" y="189.556" width="73.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="410.02" y="189.556" width="73.6" height="28"/>
+    <rect style="fill: #ffffff" x="410.02" y="171.556" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="410.02" y="171.556" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="416.02" y="207.456">
+      <tspan x="416.02" y="207.456"> signal </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="185.02" y="247.41" width="127.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="185.02" y="247.41" width="127.5" height="28"/>
+    <rect style="fill: #ffffff" x="185.02" y="229.41" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="185.02" y="229.41" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="191.02" y="265.31">
+      <tspan x="191.02" y="265.31"> signalhandler </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="329.78" y="247.41" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="329.78" y="247.41" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="329.78" y="229.41" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="329.78" y="229.41" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="335.78" y="265.31">
+      <tspan x="335.78" y="265.31"> eval </tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="406.78" y="247.41" width="58.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="406.78" y="247.41" width="58.2" height="28"/>
+    <rect style="fill: #ffffff" x="406.78" y="229.41" width="30" height="18"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="406.78" y="229.41" width="30" height="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="412.78" y="265.31">
+      <tspan x="412.78" y="265.31"> exec </tspan>
+    </text>
+  </g>
+</svg>

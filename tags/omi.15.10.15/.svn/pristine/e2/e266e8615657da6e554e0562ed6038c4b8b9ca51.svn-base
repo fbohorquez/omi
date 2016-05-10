@@ -1,0 +1,58 @@
+#!/usr/local/bin/omi
+echo "Expresiones regulares";
+echo "Inicialización";
+vacia = ``;
+exp0 = `s.*exp`;
+exp1 = regexp ("^Esta.*");
+aux = "(?i)<a[^>]*href\s*=\s*\"([^\"]*)\"[^>]*>(.+?)<\s*/\s*a\s*>";
+exp2 = regexp (aux);
+aux2 = "([^\d]+)(0\d)";
+exp3 = regexp (aux2);
+#~ exp3 = `([^\d[:punct:]]+)(0\d)`;
+echo "Cojetamiento";
+echo match ("", vacia);
+echo match (" ", vacia);
+echo match (sin_ini, vacia);
+<< texto = "Esta es la primera expresión";
+echo match (texto, exp0);
+echo match (texto, exp1);
+echo "Búsqueda";
+echo x = str_find (texto, exp0);
+<< texto[x];
+echo str_find (texto, exp1);
+texto .= " de muchas expresiones que tendrá el programa";
+echo texto;
+i = -1;
+while ((i = str_find(texto, exp0, i + 1))  != -1){
+  echo i;
+}  
+echo "Busqueda estructurada";
+echo str_search (texto, exp0);
+echo "Buscando URLs";
+web = "<a href=\"url01\">link01 -> web01< /a>";
+echo str_search (web, exp2);
+web .= "\n<div  >\n<a id=\"id\" href  =  \"url02\" clase=\"clase\">link02 -> web02< /   a >\n</div>";
+echo web;
+echo str_search (web, exp2);
+echo links = str_search (web, exp2, "url", "link");
+echo str_search (web, exp2, "url");
+echo str_search (links, exp3);
+for (i = 0; i < size (links); ++i){
+  echo "Esto es el enlace ".(i + 1).": ".links[i]["link"];
+  echo "Esto es la url ".(i + 1).": ".links[i]["url"];
+}
+echo "Remplazos";
+text = "Voy a tú casa de forma alegre, para gustarte de forma infinita y de forma maravillosa";
+echo str_replace (text,`de forma ([^\s[:punct:]]+)`, "\1mente"); 
+echo str_replace (text, `de forma ([^\s[:punct:]]+)`, "de forma \1mente"); 
+echo str_replace (text, ``, "-"); 
+echo str_replace (text, `.*`, "-"); 
+echo str_replace (text, `.+`, "-"); 
+echo str_replace (text, `\s`, "-"); 
+echo str_replace (text, ``, ""); 
+echo str_replace (text, `.*`, ""); 
+echo str_replace (
+  text, 
+  regexp("[[:graph:]]"), 
+  "-"
+); 

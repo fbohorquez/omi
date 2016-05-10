@@ -1,0 +1,17 @@
+Lorem ipsum dolor sit amet
+[0] => 2
+[1] => 3
+Lorem ipsum dolor sit amet
+[0] => 1
+[1] => 4
+Lorem ipsum dolor sit amet
+Quisque ante mi
+Lorem ipsum dolor sit amet
+Quisque ante mi
+Lorem ipsum dolor sit amet
+Quisque ante mi
+Lorem ipsum dolor sit amet
+Quisque ante mi
+ABORT ↓
+terminate called after throwing an instance of 'throwException'
+  what():  throw statement out of try block

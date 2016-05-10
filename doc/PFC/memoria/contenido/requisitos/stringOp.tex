@@ -1,0 +1,148 @@
+\subsection{Operadores sobre cadenas}
+
+\subsubsection{Concatenación}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Operador concatenación.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] La expresión que simboliza una operación de concatenación precisa de dos operandos que serán
+		tratados como cadena de caracteres. El valor que tomará la expresión será la cadena resultante de concatenar ambas.
+	\end {description}
+%\end{framed}
+
+\subsubsection{explode}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función explode.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] La función explode deberá tomar dos cadenas de caracteres como operandos denominadas ``texto'' y ``separador''.
+		El valor será el array resultante de separar la cadena ``texto'' en diferentes cadenas en función la cadena ``separador''.
+	\end {description}
+%\end{framed}
+
+\subsubsection{implode}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función implode.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Representa la operación inversa a explode. La función implode deberá tomar como argumentos un array denominado
+		``listado'' y una cadena denominada ``separador''. El valor de la expresión será una cadena resultado de concatenar cada uno
+		de los elementos de ``listado'' separados por la cadena ``separador''.
+	\end {description}
+%\end{framed}
+
+\subsubsection{sprintf}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función de formato.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se hace necesario un mecanismo que permita generar cadenas formateadas. Este deberá consistir
+		en una cadena de caracteres denominada ``formato'' y un listado de expresiones. La cadena formato contendrá una serie de
+		directivas de formato. Estas directivas serán sustituidas por el valor correspondiente, según posición, de la
+		lista de expresiones. Cuando se realiza cada sustitución el valor es formateado según la directiva.
+		
+		Las directivas de formato tienen el siguiente forma:
+		$$\%[operador][precisi\acute{o}n][formato]$$
+		
+		Los posibles operadores serán los siguientes:
+		\begin{description}
+			\item[+:] Fuerza la impresión del símbolo + cuando se formatean números positivos.
+			\item[\^\ :] Convierte el caracteres a mayúsculas cuando se formatean cadenas de texto.
+			\item[\#:] Añade el carácter 0x cuando se formatean números hexadecimales y el carácter 0 cuando se formatean octales.
+		\end{description}
+	
+		La precisión se refiere al número de decimales que se imprimirán en el caso de formatear
+		números o el número de caracteres en el caso de formatear cadenas.			
+
+		El carácter de formato indica que tipo de formato se le dará al valor:
+		\begin{description}
+			\item[i|d:] Número entero.
+			\item[u:] Sin signo.
+			\item[f:] Coma flotante.
+			\item[\%:] Carácter \%.
+			\item[e:] Notación científica.
+			\item[o:] Octal.
+			\item[x:] Hexadecimal.
+			\item[s|c:] Cadena de texto.
+		\end{description}
+	\end {description}
+%\end{framed}
+
+\subsubsection{Buscar subcadena}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función de búsqueda de subcadena.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Esta es una función básica en el tratamiento de cadenas. Opera sobre dos argumentos
+		que serán tratados como cadenas de caracteres, uno denominado ``texto'' y otro ``subcadena''. La función
+		toma como valor un dato aritmético relativo a la posición de la primera ocurrencia de ``subcadena'' dentro
+		de ``texto''. Si no se encuentra ningún resultado se tomará el valor nulo. Adicionalmente se puede dar otro
+		operando denominado ``offset'' que simbolice la posición dentro de ``texto'' a partir de la cual se comenzará a buscar.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Buscar y remplazar}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función de remplazo de subcadena.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se necesita de un mecanismo para buscar y remplazar subcadenas dentro de otra.
+		Este debe buscar las ocurrencias de una subcadena ``búsqueda'' en una
+		cadena ``texto'', sustituyéndolas por una cadena de ``remplazo''. Esta función debe admitir
+		el número máximo de sustituciones que se llevarán a cabo. Tras la ejecución debe tomar como valor la cadena
+		resultante de sustituir en la cadena principal las ocurrencias de la subcadenas por la cadena de remplazo.
+
+		Adicionalmente la subcadena de ``búsqueda'' puede ser una expresión regular, en cuyo caso
+		se buscará subcadenas que pertenezcan al conjunto de las palabras definido por la
+		expresión regular.
+		
+		Si se utiliza una expresión regular como patrón de búsqueda deberá ser posible
+		utilizar en la cadena de remplazo parte de la subcadena
+		que concuerda con la expresión regular. Para ello se ha de formar la expresión regular mediante
+		subexpresiones delimitadas por ``()''. En la cadena de remplazo se debe poder hacer referencia,
+		de forma posicional, a las subcadenas correspondientes a cada una de las subexpresiones.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Remplazar subcadena}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función de remplazo de subcadena mediante posiciones.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Se necesita de un mecanismo para buscar y remplazar subcadenas dentro de otra.
+		Este debe sustituir en una cadena ``texto'' la subcadena comprendida entre dos posiciones dadas por 
+      expresiones numéricas, sustituyendo las subcadena correspondiente por una cadena de ``remplazo''. 
+      Tras la ejecución debe tomar como valor la cadena
+		resultante de sustituir, en la cadena principal, la subcadena correspondiente a las pociones dadas por la cadena de remplazo.
+      
+	\end {description}
+%\end{framed}
+
+\subsubsection{Convertir a mayúsculas}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función conversión a mayúsculas.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un mecanismo que convierta todos los caracteres
+		alfabéticos que la conforman en mayúsculas. El valor que se tomará será la cadena resultante de la operación.
+	\end {description}
+%\end{framed}
+
+\subsubsection{Convertir a minúsculas}
+%\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Función conversión a minúsculas.
+		\item [Categoría:] Operadores sobre cadena de caracteres.
+		\item [Descripción:] Dada una cadena de caracteres se necesita de un mecanismo que convierta todos los caracteres
+		alfabéticos que la conforman en minúsculas. El valor que se tomará será la cadena resultante de la operación.
+	\end {description}
+%\end{framed}

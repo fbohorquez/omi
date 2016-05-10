@@ -1,0 +1,83 @@
+\BOOKMARK [1][-]{section.1}{Arquitectura del sistema}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Arquitectura f\355sica}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Escritorio}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Cliente/servidor}{subsection.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{Arquitectura l\363gica}{section.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Frontal \(front-end\)}{subsection.1.2}% 6
+\BOOKMARK [4][-]{paragraph.1.2.1.1}{Analizador l\351xico}{subsubsection.1.2.1}% 7
+\BOOKMARK [4][-]{paragraph.1.2.1.2}{Analizador sint\341ctico}{subsubsection.1.2.1}% 8
+\BOOKMARK [4][-]{paragraph.1.2.1.3}{Mecanismos de entrada/salida}{subsubsection.1.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Motor \(back-end\)}{subsection.1.2}% 10
+\BOOKMARK [4][-]{paragraph.1.2.2.1}{Inicializaci\363n}{subsubsection.1.2.2}% 11
+\BOOKMARK [4][-]{paragraph.1.2.2.2}{Ejecuci\363n}{subsubsection.1.2.2}% 12
+\BOOKMARK [4][-]{paragraph.1.2.2.3}{Tabla de s\355mbolos}{subsubsection.1.2.2}% 13
+\BOOKMARK [4][-]{paragraph.1.2.2.4}{Eliminaci\363n de referencias}{subsubsection.1.2.2}% 14
+\BOOKMARK [3][-]{subsubsection.1.2.3}{runTree}{subsection.1.2}% 15
+\BOOKMARK [1][-]{section.2}{Dise\361o de la gram\341tica}{}% 16
+\BOOKMARK [2][-]{subsection.2.1}{Programa}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.2}{Sentencias}{section.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Secuecia de sentencias}{subsection.2.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Sentencia de bloque}{subsection.2.2}% 20
+\BOOKMARK [4][-]{paragraph.2.2.2.1}{Sentencia de control: if}{subsubsection.2.2.2}% 21
+\BOOKMARK [4][-]{paragraph.2.2.2.2}{Sentencia de control: while}{subsubsection.2.2.2}% 22
+\BOOKMARK [4][-]{paragraph.2.2.2.3}{Sentencia de control: do...while}{subsubsection.2.2.2}% 23
+\BOOKMARK [4][-]{paragraph.2.2.2.4}{Sentencia de control: for}{subsubsection.2.2.2}% 24
+\BOOKMARK [4][-]{paragraph.2.2.2.5}{Sentencia de control: forearch}{subsubsection.2.2.2}% 25
+\BOOKMARK [4][-]{paragraph.2.2.2.6}{Sentencia de control: switch}{subsubsection.2.2.2}% 26
+\BOOKMARK [4][-]{paragraph.2.2.2.7}{Sentencia de control: iloop}{subsubsection.2.2.2}% 27
+\BOOKMARK [4][-]{paragraph.2.2.2.8}{Sentencia de control: try...catch}{subsubsection.2.2.2}% 28
+\BOOKMARK [4][-]{paragraph.2.2.2.9}{Sentencia de control: with}{subsubsection.2.2.2}% 29
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Sentencia simple}{subsection.2.2}% 30
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Etiquetas}{subsection.2.2}% 31
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Nombres de espacios}{subsection.2.2}% 32
+\BOOKMARK [3][-]{subsubsection.2.2.6}{Clases}{subsection.2.2}% 33
+\BOOKMARK [4][-]{paragraph.2.2.6.1}{M\351todos y atributos}{subsubsection.2.2.6}% 34
+\BOOKMARK [2][-]{subsection.2.3}{Expresiones}{section.2}% 35
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Operadores l\363gicos}{subsection.2.3}% 36
+\BOOKMARK [4][-]{paragraph.2.3.1.1}{Or l\363gico}{subsubsection.2.3.1}% 37
+\BOOKMARK [4][-]{paragraph.2.3.1.2}{And l\363gico}{subsubsection.2.3.1}% 38
+\BOOKMARK [4][-]{paragraph.2.3.1.3}{Negaci\363n l\363gica}{subsubsection.2.3.1}% 39
+\BOOKMARK [4][-]{paragraph.2.3.1.4}{Comparaciones}{subsubsection.2.3.1}% 40
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Operadores aritm\351ticos}{subsection.2.3}% 41
+\BOOKMARK [4][-]{paragraph.2.3.2.1}{Suma y diferencia}{subsubsection.2.3.2}% 42
+\BOOKMARK [4][-]{paragraph.2.3.2.2}{Producto y divisi\363n}{subsubsection.2.3.2}% 43
+\BOOKMARK [4][-]{paragraph.2.3.2.3}{Potencia y m\363dulo}{subsubsection.2.3.2}% 44
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Operadores cadenas de caracteres}{subsection.2.3}% 45
+\BOOKMARK [4][-]{paragraph.2.3.3.1}{Concatenaci\363n}{subsubsection.2.3.3}% 46
+\BOOKMARK [4][-]{paragraph.2.3.3.2}{Flujo}{subsubsection.2.3.3}% 47
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Llamadas}{subsection.2.3}% 48
+\BOOKMARK [3][-]{subsubsection.2.3.5}{Operadores condicionales}{subsection.2.3}% 49
+\BOOKMARK [4][-]{paragraph.2.3.5.1}{Operador ternario}{subsubsection.2.3.5}% 50
+\BOOKMARK [4][-]{paragraph.2.3.5.2}{Null coalescing}{subsubsection.2.3.5}% 51
+\BOOKMARK [3][-]{subsubsection.2.3.6}{Operadores unitarios}{subsection.2.3}% 52
+\BOOKMARK [4][-]{paragraph.2.3.6.1}{Incrementos y decrementos}{subsubsection.2.3.6}% 53
+\BOOKMARK [4][-]{paragraph.2.3.6.2}{Conversi\363n de tipos}{subsubsection.2.3.6}% 54
+\BOOKMARK [4][-]{paragraph.2.3.6.3}{Accesos}{subsubsection.2.3.6}% 55
+\BOOKMARK [3][-]{subsubsection.2.3.7}{Asignaciones}{subsection.2.3}% 56
+\BOOKMARK [3][-]{subsubsection.2.3.8}{Funciones}{subsection.2.3}% 57
+\BOOKMARK [4][-]{paragraph.2.3.8.1}{Funci\363n lambda}{subsubsection.2.3.8}% 58
+\BOOKMARK [4][-]{paragraph.2.3.8.2}{C\341lculo parcial}{subsubsection.2.3.8}% 59
+\BOOKMARK [4][-]{paragraph.2.3.8.3}{Funci\363n de contexto}{subsubsection.2.3.8}% 60
+\BOOKMARK [3][-]{subsubsection.2.3.9}{Decoradores}{subsection.2.3}% 61
+\BOOKMARK [4][-]{paragraph.2.3.9.1}{Decorador lambda}{subsubsection.2.3.9}% 62
+\BOOKMARK [3][-]{subsubsection.2.3.10}{Operadores clases y objetos}{subsection.2.3}% 63
+\BOOKMARK [3][-]{subsubsection.2.3.11}{Funciones del lenguaje}{subsection.2.3}% 64
+\BOOKMARK [4][-]{paragraph.2.3.11.1}{Funciones l\363gicas}{subsubsection.2.3.11}% 65
+\BOOKMARK [4][-]{paragraph.2.3.11.2}{Funciones aritm\351ticas}{subsubsection.2.3.11}% 66
+\BOOKMARK [4][-]{paragraph.2.3.11.3}{Funciones cadenas de caracteres}{subsubsection.2.3.11}% 67
+\BOOKMARK [4][-]{paragraph.2.3.11.4}{Funciones arrays}{subsubsection.2.3.11}% 68
+\BOOKMARK [4][-]{paragraph.2.3.11.5}{Funciones expresiones regulares}{subsubsection.2.3.11}% 69
+\BOOKMARK [4][-]{paragraph.2.3.11.6}{Funciones fechas y tiempo}{subsubsection.2.3.11}% 70
+\BOOKMARK [4][-]{paragraph.2.3.11.7}{Funciones acceso a entorno}{subsubsection.2.3.11}% 71
+\BOOKMARK [4][-]{paragraph.2.3.11.8}{Funciones ficheros}{subsubsection.2.3.11}% 72
+\BOOKMARK [4][-]{paragraph.2.3.11.9}{Funciones procesos}{subsubsection.2.3.11}% 73
+\BOOKMARK [3][-]{subsubsection.2.3.12}{Generadores}{subsection.2.3}% 74
+\BOOKMARK [2][-]{subsection.2.4}{Identidades}{section.2}% 75
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Par\341metros}{subsection.2.4}% 76
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Listas y pares}{subsection.2.4}% 77
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Identificador}{subsection.2.4}% 78
+\BOOKMARK [3][-]{subsubsection.2.4.4}{N\372meros}{subsection.2.4}% 79
+\BOOKMARK [3][-]{subsubsection.2.4.5}{Cadenas de caracteres}{subsection.2.4}% 80
+\BOOKMARK [3][-]{subsubsection.2.4.6}{Array}{subsection.2.4}% 81
+\BOOKMARK [3][-]{subsubsection.2.4.7}{Expresi\363n regular}{subsection.2.4}% 82
+\BOOKMARK [3][-]{subsubsection.2.4.8}{Comentarios}{subsection.2.4}% 83

@@ -1,0 +1,135 @@
+\subsection{Ficheros}
+\subsubsection{Fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] El intérprete debe ser capaz de manipular ficheros, para ello se precisa de un tipo de dato
+		que simbolice un puntero a un fichero del sistema de ficheros. Este tipo de dato no debe ser convertido a ningún otro
+		tipo de dato ni viceversa. Además solo será tratado por algunos operadores dedicados. 
+		
+		No se tendrán en cuenta los  ficheros binarios.
+	\end{description}
+\end{framed}
+
+\subsubsection{Abrir ficheros}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Abrir ficheros.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Es necesario un operador que permita abrir ficheros para su manipulación. Este tendrá como operandos
+		una cadena de caracteres que simbolice la ruta al fichero y otra que determine el modo en el que será abierto. El operador 
+		tomára como valor un dato de tipo puntero a fichero. Los posibles modos serán:
+		
+		\begin{description}
+			\item [r:] Lectura.
+			\item [r+:] Lectura y/o escritura.
+			\item [w:] Escritura truncando el contenido del fichero.
+			\item [w+:] Lectura y/o escritura truncando el contenido del fichero.
+			\item [a:] Escritura posicionando el puntero al final el fichero.
+			\item [a+:] Lectura y/o escritura posicionando el puntero al final del fichero.
+		\end{description}
+		
+		Todos los modos a excepción de sólo lectura deberán crear el fichero si este no existe.  
+	\end {description}
+\end{framed}
+
+\subsubsection{Cerrar ficheros}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cerrar ficheros.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Es necesario un operador que permita cerrar ficheros abiertos a partir de un puntero al mismo.
+		Se deberá finalizar cualquier flujo de datos abierto y el fichero quedará cerrado. Como valor se deberá tomar 
+		un dato de tipo lógico que determine si la operación se ha realizado correctamente.
+	\end {description}
+\end{framed}
+
+\subsubsection{Escribir en fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Escribir en fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se hace necesario un operador que, dado un dato de tipo puntero a fichero, pueda escribir datos
+		en la posición referenciada por el mismo. Así este operador trabaja sobre dos operandos, un puntero a fichero y una 
+		cadena de caracteres que simbolizará el contenido a escribir. Como valor el operador toma el número de bytes que 
+		fueron escritos.
+	\end{description}
+\end{framed}
+
+\subsubsection{Leer de fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Leer de fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se hace necesario un operador que, dado un dato de tipo puntero a fichero, lea desde la
+		posición referencia por el mismo hasta un carácter de nueva línea, o bien un número de carácteres dado. Así el operador deberá tomar como valor 
+		una cadena de caracteres que represente el contenido leído.
+	\end{description}
+\end{framed}
+
+\subsubsection{Cambiar posición de puntero a fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cambiar posición de puntero a fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Una operación básica sobre punteros a ficheros es desplazar este dentro del contenido del mismo. 
+		Para ello se precisa de un operador que, dado un puntero a fichero, cambie la posición de este dentro del propio fichero.
+		Así la nueva posición deberá ser una expresión numérica que represente un offset relativo al principio del fichero, el final 
+		o la posición actual del puntero. La expresión correspondiente al operador deberá tomar un valor booleano que determine si el cambio
+		de posición se ha realizado correctamente.
+	\end{description}
+\end{framed}
+
+\subsubsection{Obtener la posición actual de puntero a fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener la posición actual de puntero a fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se necesita de un operador que dado un puntero a fichero tome el valor aritmético que represente la posición de este 
+		dentro del mismo.
+	\end{description}
+\end{framed}
+
+\subsubsection{Obtener contenido de un fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Obtener contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de obtener el contenido completo de un fichero, sin que sea necesario disponer de un 
+		puntero al mismo. Para ello se deberá facilitar una cadena de caracteres que simbolice la ruta completa del fichero. El operador tomará como valor
+		una cadena de caracteres que contenga todo el contenido del fichero. En el caso de que el fichero no exista se deberá tomar como valor la cadena vacía.
+	\end{description}
+\end{framed}
+
+\subsubsection{Cadena como contenido de un fichero.}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Cadena como contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de escribir una cadena de caracteres en un fichero, sin que sea necesario 
+		disponer de un puntero al mismo. Si el fichero existe su contenido deberá ser truncado, si no existe será creado. Este operador tendrá como operandos dos cadenas 
+		de caracteres que se correspondan con la ruta del fichero y la cadena a escribir. Como valor se tomára la cadena escrita.
+	\end{description}
+\end{framed}
+
+\subsubsection{Añadir cadena al contenido de un fichero}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Añadir cadena al contenido de un fichero.
+		\item [Categoría:] Operadores sobre ficheros.
+		\item [Descripción:] Se precisa de un operador que simplifique la tarea de añadir una cadena de caracteres al final de un fichero, sin que sea necesario 
+		disponer de un puntero al mismo. Si el fichero no existe será creado. Este operador tendrá como operandos dos cadenas 
+		de caracteres que se correspondan con la ruta del fichero y la cadena a escribir. Como valor se tomará la cadena escrita.
+	\end{description}
+\end{framed}

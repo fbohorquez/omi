@@ -1,0 +1,69 @@
+\hypertarget{classdowhileNode}{\section{Referencia de la Clase dowhile\-Node}
+\label{classdowhileNode}\index{dowhile\-Node@{dowhile\-Node}}
+}
+
+
+Nodo sentencia do..while.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de dowhile\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdowhileNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdowhileNode_a0300c826e3ae9bd1894ba7b8ecc6db46}{dowhile\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$exp, \hyperlink{classrunNode}{run\-Node} $\ast$rb)
+\item 
+void \hyperlink{classdowhileNode_a347c599237629fdd55071a78a693d351}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo sentencia do..while. 
+
+Este nodo representa una sentencia iterativa do...while. Esta consta de una condición y un bloque de sentencias. El bloque de sentencias será ejecutado mientras la evaluación de la condición sea verdadera, ejecutándose el bloque al menos una vez. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classdowhileNode_a0300c826e3ae9bd1894ba7b8ecc6db46}{\index{dowhile\-Node@{dowhile\-Node}!dowhile\-Node@{dowhile\-Node}}
+\index{dowhile\-Node@{dowhile\-Node}!dowhileNode@{dowhile\-Node}}
+\subsubsection[{dowhile\-Node}]{\setlength{\rightskip}{0pt plus 5cm}dowhile\-Node\-::dowhile\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{exp, }
+\item[{{\bf run\-Node} $\ast$}]{rb}
+\end{DoxyParamCaption}
+)}}\label{classdowhileNode_a0300c826e3ae9bd1894ba7b8ecc6db46}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em exp} & Nodo que representa la expresión de condición. \\
+\hline
+{\em rb} & Nodo que representa el bloque de sentencias. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classdowhileNode_a347c599237629fdd55071a78a693d351}{\index{dowhile\-Node@{dowhile\-Node}!run@{run}}
+\index{run@{run}!dowhileNode@{dowhile\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void dowhile\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdowhileNode_a347c599237629fdd55071a78a693d351}
+Método que ejecuta el nodo. Ejecuta el bloque de sentencias, luego ejecuta y evalúa la condición. Si esta es positiva vuelve a repetir el proceso. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+\hypertarget{classorNode}{\section{Referencia de la Clase or\-Node}
+\label{classorNode}\index{or\-Node@{or\-Node}}
+}
+
+
+Nodo operador O\-R.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de or\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classorNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorNode_a29bb6481e2ea78693d3f4c2ff3c5d7af}{or\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\item 
+void \hyperlink{classorNode_a326d03128c3fd68b03749eb6d9c31ec3}{run} ()
+\item 
+bool \hyperlink{classorNode_ac77151e938ad86e4984215f7d41160d9}{do\-\_\-or} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador O\-R. 
+
+Este nodo implementa una operación lógica O\-R entre dos nodos asociados.
+
+Para llevar a cabo la operación lógica O\-R se realiza una evaluación en cortocircuito, donde el valor del nodo O\-R es el último valor evaluado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classorNode_a29bb6481e2ea78693d3f4c2ff3c5d7af}{\index{or\-Node@{or\-Node}!or\-Node@{or\-Node}}
+\index{or\-Node@{or\-Node}!orNode@{or\-Node}}
+\subsubsection[{or\-Node}]{\setlength{\rightskip}{0pt plus 5cm}or\-Node\-::or\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)}}\label{classorNode_a29bb6481e2ea78693d3f4c2ff3c5d7af}
+Constructor de la clase. Asocia los nodos operandos. 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classorNode_ac77151e938ad86e4984215f7d41160d9}{\index{or\-Node@{or\-Node}!do\-\_\-or@{do\-\_\-or}}
+\index{do\-\_\-or@{do\-\_\-or}!orNode@{or\-Node}}
+\subsubsection[{do\-\_\-or}]{\setlength{\rightskip}{0pt plus 5cm}bool or\-Node\-::do\-\_\-or (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)}}\label{classorNode_ac77151e938ad86e4984215f7d41160d9}
+Ejecuta la operación O\-R entre dos nodos dados. 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classorNode_a326d03128c3fd68b03749eb6d9c31ec3}{\index{or\-Node@{or\-Node}!run@{run}}
+\index{run@{run}!orNode@{or\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void or\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classorNode_a326d03128c3fd68b03749eb6d9c31ec3}
+Función de ejecución. Procede a la ejecución de los nodos asociados. Toma como valor una referencia al último nodo evaluado según la operación O\-R. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

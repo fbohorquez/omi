@@ -1,0 +1,670 @@
+\hypertarget{classsTable}{\section{Referencia de la Clase s\-Table}
+\label{classsTable}\index{s\-Table@{s\-Table}}
+}
+
+
+Contexto de tablas de símbolos.  
+
+
+
+
+{\ttfamily \#include $<$s\-Table.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsTable_aa49680811a00fdc1ed3c5c6d6f897f5c}{s\-Table} ()
+\item 
+\hyperlink{classsTable_a94e2bc853ab9d66eac74299d83c26a27}{s\-Table} (\hyperlink{classsTable}{s\-Table} $\ast$s)
+\item 
+void \hyperlink{classsTable_aa547c576101026db1b4db5ce10d93153}{mklevel} (\hyperlink{classsymbolsTable}{symbols} $\ast$default\-\_\-level=N\-U\-L\-L)
+\item 
+\hyperlink{classsymbolsTable}{symbols} $\ast$ \hyperlink{classsTable_aa3625d4ea455f68e3387f8df76b284b2}{currentlevel} ()
+\item 
+void \hyperlink{classsTable_a2633260b2d4749f726dd1024af528648}{rmlevel} ()
+\item 
+void \hyperlink{classsTable_ab4b189e89f314dfd49b7597b1602fad1}{add} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classsTable_ae5775575a308bed2519d4d1df536e394}{addfunction} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classsTable_ad6c4483ab1c03f49d6c74082af4bec81}{addclass} (\hyperlink{classrunNode}{run\-Node} $\ast$str, \hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsTable_a189bea4924d3909768828ab801da35f1}{access} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsTable_af62e21512f5ee4e0b20e65e576e25594}{accessfunction} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsTable_a957f301c4be9bef777ba9cda087f5b21}{accessclass} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classsTable_a2fc47d83ff9f0f97ded0902e18189d20}{clear} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+bool \hyperlink{classsTable_aa000ee3b3d80be90d345dacd8ce406ad}{exist} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+bool \hyperlink{classsTable_a1b4595dd00dc0044b400d097614776d0}{existfunction} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+bool \hyperlink{classsTable_add44366e5b9bb92807dbcb1a101d41e4}{existclass} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+int \hyperlink{classsTable_a1a0f2aef31fd214a7f38b05842684462}{get\-Level} () const 
+\item 
+int \hyperlink{classsTable_a71d0d14cf7c982b67c875f0b33ccddc9}{get\-Level\-Top} () const 
+\item 
+void \hyperlink{classsTable_a257736173d31de237fdb226e85cb561d}{set\-Level} (int l)
+\item 
+void \hyperlink{classsTable_ae5edea4fbd5a5046fe39d849b81ab0a7}{print} ()
+\item 
+void \hyperlink{classsTable_aa73eab281df7f3bb53a22f3e28d6a6a9}{fprint} ()
+\item 
+void \hyperlink{classsTable_a63a951aec8df80400dc60aa7ab241442}{cprint} ()
+\item 
+\hyperlink{classsymbolsTable}{symbols} $\ast$ \hyperlink{classsTable_ab97a20a919412e2c0e2e031fe1262233}{get\-Table} ()
+\item 
+\hyperlink{classsymbolsTable}{symbols} \hyperlink{classsTable_a9a9a56a7e8fc4a6fcabf4366ad8e3d22}{get\-Functions} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsTable_a3db1d8ca136cb466440f7c356863d7fc}{get\-Function} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsTable_a0565e905480646205354beddf3f2e664}{get\-Function\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classsTable_a4743ef61fd3a1f986587697805cb9f1e}{set\-Function} (\hyperlink{classrunNode}{run\-Node} $\ast$key, \hyperlink{classrunNode}{run\-Node} $\ast$exp)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsTable_a47f0f1fc8f20deb57f350e2eefde9d83}{get\-Element} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+\hyperlink{classrefNode}{ref\-Node} $\ast$ \hyperlink{classsTable_a8d004fe344c39d0a12b9a31eac88bda6}{get\-Element\-Ref} (\hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classsTable_acc9ee84140d1aa2f586c2541687b285e}{set\-Node\-Use} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsTable_a97d52825fb8e4571a780b257c082a45e}{get\-Node\-Use} () const 
+\item 
+void \hyperlink{classsTable_ae592b4a5fa6df887ef21fed0c1cfa587}{set\-Private} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+bool \hyperlink{classsTable_adefd95f6a1d88c4c180e6c08ce037960}{is\-Private} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classsTable_adff617e6b26897dbc6131ab37ac171b5}{set\-Delete\-Current\-Level} (bool del)
+\item 
+bool \hyperlink{classsTable_a02f8d69679f8ead24f9bd28070f707ff}{isref} (\hyperlink{classrunNode}{run\-Node} $\ast$node, int level\-\_\-see)
+\item 
+bool \hyperlink{classsTable_a58214a193d122d4179a05dc35b8e18ca}{isref\-All} (\hyperlink{classrunNode}{run\-Node} $\ast$node, int level\-\_\-see)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classsTable_ae50e5b871b157a7e303874cab9d1c1e6}{sys\-\_\-s\-Table} ()
+\item 
+static \hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classsTable_a70b8494bbbfce6a36fe142c47f93a2ba}{new\-\_\-s\-Table} (bool level\-\_\-default=true)
+\item 
+static \hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classsTable_aa9e8ad51141bccf1f81d315dcbad8f01}{new\-\_\-s\-Table} (\hyperlink{classsTable}{s\-Table} $\ast$s, bool level\-\_\-default=true)
+\item 
+static void \hyperlink{classsTable_a46c5b38a9f85db63c323731048798175}{add\-\_\-s\-Table} (\hyperlink{classsTable}{s\-Table} $\ast$s)
+\item 
+static int \hyperlink{classsTable_a88a04f5451d37ea5b84cb65da081a7de}{search\-\_\-s\-Table} (\hyperlink{classsTable}{s\-Table} $\ast$s)
+\item 
+static void \hyperlink{classsTable_a1bf90aedd295e313dc5296828bb407d2}{set\-Global} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classsymbolsTable}{symbols} $\ast$ $>$ \hyperlink{classsTable_a826fb8438b2b8475ef3328b0f0342fd2}{tables\-\_\-}
+\item 
+int \hyperlink{classsTable_a549ab9d5d0aad41d8289c693de39d328}{level\-\_\-}
+\item 
+\hyperlink{classsymbolsTable}{symbols} \hyperlink{classsTable_ac39633c58e4f659879f0292af0a3ea48}{functions\-\_\-}
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsTable_a7f0eed1e3a2f06e80900d4034d7c7e25}{node\-\_\-use\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classsTable_a80ddd01254b180d81bf0264e353bf7eb}{s\-Table\-\_\-use} = N\-U\-L\-L
+\item 
+static \hyperlink{classsTable}{s\-Table} $\ast$ \hyperlink{classsTable_a8c9904b43ec79f00b72d19b7e93fe80e}{s\-Table\-\_\-ini} = N\-U\-L\-L
+\item 
+static \hyperlink{classsymbolsTable}{symbols} \hyperlink{classsTable_ae3ed8713b34d93d63addf914333c9766}{class\-\_\-}
+\item 
+static vector$<$ \hyperlink{classsTable}{s\-Table} $\ast$ $>$ \hyperlink{classsTable_a4f5d3240bb31d3f77e72e81d4c18cdf4}{s\-Tables\-\_\-}
+\item 
+static map$<$ \hyperlink{classrunNode}{run\-Node} $\ast$, \hyperlink{classrefNode}{ref\-Node} \\*
+$\ast$, \hyperlink{structcmp__runNode}{cmp\-\_\-run\-Node} $>$ \hyperlink{classsTable_a1f57f04be1d59b8c5ac8c58afc2a2687}{globals\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Contexto de tablas de símbolos. 
+
+La tabla de símbolos es una estructura de datos que sirve para guardar referencias a nodos creados dinámicamente.
+
+Gracias a la tabla de símbolos es posible que durante el recorrido de una determinada rama del árbol de ejecución se cree un nodo en memoria dinámica que será utilizado en ramas posteriores. Para ello en la tabla de símbolos se crea un nodo referencia que apunta al valor creado. De esta forma, con solo conocer la clave de la referencia, es posible acceder al nodo creado en cualquier momento posterior de la ejecución.
+
+El contexto se define mediante tres tablas de símbolos\-:
+
+
+\begin{DoxyItemize}
+\item Tabla de variables
+\item Tabla de funciones
+\item Tabla de clases
+\end{DoxyItemize}
+
+Adicionalmente puede tener una tabla de símbolos de acceso global.
+
+La primera puede contener referencias a cualquier tipo de nodo, aunque la gramática hace que sólo existan referencias a nodos de tipos de datos (arrays, strings...) o a nodos etiquetas. La tabla de funciones guarda referencia a nodos de este tipo. Análogamente, la tabla de clases guarda referencias a las nodos de tipo clase.
+
+La tabla de variables se estructura en varios niveles. Así las claves de un nivel generalmente no son accesibles desde ejecuciones que se realicen en otro. Esto establece un ámbito para las claves de la tabla de símbolo.
+
+La tabla de funciones y de clases solo consta de un nivel.
+
+Para acceder a la tabla de símbolos se utilizan una serie de clases de nodos que funcionan como interfaz.
+
+Se debe destacar que puede haber más de una tabla de un contexto. Elementos como las clases disponen de su propio contexto. Se define pues el concepto de contexto activo, que no es más que una referencia al contexto sobre la que se debe operar.
+
+Los contextos puede tener ligados un nodo ejecutable. Este nodo, denominado nodo en uso o activo, es aquel que trabaja sobre los elementos de las tablas. Así un nodo clase, por ejemplo, el contexto de una clase estará relacionado con la propia clase. Se crea así una referencia en doble sentido que permite, conociendo un contexto, obtener el elemento que opera sobra ella.
+
+Se define el contexto principal como el primer contexto que se crea en la ejecución. Este es añadido a una lista de contextos. Cuando otro contexto fuera a ser usado es puesto al final de la lista hasta que finaliza su uso.
+
+Esta clase proporciona métodos estáticos para manipular el sistema de tablas en ejecución.
+
+\begin{DoxySeeAlso}{Ver también}
+symbols 
+\end{DoxySeeAlso}
+
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsTable_aa49680811a00fdc1ed3c5c6d6f897f5c}{\index{s\-Table@{s\-Table}!s\-Table@{s\-Table}}
+\index{s\-Table@{s\-Table}!sTable@{s\-Table}}
+\subsubsection[{s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}s\-Table\-::s\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_aa49680811a00fdc1ed3c5c6d6f897f5c}
+Constructor que inicializa un nuevo contexto de tablas de símbolos. \hypertarget{classsTable_a94e2bc853ab9d66eac74299d83c26a27}{\index{s\-Table@{s\-Table}!s\-Table@{s\-Table}}
+\index{s\-Table@{s\-Table}!sTable@{s\-Table}}
+\subsubsection[{s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}s\-Table\-::s\-Table (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Table} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a94e2bc853ab9d66eac74299d83c26a27}
+Constructor copia. Crea un contexto a partir de otro. Para ello se copian por valor los elementos de las distintas estructuras que los forman. 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Contexto a copiar \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsTable_a189bea4924d3909768828ab801da35f1}{\index{s\-Table@{s\-Table}!access@{access}}
+\index{access@{access}!sTable@{s\-Table}}
+\subsubsection[{access}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ s\-Table\-::access (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a189bea4924d3909768828ab801da35f1}
+Obtiene la referencia del nivel actual de la tabla de variables correspondiente a la clave dada. Si la clave no se encuentra se crea y devuelve una referencia que apunta a un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave relativa a la referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia dada por la clave. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a957f301c4be9bef777ba9cda087f5b21}{\index{s\-Table@{s\-Table}!accessclass@{accessclass}}
+\index{accessclass@{accessclass}!sTable@{s\-Table}}
+\subsubsection[{accessclass}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ s\-Table\-::accessclass (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a957f301c4be9bef777ba9cda087f5b21}
+Obtiene la referencia de la tabla de clases correspondiente a la clave dada. Si la clave no se encuentra se crea y devuelve una referencia que apunta a un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave relativa a la referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia dada por la clave. 
+\end{DoxyReturn}
+\hypertarget{classsTable_af62e21512f5ee4e0b20e65e576e25594}{\index{s\-Table@{s\-Table}!accessfunction@{accessfunction}}
+\index{accessfunction@{accessfunction}!sTable@{s\-Table}}
+\subsubsection[{accessfunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ s\-Table\-::accessfunction (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_af62e21512f5ee4e0b20e65e576e25594}
+Obtiene la referencia de la tabla de funciones correspondiente a la clave dada. Si la clave no se encuentra se crea y devuelve una referencia que apunta a un nodo nulo. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave relativa a la referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia dada por la clave. 
+\end{DoxyReturn}
+\hypertarget{classsTable_ab4b189e89f314dfd49b7597b1602fad1}{\index{s\-Table@{s\-Table}!add@{add}}
+\index{add@{add}!sTable@{s\-Table}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ab4b189e89f314dfd49b7597b1602fad1}
+Añade un referencia con la clave dada en el nivel actual de la tabla de variables. La referencia apuntará al nodo dado. Si ya existía una referencia con dicha clave se elimina el valor anterior. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave para la referencia. \\
+\hline
+{\em node} & Nodo al que apuntará la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_a46c5b38a9f85db63c323731048798175}{\index{s\-Table@{s\-Table}!add\-\_\-s\-Table@{add\-\_\-s\-Table}}
+\index{add\-\_\-s\-Table@{add\-\_\-s\-Table}!sTable@{s\-Table}}
+\subsubsection[{add\-\_\-s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::add\-\_\-s\-Table (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Table} $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a46c5b38a9f85db63c323731048798175}
+Añade un contexto a la lista de contextos en ejecución. 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Contexto a añadir. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_ad6c4483ab1c03f49d6c74082af4bec81}{\index{s\-Table@{s\-Table}!addclass@{addclass}}
+\index{addclass@{addclass}!sTable@{s\-Table}}
+\subsubsection[{addclass}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::addclass (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ad6c4483ab1c03f49d6c74082af4bec81}
+Añade un referencia con la clave dada a la tabla de clases. La referencia apuntará al nodo dado. Si ya existía una referencia con dicha clave se elimina el valor anterior. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave para la referencia. \\
+\hline
+{\em node} & Nodo al que apuntará la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_ae5775575a308bed2519d4d1df536e394}{\index{s\-Table@{s\-Table}!addfunction@{addfunction}}
+\index{addfunction@{addfunction}!sTable@{s\-Table}}
+\subsubsection[{addfunction}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::addfunction (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str, }
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ae5775575a308bed2519d4d1df536e394}
+Añade un referencia con la clave dada a la tabla de funciones. La referencia apuntará al nodo dado. Si ya existía una referencia con dicha clave se elimina el valor anterior. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Clave para la referencia. \\
+\hline
+{\em node} & Nodo al que apuntará la referencia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_a2fc47d83ff9f0f97ded0902e18189d20}{\index{s\-Table@{s\-Table}!clear@{clear}}
+\index{clear@{clear}!sTable@{s\-Table}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::clear (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a2fc47d83ff9f0f97ded0902e18189d20}
+Elimina el elemento del nivel actual de la tabla de variables referenciado por la clave dada. Luego elimina la referencia. \hypertarget{classsTable_a63a951aec8df80400dc60aa7ab241442}{\index{s\-Table@{s\-Table}!cprint@{cprint}}
+\index{cprint@{cprint}!sTable@{s\-Table}}
+\subsubsection[{cprint}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::cprint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a63a951aec8df80400dc60aa7ab241442}
+Método para la depuración del intérprete que imprime el contenido de la tabla de clases. \hypertarget{classsTable_aa3625d4ea455f68e3387f8df76b284b2}{\index{s\-Table@{s\-Table}!currentlevel@{currentlevel}}
+\index{currentlevel@{currentlevel}!sTable@{s\-Table}}
+\subsubsection[{currentlevel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} $\ast$ s\-Table\-::currentlevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_aa3625d4ea455f68e3387f8df76b284b2}
+Obtiene el nivel actual de la tabla de variables \begin{DoxyReturn}{Devuelve}
+Tabla de variables correspondiente al nivel actual. 
+\end{DoxyReturn}
+\hypertarget{classsTable_aa000ee3b3d80be90d345dacd8ce406ad}{\index{s\-Table@{s\-Table}!exist@{exist}}
+\index{exist@{exist}!sTable@{s\-Table}}
+\subsubsection[{exist}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::exist (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_aa000ee3b3d80be90d345dacd8ce406ad}
+Devuelve un booleano que indica si existe en el nivel actual de la tabla de variables una clave str. \begin{DoxyReturn}{Devuelve}
+Booleano que determina si existe una variable dada. 
+\end{DoxyReturn}
+\hypertarget{classsTable_add44366e5b9bb92807dbcb1a101d41e4}{\index{s\-Table@{s\-Table}!existclass@{existclass}}
+\index{existclass@{existclass}!sTable@{s\-Table}}
+\subsubsection[{existclass}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::existclass (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_add44366e5b9bb92807dbcb1a101d41e4}
+Devuelve un booleano que indica si existe en la tabla de clases una clave str. \begin{DoxyReturn}{Devuelve}
+Booleano que determina si existe una clase dada. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a1b4595dd00dc0044b400d097614776d0}{\index{s\-Table@{s\-Table}!existfunction@{existfunction}}
+\index{existfunction@{existfunction}!sTable@{s\-Table}}
+\subsubsection[{existfunction}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::existfunction (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a1b4595dd00dc0044b400d097614776d0}
+Devuelve un booleano que indica si existe en la tabla de funciones una clave str. \begin{DoxyReturn}{Devuelve}
+Booleano que determina si existe una función dada. 
+\end{DoxyReturn}
+\hypertarget{classsTable_aa73eab281df7f3bb53a22f3e28d6a6a9}{\index{s\-Table@{s\-Table}!fprint@{fprint}}
+\index{fprint@{fprint}!sTable@{s\-Table}}
+\subsubsection[{fprint}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::fprint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_aa73eab281df7f3bb53a22f3e28d6a6a9}
+Método para la depuración del intérprete que imprime el contenido de la tabla de funciones. \hypertarget{classsTable_a47f0f1fc8f20deb57f350e2eefde9d83}{\index{s\-Table@{s\-Table}!get\-Element@{get\-Element}}
+\index{get\-Element@{get\-Element}!sTable@{s\-Table}}
+\subsubsection[{get\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ s\-Table\-::get\-Element (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a47f0f1fc8f20deb57f350e2eefde9d83}
+Obtiene el valor de la referencia dada por la clave facilitada en el nivel actual de la tabla de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo o N\-U\-L\-L si no existe la referencia. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a8d004fe344c39d0a12b9a31eac88bda6}{\index{s\-Table@{s\-Table}!get\-Element\-Ref@{get\-Element\-Ref}}
+\index{get\-Element\-Ref@{get\-Element\-Ref}!sTable@{s\-Table}}
+\subsubsection[{get\-Element\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ s\-Table\-::get\-Element\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a8d004fe344c39d0a12b9a31eac88bda6}
+Obtiene la referencia dada por la clave facilitada en el nivel actual de la tabla de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia o N\-U\-L\-L si no existe la referencia. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a3db1d8ca136cb466440f7c356863d7fc}{\index{s\-Table@{s\-Table}!get\-Function@{get\-Function}}
+\index{get\-Function@{get\-Function}!sTable@{s\-Table}}
+\subsubsection[{get\-Function}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ s\-Table\-::get\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a3db1d8ca136cb466440f7c356863d7fc}
+Obtiene el valor la referencia dada por la clave facilitada en la tabla de funciones. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo función o N\-U\-L\-L si no existe la referencia. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a0565e905480646205354beddf3f2e664}{\index{s\-Table@{s\-Table}!get\-Function\-Ref@{get\-Function\-Ref}}
+\index{get\-Function\-Ref@{get\-Function\-Ref}!sTable@{s\-Table}}
+\subsubsection[{get\-Function\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\-Node} $\ast$ s\-Table\-::get\-Function\-Ref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a0565e905480646205354beddf3f2e664}
+Obtiene la referencia dada por la clave facilitada en la tabla de funciones. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nodo referencia o N\-U\-L\-L si no existe la referencia. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a9a9a56a7e8fc4a6fcabf4366ad8e3d22}{\index{s\-Table@{s\-Table}!get\-Functions@{get\-Functions}}
+\index{get\-Functions@{get\-Functions}!sTable@{s\-Table}}
+\subsubsection[{get\-Functions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} s\-Table\-::get\-Functions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a9a9a56a7e8fc4a6fcabf4366ad8e3d22}
+Obtiene la tabla de símbolos funciones. \begin{DoxyReturn}{Devuelve}
+Tabla de funciones. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a1a0f2aef31fd214a7f38b05842684462}{\index{s\-Table@{s\-Table}!get\-Level@{get\-Level}}
+\index{get\-Level@{get\-Level}!sTable@{s\-Table}}
+\subsubsection[{get\-Level}]{\setlength{\rightskip}{0pt plus 5cm}int s\-Table\-::get\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsTable_a1a0f2aef31fd214a7f38b05842684462}
+Obtiene el nivel actual de la tabla de variables. \begin{DoxyReturn}{Devuelve}
+Entero que indica el nivel actual de la tabla de símbolos de variables. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a71d0d14cf7c982b67c875f0b33ccddc9}{\index{s\-Table@{s\-Table}!get\-Level\-Top@{get\-Level\-Top}}
+\index{get\-Level\-Top@{get\-Level\-Top}!sTable@{s\-Table}}
+\subsubsection[{get\-Level\-Top}]{\setlength{\rightskip}{0pt plus 5cm}int s\-Table\-::get\-Level\-Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsTable_a71d0d14cf7c982b67c875f0b33ccddc9}
+Obtiene el nivel superior de la tabla de variables. \begin{DoxyReturn}{Devuelve}
+Entero que representa el nivel superior de la tabla de variables. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a97d52825fb8e4571a780b257c082a45e}{\index{s\-Table@{s\-Table}!get\-Node\-Use@{get\-Node\-Use}}
+\index{get\-Node\-Use@{get\-Node\-Use}!sTable@{s\-Table}}
+\subsubsection[{get\-Node\-Use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ s\-Table\-::get\-Node\-Use (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsTable_a97d52825fb8e4571a780b257c082a45e}
+Devuelve el elemento en uso. Este elemento será aquel asociado al contexto. \begin{DoxyReturn}{Devuelve}
+Nodo que hace uso del contexto. 
+\end{DoxyReturn}
+\hypertarget{classsTable_ab97a20a919412e2c0e2e031fe1262233}{\index{s\-Table@{s\-Table}!get\-Table@{get\-Table}}
+\index{get\-Table@{get\-Table}!sTable@{s\-Table}}
+\subsubsection[{get\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} $\ast$ s\-Table\-::get\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ab97a20a919412e2c0e2e031fe1262233}
+Obtiene la tabla de símbolos variables. \begin{DoxyReturn}{Devuelve}
+Tabla de variables. 
+\end{DoxyReturn}
+\hypertarget{classsTable_adefd95f6a1d88c4c180e6c08ce037960}{\index{s\-Table@{s\-Table}!is\-Private@{is\-Private}}
+\index{is\-Private@{is\-Private}!sTable@{s\-Table}}
+\subsubsection[{is\-Private}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::is\-Private (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_adefd95f6a1d88c4c180e6c08ce037960}
+Determina si un identificador presenta la etiqueta de privado dentro del contexto. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Nodo que hace de identificador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Booleano que determina si el identificador es privado. 
+\end{DoxyReturn}
+\hypertarget{classsTable_a02f8d69679f8ead24f9bd28070f707ff}{\index{s\-Table@{s\-Table}!isref@{isref}}
+\index{isref@{isref}!sTable@{s\-Table}}
+\subsubsection[{isref}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::isref (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{int}]{level\-\_\-see}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a02f8d69679f8ead24f9bd28070f707ff}
+Determina si existe una referencia a un nodo desde un nivel distinto a level\-\_\-see. \hypertarget{classsTable_a58214a193d122d4179a05dc35b8e18ca}{\index{s\-Table@{s\-Table}!isref\-All@{isref\-All}}
+\index{isref\-All@{isref\-All}!sTable@{s\-Table}}
+\subsubsection[{isref\-All}]{\setlength{\rightskip}{0pt plus 5cm}bool s\-Table\-::isref\-All (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node, }
+\item[{int}]{level\-\_\-see}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a58214a193d122d4179a05dc35b8e18ca}
+Determina si existe una referencia a un nodo desde cualquier tabla de símbolos. \hypertarget{classsTable_aa547c576101026db1b4db5ce10d93153}{\index{s\-Table@{s\-Table}!mklevel@{mklevel}}
+\index{mklevel@{mklevel}!sTable@{s\-Table}}
+\subsubsection[{mklevel}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::mklevel (
+\begin{DoxyParamCaption}
+\item[{{\bf symbols} $\ast$}]{default\-\_\-level = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classsTable_aa547c576101026db1b4db5ce10d93153}
+Crea un nivel en la tabla de variables \hypertarget{classsTable_a70b8494bbbfce6a36fe142c47f93a2ba}{\index{s\-Table@{s\-Table}!new\-\_\-s\-Table@{new\-\_\-s\-Table}}
+\index{new\-\_\-s\-Table@{new\-\_\-s\-Table}!sTable@{s\-Table}}
+\subsubsection[{new\-\_\-s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table} $\ast$ s\-Table\-::new\-\_\-s\-Table (
+\begin{DoxyParamCaption}
+\item[{bool}]{level\-\_\-default = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a70b8494bbbfce6a36fe142c47f93a2ba}
+Crea una contexto nuevo y lo introduce en la lista de contextos en ejecución. 
+\begin{DoxyParams}{Parámetros}
+{\em level\-\_\-default} & Indica si la tabla de variables del contexto creado comienza con el primer nivel de la tabla del contexto actual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Contexto creado. 
+\end{DoxyReturn}
+\hypertarget{classsTable_aa9e8ad51141bccf1f81d315dcbad8f01}{\index{s\-Table@{s\-Table}!new\-\_\-s\-Table@{new\-\_\-s\-Table}}
+\index{new\-\_\-s\-Table@{new\-\_\-s\-Table}!sTable@{s\-Table}}
+\subsubsection[{new\-\_\-s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table} $\ast$ s\-Table\-::new\-\_\-s\-Table (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Table} $\ast$}]{s, }
+\item[{bool}]{level\-\_\-default = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_aa9e8ad51141bccf1f81d315dcbad8f01}
+Devuelve un contexto nuevo, creado a partir de uno dado. Además mete en la lista de tablas de símbolos en ejecución la nueva tabla. La tabla creada contiene el primer nivel de la tabla variables de la tabla de símbolos inicial, además de la tabla de funciones y de clases. \hypertarget{classsTable_ae5edea4fbd5a5046fe39d849b81ab0a7}{\index{s\-Table@{s\-Table}!print@{print}}
+\index{print@{print}!sTable@{s\-Table}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ae5edea4fbd5a5046fe39d849b81ab0a7}
+Método para la depuración del intérprete que imprime el contenido de la tabla de variables. \hypertarget{classsTable_a2633260b2d4749f726dd1024af528648}{\index{s\-Table@{s\-Table}!rmlevel@{rmlevel}}
+\index{rmlevel@{rmlevel}!sTable@{s\-Table}}
+\subsubsection[{rmlevel}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::rmlevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a2633260b2d4749f726dd1024af528648}
+Elimina las referencias del nivel actual. Por último cambia el nivel actual al nivel anterior. \hypertarget{classsTable_a88a04f5451d37ea5b84cb65da081a7de}{\index{s\-Table@{s\-Table}!search\-\_\-s\-Table@{search\-\_\-s\-Table}}
+\index{search\-\_\-s\-Table@{search\-\_\-s\-Table}!sTable@{s\-Table}}
+\subsubsection[{search\-\_\-s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}int s\-Table\-::search\-\_\-s\-Table (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Table} $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a88a04f5451d37ea5b84cb65da081a7de}
+Busca un contexto en la lista de contextos en ejecución. Devuelve la posición en la que se encuentra. 
+\begin{DoxyParams}{Parámetros}
+{\em s} & Contexto a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Posición en la que se encuentra o -\/1 en caso de no encontrarse. 
+\end{DoxyReturn}
+\hypertarget{classsTable_adff617e6b26897dbc6131ab37ac171b5}{\index{s\-Table@{s\-Table}!set\-Delete\-Current\-Level@{set\-Delete\-Current\-Level}}
+\index{set\-Delete\-Current\-Level@{set\-Delete\-Current\-Level}!sTable@{s\-Table}}
+\subsubsection[{set\-Delete\-Current\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Delete\-Current\-Level (
+\begin{DoxyParamCaption}
+\item[{bool}]{del}
+\end{DoxyParamCaption}
+)}}\label{classsTable_adff617e6b26897dbc6131ab37ac171b5}
+Determina si el nivel actual de la tabla de símbolos de variables debe ser eliminado al disminuir el nivel. 
+\begin{DoxyParams}{Parámetros}
+{\em del} & Booleano que indica si se ha de eliminar el nivel actual de la tabla del símbolos. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_a4743ef61fd3a1f986587697805cb9f1e}{\index{s\-Table@{s\-Table}!set\-Function@{set\-Function}}
+\index{set\-Function@{set\-Function}!sTable@{s\-Table}}
+\subsubsection[{set\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{key, }
+\item[{{\bf run\-Node} $\ast$}]{exp}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a4743ef61fd3a1f986587697805cb9f1e}
+Se añade una referencia a la tabla de funciones que apunta al nodo dado. 
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave. \\
+\hline
+{\em exp} & Valor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_a1bf90aedd295e313dc5296828bb407d2}{\index{s\-Table@{s\-Table}!set\-Global@{set\-Global}}
+\index{set\-Global@{set\-Global}!sTable@{s\-Table}}
+\subsubsection[{set\-Global}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Global (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a1bf90aedd295e313dc5296828bb407d2}
+Busca una tabla de símbolos en la lista de tablas en ejecución. Devuelve la posición en la que se encuentra en la tabla. \hypertarget{classsTable_a257736173d31de237fdb226e85cb561d}{\index{s\-Table@{s\-Table}!set\-Level@{set\-Level}}
+\index{set\-Level@{set\-Level}!sTable@{s\-Table}}
+\subsubsection[{set\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Level (
+\begin{DoxyParamCaption}
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}\label{classsTable_a257736173d31de237fdb226e85cb561d}
+Método modificador que cambia el nivel actual de la tabla de variables. 
+\begin{DoxyParams}{Parámetros}
+{\em l} & Nivel \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_acc9ee84140d1aa2f586c2541687b285e}{\index{s\-Table@{s\-Table}!set\-Node\-Use@{set\-Node\-Use}}
+\index{set\-Node\-Use@{set\-Node\-Use}!sTable@{s\-Table}}
+\subsubsection[{set\-Node\-Use}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Node\-Use (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classsTable_acc9ee84140d1aa2f586c2541687b285e}
+Asigna el elemento en uso. Este elemento será aquel asociado al contexto. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo que hace uso del contexto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_ae592b4a5fa6df887ef21fed0c1cfa587}{\index{s\-Table@{s\-Table}!set\-Private@{set\-Private}}
+\index{set\-Private@{set\-Private}!sTable@{s\-Table}}
+\subsubsection[{set\-Private}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Table\-::set\-Private (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsTable_ae592b4a5fa6df887ef21fed0c1cfa587}
+Le añade a un identificador la etiqueta de privado dentro del contexto. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Nodo que hace de identificador. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsTable_ae50e5b871b157a7e303874cab9d1c1e6}{\index{s\-Table@{s\-Table}!sys\-\_\-s\-Table@{sys\-\_\-s\-Table}}
+\index{sys\-\_\-s\-Table@{sys\-\_\-s\-Table}!sTable@{s\-Table}}
+\subsubsection[{sys\-\_\-s\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table} $\ast$ s\-Table\-::sys\-\_\-s\-Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_ae50e5b871b157a7e303874cab9d1c1e6}
+Inicializa el sistema de contextos de tablas de símbolos. Para ello crea un nuevo contexto que será el inicial, y lo introduce en la lista de contextos en ejecución. \begin{DoxyReturn}{Devuelve}
+Contexto creado 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classsTable_ae3ed8713b34d93d63addf914333c9766}{\index{s\-Table@{s\-Table}!class\-\_\-@{class\-\_\-}}
+\index{class\-\_\-@{class\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{class\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} s\-Table\-::class\-\_\-\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_ae3ed8713b34d93d63addf914333c9766}
+Tabla de clases. \hypertarget{classsTable_ac39633c58e4f659879f0292af0a3ea48}{\index{s\-Table@{s\-Table}!functions\-\_\-@{functions\-\_\-}}
+\index{functions\-\_\-@{functions\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{functions\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf symbols} s\-Table\-::functions\-\_\-}}\label{classsTable_ac39633c58e4f659879f0292af0a3ea48}
+Tabla de funciones. \hypertarget{classsTable_a1f57f04be1d59b8c5ac8c58afc2a2687}{\index{s\-Table@{s\-Table}!globals\-\_\-@{globals\-\_\-}}
+\index{globals\-\_\-@{globals\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{globals\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ {\bf run\-Node} $\ast$, {\bf ref\-Node} $\ast$, {\bf cmp\-\_\-run\-Node} $>$ s\-Table\-::globals\-\_\-\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a1f57f04be1d59b8c5ac8c58afc2a2687}
+Tabla de elementos globales. \hypertarget{classsTable_a549ab9d5d0aad41d8289c693de39d328}{\index{s\-Table@{s\-Table}!level\-\_\-@{level\-\_\-}}
+\index{level\-\_\-@{level\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{level\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int s\-Table\-::level\-\_\-}}\label{classsTable_a549ab9d5d0aad41d8289c693de39d328}
+Nivel máximo de la tabla de variables. \hypertarget{classsTable_a7f0eed1e3a2f06e80900d4034d7c7e25}{\index{s\-Table@{s\-Table}!node\-\_\-use\-\_\-@{node\-\_\-use\-\_\-}}
+\index{node\-\_\-use\-\_\-@{node\-\_\-use\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{node\-\_\-use\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node}$\ast$ s\-Table\-::node\-\_\-use\-\_\-}}\label{classsTable_a7f0eed1e3a2f06e80900d4034d7c7e25}
+Referencia al nodo asociado al contexto. Representa el nodo en uso.
+
+Si es N\-U\-L\-L significa que el contexto no se encuentra ligado a ningún elemento concreto y se trata con carácter global. \hypertarget{classsTable_a8c9904b43ec79f00b72d19b7e93fe80e}{\index{s\-Table@{s\-Table}!s\-Table\-\_\-ini@{s\-Table\-\_\-ini}}
+\index{s\-Table\-\_\-ini@{s\-Table\-\_\-ini}!sTable@{s\-Table}}
+\subsubsection[{s\-Table\-\_\-ini}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table} $\ast$ s\-Table\-::s\-Table\-\_\-ini = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a8c9904b43ec79f00b72d19b7e93fe80e}
+Guarda una referencia a la tabla de símbolos inicial. \hypertarget{classsTable_a80ddd01254b180d81bf0264e353bf7eb}{\index{s\-Table@{s\-Table}!s\-Table\-\_\-use@{s\-Table\-\_\-use}}
+\index{s\-Table\-\_\-use@{s\-Table\-\_\-use}!sTable@{s\-Table}}
+\subsubsection[{s\-Table\-\_\-use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Table} $\ast$ s\-Table\-::s\-Table\-\_\-use = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a80ddd01254b180d81bf0264e353bf7eb}
+Guarda una referencia a la tabla de símbolos activa. Si se cambia el valor de atributo todos los nodos trabajarán con la nueva tabla de símbolos. \hypertarget{classsTable_a4f5d3240bb31d3f77e72e81d4c18cdf4}{\index{s\-Table@{s\-Table}!s\-Tables\-\_\-@{s\-Tables\-\_\-}}
+\index{s\-Tables\-\_\-@{s\-Tables\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{s\-Tables\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf s\-Table} $\ast$ $>$ s\-Table\-::s\-Tables\-\_\-\hspace{0.3cm}{\ttfamily [static]}}}\label{classsTable_a4f5d3240bb31d3f77e72e81d4c18cdf4}
+Lista de tablas en ejecución. \hypertarget{classsTable_a826fb8438b2b8475ef3328b0f0342fd2}{\index{s\-Table@{s\-Table}!tables\-\_\-@{tables\-\_\-}}
+\index{tables\-\_\-@{tables\-\_\-}!sTable@{s\-Table}}
+\subsubsection[{tables\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf symbols} $\ast$$>$ s\-Table\-::tables\-\_\-}}\label{classsTable_a826fb8438b2b8475ef3328b0f0342fd2}
+Lista de Tabla de variables. 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{sTable_8h}{s\-Table.\-h}\item 
+trunk/src/run/table/s\-Table.\-cpp\end{DoxyCompactItemize}

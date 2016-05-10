@@ -1,0 +1,70 @@
+-- Suma
+1
+1
+2
+0
+-- Resta
+1
+-1
+0
+0
+-- Producto
+0
+0
+1
+0
+-- División
+ERROR[
+Error: file ./arith_operators.lsh line 22 => Division by zero
+dev: modNode: node 2 is 0
+]
+0
+1
+ERROR[
+Error: file ./arith_operators.lsh line 27 => Division by zero
+dev: modNode: node 2 is 0
+]
+-- Módulo
+ERROR[
+Error: file ./arith_operators.lsh line 31 => Division by zero
+dev: modNode: node 2 is 0
+]
+0
+0
+ERROR[
+Error: file ./arith_operators.lsh line 36 => Division by zero
+dev: modNode: node 2 is 0
+]
+Potencia
+1
+0
+1
+1
+Preincremento
+ERROR[
+Error: file ./arith_operators.lsh line 46 => data type error, Unknown operand
+dev: incasigNode: node is unknown operand 
+Error: file ./arith_operators.lsh line 47 => data type error, Unknown operand
+dev: incasigNode: node is unknown operand 
+]
+Postincremento
+ERROR[
+Error: file ./arith_operators.lsh line 52 => data type error, Unknown operand
+dev: asigincNode: node is unknown operand 
+Error: file ./arith_operators.lsh line 53 => data type error, Unknown operand
+dev: asigincNode: node is unknown operand 
+]
+Predecremento
+ERROR[
+Error: file ./arith_operators.lsh line 58 => data type error, Unknown operand
+dev: decasigNode: node is unknown operand 
+Error: file ./arith_operators.lsh line 59 => data type error, Unknown operand
+dev: decasigNode: node is unknown operand 
+]
+Postdecremento
+ERROR[
+Error: file ./arith_operators.lsh line 64 => data type error, Unknown operand
+dev: asigdecNode: node is unknown operand 
+Error: file ./arith_operators.lsh line 65 => data type error, Unknown operand
+dev: asigdecNode: node is unknown operand 
+]

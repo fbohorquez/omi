@@ -1,0 +1,10 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Vista general}{3}
+\contentsline {section}{\numberline {2}Introducci\IeC {\'o}n}{3}
+\contentsline {section}{\numberline {3}Requisitos previos}{3}
+\contentsline {section}{\numberline {4}Inventario de componentes}{3}
+\contentsline {subsection}{\numberline {4.1}Hardware}{3}
+\contentsline {subsection}{\numberline {4.2}Software}{4}
+\contentsline {section}{\numberline {5}Procedimiento de intalaci\IeC {\'o}n}{4}
+\contentsline {section}{\numberline {6}Pruebas de implantaci\IeC {\'o}n}{5}
+\contentsline {section}{\numberline {7}Procedimientos de operaci\IeC {\'o}n y nivel de servicio}{6}

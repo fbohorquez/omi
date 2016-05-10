@@ -1,0 +1,59 @@
+-- Igualdad
+false
+false
+true
+true
+-- Desigualdad
+true
+true
+false
+false
+-- Negación
+false
+true
+-- Mayor
+true
+false
+false
+false
+-- Menor
+false
+true
+false
+false
+-- Mayor o igual
+true
+false
+true
+true
+-- Menor o igual
+false
+true
+true
+true
+-- Idéntico
+false
+false
+true
+true
+-- No idéntico
+true
+true
+false
+false
+-- Is null
+false
+false
+-- Is empty
+false
+true
+-- AND
+false
+false
+true
+false
+-- OR
+true
+true
+true
+false

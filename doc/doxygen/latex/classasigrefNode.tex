@@ -1,0 +1,80 @@
+\hypertarget{classasigrefNode}{\section{Referencia de la Clase asigref\-Node}
+\label{classasigrefNode}\index{asigref\-Node@{asigref\-Node}}
+}
+
+
+Nodo asignación.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de asigref\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classasigrefNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classasigrefNode_a817c24e32d9c8d28298172ffe97978ba}{asigref\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classasigrefNode_a208e32830e6f43157a94d993c599ed00}{run} ()
+\item 
+void \hyperlink{classasigrefNode_ae88032a024d5e5033b53cac65f14b0c4}{set\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo asignación. 
+
+Este nodo es utilizado en las listas de parámetros e indica que un parámetro debe ser pasado por referencia.
+
+Al ejecutarse se asigna una referencia al nodo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classasigrefNode_a817c24e32d9c8d28298172ffe97978ba}{\index{asigref\-Node@{asigref\-Node}!asigref\-Node@{asigref\-Node}}
+\index{asigref\-Node@{asigref\-Node}!asigrefNode@{asigref\-Node}}
+\subsubsection[{asigref\-Node}]{\setlength{\rightskip}{0pt plus 5cm}asigref\-Node\-::asigref\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classasigrefNode_a817c24e32d9c8d28298172ffe97978ba}
+Construcutor de la clase que asocia los nodos al nodo operación de asignación de referencia. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Nodo sobre el que se realizará la asignación \\
+\hline
+{\em node2} & Nodo que será asignado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classasigrefNode_a208e32830e6f43157a94d993c599ed00}{\index{asigref\-Node@{asigref\-Node}!run@{run}}
+\index{run@{run}!asigrefNode@{asigref\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void asigref\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classasigrefNode_a208e32830e6f43157a94d993c599ed00}
+Método que ejecuta el nodo. Se lleva a cabo la asignación, para ello se procesa el lado derecho de la asignación, se obtiene una referencia al mismo como valor interno. Luego este valor es asignado como referencia del lado izquierdo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classasigrefNode_ae88032a024d5e5033b53cac65f14b0c4}{\index{asigref\-Node@{asigref\-Node}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!asigrefNode@{asigref\-Node}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void asigref\-Node\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classasigrefNode_ae88032a024d5e5033b53cac65f14b0c4}
+Asigna el valor de un nodo dado al referencia del nodo del lado izquierdo del operador 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

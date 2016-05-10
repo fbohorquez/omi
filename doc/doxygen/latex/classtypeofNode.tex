@@ -1,0 +1,85 @@
+\hypertarget{classtypeofNode}{\section{Referencia de la Clase typeof\-Node}
+\label{classtypeofNode}\index{typeof\-Node@{typeof\-Node}}
+}
+
+
+Nodo impresión de tipo.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de typeof\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtypeofNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtypeofNode_a88a71f08d4fd2ab2b8da59556901f7c8}{typeof\-Node} (\hyperlink{classidNode}{id\-Node} $\ast$id)
+\item 
+void \hyperlink{classtypeofNode_af20d8079022f6227d5403c5d2fc58527}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classtypeofNode_ae954588348173d1a51aa9052927443c2}{type} (\hyperlink{classrunNode}{run\-Node} $\ast$r)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo impresión de tipo. 
+
+Este nodo imprime el tipo de un nodo dado. El nodo dado debe ser un identificador 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classtypeofNode_a88a71f08d4fd2ab2b8da59556901f7c8}{\index{typeof\-Node@{typeof\-Node}!typeof\-Node@{typeof\-Node}}
+\index{typeof\-Node@{typeof\-Node}!typeofNode@{typeof\-Node}}
+\subsubsection[{typeof\-Node}]{\setlength{\rightskip}{0pt plus 5cm}typeof\-Node\-::typeof\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf id\-Node} $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{classtypeofNode_a88a71f08d4fd2ab2b8da59556901f7c8}
+Constructor de clase. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Nodo identificador \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classtypeofNode_af20d8079022f6227d5403c5d2fc58527}{\index{typeof\-Node@{typeof\-Node}!run@{run}}
+\index{run@{run}!typeofNode@{typeof\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void typeof\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classtypeofNode_af20d8079022f6227d5403c5d2fc58527}
+Método que ejecuta nodo. Imprime en la salida estándar el tipo de dato que guarda como valor el identificar dado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classtypeofNode_ae954588348173d1a51aa9052927443c2}{\index{typeof\-Node@{typeof\-Node}!type@{type}}
+\index{type@{type}!typeofNode@{typeof\-Node}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}string typeof\-Node\-::type (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classtypeofNode_ae954588348173d1a51aa9052927443c2}
+Devuelve el tipo de un nodo dado como una cadena. 
+\begin{DoxyParams}{Parámetros}
+{\em r} & Nodo al que se obtiene el tipo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Cadena que representa el tipo del nodo 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

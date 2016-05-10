@@ -1,0 +1,66 @@
+\hypertarget{classstrConstNode}{\section{Referencia de la Clase str\-Const\-Node}
+\label{classstrConstNode}\index{str\-Const\-Node@{str\-Const\-Node}}
+}
+
+
+Nodo cadena de caracteres constante.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de str\-Const\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{classstrConstNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstrConstNode_aed87de63e44b17f180204c8737966e94}{str\-Const\-Node} (string data)
+\item 
+void \hyperlink{classstrConstNode_af955237c0491d855a055ab3bd995d1f4}{rm\-Ref} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo cadena de caracteres constante. 
+
+Un nodo constante sobrecarga el método de eliminar referencia para que no pueda ser eliminado de la forma normal. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classstrConstNode_aed87de63e44b17f180204c8737966e94}{\index{str\-Const\-Node@{str\-Const\-Node}!str\-Const\-Node@{str\-Const\-Node}}
+\index{str\-Const\-Node@{str\-Const\-Node}!strConstNode@{str\-Const\-Node}}
+\subsubsection[{str\-Const\-Node}]{\setlength{\rightskip}{0pt plus 5cm}str\-Const\-Node\-::str\-Const\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{data}
+\end{DoxyParamCaption}
+)}}\label{classstrConstNode_aed87de63e44b17f180204c8737966e94}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Valor cadena del nodo. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classstrConstNode_af955237c0491d855a055ab3bd995d1f4}{\index{str\-Const\-Node@{str\-Const\-Node}!rm\-Ref@{rm\-Ref}}
+\index{rm\-Ref@{rm\-Ref}!strConstNode@{str\-Const\-Node}}
+\subsubsection[{rm\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void str\-Const\-Node\-::rm\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstrConstNode_af955237c0491d855a055ab3bd995d1f4}
+Sobrecarga del método para eliminar referencias. 
+
+Reimplementado de \hyperlink{classrunNode_a8d0761660753ceb2c98836614c526a45}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

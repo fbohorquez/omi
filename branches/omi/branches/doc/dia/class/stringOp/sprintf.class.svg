@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="12cm" height="11cm" viewBox="165 182 239 215" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="166" y="203.008" width="236" height="192.565"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="166" y="203.008" width="236" height="192.565"/>
+    <rect style="fill: #ffffff" x="166" y="183.008" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="166" y="183.008" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="168" y="198.008"> sprintf </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="193.9" y="286" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="193.9" y="286" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.95" y="305">stringNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="190.9" y="353.8" width="117.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="190.9" y="353.8" width="117.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="249.425" y="372.8">sprintfNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.95,332.236 248.95,341.9 249.425,341.9 249.425,353.8 "/>
+    <polygon style="fill: #ffffff" points="256.95,332.236 248.95,316.236 240.95,332.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.95,332.236 248.95,316.236 240.95,332.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="205" y="219.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="205" y="219.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="248.7" y="238.8">runNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="248.7,266.036 248.7,274.9 248.95,274.9 248.95,286 "/>
+    <polygon style="fill: #ffffff" points="256.7,266.036 248.7,250.036 240.7,266.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="256.7,266.036 248.7,250.036 240.7,266.036 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="333.122,367.8 351,367.8 351,233.8 292.4,233.8 "/>
+    <polygon style="fill: #ffffff" points="307.95,367.8 321.95,363 335.95,367.8 321.95,372.6 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="307.95,367.8 321.95,363 335.95,367.8 321.95,372.6 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="353" y="297.8">list</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="339.95" y="364.8"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="296.4" y="230.8">1</text>
+  </g>
+</svg>

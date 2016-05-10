@@ -1,0 +1,386 @@
+\section {Título}
+Rules. Lenguaje para el desarrollo software dentro del ámbito de los juegos de mesa.
+Rules. Lenguaje para la programación de juegos de mesa.
+Rules. Lenguaje para el desarrollo de juegos de mesa.
+\section {Documentos básicos}
+\begin{itemize}
+	\item Indice General
+	\item Memoria
+	\item Anexos
+	\item Planos
+	\item Pliego de condiciones
+	\item Estado de mediciones
+	\item Presupuesto
+	\item Estudio con entidad propia
+\end{itemize}
+
+
+\section{Volúmenes}
+Los documentos pueden estar agrupados en distintos volumenes o en uno solo.
+
+Por cada volumen
+\begin {itemize}
+	\item Número de volumen
+	\item Título del proyecto
+	\item Tipo de documento básico unitario que comprende.
+	\item Organismo o cliente
+	\item Identificación y datos profecionales del autor
+	\item Cuando corresponda, los de la persona jurídica que ha recibido 
+	el encargo de su elaboración.
+\end {itemize}
+
+\subsection{Páginas}
+\begin{itemize}
+\item Número de página o de plano.
+\item Título del Proyecto o Número o código de identificación del Proyecto.
+\item Título del documento básico a que pertenece.
+\item Número o código de identificación del documento.
+\item Número de edición y, en su caso, fecha de aprobación.
+\end{itemize}
+
+\subsection {Capítulos y apartados}
+Segun la norma UNE 50132. (1.2.3)
+\subsection {Redacción}
+\begin{itemize}
+	\item Lenguaje claro, preciso y libre de vagedadez
+	\item Terminología coherente
+	\item El tiempo futuro indicará requisitos obligatorios. 
+	\item El tiempo condicional o subjuntivo indicarán sugerencias o propuestas
+\end{itemize}
+
+\section{Desarrollo de documentos}
+\subsection{Índice general}
+Contendrá todos y cada uno de los índices de los diferentes documentos básicos.
+\subsection{Memoria}
+\begin{itemize}
+	\item Hoja de identificación (título, datos autor, datos de cliente, fecha y firma)
+	\item Indice de la memoria (indice de cada documento, capítulo o apartado)
+	\item Objeto
+	\item Alcance
+	\item Antecedentes
+	\item Normas y referencias
+	\item Definiciones y abreviaturas
+	\item Requisitos de diseño
+	\item Análisis de soluciones
+	\item Resultados finales
+	\item Planificación
+	\item Orden de prioridad entre los documentos básicos
+\end{itemize}
+
+\subsubsection {Objeto}
+Comentar el objeto del proyecto desde el punto de vista de la necesidad que pretende cubrir.
+Centrarse en la tarea de digitalizar juegos y la necesidad de tener recursos que faciliten esta labor.
+\subsubsection {Alcance}
+\begin{itemize}
+	\item Centrarse en la diversidad de juegos de mesas. 
+	\item Rules se centra en la definición de reglas y el modelado lógico de los componentes. 
+	\item Rules ofrece mecanismos para tratar aspectos comunes en muchos de ellos. 
+	\item Existen particularidades de muchos juegos que rules no contempla (Física...).
+\end{itemize}
+
+\subsubsection {Antecedentes}
+\begin{itemize}
+	\item Lenguajes formales
+	\item Compiladores y traductores
+	\item Algoritmia
+	\item Estrucutras de datos
+	\item Base de datos
+	\item Aspectos de los lenguajes de programación
+	\item ORMs
+\end{itemize}
+
+\subsubsection {Normas y referencias}
+\begin {itemize}
+	\item Disposiciones legales y normas aplicadas
+	\begin {itemize}
+		\item Licencias a las que está sujeta cada software utilizada
+		\item Licencias sobre las que se desarrolla el proyecto
+	\end {itemize}
+	\item Bibliografía
+	\begin {itemize}
+		\item libro. Compiladores y procesadores del lenguaje
+		\item documento. Manual GNU Bison
+		\item documento. Manual GNU Flex
+		\item artículo. Wikipedia. Analizador léxico
+		\item artículo. Wikipedia. Analizador sintáctico
+	\end {itemize}
+	\item Programas de cálculo ???
+	\item Plan de gestión de calidad
+	\begin{itemize}
+		\item Pruebas unitarias
+		\item Pruebas de rendimiento 
+	\end{itemize}
+	\item Otras referencias
+\end {itemize}
+
+\subsubsection{Definiciones y abreviaturas }
+\subsubsection{Requisitos de diseño}
+\begin{itemize}
+	\item Requisitos funcionales: Casos de usos
+	\item Requisitos no funcionales
+	\begin{itemize}
+		\item Sistema de base de datos portable
+		\item Rendimiento
+		\item Minimizar dependencias prácticas con otros sistemas software
+		\item Software libre
+		\item Interacción con base de datos relacional
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Analisis de soluciones}
+\begin{itemize}
+	\item Análisis de los casos de uso
+	\item Decisiones de diseño
+\end{itemize}
+\subsubsection{Resultados finales}
+\begin{itemize}
+	\item Tokens y analizador léxico
+	\item Gramática y analizador sintáctico
+	\item Tabla de símbolos
+	\item Nodos semánticos ejecutables
+	\begin{itemize}
+		\item Generales
+		\begin{itemize}
+			\item Nodo ejecutable
+			\item Nodo imprimible
+			\item Nodo expresión (definida y no definida)
+			\item Nodo lógico
+			\item Nodo aritmetico
+			\item Nodo textual
+		\end{itemize}
+		\item Tipos simples
+		\begin{itemize}
+			\item Booleano
+			\item Numerico
+			\item Carácter
+			\item Valor nulo
+		\end{itemize}
+		\item Tipos compuestos
+		\begin{itemize}
+			\item Arrays
+			\item Cadenas
+			\item Expresiones regulares
+			\item Objetos (prototipado)
+			\item Componente
+		\end{itemize}
+		\item Definiciones
+		\begin{itemize}
+			\item Ámbito de variables
+			\item Funciones (parámetros por defecto y por referencia, funciones anónimas, referencas a funciones)
+			\item Clases (herencia, new , this)
+			\item Componentes
+		\end{itemize}
+		\item Sentencias de control de flujo
+		\begin {itemize}
+			\item if
+			\item if else
+			\item if elif ... else
+			\item case
+			\item for
+			\item while
+			\item do while
+			\item iloop (variable de control iterativo)
+			\item foreach
+			\item goto (labels)
+			\item include
+			\item break
+			\item continue <======
+			\item return
+			\item exit
+			\item Llamada a función
+		\end {itemize}
+		\item Generadores de expresiones
+		\item Sentencias operacionales
+		\begin{itemize}
+			\item Tipos
+			\begin{itemize}
+				\item typeof
+				\item bool
+				\item int
+				\item float
+				\item size
+			\end{itemize} 
+			\item Datos 
+			\begin{itemize}
+				\item Asignación
+				\item Asignación por referencia
+				\item Ternario (simplificado, con valor por defecto nulo)
+				\item No nulo
+				\item rand <====
+			\end{itemize}
+			\item Entrada/Salida
+			\begin{itemize}
+				\item echo (salida estandar)
+				\item input (entrada estándar, prompt)
+				\item inputline (entrada estándar, prompt)
+			\end{itemize} 
+			\item Operaciones lógicas
+			\begin{itemize}
+				\item OR lógico
+				\item OR bit a bit  <======
+				\item OR bit a bit y asignación  <======
+				\item AND lógico
+				\item AND bit a bit <======
+				\item AND bit a bit y asignación <======
+				\item NOT Lógico
+				\item Igualdad
+				\item Desigualdad
+				\item Menor que
+				\item Menor o igual que
+				\item Idéntico <========
+				\item No identico <=======
+			\end{itemize} 
+			\item Operaciones aritméticas
+			\begin{itemize}
+				\item Suma 
+				\item Resta 
+				\item Producto 
+				\item División 
+				\item Potencia 
+				\item Módulo
+				\item Incremento y asignación
+				\item Asignación e incremento
+				\item Decremento y asignación
+				\item Asignación y decremento
+				\item Suma y asignación 
+				\item Resta y asignación 
+				\item Producto y asignación 
+				\item División y asignación
+				\item Potencia y asignación
+				\item Módulo y asignación
+			\end{itemize} 
+			\item Cadenas
+			\begin{itemize}
+				\item Concatenación
+				\item Concatenación y asignación
+				\item sprintf
+				\item find
+				\item replace
+				\item upper
+				\item lower
+			\end{itemize} 
+			\item Arrays 
+			\begin{itemize}
+				\item implode
+				\item explode
+				\item empty
+			\end{itemize}
+			\item Expresiones regulares
+			\begin{itemize}
+				\item match
+				\item search
+				\item replace
+			\end{itemize}
+			\item Base de datos <====
+			\begin{itemize}
+				\item connect
+				\item select
+				\item insert
+				\item update
+				\item delete
+			\end{itemize}
+			\item Fechas  <====
+			\begin {itemize}
+				\item date
+				\item time
+				\item sleep
+			\end {itemize}
+			\item Ficheros <====
+			\begin {itemize}
+				\item fopen
+			\end {itemize}
+			\item Llamadas al sistema
+			\begin{itemize}
+				\item Ejecución de comando (exec)
+				\item Interpretación de cadena (eval)
+			\end{itemize}
+			\item Procesos
+			\begin{itemize}
+				\item fork
+			\end{itemize}
+			\item Componentes
+			\begin{itemize}
+				\item Acceso
+				\item Búsqueda
+				\item Borrado
+				\item Asignación de atributos
+			\end{itemize}
+		\end{itemize} 
+		\item Control de errores <====
+	\end{itemize}
+	\item Sistema de eventos <====
+	\item Sistema de juego <===
+	\begin {itemize}
+		\item Definición de juego 
+		\begin{itemize}
+			\item Bloque de juego
+			\item Bloque de juego con cambio de turno
+			\item Bloque de inicialización de juego
+			\item Bloque de finalización de juego
+			\item Condiciones de finalización
+			\item Acotación de jugadores
+		\end{itemize}
+		\item Jugadores (jugadores totales, jugador activo, iteraciones con cambios de jugador)
+		\item Turnos (cambio de turno, penalización de turnos, cambios con regreso)
+		\item Posicionamiento lógico (zona de juego, mesa)
+		\item Flujos de movimiento
+		\item Control de flujo de juego (finalización de ronda o de juego)
+		\item Bloque de deciciones y opciones (decide, select)
+		\item Dados
+		\item Mazos (barajar, robar, descarte, mirar componentes, buscar componentes...)
+		\item Reservas (barajar, robar, devolver, mirar componentes, buscar componente...)
+	\end {itemize}
+	\item Gestión de memoria
+\end{itemize}
+\subsubsection{Planificación}
+Se definirán las diferentes etapas, metas o hitos a alcanzar, plazos de entrega y cronogramas o gráficos de programación correspondientes
+Diagrama de gant, planner. Rango de un año poco más.
+
+\subsubsection{Orden de prioridad de documentos básicos}
+Si no se indica será el siguiente:
+\begin{itemize}
+	\item Planos
+	\item Pliego de Condiciones
+	\item Presupuesto
+	\item Memoria
+\end{itemize} 
+\subsection{Anexos}
+Se compone de los siguientes documentos
+\begin {itemize}
+	\item Documentación de partida (doc. para generar los requisitos, reglamentos de juegos)
+	\item Cálculos. (justificación de soluciones: gestión de memoria, tamaño de tipos, algoritmos)
+	\item Anexos de aplicación en el ámbito del Proyecto. (licencias, seguridad)
+	\item Otros documentos: (Juegos desarrollados)
+\end {itemize}
+
+\subsection{Planos}
+Índice que hará referencia a cada uno de ellos, indicando su ubicación, con el fin de facilitar su utilización.
+\begin{itemize}
+	\item Diagramas de casos de uso
+	\item Diagrama conceptual de clases
+	\item Diagrama de clases
+	\item ... (ver libro UML)
+\end{itemize}
+
+\subsection{Pliego de condiciones}
+Condiciones que deben darse para que el objetivo del proyecto pueda materializarse
+\subsection {Estado de mediciones}
+Desglose del proyecto en unidades de obras
+\subsection{Presupuesto}
+\begin{itemize}
+\item Cuadro de precios unitarios de materiales, mano de obra y elementos auxiliares.
+\item Cuadro de precios unitarios de materiales, mano de obra y elementos auxiliares por unidades de obras.
+\item Presupuesto: valoración económica global, desglosada y ordenada según el Estado de mediciones.
+\end{itemize}
+Aspectos a considerar
+\begin{itemize}
+	\item Gastos generales y beneficio industrial
+	\item Impuestos, tasas y otras contribuciones
+	\item Seguros
+	\item Costes de certificación y visado
+	\item Permisos y licencias
+	\item Cualquier otro concepto que influya en el coste final de materialización del objeto del Proyecto.
+\end{itemize}
+
+\subsection {Estudios con entidad propia}
+Documentos requeridos por exigencias legales.

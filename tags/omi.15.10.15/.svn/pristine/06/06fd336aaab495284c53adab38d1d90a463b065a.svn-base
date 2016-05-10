@@ -1,0 +1,123 @@
+//operatorArrayNode.cpp
+//----------------------------------------------------------------------
+/*
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ */
+//----------------------------------------------------------------------
+#include "operatorArrayNode.h"
+//~ #include DATABASE
+#include "runTree.h"
+#include "stmtNode.h"
+#include "componentNode.h"
+#include "../error.h"
+#include <math.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+#include <stdio.h>
+#include "lshParser.h"
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+ arrayChunkNode::arrayChunkNode (runNode * array, runNode * size) : size_ (size), array_(array) {}
+ 
+ void arrayChunkNode::run () {
+   runNode * size = size_, *array = array_;
+   nexpNode::resolved (size)->run();
+   nexpNode::resolved (array)->run();
+   int s = arithNode::to_num (size);
+   if (arrayNode * a = dynamic_cast<arrayNode*> (array)){
+      if (s > 0) {
+         symbols *map = a->getArray ();
+         isym i;
+         int count = 0;
+         listNode * l = NULL, *la = NULL;
+         for (i = map->begin(); i != map->end(); ++i){
+            mapNode *p = new mapNode (new numNode(count - (s * (int)(count / s))), i.second);
+            l = new listNode (l, p);
+            if (count % s == s - 1) {
+               arrayNode * a = new arrayNode (l);
+               la = new listNode (la, a);
+               l = NULL;
+            }
+            count ++;
+         }
+         if ((count - 1) % s != s - 1){
+            arrayNode * a = new arrayNode (l);
+            la = new listNode (la, a);
+         }
+         arrayNode * a = new arrayNode (la);
+         noderef(a);
+      }else{
+         noderef(array);
+      }
+   }
+ }
+ runNode *arrayChunkNode::asMethod() {
+   idNode *id = new idNode("~size");
+   listNode *params = new listNode(id, NULL);
+   arrayChunkNode * a = new arrayChunkNode (new thisNode(), id);
+   runNode *body = new returnNode(a);
+   return new functionNode(NULL, params, body);
+}
+//----------------------------------------------------------------------
+
+//----------------------------------------------------------------------
+implodeNode::implodeNode(runNode * str, runNode * array):str_(str),
+   array_(array) {}
+
+void
+implodeNode::run() {
+   runNode *node_aux1 = str_;
+   runNode *node_aux2 = array_;
+   nexpNode::resolved(node_aux1)->run();
+   nexpNode::resolved(node_aux2)->run();
+   strNode s = stringNode::to_str(node_aux1);
+   ostringstream oss(ostringstream::out);
+   if(arrayNode * array = dynamic_cast < arrayNode * >(node_aux2)) {
+      symbols *v_array = array->getArray();
+      isym iter;
+      isym iter_e = v_array->end();
+      if(v_array->size())
+         iter_e--;
+      for(iter = v_array->begin(); iter != v_array->end(); ++iter) {
+         if(arrayNode * array_s =
+                  dynamic_cast < arrayNode * >(iter.second)) {
+            implodeNode i(str_, array_s);
+            i.run();
+            oss << i.strvalue();
+         } else {
+            strNode s(iter.second);
+            oss << s.strvalue();
+         }
+         if(iter != iter_e)
+            oss << s.strvalue();
+      }
+   }else 
+      throw errorException("Wrong type", "implodeNode: node must be array", 1);
+   string resp = oss.str();
+   strvalue_ = resp;
+}
+
+runNode *implodeNode::asMethod() {  
+   idNode *id = new idNode("~substr");
+   listNode *params = new listNode(id, NULL);
+   implodeNode *node = new implodeNode (id, new thisNode());
+   runNode *body = new returnNode(node);
+   return new functionNode(NULL, params, body);
+}
+//----------------------------------------------------------------------
+

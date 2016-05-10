@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="26cm" height="17cm" viewBox="230 242 508 335" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="231" y="264" width="506" height="313"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231" y="264" width="506" height="313"/>
+    <rect style="fill: #ffffff" x="231" y="244" width="81" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231" y="244" width="81" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="233" y="259"> dbSelect </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="388" y="319" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="388" y="319" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="431.7" y="338">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="382" y="387" width="100.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="382" y="387" width="100.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="432.35" y="406">nexpNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="431.7,365.236 431.7,375 432.35,375 432.35,387 "/>
+    <polygon style="fill: #ffffff" points="439.7,365.236 431.7,349.236 423.7,365.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="439.7,365.236 431.7,349.236 423.7,365.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="364" y="471" width="135.45" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="364" y="471" width="135.45" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="431.725" y="490">dbSelectNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="432.35,433.236 432.35,451 431.725,451 431.725,471 "/>
+    <polygon style="fill: #ffffff" points="440.35,433.236 432.35,417.236 424.35,433.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="440.35,433.236 432.35,417.236 424.35,433.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.622,471 536,471 536,347 475.4,347 "/>
+    <polygon style="fill: #ffffff" points="499.45,471 513.45,466.2 527.45,471 513.45,475.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="499.45,471 513.45,466.2 527.45,471 513.45,475.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="538" y="406">db</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="531.45" y="468"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="479.4" y="344"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.622,485 561,485 561,333 475.4,333 "/>
+    <polygon style="fill: #ffffff" points="499.45,485 513.45,480.2 527.45,485 513.45,489.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="499.45,485 513.45,480.2 527.45,485 513.45,489.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="563" y="406">table</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="531.45" y="482"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="479.4" y="330"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="247" y="426.8" width="145.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="247" y="426.8" width="145.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="319.575" y="445.8">extensionNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="319.575,473.036 319.575,491.8 341.287,491.8 341.287,485 364,485 "/>
+    <polygon style="fill: #ffffff" points="327.575,473.036 319.575,457.036 311.575,473.036 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="327.575,473.036 319.575,457.036 311.575,473.036 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.622,499 609,499 609,319 475.4,319 "/>
+    <polygon style="fill: #ffffff" points="499.45,499 513.45,494.2 527.45,499 513.45,503.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="499.45,499 513.45,494.2 527.45,499 513.45,503.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="611" y="406">fields</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="531.45" y="496"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="479.4" y="316"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="431.724,524.172 431.724,535 667,535 667,290 431.7,290 431.7,319 "/>
+    <polygon style="fill: #ffffff" points="431.724,499 436.524,513 431.724,527 426.924,513 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="431.724,499 436.524,513 431.724,527 426.924,513 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="669" y="409.5">where</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.724" y="511"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="435.7" y="315"/>
+  </g>
+</svg>

@@ -1,0 +1,487 @@
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>OMI - Navegador Código</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dosis:700,500" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/main.css" rel="stylesheet" type="text/css">
+<link href="http://omi.local/src/css/media.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<script id="navtreeindex3" type="text/javascript" src="navtreeindex3.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Language" content="es_ES">
+<link rel="shortcut icon" href="http://omi.local/src/images/omi.ico">
+<meta name="description" content="Intérprete Abierto y Modular enfocado en el estudio de la terría de autómatas y lenguajes formales.">
+<meta name="keywords" content="interprete abierto modular lenguaje teoría autómata lenguajes formales compiladores didáctico estudio ">
+<style>
+.tablist li:first-child{
+   display:none;
+}
+* {
+   font-family: 'Dosis', sans-serif !important;
+}
+.tabs, .tabs2, .tabs3 {
+    background-image: none;
+    background-color: #FFF;
+}
+.tablist a {
+   background-image: none; 
+   color: #1198D6;
+}
+.tablist li {
+   background-image: none;
+    background-color: #FFF;
+    border-top: 0 solid #AAA;
+}
+.tablist li a:hover{
+   background-image: none;
+    background-color: #FFF;
+    text-shadow: none;
+    color: #FD0;
+}
+.tablist li.current :hover{
+    color: #FD0 !important;
+}
+div.header {
+   background-image: none;
+   background-color: #EEE; 
+   border-top: 1px solid #AAA;
+}
+.tablist li.current a {
+   background-image: none;
+   background-color: #1198D6;
+}
+.tablist li.current a {
+   text-shadow: none;
+}
+element.style {
+}
+div.contents {
+   border-top: 1px solid #AAA;
+   padding-top: 10px;
+   padding-left: 12px;
+   padding-right: 8px;
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+div.contents {
+min-height: 700px;
+}
+#container{
+   display:flex;
+}
+#container .border{
+   height: auto;
+}
+#container .border-2{
+   padding:0;
+}
+.title{
+   float:none;
+}
+.memproto, dl.reflist dt {
+   background-image: none;
+   background-color: #EEE;
+}
+#MSearchSelectWindow {
+   display: none !important;
+}
+div.ah {
+    color: #FFF;
+    background-color: #1198D6;
+    background-image: none;
+ }
+@media (max-width: 1280px) {
+   .dynheader,
+   .dyncontent {
+      display:none;
+   }
+}
+</style>
+</head>
+<body>
+<div id="header">
+   <img src="http://omi.local/src/images/logo.svg" height="60">
+   <div id="header-border"></div>
+<div id="nav-panel">
+   <a href="http://omi.local/" class="nav">HOME</a>
+   <a href="http://omi.local/doc-index.php" class="nav">DOCUMENTACIÓN</a>
+   <a href="http://omi.local/download.php" class="nav">DESCARGAS</a>
+   <a href="http://omi.local/rtree/" class="nav">RUNTREE</a>
+</div>
+</div>
+<div id="container">
+<div class="border">
+<div class="border-2">
+<div style="clear: both;">
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4e3a55e2a9734425e24eb78aa4793941.html">trunk</a></li><li class="navelem"><a class="el" href="dir_916507c20737a70441aaf4f44c3fca94.html">src</a></li><li class="navelem"><a class="el" href="dir_c5cf98610c5a166dc6ce9ea04a0c4caa.html">run</a></li><li class="navelem"><a class="el" href="dir_cafd76ad72cc7c68ceb0561fb555dadd.html">tree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">typeNode.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="typeNode_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//typeNode.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * 75766599-E</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Puerto Real (Cádiz)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * powersgame@gmail.com</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * MA 02110-1301, USA.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span><span class="preprocessor">#ifndef _RUN_TREE_TYPENODE_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _RUN_TREE_TYPENODE_</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;boost/regex.hpp&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;../table/classNode.h&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expNode_8h.html">expNode.h</a>&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">using namespace </span>boost;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classboolNode.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboolNode.html">boolNode</a> :</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keyword">public</span> <a class="code" href="classlogicNode.html">logicNode</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   <a class="code" href="classboolNode.html">boolNode</a> (<span class="keywordtype">bool</span> data);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <a class="code" href="classboolNode.html">boolNode</a> (<a class="code" href="classboolNode.html">boolNode</a>* data);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classboolConstNode.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboolConstNode.html">boolConstNode</a> : <span class="keyword">public</span> <a class="code" href="classboolNode.html">boolNode</a> {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <a class="code" href="classboolConstNode.html">boolConstNode</a> (<span class="keywordtype">bool</span> data);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordtype">void</span> rmRef();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classnumNode.html">  119</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnumNode.html">numNode</a> :</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;   <span class="keyword">public</span> <a class="code" href="classarithNode.html">arithNode</a> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;   <a class="code" href="classnumNode.html">numNode</a> (num data);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;   <a class="code" href="classnumNode.html">numNode</a> (<span class="keywordtype">string</span> data);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;   <a class="code" href="classnumNode.html">numNode</a> (<a class="code" href="classnumNode.html">numNode</a>* data);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;};</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classnumConstNode.html">  160</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnumConstNode.html">numConstNode</a> : <span class="keyword">public</span> <a class="code" href="classnumNode.html">numNode</a> {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <a class="code" href="classnumConstNode.html">numConstNode</a> (num data);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      <span class="keywordtype">void</span> rmRef();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classstrNode.html">  184</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstrNode.html">strNode</a> :</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;   <span class="keyword">public</span> <a class="code" href="classstringNode.html">stringNode</a> {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;   <a class="code" href="classstrNode.html">strNode</a> (<span class="keywordtype">string</span> data);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;   <a class="code" href="classstrNode.html">strNode</a> (<a class="code" href="classstrNode.html">strNode</a>* data);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;   <a class="code" href="classstrNode.html">strNode</a> (<a class="code" href="classrunNode.html">runNode</a>* data);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;   <a class="code" href="classstrNode.html">strNode</a> (<a class="code" href="classrunNode.html">runNode</a>* data, <span class="keywordtype">bool</span> <span class="keywordtype">id</span> );</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;   <span class="keywordtype">bool</span> is_string () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classstrConstNode.html">  231</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstrConstNode.html">strConstNode</a> : <span class="keyword">public</span> <a class="code" href="classstrNode.html">strNode</a> {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <a class="code" href="classstrConstNode.html">strConstNode</a> (<span class="keywordtype">string</span> data);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordtype">void</span> rmRef();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;};</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="classnullNode.html">  252</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnullNode.html">nullNode</a> :</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;   <span class="keyword">public</span> <a class="code" href="classdexpNode.html">dexpNode</a> {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;   <a class="code" href="classnullNode.html">nullNode</a> ();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;   <span class="keywordtype">string</span> print () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;};</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classlistNode.html">  294</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlistNode.html">listNode</a> :</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;   <span class="keyword">public</span> <a class="code" href="classrunNode.html">runNode</a> {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;   <a class="code" href="classlistNode.html">listNode</a> (<a class="code" href="classrunNode.html">runNode</a>* ele1, <a class="code" href="classrunNode.html">runNode</a>* ele2 = NULL);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;   <span class="keywordtype">int</span> size ();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;   vector&lt;runNode*&gt; listvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;   <span class="keywordtype">bool</span> isAsigList ();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;   <a class="code" href="classlistNode.html">listNode</a>* quitAsig ();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordtype">bool</span> is_runlist () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* ele1_, *ele2_;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;   vector&lt;runNode*&gt; list_;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;   <span class="keywordtype">bool</span> exec_;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;};</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="classmapNode.html">  355</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmapNode.html">mapNode</a> :</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;   <span class="keyword">public</span> <a class="code" href="classrunNode.html">runNode</a> {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;   <a class="code" href="classmapNode.html">mapNode</a> (<a class="code" href="classrunNode.html">runNode</a>* key, <a class="code" href="classrunNode.html">runNode</a>* value);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* key () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;   <a class="code" href="classrunNode.html">runNode</a>* value () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *key_, *value_;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;};</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
+<div class="line"><a name="l00403"></a><span class="lineno"><a class="line" href="classarrayNode.html">  403</a></span>&#160;<span class="keyword">class </span><a class="code" href="classarrayNode.html">arrayNode</a> :</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;   <span class="keyword">public</span> <a class="code" href="classdexpNode.html">dexpNode</a> {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;   <a class="code" href="classarrayNode.html">arrayNode</a> (<a class="code" href="classlistNode.html">listNode</a>* list);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;   <a class="code" href="classarrayNode.html">arrayNode</a> ();</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;   <a class="code" href="classarrayNode.html">arrayNode</a> (<a class="code" href="classarrayNode.html">arrayNode</a>* array);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;   <a class="code" href="classarrayNode.html">arrayNode</a> (<a class="code" href="classarrayNode.html">arrayNode</a>* array, <a class="code" href="classrefNode.html">refNode</a>* &amp;refSearch);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;   <span class="keywordtype">string</span> print () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a>* getArray ();</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;   <span class="keywordtype">void</span> insert (<a class="code" href="classrunNode.html">runNode</a>* key, <a class="code" href="classrunNode.html">runNode</a>* val, <span class="keywordtype">bool</span> str = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;   <span class="keywordtype">void</span> del (<a class="code" href="classrunNode.html">runNode</a>* key, <span class="keywordtype">bool</span> str = <span class="keyword">false</span>, <span class="keywordtype">bool</span> force_position = <span class="keyword">false</span> );</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> *<span class="keyword">get</span> (<a class="code" href="classrunNode.html">runNode</a>* key, <span class="keywordtype">bool</span> str = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;   <span class="keywordtype">int</span> size () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;   <span class="keywordtype">bool</span> compare (<a class="code" href="classrunNode.html">runNode</a>* node, <span class="keywordtype">int</span> op = 0);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;   <span class="keywordtype">int</span> getCount () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;   <span class="keywordtype">void</span> cAll (<a class="code" href="classrunNode.html">runNode</a>* node_search, <a class="code" href="classrunNode.html">runNode</a>* node_new);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;   <span class="keywordtype">bool</span> isref (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;   <span class="keywordtype">void</span> clear ();</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;   <span class="keywordtype">void</span> clearRef ();</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;   <span class="keywordtype">void</span> setArray (<a class="code" href="classsymbolsTable.html">symbols</a> array);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;   <span class="keywordtype">void</span> push (<a class="code" href="classrunNode.html">runNode</a>* node);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classrunNode.html">runNode</a> * copyArray (<a class="code" href="classarrayNode.html">arrayNode</a> * a);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> * getClass ();</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;   <span class="keyword">static</span> <span class="keywordtype">void</span> generateClass  ();</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;   <span class="keywordtype">bool</span> boolvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;   num numvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;   <span class="keywordtype">string</span> strvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;   ~<a class="code" href="classarrayNode.html">arrayNode</a> ();</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="preprocessor">#if JSON==1 </span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="preprocessor"></span>   <span class="keywordtype">void</span> toJsonSymbols ();</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="preprocessor"></span> <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;   <span class="keywordtype">string</span> printLevel (<span class="keywordtype">short</span> <span class="keywordtype">int</span> level) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;   <span class="keywordtype">void</span> fromList (<a class="code" href="classlistNode.html">listNode</a> * l, <span class="keywordtype">bool</span> addref = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;   <span class="keyword">static</span> <a class="code" href="classrunNode.html">runNode</a> *copy(<a class="code" href="classarrayNode.html">arrayNode</a> *a, <a class="code" href="classarrayNode.html">arrayNode</a> *b);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;   <span class="keyword">static</span> <a class="code" href="classclassNode.html">classNode</a> *class_;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;   <span class="keywordtype">bool</span> asociative_;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;   <a class="code" href="classsymbolsTable.html">symbols</a> array_;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;};</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;</div>
+<div class="line"><a name="l00588"></a><span class="lineno"><a class="line" href="classarrayConstNode.html">  588</a></span>&#160;<span class="keyword">class </span><a class="code" href="classarrayConstNode.html">arrayConstNode</a> : <span class="keyword">public</span> <a class="code" href="classarrayNode.html">arrayNode</a> {</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;      <a class="code" href="classarrayConstNode.html">arrayConstNode</a> (<a class="code" href="classlistNode.html">listNode</a>* list);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;      <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;      <span class="keywordtype">void</span> rmRef();</div>
+<div class="line"><a name="l00608"></a><span class="lineno"><a class="line" href="classarrayConstNode.html#aba71d93899fadd2d756009ce16f5eefc">  608</a></span>&#160;      <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classarrayConstNode.html#aba71d93899fadd2d756009ce16f5eefc">isCloned</a> (<span class="keywordtype">bool</span> cloned) {cloned_ = cloned;}</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;      <a class="code" href="classlistNode.html">listNode</a>* list_;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;      <span class="keywordtype">bool</span> cloned_;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;};</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;</div>
+<div class="line"><a name="l00626"></a><span class="lineno"><a class="line" href="classobjectNode.html">  626</a></span>&#160;<span class="keyword">class </span><a class="code" href="classobjectNode.html">objectNode</a> : <span class="keyword">public</span> <a class="code" href="classarrayNode.html">arrayNode</a> {</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;   <a class="code" href="classobjectNode.html">objectNode</a> (<a class="code" href="classclassNode.html">classNode</a> * c = NULL);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;   <a class="code" href="classobjectNode.html">objectNode</a> (<a class="code" href="classsymbolsTable.html">symbols</a>* s, <a class="code" href="classclassNode.html">classNode</a> * c = NULL);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;   <a class="code" href="classobjectNode.html">objectNode</a> (<a class="code" href="classlistNode.html">listNode</a>* l, <a class="code" href="classclassNode.html">classNode</a> * c = NULL);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;   <a class="code" href="classobjectNode.html">objectNode</a> (<a class="code" href="classarrayNode.html">arrayNode</a>* a);</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;   <a class="code" href="classobjectNode.html">objectNode</a> (<a class="code" href="classobjectNode.html">objectNode</a>* a);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;   <a class="code" href="classrunNode.html">runNode</a> * getClass ();</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;   <span class="keywordtype">string</span> print () <span class="keyword">const</span> ;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;   <a class="code" href="classclassNode.html">classNode</a> * class_;</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;};</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;</div>
+<div class="line"><a name="l00687"></a><span class="lineno"><a class="line" href="classregexpNode.html">  687</a></span>&#160;<span class="keyword">class </span><a class="code" href="classregexpNode.html">regexpNode</a>:</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;   <span class="keyword">public</span> <a class="code" href="classdexpNode.html">dexpNode</a> {</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;   <a class="code" href="classregexpNode.html">regexpNode</a> (<span class="keywordtype">string</span> str);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;   <a class="code" href="classregexpNode.html">regexpNode</a> (<a class="code" href="classregexpNode.html">regexpNode</a>* r);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;   regex exvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;   <span class="keywordtype">void</span> run ();</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;   <span class="keywordtype">string</span> strvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;   <span class="keywordtype">bool</span> boolvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;   num numvalue () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;   <span class="keywordtype">string</span> print () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;   <span class="keywordtype">string</span> str_;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;   regex ex_;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;};</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;</div>
+<div class="line"><a name="l00751"></a><span class="lineno"><a class="line" href="classregexpConstNode.html">  751</a></span>&#160;<span class="keyword">class </span><a class="code" href="classregexpConstNode.html">regexpConstNode</a> : <span class="keyword">public</span> <a class="code" href="classregexpNode.html">regexpNode</a> {</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;   <span class="keywordtype">void</span> rmRef();</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;};</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;<span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;<a class="code" href="classrunNode.html">runNode</a> *create(<a class="code" href="classlistNode.html">listNode</a>* list) {</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> T(list);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;}</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="preprocessor"></span><span class="comment">//-------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;<span class="comment">//Fco. Javier Bohórquez Ogalla</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;</div>
+<div class="ttc" id="classarrayConstNode_html_aba71d93899fadd2d756009ce16f5eefc"><div class="ttname"><a href="classarrayConstNode.html#aba71d93899fadd2d756009ce16f5eefc">arrayConstNode::isCloned</a></div><div class="ttdeci">void isCloned(bool cloned)</div><div class="ttdef"><b>Definition:</b> typeNode.h:608</div></div>
+<div class="ttc" id="classstrNode_html"><div class="ttname"><a href="classstrNode.html">strNode</a></div><div class="ttdoc">Nodo cadena de caracteres. </div><div class="ttdef"><b>Definition:</b> typeNode.h:184</div></div>
+<div class="ttc" id="classlistNode_html"><div class="ttname"><a href="classlistNode.html">listNode</a></div><div class="ttdoc">Nodo lista de elementos. </div><div class="ttdef"><b>Definition:</b> typeNode.h:294</div></div>
+<div class="ttc" id="classarrayConstNode_html"><div class="ttname"><a href="classarrayConstNode.html">arrayConstNode</a></div><div class="ttdoc">Nodo array constante. </div><div class="ttdef"><b>Definition:</b> typeNode.h:588</div></div>
+<div class="ttc" id="classlogicNode_html"><div class="ttname"><a href="classlogicNode.html">logicNode</a></div><div class="ttdoc">Nodos lógicos. </div><div class="ttdef"><b>Definition:</b> expNode.h:279</div></div>
+<div class="ttc" id="classstrConstNode_html"><div class="ttname"><a href="classstrConstNode.html">strConstNode</a></div><div class="ttdoc">Nodo cadena de caracteres constante. </div><div class="ttdef"><b>Definition:</b> typeNode.h:231</div></div>
+<div class="ttc" id="classboolConstNode_html"><div class="ttname"><a href="classboolConstNode.html">boolConstNode</a></div><div class="ttdoc">Nodo boleano constante. </div><div class="ttdef"><b>Definition:</b> typeNode.h:97</div></div>
+<div class="ttc" id="classarithNode_html"><div class="ttname"><a href="classarithNode.html">arithNode</a></div><div class="ttdoc">Nodos aritméticos. </div><div class="ttdef"><b>Definition:</b> expNode.h:351</div></div>
+<div class="ttc" id="classclassNode_html"><div class="ttname"><a href="classclassNode.html">classNode</a></div><div class="ttdoc">Nodo clase. </div><div class="ttdef"><b>Definition:</b> classNode.h:89</div></div>
+<div class="ttc" id="classsymbolsTable_html"><div class="ttname"><a href="classsymbolsTable.html">symbolsTable</a></div><div class="ttdoc">Tabla de símbolos. </div><div class="ttdef"><b>Definition:</b> symbols.h:65</div></div>
+<div class="ttc" id="classnumNode_html"><div class="ttname"><a href="classnumNode.html">numNode</a></div><div class="ttdoc">Nodo numérico. </div><div class="ttdef"><b>Definition:</b> typeNode.h:119</div></div>
+<div class="ttc" id="classarrayNode_html"><div class="ttname"><a href="classarrayNode.html">arrayNode</a></div><div class="ttdoc">Nodo array. </div><div class="ttdef"><b>Definition:</b> typeNode.h:403</div></div>
+<div class="ttc" id="classnumConstNode_html"><div class="ttname"><a href="classnumConstNode.html">numConstNode</a></div><div class="ttdoc">Nodo numérico constante. </div><div class="ttdef"><b>Definition:</b> typeNode.h:160</div></div>
+<div class="ttc" id="classrunNode_html"><div class="ttname"><a href="classrunNode.html">runNode</a></div><div class="ttdoc">Nodo ejecutable. </div><div class="ttdef"><b>Definition:</b> runTree.h:123</div></div>
+<div class="ttc" id="classregexpConstNode_html"><div class="ttname"><a href="classregexpConstNode.html">regexpConstNode</a></div><div class="ttdoc">Nodo expresión regular constante. </div><div class="ttdef"><b>Definition:</b> typeNode.h:751</div></div>
+<div class="ttc" id="classregexpNode_html"><div class="ttname"><a href="classregexpNode.html">regexpNode</a></div><div class="ttdoc">Nodo expresión regular. </div><div class="ttdef"><b>Definition:</b> typeNode.h:687</div></div>
+<div class="ttc" id="expNode_8h_html"><div class="ttname"><a href="expNode_8h.html">expNode.h</a></div><div class="ttdoc">Expresiones. </div></div>
+<div class="ttc" id="classrefNode_html"><div class="ttname"><a href="classrefNode.html">refNode</a></div><div class="ttdoc">Nodo referencia. </div><div class="ttdef"><b>Definition:</b> runTree.h:279</div></div>
+<div class="ttc" id="classnullNode_html"><div class="ttname"><a href="classnullNode.html">nullNode</a></div><div class="ttdoc">Nodo nulo. </div><div class="ttdef"><b>Definition:</b> typeNode.h:252</div></div>
+<div class="ttc" id="classstringNode_html"><div class="ttname"><a href="classstringNode.html">stringNode</a></div><div class="ttdoc">Nodos cadenas de texto. </div><div class="ttdef"><b>Definition:</b> expNode.h:418</div></div>
+<div class="ttc" id="classdexpNode_html"><div class="ttname"><a href="classdexpNode.html">dexpNode</a></div><div class="ttdoc">Nodo expresión de tipo definido. </div><div class="ttdef"><b>Definition:</b> expNode.h:115</div></div>
+<div class="ttc" id="classboolNode_html"><div class="ttname"><a href="classboolNode.html">boolNode</a></div><div class="ttdoc">Nodo booleano. </div><div class="ttdef"><b>Definition:</b> typeNode.h:66</div></div>
+<div class="ttc" id="classmapNode_html"><div class="ttname"><a href="classmapNode.html">mapNode</a></div><div class="ttdoc">Nodo asociativo. </div><div class="ttdef"><b>Definition:</b> typeNode.h:355</div></div>
+<div class="ttc" id="classobjectNode_html"><div class="ttname"><a href="classobjectNode.html">objectNode</a></div><div class="ttdoc">Nodo objeto. </div><div class="ttdef"><b>Definition:</b> typeNode.h:626</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+</div>
+</div>
+<div id="footer">
+   <div class="clear"></div>
+   <div id="footer-content">
+      <div id="footer-links">
+         <a href="http://omi.local/about.php">Sobre OMI</a>
+         <a href="http://omi.local/contact.php">Contacto</a>
+         <a href="http://omi.local/license.php">Licencia</a>
+      </div>
+      <span id="logos-list" style="
+    width: 221px;
+">
+         <img src="http://omi.local/src/images/gplv3.svg">
+         <img src="http://omi.local/src/images/cc.svg">
+         <span id="copyleft" style="
+    /* width: 9%; */
+"><img src="http://omi.local/src/images/copyleft.svg"> <span style="display: inline;">2015 OMI.</span></span>
+      </span>
+   </div>
+</div>

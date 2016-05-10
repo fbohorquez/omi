@@ -1,0 +1,73 @@
+\hypertarget{classnewNode}{\section{Referencia de la Clase new\-Node}
+\label{classnewNode}\index{new\-Node@{new\-Node}}
+}
+
+
+Nodo nueva instancia.  
+
+
+
+
+{\ttfamily \#include $<$class\-Node.\-h$>$}
+
+Diagrama de herencias de new\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classnewNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnewNode_a05ceeb26698dae7dac2b64caac4f0973}{new\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$id, \hyperlink{classrunNode}{run\-Node} $\ast$params)
+\item 
+void \hyperlink{classnewNode_afa5d1d8599f4dd6d7e68b04ad0c12b15}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo nueva instancia. 
+
+Este nodo es el encargado de crear una instancia de una clase como un objeto.
+
+Un nodo \hyperlink{classnewNode}{new\-Node} es un nodo de tipo no definido por lo que guarda una referencia a otro nodo. Tras la ejecución un nodo \hyperlink{classnewNode}{new\-Node} se tomará como referencia una instancia de la clase determinada por un identificador dado.
+
+Cuando la instancia es creada se busca un método en la tabla de funciones del contexto de la clase que se llame igual que esta, este método es llamado como método constructor. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnewNode_a05ceeb26698dae7dac2b64caac4f0973}{\index{new\-Node@{new\-Node}!new\-Node@{new\-Node}}
+\index{new\-Node@{new\-Node}!newNode@{new\-Node}}
+\subsubsection[{new\-Node}]{\setlength{\rightskip}{0pt plus 5cm}new\-Node\-::new\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{id, }
+\item[{{\bf run\-Node} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{classnewNode_a05ceeb26698dae7dac2b64caac4f0973}
+Constructor de la clase que se inicializa a partir de un nodo identificador y una lista de parámetros. 
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador de la clase que será instanciada. \\
+\hline
+{\em params} & Parámetros que será pasados al método constructor. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnewNode_afa5d1d8599f4dd6d7e68b04ad0c12b15}{\index{new\-Node@{new\-Node}!run@{run}}
+\index{run@{run}!newNode@{new\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void new\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnewNode_afa5d1d8599f4dd6d7e68b04ad0c12b15}
+Lleva a cabo la ejecución del nodo. Para ello busca en la tabla de clases activa el nodo correspondiente al identificador utilizado en la inicialización. Crea un objeto a partir de la tabla de símbolos de variables de la clase. Luego accede y ejecuta el método constructor de la clase, pasándole los parámetros con el que fue inicializado. Por último toma como valor la instancia creada. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{classNode_8h}{class\-Node.\-h}\item 
+trunk/src/run/table/class\-Node.\-cpp\end{DoxyCompactItemize}

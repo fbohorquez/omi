@@ -1,0 +1,14 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visi\IeC {\'o}n general}{3}
+\contentsline {section}{\numberline {2}Diagramas de secuencia del sistema}{3}
+\contentsline {subsection}{\numberline {2.1}Interpretar entrada est\IeC {\'a}ndar}{3}
+\contentsline {subsection}{\numberline {2.2}Interpretar l\IeC {\'\i }nea}{4}
+\contentsline {subsection}{\numberline {2.3}Interpretar fichero}{4}
+\contentsline {subsection}{\numberline {2.4}Ver ayuda}{5}
+\contentsline {subsection}{\numberline {2.5}Cargar extensi\IeC {\'o}n}{5}
+\contentsline {subsection}{\numberline {2.6}Listar extensiones}{6}
+\contentsline {section}{\numberline {3}Contratos de operaciones del sistema}{6}
+\contentsline {subsection}{\numberline {3.1}Operaci\IeC {\'o}n inicio\_interprete\_stdin}{6}
+\contentsline {subsection}{\numberline {3.2}Operaci\IeC {\'o}n inicio\_interprete\_linea}{8}
+\contentsline {subsection}{\numberline {3.3}Operaci\IeC {\'o}n interpretar\_cadena}{9}
+\contentsline {subsection}{\numberline {3.4}Operaci\IeC {\'o}n interpretar\_fichero}{10}

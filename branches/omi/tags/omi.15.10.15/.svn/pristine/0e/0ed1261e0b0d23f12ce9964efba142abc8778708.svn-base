@@ -1,0 +1,70 @@
+#omi
+#-----------------------------------------------------------------------
+function print_narg (a) {
+	for (i = 0; i < size a; i ++){
+		echo "arg".i." : ".a[i];
+	}
+}
+#-----------------------------------------------------------------------
+function sum (a, b){
+	return a + b;
+}
+#-----------------------------------------------------------------------
+function res (a, b){
+	return a - b;
+}
+#-----------------------------------------------------------------------
+function div (a, b){
+	if (b == 0){
+		echo "No es posible la división entre 0";
+	}
+	return a / b;
+}
+#-----------------------------------------------------------------------
+function prod (a, b){
+	return a * b;
+}
+#-----------------------------------------------------------------------
+#main:
+if (!(args[0])){
+	echo "Debe introducir un parámetro";
+	exit;
+}
+<< args;
+switch (args[1]){
+	case "narg":
+		print_narg (args);
+		break;
+	case "sum":
+		if (args[3] !== "" && args[3] !==""){
+			echo sum (args[3], args[2]);
+		}else{
+			echo "Debe especificar dos operandos";
+		}
+		break;
+	case "res":
+		if (args[2] !== "" && args[3] !==""){
+			echo res (args[2], args[3]);
+		}else{
+			echo "Debe especificar dos operandos";
+		}
+		break;
+	case "div":
+		if (args[2] !== "" && args[3] !==""){
+			echo div (args[2], args[3]);
+		}else{
+			echo "Debe especificar dos operandos";
+		}
+		break;
+	case "prod":
+		if (args[2] !== "" && args[3] !==""){
+			echo prod (args[2], args[3]);
+		}else{
+			echo "Debe especificar dos operandos";
+		}
+		break;
+	default:
+		echo "Comando no conocido";
+}
+#-----------------------------------------------------------------------
+#Fco Javier Bohórquez Ogalla

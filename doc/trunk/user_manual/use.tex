@@ -1,0 +1,4869 @@
+\subsection{Obtener OMI}
+El intérprete OMI puede ser descargado desde la web OMI project. Se ofrecen varias 
+alternativas para la descarga:
+
+\begin{itemize}
+\item Código fuente.
+\item Precompilado y empaquetado para algunas distribuciones GNU/Linux.
+\end{itemize}
+
+Se recomienda la descarga de la última versión estable del sistema software. 
+ 
+\subsection{Instalación}
+El intérprete OMI puede ser instalado sobre un sistema GNU/Linux mediante varios procesos. 
+
+\subsubsection{Compilación e instalación desde código fuente} \label{sec:compile}
+Para instalar OMI mediante el código fuente de la aplicación previamente se deberá llevar a cabo la compilación de este. 
+Es posible obtener el código fuente de la aplicación desde la sección de descargas de la web OMI project. 
+
+El proceso de compilación se vale de una serie de herramientas que lo simplifican y parametrizan, permitiendo la configuración
+del ejecutable obtenido.
+
+\begin{itemize}
+\item autoconf
+\item automake
+\item make
+\item g++
+\end{itemize}
+
+Además se mantiene dependencia con las siguientes bibliotecas de programación:
+
+\begin{itemize}
+\item Biblioteca estándar de C/C++
+\item Biblioteca GNU readline
+\item Biblioteca Boost regex
+\end{itemize}
+
+Instalación de dependencias en una distribución Debian:
+\lstset {language=bash}
+\begin{lstlisting}
+$PS1 apt-get install autoconf automake build-essential \
+$PS2  libreadline-dev libboost-regex-dev
+\end{lstlisting}
+
+Para la compilación es necesario abrir una sesión de terminal de comandos en el directorio sobre el
+que se desea llevar a cabo el proceso. Se supone que el usuario tiene permisos suficientes en el 
+sistema para llevar a cabo la instalación.
+
+Descarga del código fuente de la versión \$VERSION:
+\begin{lstlisting}
+$PS1 wget http://wwww.omi-project.com/download/code/omi_$VERSION.tar.gz
+\end{lstlisting}
+\pagebreak
+
+Descompresión y desempaquetado del fichero:
+\begin{lstlisting}
+$PS1 tar -xzvf omi_$VERSION.tar.gz
+$PS1 cd omi_$VERSION
+\end{lstlisting}
+
+Es posible establecer determinados aspectos del intérprete durante el proceso de compilación. Las opciones 
+más significativas son las siguientes:
+
+\begin{description}
+\item [numType:] Tipo de dato utilizado para la representación interna de los datos numéricos. El valor por defecto es ``double''.
+Su valor puede ser cualquier tipo de dato estándar de C/C++ o algún tipo específico facilitado por el usuario. También admite el
+valor en número de bytes, siendo los posibles valores ``4bytes'', ``8bytes'' y ``16bytes''.
+\item [numPrecision:] Precisión numérica utilizada en al escribir en la salida estándar. Su valor por defecto es 15, y puede ser cualquier número entero.
+\item [refCType:] Tipo de dato utilizado para contar el número de referencias de los nodos. Determina el número de referencias máximas que puede llegar a tener un 
+dato. Su valor por defecto ``unsigned int''. Puede ser cualquier tipo de dato estándar de C/C++ o  algún tipo específico facilitado por el usuario.
+\item [sizeNode:] Esta opción permite configurar el intérprete dando valores óptimos a las opciones anteriores. Puede presentar uno de los siguientes valores:
+\begin{description}
+\item [small:] numType=``float'' refCType=``unsigned int'' numPrecision=6
+\item [normal:] numType=``double'' refCType=``unsigned int'' numPrecision=15
+\item [big:] numType=``long double'' refCType=``unsigned int'' numPrecision=18
+\end{description}
+\end{description}
+
+Para ver un listado completo de las opciones de configuración para la compilación:
+\begin{lstlisting}
+$PS1 ./configure --help 
+\end{lstlisting}
+
+Configurar el proceso de compilación con las opciones por defecto:
+\begin{lstlisting}
+$PS1 ./configure 
+\end{lstlisting}
+
+Durante la ejecución de este script se comprobará si se satisfacen las dependencias, y se creará los scripts necesarios para la compilación.
+
+Para llevar a cabo la compilación:
+\begin{lstlisting}
+$PS1 make 
+\end{lstlisting}
+
+Una vez compilado con éxito es posible proceder con la instalación:
+\begin{lstlisting}
+$PS1 make install
+\end{lstlisting}
+
+Para comprobar la integridad de la instalación:
+\begin{lstlisting}
+$PS1 make check
+\end{lstlisting}
+\pagebreak
+
+Para limpiar el entorno de compilación:
+\begin{lstlisting}
+$PS1 make clean
+\end{lstlisting}
+
+Para desinstalar el software:
+\begin{lstlisting}
+$PS1 make unistall
+\end{lstlisting}
+
+\subsubsection{Instalación mediante paquete .deb}\label{sec:deb_pack}
+Cada versión del intérprete es precompilada y empaquetada. Las bibliotecas externas se compilan
+de forma estática por lo que se elimina la dependencia con otros paquetes.
+
+Con una sesión de terminal y los permisos en el sistema suficientes es posible descargar e instalar el paquete .deb
+
+Para descargar el paquete:
+\begin{lstlisting}
+$PS1 wget http://wwww.omi-project.com/download/deb/omi_$VERSION.deb
+\end{lstlisting}
+
+Para instalar el paquete:
+\begin{lstlisting}
+$PS1 dpkg -i omi_$VERSION.deb
+\end{lstlisting}
+
+Para desinstalar el paquete:
+\begin{lstlisting}
+$PS1 dpkg -r omi
+\end{lstlisting}
+
+\subsection{Intérprete}label{sec:intérpreter}
+El intérprete es el sistema software sobre el que gira el proyecto OMI. Se trata
+del software encargado de leer y ejecutar el código fuente escrito en OMI.
+
+Para ejecutar el intérprete se utiliza el comando con el mismo nombre.
+ \begin{lstlisting}
+$PS1 omi
+\end{lstlisting}
+
+Ejecutar el comando sin argumento hará que el intérprete lea y procese la entrada estándar.
+
+La sintaxis del comando es la siguiente:
+$$
+omi\ [options]\ [file]\ [args...]
+$$
+
+El fichero será un documento escrito en el lenguaje OMI. La lista de argumentos serán datos accesibles
+desde el código fuente contenido en el fichero.
+
+Las posibles opciones son:
+\begin{description} 
+\item [-c \underline{cmd}:] Interpreta la cadena cmd.
+\item [-i:] Modo interactivo. Las expresiones y sentencias son interpretadas en tiempo real y solicitadas mediante un prompt.
+\item [-h:] Muestra la ayuda del comando.
+\item [-V:] Muestra la versión del software.
+\end{description}
+
+Los argumentos facilitados serán accesible desde el código fuente mediante el array ``args'', donde la primera posición del array es
+el nombre del fichero y las siguientes los argumentos facilitados.
+
+Se pone a disposición del usuario una hoja de manual que detalla el uso del comando.
+\begin{lstlisting}
+$PS1 man omi
+\end{lstlisting}
+
+Con la instalación por defecto el intérprete es ubicado en la siguiente ruta:
+$$/usr/local/bin/omi$$
+
+Además los recursos, como por ejemplo las extensiones, serán ubicados en el siguiente directorio:
+$$/usr/local/share/omi$$
+
+\lstset {language=omi}
+\subsection{Referencias del lenguaje}
+\subsubsection{Sentencias} \label{sec:stmt}
+Como muchos otros lenguajes de programación toda sentencia OMI debe acabar en punto y coma ``;''. 
+
+Es posible delimitar un bloque de sentencias entre llaves. Muchos recursos del lenguaje operan 
+ o trabajan sobre un bloque de sentencias. Estas no necesitan acabar en ``;''.
+
+Los cierre de bloque o fin de la entrada automáticamente implica un punto y coma.
+En el modo interactivo no es necesario si la línea introducida sólo se compone de una sentencia. \\
+
+\begin{lstlisting}
+   << "Hola mundo"; // Sentencia acabada 
+   if (true) { << "Y un ejemplo"; } // Bloque de sentencias 
+   << "Soy un programa OMI"
+\end{lstlisting}
+
+\subsubsection{Comentarios}\label{sec:comments}
+Los comentarios son fragmentos de texto que son incluidos en el código fuente y que serán omitidos por el intérprete. Se utilizan normalmente para aclarar y/o documentar las
+piezas de código. 
+
+En OMI es posible realizar un comentario de línea al estilo de C++ o de consola de comando UNIX. \\
+
+\begin{lstlisting}
+   x = 1; //x vale 1
+   y = 2; #y vale 2
+\end{lstlisting}
+ 
+Por otro lado, es posible escribir un bloque de una o varias líneas de comentarios delimitándolo mediante ``/*'' y ``*/''. \\
+
+\begin{lstlisting}
+   /* 
+      x vale 1
+      y vale 2
+   */
+   x = 1; 
+   y = 2; 
+\end{lstlisting}
+\subsubsection{Ejecución}\label{sec:execution}
+La ejecución de un programa escrito en OMI comenzará desde un fichero, y desde la primera sentencia contenida en este. Las sentencias 
+en este fichero que no esten contenidas en ninguna función o método son consideradas el flujo principal del programa.
+
+La ejecución del programa normalmente se realiza sentencia a sentencia de forma secuencial. Algunas sentencias y expresiones del lenguaje podrán cambiar este flujo.
+
+La ejecución finaliza cuando se llega al final de este fichero o se resuelve una sentencia que produzca la salida. También es posible que se de algún error sintáctico o semántico
+
+\subsubsection{Identificadores}\label{sec:id}
+Los identificadores en OMI sirven para nombrar elementos del script definidos por el programador,
+tales como variables, funciones, etiquetas, clases...
+
+Un identificador debe comenzar por una letra (mayúscula o minúscula) o un subguión (\_), seguidos de tantas letras, números o subguiones como se desee. \\
+
+\begin{lstlisting}
+   foo = 1;  // foo identifica una variable que vale uno
+   ~ bar () { // bar identifica una funci|{\color{gray75}{ó}}|n que imprime "Hola mundo".
+      << "Hola mundo";
+   } 
+\end{lstlisting}
+
+OMI es sensible a mayúsculas, por lo que considera dos identificadores distintos si no mantienen la misma capitalización.
+
+Un identificador no puede coincidir con una palabra reservada del lenguaje o se producirá un error sintáctico.
+
+\paragraph{Palabras reservadas}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item null
+\item NULL
+\item true
+\item false
+\item global
+\item getenv
+\item function
+\item P
+\item return
+\item class
+\item new
+\item private
+\item extends
+\item this
+\item extends
+\item parent
+\item static
+\item include
+\item if
+\item else
+\item elseif
+\item elif
+\item switch
+\item case
+\item default
+\item with
+\item do
+\item while
+\item for
+\item as
+\item in
+\item break
+\item continue
+\item exit
+\item goto
+\item throw
+\item try
+\item catch
+\item print
+\item echo
+\item input
+\item inputline
+\item typeof
+\item typeOf
+%~ \item sizeof
+%~ \item sizeOf
+\item datinfo
+\item datInfo
+\item empty
+\item isnull
+\item isbool
+\item isnum
+\item isstring
+\item isarray
+\item isobject
+\item AND
+\item and
+\item OR
+\item or
+\item size
+\item str\_explode
+\item str\_implode
+\item array\_implode
+\item str\_implode
+\item str\_find 
+\item str\_pos 
+\item str\_replace 
+\item str\_replace\_sub 
+\item str\_upper 
+\item str\_lower 
+\item str\_search 
+\item str\_match 
+\item sprintf 
+\item regexp 
+\item reduce 
+\item array\_chunk 
+\item array\_search 
+\item int 
+\item float 
+\item bool 
+\item string 
+\item date 
+\item time 
+\item sleep 
+\item file 
+\item fopen 
+\item fput 
+\item fget 
+\item fread 
+\item fwrite 
+\item fappend 
+\item fapp 
+\item fclose 
+\item ftell 
+\item fseek 
+\item fSET 
+\item fCUR 
+\item fEND 
+\item exec 
+\item eval 
+\item fork 
+\item wait 
+\item getpid 
+\item getppid 
+\item process 
+\item signal 
+\item kill 
+\item shandler 
+\item exit\_process 
+\item load 
+%~ \item sqrt
+\end{itemize}
+\end{multicols}
+
+En OMI se nombran de igual forma las variables, funciones, clases... Es el contexto 
+en el que se da un identificador el que determina el recurso que este nombra. 
+Por regla general todos los operadores, funciones y demás construcciones del lenguaje toman, 
+a no ser que se indique lo contrario, los identificadores como variables. Las excepciones a esta regla son:
+
+\begin {itemize}
+   \item Operador llamada a función 
+   \item Operador aplicación parcial
+   \item Operador $new$
+\end{itemize}
+
+OMI dispone de mecanismos para indicar explícitamente el tipo de recurso que es nombrado.
+
+\subsubsection{Tipos de datos}\label{sec:data_type}
+Haciendo uso del lenguaje OMI se puede operar sobre varios tipos de datos simples y compuestos. 
+
+OMI es un lenguaje de programación que presenta un tipado dinámico, es decir, las variables se consideran del mismo tipo que al dato al que 
+referencian. Así no es necesario declarar el tipo de dato que contendrán.
+
+Los tipos de datos sobre los que opera OMI son:
+\begin{itemize}
+\item Simples:
+\begin{itemize}
+   \item Booleanos.
+   \item Numéricos.
+   \item Cadenas de caracteres.
+\end{itemize}
+\item Compuestos:
+\begin{itemize}
+   \item Arrays.
+   \item Objetos.
+\end{itemize}
+\item Especiales:
+\begin {itemize}
+   \item Nulo.
+   \item Función.
+   \item Expresión regular.
+\end{itemize}
+\end{itemize}
+
+Algunas funciones y operadores del lenguaje tratan tipos de datos concretos. A pesar de ello OMI es un lenguaje débilmente tipado, por
+lo que es posible usar valores de un tipo de dato en expresiones que requieran otro tipo de dato. Para ello se lleva a cabo una conversión de
+tipo de forma implícita.
+
+\paragraph{Booleano}\label{sec:type_bool}
+Este tipo de dato puede contener dos únicos valores: verdadero o falso. Es el tipo de dato 
+más simple. El valor verdadero se expresa mediante el literal ``true'', mientras que el 
+falso se representa mediante ``false''. \\
+
+\begin{lstlisting}
+   a = true; // a presenta el valor verdadero
+   b = false; // b presenta el valor falso
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores lógicos (\autoref{sec:op_bool}).
+   \item Operadores de comparación (\autoref{sec:op_cmp}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv})
+   \end{itemize}
+}}}
+
+
+\paragraph{Numérico}\label{sec:type_num}
+En OMI únicamente existe un tipo de dato numérico. Mediante este tipo de dato es posible representar 
+números enteros y aquellos decimales que puedan ser expresados en punto flotante. 
+
+A pesar de que solo presenta un tipo de dato numérico ofrece mecanismos para operar con enteros y decimales, por ejemplo es posible obtener la parte entera de 
+un número decimal.
+
+Los números son expresados en OMI mediante cualquier conbinación de dígitos, separando la parte decimal mediante un punto si existiera. Además es
+posible preceder la expresión de un signo ``+'' o ``-''. \\
+
+\begin{lstlisting}
+   a = 1; // a presenta el valor 1
+   b = -1; // b presenta el valor -1
+   c = +1; // c presenta el valor +1
+   d = 0.001; // d presenta el valor 0.001
+   e = -0.001; // e presenta el valor -0.001
+\end{lstlisting}
+
+En OMI es posible configurar cómo los tipos de datos numéricos son almacenados y tratados de forma interna. Así es posible alterar el valor numérico máximo que se puede representar 
+y la precisión. No obstante, esto sólo es posible en tiempo de compilación, por lo que se deberá usar la misma configuración para todos las ejecuciones. \\
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores aritméticos (\autoref{sec:op_arth}).
+   \item Compilación e instalación desde código fuente (\autoref{sec:compile}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv})
+   \end{itemize}
+}}}
+
+\paragraph{Cadena de caracteres}\label{sec:type_string}
+En general, un carácter se refiere a una letra, número u otro símbolo o signo. Las cadenas de caracteres son una sucesión de estos. Normalmente representan un contenido textual. 
+
+En OMI las cadenas de caracteres son consideradas como un tipo de dato simple. Esto es debido a que no existe el tipo de dato carácter, y por tanto los datos de este tipo no puede ser 
+descompuesto en datos de tipos más simples. De esta forma se considera al carácter simple como una cadena de un solo elemento.
+
+Una cadena de caracteres queda delimitada entre comillas simples o comillas dobles. \\
+
+\begin{lstlisting}
+   a = "Una cadena de caracteres"; // a es una cadena definida entre "
+   b = 'Y otra'; // b es una cadena definida entre '
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores sobre cadenas de caracteres(\autoref{sec:op_string}).
+   \item Funciones sobre cadenas de caracteres (\autoref{sec:func_string}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv})
+   \end{itemize}
+}}}
+
+\paragraph{Array}\label{sec:type_array}
+
+En OMI un array es una estructura de datos que almacena valores de forma contigua. Los datos que guarda un array pueden ser de diferente tipo. 
+
+Se pueden dar dos tipos de arrays:
+
+\begin{itemize}
+\item Secuenciales.
+\item Asociativos.
+\end{itemize}
+
+Los arrays secuenciales son accesibles mediante índices numéricos y de una forma posicional. Se definen mediante una secuencia de expresiones que representan 
+un valor. Estas serán separadas por el carácter ``,'' y delimitadas entre llaves ``{'' y ``}''. El primer elemento del array se corresponde con el índice numérico $0$. \\
+
+ \begin{lstlisting}
+   a = {0,1,2}; // a es un array que contiene los n|{\color{gray75}{ú}}|meros 0, 1 y 2
+   /* 
+      b es un array que contiene el numero 0, la
+      cadena "str" y otro array con los numeros 0 y 1
+   */
+   b = {0,"str", { 0, 1 } }; 
+\end{lstlisting}
+
+En arrays asociativos cada elemento está referenciado mediante una clave, de forma que se puede utilizar esta para acceder al elemento dentro del array. En OMI las claves 
+de los arrays asociativos pueden ser cualquier expresión válida que represente un valor de tipo simple. Un array asociativo se define igual que uno secuencial salvo que los elementos que lo
+componen son pares de expresiones correspondientes a la clave y al valor y separadas por el carácter ``:''. \\
+
+\begin{lstlisting}
+   /*
+      a es un array asociativo con las cadenas
+      'k0', 'k1' y 'k2' como claves. Sus valores 
+      son 0, 1 y 2 respectivamente.
+   */
+   a = {'k0' : 0, 'k1' : 1, 'k2' : 2};
+   /* 
+      b es un array asociativo con los n|{\color{gray75}{ú}}|meros 0 y
+      10, y la cadena "K" como claves. Sus valores son
+      el numero 0, la cadena "str" y otro array con 
+      los numeros 0 y 1.
+   */
+   b = { 10: 0, 0: "str", "K": { 0, 1 } }; 
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores sobre arrays (\autoref{sec:op_string}).
+   \item Funciones sobre arrays (\autoref{sec:func_string}).
+   \end{itemize}
+}}}
+
+\paragraph{Objetos} \label{sec:type_object}
+En programación orientada a objetos, un objeto es una estructura de datos que presenta un comportamiento asociado. Tiene un estado interno 
+determinado por el valor de los datos que contiene, y se encarga de realizar una serie de tareas en tiempo de ejecución. Una clase de objetos es un
+modelo que define las propiedades y el comportamiento que tienen objetos afines. 
+
+El uso de las clases y los objetos es descrito en profundidad como una referencia del lenguaje (\autoref{sec:class}).
+
+%~ Un objeto consta de atributos y métodos. Los atributos se corresponden con los datos que contiene y que reflejan el estado del mismo. Los métodos
+
+En OMI todo dato es considerado de tipo objeto, los otros tipos se ven como clases de objetos. Un dato, además de tener asociado un valor de un tipo concreto, 
+presenta  una serie de acciones u operaciones que se pueden realizar con él y que están determinadas por su tipo. Por ejemplo sobre un dato array se puede realizar la operación
+implode para obtener una cadena con todos los elementos del array separado por una subcadena separadora. \\
+
+\begin{lstlisting}
+   /*
+      A la variable "a" se le asigna
+      el resultado de ejecutar la operaci|{\color{gray75}{ó}}|n 
+      implode sobre el array. 
+   */
+   a = {"hola","mundo"}->implode(" ");
+\end{lstlisting} 
+
+OMI permite al usuario definir, construir y utilizar sus propios objetos. Para ello se vale de las clases
+y de mecanismos para instanciar los objetos a partir de estas.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Clases de objetos (\autoref{sec:class}).
+   \end{itemize}
+}}}
+
+\paragraph{Nulo}
+Nulo representa la ausencia de valor. Es un tipo de dato especial que se utiliza para expresar referencias que no tienen valor asociado. Paradójicamente el
+valor nulo conlleva la ausencia de valor. 
+
+En OMI cualquier referencia sin valor se considera como nulo. Las variables no inicializadas, o las posiciones de arrays inexistentes tienen el valor nulo. 
+
+Es posible expresar un dato nulo mediante el literal ``null'' (o en mayúsculas ``NULL''). \\
+
+\begin{lstlisting}
+   a = null; // a no contiene valor
+\end{lstlisting} 
+
+\paragraph{Función}\label{sec:type_func}
+En OMI una función hace referencia a un bloque de sentencias que puede recibir una serie de parámetros y tomar un valor. Una función realiza una tarea específica dentro del programa.
+Cuando una función es llamada se ejecuta el bloque de sentencias al que referencia, pasándole como parámetros los valores en la llamada. 
+
+El uso de las funciones es descrito en detalle más adelante, en este manual, como una referencia del lenguaje (\autoref{sec:class}). 
+
+En OMI las funciones son consideradas tipos de datos, siendo posible operar sobre ellas. Así una función puede ser asignada a una variable, pasada como parámetro 
+o ser devuelta por otra función. \\
+
+\begin{lstlisting}
+   /*
+      a es una funci|{\color{gray75}{ó}}|n que recibe un 
+      par|{\color{gray75}{á}}|metro y lo devuelve como valor
+   */
+   a = ~(param){ return param; }; 
+\end{lstlisting} 
+
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones (\autoref{sec:function}).
+   \end{itemize}
+}}}
+
+\paragraph{Expresión regular}
+Una expresión regular es un patrón definido por un lenguaje regular. Normalmente se aplica a una cadena de caracteres, para 
+determinar si pertenece al lenguaje que define. Se utiliza para realizar búsquedas de subcadenas o llevar a cabo remplazos.
+
+Con OMI se puede expresar cualquier expresión regular usando la sintaxis PERL. Para ello se ha de delimitar entre acento grave (\`\ ). \\
+
+\begin{lstlisting}
+   /*
+      "exp" es la expresi|{\color{gray75}{ó}}|n regular correspondiente
+      al lenguaje descrito por cero o mas caracteres "a" 
+      seguidos de dos caracteres "b"
+   */
+   exp = `a*bb`; 
+\end{lstlisting} 
+
+El lenguaje dispone de funciones para crear y operar sobre expresiones regulares.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones de expresiones regulares (\autoref{sec:func_regex}).
+   \end{itemize}
+}}}
+
+\paragraph{Conversión implícita entre tipos de datos}\label{sec:type_iconv}
+OMI es un lenguaje de tipado débil, es decir, dado un valor de un tipo concreto es posible utilizarlo como otro tipo sin necesidad de 
+llevar a cabo una conversión de forma explícita. Al usar un dato en una operación que espera  otro tipo OMI realizará
+una conversión automática.
+
+
+
+\begin{description}
+\item [Nulo] \hfill
+   \begin{description}
+   \item[Booleano:] false
+   \item[Numérico:] 0
+   \item[Cadena de caracteres:] $''$$''$
+   \end{description}
+\item[Booleanos] \hfill
+   \begin{description}
+   \item[false] \hfill
+      \begin{description}
+      \item[Numérico:] 0 
+      \item[Cadena de caracteres:] $''$$''$
+      \end{description}
+   \item[true] \hfill
+      \begin{description}
+      \item[Numérico:] 1 
+      \item[Cadena de caracteres:] $''$1$''$
+      \end{description}
+   \end{description}
+\item[Numéricos] \hfill
+   \begin{description}
+   \item[Número 0] \hfill
+      \begin{description}
+      \item[Booleano:] false 
+      \item[Cadena de caracteres:] $''$0$''$
+      \end{description}
+   \item[Número distinto a 0] \hfill
+      \begin{description}
+      \item[Booleano:] true 
+      \item[Cadena de caracteres:] Cadena que representa el número.
+      \end{description}
+   \end{description}
+\item[Cadena de caracteres] \hfill
+   \begin{description}
+   \item[Cadena vacía] \hfill
+      \begin{description}
+      \item[Booleano:] false 
+      \item[Numérico:] 0
+      \end{description}
+   \item[Cadena numérica] \hfill
+      \begin{description}
+      \item[Booleano:] true 
+      \item[Numérico:] Número que representa la cadena
+      \end{description}
+   \item[Otra cadena] \hfill
+      \begin{description}
+      \item[Booleano:] true 
+      \item[Numérico:] Tamaño de la cadena
+      \end{description}
+   \end{description}
+\end{description}
+
+Normalmente no es posible usar un dato simple en lugar de uno compuesto. Las funciones y operaciones que esperan recibir como argumento
+un dato compuesto devolverán un error si no es así. No obstante un dato compuesto puede utilizarse como uno simple sin que se produzcan
+errores semánticos.
+
+\begin{description}
+\item[Array] \hfill
+   \begin{description}
+   \item[Array vacío] \hfill
+      \begin{description}
+      \item[Booleano:] false 
+      \item[Numérico:] 0
+      \item[Cadena de caracteres:] $''$$''$
+      \end{description}
+   \item[Array con elementos] \hfill
+      \begin{description}
+      \item[Booleano:] true 
+      \item[Numérico:] 0   
+      \item[Cadena de caracteres:] $''$$''$
+      \end{description}
+   \end{description}
+\end{description}
+
+En el caso de los objetos, es posible definir métodos que serán invocados cuando sean utilizados como otro tipo de dato. Estos métodos son denominados 
+métodos mágicos (\autoref{sec:magic_method}).
+
+\subsubsection{Operadores}
+OMI soporta una serie de operadores de naturaleza muy variada. Mediante un operador se puede construir una expresión que, al ser evaluadas, se aplicará una función
+sobre un conjunto de datos de entrada denominados operandos, y obtener así un valor.
+
+Un operador normalmente es de naturaleza binaria, presentando dos entradas, aunque existe operadores unitarios o ternarios. Además presenta una sintaxis y semántica propia. \\
+
+\begin{lstlisting}
+   foo = 1 + 1; // foo es el resultado de evaluar la operaci|{\color{gray75}{ó}}|n suma
+\end{lstlisting} 
+
+Los operadores pueden combinarse para formar expresiones más complejas. Para la evaluación se establece una precedencia de operadores implícita, que determina en qué orden 
+deben de resolverse. Es posible alterar la precedencia de operadores encerrando la expresión entre paréntesis. \\
+
+\begin{lstlisting}
+   foo = 2 * 8 + 3; // se eval|{\color{gray75}{ú}}|a la operaci|{\color{gray75}{ó}}|n producto y luego la suma.
+   bar = 2 * (8 + 3); //se eval|{\color{gray75}{ú}}|a la operaci|{\color{gray75}{ó}}|n suma y luego el producto.
+\end{lstlisting} 
+
+La mayoría de operadores que se pueden utilizar en OMI tienen una naturaleza matemática y se resuelven igual forma. No obstante también soporta otros operadores propios de
+los lenguajes de programación. 
+
+\paragraph{Operadores lógicos}\label{sec:op_bool}
+
+Al aplicarse un operador lógico se produce un resultado booleano derivado de la evaluación de una condición. 
+
+Los operadores lógicos son los siguientes:
+
+\begin{description}
+\item [Negación:] $!$
+\item [AND lógico:] $\&\&$, $and$
+\item [OR lógico:] $||$, $or$
+%~ \item [XOR lógico:] $x|$, $xor$
+\end{description} 
+
+\begin{lstlisting}
+   foo = !true; // foo vale falso
+   foo = true && false; // foo vale falso
+   foo = true or false; // foo vale verdadero
+\end{lstlisting} 
+
+
+Los operadores AND y OR son evaluados de izquierda a derecha en corto circuito. Se puede producir el resultado mediante una evaluación parcial, al conocerse de antemano el 
+valor que se obtendrá mediante la evaluación total. En este caso el resto de la expresión no será evaluada. Además el resultado siempre será el último operando en ser evaluado. \\
+ 
+\begin{lstlisting}
+   foo = null and 3 + 4; // foo vale null, evaluaci|{\color{gray75}{ó}}|n parcial 
+   foo = {} or "10"; // foo vale "10", evaluaci|{\color{gray75}{ó}}|n total
+   foo = "10" and 3 + 4; // foo vale 7, evaluaci|{\color{gray75}{ó}}|n total
+   foo = "5" or {}; // foo vale "5", evaluaci|{\color{gray75}{ó}}|n parcial
+\end{lstlisting} 
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato booleano (\autoref{sec:type_bool}).
+   \end{itemize}
+}}}
+
+
+\paragraph{Operadores de comparación}\label{sec:op_cmp}
+Se encargan de evaluar el orden entre dos valores. El resultado es un valor booleano de verdadero si se satisface la comparación o falso en caso contrario.
+
+Los operadores de comparación son los siguientes:
+
+\begin{description}
+\item [Igualdad:] $==$
+\item [Desigualdad:] $!=$
+\item [Menor que:] $<$
+\item [Menor o igual que:] $<=$
+\item [Mayor que:] $>$
+\item [Mayor o igual que:] $>=$
+\item [Idéntico:] $===$
+\item [No idéntico:] $!==$
+%~ \item [Contención:] $in$
+\end{description} 
+
+
+\begin{lstlisting}
+   foo = 5 == 5; // foo vale verdadero
+   foo = "5" == 5; // foo vale verdadero
+   foo = 5 != 5; // foo vale falso
+   foo = "3" < 4; // foo vale verdadero
+   foo = "3" <= 4; // foo vale verdadero
+   foo = 4 > 4; // foo vale falso
+   foo = 4 >= 4; // foo vale verdadero
+   foo = 5 === 5; // foo vale verdadero
+   foo = "5" === 5; // foo vale falso
+   foo = "5" !== 5; // foo vale verdadero
+\end{lstlisting} 
+
+Para los tipos booleanos se considera que verdadero (true) es mayor que falso (false). Para los datos de tipo numéricos se toma su valor aritmético.
+Las cadenas de caracteres son ordenadas alfabéticamente.
+
+Cuando se comparan datos de distintos tipos se realiza una conversión al tipo de dato más simple. Por ejemplo al comparar un dato numérico con un booleano se convertirá
+el numérico a booleano. \\
+
+\begin{lstlisting}
+   foo = true <= 5; // foo vale verdadero
+   foo = "5" == true; // foo vale verdadero
+   foo = "word" < 4; // foo vale falso
+\end{lstlisting} 
+
+Cuando se realiza una comparación de forma idéntica, además de comparar el valor de los datos, se comprueban los tipos.
+
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato booleano (\autoref{sec:type_bool}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores aritméticos} \label{sec:op_arth}
+
+Se corresponden con las operaciones aritméticas básicas que son la suma, la diferencia, el producto y la división, y 
+aquellas derivadas de estas. El resultado de la operación será un número.
+
+Los operadores aritméticos toman como operandos expresiones tratadas como numéricos. Todo dato que sea sometido a una operación
+aritmética será convertido a numérico.
+
+Los operadores aritméticos soportados por OMI son:
+
+\begin{description}
+\item [Suma:] $+$
+\item [Diferencia:] $-$
+\item [Producto:] $*$
+\item [Division:] $/$
+\item [Módulo:] $\%$
+\item [Potencia:] \^ \hfill   
+\end{description} 
+
+
+\begin{lstlisting}
+   foo = 1 + 1; // foo vale 2
+   foo = "5" + 5; // foo vale 10
+   foo = "word" + 4; // foo vale 8
+   foo = true + 10; // foo vale 11
+   foo = 4 - "2"; // foo vale 2
+   foo = 3 * 4; // foo vale 12
+   foo = 17 / 4; // foo vale 4.25
+   foo = 2.1 / "8"; // foo vale 0.2625
+   foo = 4 % 3; // foo vale 1
+   foo = 4 ^ 2; // foo vale 16 
+\end{lstlisting} 
+
+El resultado del operador módulo mantendrá el mismo signo que el operando que hace de dividendo.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato numérico (\autoref{sec:type_num}).
+   \end{itemize}
+}}}
+
+
+
+\paragraph{Operadores sobre cadenas de caracteres}\label{sec:op_string}
+OMI soporta una serie de operadores que pueden ser aplicados sobre cadenas de caracteres. 
+
+\begin{description}
+\item [Concatenación:] $.$
+\item [Acceso a posición:] $[n]$
+\end{description} 
+
+\begin{lstlisting}
+   foo = "ABC" . "DEF"; // foo vale "ABCDEF"
+   foo = "ABCDE"[0]; // foo vale "A"
+\end{lstlisting} 
+
+La concatenación se realiza después de que se determinen los números decimales presentes en la 
+expresión. Todo carácter punto no suponga un separador decimal será considerado un operador
+de concatenación.\\  
+
+\begin{lstlisting}
+   foo = "AB".2.1.1."CD"; // foo vale "AB2.11CD"
+   foo = "AB".2.1.1.1."CD"; // foo vale "AB2.11.1CD"
+\end{lstlisting} 
+
+El operador de acceso a posición recibe un índice que indica el elemento al que acceder dentro de la 
+cadena. Si la posición indicada no existe se toma el valor nulo. El índice siempre será considerado como un 
+dato numérico.
+
+El operador de acceso también puede ser utilizado para escribir en una determinada posición de la cadena.
+No obstante, en este caso, debe existir un elemento en la posición indicada o se producirá un error. \\
+
+\begin{lstlisting}
+   foo = "ABCD"; // foo vale "ABCD"
+   foo[0] = "E"; // foo vale "EBCD"
+   foo[0] = "FG"; // foo vale "FGBCD"
+   foo[10] = "X"; // se produce un error.
+\end{lstlisting} 
+
+No es posible utilizar el operador de acceso para escribir en una determinada posición de una cadena constante. \\
+
+\begin{lstlisting}
+   "ABCD"[0] = "X"; // se produce un error.
+\end{lstlisting} 
+
+El operador de acceso es utilizado para otros tipos de datos como los arrays.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato cadena de caracteres (\autoref{sec:type_string}).
+   \item Funciones sobre cadena de caracteres (\autoref{sec:fun_string}).
+   \item Operadores sobre array (\autoref{sec:op_array}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores de asignación} \label{sec:op_asig}
+La asignación es la operación mediante la cual el valor de una expresión puede ser atribuido a un símbolo variable. De esta forma se puede hacer uso 
+del valor en otras expresiones. El operador se representa mediante un signo igual ``='' y toma una expresión (operando derecho) para asignarla a un símbolo variable (operando izquierdo).
+ 
+
+En OMI se lleva a cabo una asignación destructiva. Cuando una expresión es asignada, por ejemplo a una variable, el valor de esta última cambia, indistintamente de lo que contenía
+anteriormente.\\
+
+ \begin{lstlisting}
+   foo = 1; // foo vale 1
+   foo = 2; // foo a cambiado al valor 2
+   bar = foo; // bar vale el valor actual de foo que es 2
+   foo = 10; // foo a cambiado al valor 10 y bar sigue valiendo 2
+\end{lstlisting} 
+
+OMI, como otros lenguajes, soporta una serie de operadores que combinan una operación determinada y una asignación. Estos simplifican
+muchas expresiones.
+
+\begin{description}
+\item [Suma y asignación:] $+=$
+\item [Diferencia y asignación:] $-=$
+\item [Producto y asignación:] $*=$
+\item [División y asignación:] $/=$
+\item [Potencia y asignación:] \^ \ =\hfill 
+\item [Módulo y asignación:] $\%=$
+\item [Concatenación y asignación:] $.=$
+\end{description} 
+
+ \begin{lstlisting}
+   foo = 1; // foo vale 1
+   foo += 2; // foo a cambiado al valor 3
+   foo -= 4; // foo a cambiado al valor -1
+   foo *= -9; // foo a cambiado al valor 9
+   foo /= 3; // foo a cambiado a 3
+   foo ^= 3; // foo a cambiado a 27
+   foo %= 2; // foo a cambiado a 1
+   foo .= "F"; // foo a cambiado a "1F" 
+\end{lstlisting} 
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores aritméticos (\autoref{sec:op_arth}).
+   \item Operadores sobre cadenas de caracteres (\autoref{sec:op_string}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores de incremento y decremento} \label{sec:op_inc}
+Estos operadores se aplican a una expresión variable, incrementando o decrementado su valor
+numérico. Este tipo de operaciones implican una asignación. 
+
+Se distinguen entre si, además de que si el valor es incrementado o decrementado, en el momento en el momento
+en el que se tomará el valor. Pudiendo aplicarse la operación antes o después de evaluar el resto de la expresión.
+
+\begin{description}
+\item [Preincremento:] $++i$
+\item [Posincremento:] $i++$
+\item [Predecremento:] $--i$
+\item [Posdecremento:] $i--$
+\end{description} 
+
+
+ \begin{lstlisting}
+   foo = 1; // foo vale 1
+   bar = ++foo; // bar vale 2 y foo vale 2
+   bar = foo++; // bar vale 2 y foo vale 3
+   bar = --foo; // bar vale 2 y foo vale 2
+   bar = foo--; // bar vale 2 y foo vale 1
+\end{lstlisting} 
+
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores aritméticos (\autoref{sec:op_arth}).
+   \item Operadores de asignación (\autoref{sec:op_asig}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores de conversión de tipo} \label{sec:op_type}
+En OMI se definen una serie de operadores que permiten realizar una conversión explícita a un determinado tipo de dato.
+
+\begin{description}
+\item [Booleano:] $bool$
+\item [Entero:] $int$
+\item [Punto flotante:] $float$
+\item [Cadena de caracteres:] $string$
+\end{description} 
+
+\begin{lstlisting}
+   foo = bool 4; // foo vale el booleano true
+   foo = bool 0; // foo vale el booleano false
+   foo = int "4.5"; // foo vale el num|{\color{gray75}{é}}|rico 4
+   foo = int "AA"; // foo vale el num|{\color{gray75}{é}}|rico 2
+   foo = float "4.5"; // foo vale el num|{\color{gray75}{é}}|rico 4.5
+   foo = string 55; // foo vale la cadena "55" 
+   foo = string true; // foo vale la cadena "1" 
+\end{lstlisting} 
+
+A pesar de que OMI soporta la conversión a enteros o flotantes, internamente estos se representan de la misma forma. Por lo que
+se consideran del mismo tipo.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores sobre arrays} \label{sec:op_array}
+El lenguaje OMI soporta una serie de operadores que pueden ser aplicados sobre un dato array.
+
+\begin{description}
+\item [Acceso a posición:] $[k]$
+\item [Acceso a final:] $[]$
+\item [Tamaño:] $size$
+\end{description} 
+
+\begin{lstlisting}
+   foo = {"A","B"}; // foo es un array que contiene las cadenas "A" y "B"
+   bar = {"A","B"}[0]; // bar vale "A"
+   bar = foo[1]; // bar vale "B"
+   bar = size foo; // bar vale 2
+   foo[] = "C"; // foo es un array que contiene las cadenas "A", "B" y "C"
+   bar = size foo; // bar vale 3
+   foo = { "k0": "v0", "k1": "v1" }; // foo es un array asociativo con dos claves
+   bar = { "k0": "v0", "k1": "v1" }["k0"]; // bar vale "v0"
+   bar = foo["k1"]; // bar vale "v1"
+   bar = size foo; // bar vale 2
+   foo["k2"] = "v2"; // foo es un array asociativo con tres claves
+   foo[] = "v3"; // foo es un array asociativo con cuatro claves
+\end{lstlisting} 
+
+Con el operador de acceso a posición es posible acceder a un determinado elemento
+dentro del array. Para ello se debe facilitar el índice o la clave a la que 
+se desea acceder. 
+
+El operador de acceso a posición en array no realiza ninguna conversión de tipos sobre 
+el índice o clave. Las claves son comparadas con el operador de igualdad (\autoref{sec:op_cmp}).
+
+Si se accede mediante un índice o clave que no existe en el array se toma el valor nulo.
+
+El operador de acceso a última posición por si solo toma el valor nulo, pero puede ser utilizado 
+para añadir elementos al final del array. 
+
+No es posible asignar a posiciones de un array constante. \\
+
+\begin{lstlisting}
+   {1,2}[0] = 10; // se produce un error
+   {"key":"val"}["key"] = "other"; // se produce un error
+   {1,2}[] = 10; // se produce un error
+\end{lstlisting} 
+
+El operador de acceso es utilizado en otros tipos de datos como las cadenas
+de caracteres.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato array (\autoref{sec:type_array}).
+   \item Funciones sobre array (\autoref{sec:func_array}).
+   \item Operadores sobre cadenas de caracteres (\autoref{sec:op_string}).
+   
+   \end{itemize}
+}}}
+
+\paragraph{Operadores sobre clases y objetos} \label{sec:op_object}
+
+OMI es un lenguaje de programación orientado a objetos, por lo que pone a 
+disposición del usuario un conjunto de operadores relacionados con estos. \\
+
+\begin{description}
+\item [Acceso a atributos y métodos:] -$>$
+\item [Instanciación de clases:] $new$
+\item [Acceso al objeto en ejecución:] $this$ 
+\item [Acceso al objeto padre en ejecución:] $parent$ 
+\item [Acceso a la clase en ejecución:] $static$ 
+\end{description} 
+
+El uso de las clases y objetos quedan descritos en la sección correspondiente (\autoref{sec:class}).
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Clases de objetos (\autoref{sec:class}).
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Tipos de datos objetos (\autoref{sec:type_object}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores sobre funciones} \label{sec:op_func}
+
+OMI define una serie de operadores que son aplicables a funciones. 
+
+
+\begin{description}
+\item [Llamada a función:] $(p0,...)$
+\item [Aplicación parcial:] $P[v1,...]$
+\item [Acceso a función de contexto:] $\sim>$
+\end{description} 
+
+El uso de las funciones queda descritos en la sección correspondiente (\autoref{sec:function}).
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones (\autoref{sec:function}).
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Tipos de datos funciones (\autoref{sec:type_func}).
+   \end{itemize}
+}}}
+
+
+\paragraph{Operadores comprobación de tipos} \label{sec:op_typecheck}
+En OMI existen una serie de operadores encargados de comprobar el tipo de un dato dado. Estos devolverán
+un valor booleano que dependerá de que el dato sea del tipo indicado o no.
+
+\begin{description}
+\item [Comprobación de nulo:] $isnull$
+\item [Comprobación de booleano:] $isbool$
+\item [Comprobación de numérico:] $isnum$
+\item [Comprobación de cadena:] $isstring$
+\item [Comprobación de array:] $isarray$
+\item [Comprobación de objeto:] $isobject$
+\end{description} 
+
+\begin{lstlisting}
+   foo = isnull null; // foo es true
+   foo = isnull 4; //foo es false
+   foo = isbool true; //foo es true
+   foo = isbool false; //foo es true
+   foo = isbool 5; //foo es false
+   foo = isnum 4; // foo es true
+   foo = isnum "4"; // foo es false
+   foo = isnum 4.6; // foo es true
+   foo = isstring "4"; // foo es true
+   foo = isstring 4; // foo es false
+   foo = isarray {}; // foo es true
+   foo = isarray {1,2}; // foo es true 
+   foo = isarray "{1,2}"; // foo es false
+   foo = isobject new Class1 (); // foo es true
+   foo = isobject 5; // foo es false 
+\end{lstlisting} 
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores condicionales} \label{sec:op_cond}
+
+Los operadores condicionales evalúan una expresión que hace de condición, y en función del resultado obtenido realizan una determinada operación.
+
+\begin{description}
+\item [Operador ternario:] $cond\ ?\ op1:op2$
+\item [Fusión de nulos:] $[[ op1, op2,...,opn ]]$
+\end{description} 
+
+
+En el operador ternario si la expresión de condición se cumple se toma el valor del operando precedido por ``?'', en caso contrario se toma el del último, que es precedido por ``:''. \\
+
+\begin{lstlisting}
+   foo = (4 == 4)?"OP1":"OP2"; // foo vale "OP1"
+   foo = (4 != 4)?"OP1":"OP2"; // foo vale "OP2"
+   foo = 5?"OP1":"OP2"; // foo vale "OP1"
+\end{lstlisting} 
+
+Existe distintas formas del operador ternario además de la descrita. El operador ternario simplificado en valor verdadero omite el operando que se devolverá en el caso de que la condición 
+sea cierta, en este caso se devolverá el valor de la expresión de condición. Por otro lado existe el ternario simplificado en valor falso, que omite el último operando
+y que tomará el valor nulo. \\
+
+\begin{lstlisting}
+   foo = 5?:"OP2"; // foo vale 5
+   foo = 0?:"OP2"; // foo vale "OP2"
+   foo = "COND"?"OP1"; // foo vale "OP1"
+   foo = ""?"OP1"; // foo vale null
+\end{lstlisting} 
+
+La fusión de nulos opera sobre una lista de operandos. El operador comprueba los elementos secuencialmente y devuelve el primero que no sea nulo o nulo si todos los son. \\
+
+\begin{lstlisting}
+   foo = [[ null, null, 4 ]]; // foo vale 4
+   foo = [[ null, 4, 5 ]]; // foo vale 4
+   foo = [[ null, null, null ]]; // foo vale null
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Operadores lógicos (\autoref{sec:op_bool}).
+   \item Operadores de comparación (\autoref{sec:op_cmp}).
+   \end{itemize}
+}}}
+
+\paragraph{Operadores de entrada/salida} \label{sec:op_io}
+OMMI presenta una serie de operadores que permiten leer de la entrada estándar o
+escribir en la salida estándar.
+
+\begin{description}
+\item [Entrada estándar:] $>>$, $input$
+\item [Salida estándar:] $<.$, $<<$ , $echo$
+\end{description} 
+
+El operador de entrada estándar tiene como operando una expresión variable. Este se encarga de leer un flujo de caracteres de
+la entrada estándar hasta que lee un carácter fin de línea. El conjunto de caracteres leídos es asignado a la variable como
+una cadena. \\
+
+\begin{lstlisting}
+   >> foo; // Se lee de la entrada est|{\color{gray75}{á}}|ndar hasta un car|{\color{gray75}{á}}|cter fin de linea y se introduce en foo
+   input foo; // Igual que el caso anterior
+\end{lstlisting}
+
+El operador de entrada tiene una segunda forma en la que se puede indicar una cadena de caracteres
+que se mostrará como prompt. \\
+
+\begin{lstlisting}
+   /*
+      Se lee de la entrada est|{\color{gray75}{á}}|ndar hasta un car|{\color{gray75}{á}}|cter fin de linea 
+      y se introduce en foo. Para indicar que se espera una entrada
+      se utiliza la cadena "Example:"
+   */
+   >>["Example:"] foo;
+\end{lstlisting}
+
+Los operadores de salida estándar se encargan de escribir en esta una cadena de caracteres. 
+Estos operadores se diferencian entre si, además de en su forma léxica, en si 
+escriben un carácter de fin de línea automático o no. 
+\\
+\begin{lstlisting}
+   echo "Hola mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   <. "Hola mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   << "Hola mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar y un salto de linea
+\end{lstlisting}
+
+Es posible utilizar los operadores $<.$ y $<<$ para concatenar un flujo de cadenas de caracteres en la
+salida estándar. En el caso del operador $<.$ se resolverá como el operador de concatenación de cadenas 
+$.$, introduciendo las cadenas una seguida a la otra. Por otro lado, usar el operador $<<$ implica que se
+va a concatenar un salto de línea antes que la cadena\\
+
+\begin{lstlisting}
+   echo "Hola " . "mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   echo "Hola " <. "mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   echo "Hola " << "mundo"; // Escribe la cadena "Hola \mundo" en la salida est|{\color{gray75}{á}}|ndar
+   
+   <. "Hola " . "mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   <. "Hola " <. "mundo"; // Escribe la cadena "Hola mundo" en la salida est|{\color{gray75}{á}}|ndar
+   <. "Hola " << "mundo"; // Escribe la cadena "Hola \mundo" en la salida est|{\color{gray75}{á}}|ndar
+   
+   << "Hola " . "mundo"; // Escribe la cadena "Hola mundo\n" en la salida est|{\color{gray75}{á}}|ndar
+   << "Hola " <. "mundo"; // Escribe la cadena "Hola mundo\n" en la salida est|{\color{gray75}{á}}|ndar
+   << "Hola " << "mundo"; // Escribe la cadena "Hola \mundo\n" en la salida est|{\color{gray75}{á}}|ndar
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Operadores sobre cadenas de caracteres (\autoref{sec:op_string}).
+   \end{itemize}
+}}}
+
+\paragraph{Precedencia de operadores} \label{sec:op_pre}
+
+Una expresión puede estar compuesta por varios operadores, se establece pues prioridades entre estos que determinan 
+cómo ha de resolverse la expresión. 
+
+Los operadores quedan ordenados en el siguiente listado de más prioritarios a menos:
+
+\begin{description}
+\item [Llamadas:] $(p0,..)$, $new$
+\item [Operadores de acceso:] $[]$, -$>$, $\sim>$, $this$, $static$
+\item [Incrementos y decrementos:] $++$, $--$
+\item [Conversión de tipos:] $bool$, $int$, $float$, $string$
+\item [Operadores condicionales:] $[[op1,...]]$, $?:$
+\item [Operaciones aritméticas de primer nivel:] $\%$, \^ \hfill  
+\item [Operaciones aritméticas de segundo nivel:] $*$, $/$
+\item [Operaciones aritméticas de tercer nivel:] $+$, $-$
+\item [Operaciones comparación:] $==$, $!=$, $<$, $<=$, $>$, $>=$, $===$, $!==$
+\item [Operaciones lógicas de primer nivel:] $!$
+\item [Operaciones lógicas de segundo nivel:] $\&\&$
+\item [Operaciones lógicas de tercer nivel:] $||$
+\item [Asignaciones:] $=$, $+=$, $-=$, $*=$, $/=$, $\%=$, $.=$, \^ \ =\hfill 
+\end{description} 
+
+Los operadores en el mismo nivel de prioridad son resueltos mediante una asociación desde la izquierda, excepto los operadores de asignación que son asociativos desde la derecha.
+
+\subsubsection{Etiquetas} \label{sec:label}
+Es posible etiquetar sentencias dentro del código fuente para poder cambiar el flujo de ejecución al punto que esta ocupa.
+
+Una sentencia está formada por un identificador seguido del carácter ':' y la sentencia etiquetada.
+
+\begin{lstlisting}
+   label: << "Sentencia";
+\end{lstlisting}
+
+Las etiquetas normalmente son referenciadas por la sentencia de control $goto$ la cual cambia el flujo de ejecución 
+a la sentencia etiquetada. 
+
+Normalmente se desaconseja el uso de etiquetas y sentencias $goto$ dado que dificultan la legibilidad del código. No obstante OMI 
+soporta este mecanismo de control.
+
+
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Sentencia $goto$ (\autoref{sec:stmt_goto}).
+   \end{itemize}
+}}}
+
+\subsubsection{Sentencias de control}
+
+Las sentencias de control son construcciones del lenguaje que permiten alterar el flujo de ejecución del programa. Son muy comunes y
+utilizadas en los lenguajes de programación.
+
+Se clasifican según su naturaleza, así es posible ver sentencias de control condicionales, iterativas, de salto, inclusivas o de excepción.
+
+Muchas sentencias de control están formadas por bloques de sentencias cuya ejecución controlan. Estos bloques pueden estar formados por una sola sentencia.
+
+
+
+\paragraph{Sentencia condicional $if...\ else...$}\label{sec:stmt_if}
+
+La sentencia condicional $if...\ else...$ está formada por una expresión de condición, además de dos bloques de sentencias que serán ejecutadas en función la condición sea evaluada 
+como verdadera o falsa. \\
+
+\begin{lstlisting}
+   >>["Dime el valor de foo:"] foo;
+   if ( foo < 10) { 
+      << foo << " es menor que 10"; // Se ejecuta si la condici|{\color{gray75}{ó}}|n es verdadera
+   }
+   else {
+      << foo << " no es menor que 10"; // Se ejecuta si la condici|{\color{gray75}{ó}}|n es falsa
+   }
+\end{lstlisting}
+
+Si el caso de evaluación negativa no implica la ejecución de ninguna sentencia, el bloque $else$ puede omitirse. \\
+
+\begin{lstlisting}
+   >>["Dime el valor de foo:"] foo;
+   if ( foo < 10) { 
+      << foo << " es menor que 10"; // Se ejecuta si la condici|{\color{gray75}{ó}}|n es verdadera
+   }
+\end{lstlisting}
+
+Otra forma de esta sentencia condicional es $if...\ elif...\ else...$, en donde se anidan varias
+sentencias de este tipo. Se pueden anidar tantos $elif$ como sea necesario.\\
+
+\begin{lstlisting}
+   >>["Dime el valor de foo:"] foo;
+   if ( foo < 10) { 
+      << foo << " es menor que 10"; // La primera condici|{\color{gray75}{ó}}|n es verdadera
+   }
+   elif (foo == 10) {
+      << foo << " es igual que 10"; // La primera es falsa y la segunda verdadera
+   }
+   else {
+      << foo << " es mayor que 10"; // Todas las condiciones son falsas
+   }
+\end{lstlisting}
+
+\paragraph{Sentencia condicional $switch...\ case...$}
+La sentencia $switch...\ case...$ agiliza la toma de decisiones múltiples. Opera de igual forma que varios 
+$if...\ else...$ anidados, pero presenta una sintaxis que en muchos casos favorece la legibilidad y 
+la rapidez de programación.
+
+Se compone de un dato a comparar y un bloque de sentencias etiquetadas con casos. Los casos están formados por una expresión que 
+será comparada con el dato. La ejecución pasará a la primera sentencia etiquetada
+con el caso que sea igual al dato comparado, procediéndose a ejecutar todas las sentencias siguientes. \\
+
+\begin{lstlisting}
+   >>["Sentencia inicial:"] foo;
+   switch (foo) {
+      case 0: 
+         << "Sentencia 0"; // Se ejecuta si foo es 0
+      case 1:
+         << "Sentencia 1"; // Se ejecuta si foo es 0 o 1
+      case 2:
+         << "Sentencia 2"; // Se ejecuta si foo es 0, 1 o 2
+   }
+\end{lstlisting}
+
+Es una práctica muy común, para omitir la ejecución de algunas sentencias, el utilizar la sentencia $break$, la cual finaliza la 
+ejecución del bloque de sentencias actual. \\ 
+
+\begin{lstlisting}
+   >>["Sentencia inicial:"] foo;
+   switch (foo) {
+      case 0: 
+         << "Sentencia 0"; // Se ejecuta si foo es 0
+         break;
+      case 1:
+         << "Sentencia 1"; // Se ejecuta si foo es 1
+         break;
+      case 2:
+         << "Sentencia 2"; // Se ejecuta si foo es 2
+   }
+\end{lstlisting}
+
+Si ningún caso es igual al dato comparado no se ejecuta ninguna sentencia del bloque, a menos que se encuentre 
+la etiqueta $default$. \\
+
+\begin{lstlisting}
+   >>["Sentencia a ejecutar:"] foo;
+   switch (foo) {
+      case 0: 
+         << "Sentencia 0"; // Se ejecuta si foo es 0
+         break;
+      case 1:
+         << "Sentencia 1"; // Se ejecuta si foo es 1
+         break;
+      case 2:
+         << "Sentencia 2"; // Se ejecuta si foo es 2
+         break;
+      default:
+         << "Sentencia por defecto"; // Se ejecuta si foo no es 0, 1 ni 2
+   }
+\end{lstlisting}
+
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Sentencia break (\autoref{sec:stmt_break}).
+   \end{itemize}
+}}}
+
+\paragraph{Sentencia iterativa $while...$} \label{sec:stmt_while}
+
+La sentencia $while...$ es una estructura de control iterativa que permite la ejecución de un bloque de 
+sentencias repetidamente mientras que se cumpla una determinada expresión de condición. Se compone pues de una expresión que será evaluada como 
+un dato booleano y un bloque de sentencias. \\
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" 10 veces.
+   */
+   foo = 0;
+   while (foo < 10) {
+      << "Sentencia"; 
+      foo++;
+   }
+\end{lstlisting}
+
+La expresión de condición es evaluada al comienzo de cada ejecución del bloque de sentencias, por lo que si alguna sentencia vuelve 
+la condición falsa se seguirá con la ejecución del bloque hasta la próxima iteración.
+
+\paragraph{Sentencia iterativa $do...\ while$} \label{sec:stmt_dowhile}
+
+La sentencia $do...\ while$ es una estructura de control iterativa que permite la ejecución de un bloque de 
+sentencias repetidamente mientras que se cumpla una determinada expresión de condición, y al menos una vez. Se compone pues de una expresión que será evaluada como 
+un dato booleano y un bloque de sentencias. \\
+
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" 10 veces.
+   */
+   foo = 0;
+   do {
+      << "Sentencia"; 
+      foo++;
+   } while (foo < 10);
+\end{lstlisting}
+
+A diferencia de la sentencia $do...\ while$ la condición es evaluada al final de la ejecución del bloque de sentencias por lo que se asegura que este
+se ejecutará al menos una vez. Al igual que $do...\ while$ si alguna sentencia vuelve falsa la condición se proseguirá con la ejecución hasta que se 
+produzca la evaluación.
+
+\paragraph{Sentencia iterativa $for...$} \label{sec:stmt_for}
+
+La sentencia $for...$ es una estructura de control iterativa que permite la ejecución de un bloque de 
+sentencias repetidamente mientras que se cumpla una determinada expresión de condición. La sentencia $for...$ conlleva
+la ejecución de la expresión de inicialización al inicio de la sentencia, y de una expresión de iteración al final de cada ejecución del
+bloque. \\
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" 10 veces.
+   */
+   for (foo = 0; foo < 10; ++foo){
+      << "Sentencia"; 
+   }
+\end{lstlisting}
+
+Es OMI es necesario especificar todas las expresiones que conforman la sentencia $for...$, si alguno es omitido se
+producirá un error sintáctico.
+
+
+\paragraph{Sentencia iterativa $for...\ as...$ y $for...\ in...$} \label{sec:stmt_foreach}
+
+OMI ofrece unas formas de sentencias $for...$ que permiten ejecutar un bloque de sentencias para cada elemento contenido 
+en una determinada expresión. Para ello se debe especificar la expresión a recorrer, el símbolo variable con el 
+que se referenciará al elemento actual y el bloque de sentencias que se ejecutará para cada elemento contenido 
+en la expresión. \\
+
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" y su |{\color{gray75}{í}}|ndice 
+      10 veces.
+   */
+   for ( 10 as i ){
+      << "Sentencia " . i; 
+   }
+   /*
+      Imprime la cadena 
+      "Sentencia" y su |{\color{gray75}{í}}|ndice
+      10 veces.
+   */
+   for ( i in 10 ){
+      << "Sentencia " . i; 
+   }
+\end{lstlisting}
+
+
+La diferencias entre $for...\ as...$ y $for...\ in...$ son puramente sintácticas, siendo el orden en que se especifican la expresión conjunto y el
+símbolo variable su principal diferencia.
+
+El comportamiento de estas estructuras cambia en función el tipo de dato de la expresión conjunto. 
+
+\begin{description}
+\item [Booleano:] Si es true se ejecutará el bloque indefinidamente y el símbolo variable tendrá el valor true. Si es falso el bloque de sentencias no se ejecutará.
+\item [Numéricos:] Si es mayor que se $0$ el bloque se ejecutará desde 0 hasta el valor de la expresión y el símbolo variable tendrá el valor numérico de cada iteración.
+En otro caso no se llega a ejecutar el bloque.
+\item [Cadenas de caracteres:] Se ejecuta el bloque de sentencias por cada carácter en la cadena, el símbolo variable tomará como valor la cadena correspondiente al 
+caracter de cada iteración.
+\item [Array:] Se ejecuta el bloque de sentencias por cada elemento en el array, el símbolo variable tomará como valor el elemento de cada iteración.
+\end{description} 
+
+Es posible especificar un par de símbolos variables separados por el carácter ``:''. Esto hará que si el elemento actual en el recorrido tiene una clave que lo referencia esta se guarde en 
+el primero y el valor en el segundo. Si no tuviera clave solo se asignará el valor al segundo símbolo variable. \\
+
+
+\begin{lstlisting}
+   /*
+      Imprime todas las 
+      claves y valores del array
+   */
+   array = {'k0':'v0', 'k1':'v1', 'k2':'v2'};
+   for ( array as key:value ){
+      << key . " => " . value; 
+   }
+\end{lstlisting}
+
+\paragraph{Sentencia iterativa ágil} \label{sec:stmt_agil}
+
+OMI ofrece una estructura de control iterativa cuya sintaxis ha sido simplificada, su funcionalidad extendida. La sentencia de control de iteración ágil funciona
+igual que una sentencia $for...\ in...$, pero sin que se produzca una asignación de cada elemento a un símbolo variable. En su lugar se puede acceder al elemento 
+en curso mediante un operador de acceso especial.
+
+La sentencia de iteración ágil se compone de una expresión a recorrer y de un bloque de sentencias que se ejecutará para cada elemento en la expresión. \\
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" 10 veces.
+   */
+   $(10){
+      << "Sentencia"; 
+   }
+\end{lstlisting}
+
+Durante la ejecución del bloque de sentencias es posible acceder al elemento actual mediante el operador ``\$''. \\
+
+\begin{lstlisting}
+   /*
+      Imprime la cadena 
+      "Sentencia" y su |{\color{gray75}{í}}|ndice 
+      10 veces.
+   */
+  $(10){
+      << "Sentencia " . $; 
+   }
+\end{lstlisting}
+
+Es posible anidar dos o más sentencias de iteración ágil y acceder al índice de cada una de ellas, añadiendo una expresión que se corresponde con el nivel de
+anidamiento tras el operador ``\$'' y delimitada entre llaves. \\
+
+
+\begin{lstlisting}
+   /*
+      Imprime las tablas de multiplicar del 
+      0 al 9.
+   */
+  $(10){ // Nivel 0
+    << "Tabla de multiplicar del " . ${0};
+    $(10) { // Nivel 1
+      << ${0} . " x " . ${1} . " = " . (${0} * ${1}); 
+    }
+  }
+\end{lstlisting}
+
+Si el operador de acceso no presenta índice este se corresponderá con el nivel actual.
+
+
+
+\paragraph{Sentencia de salto $break$} \label{sec:stmt_break}
+La sentencia $break$ permite terminar la ejecución de un bloque de sentencias correspondientes a una estructura iterativa y saltar a la siguiente sentencia tras el bloque. \\
+
+\begin{lstlisting}
+   /*
+      Imprime el valor dado
+      hasta que este es 0.
+   */
+  while(true){
+    >>["Dame un valor (0 para salir)"] foo;
+    if (foo === "0")
+      break;
+    << foo;
+  }
+  << "Finalizando";
+\end{lstlisting}
+
+Es posible salir de dos bloques iterativos que se encuentren anidados, indicando tras $break$ cuantos satos se desean realizar. \\
+
+\begin{lstlisting}
+   /*
+      Imprime el valor dado
+      hasta que este es 0.
+      Imprimiendo cuantas 
+      solicitudes se han 
+      realizado cada 10 veces
+   */
+   count = 0;
+   while (true) {
+     i = 0;
+     while(i < 10){
+       >>["Dame un valor (0 para salir)"] foo;
+       count ++;
+       if (foo === "0")
+         break 2;
+       << foo;
+       i ++;
+     }
+     
+     << "Se han solicitado " . count . " valores ";
+   }
+  << "Finalizando";
+\end{lstlisting} 
+
+\paragraph{Sentencia de salto $continue$} \label{sec:stmt_continue}
+
+La sentencia $continue$ permite terminar la ejecución actual de un bloque de sentencias correspondientes a una estructura iterativa. De esta forma se salta a la comprobación y 
+ejecución (si fuera el caso) de la siguiente iteración. \\
+
+\begin{lstlisting}
+   /*
+      Imprime el valor dado,
+      excepto si este es "jump",
+      hasta que es 0.
+   */
+  while(true){
+    >>["Dame un valor (0 para salir, jump para saltar)"] foo;
+    if (foo === "0")
+      break;
+   if (foo === "jump")
+      continue;
+   << foo;
+  }
+  << "Finalizando";
+\end{lstlisting}
+
+Es posible utilizar la sentencia $continue$ para saltar a la siguiente iteración de una estructura iterativa concreta de varias anidadas. Para ello tras el literal 
+se debe indicar una expresión cuyo valor sea el número de bloques anidados que se desea saltar. \\
+
+\begin{lstlisting}
+   /*
+      Imprime el valor dado hasta que este es 0.
+      Imprimiendo cuantas solicitudes se han realizado cada 10 veces.
+      Es posible forzar el reinicio del contador mediante el valor "restart"
+   */
+   count = 0;
+   while (true) {
+     i = 0;
+     while(i < 10){
+       >>["Dame un valor (0 para salir, restart para reiniciar contador)"] foo;
+       count ++;
+       if (foo === "0")
+         break 2;
+       if (foo === "restart"){
+         << "Reiniciando contador ";
+         count = 0;
+         continue 2;
+       }
+       << foo;
+       i ++;
+     }
+     << "Se han solicitado " << count << " valores ";
+   }
+  << "Finalizando";
+\end{lstlisting} 
+
+\paragraph{Sentencia de salto $goto$} \label{sec:stmt_goto}
+La sentencia $goto$ se compone de un identificador y  permite cambiar el flujo de ejecución a la sentencia etiquetada con dicho identificador. \\
+
+\begin{lstlisting}
+   /*
+      Se imprime la cadena
+      "Sentencia" indefinidamente
+   */
+   label: << "Sentencia";
+   goto label;
+\end{lstlisting}
+
+En general se desaconseja el uso de etiquetas y sentencias $goto$ dado que dificultan la legibilidad del código.
+
+Lo habitual es que la sentencia $goto$ se encuentre condicionada para que el salto no se ejecute siempre. \\
+
+\begin{lstlisting}
+   /*
+      Se imprime la cadena
+      "Sentencia" 10 veces
+   */
+   foo = 0;
+   label: << "Sentencia " . foo;
+   if (foo < 10){
+      foo++;
+      goto label;
+   }
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Etiquetas (\autoref{sec:label}).
+   \item Sentencia condicional $if...\ else...$ (\autoref{sec:stmt_if}).
+   \end{itemize}
+}}}
+
+\paragraph{Sentencia $include$} \label{sec:stmt_include}
+La sentencia $include$ permite separar el código fuente en diferentes ficheros. Se compone de una 
+expresión que se corresponde con el fichero a incluir. Al ser evaluada,
+la ejecución pasa a la primera sentencia en el fichero. \\
+
+\begin{lstlisting}
+   /*
+      fichero1.omi
+      Se imprime el contenido de este fichero
+      y se incluye el fichero 2
+   */
+   << "Contenido fichero 1";
+   include "fichero2.omi";
+\end{lstlisting}
+
+\begin{lstlisting}
+   /*
+      fichero2.omi
+      Se imprime el contenido de este fichero
+   */
+   << "Contenido fichero 2";
+\end{lstlisting}
+
+Si la cadena facilitada como expresión no se corresponde con un fichero del sistema
+se producirá un error y finalizará la ejecución del script.
+
+\paragraph{Sentencia $exit$} \label{sec:stmt_exit}
+
+La sentencia $exit$ permite finalizar la ejecución del script en cualquier parte del mismo. \\
+
+\begin{lstlisting}
+   /*
+      Finaliza el script sin llegar 
+      a ejecuta la ultima sentencia
+   */
+   << "SENTENCIA EJECUTADA";
+   exit;
+   << "SENTENCIA NO EJECUTADA";
+\end{lstlisting}
+
+A diferencia de otros lenguajes de programación en OMI no existe una forma de finalizar el script 
+devolviendo un estado de error.
+
+\paragraph{Sentencia $with$} \label{sec:stmt_with}
+
+La sentencia $with$ permite establecer un objeto como contexto dentro de un bloque de sentencias. Se forma mediante
+una expresión correspondiente al objeto y un bloque de sentencias que será ejecutada con el objeto como contexto. 
+
+Cuando se establece un objeto como contexto todas las funciones que se llamen, y que no se encuentren definidas, serán 
+llamadas como métodos del objeto. \\
+
+\begin{lstlisting}
+   class Foo {
+      ~ identity () {
+         << "Soy Foo";
+      } 
+   }
+   foo = new Foo ();
+   with (foo) {
+      identity(); // Llama al m|{\color{gray75}{é}}|todo identity del objeto foo
+   }
+\end{lstlisting}
+
+\paragraph{Sentencia $try...\ catch...$} \label{sec:stmt_try}
+
+La sentencia $try...\ catch...$ permite delimitar mediante un bloque de sentencias 
+un comportamiento en el que se pueden dar excepciones. Además, mediante otro 
+bloque de sentencias y un símbolo variable, se puede especificar cómo serán tratadas
+las excepciones que se den.
+
+A diferencia de otros lenguajes de programación OMI solo permite un bloque de 
+sentencias $catch$. No comprueba la clase de la excepción que se ha dado, esto recae
+en resposabilidad del programador. \\
+
+\begin{lstlisting}
+   class Exc {
+      var = null;
+      ~ Exc (num) {
+         this->var = num;
+      }
+      ~ printError () {
+         << "Error " . this->var;
+      }
+   }
+   try {
+      >>["Dame un valor:"] foo;
+      if ( foo === "" ){
+         throw new Exc (404);
+      } 
+      << foo;
+   }catch (exc) {
+      exc->printError ();
+   }
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Excepciones (\autoref{sec:exception}).
+   \item Sentencia  $throw$ (\autoref{sec:stmt_throw}).
+   \end{itemize}
+}}}
+
+
+\paragraph{Sentencia $throw$} \label{sec:stmt_throw}
+
+La sentencia $throw$ permite lanzar una excepción que puede ser atrapada por una 
+sentencia $try...\ catch...$. Esta sentencia se construye mediante una expresión cuyo 
+valor será asociado al símbolo variable del bloque de sentencias $catch$. \\
+
+\begin{lstlisting}
+   class Exc {
+      var = null;
+      ~ Exc (num) {
+         this->var = num;
+      }
+      ~ printError () {
+         << "Error " << this->var;
+      }
+   }
+   try {
+      >>["Dame un valor:"] foo;
+      if ( foo === "" ){
+         throw new Exc (404);
+      } 
+      << foo;
+   }catch (exc) {
+      exc->printError ();
+   }
+\end{lstlisting}
+
+Si una excepción lanzada con $throw$ no sucede dentro de una sentencia $try...\ catch$ controlada
+se producirá un error y se detendrá la ejecución del script.
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Excepciones (\autoref{sec:exception}).
+   \item Sentencia  $try...\ catch...$ (\autoref{sec:stmt_try}).
+   \end{itemize}
+}}}
+
+\paragraph{Sentencia $sleep$} \label{sec:stmt_sleep}
+
+La sentencia $sleep$ hace que la ejecución del programa se pare un número de segundos dados. \\
+
+\begin{lstlisting}
+   << "Antes de parar";
+   sleep (10);
+   << "Tras 10 segundos";
+\end{lstlisting}
+
+
+\paragraph{Sentencia $typeof$} \label{sec:stmt_typeof}
+La sentencia $typeof$ imprime en la salida estándar el tipo de dato del valor 
+referenciado por un símbolo variable. \\
+
+\begin{lstlisting}
+   foo = 10;
+   typeof foo; // Imprime Arithmetic
+   foo = "STR";
+   typeof foo; // Imprime String
+   foo = {1,2};
+   typeof foo; // Imprime Array(2)
+\end{lstlisting}
+
+
+\paragraph{Sentencia $datInfo$} \label{sec:stmt_datInfo}
+La sentencia $datInfo$ permite consultar el estado interno de un dato. Esto
+es la posición de memoria que ocupa, el tipo y el número de referencias que tiene. \\
+
+\begin{lstlisting}
+   datInfo 5; // Imprime ptr(0x1d72e00), type(Arithmetic: 5), refs(0)
+   datInfo "A"; // Imprime ptr(0x1d72f70), type(String: A), refs(0)
+   foo = 10;
+   datInfo foo; // ptr(0x1d73f00), type(Arithmetic: 10), refs(1)
+   bar = foo;
+   datInfo bar; // ptr(0x1d73f00), type(Arithmetic: 10), refs(2)
+\end{lstlisting}
+
+La sentencia $datInfo$ también admite la forma $datinfo$.
+
+\subsubsection{Variables}
+En programación una variable se define como un espacio que es asociado a un nombre o identificador, el contenido alojado en dicho espacio es llamado el valor de la variable.
+Mediante el nombre es posible utilizar la variable en expresiones con independencia de la información exacta que esta referencia. Cuando una expresión que contiene una variable es resuelta
+se obtiene el valor contenido en la misma. 
+
+El valor de una variable puede cambiar durante la ejecución del programa. Para alterar el contenido de una variable lo habitual es utilizar el operador de asignación. 
+En OMI la asignación de una variable es destructiva, es decir, la variable modifica su valor sobrescribiendo el valor anterior. 
+
+Las variables suponen un recurso esencial para los lenguajes de programación imperativos, ya que son el mecanismo básico para guardar el estado del sistema. Las variables en matemáticas
+forman parte de definiciones y una vez atribuido su valor este no variará, esto difiere del concepto de variable que presentan los lenguajes de programación imperativos. 
+
+
+OMI es un lenguaje de programación de tipado dinámico, y por tanto, el tipo de dato de una variable está determinado por el valor actual de la misma, y no se encuentra 
+asociado a la variable. En un momento dado una variable podría contener un valor entero, y en otro una cadena de caracteres. 
+
+En OMI el tipo de dato del valor almacenado en una variable es desconocido hasta que es obtenido en la resolución de una expresión. Los operadores, funciones y demás recursos
+del lenguaje usan el valor para operar, con independencia de la variable que lo contuviera.
+
+En OMI no es necesario declarar ni inicializar una variable antes de su uso. Si una variable sin valor es usada en una expresión se toma el valor nulo.
+
+Internamente OMI representa las variables como referencias a los valores, más que como contenedores de estos. En OMI no es necesario llevar una gestión los datos que han sido
+creados y asignados a las variables de forma dinámica, un subsistema denominado recolector de basura será el encargado de esta tarea.
+
+Las variables deben ser nombradas mediante un identificador válido, y no deben coincidir con ninguna palabra reservada. 
+
+Las variables en OMI pueden presentar un ámbito local y global. Una variable puede ser local al flujo principal o a una función o método. Por defecto las variables son locales.
+Una variable local solo puede ser accesible desde donde se utilizó inicialmente. Si en otro lugar se hace uso del mismo identificador se consideran variables distintas.
+Las variables globales son accesibles desde cualquier parte de la aplicación. Para usar una variable como global debe ser declarada como tal con el literal $global$. \\
+
+
+\begin{lstlisting}
+   foo = 10; // foo es una variable local al flujo principal
+   global bar; // bar es una variable global.
+   bar = 20; 
+   ~ func () {
+      foo = 30; // foo es una variable local a la funci|{\color{gray75}{ó}}|n func
+      bar = 40; // Se asigna a la variable global bar
+   }
+\end{lstlisting}
+
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operador de asignación (\autoref{sec:op_asig}).
+   \item Identificadores (\autoref{sec:id})
+   \end{itemize}
+}}}
+
+
+\subsubsection{Referencias}
+Una referencia es un valor que permite acceder indirectamente a un dato almacenado en un símbolo variable. Cuando 
+se opera sobre una referencia se hace sobre el dato almacenado en la variable.
+
+Es posible obtener una referencia anteponiendo el símbolo ``$\&$'' ante el símbolo variable. \\
+
+\begin{lstlisting}
+   foo = 10;
+   bar = &foo; // Se obtiene una referencia de foo
+   << foo . " - " . bar; // Imprime 10 - 10
+   bar = 20; 
+   << foo . " - " . bar; // Imprime 20 - 20 
+\end{lstlisting}
+
+En OMI es posible obtener una referencia de cualquier expresión que sea variable, y acceder su valor de forma indirecta. Así por
+ejemplo se puede obtener una referencia a una posición de un array, a un atributo de un objeto, etc. \\
+
+\begin{lstlisting}
+   foo = {{1,2}, 3}; 
+   bar = &foo[0][1];
+   bar = 4;
+   << foo[0][1];
+\end{lstlisting}
+
+No es posible obtener una referencia a una posición dentro de una cadena, esto es debido a que en OMI las cadenas de caracteres son un tipo de dato simple.  
+En su lugar se copiará el valor del carácter en la posición como otra cadena, por lo que la referencia no tendrá efecto. \\
+
+\begin{lstlisting}
+   foo = "ABCD"; 
+   bar = &foo[0];
+   bar = "Z";
+   << bar; // Imprime "Z"
+   << foo; // Imprime "ABCD". La referencia no tiene efecto.
+\end{lstlisting}
+
+Sintácticamente es posible obtener una referencia de un valor constante, no obstante esto hará que se tome el valor en si, sin que tenga efecto alguno.
+
+Las referencias pueden ser utilizadas como un dato, por lo que pueden ser pasadas como parámetro. En este caso cualquier acceso al parámetro dentro de la función 
+se hará sobre las variables a las que referencia. \\
+
+\begin{lstlisting}
+   ~ inc (param) {
+      param += 1;
+   }
+   
+   a = 20;
+   inc(&a);
+   << a; // Imprime 21
+\end{lstlisting}
+
+Es posible hacer que algunos parámetros de una función sean pasados siempre por referencia. Para ello se antepone $\&$ al parámetro en la definición de
+la función. Ver paso de parámetros por referencia (\autoref{sec:func_ref}).
+
+Las funciones y métodos pueden devolver referencias. De esta forma si una llamada a función es asignada se hará la operación sobre la referencia devuelta, 
+por lo que cualquier acceso se hará sobre el símbolo variable a la que esta apunta. Si la referencia es a un símbolo variable de ámbito local, el cual es liberado al terminar la llamada, 
+el valor será copiado. \\
+
+\begin{lstlisting}
+   class example {
+      private attr = null;
+      
+      ~ example (attr) {
+         this->attr = attr;
+      }
+      
+      ~ getRef () {
+         return &this->attr;
+      }
+      
+      ~ printAttr () {
+         << this->attr;
+      }
+   }
+   
+   foo = new example (20);
+   foo->printAttr(); // Imprime 20
+   << foo->attr; // Error acceso a elemento privado
+   bar = foo->getRef(); // bar es una referencia a foo->attr
+   bar = 40; 
+   foo->printAttr(); // Imprime 40
+   
+\end{lstlisting}
+
+\subsubsection{Funciones} \label{sec:function}
+Una función es un conjunto de sentencias que tienen un objetivo particular. Se corresponde con un
+subalgoritmo dentro del algoritmo principal.
+
+Una función se define normalmente mediante un identificador, una lista de parámetros (delimitados por paréntesis y separados por coma) y un bloque de sentencias. La
+definición de una función debe empezar por el carácter ``$\sim$'' o la palabra reservada $function$. \\
+
+\begin{lstlisting}
+   ~ func1 (param1, param2) { 
+      << "Soy fun1 con dos parametros:";
+      << "param1 => " . param1;
+      << "param2 => " . param2;
+   }
+   
+   function func2 (param1, param2) { 
+      << "Soy func2 con dos parametros:";
+      << "param1 => " . param1;
+      << "param2 => " . param2;
+   }
+\end{lstlisting}
+
+Los parámetros de la función suponen un mecanismo para que esta pueda recibir datos con los que operar
+y realizar su tarea. Los parámetros son variables que pueden ser utilizadas en el bloque de sentencias
+y cuyos valores serán dado cuando la función es llamada.
+
+Las funciones pueden ser llamadas desde cualquier parte del código, lo que supondrá la ejecución del bloque
+de sentencias. Para realizar una llamada a una función se utilizará el nombre de la función seguido de los 
+valores que serán atribuidos a los parámetros, delimitados por paréntesis y separados por coma. La atribución
+de valores a los parámetros se hace de forma posicional. \\
+
+\begin{lstlisting}
+   ~ func1 (param1, param2) { 
+      << "Soy fun1 con dos parametros:";
+      << "param1 => " . param1;
+      << "param2 => " . param2;
+   }
+   
+   func1 ("valor1", "valor2");
+\end{lstlisting}
+
+En una llamada los parámetros son pasados, a no ser que se indique lo contrario, por valor. Esto quiere decir 
+que los valores son copiados a los parámetros, lo que implica que cualquier modificación de estos solo tendrá efecto en el bloque 
+que define la función. \\
+
+
+\begin{lstlisting}
+   ~ func1 (foo) { 
+      foo = 20;
+      << foo;  // Imprime 20
+   }
+   
+   foo = 40;
+   func1 (foo);
+   << foo; // Imprime 40
+\end{lstlisting}
+
+
+Una función puede devolver un valor que será atribuido a la llamada. Para ello 
+se hace uso de la sentencia $return$. Esta sentencia, que puede formar parte del
+bloque de sentencias de una función, esta formada por el valor que será devuelto 
+y atribuido a la llamada. La ejecución de la sentencia $return$ implica 
+la finalización de la función.
+
+La llamada a un función es considerada un operador y puede formar parte de expresiones. El
+valor de la llamada es dado por la ejecución de la sentencia $return$ en el bloque de sentencias
+de esta. Si la ejecución de la función termina sin una sentencia $return$ se tomará el valor nulo. \\
+
+\begin{lstlisting}
+   ~ sum (op1, op2) { 
+      return op1 + op2;
+   }
+   
+   << sum(1,2) * 4; // Imprime 12
+\end{lstlisting} 
+
+Las llamadas a función son resueltas antes que cualquier otro operador, ya que presentan el mayor nivel de prioridad. 
+
+Si una función es llamada sin que esta se encuentre definida se producirá un error semántico. También se producirá 
+un error si el número de valores facilitados como parámetros en la llamada no se corresponden con la definición de la función. Cabe destacar 
+que las definiciones de funciones son ejecutadas de forma secuencial dentro del flujo del programa, por lo que realizar 
+un llamada de un función que se encuentre definida en sentencias posteriores producirá un error como si esta no
+se encontrara definida, por ello es buena práctica disponer las definiciones de funciones al comienzo del programa.
+
+Los nombres de las funciones deben seguir las reglas normales de uso de identificadores, y no corresponderse con ninguna
+palabra reservada.
+
+Si dos o más definiciones de función comparten el mismo identificador la última definición interpretada será la que se corresponda
+con dicho identificador. \\
+
+\begin{lstlisting}
+   ~ func () { 
+      << "FUNC 1";
+   }
+   
+   ~ func () { 
+      << "FUNC 2";
+   }
+   
+   func(); // Imprime "FUNC 2"
+\end{lstlisting} 
+
+A pesar de ser considerado un lenguaje imperativo, OMI presenta algunos recursos y mecanismos propios de la programación funcional. En las 
+subsecciones siguientes se presentan los recursos y mecanismos que pueden ser utilizados y aplicados a las funciones. 
+
+\paragraph{Parámetros con valores por defecto}
+En OMI es posible definir funciones cuyos parámetros presenten un valor por defecto, es decir, en caso de ser omitido en una llamada
+dicho parámetro tendrá el valor especificado. 
+
+En una llamada es obligatorio dar el valor de todos los parámetros excepto los que tienen definido un valor por defecto. Dado que la 
+atribución de valores a los parámetros se hace de forma posicional, los parámetros con valores por defecto serán los últimos
+para que puedan omitirse en la llamada. 
+
+En la definición de una función se puede especificar que determinados parámetros tendrán valores por defecto siguiendo estos mediante el 
+signo igual y el valor que tendrán. \\
+
+
+\begin{lstlisting}
+   ~ sum (op1, op2 = 4) { 
+      return op1 + op2;
+   }
+   
+   << sum(1,2) * 4; // Imprime 12
+   << sum(1) * 4; // Imprime 20
+\end{lstlisting} 
+
+\paragraph{Paso de parámetros por referencia} \label{sec:func_ref}
+Por defecto los parámetros de una llamada a función son pasados por valor, lo que implica que cualquier modificación 
+en los mismos dentro de la función no tendrá efecto fuera de esta. 
+
+Es posible definir funciones donde algunos parámetros sean pasado como referencia en las llamadas. Esto es que si
+en la llamada se facilita un símbolo variable como valor de dicho parámetro, cualquier modificación realizada 
+en el mismo será aplicado a la variable fuera de la función. 
+
+En la definición de una función se puede indicar que un determinado parámetro será pasado por referencia anteponiendo
+el símbolo ``\&'' a dicho parámetro. \\
+
+\begin{lstlisting}
+   ~ func1 (&foo) { 
+      foo = 20;
+      << foo;  // Imprime 20
+   }
+   
+   foo = 40;
+   func1 (foo);
+   << foo; // Imprime 20
+\end{lstlisting}
+
+Si un valor constante es dado como parámetro por referencias se producirá un error.
+
+\paragraph{Definición como parte de expresiones}
+
+En OMI las funciones son consideradas tipos de datos, por lo que es posible asignarlas 
+a variables, operar sobre ellas, etc. Sin embargo, no se puede realizar una conversión
+de una función a otro tipo de dato y viceversa, por lo que la mayoría de operadores producirán 
+un error al resolverse si operan con una función y otro tipo de dato.
+
+Es posible utilizar la definición de una función como expresión en una operación de asignación. \\
+
+\begin{lstlisting}
+   foo = ~ sum (param1, param2) { return param1 + param2; };
+   << foo (4, 5); // Imprime 9
+   ((x < 10)?~(){<<"A";}:~(){<<"B"})(); // Si x < 10 imprime "A", si no imprime "B"
+\end{lstlisting}
+
+\paragraph{Referencias a funciones }
+En OMI se nombran de igual forma a las funciones, las variables y las clases. Para determinar 
+si un identificador en una expresión hace referencia a una función u otro elemento se utiliza 
+el contexto. 
+
+En muchos casos es necesario indicar explícitamente que el objeto que se desea utilizar es una 
+función ya definida, y no una variable u otro elemento. Para ello se antepone al identificador 
+de la función el par de símbolos ``$\sim\&$''. \\
+
+%~ \color{gray75}
+%~ {\color{red} jhkhjhjhh}
+%~ \emph{}
+
+
+
+\begin{lstlisting}
+   ~ foo () {
+      return "FUNCI|{\color{red}\emph{Ó}}|N";
+   }
+   foo = "VARIABLE";
+   bar = foo; // bar vale "VARIABLE";
+   bar = ~&foo; // var vale la funci|{\color{gray75}{ó}}|n que devuelve "FUNCI|{\color{gray75}{Ó}}|N" 
+\end{lstlisting}
+
+Por regla general todos los operadores toman, a no ser que se indique lo contrario, 
+los identificadores como variables. Las excepciones a esta regla son los 
+siguientes operadores:
+
+\begin {itemize}
+   \item Llamada a función 
+   \item Aplicación parcial
+   \item $new$.
+\end{itemize}
+
+\paragraph{Funciones anónimas}
+OMI permite definir funciones sin identificador que las nombre, lo que se denomina funciones 
+anónimas. Normalmente las funciones anónimas son utilizadas
+como dato en otras expresiones. 
+
+Para definir una función anónima solo se ha de omitir el identificador. \\
+
+%~ bar = foo = ~() { << "FUNCIÓN ANÓNIMA"; };
+
+\begin{lstlisting} 
+   bar = foo = ~() { << "FUNCI|{\color{red}\emph{Ó}}|N AN|{\color{red}\emph{Ó}}|NIMA"; };
+   foo(); // IMPRIME "FUNCI|{\color{gray75}{Ó}}|N AN|{\color{gray75}{Ó}}|NIMA"; 
+   bar(); // IMPRIME "FUNCI|{\color{gray75}{Ó}}|N AN|{\color{gray75}{Ó}}|NIMA"; 
+\end{lstlisting}
+
+
+
+\paragraph{Expresiones parametrizadas}
+p
+Una expresión parametrizada es similar a una función. Permite definir una expresión a partir de unos parámetros. 
+
+La expresión parametrizada puede ser utilizada como dato para llevar a cabo operaciones sobre ella. Así es posible asignarla, 
+llamarla con unos valores dado, ser devuelta como valores de función, etc.
+
+Para definir una expresión parametrizada se utiliza el símbolo ``$\sim$'' seguido de una lista de parámetros separados por coma, el símbolo ``:'' y la expresión 
+a parametrizar, la cual normalmente hará uso de los parámetros. Es posible obtener el valor para unos determinados parámetros utilizando 
+el operador de llamada a función. \\
+
+\begin{lstlisting} 
+   sum = ~ x, y : x + y;
+   << sum (4,5); 
+\end{lstlisting}
+
+
+\paragraph{Funciones de orden superior}
+
+Las funciones de orden superior son funciones que cumplen una de las siguientes premisas:
+
+\begin{itemize}
+\item Reciben como parámetros una o más funciones.
+\item Devuelven como valor una función.
+\end{itemize}
+
+En OMI las funciones son tipos de datos, por lo que es posible crear funciones de orden superior de
+forma natural a la sintaxis del lenguaje. \\
+
+\begin{lstlisting}
+   ~ call (f) {  // Funci|{\color{gray75}{ó}}|n de orden superior que recibe una funci|{\color{gray75}{ó}}|n como par|{\color{gray75}{á}}|metro
+      f();
+   }
+   
+   ~ printA () { << "A" }
+   ~ printB () { << "B" }
+   
+   call (~&printA); // Imprime A
+   call (~&printB); // Imprime B
+   
+\end{lstlisting}
+
+\hfill \\
+
+\begin{lstlisting}
+   ~ getOp (code) {  // Funci|{\color{gray75}{ó}}|n de orden superior que devuelve una funci|{\color{gray75}{ó}}|n
+      switch (code) {
+         case 0:  return ~(a,b) { return a + b }; break;
+         case 1: return ~(a,b) { return a - b }; break;
+         default: return ~(a,b) { << "WRONG CODE"; return null; }
+      }
+   }
+   
+   func = getOp (0);
+   << func (4, 5); // Imprime 9
+   
+   func = getOp (1);
+   << func (4, 5); // Imprime -1
+   
+   func = getOp ("*");
+   << func (4, 5); // Imprime "WRONG CODE"
+   
+\end{lstlisting}
+
+\paragraph{Clausura de funciones}
+Si una función es definida en el bloque de sentencias de otra, cuando la función interna sea llamada, en su ejecución podrá 
+acceder a las variables definidas en el bloque en el momento en el que se definió.
+
+La clausura permite que funciones que sean definidas en un entorno puedan acceder a las variables de dicho entorno. \\
+
+\begin{lstlisting}
+   ~ addX (X) { 
+      return ~(num) {
+         return num + X; // X pertenece al entorno de addX
+      }
+   }
+   
+   add1 = addX(1);
+   add2 = addX(2);
+   
+   << add1 (4); // Imprime 5
+   << add2 (4); // Imprime 6
+\end{lstlisting}
+
+\paragraph{Función de contexto}
+Por regla general la función de contexto se refiere a la función en ejecución. En OMI es 
+posible acceder a la función de contexto mediante el operador ``$\sim>$'', esto permite definir 
+funciones recursivas de forma simple. \\
+
+\begin{lstlisting}
+   ~ factorial (num) {
+      if (num == 2) return 2;
+      return num * ~>(num-1);
+   }
+\end{lstlisting}
+
+En otros casos la función de contexto puede mantener otras referencias diferentes a la función 
+en ejecución.
+
+\paragraph{Decoradores}
+
+%~ En OMI un decorador es una construcción del lenguaje similar a una función. El decorador
+%~ cuando es llamado toma una función y ejecuta su bloque de sentencias 
+
+Un decorador es una función que:
+\begin{itemize}
+\item Toma una función como parámetro. 
+\item Devuelve otra función que utiliza la función recibida como parámetro en su bloque de sentencias.
+\end{itemize}
+
+Es posible crear un decorador mediante funciones gracias al principio de clausura. \\
+
+\begin{lstlisting}
+   ~ generateFileHTML (func) { //Decorador mediante funciones
+      return ~(title, params){
+         << "<html>";
+         << "<head>";
+         << "<title>" << title << "</title>";
+         << "</head>";
+         << "<body>";
+         func(params);
+         << "</body>";
+         << "</html>";
+      }
+   }
+   
+   search = ~(params) { << "Buscando: " << params; };
+   info = ~(params) { << "Informaci|{\color{red}\emph{ó}}|n sobre: " << params; };
+   
+   generateSearchHTML = generateFileHTML (search);
+   generateInfoHTML = generateFileHTML (info);
+   
+   generateSearchHTML("B|{\color{red}\emph{ú}}|squeda", "concepto");
+   generateInfoHTML("Informaci|{\color{red}\emph{ó}}|n", "producto");
+\end{lstlisting}
+
+En OMI existe una construcción propia del lenguaje denominada decorador. Esta simplifica el 
+proceso anterior. Un decorador se define de forma parecida a una función: presenta un identificador 
+que lo nombra, una lista de parámetros y un bloque de sentencias. La lista de parámetros se corresponde 
+con los que recibirá la función devuelta por el decorador, la cual se definirá a partir del 
+bloque de sentencias. En el bloque de sentencias se podrá hacer referencia a la función a 
+decorar mediante el operador de función de contexto ``$\sim>$''. Para definir un decorador se utiliza
+el literal ``$\sim\sim$''. \\
+
+\begin{lstlisting}
+   ~~ generateFileHTML (title, params) { // Decorador mediante construcciones del lenguaje
+      << "<html>";
+      << "<head>";
+      << "<title>" << title << "</title>";
+      << "</head>";
+      << "<body>";
+      ~>(params);
+      << "</body>";
+      << "</html>";
+   }
+   
+   search = ~(params) { << "Buscando: " << params; };
+   info = ~(params) { << "Informaci|{\color{red}\emph{ó}}|n sobre: " << params; };
+   
+   generateSearchHTML = generateFileHTML (search);
+   generateInfoHTML = generateFileHTML (info);
+   
+   generateSearchHTML("B|{\color{red}\emph{ú}}|squeda", "concepto");
+   generateInfoHTML("Informaci|{\color{red}\emph{ú}}|n", "producto");
+\end{lstlisting}
+\paragraph{Aplicación parcial}
+
+La aplicación parcial toma una función y devuelve otra basada en esta, donde algunos de sus parámetros presentan ya un valor.
+
+Para la aplicación parcial se utiliza el operador con el mismo nombre. Este consiste en el literal ``$P$'' seguidos de 
+una lista con los valores que se aplicarán y la función sobre la que se realizará la operación. La lista de parámetros consiste 
+en pares parámetro/valor separados por el signo ``$=$'', y entre si por coma. Los parámetros se han de corresponder con parámetros de
+la función sobre la que se realizará la operación. La función resultante será una función que recibe tantos parámetros como la función original
+exceptuando aquellos que tienen aplicados un valor. \\ 
+
+\begin{lstlisting}
+   ~ addX (num, X) {
+      return num + X;
+   }
+   
+   add4 = P[X=4]addX;
+   add8 = P[X=8]addX;
+   
+   << add4(5); // Imprime 9
+   << add8(5); // Imprime 13
+\end{lstlisting}
+
+\subsubsection{Listas por comprensión}
+En OMI es posible definir una lista o un diccionario por compresión. Para ello se utiliza una construcción del
+lenguaje similar a la sentencia iterativa $for$, salvo que en cada iteración genera un elemento del array 
+asociado a la lista o diccionario. 
+
+La definición de una lista por compresión debe ir entre paréntesis.
+
+La forma más simple de crear una lista por compresión es mediante una expresión de generación, 
+el literal $for$ y una variable que iterará sobre una expresión conjunto. En cada iteración la variable 
+iteradora tomará un valor del conjunto. Para cada elemento se calculará el valor de 
+la expresión generadora, la cual normalmente contendrá la variable iteradora, y será introducido en 
+el array resultado. El conjunto sobre el que se itera dependerá del tipo de dato obtenido al evaluar la expresión conjunto:
+
+\begin {description}
+\item [Booleano:] Se itera hasta que se evalúa como falso. En cada iteración se asigna el entero correspondiente al número de la misma.
+\item [Numérico:] Si es positivo se itera desde cero hasta el valor sin incluirlo. Si es negtivo no se itera.
+\item [Cadena de caracteres:] Se itera por cada carácter en la cadena.
+\item [Array:] Se itera por cada elemento en el array.
+\end{description}
+
+\begin{lstlisting}
+   /*
+      Array de 10 elementos: desde el 0 al 9
+   */
+    foo = ( y++ for x in y < 10 )
+   /*
+      Array de 10 elementos donde las 
+      posiciones pares valen 0 y las
+      impares 1
+   */
+   foo = ( x % 2 for x in 10 ); 
+   /*
+      Array que contiene "A", "B", "C" y "D"
+   */
+   foo = ( x for x in "ABCD" ); 
+   /*
+      Array que contiene 1, 2 y 4
+   */
+   foo = ( x/2 for x in {2,4,8} ); 
+\end{lstlisting}
+
+
+
+En cada iteración la expresión de conjunto es evaluada antes de obtener el elemento correspondiente.
+
+Es posible filtrar los datos que serán incluidos en el array, añadiendo el literal
+$if$ y la condición que se debe cumplir. \\
+
+\begin{lstlisting}
+   /*
+      Array de los pares
+      del 0 al 9
+   */
+   foo = ( x for x in 10 if x % 2 == 0 );
+\end{lstlisting}
+
+Dado un array asociativo como conjunto es posible iterar sobre los pares clave/valor que lo conforman ,
+para ello se define el par de variables que se van a utilizar separadas por ``$:$''. \\
+
+\begin{lstlisting}
+   /*
+      Array que contiene "key0 => val0"
+      y "key1 => val1"
+   */
+   foo = ( k." => ".v for k:v in {"key0":"val0","key1":"val1"} );
+\end{lstlisting}
+
+El array generado puede ser asociativo utilizando dos expresiones de generación separadas por 
+``$:$'' que se utilizarán para construir las claves y el valores. \\
+
+\begin{lstlisting}
+   /*
+      Array asociativo con las claves "key0", "key1" y "key2",
+      cuyos valores son 2, 4 y 6 respectivamente.
+   */
+   foo = ( "key".k : x for k:x in {2,4,6} );
+\end{lstlisting}
+
+Es posible indicar un bloque de sentencias que será ejecutado 
+con cada iteración. Este bloque irá después del conjunto a iterar. \\
+
+\begin{lstlisting}
+   /*
+      Array con los valores dados.
+      Se solicita valores y se van introduciendo
+      en el array hasta que no se da valor 
+   */
+   foo = ( x for i in x !== "" {>>["Posici|{\color{gray75}{ó}}|n ".i.": "] x} if x !== "" );
+\end{lstlisting}
+
+
+\subsubsection{Clases de objeto} \label{sec:class}
+OMI es un lenguaje orientado a objetos, por tanto permite hacer uso de los conceptos y recursos enmarcados
+dentro de este paradigma de programación.
+
+Una clase es una construcción del lenguaje que modela un concepto del dominio del problema. Se trata de la definición de un conjunto de entidades u objetos
+con características y propiedades comunes. Describe los datos necesarios para representarlos y el comportamiento que tienen asociado.
+
+Los objetos son casos concretos de los conceptos modelados mediante las clases. Guardan un estado dando valores a los datos descritos.
+Además presentan el comportamiento ligado al concepto. 
+
+Los datos que representan el estado de un objeto son modelados mediante atributos, mientras que el comportamiento es definido mediante métodos.
+
+En OMI una clase se construye mediante la palabra reservada ``$class$'', un identificador que la nombra y un bloque de sentencias en la que se 
+definirán los atributos y métodos. Un atributo se define de forma similar a una variable, y un método a una función. \\
+
+\begin{lstlisting}
+   /*
+      Se define una clase gato. Un gato 
+      se representa mediante un nombre y tiene
+      asociado el comportamiento de aullar.
+   */
+   class gato {
+      nombre;
+      ~ aullar () {
+         << "Miauuu";
+      }
+   }
+\end{lstlisting}
+
+Los objetos pueden ser creados mediante la instanciación de una clase. El objeto dará valores
+a los atributos y se le podrá aplicar los métodos definidos. Al crear una instancia se 
+obtendrá un objeto llamando al método constructor, que es aquel que tenga el mismo nombre que la clase. 
+Para crear una instancia se utiliza el operador ``$new$'' seguido del nombre de la clase y los parámetros 
+del método constructor. \\ 
+
+\begin{lstlisting}
+   /*
+      Se define una clase gato. Un gato 
+      se representa mediante un nombre y tiene
+      asociado el comportamiento de aullar.
+   */
+   class gato {
+      nombre;
+      ~ gato (nombre) {
+         << "Construyendo el gato ".nombre;
+      }
+      ~ aullar () {
+         << "Miauuu";
+      }
+   }
+   /*
+      Se instancia un gato 
+      llamado "MacAlistair"
+   */
+   mac = new gato ("MacAlistair"); // Imprime "Construyendo el gato MacAlistair"
+\end{lstlisting}
+
+Si se instancia una clase que no se encuentra definida se produce un error semántico y se continua con la ejecución del programa.
+
+Es posible acceder a los atributos y métodos de un objeto mediante el operador ``$->$''.
+También se puede hacer referencia al objeto en ejecución dentro de los métodos, para ello se utiliza el operador ``$this$''. \\
+
+\begin{lstlisting}
+   /*
+      Se define una clase gato. Un gato 
+      se representa mediante un nombre y tiene
+      asociado el comportamiento de aullar.
+*/
+   class gato {
+      nombre;
+      ~ gato (nombre) {
+        this->nombre = nombre;
+      }
+      ~ aullar () {
+         << "Miauuu";
+      }
+   }
+   /*
+      Se instancia un gato 
+      llamado "MacAlistair"
+   */
+   mac = new gato ("MacAlistair"); 
+   mac->aullar(); // Imprime "Miauuu"
+   << mac->nombre; // Imprime "MacAlistair"
+\end{lstlisting}
+
+Si se accede a un atributo o método no existente se llaman al método ``\_get'' o ``\_call'' respectivamente (ver Métodos mágicos \autoref{sec:magic_method}). Si 
+estos no existen se produce un error semántico y se continua con la ejecución.
+
+Si no existe ningún método llamado igual que la clase, se considera que esta tiene un constructor vacío. Este es
+un método con el bloque de sentencias vacío y sin parámetros.
+
+Una clase solo puede disponer de un constructor, si se dan varios métodos llamados igual que la clase solo tendrá 
+efecto el último definido.
+
+\paragraph{Accesibilidad de métodos y atributos}
+Los métodos y atributos definidos en un clase pueden tener restricciones a la accesibilidad de los mismos. Estos pueden ser públicos 
+o privados.
+
+Los atributos y métodos públicos pueden ser accedidos desde un ámbito externo a la clase. A no ser que se especifique lo contrario todos los
+métodos y atributos de una clase son públicos. \\
+
+\begin{lstlisting}
+   /*
+      Se define una clase gato. Un gato 
+      se representa mediante un nombre y tiene
+      asociado el comportamiento de aullar.
+   */
+   class gato {
+      nombre; // Atributo p|{\color{gray75}{ú}}|blico
+      ~ gato (nombre) { // M|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico
+        this->nombre = nombre; // Acceso a atributo p|{\color{gray75}{ú}}|blico dentro de la clase
+      }
+      ~ aullar () { // M|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico
+         << "Miauuu";
+      }
+   }
+   /*
+      Se instancia un gato 
+      llamado "MacAlistair"
+   */
+   mac = new gato ("MacAlistair"); 
+   mac->aullar(); // Llamada a m|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico fuera de la clase
+   << mac->nombre;  // Acceso a atributo p|{\color{gray75}{ú}}|blico fuera de la clase
+\end{lstlisting}
+
+Los métodos o atributos privados no son accesibles desde fuera de la propia clase, solo desde los métodos definido dentro de esta. Para 
+declarar un atributo o método como privado se antepone la palabra clave $private$ a la definición. \\
+
+\begin{lstlisting}
+   /*
+      Se define una clase gato. Un gato 
+      se representa mediante un nombre y tiene
+      asociado el comportamiento de aullar.
+   */
+   class gato {
+      private nombre; // Atributo privado
+      ~ gato (nombre) { // M|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico
+        this->nombre = nombre; // Acceso a atributo privado dentro de la clase
+      }
+      ~ aullar () { // M|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico
+         << "Miauuu";
+      }
+   }
+   /*
+      Se instancia un gato 
+      llamado "MacAlistair"
+   */
+   mac = new gato ("MacAlistair"); 
+   mac->aullar(); // Llamada a m|{\color{gray75}{é}}|todo p|{\color{gray75}{ú}}|blico fuera de la clase
+   << mac->nombre;  // Acceso a atributo privado fuera de la clase (Error)
+\end{lstlisting}
+
+Si el constructor de una clase es privado solo se podrán crear instancias desde los métodos de esta, los cuales normalmente serán métodos estáticos. 
+
+\paragraph{Atributos y métodos estáticos}
+
+En OMI es posible declarar un método o atributo como estático, esto hará que pertenezca a la clase y no a los objetos instanciados. 
+Los atributos y métodos estáticos son accesibles utilizando la clase y no utilizando un objeto. Generalmente guardan datos o definen un 
+comportamiento aplicables a un conjunto de objetos definido por la clase. 
+
+Para declarar un atributo o método como estático se utiliza la palabra reservada ``$static$''. Para acceder a un método o atributo se utiliza el
+nombre de la clase, el operador de resolución de nombre de dominio ``$::$'' y el nombre del atributo o método. Es posible especificar que 
+un atributo o método será a la vez estático y privado. \\
+
+\begin{lstlisting}
+   class gato {
+      private nombre; 
+      private raza;
+      private energia = 100;
+      private hambre = 100;
+      
+      static private energia_min = -10;
+      static private hambre_min = -10;
+      
+      static ~ pasar_tiempo (gatos, h = 1) {
+         if (h > 0) {
+            $(gatos) {
+               $->energia -= 10;
+               $->hambre -= (30 * h);
+               if ($->energia < gato::energia_min || $->hambre < gato::hambre_min)
+                  << $->nombre." a pasado a un lugar mejor";
+            }
+         }else{
+            << "Imposible";
+         }
+      }
+      
+      ~ gato (nombre, raza) { 
+        this->nombre = nombre; 
+        this->raza = raza;
+      }
+      
+      ~ getNombre () {
+         return this->nombre;
+      }
+      
+      ~ getRaza () {
+         return this->raza;
+      }
+      
+      ~ aullar () { 
+         << "Miauuu";
+      }
+      
+      ~ comer () {
+         this->hambre += 10;
+         << "El animal come";
+      }
+      
+      ~ dormir () {
+         this->energia += 10;
+         << "El animal duerme";
+      }
+      
+      ~ jugar () {
+         if (this->energia <= 0 or this->hambre <= 0)
+            << "El gato ".this->nombre." no quiere jugar.";
+         else{
+            << "A ".this->nombre." le encanta jugar";
+            this->energia -= 10;
+            this->hambre -= 10;
+         }
+      }
+      
+   }
+
+   mac = new gato ("MacAlistair", "Siam|{\color{red}\emph{é}}|s"); 
+   ada = new gato ("Ada", "Persa"); 
+   bab = new gato ("Babbage", "Persa"); 
+
+   $(15) {
+      << "Gatos disponibles";
+      << "[0]=> ".mac->getNombre()." [".mac->getRaza()."] ";
+      << "[1]=> ".ada->getNombre()." [".ada->getRaza()."] ";
+      << "[2]=> ".bab->getNombre()." [".bab->getRaza()."] ";
+      << "[otro]=> Salir ";
+      >>["Seleccione un gato para interactuar:"] s;
+      switch (s) {
+         case 0: 
+            g = mac;
+            break;
+         case 1: 
+            g = ada;
+            break;
+         case 2:
+            g = bab;
+            break;
+         default:
+            exit;
+      }
+      << "------------------------------------------------------------";
+      << "Acciones disponibles";
+      << "[0]=> Dormir ";
+      << "[1]=> Comer ";
+      << "[2]=> Jugar ";
+      << "[otro]=> Aullar ";
+      >>["Seleccione una acci|{\color{red}\emph{ó}}|n:"] s;
+      switch (s) {
+         case 0: 
+            g->dormir();
+            break;
+         case 1: 
+            g->comer();
+            break;
+         case 2:
+            g->jugar();
+            break;
+         default:
+            g->aullar();
+      }
+      gato::pasar_tiempo ({mac, ada, bab});
+   }
+\end{lstlisting}
+
+\paragraph{Herencia de clases}
+
+
+En OMI es posible definir una relación de herencia entre dos clases. Que una clase herede de otra significa 
+que es una especialización de esta.  
+
+La herencia permite establecer una jerarquía entre clases, tal que la clase que especializa es denominada 
+hija de la clase que más genérica, denominada padre. La clase hija deriva de la padre y extiende su funcionalidad y definición.
+Una clase que extiende a otra toma todos sus métodos y atributos, pudiendo añadir nuevos o redefinir los existentes.
+
+La herencia de clases permite que se dé la propiedad de polimorfismo, de forma que 
+es posible mandar mensajes sintácticamente iguales a objetos de tipos distintos.
+
+Para definir una relación de herencia entre dos clases se se sigue el nombre de la clase hija de la palabra 
+reservada ``$extends$'' y del nombre de clase a la que extiende. \\
+
+
+
+\begin{lstlisting}
+   class mascota {
+      private nombre; 
+      private raza;
+      
+      ~ mascota (nombre, raza) { 
+        this->nombre = nombre; 
+        this->raza = raza;
+      }
+      
+      ~ getNombre () {
+         return this->nombre;
+      }
+      
+      ~ getRaza () {
+         return this->raza;
+      }
+      
+   }
+
+   class gato extends mascota {
+       ~ aullar () { 
+         << "Miauuu";
+      }
+   }
+
+   class perro extends mascota {
+       ~ aullar () { 
+         << "Guauuu";
+      }
+   }
+   
+   mac = new gato ("MacAlistair", "Siam|{\color{red}\emph{é}}|s"); 
+   ada = new perro ("Ada", "Bulldog");  
+   mac->aullar(); // Imprime "Miauuu"
+   ada->aullar(); // Imprime "Guauuu"
+\end{lstlisting}
+
+Si alguna clase hija no define constructor se toma el constructor de la clase padre si esta tuviera. 
+
+Es posible definir una serie de clases de forma que presenten varios niveles de jerarquía.
+
+
+
+Desde un método definido en la clase hija es posible hacer referencia a los métodos definidos en la clase padre 
+mediante la palabra reservada ``$parent$''. \\
+
+\begin{lstlisting}
+   class mascota {
+      private nombre; 
+      private raza;
+      
+      ~ mascota (nombre, raza) { 
+        this->nombre = nombre; 
+        this->raza = raza;
+      }
+      
+      ~ getNombre () {
+         return this->nombre;
+      }
+      
+      ~ getRaza () {
+         return this->raza;
+      }
+      
+   }
+
+   class gato extends mascota {
+       ~ aullar () { 
+         << "Miauuu";
+      }
+   }
+
+   class gato_persa extends gato {
+       ~ gato_persa (nombre) {
+         parent->gato (nombre, "Persa"); // Llama al m|{\color{gray75}{é}}|todo constructor de la clase padre.
+       }
+   }
+   
+   mac = new gato_persa ("MacAlistair"); 
+   mac->aullar(); // Imprime "Miauuu"
+   << mac->getRaza(); // Imprime "Persa"
+\end{lstlisting}
+
+Cuando un método de una clase padre utiliza el operador ``$this$'' se accede al objeto
+en si, de la misma forma que se haría desde un método de la clase hija.  \\
+
+\begin{lstlisting}
+   class mascota {
+      private nombre; 
+      private raza;
+      
+      ~ mascota (nombre, raza) { 
+        this->nombre = nombre; 
+        this->raza = raza;
+      }
+      
+      ~ getNombre () {
+         return this->nombre;
+      }
+      
+      ~ getRaza () {
+         return this->raza;
+      }
+      
+      ~ saludar () {
+         // Accede al m|{\color{gray75}{é}}|todo getType definido en la clase hija
+         << "Hola soy ".this->nombre.", un ".this->getType()." ".this->raza;  
+      }
+      
+   }
+
+   class gato extends mascota {
+       ~ getType () {
+         return "gato";
+       }
+       
+       ~ aullar () { 
+         << "Miauuu";
+      }
+   }
+
+   class perro extends mascota {
+       ~ getType () {
+         return "perro";
+       }
+       
+       ~ aullar () { 
+         << "Guauuu";
+      }
+   }
+   
+   mac = new gato ("MacAlistair", "Persa"); 
+   mac->aullar(); // Imprime "Miauuu"
+   mac->saludar(); // Imprime "Hola soy MacAlistair, un gato Persa"
+   
+   ada = new perro ("Ada", "Bulldog"); 
+   ada->aullar(); // Imprime "Guauuu"
+   ada->saludar(); // Imprime "Hola soy Ada, un perro Bulldog"
+\end{lstlisting}
+
+En OMI es posible acceder a un atributo o método estático que es definido en la clase hija, desde un método de
+la clase padre. Para ello se utiliza la palabra reservada ``$static$'' seguido del operador ``$::$'' y el 
+nombre del atributo o método al que se accederá. \\
+
+\begin{lstlisting}
+   class mascota {
+      private nombre; 
+      private raza;
+      
+      ~ mascota (nombre, raza) { 
+        this->nombre = nombre; 
+        this->raza = raza;
+      }
+      
+      ~ getNombre () {
+         return this->nombre;
+      }
+      
+      ~ getRaza () {
+         return this->raza;
+      }
+      
+      ~ saludar () {
+         // Accede al atributo est|{\color{gray75}{á}}|tico type definido en la clase hija
+         << "Hola soy ".this->nombre.", un ".static::type." ".this->raza;  
+      }
+      
+   }
+
+   class gato extends mascota {
+       static type = "gato";
+       
+       ~ aullar () { 
+         << "Miauuu";
+      }
+   }
+
+   class perro extends mascota {
+      static type = "perro";
+       
+       ~ aullar () { 
+         << "Guauuu";
+      }
+   }
+   
+   mac = new gato ("MacAlistair", "Persa"); 
+   mac->aullar(); // Imprime "Miauuu"
+   mac->saludar(); // Imprime "Hola soy MacAlistair, un gato Persa"
+   
+   ada = new perro ("Ada", "Bulldog"); 
+   ada->aullar(); // Imprime "Guauuu"
+   ada->saludar(); // Imprime "Hola soy Ada, un perro Bulldog"
+
+\end{lstlisting}
+
+
+
+En OMI no es posible llevar a cabo herencia múltiple. Tampoco dispone de ningún
+mecanismo con el que se pueda simular tales como traits. 
+
+\paragraph{Redefinición de clases}
+En OMI es posible redefinir una clase, de forma que se pueden añadir métodos o sobrescribir los 
+existentes. 
+
+Para redefinir una clase basta con definirla nuevamente con el mismo identificador. La nueva 
+clase tomará todos los atributos y métodos anteriores. \\
+
+\begin{lstlisting}
+   class miClase {
+      ~ meth1 () {
+         << "M|{\color{red}\emph{é}}|todo 1";
+      }
+   }
+   
+   class miClase {
+      ~ meth2 () {
+         << "M|{\color{red}\emph{é}}|todo 2";
+      }
+   }
+   foo = new miClase ();
+   foo->meth1(); // Imprime "m|{\color{gray75}{é}}|todo 1"
+   foo->meth2(); // Imprime "m|{\color{gray75}{é}}|todo 2"
+   class miClase {
+      ~ meth1 () {
+         << "Redefinici|{\color{red}\emph{ó}}|n de m|{\color{red}\emph{é}}|todo 1";
+      }
+   }
+   foo = new miClase ();
+   foo->meth1(); // Imprime "Redefinici|{\color{gray75}{ó}}|n de m|{\color{gray75}{é}}|todo 1"
+   foo->meth2(); // Imprime "M|{\color{gray75}{é}}|todo 2"
+\end{lstlisting}
+
+La redefinición de clases es un mecanismo que ofrece flexibilidad a la hora de construir clases de objetos, no obstante 
+debe ser utilizado con cuidado ya que hace que la definición de una clase sea dinámica y pueda cambiar en la ejecución 
+pudiendo ocasionar confusión en el código e inestabilidad del programa.
+
+\paragraph{Clases bases}
+En OMI existen una serie de clases denominadas clases bases, a partir de las 
+cuales se definen los tipos de datos básicos. Estas son:
+
+\begin{itemize}
+\item logicClass
+\item arithClass
+\item stringClass
+\item arrayClass
+\end{itemize}
+
+Es posible redefinir una clase base y modificar su comportamiento, añadiendo o sustituyendo 
+métodos. \\
+
+\begin{lstlisting}
+   class stringClass {
+      ~ OReq (elems) {
+         $(elems)
+            if (this == $) 
+               return true;
+         return false;
+      }
+      ~ concatX () {
+         return this .= "X";
+      }
+   }
+
+   foo = "ABC"->OReq({"A", "AB", "ABC"}); // foo vale true
+   foo = "ABCD"->OReq({"A", "AB", "ABC"}); // foo vale false
+   foo = "ABCD"->concatX(); // foo vale "ABCDX"
+   
+   str = "ABCD";
+   << str->concatX(); // Imprime "ABCDX"
+   << str; // Imprime "ABCDX"
+\end{lstlisting}
+
+ En una clase base el operador ``$this$'' obtiene el dato en si, por lo que este será tratado como una variable
+ de este tipo.
+ 
+ Es posible extender una clase base para especializarla mediante otras subclases. \\
+ 
+ \begin{lstlisting}
+   class stringA extends stringClass {
+      ~ stringA (){
+         this = "A";
+      }
+   }
+   class stringB extends stringClass {
+      ~ stringB (){
+         this = "B";
+      }
+   }
+
+   strA = new stingA ();
+   strB = new stingB ();
+   << strA; // Imprime "A"
+   << strB; // Imprime "B"
+   << strA . strB; // Imprime "AB"
+\end{lstlisting}
+
+Las clases bases logicClass y arithClass no disponen inicialmente de métodos.
+Las clases stringClass y arrayClass tienen como métodos los equivalentes 
+a las funciones aplicables a estos tipos de datos.
+
+\paragraph{Duck typing}
+
+OMI es un lenguaje de tipado dinámico que presenta un estilo duck typing.
+La validez semántica en el uso de un objeto viene determinada
+por el conjunto de atributos y métodos de este. 
+
+Si en una expresión se accede a un método o atributo de un objeto únicamente se
+comprobará que el elemento exista, indistintamente de la clase a la que pertenezca 
+el objeto. De esta forma es posible utilizar un objeto independientemente de 
+la clase a la que pertenece, sin que sea necesario un chequeo de tipos. \\
+
+\begin{lstlisting}
+   class pato {
+      ~ sonar () {
+         << "Cuack";
+      }
+   }
+
+   class persona {
+      ~ sonar () {
+         << "La persona imita el sonido de un pato";
+      }
+   }
+
+
+   ~ sonar (obj) {
+      /*
+       * Sea cual sea la clase del objeto, 
+       * si tiene el m|{\color{gray75}{é}}|todo sonar
+       * ser|{\color{gray75}{á}}| llamado
+       */
+      obj->sonar();
+   }
+
+   obj1 = new pato ();
+   obj2 = new persona ();
+   sonar (obj1); // Imprime "Cuack"
+   sonar (obj2); // Imprime "La persona imita el sonido de un pato"
+\end{lstlisting}
+
+El estilo de tipado duck typing permite que se de polimorfismo sin herencia de 
+clases, de forma que a objetos de distinto tipos se le puede enviar mensajes sintácticamente iguales.  
+
+\paragraph {Métodos mágicos} \label{sec:magic_method}
+
+En OMI se definen una serie de métodos mágicos. Estos son métodos que serán 
+llamados en distintas circunstancias, como cuando se utilice al objeto 
+como una cadena o se acceda a un atributo no existente. 
+
+Los métodos mágicos comienzan por el signo ``\_'' y son los siguientes: 
+
+\begin{description}
+\item[\_str:] Se llama cuando se accede a un objeto como una una cadena de caracteres.
+\item[\_get:] Se llama cuando se accede a un atributo que no existe.
+\item[\_call:] Se llama cuando se accede a un método que no existe.
+\end{description}
+
+El método ``\_str'' no tendrá parámetros y devolverá la cadena de caracteres que
+represente el objeto. 
+
+\begin{lstlisting}
+   class persona {
+      private nombre;
+      private apellidos;
+      
+      ~ persona (nombre, apellidos) {
+         this->nombre = nombre;
+         this->apellidos = apellidos;
+      }
+      
+      ~ _str () {
+         return this->apellidos.', '.this->nombre;
+      }
+      
+   }
+   
+   p = new persona ('Fco. Javier', 'Boh|{\color{red}\emph{ó}}|rquez Ogalla');
+   << p; // Imprime "Boh|{\color{gray75}{ó}}|rquez Ogalla, Fco. Javier"
+   
+\end{lstlisting}
+
+El método ``\_get'' tendrá un único parámetro que se corresponderá con 
+el nombre del atributo no existente al que se ha accedido. Y devolverá 
+el valor para dicho atributo. \\
+
+\begin{lstlisting}
+   class persona {
+      private nombre;
+      private apellidos;
+      
+      ~ persona (nombre, apellidos) {
+         this->nombre = nombre;
+         this->apellidos = apellidos;
+      }
+      
+      ~ _get (attr) {
+         << "El atributo ".attr." no existe";
+         return "No existe";
+      }
+      
+   }
+   
+   p = new persona ('Fco. Javier', 'Boh|{\color{red}\emph{ó}}|rquez Ogalla');
+   foo = p->test; // Imprime "El atributo test no existe"
+   << foo; // Imprime "No existe"
+\end{lstlisting}
+
+El método ``\_call'' tendrá dos parámetros que se corresponderán con 
+el nombre del método no existente al que se ha accedido y 
+con un array que contendrá los parámetros pasados en la llama. El valor devuelto
+será el valor de la llamada. \\
+
+\begin{lstlisting}
+   class persona {
+      private nombre;
+      private apellidos;
+      
+      ~ persona (nombre, apellidos) {
+         this->nombre = nombre;
+         this->apellidos = apellidos;
+      }
+      
+      ~ _call (meth, params) {
+         <."El m|{\color{red}\emph{é}}|todo ".meth." no existe [ ";
+         $(params) <.$." ";
+         << "]";
+         return "No existe";
+      }
+      
+   }
+   
+   p = new persona ('Fco. Javier', 'Boh|{\color{red}\emph{ó}}|rquez Ogalla');
+   foo = p->test("1", 2, "4"); // Imprime "El m|{\color{gray75}{é}}|todo test no existe [ 1 2 4 ]"
+   << foo; // Imprime "No existe"
+\end{lstlisting}
+
+\subsubsection{Entorno del programa} \label{sec:environment}
+
+En OMI es posible  acceder al entorno en el que se ejecuta el programa, definido por el sistema 
+operativo y la entrada del programa. 
+
+La mayoría de sistemas operativos permiten definir una serie de variables de entorno que pueden ser usadas
+por los procesos y por el propio sistema operativo. En OMI es posible acceder a estas variables
+mediante la función $getenv$ y una cadena que representa el nombre de la variable a la que se desea acceder. \\
+
+\begin{lstlisting}
+   << getenv ("USER"); // Imprime el nombre de usuario 
+\end{lstlisting}
+
+Un programa escrito en OMI puede recibir una serie de parámetros cuando es ejecutado. Los argumentos serán almacenados
+en una variable denominada $args$. El valor de esta será un array donde el primer elemento es el nombre del script y los siguientes
+los argumentos dados. \\
+
+ \begin{lstlisting}
+   // File: args.omi
+   $(args) << $; // Imprime el nombre del script y los argumentos.
+\end{lstlisting}
+
+ \begin{lstlisting}{language=bash}
+   omi args.omi "ARG1" "ARG2" # Imprime args.omi ARG1 y ARG2
+\end{lstlisting}
+
+\subsubsection{Excepciones} \label{sec:exception}
+
+Las excepciones son un mecanismo de programación que permite tratar casos no habituales, normalmente de error, durante la ejecución de un programa. Las excepciones
+permiten separar el código correspondiente al caso de normal o de éxito, del código extraordinario o de error. 
+
+El uso de excepciones permite realizar programas robustos y tolerantes a errores, a la vez que se gana claridad en el código.
+
+Para hacer uso del manejo de excepciones se utiliza la sentencia $try...catch...$, esta consiste en la palabra reservada $try$ seguida del bloque de 
+sentencias en la que puede darse la excepción. Tras lo cual se utiliza la palabra reservada $catch$, un símbolo variable al que se le va a asignar el valor de la excepción y un bloque de 
+sentencias en la que se va a tratar. Para lanzar la excepción se utilizar la palabra reservada $throw$ seguida de una expresión que le da valor. \\
+
+\begin{lstlisting}
+   class Exc {
+      var = null;
+      ~ Exc (num) {
+         this->var = num;
+      }
+      ~ printError () {
+         << "Error " << this->var;
+      }
+   }
+   try {
+      >>["Dame un valor:"] foo;
+      if ( foo === "" ){
+         throw new Exc (404);
+      } 
+      << foo;
+   }catch (exc) {
+      exc->printError ();
+   }
+\end{lstlisting}
+
+A diferencias de otros lenguajes de programación OMI solo permite un bloque catch que será ejecutado sea cual sea la excepción que se produzca. No se comprobará el 
+tipo de dato del valor asociado a la excepción. 
+
+\subsubsection{Reflexión}
+OMI es un lenguaje que presenta características reflexivas. Un programa escrito en OMI puede hacer uso del entorno construido durante su ejecución para cambiar su propia estructura
+y comportamiento.
+
+En OMI es posible utilizar expresiones cuyo valor sea una cadena de caracteres como un identificador para una variable, una función, una clase, un método, etc. Para ello se 
+utiliza el símbolo ``$@$'' seguido de la expresión entre llaves. \\
+
+\begin{lstlisting}
+   class Foo {
+      ~ hello () {
+         << "Hola mundo";
+      }
+   }
+   
+   class_pre = "Fo";
+   class_post = "o";
+   var = "object";
+   method = "hello";
+   @{var} = new @{class_pre.class_post}();
+   object->@{method}(); // Imprime "Hola mundo"
+\end{lstlisting}
+
+En OMI también es posible evaluar una cadena de caracteres como si de una sentencia de código fuente se tratase. Para ello se utiliza la sentencia ``$eval$''. \\
+
+\begin{lstlisting}
+   foo = " x = 4 + 3 ";
+   eval (foo);
+   << x; // Imprime 7
+\end{lstlisting}
+
+\subsubsection{Introspección de tipos}
+
+OMI es un lenguaje en el que es posible llevar a cabo introspección de tipos. Permite examinar, en tiempo de ejecución, el tipo de los objetos creados. 
+
+Para obtener la clase de un objeto dado se utiliza la palabra clave ``$getclass$'' seguida de la expresión, cuyo valor representará el objeto, entre paréntesis. Se devolverá
+la cadena de caracteres correspondiente al nombre de la clase, o la cadena vacía si la expresión no es un objeto. \\
+
+\begin{lstlisting}
+   class Foo {
+      ~ hello () {
+         << "Hola mundo";
+      }
+   }
+   foo = new Foo ();
+   if (getclass(foo) == 'Foo')
+      foo->hello(); // Imprime "Hola mundo"
+\end{lstlisting}
+
+\subsubsection{Errores} \label{sec:error}
+Cuando un programa escrito en OMI es interpretado se pueden dar diferentes tipos de errores. Un error de interpretación 
+puede tener diferentes efectos, pero en cualquier caso se presentará información sobre el error ocurrido. Si el código fuente está contenido en un fichero 
+se indicará el nombre del mismo y la línea de código en la que se ha producido el error. 
+
+\paragraph {Léxicos} 
+Los errores léxicos son originados durante el procesado del código fuente, cuando existe un carácter o cadena que no es reconocida por el intérprete. En este caso 
+se detendrá el programa no será ejecutado y fallará el proceso de interpretación. \\
+
+\begin{lstlisting}
+   |æ| = 10;
+   Error: lexical error, unexpected character (|æ|)
+\end{lstlisting}
+
+\paragraph {Sintácticos}
+Los errores sintácticos tienen lugar durante el procesado del código fuente, cuando una sentencia o expresión no está construida de forma correcta y no respeta las reglas establecidas por el 
+lenguaje. Si se detecta un error sintáctico al procesarse el código fuente este no será ejecutado y el programa se detendrá. \\
+
+\begin{lstlisting}
+   [ id );
+   Error: syntax error, unexpected |')'|, expecting |','| or |']'|
+\end{lstlisting}
+
+\paragraph {Semánticos} 
+Los errores semánticos se dan durante la ejecución del programa. Estos son dependientes del entorno y los datos. 
+
+Cuando una sentencia o expresión es interpretada es posible que se dé un error semántico si no es capaz de operar sobre los datos
+facilitados, o no se da el contexto adecuado. 
+
+Existe gran variedad de posibles errores semánticos, estos son descritos en este manual al tratar las sentencias, expresiones y demás construcciones en las que se 
+pueden dar. Cuando se produce un error semántico puede detenerse o no la ejecución del programa, dependerá del error en si. Si no se indica lo contrario en
+el manual, cuando se produce un error semántico, se prosigue con la ejecución del programa. \\
+
+\begin{lstlisting}
+   a = new noExist ()
+   Error: data type error, worng |class| identifier
+\end{lstlisting}
+
+OMI es un lenguaje de tipado dinámico, por lo que cualquier error de tipo se da en tiempo de ejecución. Las funciones y operadores
+del lenguaje esperan tratar con unos tipos de datos concretos. Si una función u operador recibe un valor de un tipo 
+que no pueda manipular producirá un error semántico. En este manual se indica los tipos de datos con los que esperan operar 
+las funciones y métodos, se entiende que otro tipo distinto producirá un error. 
+
+\subsection{Funciones del lenguaje}
+\subsubsection{Cadenas de caracteres}
+OMI pone a disposición del programador un conjunto de funciones que operan sobre cadenas de caracteres.
+
+En OMI las cadenas de caracteres pertenecen a una clase de objetos, así toda función aplicable a una cadena
+puede ser llamada como un método de la cadena. 
+
+Toda función aplicable a una cadena comienza con el prefijo ``str'' y toman como primer parámetro la cadena sobre la que 
+operar. Por otro lado los métodos de cadena no disponen de prefijo y se toma implícitamente como primer parámetro el objeto 
+cadena. 
+
+
+
+\paragraph {str\_explode}
+La función str\_explode divide en partes una cadena de caracteres según una subcadena denominada separador. El resultado 
+será un array de elementos que contendrá las cadenas correspondientes a cada una de las partes. 
+
+\begin{framed}
+\hfill \\ $array$ \textbf{str\_explode} ( $string$ \textbf{str}, $string$ \textbf{delimeter})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[delimeter:] Cadena delimitadora.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Array de elementos que contiene las subcadenas resultado de dividir \textbf{str} usando el delimitador \textbf{delimeter}.
+   
+   Si el separador no se encuentra en la cadena el resultado será un array de un elemento que contendrá la cadena completa.
+\end{description}
+\end{framed}
+
+
+\begin{lstlisting}
+   // foo es el array {"A", "B", "C", "D", "E"}
+   foo = str_explode ("A,B,C,D,E", ","); 
+   
+   // foo es el array {"A", "B", "C", "D", "E"}
+   foo = "A,B,C,D,E"->explode (",");
+\end{lstlisting}
+
+\paragraph {str\_find}
+La función str\_find obtiene la primera posición de una subcadena dentro de una cadena de caracteres. 
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{str\_find} ( $string$ \textbf{str}, $mixed$ \textbf{substr} [, $numeric$ \textbf{position}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[substr:] Expresión de búsqueda. Puede ser una cadena de caracteres o una expresión regular.  
+   \item[position:] Posición dentro de la cadena \textbf{str} a partir de la cual se comenzará la búsqueda. Si no es dado 
+   se comenzará desde la primera posición de la cadena.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el número entero correspondiente a la primera posición en la que se encuentre \textbf{substr} dentro de \textbf{str}. 
+   Se ha de tener en cuenta que la primera posición de la cadena se corresponde con el entero $0$.
+   
+   Si \textbf{substr} es una expresión regular esta se corresponderá con la subcadena de mayor longitud perteneciente al 
+   lenguaje definido por esta. 
+   
+   Si la subcadena no se encuentra devuelve el valor $-1$. 
+   
+   Si la posición de inicio \textbf{position} es mayor que la longitud de la cadena \textbf{str} se devuelve el valor $-1$. 
+\end{description}
+\end{framed}
+
+\begin{lstlisting}
+   foo = str_find ("A,B,C,D,C,F", "C"); // foo vale 4  
+   foo = "A,B,C,D,C,F"->find ("C"); // foo vale 4
+
+   foo = str_find ("A,B,C,D,C,F", "C", 5); // foo vale 8 
+   foo = "A,B,C,D,C,F"->find ("C", 5); // foo vale 8
+   
+   foo = str_find ("A,B,C,D,C,F", `C(.*)C`); // foo vale 4
+   foo = "A,B,C,D,C,F"->find (`C(.*)C`); // foo vale 4
+\end{lstlisting}
+
+
+\paragraph {str\_replace}
+La función str\_replace busca las ocurrencias de una subcadena dada en una cadena de caracteres, sustituyéndolas
+por una cadena de remplazo. El valor devuelto por la función es la cadena con los remplazos efectuados. \\
+
+\begin{framed}
+\hfill \\ $string$ \textbf{str\_replace} ( $string$ \textbf{str}, $mixed$ \textbf{search}, $string$ \textbf{replace} [, $numeric$ \textbf{n}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[search:] Expresión de búsqueda. Puede ser una cadena de caracteres o una expresión regular.  
+   \item[replace:] Cadena de remplazo.
+   \item[n:] Número de reemplazos a efectuar. Si no es dado se realizan todos los reemplazos.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un cadena de caracteres resultado de remplazar la subcadena \textbf{search}  por \textbf{replace}
+   en la cadena de caracteres \textbf{str}, tantas veces como indique el parámetro \textbf{n}.
+   
+   Si \textbf{search} es una expresión regular se buscarán subcadenas que pertenezcan al conjunto de palabras del lenguaje definido por esta. La
+   expresión regular puede estar compuesta por subexpresiones delimitadas por paréntesis, si es así es posible hacer referencia a las subcadenas 
+   correspondientes a estas usando el carácter ``\textbackslash'' seguido de la posición que ocupa la subexpresión.
+   
+\end{description}
+\end{framed}
+
+
+\begin{lstlisting}
+   // foo vale "A,B,P,D,P,F" 
+   foo = str_replace ("A,B,C,D,C,F", "C", "P"); 
+   
+   // foo vale "A,B,P,D,P,F" 
+   foo = "A,B,C,D,C,F"->replace ("C", "P");
+
+   // foo vale "A,B,P,D,C,F" 
+   foo = str_replace ("A,B,C,D,C,F", "C", "P", 1); 
+   
+   // foo vale "A,B,P,D,C,F" 
+   foo = "A,B,C,D,C,F"->replace ("C", "P", 1);
+
+   // foo vale "A,B,D,F" 
+   foo = str_replace ("A,B,C,D,C,F", `C,(.)`, "\1"); 
+   
+   // foo vale "A,B,D,F" 
+   foo = "A,B,C,D,C,F"->replace (`C,(.)`, "\1");
+\end{lstlisting}
+
+\paragraph{str\_replace\_sub}
+La función str\_replace\_sub remplaza la subcadena dada por una posición inicial y una longitud dentro de un cadena de caracteres por otra cadena.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{str\_replace\_sub} ( $string$ \textbf{str}, $numeric$ \textbf{ini}, $numeric$ \textbf{len}, $string$ \textbf{replace} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[ini:] Posición inicial para el remplazo.
+   \item[len:] Longitud de la subcadena de remplazo.
+   \item[replace:] Cadena de remplazo.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un cadena de caracteres resultado de remplazar la subcadena dada por la posición \textbf{ini} y la longitud
+   \textbf{len} dentro de la cadena de caracteres \textbf{str} por la cadena \textbf{replace}.
+   
+   Si la posición inicial dada se encuentra fuera de la cadena se produce un error semántico.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}
+   // foo vale "A,B,P,C,F" 
+   foo = str_replace_sub ("A,B,C,D,C,F", 4, 3, "P"); 
+   
+   // foo vale "A,B,P,C,F" 
+   foo = "A,B,C,D,C,F"->replace_sub (4, 3, "P");
+\end{lstlisting}
+
+\paragraph{str\_upper}
+La función str\_upper convierte todos los caracteres alfabéticos de una cadena en mayúsculas. 
+
+\begin{framed}
+\hfill \\ $string$ \textbf{str\_upper} ( $string$ \textbf{str} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres \textbf{str} con todos los caracteres alfabéticos convertidos a mayúsculas.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}
+   foo = str_upper ("a,b,c,D"); // foo vale "A,B,C,D"
+   foo = "a,b,c,D"->upper (); // foo vale "A,B,C,D" 
+\end{lstlisting}
+
+\paragraph{str\_lower}
+La función str\_lower convierte todos los caracteres alfabéticos de una cadena en minúsculas. 
+
+\begin{framed}
+\hfill \\ $string$ \textbf{str\_lower} ( $string$ \textbf{str} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres \textbf{str} con todos los caracteres alfabéticos convertidos a minúsculas.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}   
+   foo = str_lower ("A,B,C,d"); // foo vale "a,b,c,d"
+   foo = "A,B,C,d"->lower (); // foo vale "a,b,c,d" 
+\end{lstlisting}
+
+\paragraph{str\_search}
+La función str\_search permite llevar a cabo una búsqueda aplicando un patrón sobre una 
+cadena de texto. Se obtendrá un array con los resultados de la búsqueda.
+
+\begin{framed}
+\hfill \\ $array$ \textbf{str\_search} ( $mixed$ \textbf{str}, $regexp$ \textbf{pattern} [, $string$ \textbf{keys...}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada. Puede ser un array de cadenas.
+   \item[pattern:] Patrón de búsqueda. 
+   \item[keys...:] Listado de claves para las coincidencias. Si no se da las
+   claves serán numéricas.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un array que contiene todas las coincidencias del patrón dado por la 
+   expresión regular \textbf{pattern} en la cadena \textbf{str}, donde las 
+   claves del array vienen dadas por la lista de cadenas \textbf{keys...}. \\
+   
+   La expresión regular puede estar formada por subexpresiones delimitadas
+   por "()". En dicho caso se buscará en la cadena \textbf{str} subcadenas que pertenezcan al
+   conjunto delimitado por la expresión regular. Por cada subcadena encontrada se creará un array
+   con las correspondencias de cada subexpresión. \\
+   
+   Si \textbf{str} es un array de cadenas se aplicará el algoritmo de búsqueda de foram iterativa a cada cadena en el mismo.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}   
+   atag = `(?i)<a[^>]*href\s*=\s*\"([^\"]*)\"[^>]*>(.+?)<\s*/\s*a\s*>`;
+   web = "<a href=\"url01\">link01 -> web01< /a>";
+   web .= "\n<div><a id=\"id\" href=\"url02\" class=\"clase\">link02 -> web02</a></div>";
+   /*
+      links es el siguiente array:
+      {
+         {
+            "url" : "url01",
+            "label" : "link01 -> web01"
+         },
+         {
+            "url" : "url02",
+            "label" : "link02 -> web02"
+         }
+      }
+   */
+   links = str_search (web, atag, "url", "label");
+\end{lstlisting}
+
+Las cadenas de caracteres tienen el método search, que opera de igual forma que la
+función str\_search, salvo por que no acepta la lista de claves.
+
+\paragraph{str\_match}
+La función str\_match comprueba si una cadena de caracteres pertenece o no al
+lenguaje definido por una expresión regular.
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{str\_match} ( $string$ \textbf{str}, $regexp$ \textbf{pattern})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada.
+   \item[pattern:] Expresión regular patrón. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor booleano verdadero si la cadena de caracteres \textbf{str} pertenence
+   al conjunto de palabras del lenguaje definido por la expresión regular \textbf{pattern}. Falso
+   en caso contrario.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}   
+   foo = str_match ("ABCD",`A[^D]*D`); // foo vale true
+   foo = "ABCD"->match(`A[^D]*D`); // foo vale true
+\end{lstlisting}
+
+
+\paragraph{regexp}
+La función regexp convierte una cadena de caracteres dada en una expresión regular
+
+\begin{framed}
+\hfill \\ $regexp$ \textbf{regexp} ( $string$ \textbf{str})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la expresión regular correspondiente a la cadena \textbf{str}.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}   
+   pattern = regexp ("A[^D]*D"); 
+   foo = "ABCD"->match(pattern); // foo vale true
+\end{lstlisting}
+
+\paragraph{sprintf}
+La función sprintf permite obtener una cadena de caracteres formateada a partir de una serie de valores. 
+
+\begin{framed}
+\hfill \\ $string$ \textbf{sprintf} ( $string$ \textbf{format} [, $mixed$ \textbf{values...}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[format:]  \hfill \\
+      La cadena formato contendrá una serie de
+		directivas de formato. Estas directivas serán sustituidas por el valor correspondiente, según posición, de la
+		lista. Cuando se realiza cada sustitución el valor es formateado según la directiva. \\
+		
+		Las directivas de formato tienen el siguiente forma:
+		$$\%[operador][precisi\acute{o}n][formato]$$ \\
+		Los posibles operadores serán los siguientes:
+		\begin{description}
+			\item[ +:] Fuerza la impresión del símbolo + cuando se formatean números positivos.
+			\item[ \^\ :] Convierte el caracteres a mayúsculas cuando se formatean cadenas de texto.
+			\item[ \#:] Añade el carácter 0x cuando se formatean números hexadecimales y el carácter 0 cuando se formatean octales.
+		\end{description} \hfill 
+	
+		La precisión se refiere al número de decimales que se imprimirán en el caso de formatear
+		números o el número de caracteres en el caso de formatear cadenas. \\		
+
+		El carácter de formato indica que tipo de formato se le dará al valor: 
+		\begin{description}
+			\item[  i|d:] Número entero.
+			\item[  u:] Sin signo.
+			\item[  f:] Coma flotante.
+			\item[  \%:] Carácter \%.
+			\item[  e:] Notación científica.
+			\item[  o:] Octal.
+			\item[  x:] Hexadecimal.
+			\item[  s|c:] Cadena de texto.
+		\end{description} \hfill \\
+   \item[values:] \hfill \\ Lista de valores. Se deben de dar tantos como directivas existan en la cadena de formato.
+      
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres resultante de sustituir las directivas de formato de la cadena \textbf{format}, por los valores  de la lista \textbf{values} formateados 
+   según la directiva correspondiente posicionalmente.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}   
+   << sprintf("Esto es una %s formateada.", "cadena"); // Esto es una cadena formateada.
+   << sprintf("Ya son %2d", 2.003); // Ya son 02
+   << sprintf("Y %4s", "tres gatos"); // Y tres
+   << sprintf("Y %+4i", "4"); // Y +0004
+   << sprintf("Y %u", -5); // Y 5
+   << sprintf("Y %+2f", 6.6666 ); // Y +6.7
+   << sprintf("Y %+5e", 777.77777777); // Y +7.77778e+02
+   << sprintf("Y %F", "88888888888888888888888888"); // Y 8.88889E+25
+   << sprintf("Y %3E", "99.99"); // Y 9.999E+01
+   << sprintf("Y %^s", "diez"); // Y DIEZ
+   << sprintf("%d en octal es %#o", 31, 31); // 31 en octal es 037
+   // 31 en hexadecimal es 0x1f o 0X1F
+   << sprintf("%d en hexadecimal es %#x o %#X", 31, 31, 31); 
+   << sprintf("Texto sin expresiones de formato"); // Texto sin expresiones de formato
+   << sprintf("%2sdenas %3stas", "Cadiz", "junio"); // Cadenas juntas
+   // El 100% de aciertos en 100 intento
+   << sprintf("El %s%% de aciertos en %d intentos", 100, 100); 
+   << sprintf("%%%%%%"); // %%%%
+\end{lstlisting}
+
+\subsubsection{Arrays}
+OMI pone a disposición del programador un conjunto de funciones que operan sobre arrays.
+
+En OMI los arrays pertenecen a una clase de objetos, así toda función aplicable a un array
+puede ser llamada como un método del mismo. 
+
+Toda función aplicable a un array con el prefijo ``array'' y toman como primer parámetro el array sobre el que 
+operar. Por otro lado los métodos de array no disponen de prefijo y se toma implícitamente como primer parámetro el objeto 
+array.
+
+\paragraph{array\_implode}
+Forma una cadena de caracteres a partir de un array de cadenas y una cadena separadora. 
+
+\begin{framed}
+\hfill \\ $string$ \textbf{array\_implode} ( $array$ \textbf{elements}, $string$ \textbf{sep} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \item[sep:] Cadena separadora
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un string correspondiente a todos los elementos del array \textbf{elements} en el mismo orden, con el string \textbf{sep} entre cada elemento. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   << array_implode ({"Hola", "Mundo"}, " "); // Imprime "Hola Mundo"
+   << {"Hola", "Mundo"}->implode (" "); // Imprime "Hola Mundo"
+\end{lstlisting}
+
+\paragraph{array\_first}
+Obtiene el primer elemento de un array. 
+
+\begin{framed}
+\hfill \\ $mixed$ \textbf{array\_first} ( $array$ \textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el primer elemento del array \textbf{elements}. Si \textbf{elements} es un array
+   numérico con claves numéricas devuelve el elemento con la posición 0. Si es un array asociativo 
+   devuelve el elemento correspondiente a la primera clave que se introdujo. Si el array es vacío 
+   devuelve un valor nulo. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   << array_first ({"Hola", "Mundo"}); // Imprime "Hola"
+   << {"Hola", "Mundo"}->first (); // Imprime "Hola"
+\end{lstlisting}
+
+\paragraph{array\_last}
+Obtiene el último elemento de un array. 
+
+\begin{framed}
+\hfill \\ $mixed$ \textbf{array\_last} ( $array$ \textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el último elemento del array \textbf{elements}. Si \textbf{elements} es un array
+   numérico con claves numéricas devuelve el elemento con la posición $size - 1$. Si es un array asociativo 
+   devuelve el elemento correspondiente a la última clave que se introdujo. Si el array es vacío 
+   devuelve un valor nulo. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   << array_last ({"Hola", "Mundo"}); // Imprime "Mundo"
+   << {"Hola", "Mundo"}->last (); // Imprime "Mundo"
+\end{lstlisting}
+
+\paragraph{array\_insert}
+Inserta un elemento en una determinada posición de un array dado.
+
+\begin{framed}
+\hfill \\ $array$ \textbf{array\_insert} ( $array$ \&\textbf{elements}, $numeric$ \textbf{position}, $mixed$ \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[position:] Entero sin signo que determina la posición en la que se insertará el elemento. Debe ser un valor entero entre $0$ y
+   el tamaño del array, cualquier otro valor dará error de índice.
+   \item[element:] Elemento a insertar
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array resultado de insertar \textbf{element} en la posición \textbf{position} del array \textbf{elements}.
+   Si \textbf{elements} es un array de índices numéricos inserta el elemento en la posición dada. Si 
+   es un array asociativo inserta el elemento en la clave que ocupa la posición dada, desplazando los demás valores y creando
+   una nueva clave correspondiente al número de elementos.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale el array { "Hola", "Mundo", "Digital"}
+    */
+   foo = array_insert ({"Hola", "Mundo"}, 2, "Digital"); 
+   /*
+    * foo vale el array { "Hola", "Mundo", "Digital"}
+    */
+   foo = {"Hola", "Mundo"}->insert (2, "Digital");
+   
+   foo = {"A", "C"};
+   array_insert (foo, 1, "B"); // foo vale {"A", "B", "C"}
+   foo->insert (3, "D"); // foo vale {"A", "B", "C", "D"}
+\end{lstlisting}
+
+\paragraph{array\_delete}
+Elimina el elemento ocupa una determinada posición en un array dado.
+
+\begin{framed}
+\hfill \\ $array$ \textbf{array\_delete} ( $array$ \&\textbf{elements}, $mixed$ \textbf{position})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[position:] Puede ser un entero sin signo que determina la posición que será eliminada. Debe ser un valor entero mayor que $0$ y
+   menor que el tamaño del array, cualqueir otro valor no tendrá efecto. Además puede ser una cadena de caracteres que 
+   represente la clave del array que será eliminada. Si la clave no existe en el array la función no realizará ninguna acción.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Si el array \textbf{elements} presenta índices numéricos devuelve el array resultado de eliminar la posición \textbf{position} del array. 
+   
+   Si el array \textbf{elements} es asociativo devuelve el array resultado de eliminar la clave \textbf{position} del array. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale el array { "Hola" }
+    */
+   foo = array_delete ({"Hola", "Mundo"}, 1); 
+   /*
+    * foo vale el array { "Hola" }
+    */
+   foo = {"Hola", "Mundo"}->delete (1);
+   
+   foo = {"A", "C"};
+   array_delete (foo, 0); // foo vale {"C"}
+   foo->delete (0); // foo vale {}
+   
+   foo = { 'key0' : 'val0', 'key1' : 'val1' };
+   foo->delete ('key0'); // foo vale { 'key1' : 'val1' }
+\end{lstlisting}
+
+\paragraph{array\_push}
+Inserta un elemento al final de un array dado.
+
+\begin{framed}
+\hfill \\ $array$ \textbf{array\_push} ( $array$ \&\textbf{elements}, $mixed$ \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[element:] Elemento a insertar al final del array
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array \textbf{elements} con el elemento \textbf{element} insertado en la última posición. Si \textbf{elements} es
+   asociativo la clave del elemento insertado será el número de elementos del array antes de la insercción. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale el array { "Hola", "Mundo", "Digital" }
+    */
+   foo = array_push ({"Hola", "Mundo"}, "Digital"); 
+   /*
+    * foo vale el array { "Hola", "Mundo", "Digital"}
+    */
+   foo = {"Hola", "Mundo"}->push ("Digital");
+   
+   foo = {"A", "B"};
+   array_push (foo, "C"); // foo vale { "A", "B", "C" }
+   foo->push ("D"); // foo vale { "A", "B", "C", "D" }
+   
+   foo = { 'key0' : 'val0', 'key1' : 'val1'};
+   foo->push ('val2'); // foo vale { 'key0' : 'val0', 'key1' : 'val1', '2' : 'val2' }
+\end{lstlisting}
+
+\paragraph{array\_pop}
+Elimina y devuelve el último elemento de un array dado. 
+
+\begin{framed}
+\hfill \\ $mixed$ \textbf{array\_pop} ( $array$ \&\textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el último elemento del array \textbf{elements} y lo elimina del mismo. Si el array es asociativo devuelve el
+   elemento de la última clave introducida.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale la cadena "Mundo"
+    */
+   foo = array_pop ({"Hola", "Mundo"}); 
+   /*
+    * foo vale la cadena "Mundo"
+    */
+   foo = {"Hola", "Mundo"}->pop ();
+   
+   foo = {"A", "B"};
+   array_pop (foo); // foo vale { "A" }
+   foo->pop (); // foo vale { }
+   
+   foo = { 'key0' : 'val0', 'key1' : 'val1'};
+   foo->pop (); // foo vale { 'key0' : 'val0' }
+\end{lstlisting}
+
+
+\paragraph{array\_unshift}
+Inserta un elemento al inicio de un array dado.
+
+\begin{framed}
+\hfill \\ $array$ \textbf{array\_unshift} ( $array$ \&\textbf{elements}, $mixed$ \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[element:] Elemento a insertar al inicio del array
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array \textbf{elements} con el elemento \textbf{element} insertado en la primera posición. Si \textbf{elements} es
+   asociativo la clave del elemento insertado será la misma que la anterior, llevándose a cabo un desplazamiento. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale el array { "Digital", "Hola", "Mundo" }
+    */
+   foo = array_unshift ({ "Hola", "Mundo" }, "Digital"); 
+   /*
+    * foo vale el array { "Digital", "Hola", "Mundo"}
+    */
+   foo = {"Hola", "Mundo"}->unshift ("Digital");
+   
+   foo = {"B", "C"};
+   array_unshift (foo, "A"); // foo vale { "A", "B", "C" }
+   foo->unshift ("-"); // foo vale { "-", "A", "B", "C" }
+   
+   foo = { 'key0' : 'val0', 'key1' : 'val1'};
+   foo->unshift ('val2'); // foo vale { 'key0' : 'val2', 'key1' : 'val0', '2' : 'val1' }
+\end{lstlisting}
+
+\paragraph{array\_shift}
+Elimina y devuelve el primer elemento de un array dado. 
+
+\begin{framed}
+\hfill \\ $mixed$ \textbf{array\_shift} ( $array$ \&\textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el primer elemento del array \textbf{elements} y lo elimina del mismo. Si el array es asociativo devuelve el
+   elemento de la primera clave introducida.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale la cadena "Hola"
+    */
+   foo = array_shift ({"Hola", "Mundo"}); 
+   /*
+    * foo vale la cadena "Hola"
+    */
+   foo = {"Hola", "Mundo"}->shift ();
+   
+   foo = {"A", "B"};
+   array_shift (foo); // foo vale { "B" }
+   foo->shift (); // foo vale { }
+   
+   foo = { 'key0' : 'val0', 'key1' : 'val1'};
+   foo->shift (); // foo vale { 'key1' : 'val1' }
+\end{lstlisting}
+
+\paragraph{array\_reduce}
+Lleva a cabo la reducción de un array a un único valor, aplicando iterativamente una función. 
+
+\begin{framed}
+\hfill \\ $mixed$ \textbf{array\_reduce} ( $array$ \textbf{elements}, $function$ \textbf{iterative} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos.
+   \item[itereative:] Función de iteración para la reducción. La función debe recibir dos parámetros donde el primero
+   será el acumulador y el segundo el elemento de la iteración actual, y devolverá el acumulador para la próxima iteración.
+   La iteración comienza con el primer elemento como valor del acumulador y el segundo como primer elemento para iterar.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el resultado de aplicar la función \textbf{iterative} iterativamente sobre los elementos del array \textbf{elements}.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale la cadena "Hola Mundo Digital"
+    */
+   foo = array_reduce (
+      {"Hola", "Mundo", "Digital"}, 
+      ~(acumulador, elemento) { 
+         return acumulador." ".elemento;
+      }
+   ); 
+   /*
+    * foo vale la cadena "Hola Mundo Digital"
+    */
+   foo = {"Hola", "Mundo", "Digital"}->reduce (
+      ~(acumulador, elemento) { 
+         return acumulador." ".elemento;
+      }
+   );
+\end{lstlisting}
+
+\subsubsection{Procesos}
+OMI proporciona una serie de funciones para gestionarlos procesos. Así es posible abrir varios
+hilos de ejecución creando procesos.
+
+Es posible enviar señales a los procesos creados, y estos podrán manejarlas según sea necesario. 
+
+\paragraph{exec}
+Ejecuta un comando del sistema y devuelve la salida.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{exec} ( $string$ \textbf{cmd} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[cmd:] Cadena de caracteres que representa el comando a ejecutar
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el contenido de la salida estándar al ejecutar el comando del sistema indicado por \textbf{cmd}.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * foo vale el listado de procesos en ejecuci|{\color{gray75}{ó}}|n
+    */
+   foo = exec ('ps -e');
+\end{lstlisting}
+
+\paragraph{fork}
+Crea un proceso hijo del proceso en ejecución.
+
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{fork} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Produce una bifurcación en la ejecución, creando un nuevo proceso copia del 
+   proceso actual. La ejecución en el proceso hijo prosigue en la misma sentencia 
+   y con el mismo estado que el proceso padre. 
+   
+   El valor devuelto en el proceso padre será de el identificador del proceso hijo creado. 
+   
+   El valor devuelto en el proceso hijo será $0$.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}   
+   /*
+    * Se lleva a cabo la bifurcaci|{\color{gray75}{ó}}|n de la ejecuci|{\color{gray75}{ó}}|n mediante la 
+    * creaci|{\color{gray75}{ó}}|n de un proceso que imprimir|{\color{gray75}{á}}| "Soy el proceso Hijo",
+    * mientras que en el proceso principal imprimir|{\color{gray75}{á}}| 
+    * "Soy el proceso Padre de PID" donde PID es el identificador
+    * del proceso hijo.
+    */
+    if (pid = fork ()) 
+      << "Soy el proceso Padre de " . pid;
+    else
+      << "Soy el proceso Hijo";
+\end{lstlisting}
+
+\paragraph{wait}
+Espera la finalización de todos o algunos de los procesos hijos creados.
+
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{wait} ( [ $numeric$ pid ] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[pid:] Identificador del proceso hijo cuya ejecución se desea esperar a que 
+   finalice. Si no es dado se esperará a que finalicen todos los procesos hijos.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el código de salida producido por el último proceso en finalizar.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y se espera
+    * a que este finalice
+    */
+    if (pid = fork ()) {
+      wait( pid );
+      << "Finaliza proceso padre";
+   }else{
+      sleep (10);
+      << "Finaliza proceso hijo";
+   }
+\end{lstlisting}
+
+\paragraph{getpid}
+Obtiene el identificador del proceso actual.
+
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{getpid} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el identificador del proceso actual
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y se imprimen
+    * los identificadores.
+    */
+   if (pid = fork ()) {
+      << "PID del Padre " . getpid (); // Imprime el pid del padre
+      << "PID del Hijo " . pid; // Imprime el pid del hijo
+   } else {
+      << "PID del Hijo " . getpid (); // Imprime el pid del hijo
+   }
+\end{lstlisting}
+
+\paragraph{getppid}
+Obtiene el identificador del proceso padre.
+
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{getppid} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el identificador del proceso padre del actual.
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y se imprimen
+    * los identificadores.
+    */
+   if (pid = fork ()) {
+      << "PID del Padre " . getpid (); // Imprime el pid del padre
+      << "PID del Hijo " . pid; // Imprime el pid del hijo
+   } else {
+      << "PID del Padre " . getppid (); // Imprime el pid del padre
+      << "PID del Hijo " . getpid (); // Imprime el pid del hijo
+   }
+\end{lstlisting}
+
+\paragraph{signal}
+Envía una señal a un proceso. 
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{signal} ( $numeric$ \textbf{pid}, $numeric$ \textbf{code} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[pid:] Identificador de proceso al que se le envía la señal
+   \item[code:] Código numérico de señal POSIX
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Un valor booleano que indica si la señal se envió correctamente. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y env|{\color{gray75}{í}}|a una se|{\color{gray75}{ñ}}|al pasados
+    * unos segundos para finalizar su ejecuci|{\color{gray75}{ó}}|n
+    */
+   if (pid = fork ()) {
+      << "Padre: Esperando para finalizar";
+      sleep (2);
+      << "Padre: Enviando se|{\color{red}\emph{ñ}}|al";
+      signal (pid, 9);
+   } else {
+      << "Hijo: Esperando se|{\color{red}\emph{ñ}}|al";
+      sleep (30);
+      << "Hijo: Finaliza normal";
+   }
+\end{lstlisting}
+
+\paragraph{shandler}
+Permite establecer una función para manejar señales enviadas al proceso actual. 
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{shandler} ( $numeric$ \textbf{code}, $function$ \textbf{handler} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[code:] Código numérico de señal POSIX a la que se le atribuirá el manejador.
+   \item[handler:] Función que manejará la ejecución cuando se dé la señal.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Un valor booleano que indica si el manejador de señal se estableció correctamente. 
+\end{description}
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y env|{\color{gray75}{í}}|a una se|{\color{gray75}{ñ}}|al 
+    * que ser|{\color{gray75}{á}}| manejada
+    */
+   if (pid = fork ()) {
+      << "Padre: Esperando para interrumpir";
+      sleep (2);
+      << "Padre: Enviando interrupci|{\color{red}\emph{ó}}|n";
+      signal (pid, 2);
+   } else {
+      if (shandler (2, ~(){ << "Interrupci|{\color{red}\emph{ó}}|n"; })){
+         sleep (30);
+         << "Hijo: Finaliza normal";
+      }else {
+         << "Error estableciendo manejador de se|{\color{red}\emph{ñ}}|al";
+      }
+   }
+\end{lstlisting}
+
+\paragraph{exit\_process}
+Finaliza el proceso en ejecución y todos los hijos de este. Si se da en el
+proceso principal se sale del programa.
+
+\begin{framed}
+\hfill \\ $void$ \textbf{exit\_process} ( )  
+\end{framed}
+     
+\begin{lstlisting}  
+   /*
+    * Se crea un proceso y si el identificador de
+    * proceso es menor que 20000 se cierra.
+    */
+   if (pid = fork ()) {
+      sleep (30);
+   } else {
+      if (getpid() < 20000){
+         exit_process ();
+      }
+      << "Exit";
+   }
+\end{lstlisting}
+
+\paragraph{process}
+Realiza una llamada a función como un proceso.
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{process} ( $function$ \textbf{func} [, $mixed$ \textbf{args ...} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[func:] Función que será llamada como un proceso.
+   \item[args...:] Lista de parámetros que serán pasados a la función.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor verdadero si el proceso fue llamado con éxito.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   process ( ~() { $(100) << "P1:".$; } );
+   process ( ~(i) { $(i) << "P2:".$; }, 100 );  
+\end{lstlisting}
+
+\subsubsection{Ficheros}
+OMI dispone de una serie de funciones para gestionar ficheros. Estas funciones permiten
+abrir un fichero, leer su contenido, escribir en el mismo, etc.
+
+OMI presenta un tipo de dato especial que se corresponde con un puntero a fichero. Este tipo 
+de  dato sólo puede ser usado en las funciones de fichero, en cualquier otro contexto 
+tomará un valor booleano que indica si el fichero se encuentra abierto. 
+
+Un puntero a fichero referencia una posición dentro del mismo, posición a partir de la cual 
+se llevarán a cabo las operaciones de lectura/escritura. Esta posición puede ser manipulada.
+
+OMI solo es capaz de operar directamente con ficheros en texto plano. No es posible crear 
+ficheros de tipo binario que no sea texto plano.
+
+\paragraph{file}
+Abre un fichero según el modo especificado. 
+
+\begin{framed}
+\hfill \\ $file$ \textbf{file} ( $string$ \textbf{name}, $string$ \textbf{mode}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[name:] Nombre del fichero que se desea abrir. Se puede utilizar una ruta absoluta o relativa al programa
+   \item[mode:] Modo en el que se abrirá el fichero:
+      \begin{description}
+         \item [r:] Solo lectura
+         \item [r+:] Lectura y/o escritura
+         \item [w:] Escritura truncando el fichero
+         \item [w+:] Lectura y/o escritura truncando el fichero
+         \item [a:] Escritura posicionando el puntero al final del fichero
+         \item [a+:] Lectura y/o escritura posicionando el puntero al final del fichero
+      \end{description} \hfill 
+      
+      Todos los modos excepto el solo lectura crean el fichero si este no existe. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un puntero a fichero si el fichero ha sido abierto correctamente. Y un valor falso si no se ha 
+   abierto el fichero con éxito
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w+")){
+      << "Fichero abierto con |{\color{red}\emph{é}}|xito";
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{fclose}
+Cierra un fichero abierto mediante la función ``file''
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{fclose} ( $file$ \textbf{fpointer}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor booleano que indica si el fichero se ha cerrado correctamente.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w+")){
+      fclose (f); 
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{fput}
+Escribe un contenido dado en la posición de lectura/escritura a la que apunta un puntero a fichero. Esta función presenta un alias ``f>:''.
+\begin{framed}
+\hfill \\ $numeric$ \textbf{fput}|\textbf{f>:} ( $file$ \textbf{fpointer}, $string$ \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[content:] Cadena de caracteres que será escrita en el fichero a partir de la posición en la que se encuentre el puntero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor numérico que representa los bytes que han sido escritos.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w+")){
+      f>: (f, "Contenido a escribir"); 
+      fclose(f);
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{fget}
+Lee el un número de caracteres de un fichero, a partir de la posición de lectura/escritura dada por el puntero al mismo. Esta función presenta un alias ``f<:''.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{fget}|\textbf{f<:} ( $file$ \textbf{fpointer} [, $numeric$ \textbf{size} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[size:] Número de caracteres que serán leídos. Si no es dado se lee hasta el primer carácter de salto de línea encontrado o hasta el final del fichero 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres leída.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w")){
+      f>: (f, "Contenido escrito"); 
+      fclose(f);
+   } else {
+      << "Error abriendo el fichero";
+   }
+   if (f = file ("example.file", "r")){
+      << f<:(f); // Imprime "Contenido escrito"
+      fclose (f);
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{fseek}
+Cambia la posición de lectura/escritura de un puntero a fichero.
+
+\begin{framed}
+\hfill \\ $bool$ \textbf{fseek} ( $file$ \textbf{fpointer}, $numeric$ \textbf{offset} [, $enum$ \textbf{position} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[offset:] Número de bytes que será desplazado el puntero
+   \item[position:] Posición de referencia desde la que mover el puntero. Puede ser algún valor 
+   FSET, FCUR o FEND, para referirse al inicio, la posición actual o el final. Si no es dado se
+   toma como referencia el inicio del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un booleano que indica si la posición cambió correctamente. Si la posición 
+   nueva se encuentra fuera del fichero el puntero se colocará al final del mismo.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w+")){
+      f>:(f, "ABCD");
+      fseek (f, 2);
+      << f<:(f, 1); // Imprime "C"
+      fseek (f, -1, FEND);
+      << f<:(f, 1); // Imprime "D"
+      fseek (f, -1, FCUR);
+      << f<:(f, 1); // Imprime "C"
+      fseek (f, -1, FCUR);
+      << f<:(f, 1); // Imprime "B"
+      fseek (f, -1, FCUR);
+      << f<:(f, 1); // Imprime "A"
+      fclose(f);
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{ftell}
+Obtiene la posición de lectura/escritura a la que apunta un puntero a fichero.
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{ftell} ( $file$ \textbf{fpointer}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un la posición del puntero al fichero como un número que representa el
+   número de bytes desde el inicio del mismo. 
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   if (f = file ("example.file", "w+")){
+      f>:(f, "ABCD");
+      fseek (f, 2);
+      << "Antes de leer: " . ftell (f); // Imprime 2
+      << f<:(f, 1); // Imprime "C"
+      << "Despu|{\color{red}\emph{é}}|s de leer: " . ftell (f); // Imprime 3
+      fclose(f);
+   } else {
+      << "Error abriendo el fichero";
+   }
+\end{lstlisting}
+
+\paragraph{fread}
+Lee el contenido de un fichero.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{fread} ( $mixed$ \textbf{file}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. Si el fichero no existe
+   devolverá el valor nulo.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve una cadena de caracteres que representa el contenido del fichero.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   foo = fread ('/etc/hosts'); // foo vale el contenido del fichero /etc/hosts
+\end{lstlisting}
+
+\paragraph{fwrite}
+Escribe el contenido de un fichero.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{fwrite} ( $mixed$ \textbf{file}, $string$ \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. 
+   Si el fichero no existe será creado.
+   \item[content:] Cadena de caracteres que será el contenido del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres escrita en el fichero.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   /*
+   * El fichero /etc/hosts queda
+   * con el contenido:
+   * 127.0.0.1 localhost
+   */
+   fwrite ('/etc/hosts', '127.0.0.1 localhost');
+\end{lstlisting}
+
+\paragraph{fappend}
+Escribe el contenido al final de un fichero.
+
+\begin{framed}
+\hfill \\ $string$ \textbf{fappend} ( $mixed$ \textbf{file}, $string$ \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. 
+   Si el fichero no existe será creado.
+   \item[content:] Cadena de caracteres que será añadida al contenido del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres escrita en el fichero.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   /*
+   * Al fichero /etc/hosts se le
+   * ha a|{\color{gray75}{ñ}}|adido el contenido:
+   * 127.0.0.1 localhost
+   */
+   fappend ('/etc/hosts', '127.0.0.1 localhost');
+\end{lstlisting}
+
+\subsubsection{Fechas y tiempo}
+OMI dispone de un conjunto de funciones de tiempo que permiten operar con fechas y con marcas de tiempo. 
+
+\paragraph{date}
+Obtiene una fecha formateada.  
+
+\begin{framed}
+\hfill \\ $string$ \textbf{date} ( $mixed$ \textbf{format} [, $numeric$ \textbf{timestamp} ] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[format:] Cadena de formato. Establece el formato de la fecha mediante una 
+   serie de directivas.
+   \begin{description}
+         \item[\%d:] Día del mes con dos dígitos.
+			\item[\%j:] Día del mes sin ceros iniciales.
+			\item[\%l:] Día de la semana de forma alfabética completa.
+			\item[\%D:] Día de la semana de forma alfabética y con tres letras.
+			\item[\%w:] Día de la semana de forma numérica (0-domingo,6-sábado).
+			\item[\%z:] Día del año de forma numérica.
+			\item[\%F:] Mes de forma alfabética.
+			\item[\%m:] Mes de forma numérica con dos dígitos.
+			\item[\%n:] Mes de forma numérica sin ceros iniciales.
+			\item[\%M:] Mes de forma alfabética con tres letras.
+			\item[\%Y:] Año con cuatro dígitos.
+			\item[\%y:] Año con dos dígitos.
+			\item[\%a:] Periodo del día (am/pm) en minúsculas.
+			\item[\%A:] Periodo del día (am/pm) en mayúsculas.
+			\item[\%g:] Hora en formato 12h sin ceros iniciales.
+			\item[\%G:] Hora en formato 24h sin ceros iniciales.
+			\item[\%h:] Hora en formato 12h con dos dígitos.
+			\item[\%H:] Hora en formato 24h con dos dígitos.
+			\item[\%i:] Minutos con dos dígitos.
+			\item[\%U:] Segundos desde la Época Unix (1 de Enero del 1970 00:00:00 GMT).
+			\item[\%\%:] Carácter \%.
+   \end{description}
+   \item[timestamp:] Número entero que representa la marca de tiempo Unix a la que se desea dar formato. Si 
+   no es dado se toma el momento actual.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres correspondiente a la marca de tiempo \textbf{timestamp} formateada según
+   \textbf{format}.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   << date ("%d/%m/%Y %H:%i:%s"); // Fecha y hora actual
+   << date ("%d/%m/%Y %H:%i:%s", 0); // 01/01/1970 00:00:00
+\end{lstlisting}
+
+
+\paragraph{time}
+Obtiene la marca de tiempo Unix actual.  
+
+\begin{framed}
+\hfill \\ $numeric$ \textbf{time} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el entero correspondiente a la marca de tiempo Unix actual.
+\end{description}
+\end{framed}
+
+\begin{lstlisting}  
+   << time (); // Imprime la marca de tiempo Unix actual
+   << date ("%d/%m/%Y %H:%i:%s", time()); // Fecha y hora actual 
+\end{lstlisting}
+
+Esta es una función interna de OMI que puede ser utilizada sin paréntesis.
+
+\subsection{Extensiones del lenguaje}
+OMI es un lenguaje modular que puede ser extendido. 
+Los módulos o extensiones permiten añadir funciones al lenguaje, ampliando así su funcionalidad y uso.
+
+Los módulos son bibliotecas dinámicas que son cargadas en tiempo de ejecución. Estas
+han sido programadas en un lenguaje de más bajo nivel (C/C++) y compiladas a código máquina. 
+
+Es posible obtener módulos de OMI desde la web del proyecto 
+(http://wwww.omi-project.com/download/extensions). 
+
+\subsubsection{Carga de módulos}
+Para cargar un módulo desde el código fuente se puede utilizar la sentencia $load$ seguida de 
+una cadena entre paréntesis que representa la biblioteca dinámica que se usará como módulo. \\
+
+\begin{lstlisting}  
+   load ('libomi_gettext.so');
+   << _('cadena traducida');
+\end{lstlisting}
+
+Se dispone de un mecanismo para autocargar módulos de extensiones del lenguaje. Al iniciarse 
+el intérprete se cargarán todos los módulos indicados en el fichero ``libs.ini'' localizado 
+en el directorio de datos de la aplicación (por defecto /usr/local/share/omi). Cada línea 
+de este fichero será un módulo que será cargado, exceptuando las líneas que comiencen por ``;'' que
+son consideradas comentarios.
+
+\subsubsection{Creación de módulos}
+OMI permite al programador extender el lenguaje haciendo uso de una biblioteca para el desarrollo de módulos. Esta
+dispone de los elementos sobre los que se construye el intérprete. 
+
+Para construir un módulo se ha de disponer de la biblioteca OMI correctamente instalada. Para ello se
+dispone de dos opciones:
+
+\begin{description}
+\item[Paquete .deb:] http://wwww.omi-project.com/download/deb/libomi-dev\_\$VERSION.deb
+\item[Código fuente:] A partir del código fuente de OMI se puede construir e instalar la biblioteca 
+mediante las reglas $dev$ e \emph{install-dev}
+\end{description}
+
+Un módulo OMI está escrito en C++ y se define mediante unas series de clases cada una de las cuales representará una
+función que se desea añadir. 
+
+El intérprete OMI se construye mediante una colección de nodos ejecutables. Todo es un nodo ejecutable: los booleanos,
+los números, las variables, las funciones... Existen diferentes niveles de abstracción en los nodos ejecutables, así por ejemplo
+un número es representado mediante un nodo ejecutable numérico, que a su vez es un nodo expresión aritmética, que a su vez es
+una expresión de tipo definido... Las clases de un módulo extenderán los tipos de nodos definidos por la biblioteca de desarrollo OMI, 
+normalmente nodos expresiones.
+
+Las clases que integran un modulo OMI deben cumplir lo siguiente:
+
+\begin{itemize}
+\item Ser un tipo de nodo ejecutable. 
+\item Ser un nodo extensión e inherir su constructor.
+\item Implementar un método $run$ que lleve a cabo la funcionalidad.
+\item Ser añadidas al cargador de módulos.
+\end{itemize}
+
+Dependiendo el tipo de nodo ejecutable que se tome de base se dispondrá 
+de un atributo que guardará el valor interno del nodo. Así un nodo de tipo cadena
+de caracteres tendrá un atributo que representa la cadena guardada. El método 
+$run$ llevará a cabo la funcionalidad y dará valor a este atributo.
+
+Normalmente el método $run$ obtendrá los parámetros con los que se ha llamado a la 
+función, les aplicará la operativa asociada y atribuirá el valor interno del 
+nodo. Mediante una llamada al método $getParams$ es posible obtener un vector
+con los parámetros pasados a la función en una ejecución. \\
+
+  
+
+\lstset{language=cpp} 
+\begin{lstlisting} 
+   // libomi_strings.h
+   #include <omi/omi.h>
+
+   class ucfirstNode : public stringNode, public extensionNode {
+      public:
+         using extensionNode::extensionNode; // Si std=c++11
+         // ucfirstNode (listNode* list) : extensionNode(list) {}  //Si std=c++98
+         void run ();
+   };
+\end{lstlisting}
+
+\begin{lstlisting}
+   // libomi_strings.cpp
+   #include "libomi_strings.h"
+   
+   void ucfirstNode::run () { 
+      vector<runNode*> v = this->getParams ();
+      if (v.size() == 1){
+         strvalue_ = stringNode::to_str (v[0]);
+         strvalue_[0] = toupper(strvalue_[0]);
+      }else
+          throw errorException(
+            "One parameter is required", 
+            "ucfirstNode::run, size " + to_string (v.size()), 
+            ERROR_PARAMS
+         );
+   }  
+   
+   extern "C" void load (PluginsLoader* loader) {
+      loader->add ("ucfirst", create<ucfirstNode>);
+   }
+\end{lstlisting}
+
+
+\lstset{language=bash} 
+\begin{lstlisting}
+   $PS1 # Compilaci|{\color{gray75}{ó}}|n del m|{\color{gray75}{ó}}|dulo
+   $PS1 g++ -c -fPIC \
+   $PS2     -DNUMTYPE='double' -DNUMPRECISION='15' -DREFCTYPE='unsigned int' \
+   $PS2     -ansi -pedantic -g  -std=c++11  libomi_strings.cpp -o libomi_strings.o
+   $PS1 g++ -g -O2 -shared -rdynamic -g -o libomi_strings.so libomi_strings.o -lomi
+\end{lstlisting}
+
+\lstset{language=omi} 
+\begin{lstlisting}
+   // user.omi
+   load ("./libomi_strings.so")
+   << ucfirst ("example"); // Imprime "Example"
+\end{lstlisting}
+
+
+
+
+

@@ -1,0 +1,107 @@
+\hypertarget{classinterpreter}{\section{Referencia de la Clase interpreter}
+\label{classinterpreter}\index{interpreter@{interpreter}}
+}
+
+
+Interprete O\-M\-I.  
+
+
+
+
+{\ttfamily \#include $<$interpreter.\-h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classinterpreter_a337af48d3fc3ab498e9cf262e09badcc}{run} ()
+\item 
+void \hyperlink{classinterpreter_a1fbf329ec2c7892033d12ae614d437bf}{scan\-\_\-string} (const char $\ast$str)
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classinterpreter_aa82c4a511d7d8a720020bc8f010ba317}{omi} (string str, vector$<$ string $>$args)
+\item 
+static \hyperlink{classinterpreter}{interpreter} $\ast$ \hyperlink{classinterpreter_ab71b50ed1f535236eef302d1d855b7e6}{init} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+static \hyperlink{classinterpreter}{interpreter} $\ast$ \hyperlink{classinterpreter_a58047193876320b487dc44e4d0d627b2}{get} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Interprete O\-M\-I. 
+
+Esta clase representa el interprete en si. Es una clase singleton. Se encarga de procesar las opciones de líneas de comando, inicializar las estructuras funcionales del sistemas e iniciar la interpretación del código fuente. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classinterpreter_a58047193876320b487dc44e4d0d627b2}{\index{interpreter@{interpreter}!get@{get}}
+\index{get@{get}!interpreter@{interpreter}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf interpreter}$\ast$ interpreter\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classinterpreter_a58047193876320b487dc44e4d0d627b2}
+Obtiene el intérprete \begin{DoxyReturn}{Devuelve}
+interprete 
+\end{DoxyReturn}
+\hypertarget{classinterpreter_ab71b50ed1f535236eef302d1d855b7e6}{\index{interpreter@{interpreter}!init@{init}}
+\index{init@{init}!interpreter@{interpreter}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf interpreter}$\ast$ interpreter\-::init (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classinterpreter_ab71b50ed1f535236eef302d1d855b7e6}
+Inicializa y devuelve el intérprete a partir de unos argumentos. 
+\begin{DoxyParams}{Parámetros}
+{\em argc} & Número de argumentos \\
+\hline
+{\em argv} & Array de argumentos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Inérprete. 
+\end{DoxyReturn}
+\hypertarget{classinterpreter_aa82c4a511d7d8a720020bc8f010ba317}{\index{interpreter@{interpreter}!omi@{omi}}
+\index{omi@{omi}!interpreter@{interpreter}}
+\subsubsection[{omi}]{\setlength{\rightskip}{0pt plus 5cm}string interpreter\-::omi (
+\begin{DoxyParamCaption}
+\item[{string}]{str, }
+\item[{vector$<$ string $>$}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classinterpreter_aa82c4a511d7d8a720020bc8f010ba317}
+Inicializa y ejecuta el interprete a partir de una cadena que se corresponde con el código fuente y una lista de argumentos que serán accesibles desde la interpretación. Devuelve ela salida resultado de la interpretación. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Código fuente \\
+\hline
+{\em args} & Parámetros del programa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Salida estándar de la interpretación 
+\end{DoxyReturn}
+\hypertarget{classinterpreter_a337af48d3fc3ab498e9cf262e09badcc}{\index{interpreter@{interpreter}!run@{run}}
+\index{run@{run}!interpreter@{interpreter}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void interpreter\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classinterpreter_a337af48d3fc3ab498e9cf262e09badcc}
+Método que lleva a cabo la interpretación el código fuente configurado \hypertarget{classinterpreter_a1fbf329ec2c7892033d12ae614d437bf}{\index{interpreter@{interpreter}!scan\-\_\-string@{scan\-\_\-string}}
+\index{scan\-\_\-string@{scan\-\_\-string}!interpreter@{interpreter}}
+\subsubsection[{scan\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void interpreter\-::scan\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classinterpreter_a1fbf329ec2c7892033d12ae614d437bf}
+Configura la cadena dada para que sea interpretada. 
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena que se establecerá como código fuente \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/interpreter.\-h\item 
+trunk/src/interpreter.\-cpp\end{DoxyCompactItemize}

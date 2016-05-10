@@ -1,0 +1,68 @@
+\hypertarget{classstrconvNode}{\section{Referencia de la Clase strconv\-Node}
+\label{classstrconvNode}\index{strconv\-Node@{strconv\-Node}}
+}
+
+
+Nodo de conversión a cadena de caracteres.  
+
+
+
+
+{\ttfamily \#include $<$conv\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de strconv\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classstrconvNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstrconvNode_aca8ef5e64bf7cd8dfbdfb42708bf2315}{strconv\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classstrconvNode_a85f8c063a67fe4c753fc9053ec87977b}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de conversión a cadena de caracteres. 
+
+Este nodo fuerza la conversion a cadena de caracteres del valor de un nodo
+
+Si el nodo es booleano toma el valor de \char`\"{}1\char`\"{} en el caso verdadero o cadena vacia en el caso falso Si el nodo es aritmético toma la cadena correspondiente al numero que representa Si el nodo es array toma la cadena vacia 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classstrconvNode_aca8ef5e64bf7cd8dfbdfb42708bf2315}{\index{strconv\-Node@{strconv\-Node}!strconv\-Node@{strconv\-Node}}
+\index{strconv\-Node@{strconv\-Node}!strconvNode@{strconv\-Node}}
+\subsubsection[{strconv\-Node}]{\setlength{\rightskip}{0pt plus 5cm}strconv\-Node\-::strconv\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classstrconvNode_aca8ef5e64bf7cd8dfbdfb42708bf2315}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classstrconvNode_a85f8c063a67fe4c753fc9053ec87977b}{\index{strconv\-Node@{strconv\-Node}!run@{run}}
+\index{run@{run}!strconvNode@{strconv\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void strconv\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstrconvNode_a85f8c063a67fe4c753fc9053ec87977b}
+Tras ser ejecutado el operador toma como valor el resultado de la conversión a cadena de caracteres del nodo asociado. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{convOpNode_8h}{conv\-Op\-Node.\-h}\item 
+trunk/src/run/operators/conv\-Op\-Node.\-cpp\end{DoxyCompactItemize}

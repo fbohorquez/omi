@@ -1,0 +1,17 @@
+OMI, acrónimo de Open Modular Interpreter, es un lenguaje para la creación de `scripts' que presenta un propósito general y es de código abierto.
+El objetivo del proyecto OMI es servir de guía en la aplicación práctica de la teoría de compiladores e interpretes. Para ello presenta un caso práctico 
+en el que se construye un lenguaje de programación moderno a partir de los conceptos teóricos de autómatas y lenguajes formales. 
+
+La plataforma OMI representa un sistema software desarrollado para la comunidad académica. Pretende ser una herramienta utilizada en el aprendizaje de
+los sistemas interpretes y traductores modernos, además de cualquier otro basado en los conceptos sobre los que estos se construyen. 
+
+El plataforma OMI se constituye mediante los siguientes sistemas:
+
+\begin{itemize}
+   \item Documentación completa del proceso aplicado en el desarrollo de un lenguaje de programación.
+   \item Interprete de un lenguaje de programación denominado OMI, el cual da nombre al proyecto.
+   \item Aplicación web que permite consultar la documentación e interactuar con el interprete. 
+\end{itemize}
+
+Este manual describe al lenguaje, las funciones que integra, y las características del interprete. Además detalla cómo se 
+estructura el contenido dentro de la aplicación web y las herramientas que la componen.

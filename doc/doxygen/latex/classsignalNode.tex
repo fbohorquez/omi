@@ -1,0 +1,69 @@
+\hypertarget{classsignalNode}{\section{Referencia de la Clase signal\-Node}
+\label{classsignalNode}\index{signal\-Node@{signal\-Node}}
+}
+
+
+Node función envío de señal a proceso .  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de signal\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classsignalNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsignalNode_a194dc5f746e28aed6c37db7694f65b4c}{signal\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$pid, \hyperlink{classrunNode}{run\-Node} $\ast$signal)
+\item 
+void \hyperlink{classsignalNode_ab7301aabdfecb2e2fcdcd4e787c7476d}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node función envío de señal a proceso . 
+
+Nodo que envía una señal a un proceso a partir de su identificador de proceso. La señal se representa mediante un entero según el modelo de códigos Unix. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsignalNode_a194dc5f746e28aed6c37db7694f65b4c}{\index{signal\-Node@{signal\-Node}!signal\-Node@{signal\-Node}}
+\index{signal\-Node@{signal\-Node}!signalNode@{signal\-Node}}
+\subsubsection[{signal\-Node}]{\setlength{\rightskip}{0pt plus 5cm}signal\-Node\-::signal\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{pid, }
+\item[{{\bf run\-Node} $\ast$}]{signal}
+\end{DoxyParamCaption}
+)}}\label{classsignalNode_a194dc5f746e28aed6c37db7694f65b4c}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em pid} & Nodo que representa el identificador de proceso \\
+\hline
+{\em signal} & Nodo que representa la señal. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsignalNode_ab7301aabdfecb2e2fcdcd4e787c7476d}{\index{signal\-Node@{signal\-Node}!run@{run}}
+\index{run@{run}!signalNode@{signal\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void signal\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsignalNode_ab7301aabdfecb2e2fcdcd4e787c7476d}
+Metodo de ejecución. Envía una señal a un proceso a partir de su identificador de proceso. Como valor se toma un valor booleano que indica si el proceso se llevó a cabo de forma correcta. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

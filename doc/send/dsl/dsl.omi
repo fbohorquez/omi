@@ -1,0 +1,94 @@
+#!/usr/local/bin/omi
+#-----------------------------------------------------------------------
+class Quiz {
+   name = '';
+   questions = {};
+   ~ Quiz (name) {
+      this->name = name;
+   }
+   ~ add_question (question) {
+      this->questions[size this->questions] = question;
+   }
+   ~ last_question () {
+      return this->questions [(size this->questions) - 1];
+   }
+   ~ run_quiz () {
+      count = 0;
+      total = 0;
+      $(this->questions) {
+         if ($->ask ()) count += $->rating;
+         total += $->rating;
+      }
+      << "Tienes " << count << " respuestas correctas de " << total;
+   }
+}
+#-----------------------------------------------------------------------
+class Question {
+   title = "";
+   rating = 0;
+   options = {};
+   ~ Question (title, rating) {
+      this->title = title;
+      this->rating = rating;
+   }
+   ~ add_option (option) {
+      this->options [(size this->options)] = option;
+   }
+}
+#-----------------------------------------------------------------------
+class Text extends Question {
+   ~ Text (title, rating) {
+      this->Question (title, rating);
+   } # No tener que declarar todo constructor si existe jerarquía
+   ~ ask () {
+      << "";
+      << this->title << " (" << this->rating << ")";
+      << "Introducir respuesta: ";
+      >> ans;
+      return ans == this->options[0]->title;
+   }
+}
+#-----------------------------------------------------------------------
+class MultiChoice extends Question {
+   ~ MultiChoice (title, rating) {
+      this->Question (title, rating);
+   } # No tener que declarar todo constructor si existe jerarquía
+   ~ ask () {
+      << this->title << " (" << this->rating << ")";
+      count = 0; # Hacer un acceso al número de iteración para evitar count!!!!!
+      $(this->options) <<  (++count) << " - " << $->title; # << Arreglar prioridad de incremento
+      << "Introducir respuesta: ";
+      >> ans;
+      # Implementar booleanos is_num, is_str...
+      return (this->options[ans - 1]) && this->options[ans - 1]->correct;
+   }
+}
+#-----------------------------------------------------------------------
+class Option {
+   title = "";
+   correct = "";
+   ~ Option (title, correct){
+      this->title = title;
+      this->correct = correct;
+   }
+}
+#-----------------------------------------------------------------------
+global quiz;
+quiz =  new Quiz ("Prueba");
+
+~ multichoice (text, rating) {
+   quiz->add_question (new MultiChoice (text, rating));
+}
+
+~ text (text, rating) {
+   quiz->add_question (new Text (text, rating));
+}
+
+~ option (text, correct = null) {
+   quiz->last_question()->add_option(new Option (text, correct));
+}
+
+include "quiz.q";
+
+quiz->run_quiz();
+#-----------------------------------------------------------------------

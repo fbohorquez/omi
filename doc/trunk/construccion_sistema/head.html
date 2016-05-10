@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>.</TITLE>
+<META NAME="description" CONTENT=".">
+<META NAME="keywords" CONTENT="head">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="head.css">
+
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+<H1 ALIGN="CENTER"> 
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="302" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="./logo-doc.png"
+ ALT="Image logo-doc">
+
+</DIV></H1>
+<DIV CLASS="author_info">
+
+<P ALIGN="CENTER"><STRONG>Construcción del sistema</STRONG></P>
+<P ALIGN="LEFT"><SMALL> Fco. Javier Bohórquez Ogalla</SMALL></P>
+</DIV>
+<BR>
+
+<H2><A NAME="SECTION00010000000000000000">
+&#205;ndice General</A>
+</H2>
+<!--Table of Contents-->
+
+<UL CLASS="TofC">
+<LI><A NAME="tex2html10"
+  HREF="head.html#SECTION00020000000000000000">Vista general</A>
+<LI><A NAME="tex2html11"
+  HREF="head.html#SECTION00030000000000000000">Entorno de construcción</A>
+<LI><A NAME="tex2html12"
+  HREF="head.html#SECTION00040000000000000000">Ficheros de código fuente</A>
+<LI><A NAME="tex2html13"
+  HREF="head.html#SECTION00050000000000000000">Extractos de código fuente</A>
+<UL>
+<LI><A NAME="tex2html14"
+  HREF="head.html#SECTION00051000000000000000">Acceso a variable</A>
+<LI><A NAME="tex2html15"
+  HREF="head.html#SECTION00052000000000000000">Asignación</A>
+<LI><A NAME="tex2html16"
+  HREF="head.html#SECTION00053000000000000000">Operación suma</A>
+</UL></LI></UL>
+<!--End of Table of Contents-->
+<H1><A NAME="SECTION00020000000000000000">
+Vista general</A>
+</H1>
+En esta sección se tratan los aspectos relacionados con la con la implementación
+del sistema y su codificación. Para ello se describen las herramientas software
+y hardware utilizadas en el desarrollo, y la estructra del código fuente. 
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+Entorno de construcción</A>
+</H1>
+
+<P>
+<DL>
+<DT><STRONG>Entodrno de desarrollo (IDE):</STRONG></DT>
+<DD>Geany
+   
+</DD>
+<DT><STRONG>Lenguaje de programación:</STRONG></DT>
+<DD>C++
+   
+</DD>
+<DT><STRONG>Compilador:</STRONG></DT>
+<DD>GCC
+   
+</DD>
+<DT><STRONG>Configuración automática:</STRONG></DT>
+<DD>Autoconf
+   
+</DD>
+<DT><STRONG>Construcción automática:</STRONG></DT>
+<DD>Automake
+   
+</DD>
+<DT><STRONG>Gestión de dependencias:</STRONG></DT>
+<DD>Make
+   
+</DD>
+<DT><STRONG>Control de versions:</STRONG></DT>
+<DD>Subversion
+   
+</DD>
+<DT><STRONG>Generador de analizador léxico:</STRONG></DT>
+<DD>Flex
+   
+</DD>
+<DT><STRONG>Generador de analizador sintáctico:</STRONG></DT>
+<DD>Bison
+   
+</DD>
+<DT><STRONG>Depurador:</STRONG></DT>
+<DD>GDB
+   
+</DD>
+<DT><STRONG>Bibliotecas de desarrollo</STRONG></DT>
+<DD>
+      <DL>
+<DT><STRONG>Editor de línea e histórico:</STRONG></DT>
+<DD>Readline
+         
+</DD>
+<DT><STRONG>Expresiones regulares:</STRONG></DT>
+<DD>BoostRegex
+         
+</DD>
+<DT><STRONG>Matemáticas:</STRONG></DT>
+<DD>Biblioteca estándar de C
+         
+</DD>
+<DT><STRONG>Enlaces dinámicos:</STRONG></DT>
+<DD>Biblioteca del sistema GNU/Linux libdl
+      
+</DD>
+</DL>
+   
+</DD>
+<DT><STRONG>Desarrollo Web</STRONG></DT>
+<DD>
+      <DL>
+<DT><STRONG>Programación en servidor:</STRONG></DT>
+<DD>PHP
+         
+</DD>
+<DT><STRONG>Programación en cliente:</STRONG></DT>
+<DD>JavaScript
+         
+</DD>
+<DT><STRONG>Estructura del contenido:</STRONG></DT>
+<DD>HTML5
+         
+</DD>
+<DT><STRONG>Presentación del contenido:</STRONG></DT>
+<DD>CSS
+      
+</DD>
+</DL>
+</DD>
+</DL>
+
+<P>
+
+<H1><A NAME="SECTION00040000000000000000">
+Ficheros de código fuente</A>
+</H1>
+El sistema software se constituye de una serie de módulos o componentes en forma de ficheros, 
+cada uno de los cuales contiene las estructuras de programación y el código fuente necesario
+para implementar cada una de las funcionalidades del sistema.
+
+<P>
+<DL>
+<DT><STRONG>interpreter:</STRONG></DT>
+<DD>Interprete.
+</DD>
+<DT><STRONG>lshScanner:</STRONG></DT>
+<DD>Analizador léxico.
+</DD>
+<DT><STRONG>lshParser:</STRONG></DT>
+<DD>Analizador sintáctico.
+</DD>
+<DT><STRONG>error:</STRONG></DT>
+<DD>Sistema de errores.
+</DD>
+<DT><STRONG>plugins:</STRONG></DT>
+<DD>Sistema de extensiones.
+</DD>
+<DT><STRONG>run/runTree:</STRONG></DT>
+<DD>Abstracción de nodo ejecutable.
+</DD>
+<DT><STRONG>run/expNode:</STRONG></DT>
+<DD>Abstracción de nodos ejecutables expresiones.
+</DD>
+<DT><STRONG>run/symbols:</STRONG></DT>
+<DD>Estructura de datos tabla de símbolos.
+</DD>
+<DT><STRONG>run/sTable:</STRONG></DT>
+<DD>Gestión de tabla de de símbolos y definiciones.
+</DD>
+<DT><STRONG>run/typeNode:</STRONG></DT>
+<DD>Nodos ejecutables para cada tipo de dato.
+</DD>
+<DT><STRONG>run/numData:</STRONG></DT>
+<DD>Representación interna de datos numéricos.
+</DD>
+<DT><STRONG>run/stmtNode:</STRONG></DT>
+<DD>Nodos ejecutables sentencias de control.
+</DD>
+<DT><STRONG>run/operatorBaseNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores básicos.
+</DD>
+<DT><STRONG>run/operatorLogicNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores lógicos.
+</DD>
+<DT><STRONG>run/operatorArithNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores aritméticos.
+</DD>
+<DT><STRONG>run/operatorStrNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre cadenas.
+</DD>
+<DT><STRONG>run/operatorArrayNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre arrays.
+</DD>
+<DT><STRONG>run/operatorRegexpNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre expresiones regulares.
+</DD>
+<DT><STRONG>run/operatorDateNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre fechas y tiempo.
+</DD>
+<DT><STRONG>run/operatorFileNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre ficheros.
+</DD>
+<DT><STRONG>run/operatorProcessNode:</STRONG></DT>
+<DD>Nodos ejecutables operadores sobre procesos.
+</DD>
+</DL>
+
+<P>
+A continuación se describen las dependencias entre ficheros mediante una serie de paquetes que contienen diagramas de componentes.
+Este aspecto del sistema queda completamente descrito mediante la combinación de estos paquetes.
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="529" HEIGHT="740" ALIGN="BOTTOM" BORDER="0"
+ SRC="./interpreter.png"
+ ALT="Image interpreter"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="109" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="./error.png"
+ ALT="Image error"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="243" HEIGHT="215" ALIGN="BOTTOM" BORDER="0"
+ SRC="./plugin.png"
+ ALT="Image plugin"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="118" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="./runTree.png"
+ ALT="Image runTree"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="237" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="./expNode.png"
+ ALT="Image expNode"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="370" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="./sTable.png"
+ ALT="Image sTable"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="268" HEIGHT="252" ALIGN="BOTTOM" BORDER="0"
+ SRC="./symbols.png"
+ ALT="Image symbols"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="365" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="./typeData.png"
+ ALT="Image typeData"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="243" HEIGHT="185" ALIGN="BOTTOM" BORDER="0"
+ SRC="./stmtNode.png"
+ ALT="Image stmtNode"> 
+<BR>
+</DIV>
+
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="305" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorBaseNode.png"
+ ALT="Image operatorBaseNode"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="325" HEIGHT="311" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorLogicNode.png"
+ ALT="Image operatorLogicNode"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="234" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorArithNode.png"
+ ALT="Image operatorArithNode"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorStrNode.png"
+ ALT="Image operatorStrNode"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorArrayNode.png"
+ ALT="Image operatorArrayNode"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorRegexpNode.png"
+ ALT="Image operatorRegexpNode"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="327" HEIGHT="236" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorDateNode.png"
+ ALT="Image operatorDateNode"> 
+<BR>
+</DIV>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="319" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorFileNode.png"
+ ALT="Image operatorFileNode"> 
+<BR>
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="325" HEIGHT="229" ALIGN="BOTTOM" BORDER="0"
+ SRC="./operatorProcessNode.png"
+ ALT="Image operatorProcessNode"> 
+<BR>
+</DIV>
+<P>
+
+<H1><A NAME="SECTION00050000000000000000">
+Extractos de código fuente</A>
+</H1>
+
+<H2><A NAME="SECTION00051000000000000000">
+Acceso a variable</A>
+</H2>
+
+<P>
+<PRE>
+void idNode::run (bool resolvkey) {
+   #if JSON==1
+      interpreter::to_jsonRun(this);
+   #endif
+   sTable *table_ = sTable::sTable_use;
+   refNode *str = new refNode(id_);
+   exist_ = table_-&gt;exist (str);
+   ref_ = table_-&gt;access (str);
+   delete str;
+   runNode *val = ref_-&gt;getRef();
+   refNode * key = NULL;
+   ref_ = refNode::resolved (val);
+   if (privateNode::is)
+      table_-&gt;setPrivate(new refNode (id_));
+   if (!ref_-&gt;isprivate_)
+      ref_-&gt;isprivate_ = privateNode::is;
+   #if JSON==1
+         interpreter::to_jsonSetValue(this, val);
+   #endif
+}
+</PRE>
+
+<P>
+
+<H2><A NAME="SECTION00052000000000000000">
+Asignación</A>
+</H2>
+<PRE>
+void asigNode::run () {
+   runNode *node_aux = node2_, *nodeR_ = NULL;
+   #if JSON==1
+      interpreter::to_jsonRun(this);
+   #endif
+   ref_ = NULL;
+   nexpNode::resolvedRef (node_aux);
+   #if JSON==1
+      if (node2_ != node_aux)
+         interpreter::to_jsonRun(this);
+   #endif
+   if (!(bool)dynamic_cast&lt;functionNode*&gt;(node_aux) &amp;&amp; node2_ == node_aux) {
+      node_aux-&gt;run();
+      #if JSON==1
+         interpreter::to_jsonRun(this);
+      #endif
+   }
+   nodeR_ = this-&gt;isRefNode (node_aux)?node_aux:expNode::clone (node_aux);
+   noderef(nodeR_);
+   #if JSON==1
+      interpreter::to_jsonSetValue(this, nodeR_);
+   #endif
+   setValue (nodeR_);
+}
+</PRE>
+
+<P>
+
+<H2><A NAME="SECTION00053000000000000000">
+Operación suma</A>
+</H2><PRE>
+void addNode::run () {
+   #if JSON==1
+      interpreter::to_jsonRun(this);
+   #endif         
+   runNode* op1 = node1_;
+   runNode* op2 = node2_;
+   nexpNode::resolved (op1);
+   #if JSON==1
+      interpreter::to_jsonRun(this);
+   #endif      
+   nexpNode::resolved (op2);
+   #if JSON==1
+      interpreter::to_jsonRun(this);
+   #endif         
+   numvalue_ = addNode::do_add (op1, op2);
+   #if JSON==1
+      interpreter::to_jsonSetValue(this, numvalue_);
+   #endif
+}
+</PRE>
+
+<H1><A NAME="SECTION00060000000000000000">
+Sobre este documento...</A>
+</H1>
+ <STRONG> 
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="302" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="./logo-doc.png"
+ ALT="Image logo-doc">
+
+</DIV></STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2008 (1.71)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+Nikos Drakos, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-no_subdir -split 0 head.tex -html_version 4.0,latin1,unicode</TT>
+<P>
+The translation was initiated by franj on 2016-01-16
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+franj
+2016-01-16
+</ADDRESS>
+</BODY>
+</HTML>

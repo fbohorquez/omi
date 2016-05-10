@@ -1,0 +1,3759 @@
+% ------------------------------------------------------------------------------
+% Este fichero es parte de la plantilla LaTeX para la realización de Proyectos
+% Final de Grado, protegido bajo los términos de la licencia GFDL.
+% Para más información, la licencia completa viene incluida en el
+% fichero fdl-1.3.tex
+
+% Copyright (C) 2012 SPI-FM. Universidad de Cádiz
+% ------------------------------------------------------------------------------
+
+Esta sección cubre el análisis del sistema de información a desarrollar, haciendo uso del lenguaje de modelado UML.
+
+% ======================================================================
+\section{Modelo conceptual}
+El presente capítulo representa un análisis de los datos que construyen
+el sistema OMI y cómo estos se relacionan. Se describe el 
+modelo conceptual de datos del sistema mediante diagramas de clases. Las 
+clases son organizadas en paquetes para facilitar la modularidad del sistema
+y su entendimiento. 
+
+El proceso de interpretar consiste en tomar código fuente, procesarlo y ejecutar 
+su significado semántico. Por tanto el modelo de datos estará constituido por
+entidades que guardan un significado concreto y preciso dentro del lenguaje.
+Estos elementos, que representan la unidad semántica mínima, 
+son denominados nodos ejecutables, debido a que cuando 
+son ejecutados producen el resultado semántico asociado.  Muchos nodos ejecutables
+por si solos no presentan un resultado semántico completo, por lo que precisan de otros
+nodos. 
+
+El diagrama general de paquetes describe los paquetes que componen el 
+sistema según el carácter funcional de las entidades que contienen. Un 
+paquete podrá contener clases u otros paquetes.
+
+El paquete ``interpreter'' describe las entidades que procesan  
+el contenido fuente según el léxico y la gramática del lenguaje OMI. 
+El objetivo es generar el árbol de nodos ejecutables correspondiente al
+programa. Al procesarse este árbol se aplicará la semántica que encierran 
+las líneas de código del contenido fuente, produciéndose de esta forma la ejecución del programa.
+
+El paquete ``runNode'' describe el nodo ejecutable y aquellos tipos de nodos derivados
+de este, que son abstractos y que serán extendidos por tipos más específicos.
+
+El paquete ``typeData'' describe los nodos correspondientes a los tipos de datos básicos 
+que pueden ser manipulados por el sistema. 
+
+\begin{multicols}{2}
+El paquete ``error'' describe el sistema de errores y los nodos ejecutables que permiten
+su control.
+
+El paquete ``extensions'' describe el sistema de extensiones del interprete, el cual
+permite extender la funcionalidades del lenguaje de una forma dinámica. Además contiene dos
+el modelado de dos extensiones concretas.  
+
+Los paquetes siguientes categorizan y agrupan nodos ejecutables según la funcionalidad 
+que encierran y el tipo de dato sobre el que operan. 
+
+El último paquete ``rtree'' describe el modelo de datos correspondiente al sistema 
+software cliente. Una aplicación web que hace uso del interprete de forma online
+y representa el estado de este.
+% ======================================================================
+\subsection{Intérprete}
+El sistema OMI se corresponde con un interprete que opera sobre 
+un contenido fuente escrito en el lenguaje con el mismo nombre. 
+El interprete se compone de un analizador sintáctico que encierra la 
+gramática del lenguaje, esta es descrita a partir de una serie de tokens.
+
+El analizador sintáctico se vale de un analizador léxico que validará 
+y obtendrá los tokens (bajo petición) desde el código fuente.
+El analizador léxico debe controlar el fichero que contiene el código fuente, 
+así como la línea y posición que se encuentra procesando en el mismo.
+
+Los tokens obtenidos se definen por un identificador y la línea del código fuente en la que se generó,
+además pueden tener asociado un valor que puede ser numérico o cadena. Serán utilizados 
+por el analizador sintáctico para determinar las reglas gramaticales que se deben aplicar y
+construir el árbol sintáctico correspondiente. 
+\columnbreak 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/package-omi.png}
+\captionof{figure}{Paquetes OMI}
+\end{center}
+\end{multicols}
+\pagebreak
+Este árbol está formado 
+por nodos denominados ejecutables, dado que al ser procesados en profundidad se llevará 
+a cabo la ejecución del programa. Los nodos ejecutables dan significado semántico a 
+cada una de las sentencias que componen el contenido fuente.
+
+El interprete se compone además de un contexto denominado principal, que será sobre el que 
+opere de forma predeterminada. Un contexto está formado por una serie de tablas de símbolos 
+que serán manipuladas por ciertos nodos ejecutables cuando sean procesados. Estas tablas guardan 
+referencias a nodos ejecutables correspondientes a símbolos variables, funciones y clases de objetos 
+que son definidos en el código fuente. Existen determinados nodos que al ser ejecutados pueden 
+cambiar el contexto en uso.
+
+El interprete es ejecutado con una serie de argumentos que alteran su funcionamiento.
+
+\begin{center}
+\includegraphics[scale=0.3]{analysis/interpreter.png}
+\captionof{figure}{Clases intérprete}
+\end{center}
+% ----------------------------------------------------------------------
+\subsection{Nodos ejecutables}
+Se definen un nodo ejecutable para cada aspecto o funcionalidad que contemple el lenguaje.
+Cada sentencia se corresponde con un nodo ejecutable, que a su vez puede estar compuestos de otros
+nodos. Cada nodo ejecutable guarda el número de nodos que lo referencian para que se pueda hacer un uso 
+óptimo del mismo.
+
+Las expresiones son nodos ejecutables que tomarán un valor tras ser procesados. Generalmente forman parte de otros 
+nodos correspondientes a sentencias u otras expresiones. El valor que toman pueden ser de un tipo determinado y conocido (numérico, lógico, etc), 
+o de tipo indeterminado o no conocido hasta que el nodo es procesado. 
+
+Las expresiones de tipo determinado son extendidas por cada tipo de dato soportado por el lenguaje. Además 
+pueden ser consideradas tipos de objetos y estar así asociadas a una clase. De esta forma toda expresión puede disponer
+de métodos y atributos según el tipo de dato que guarde.
+
+Las expresiones de tipo indeterminado se componen de una referencia al nodo que guarda el valor tras la ejecución, este podrá ser una 
+expresión de tipo determinado.
+
+Las expresiones son nodos imprimibles lo que significa que tienen una representación gráfica asociada que puede ser volcada en la
+salida estándar.
+
+\begin{center}
+\includegraphics[scale=0.35]{analysis/runNode.png}
+\captionof{figure}{Clases nodos ejecutables}
+\end{center}
+% ----------------------------------------------------------------------
+\begin{multicols}{2}
+\subsection{Tipos de datos}
+Este paquete contiene los nodos que representan expresiones con tipos de datos definidos.
+Se describe cada tipo de dato como un nodo con un valor asociado (en algunos casos el tipo puede comprender un único valor).
+
+Muchos nodos son especializaciones de tipos de datos, correspondiéndose con expresiones que 
+guardan un valor del tipo de dato al que extienden. Así por ejemplo los nodos de operaciones aritméticas
+generalmente extenderán al nodo del mismo tipo de dato. 
+
+Algunos nodos de tipos datos son concretados por nodos que representan un valor constante de dicho tipo de dato.
+\columnbreak
+\begin{center}
+\hfill\includegraphics[scale=0.25]{analysis/typeData.png}
+\captionof{figure}{Clases tipos de datos}
+\end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\subsection{Sentencias de control de flujo}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/flowstmts.png}
+\captionof{figure}{Paquetes sentencias de control de flujo}
+\end{center}
+
+%~ \subsubsection{Sentencia}
+\begin{multicols}{2}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/stmt.png} 
+\captionof{figure}{Clases sentencia}
+\end{center}
+\columnbreak
+\begin{center}
+\includegraphics[scale=0.4]{analysis/emptyStmt.png} 
+\captionof{figure}{Clases sentencia vacía}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{include}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/include.png} 
+\captionof{figure}{Clases include}
+\end{center}
+\columnbreak
+%~ \subsubsection{exit}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/exit.png} 
+\captionof{figure}{Clases exit}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{goto}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/goto.png} 
+\captionof{figure}{Clases goto}
+\end{center}
+\columnbreak
+%~ \subsubsection{if}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/if.png} 
+\captionof{figure}{Clases if}
+\end{center}
+\end{multicols}
+
+\pagebreak
+\begin{multicols}{2}
+%~ \subsubsection{switch}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/switch.png} 
+\captionof{figure}{Clases switch}
+\end{center}
+\columnbreak
+%~ \subsubsection{while}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/while.png} 
+\captionof{figure}{Clases while}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{do...while}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/dowhile.png} 
+\captionof{figure}{Clases do...while}
+\end{center}
+\columnbreak
+%~ \subsubsection{for}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/for.png} 
+\captionof{figure}{Clases for}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{foreach}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/foreach.png} 
+\captionof{figure}{Clases foreach}
+\end{center}
+\columnbreak
+%~ \subsubsection{iloop}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/iloop.png} 
+\captionof{figure}{Clases iloop}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{continue}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/continue.png} 
+\captionof{figure}{Clases continue}
+\end{center}
+\columnbreak
+%~ \subsubsection{break}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/break.png} 
+\captionof{figure}{Clases break}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{try}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/try.png} 
+\captionof{figure}{Clases try}
+\end{center}
+\columnbreak
+%~ \subsubsection{throw}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/throw.png} 
+\captionof{figure}{Clases throw}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection{with}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/with.png} 
+\captionof{figure}{Clases witch}
+\end{center}
+% ----------------------------------------------------------------------
+\subsection {Definiciones}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/definitions.png} 
+\captionof{figure}{Paquetes definiciones}
+\end{center}
+
+%~ \subsubsection {Variables}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/id.png} 
+\captionof{figure}{Clases sobre variables}
+\end{center}
+
+%~ \subsubsection {Funciones}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/functions.png} 
+\captionof{figure}{Clases sobre funciones}
+\end{center}
+
+%~ \subsubsection {Clases}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/class.png} 
+\captionof{figure}{Clases sobre clases}
+\end{center}
+\pagebreak
+
+\begin{multicols}{2}
+%~ \subsubsection {Objetos}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/object.png} 
+\captionof{figure}{Clases sobre objetos}
+\end{center}
+\columnbreak
+%~ \subsubsection {Listas}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/list.png} 
+\captionof{figure}{Clases sobre listas}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Pares clave/valor}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/map.png} 
+\captionof{figure}{Clases sobre pares clave/valor}
+\end{center}
+\columnbreak
+%~ \subsubsection {Etiquetas}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/label.png} 
+\captionof{figure}{Etiquetas}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Definiciones globales}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/global.png} 
+\captionof{figure}{Definiciones globales}
+\end{center}
+\columnbreak
+%~ \subsubsection {Generadores}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/generator.png} 
+\captionof{figure}{Clases sobre generadores}
+\end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\subsection {Asignaciones}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/assig-package.png} 
+\captionof{figure}{Paquetes asignaciones}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Asignación}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/assigNode.png} 
+\captionof{figure}{Clases asignación}
+\end{center}
+\columnbreak
+%~ \subsubsection {Asignación de referencia}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/assigRef.png} 
+\captionof{figure}{Clases asignación de referencia}
+\end{center}
+\end{multicols}
+
+% ----------------------------------------------------------------------
+\subsection {Operadores aritméticos}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/arithOp-package.png} 
+\captionof{figure}{Paquetes operadores aritméticos}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Suma}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/add.png} 
+\captionof{figure}{Clases suma}
+\end{center}
+\columnbreak
+%~ \subsubsection {Diferencia}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/sub.png} 
+\captionof{figure}{Clases diferencia}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Producto}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/prod.png} 
+\captionof{figure}{Clases producto}
+\end{center}
+\columnbreak
+%~ \subsubsection {División}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/div.png} 
+\captionof{figure}{Clases división}
+\end{center}
+\end{multicols}
+\pagebreak
+
+\begin{multicols}{2}
+%~ \subsubsection {Potencia}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/pow.png} 
+\captionof{figure}{Clases potencia}
+\end{center}
+\columnbreak
+%~ \subsubsection {Módulo}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/mod.png} 
+\captionof{figure}{Clases módulo}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Tamaño}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/size.png} 
+\captionof{figure}{Clases tamaño}
+\end{center}
+\columnbreak
+%~ \subsubsection {Incremento y asignación}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/incAssig.png} 
+\captionof{figure}{Clases incremento y asignación}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Asignación e incremento}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/assigInc.png} 
+\captionof{figure}{Clases asignación e incremento}
+\end{center}
+\columnbreak
+%~ \subsubsection {Decremento y asignación}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/decAssig.png} 
+\captionof{figure}{Clases decremento y asignación}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Asignación y decremento}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/assigDec.png} 
+\captionof{figure}{Clases asignación y decremento}
+\end{center}
+% ----------------------------------------------------------------------
+
+ \subsection {Operadores lógicos}
+ \begin{center}
+\includegraphics[scale=0.4]{analysis/logicOp-package.png} 
+\captionof{figure}{Paquetes operadores lógicos}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Or}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/or.png} 
+\captionof{figure}{Clases or}
+\end{center}
+\columnbreak
+%~ \subsubsection {And}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/and.png} 
+\captionof{figure}{Clases and}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Negación}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/not.png} 
+\captionof{figure}{Clases negación}
+\end{center}
+\columnbreak
+%~ \subsubsection {Igual que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/eq.png} 
+\captionof{figure}{Clases igual que}
+\end{center}
+\end{multicols}
+\pagebreak
+
+\begin{multicols}{2}
+%~ \subsubsection {Distinto que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/neq.png} 
+\captionof{figure}{Clases distinto que}
+\end{center}
+\columnbreak
+%~ \subsubsection {Menor que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/lth.png} 
+\captionof{figure}{Clases menor que}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Menor o igual que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/leq.png} 
+\captionof{figure}{Clases menor o igual que}
+\end{center}
+\columnbreak
+%~ \subsubsection {Mayor que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/gth.png} 
+\captionof{figure}{Clases mayor que}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Mayor o igual que}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/geq.png} 
+\captionof{figure}{Clases mayor o igual que}
+\end{center}
+\columnbreak
+%~ \subsubsection {Idéntico a}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/iden.png} 
+\captionof{figure}{Clases idéntico a}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {No idéntico a}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/niden.png} 
+\captionof{figure}{Clases no idéntico a}
+\end{center}
+\columnbreak
+%~ \subsubsection {Es nulo}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/isNull.png} 
+\captionof{figure}{Clases es nulo}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Vacío}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/empty.png} 
+\captionof{figure}{Clases vacío}
+\end{center}
+
+% ----------------------------------------------------------------------
+
+\subsection {Operadores sobre cadenas}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/stringOp-package.png} 
+\captionof{figure}{Paquetes operadores de cadenas}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Concatenación}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/cat.png} 
+\captionof{figure}{Clases concatenación}
+\end{center}
+\columnbreak
+%~ \subsubsection {explode}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/explode.png} 
+\captionof{figure}{Clases explode}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {implode}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/implode.png} 
+\captionof{figure}{Clases implode}
+\end{center}
+\columnbreak
+%~ \subsubsection {sprintf}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/sprintf.png} 
+\captionof{figure}{Clases sprintf}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Buscar subcadena}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/find.png} 
+\captionof{figure}{Clases buscar subcadena}
+\end{center}
+\columnbreak
+%~ \subsubsection {Buscar y remplazar}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/replace.png} 
+\captionof{figure}{Clases buscar y remplazar}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Remplazar subcadena}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/subreplace.png} 
+\captionof{figure}{Clases remplazar subcadena}
+\end{center}
+\columnbreak
+%~ \subsubsection {Convertir a mayúsculas}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/upper.png}
+\captionof{figure}{Clases convertir a mayúsculas} 
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Convertir a minúsculas}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/lower.png} 
+\captionof{figure}{Clases convertir a minúsculas} 
+\end{center}
+
+%~ \subsubsection {Concatenación y asignación}
+%~ Diagrama aún por realizar.
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/lower.png} \\
+%~ \end{center}
+% ----------------------------------------------------------------------
+
+\subsection {Operadores sobre array}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/arrayOp-package.png} 
+\captionof{figure}{Paquetes operadores sobre array} 
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Dividir en fragmentos}
+\begin{center}
+\includegraphics[scale=0.25]{analysis/chunk.png} 
+\captionof{figure}{Clases dividir en fragmentos} 
+\end{center}
+\columnbreak
+%~ \subsubsection {Reducir mediante función}
+\begin{center}
+\includegraphics[scale=0.25]{analysis/reduce.png} 
+\captionof{figure}{Clases reducir mediante función} 
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Obtener último}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/last.png} 
+\captionof{figure}{Clases obtener último} 
+\end{center}
+\columnbreak
+%~ \subsubsection {Obtener primero}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/first.png} 
+\captionof{figure}{Clases obtener primero} 
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Insertar en posición}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/insert.png} 
+\captionof{figure}{Clases insertar en posición} 
+\end{center}
+\columnbreak
+%~ \subsubsection {Eliminar posición}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/delete.png} 
+\captionof{figure}{Clases eliminar posición} 
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Insertar al inicio}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/unshift.png} 
+\captionof{figure}{Clases insertar al inicio}
+\end{center}
+\columnbreak
+%~ \subsubsection {Insertar al final}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/push.png} 
+\captionof{figure}{Clases insertar al final}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Eliminar del inicio}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/shift.png} 
+\captionof{figure}{Clases eliminar del inicio}
+\end{center}
+\columnbreak
+%~ \subsubsection {Eliminar del final}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/pop.png} 
+\captionof{figure}{Clases eliminar del final}
+\end{center}
+\end{multicols}
+
+% ----------------------------------------------------------------------
+
+\subsection {Operadores sobre expresiones regulares}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/regexpOp-package.png} 
+\captionof{figure}{Paquetes operadores sobre expresiones regulares}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Crear expresión regular}
+\begin{center}
+\includegraphics[scale=0.25]{analysis/newRegExp.png}
+\captionof{figure}{Clases crear expresión regular} 
+\end{center}
+\columnbreak
+%~ \subsubsection {match}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/match.png} 
+\captionof{figure}{Clases match}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {search}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/search.png} 
+\captionof{figure}{Clases search}
+\end{center}
+
+% ----------------------------------------------------------------------
+
+\subsection {Conversión de tipos}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/convOp-package.png} 
+\captionof{figure}{Paquetes conversión de tipos}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Conversión a lógico}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/boolconv.png} 
+\captionof{figure}{Clases conversión a lógico}
+\end{center}
+\columnbreak
+%~ \subsubsection {Conversión a entero}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/intconv.png} 
+\captionof{figure}{Clases conversión a entero}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Conversión a flotante}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/floatconv.png} 
+\captionof{figure}{Clases conversión a flotante}
+\end{center}
+\columnbreak
+%~ \subsubsection {Conversión a cadena}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/strconv.png} 
+\captionof{figure}{Clases conversión a cadena}
+\end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\subsection {Operadores de acceso}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/accessOp-package.png} 
+\captionof{figure}{Paquetes operadores de acceso}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Acceso a clave} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/get.png} 
+\captionof{figure}{Clases acceso a clave}
+\end{center}
+\columnbreak
+%~ \subsubsection {Acceso a función} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/getFunc.png} 
+\captionof{figure}{Clases acceso a función}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Acceso a variable de entorno} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/getEnvSys.png} 
+\captionof{figure}{Clases acceso a variable de entorno}
+\end{center}
+% ----------------------------------------------------------------------
+
+\subsection {Operadores condicionales} 
+\begin{center}
+\includegraphics[scale=0.4]{analysis/condOp-package.png} 
+\captionof{figure}{Paquetes Operadores condicionales}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Ternario} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/tern.png} 
+\captionof{figure}{Clases ternario}
+\end{center}
+\columnbreak
+%~ \subsubsection {Fusión de nulos} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/nullCoalescing.png} 
+\captionof{figure}{Clases fusión de nulos}
+\end{center}
+\end{multicols}
+
+% ----------------------------------------------------------------------
+
+\subsection {Operadores de entrada/salida} 
+\begin{center}
+\includegraphics[scale=0.4]{analysis/ioOp-package.png} 
+\captionof{figure}{Paquetes operadores de entrada/salida}
+\end{center}
+
+\pagebreak
+\begin{multicols}{2}
+%~ \subsubsection {Salida estándar} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/output.png} 
+\captionof{figure}{Clases salida estándar}
+\end{center}
+\columnbreak
+%~ \subsubsection {Entrada estándar} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/input.png} 
+\captionof{figure}{Clases entrada estándar}
+\end{center}
+\end{multicols}
+
+% ----------------------------------------------------------------------
+
+\subsection {Operadores informativos} 
+\begin{center}
+\includegraphics[scale=0.4]{analysis/infoOp-package.png} 
+\captionof{figure}{Paquetes operadores informativos}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Tipo de} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/typeOf.png} 
+\captionof{figure}{Clases tipo de}
+\end{center}
+\columnbreak
+%~ \subsubsection {Tamaño de} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/sizeOf.png} 
+\captionof{figure}{Clases tamaño de}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Información sobre} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/datInfo.png} 
+\captionof{figure}{Clases información sobre}
+\end{center}
+% ----------------------------------------------------------------------
+
+\subsection {Procesos} 
+\begin{center}
+\includegraphics[scale=0.4]{analysis/processOp-package.png} 
+\captionof{figure}{Paquete de procesos}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Crear proceso} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fork.png} 
+\captionof{figure}{Clases crear proceso}
+\end{center}
+\columnbreak
+%~ \subsubsection {Esperar finalización} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/wait.png} 
+\captionof{figure}{Clases esperar finalización}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Obtener identificador } 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/getpid.png} 
+\captionof{figure}{Clases obtener identificador}
+\end{center}
+\columnbreak
+%~ \subsubsection {Obtener identificador padre} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/getppid.png} 
+\captionof{figure}{Clases obtener identificador padre}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Ejecutar como proceso} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/process.png} 
+\captionof{figure}{Clases ejecutar como proceso}
+\end{center}
+\columnbreak
+%~ \subsubsection {Salir de proceso} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/exitProcess.png} 
+\captionof{figure}{Clases salir de proceso}
+\end{center}
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+%~ \subsubsection {Señal a proceso} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/signal.png} 
+\captionof{figure}{Clases señal a proceso}
+\end{center}
+\columnbreak
+%~ \subsubsection {Manejador de señales} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/signalhandler.png} 
+\captionof{figure}{Clases manejador de señales}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Evaluar cadena} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/eval.png} 
+\captionof{figure}{Clases evaluar cadena}
+\end{center}
+\columnbreak
+%~ \subsubsection {Ejecutar comando del sistema} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/exec.png} 
+\captionof{figure}{Clases ejecutar comando del sistema}
+\end{center}
+\end{multicols}
+% ----------------------------------------------------------------------
+
+\subsection {Ficheros} 
+\begin{center}
+\includegraphics[scale=0.4]{analysis/fileOp-package.png} 
+\captionof{figure}{Paquetes de ficheros}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Obtener un flujo a fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/file.png} 
+\captionof{figure}{Clases obtener un flujo a fichero}
+\end{center}
+\columnbreak
+%~ \subsubsection {Escribir en flujo a fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fput.png} 
+\captionof{figure}{escribir en flujo a fichero}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Leer de flujo a fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fget.png} 
+\captionof{figure}{Clases leer de flujo a fichero}
+\end{center}
+\columnbreak
+%~ \subsubsection {Cambiar posición en fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fseek.png} 
+\captionof{figure}{Clases cambiar posición en fichero}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Obtener posición en flujo a fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/ftell.png} 
+\captionof{figure}{Clases obtener posición en flujo a fichero}
+\end{center}
+\columnbreak
+%~ \subsubsection {Cerrar flujo a fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fclose.png} 
+\captionof{figure}{Clases cerrar flujo a fichero}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection {Leer fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fread.png} 
+\captionof{figure}{Clases leer fichero}
+\end{center}
+\columnbreak
+%~ \subsubsection {Escribir en fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fwrite.png} 
+\captionof{figure}{Clases escribir en fichero}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {Escribir al final de fichero} 
+\begin{center}
+\includegraphics[scale=0.3]{analysis/fappend.png} 
+\captionof{figure}{Clases escribir al final de fichero}
+\end{center}
+% ----------------------------------------------------------------------
+ \pagebreak
+
+\subsection {Fechas}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/dateOp-package.png} 
+\captionof{figure}{Paquetes de fechas}
+\end{center}
+
+\begin{multicols}{2}
+%~ \subsubsection {Tiempo Unix} 
+\begin{center}
+\includegraphics[scale=0.35]{analysis/time.png} 
+\captionof{figure}{Clases tiempo Unix}
+\end{center}
+\columnbreak
+%~ \subsubsection {Fecha y hora con formato} 
+\begin{center}
+\includegraphics[scale=0.35]{analysis/date.png} 
+\captionof{figure}{Clases fecha y hora con formato}
+\end{center}
+\end{multicols}
+
+%~ \subsubsection {sleep} 
+\begin{center}
+\includegraphics[scale=0.35]{analysis/sleep.png} 
+\captionof{figure}{Clases sleep}
+\end{center}
+
+% ----------------------------------------------------------------------
+
+\subsection {Errores} 
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/error-package.png} \\
+%~ \end{center}
+%~ 
+%~ \subsubsection {Error} 
+\begin{center}
+\includegraphics[scale=0.35]{analysis/errorException.png} 
+\captionof{figure}{Clases Errores}
+\end{center}
+
+%~ \subsubsection {Manejador de errores } 
+%~ Diagrama aún por realizar
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/errorhandler.png} \\
+%~ \end{center}
+
+%~ \subsubsection {Manejador de excepciones no capturadas} 
+%~ Diagrama aún por realizar
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/errorhandler.png} \\
+%~ \end{center}
+% ----------------------------------------------------------------------
+
+
+\subsection {Extensiones} 
+\begin{center}
+\includegraphics[scale=0.35]{analysis/extensions-package.png} 
+\captionof{figure}{Paquete de extensiones}
+\end{center}
+
+%~ \subsection {plugins}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/plugins.png} 
+\captionof{figure}{Clases plugins}
+\end{center}
+
+\subsubsection{Biblioteca GNU de internacionalización (gettext)}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/gettext-ext-package.png} 
+\captionof{figure}{Paquetes de Biblioteca GNU de internacionalización (gettext)}
+\end{center}
+
+%~ \paragraph {gettext}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/gettext.png} 
+\captionof{figure}{Clases gettext}
+\end{center}
+
+\begin{multicols}{2}
+%~ \paragraph {setlocale}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/setlocale.png} 
+\captionof{figure}{Clases setlocale}
+\end{center}
+%~ \paragraph {dgettext}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/dgettext.png} 
+\captionof{figure}{Clases dgettext}
+\end{center}
+\columnbreak
+%~ \paragraph {bindtextdomain}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/bindtextdomain.png} 
+\captionof{figure}{Clases bindtextdomain}
+\end{center}
+%~ \paragraph {textdomain}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/textdomain.png} 
+\captionof{figure}{Clases textdomain}
+\end{center}
+\end{multicols}
+
+\subsection {rTree} 
+El intérprete OMI tiene la capacidad de generar una salida relativa
+a su estado y funcionamiento. Para completar el proyecto se precisa 
+de una herramienta capaz de interpretar y representar este estado 
+interno de forma gráfica y textual. 
+
+El modelo de datos del cliente OMI se define de forma similar al intérprete.
+La principal diferencia es que en el intérprete este modelo de datos se usa para procesar y 
+ejecutar el código fuente, mientras que en el cliente se usa para representar gráficamente 
+el proceso llevado a cabo. Es por ello que el modelo de datos del cliente es más abstracto. 
+
+\begin{center}
+\includegraphics[scale=0.6]{analysis/rtree.png} 
+\captionof{figure}{Clases rTree}
+\end{center}
+
+%~ \subsubsection {Operaciones sobre un SGBD Mysql}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/mysql-ext-package.png} \\
+%~ \end{center}
+%~ \paragraph {Abrir conexión}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/db.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Consulta}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbQuery.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Cerrar conexión}
+%~ Diagrama aún por realizar.
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbClose.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Insertar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbInsert.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Seleccionar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbSelect.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Actualizar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbUpdate.png} \\
+%~ \end{center}
+%~ 
+%~ \paragraph {Eliminar datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dbDelete.png} \\
+%~ \end{center}
+%~ 
+%~ % ----------------------------------------------------------------------
+
+
+% ======================================================================
+\section{Modelo de casos de uso}
+%~ En el presente documento se detallan los casos de uso recogidos para el 
+%~ interprete OMI. Para ello los casos de uso son distribuidos
+%~ en paquetes, y estos modelados mediante un diagrama. 
+%~ 
+%~ El diagrama de paquetes inicial presenta una organización y distribución 
+%~ general de los paquetes en los que se ha dividido el modelo. Estos paquetes
+%~ pueden contener diagramas de casos de uso u otros paquetes. Además se establecen
+%~ relaciones entre estos.
+%~ 
+%~ La relación de mezcla (merge) entre dos paquetes significa que el contenido
+%~ de ambos paquetes será superpuesto, cumplimentando la información que presenta uno
+%~ con la que ofrece el otro. 
+%~ 
+%~ Inicialmente se presenta el paquete ``interpreter'' que recoge los casos 
+%~ de uso que puede llevar a cabo el usuario. Aquí el caso de uso que cabría 
+%~ destacar es el de Interpretar. Este consiste en la interpretación sentencia 
+%~ a sentencia del código fuente facilitado por el usuario. Este caso de
+%~ uso es extendido según el tipo de sentencia interpretada en cada momento.
+En esta sección se detallan los casos de usos que recogen los sistemas que conforman el proyecto OMI. 
+Un caso de uso describe la secuencia de  interacciones entre el sistema y sus
+actores como consecuencia de un evento. 
+
+En primer lugar se describen los actores que hacen uso del sistema, llegándose a distinguir dos que serán nominados 
+usuario y sistema externo. Luego se describen los casos de uso del sistema intérprete y del cliente runTree. 
+
+\subsection{Actores}
+Los actores humanos que interactúan con los sistemas OMI presentan todos un mismo rol. Así el 
+único actor definido será llamado usuario.  Los usuarios que hacen uso del intérprete pueden ser desarrolladores,
+estudiantes u otros perfiles técnicos, pero todos usarán el sistema de la misma forma.
+
+Por otro lado el intérprete OMI puede ser usado por otros sistemas, viéndose estos actores de determinados casos
+de uso. Algunos sistemas del proyecto OMI hacen uso del intérprete para llevar  a cabo su propósito.
+
+%~ En primer lugar se describen los casos de usos del intérprete OMI. El principal caso de uso es
+%~ el de intérpretar, ya que recoge el proceso principal.  
+
+%~ \begin{center}
+%~ \includegraphics[scale=0.3]{analysis/package-omi.png} \\
+%~ \end{center}
+% ======================================================================
+\subsection{Intérprete}
+\begin{center}
+\includegraphics[scale=0.5]{analysis/use_case_interpreter.png} 
+\captionof{figure}{Casos de usos intérprete}
+\end{center}
+% ----------------------------------------------------------------------
+\subsubsection{Casos de usos interpretar entrada estándar}
+
+\begin{description}
+  \item[Caso de Uso:] 
+  Interpretar entrada estándar.
+  \item[Tipo:] General.
+  \item[Descripción:] 
+  El usuario introduce un bloque de código en forma de cadena de 
+  caracteres mediante la entrada estándar. El sistema lo interpreta 
+  y ejecuta.
+  \item[Actores:] 
+  Usuario.
+  \item[Precondiciones:] 
+  El sistema debe estar esperando un bloque de código mediante la entrada estándar.
+  \item[Postcondiciones:] 
+  El código introducido es interpretado y ejecutado.
+  \item[Escenario principal:] \hfill 
+  \begin{enumerate}
+   \item El usuario inicia el sistema facilitando un listado de argumentos.
+   \item El sistema asigna como variables cada argumento y solicita contenido fuente al usuario. 
+   \item El usuario introduce un bloque de código en la entrada estándar.
+   \item El sistema obtiene el bloque de código a interpretar mediante la entrada estándar.
+   \item Incluir (Interpretar). 
+  \end{enumerate}
+\end{description}
+% ----------------------------------------------------------------------
+\subsubsection{Interpretar fichero}
+
+\begin{description}
+   \item[Caso de Uso:]  Interpretar fichero.
+   \item[Tipo:] General.
+   \item[Descripción:] 
+   El usuario indica un fichero que contiene código y que será 
+   interpretado y ejecutado por el sistema.
+   \item[Actores:] 
+   Usuario.
+   \item[Precondiciones:] 
+   El sistema espera que se le indique un fichero.
+   \item[Postcondiciones:] 
+   El fichero es leído y el código en el mismo es interpretado y ejecutado.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario indica la ruta a un fichero y una serie de argumentos
+   \item El sistema lee el fichero y obtiene el código en el mismo, además asigna cada argumento a variables.
+   \item Incluir (Interpretar).
+   \end{enumerate}
+   
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El fichero indicado no se encuentra.
+         \begin{enumerate}
+         \item El sistema informa del error y finaliza.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+\subsubsection{Interpretar línea}
+
+\begin{description}
+   \item[Caso de Uso:]  Interpretar línea.
+   \item[Tipo:] General.
+   \item[Descripción:] 
+   El usuario introduce bloques de códigos denominados líneas
+   de una forma interactiva. El sistema solicita por la entrada 
+   estándar las líneas de código, que serán interpretadas y ejecutadas.
+   \item[Actores:] 
+   Usuario.
+   \item[Precondiciones:] 
+   El sistema se encuentra en modo interactivo.
+   \item[Postcondiciones:] 
+   Se interpreta cada línea introducida por el usuario
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario inicia el sistema facilitando un listado de argumentos y la opción de interprete de línea.
+   \item El sistema asigna como variables cada argumento y muestra un prompt que indica que espera una línea de código.
+   \item El usuario introduce una línea de código.
+   \item El sistema lee de la entrada estándar la línea introducida.
+   \item Include (Interpretar). \\\\\hfill\hfill
+   El sistema repite el caso de uso hasta que se interpreta una sentencia que produzca 
+   la salida.
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+\subsubsection{Interpretar}
+
+\begin{description}
+   \item[Caso de Uso:]  Interpretar.
+   \item[Tipo:] General.
+   \item[Nivel:]  Subfunción.
+   \item[Descripción:] 
+   El sistema analiza, interpreta y ejecuta un bloque de código facilitado por el usuario.
+   Para ello comprueba que este cumple con el léxico y la gramática del lenguaje 
+   que define, dividiéndolo a su vez en sentencias que serán interpretadas. 
+   \item[Precondiciones:] 
+   Se dispone de un bloque de código.
+   \item[Postcondiciones:] 
+   El bloque de código es interpretado.
+   %~ \item [Puntos de extensión:] \hfill
+   %~ \begin{description}
+      %~ \item[Sentencia:] Según el tipo de sentencia.
+   %~ \end{description}
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El sistema procesa y comprueba el bloque de código, aplicando
+   la gramática y léxico que define.
+   \item El sistema obtiene e interpreta cada sentencia en el código, produciéndose
+   el significado semántico que estas encierran.
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{0}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El código no respeta el léxico del lenguaje.
+         \begin{enumerate}
+         \item El sistema informa del error y finaliza.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{0}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{1}
+         \item El código no respeta la gramática del lenguaje.
+         \begin{enumerate}
+         \item El sistema informa del error y finaliza.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El código no contiene ninguna sentencia.
+         \begin{enumerate}
+         \item El sistema finaliza.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+\subsubsection{Ver ayuda}
+
+\begin{description}
+   \item[Caso de Uso:]  Ver ayuda.
+   \item[Tipo:] General.
+   \item[Descripción:] 
+   Se muestra una ayuda que detalla cada opción disponible en el sistema.
+   \item[Actores:] 
+   Usuario.
+   \item[Precondiciones:] 
+   Sin precondiciones.
+   \item[Postcondiciones:] 
+   El sistema muestra un listado que presenta las distintas opciones.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario indica que quiere visualizar la ayuda.
+   \item El sistema muestra un listado completo de las opciones que
+   presenta. 
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+\subsubsection{Cargar extensión}
+
+\begin{description}
+   \item[Caso de Uso:]  Cargar extensión.
+   \item[Tipo:] General.
+   \item[Descripción:] 
+   El usuario indica que una extensión que será cargada por
+   el sistema.
+   \item[Actores:] 
+   Usuario.
+   \item[Precondiciones:] 
+   Sin precondiciones.
+   \item[Postcondiciones:] 
+   El sistema cargar la extensión facilitada.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario indica la ruta a la extensión que desea cargar.
+   \item El sistema carga la extensión para disponer de las distintas opciones que 
+   ofrece. 
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item La extensión indicada no se encuentra.
+         \begin{enumerate}
+         \item El sistema informa del error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{1}
+         \item La extensión indicada no es una extensión válida.
+         \begin{enumerate}
+         \item El sistema informa del error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+\subsubsection{Listar extensiones}
+
+\begin{description}
+   \item[Caso de Uso:]  Listar extensiones.
+   \item[Tipo:] General.
+   \item[Descripción:] 
+   Lista las extensiones que serán cargadas en cada ejecución del sistema.
+   \item[Actores:] 
+   Usuario.
+   \item[Precondiciones:] 
+   Sin precondiciones.
+   \item[Postcondiciones:] 
+   El sistema lista las extensiones que serán cargadas.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario indica que desea listar las extensiones cargadas.
+   \item El sistema lista las extensiones cargadas por defecto. 
+   \end{enumerate}
+\end{description}
+
+% ----------------------------------------------------------------------
+
+%~ % ======================================================================
+%~ 
+%~ \pagebreak
+%~ \subsection {Expresiones}
+%~ \begin{center}
+%~ \includegraphics[scale=0.5]{analysis/exp.png} \\
+%~ \end{center}
+%~ % ----------------------------------------------------------------------
+%~ 
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Expresión.
+   %~ \item[Tipo:] General.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora la expresión según la prioridad de operadores
+   %~ que define. 
+   %~ \item[Precondiciones:] 
+   %~ La expresión cumple con el léxico y gramática del lenguaje.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema interpreta la expresión obteniendo su valor asociado.
+   %~ \item[Puntos de extensión:] \hfill
+      %~ \begin{description}
+         %~ \item [Valorar:] Según tipo de operador o subexpresión
+      %~ \end{description}
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema determina el operador 
+   %~ o subexpresión de mayor prioridad.
+   %~ \item Valorar: punto de extensión 
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ % ======================================================================
+%~ 
+%~ 
+%~ \subsection {Tipos de datos}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dataType.png} \\
+%~ \end{center}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection{Valorar constante nula}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:] Valorar constante nula.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente a
+   %~ la constante nula codificada de forma explicita.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es un valor constante nulo.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye nulo como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema otorga a la expresión en valor nulo.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ 
+%~ \subsubsection{Valorar constante lógica}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Valorar constante lógica.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente
+   %~ a una constante lógica verdadero o falso.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es una constante lógica.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye verdadero o falso como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema otorga a la expresión el valor lógico verdadero 
+   %~ si se corresponde con la expresión ``true'' o falso si se corresponde 
+   %~ con ``false''.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ 
+%~ \subsubsection{Valorar constante aritmética}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Valorar constante aritmética.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión que se corresponde con
+   %~ un número dentro del conjunto de los racionales.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es una constante numérica.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye el número como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema otorga a la expresión el valor numérico codificado 
+   %~ en la misma.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ 
+%~ \subsubsection {Valorar cadena de caracteres}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Valorar cadena de caracteres.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente a
+   %~ una cadena de caracteres constante.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es un valor cadena de caracteres.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye la cadena de caracteres como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema otorga a la expresión el valor correspondiente a la cadena codificada
+   %~ en la misma.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ \subsubsection {Valorar array}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Valorar array.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente a
+   %~ un array no asociativo.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es un array.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye el array como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la subexpresión correspondiente al primer elemento.
+   %~ \item Include (Expresión)
+   %~ \item Atribuye el valor de la subexpresión como último elemento en el array.\\\\\hfill\hfill
+   %~ Se repiten los pasos 2-3 secuencialmente para cada elemento.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El array no contiene elementos.
+         %~ \begin{enumerate}
+         %~ \item El sistema atribuye como valor de la expresión el array vacío.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ \subsubsection {Valorar array asociativo}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Array asociativo.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente a
+   %~ un array asociativo .
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es un valor array asociativo.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye el array asociativo como valor de la expresión.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la subexpresión correspondiente al primer elemento.
+   %~ \item El sistema obtiene la subexpresión correspondiente la clave.
+   %~ \item Include (Expresión)
+   %~ \item El sistema obtiene la subexpresión correspondiente al valor.
+   %~ \item Include (Expresión)
+   %~ \item Atribuye el par clave/valor como último elemento en el array.\\\\\hfill\hfill
+   %~ Se repiten los pasos 2-6 secuencialmente para cada elemento.
+   %~ \end{enumerate}
+    %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El array no contiene elementos.
+         %~ \begin{enumerate}
+         %~ \item El sistema atribuye como valor de la expresión el array vacío.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ \subsubsection {Valorar expresión regular}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Valor expresión regular.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora una expresión o subexpresión correspondiente a
+   %~ una expresión regular PERL.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión y esta es una expresión regular PERL.
+   %~ \item[Postcondiciones:] 
+   %~ El sistema atribuye la expresión regular como valor de la expresión PERL.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión regular codificada.
+   %~ \item El sistema atribuye la expresión regular como valor de la expresión
+   %~ \end{enumerate}
+    %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión regular no mantiene una sintaxis PERL.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la interpretación
+         %~ de la sentencia correspondiente.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ 
+%~ % ----------------------------------------------------------------------
+%~ % ======================================================================
+%~ 
+%~ 
+%~ \subsection {Sentencias de control de flujo}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/flowstmts.png} \\
+%~ \end{center}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia vacía}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/emptyStmt.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia vacía.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Se interpreta una sentencia vacía sin producir resultado alguno.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia vacía.
+   %~ \item[Postcondiciones:] No tiene.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema no realiza ninguna acción.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia include}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/include.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia include.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Se interpreta una sentencia include, lo que 
+   %~ se corresponde con la lectura e interpretación del fichero codificado 
+   %~ en la misma. 
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia include.
+   %~ \item[Postcondiciones:] El fichero es leído e interpretado
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene el código fuente del fichero.
+   %~ \item Include (Interpretar).
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El fichero no existe.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la  interpretación 
+         %~ de la sentencia actual.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ 
+%~ \subsubsection {Sentencia exit}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/exit.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia exit.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Se interpreta una sentencia exit, lo que 
+   %~ se corresponde con la salida y finalización del sistema. 
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia exit.
+   %~ \item[Postcondiciones:] Se sale del sistema con el código codificado
+   %~ en la sentencia.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión correspondiente al código de salida.
+   %~ \item Include (Expresión)
+   %~ \item El sistema finaliza su ejecución devolviendo el valor del código.
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia goto}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/goto.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia goto.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Hace que la siguiente sentencia interpretada sea la que esté referenciada 
+   %~ por la etiqueta codificada en la sentencia. 
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia goto.
+   %~ \item[Postcondiciones:] La siguiente sentencia que se ejecutará se 
+   %~ corresponde con la referenciada por la etiqueta indicada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la etiqueta codificada en la sentencia.
+   %~ \item El sistema cambia el flujo de ejecución a la sentencia obtenida.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No existe definida la etiqueta codificada.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la  interpretación 
+         %~ de la sentencia actual.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia if}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/if.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia if.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia if, lo que implica que se interpretará el 
+   %~ bloque de sentencias ``then'' si la expresión de condición es
+   %~ verdadera o el bloque ``else'' si es falsa.
+   %~ 
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia if.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia if queda interpretada.   
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de condición.
+   %~ \item Include (Expresión).
+   %~ \item Si la expresión tiene valor lógico verdadero el sistema obtiene el bloque de sentencias ``then''.
+   %~ \item Include (Interpretar).
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión no tiene valor lógico asociado.
+         %~ \begin{enumerate}
+         %~ \item Esta es considerada falsa y se prosigue con el caso de uso.  
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item La expresión tiene valor falso y la sentencia codifica un bloque ``else''.
+         %~ \begin{enumerate}
+         %~ \item El sistema obtiene el bloque de sentencias ``else''.
+         %~ \item Include (Interpretar) 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{2}
+         %~ \item La expresión tiene valor falso y la sentencia no codifica un bloque ``else''.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia switch}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/switch.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia switch.
+   %~ \item [Tipo:] Sentencia. 
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia switch, por lo que se ejecutará el bloque de sentencias 
+   %~ correspondiente según el valor de la expresión condición, y todos los bloques
+   %~ siguientes.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia switch.
+   %~ \item[Postcondiciones:] 
+       %~ La sentencia switch queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de condición.
+   %~ \item Include (Expresión).
+   %~ \item Se obtiene el bloque de sentencias correspondiente al valor de la expresión.
+   %~ \item Include (Interpretar). \\\\ \hfill
+      %~ Se repite el paso 4 por cada bloque de sentencias de los casos siguientes.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No existe bloque de sentencias para el valor de la expresión, pero 
+         %~ existe un bloque de sentencias por defecto.
+         %~ \begin{enumerate}
+         %~ \item Se obtiene el bloque de sentencias por defecto.
+         %~ \item Include (Interpretar)  
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item No existe bloque de sentencias para el valor de la expresión y 
+         %~ tampoco existe un bloque de sentencias por defecto.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia while}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/while.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia while.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta la sentencia while, lo que implica que se ejecutará el bloque 
+   %~ de sentencias mientras el valor de la expresión de condición sea verdadera.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia while.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia while queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de condición.
+   %~ \item Include (Expresión).
+   %~ \item Si la expresión es verdadera obtiene el bloque de sentencias.
+   %~ \item Include (Interpretar). \\\\ \hfill
+      %~ Se repite el paso 1-4 hasta que la expresión sea valorada como falsa.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión no tiene un valor booleano asociado.
+         %~ \begin{enumerate}
+         %~ \item Se considera como si tuviera valor falso y se continua con el caso de uso.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia do...while}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/dowhile.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia do...while.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia do...while, lo que implica que se ejecutará 
+   %~ el bloque de sentencias, al menos una vez, y mientras el valor de la expresión
+   %~ de condición sea verdadera.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia do...while.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia do...while queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene el bloque de sentencias.
+   %~ \item Include (Interpretar). 
+   %~ \item El sistema obtiene la expresión de condición.
+   %~ \item Include (Expresión).\\\\ \hfill
+      %~ Se repite el paso 1-4 hasta que la expresión sea valorada como falsa.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{3}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión no tiene un valor booleano asociado.
+         %~ \begin{enumerate}
+         %~ \item Se considera como si tuviera valor falso y se continua con el caso de uso.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia for}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/for.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia for.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia for. Para ello se valorará la expresión 
+   %~ de inicialización y se ejecutará el bloque de sentencias 
+   %~ mientras la expresión de condición tenga un valor verdadero, en cada
+   %~ iteración valorará la expresión de paso.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia for.
+   %~ \item[Postcondiciones:] 
+      %~ La sentencia for queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de inicialización.
+   %~ \item Include (Expresión).
+   %~ \item El sistema obtiene la expresión de condición.
+   %~ \item Include (Expresión).
+   %~ \item Si el valor de la expresión condición tiene valor lógico verdadero el sistema obtiene el bloque de sentencias.
+   %~ \item Include (Interpretar). 
+   %~ \item El sistema obtiene la expresión de paso.
+   %~ \item Include (Expresión).\\\\ \hfill
+      %~ Se repite el paso 3-8 hasta que la expresión de condición sea valorada falsa 
+      %~ sea valorada como falsa.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{4}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión no tiene un valor booleano asociado.
+         %~ \begin{enumerate}
+         %~ \item Se considera como si tuviera valor falso y se continua con el caso de uso.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia foreach}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/foreach.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia forearch.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia foreach. Para ello valora la expresión de conjunto
+   %~ y ejecuta el bloque de sentencias por cada uno de los elementos contenidos en el valor devuelto.
+   %~ En cada iteración  el elemento será asignado a el identificador codificado en la sentencia foreach.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia foreach.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia foreach queda interpretada.   
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de conjunto.
+   %~ \item Include (Expresión).
+   %~ \item El sistema obtiene el primer elemento del valor de la expresión.
+   %~ \item El sistema asigna el valor del elemento al identificador facilitado y obtiene el bloque de sentencias.
+   %~ \item Include (Interprete) \\\\ \hfill
+   %~ Se repite los pasos 3-4 por cada elemento en el valor de la expresión.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión resulta en un conjunto vacío.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item La expresión es una cadena de caracteres.
+         %~ \begin{enumerate}
+         %~ \item Se toma como conjunto cada caracter en la cadena.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{2}
+         %~ \item La expresión tiene un valor numérico.
+         %~ \begin{enumerate}
+         %~ \item Se toma como conjunto cada número entero desde 0 al valor entero
+         %~ de la expresión.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{3}
+         %~ \item La expresión tiene un valor lógico.
+         %~ \begin{enumerate}
+         %~ \item Si el valor es verdadero lo asigna al identificador y obtiene el bloque de sentencias
+         %~ \item Include (Interpretar) \\ \\ \hfill
+         %~ Repite el caso de uso.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{4}
+         %~ \item La expresión tiene otro tipo de valor.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia de iteración ágil}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/iloop.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia de iteración ágil.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Interpreta una sentencia de iteración ágil. Para ello valora la expresión de conjunto
+   %~ y ejecuta el bloque de sentencias por cada uno de los elementos contenidos en el valor devuelto.
+   %~ Cada elemento será asignado a una entidad denominada de iterador, también será asignada 
+   %~ la posición del elemento en la secuencia a otra entidad denominada posición del iterador. 
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia de iteración ágil.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia de iteración ágil queda interpretada.   
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión de conjunto.
+   %~ \item Include (Expresión).
+   %~ \item El sistema obtiene el primer elemento del valor de la expresión.
+   %~ \item El sistema asigna el valor del elemento al iterador y la posición del mismo a la posición del iterador, 
+   %~ luego obtiene el bloque de sentencias para ser interpretadas.
+   %~ \item Include (Interprete) \\\\ \hfill
+   %~ Se repite los pasos 3-4 por cada elemento en el valor de la expresión.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item La expresión resulta en un conjunto vacío.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item La expresión es una cadena de caracteres.
+         %~ \begin{enumerate}
+         %~ \item Se toma como conjunto cada carácter en la cadena.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{2}
+         %~ \item La expresión tiene un valor numérico.
+         %~ \begin{enumerate}
+         %~ \item Se toma como conjunto cada número entero desde 0 al valor entero
+         %~ de la expresión.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{3}
+         %~ \item La expresión tiene un valor lógico.
+         %~ \begin{enumerate}
+         %~ \item Si el valor es verdadero lo asigna al iterador y se obtiene el bloque de sentencias
+         %~ \item Include (Interpretar) \\ \\ \hfill
+         %~ Repite el caso de uso.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{4}
+         %~ \item La expresión tiene otro tipo de valor.
+         %~ \begin{enumerate}
+         %~ \item El sistema no realiza ninguna acción.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----
+%~ \paragraph {Obtener iterador}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Obtener iterador.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Accede al valor del iterador de una de las sentencias de iteración ágil que se pueden encontrar anidadas.  
+   %~ La expresión puede codificar el índice de la sentencia de iteración ágil que se encuentra anidada y sobre la
+   %~ cual se obtendrá el valor del iterador. El índice comienza en 0 y a partir de la última sentencia anidada.
+   %~ \item[Precondiciones:] 
+   %~ Se valora una expresión de acceso al iterador, además la expresión forma parte 
+   %~ de una sentencia que se encuentra dentro del bloque de una sentencia de iteración ágil, o conjunto 
+   %~ de estas anidas.
+   %~ \item[Postcondiciones:] 
+   %~ Se atribuye a la expresión el valor del iterador de la sentencia de iteración ágil 
+   %~ indicada.   
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene y atribuye a la expresión el valor del iterador 
+   %~ de la sentencia de iteración ágil indicada por el índice facilitado.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se ha facilitado un índice.
+         %~ \begin{enumerate}
+         %~ \item Se toma como índice el valor 0. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item No se encuentra una sentencia de iteración ágil en el índice dado.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la interpretación del 
+         %~ la sentencia.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----
+%~ \paragraph {Obtener posición de iterador}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Obtener posición de iterador.
+   %~ \item [Tipo:] Expresión.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Accede al valor de la posición del iterador de una de las sentencias de iteración ágil que se pueden encontrar anidadas.  
+   %~ La expresión puede codificar el índice de la sentencia de iteración ágil que se encuentra anidada y sobre la
+   %~ cual se obtendrá el valor de la posición del iterador. El índice comienza en 0 y a partir de la última sentencia anidada.
+   %~ \item[Precondiciones:] 
+   %~ Se valora una expresión de acceso a la posición del iterador, además la expresión forma parte 
+   %~ de una sentencia que se encuentra dentro del bloque de una sentencia de iteración ágil, o conjunto 
+   %~ de estas anidas.
+   %~ \item[Postcondiciones:] 
+   %~ Se atribuye a la expresión el valor de la posición del iterador de la sentencia de iteración ágil 
+   %~ indicada.   
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene y atribuye a la expresión el valor de la posición del iterador 
+   %~ de la sentencia de iteración ágil indicada por el índice facilitado.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se ha facilitado un índice.
+         %~ \begin{enumerate}
+         %~ \item Se toma como índice el valor 0. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{1}
+         %~ \item No se encuentra una sentencia de iteración ágil en el índice dado.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la interpretación del 
+         %~ la sentencia.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ======================================================================
+%~ \subsubsection {Sentencia break}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/break.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia break.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Termina la interpretación de un bloque de sentencias o bloques de sentencias anidados. Adicionalmente
+   %~ es posible indicar, codificado en forma de expresión, un índice que determina la posición del bloque de sentencias anidado cuya 
+   %~ interpretación finalizará.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia break y se encuentra dentro de un bloque de sentencias.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia break queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión correspondiente al índice, que referencia el bloque que finalizará.
+   %~ \item Include (Expresión).
+   %~ \item El sistema finaliza la interpretación del bloque de sentencias indicado por el valor de la expresión. 
+   %~ \item El sistema hace que la próxima sentencia que se interprete sea la siguiente al bloque.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se ha facilitado un índice.
+         %~ \begin{enumerate}
+         %~ \item Se toma como índice el valor 0. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se encuentra un bloque de sentencias en el índice dado.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la interpretación del 
+         %~ la sentencia.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ======================================================================
+%~ \subsubsection {Sentencia continue}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/continue.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Sentencia continue.
+   %~ \item [Tipo:] Sentencia.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ Termina la iteración actual  de un bloque de sentencias iterativo o bloques de sentencias anidados. Adicionalmente
+   %~ es posible indicar, codificado en forma de expresión, un índice que determina la posición del bloque de sentencias iterativa anidado cuya 
+   %~ iteración actual finalizará.
+   %~ \item[Precondiciones:] 
+   %~ La sentencia interpretada es una sentencia continue y se encuentra dentro de un bloque de sentencias iterativo.
+   %~ \item[Postcondiciones:] 
+   %~ La sentencia continue queda interpretada.
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene la expresión correspondiente al índice, que referencia el bloque iterativo que finalizará.
+   %~ \item Include (Expresión).
+   %~ \item El sistema finaliza la iteración actual del bloque de sentencias indicado por el valor de la expresión. 
+   %~ \item El sistema hace que la próxima sentencia sea la correspondiente al fin de iteración del bloque especificado.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se ha facilitado un índice.
+         %~ \begin{enumerate}
+         %~ \item Se toma como índice el valor 0. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{2}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item No se encuentra un bloque de sentencias iterativo en el índice dado.
+         %~ \begin{enumerate}
+         %~ \item El sistema informa del error y finaliza la interpretación del 
+         %~ la sentencia.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+%~ % ----------------------------------------------------------------------
+%~ \subsubsection {Sentencia try...catch [Aún por completar]}
+%~ Aún por completar.
+%~ \subsubsection {Sentencia throw [Aún por completar]}
+%~ Aún por completar.
+%~ \subsubsection {Sentencia with [Aún por completar]}
+%~ Aún por completar.
+%~ 
+%~ \pagebreak
+%~ 
+%~ \subsection{Definiciones}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/definitions.png} \\
+%~ \end{center}
+%~ \subsubsection {Variable}
+%~ \begin{center}
+%~ \includegraphics[scale=0.4]{analysis/id.png} \\
+%~ \end{center}
+%~ \begin{framed}
+%~ \FloatBarrier
+%~ \begin{description}
+   %~ \item[Caso de Uso:]  Variable.
+   %~ \item [Tipo:] Expresiones.
+   %~ \item[Nivel:]  Subfunción.
+   %~ \item[Descripción:] 
+   %~ El sistema valora la expresión accediendo al valor guardado en la variable que se corresponde con el identificador 
+   %~ codificado.
+   %~ \item[Precondiciones:] 
+   %~ El sistema se encuentra valorando una expresión.
+   %~ \item[Postcondiciones:] 
+   %~ A la expresión se le atribuye el valor asociado con el identificador. 
+   %~ \item[Escenario principal:] \hfill
+   %~ \begin{enumerate}
+   %~ \item El sistema obtiene el valor asociado al identificador codificado y se lo atribuye 
+   %~ a la expresión.
+   %~ \end{enumerate}
+   %~ \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{0}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El identificador no tiene valor asociado.
+         %~ \begin{enumerate}
+         %~ \item Se toma valor nulo. 
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+%~ \end{description}
+ %~ \FloatBarrier
+%~ \end{framed}
+
+
+\subsubsection{Iniciar interpretación red} 
+
+\begin{description}
+   \item[Caso de Uso:]  Iniciar interpretación red 
+   \item [Tipo:] Red
+   \item[Descripción:] 
+   Un sistema externo inicia una interpretación por red, estableciendo el contenido fuente que será interpretado.
+   El sistema procesa la petición y abre un nuevo proceso de interpretación por pasos.
+   \item[Precondiciones:] 
+   No tiene. 
+   \item[Postcondiciones:] 
+   Se establece el código fuente a interpretar y se inicia una interpretación por pasos.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El sistema espera una petición de interpretación por red.
+   \item El sistema externo inicia la comunicación y facilita el código fuente.
+   \item El sistema establece el código fuente y abre un nuevo proceso de interpretación por pasos. 
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{3}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El código fuente no presenta una sintaxis OMI correcta.
+         %~ \begin{enumerate}
+         %~ \item Se devuelve un estado de error.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{0}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Obtener pasos interpretación red} 
+
+\begin{description}
+   \item[Caso de Uso:]  Obtener pasos interpretación red 
+   \item [Tipo:] Red
+   \item[Descripción:] 
+   Un sistema externo obtiene un nuevo estado dentro de los pasos en el proceso de
+   interpretación del código fuente establecido.
+   \item[Precondiciones:] 
+   Se ha establecido código fuente para una interpretación por pasos.
+   \item[Postcondiciones:] 
+   Se lleva a cabo un nuevo paso dentro del proceso de interpretación. Obteniéndose el 
+   siguiente estado.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El sistema espera la petición de un nuevo paso en una iterpretación por red.
+   \item El sistema externo realiza la petición de un nuevo paso.
+   \item Incluir (Interpretar).
+   \item El sistema devuelve una estructura de datos que representa 
+   el estado actual del proceso de interpretación.
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   %~ \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   %~ \setcounter{enumi}{3}
+   %~ \renewcommand{\labelenumi}{}
+   %~ \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   %~ \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      %~ \item 
+      %~ \begin {enumerate}
+         %~ \setcounter{enumii}{0}
+         %~ \item El código fuente no presenta una sintaxis OMI correcta.
+         %~ \begin{enumerate}
+         %~ \item Se devuelve un estado de error.
+         %~ \end{enumerate}
+      %~ \end{enumerate}
+   %~ \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{0}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{2}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El código fuente presenta errores sintáctico o léxicos.
+         \begin{enumerate}
+         \item Se devuelve un estado de error. 
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+
+% ----------------------------------------------------------------------
+\subsection {runTree}
+\begin{center}
+\includegraphics[scale=0.5]{analysis/runtree.png}
+\captionof{figure}{Casos de usos runTree}
+\end{center}
+\subsubsection{Enviar código fuente} 
+
+\begin{description}
+   \item[Caso de Uso:]  Enviar código fuente 
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario envía  texto correspondiente a código fuente para su interpretación y análisis. 
+   El sistema cliente envía el código al servidor que lo establecerá como fuente a interpretar y enviará
+   datos relativos al proceso.
+   El cliente imprime el árbol sintáctico y espera acciones del usuario.
+   \item[Precondiciones:] 
+   No tiene.
+   \item[Postcondiciones:] 
+   Se ha establecido el código fuente para el análisis del proceso de interpretación y se ha imprimido el árbol sintáctico. 
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El sistema solicita  código fuente escrito en OMI.
+   \item El usuario introduce código fuente escrito en el lenguaje OMI.
+   \item El sistema cliente runtree envía el código fuente al servidor para su interpretación.
+   \item El sistema servidor devuelve una representación de los datos que describen el árbol sintáctico relativo al código fuente enviado.
+   \item El sistema cliente imprime el árbol sintáctico. 
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{3}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El código fuente no presenta una sintaxis OMI correcta.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{3}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{1}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Siguiente paso} 
+
+\begin{description}
+   \item[Caso de Uso:] Siguiente paso
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario usuario solicita un nuevo paso en el proceso de interpretación. 
+   El sistema cliente obtiene el nuevo paso del servidor y lo representa en pantalla.
+   \item[Precondiciones:] \hfill 
+   \begin{itemize}
+   \item Existe un código fuente establecido para estudio. 
+   \item El estado actual del proceso no es final.
+   \item La ejecución automática se encuentra desactivada. 
+   \end{itemize}
+   \item[Postcondiciones:] 
+   Se representa en nuevo paso. 
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario solicita un nuevo paso en el proceso de interpretación
+   \item El sistema cliente solicita la resolución de un nuevo paso y representa
+   el nuevo estado en pantalla. 
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Siguiente sentencia} 
+
+\begin{description}
+   \item[Caso de Uso:] Siguiente sentencia
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita la resolución de la siguiente sentencia. 
+   El sistema cliente obtiene el estado correspondiente a la interpretación de la siguiente sentencia 
+   dentro del proceso de interpretación y lo representa en pantalla.
+  \item[Precondiciones:] \hfill 
+   \begin{itemize}
+   \item Existe un código fuente establecido para estudio. 
+   \item El estado actual del proceso no es final.
+   \item La ejecución automática se encuentra desactivada. 
+   \end{itemize}
+   \item[Postcondiciones:] 
+   Se representa en nuevo estado correspondiente a la interpretación de una sentencia completa. 
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario solicita la resolución de una nueva senterncia en el proceso de interpretación.
+   \item El sistema cliente solicita la resolución de la sentencia completa y representa
+   el nuevo estado en pantalla. 
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Activar ejecución automática} 
+
+\begin{description}
+   \item[Caso de Uso:] Activar ejecución automática
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita la ejecución automática. 
+   El sistema cliente obtiene y representa cada paso dentro del proceso 
+   de interpretación hasta obtenerse un estado final.
+   \item[Precondiciones:] \hfill 
+   \begin{itemize}
+   \item Existe un código fuente establecido para estudio. 
+   \item El estado actual del proceso no es final.
+   \item La ejecución automática se encuentra desactivada. 
+   \end{itemize}
+   \item[Postcondiciones:] 
+   Se obtiene un estado final.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario activa la ejecución automática.
+   \item El sistema obtiene y representa cada paso en el proceso de interpretación hasta que se 
+   obtiene un estado final.
+   \end{enumerate}
+   \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{0}
+         \item El servicio no se encuentra disponible.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Desactivar ejecución automática} 
+
+\begin{description}
+   \item[Caso de Uso:] Desactivar ejecución automática
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita la detención de la ejecución automática. 
+   El sistema cliente detiene la ejecución automática y representa el estado actual.
+   \item[Precondiciones:] \hfill 
+   \begin{itemize}
+   \item Existe un código fuente establecido para estudio. 
+   \item El estado actual del proceso no es final.
+   \item La ejecución automática se encuentra activada.
+   \end{itemize}
+   \item[Postcondiciones:] 
+   Se obtiene el estado actual del proceso.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario desactiva la ejecución automática.
+   \item El sistema cliente para la ejecución automática y representa el estado actual 
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Limpiar salida} 
+
+\begin{description}
+   \item[Caso de Uso:] Limpiar salida
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita la limpieza de los datos de salida. 
+   El sistema cliente elimina la información disponible en la consola de salida.
+   \item[Precondiciones:]
+   No tiene.
+   \item[Postcondiciones:] 
+   La consola de salida queda vacía.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario solicita la limpieza de la salida.
+   \item El sistema cliente limpia la información disponible en la consola de salida.  
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Ver información de nodo} 
+
+\begin{description}
+   \item[Caso de Uso:] Ver información de nodo.
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario marca un nodo para ver su información.  
+   El sistema cliente muestra la información relativa al nodo.
+   \item[Precondiciones:]
+   Existe un código fuente establecido para estudio. 
+   \item[Postcondiciones:] 
+   Se muestra información relativa al nodo.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario marca un nodo para ver su información.
+   \item El sistema muestra información relativa al nodo tal como su 
+   posición de memoria interna, su tamaño, su tipo y su nombre.  
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Ver contenido de la tabla de símbolos} 
+
+\begin{description}
+   \item[Caso de Uso:] Ver contenido de la tabla de símbolos.
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario marca una tabla de símbolos para ver su contenido.  
+   El sistema cliente muestra la información relativa a la tabla de símbolos.
+   \item[Precondiciones:]
+   Existe un código fuente establecido para estudio. 
+   \item[Postcondiciones:] 
+   Se muestra información relativa a la tabla de símbolos.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario indica una tabla de símbolos para ver su contenido.
+   \item El sistema cliente muestra los nodos referenciados desde la tabla de
+   símbolos dada.
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Guardar código fuente} 
+
+\begin{description}
+   \item[Caso de Uso:] Guardar código fuente.
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita guardar el código fuente escrito en un fichero local y el cliente
+   abre el cuadro de diálogo correspondiente.
+   \item[Precondiciones:]
+   Existe un código escrito en el cliente 
+   \item[Postcondiciones:] 
+   Se guarda el código fuente en un fichero local.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario solicita guardar el código fuente en un fichero local.
+   \item El sistema abre el cuadro de diálogo correspondiente.
+   \end{enumerate}
+\end{description}
+
+
+\subsubsection{Abrir código fuente} 
+
+\begin{description}
+   \item[Caso de Uso:] Abrir código fuente.
+   \item [Tipo:] runTree
+   \item[Descripción:] 
+   El usuario solicita cargar código fuente desde un fichero local.
+   \item[Precondiciones:]
+   No tiene.
+   \item[Postcondiciones:] 
+   Se carga el código fuente contenido en el fichero.
+   \item[Escenario principal:] \hfill
+   \begin{enumerate}
+   \item El usuario solicita abrir un fichero de código fuente.
+   \item El sistema abre el cuadro de diálogo correspondiente.
+   \item El sistema carga el contenido del código fuente.
+   \end{enumerate}
+    \item[Flujo alternativo:] \hfill 
+   \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+   \setcounter{enumi}{1}
+   \renewcommand{\labelenumi}{}
+   \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+   \renewcommand{\labelenumii}{\arabic{enumi}\alph{enumii}.}
+      \item 
+      \begin {enumerate}
+         \setcounter{enumii}{2}
+         \item El fichero no contiene código en texto plano.
+         \begin{enumerate}
+         \item Se devuelve un estado de error.
+         \end{enumerate}
+      \end{enumerate}
+   \end{enumerate}
+\end{description}
+
+
+
+% ======================================================================
+\section{Comportamiento del sistema}
+Partiendo de los casos de usos se presentan los diagramas de secuencias que modelan 
+los eventos que el sistema puede recibir del usuario y los valores de retorno
+que produce como consecuencia de estos.  Esta sección considera tanto al sistema intérprete
+como el cliente.
+
+A partir de los diagramas de secuencia del sistema se obtienen las operaciones 
+que este presenta. Luego se describen los contratos de cada una de las operaciones.  
+% ======================================================================
+\section{Diagramas de secuencia del sistema}
+\subsection{Intérprete}
+
+\begin{multicols}{2}
+%~ \subsubsection{Interpretar entrada estándar}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/interpretar_stdin.png} 
+\captionof{figure}{ Secuencia interpretar entrada estándar}
+\end{center}
+\columnbreak
+%~ \subsubsection{Interpretar línea}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/interpretar_line.png} 
+\captionof{figure}{Secuencia interpretar línea}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Interpretar fichero}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/interpretar_file.png} 
+\captionof{figure}{Secuencia interpretar fichero}
+\end{center}
+\columnbreak
+%~ \subsubsection{Ver ayuda}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/ver_ayuda.png} 
+\captionof{figure}{Secuencia ver ayuda}
+\end{center}
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+%~ \subsubsection{Cargar extensión}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/cagar_extension.png} 
+\captionof{figure}{Secuencia cargar extensión}
+\end{center}
+\columnbreak
+%~ \subsubsection{Listar extensiones}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/listar_extensiones.png} 
+\captionof{figure}{Secuencia listar extensiones}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Iniciar interpretación red}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/iniciar_interpretacion_red.png} 
+\captionof{figure}{Secuencia iniciar interpretación red}
+\end{center}
+\columnbreak
+%~ \subsubsection{Obtener pasos interpretación red}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/obtener_paso_interpretacion_red.png} 
+\captionof{figure}{Secuencia obtener pasos interpretación red}
+\end{center}
+\end{multicols}
+
+\subsection{runTree}
+
+\begin{multicols}{2}
+%~ \subsubsection{Enviar código fuente}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/enviar_codigo_fuente.png} 
+\captionof{figure}{Secuencia enviar código fuente}
+\end{center}
+\columnbreak
+%~ \subsubsection{Siguiente paso}
+\begin{center}
+\includegraphics[scale=0.35]{analysis/siguiente_paso.png} 
+\captionof{figure}{Secuencia siguiente paso}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Siguiente sentencia}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/siguiente_sentencia.png} 
+\captionof{figure}{Secuencia siguiente sentencia}
+\end{center}
+\columnbreak
+%~ \subsubsection{Activar ejecución automática}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/activar_ejecucion_automatica.png} 
+\captionof{figure}{Secuencia activar ejecución automática}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Desactivar ejecución automática}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/desactivar_ejecucion_automatica.png} 
+\captionof{figure}{Secuencia desactivar ejecución automática}
+\end{center}
+\columnbreak
+%~ \subsubsection{Limpiar salida}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/limpiar_salida.png} 
+\captionof{figure}{Secuencia limpiar salida}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Ver información de nodo}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/ver_info_nodo.png} 
+\captionof{figure}{Secuencia ver información de nodo}
+\end{center}
+\columnbreak
+%~ \subsubsection{Ver contenido tabla de símbolo}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/ver_tabla_simbolos.png} 
+\captionof{figure}{Secuencia ver contenido tabla de símbolo}
+\end{center}
+\end{multicols}
+
+\begin{multicols}{2}
+%~ \subsubsection{Guardar código fuente}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/guardar_codigo_fuente.png} 
+\captionof{figure}{Secuencia guardar código fuente}
+\end{center}
+\columnbreak
+%~ \subsubsection{Abrir código fuente}
+\begin{center}
+\includegraphics[scale=0.4]{analysis/abrir_codigo_fuente.png} 
+\captionof{figure}{Secuencia abrir código fuente}
+\end{center}
+\end{multicols}
+
+\section{Contratos de operaciones del sistema}
+En esta sección se listan las operaciones del sistema y se detallan los contratos de aquellas
+que implican un cambio en la estructura de datos interna del programa. 
+
+\subsection{Intérprete}
+\begin{center}
+\includegraphics[scale=0.7]{analysis/operaciones_sistema.png} 
+\captionof{figure}{Contrato de operaciones intérprete}
+\end{center}
+\subsubsection{Operación inicio\_interprete\_stdin}
+
+	\begin{description}
+		\item [Nombre:] inicio\_interprete\_stdin(args)
+		\item [Responsabilidades:] Iniciar la interpretación de la entrada estándar.
+		\item [Referencias Cruzadas: ] Caso de Uso: Interpretar entrada estándar
+      \item [Precondiciones:] No tiene.
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó una instancia ``i'' de ``interpreter'' (creación de objeto).
+         \item Se inicializaron los atributos de ``i''.
+         \item Se crearon las instancias ``$a_0...a_n$'' de ``arg'' por cada argumento en ``args'' (creación de objeto).
+         \item Se asignó ``args$_i$'' a ``$a_i.value$'' ($a_i.value = $args$_i$) (modificación de atributos).
+         \item Se asoció los ``arg'' ``$a_0...a_n$'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``p'' de ``parser'' (creación de objeto).
+         \item Se inicializaron los atributos de ``p''.
+         \item Se creó una instancia ``s'' de ``scanner'' (creación de objeto).
+         \item Se inicializaron los atributos de ``s''.
+         \item Se asoció el ``scanner'' ``s'' al objeto ``p'' de ``parser'' (creación de enlace).
+         \item Se asoció el ``parser'' ``p'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``c'' de ``context'' (creación de objeto).
+         \item Se inicializaron los atributos de ``c''.
+         \item Se creó una instancia ``var'' de ``varSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``var''.
+         \item Se asoció el ``varSymbols'' ``var'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``func'' de ``funcSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``func''.
+         \item Se asoció el ``funcSymbols'' ``func'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``class'' de ``classSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``class''.
+         \item Se asoció el ``classSymbols'' ``class'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se asoció el ``context'' ``c'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación inicio\_interprete\_linea}
+
+	\begin{description}
+		\item [Nombre:] inicio\_interprete\_linea(args)
+		\item [Responsabilidades:] Iniciar la interpretación interactiva línea a línea.
+		\item [Referencias Cruzadas: ] Caso de Uso: Interpretar línea
+      \item [Precondiciones:] No tiene.
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó una instancia ``i'' de ``interpreter'' (creación de objeto).
+         \item Se inicializaron los atributos de ``i''.
+         \item Se crearon las instancias ``$a_0...a_n$'' de ``arg'' por cada argumento en ``args'' (creación de objeto).
+         \item Se asignó ``args$_i$'' a ``$a_i.value$'' ($a_i.value = $args$_i$) (modificación de atributos).
+         \item Se asoció los ``arg'' ``$a_0...a_n$'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``p'' de ``parser'' (creación de objeto).
+         \item Se inicializaron los atributos de ``p''.
+         \item Se creó una instancia ``s'' de ``scanner'' (creación de objeto).
+         \item Se inicializaron los atributos de ``s''.
+         \item Se asoció el ``scanner'' ``s'' al objeto ``p'' de ``parser'' (creación de enlace).
+         \item Se asoció el ``parser'' ``p'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``c'' de ``context'' (creación de objeto).
+         \item Se inicializaron los atributos de ``c''.
+         \item Se creó una instancia ``var'' de ``varSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``var''.
+         \item Se asoció el ``varSymbols'' ``var'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``func'' de ``funcSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``func''.
+         \item Se asoció el ``funcSymbols'' ``func'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``class'' de ``classSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``class''.
+         \item Se asoció el ``classSymbols'' ``class'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se asoció el ``context'' ``c'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación interpretar\_cadena}
+
+	\begin{description}
+		\item [Nombre:] interpretar\_cadena(str)
+		\item [Responsabilidades:] Interpreta el contenido fuente almacenado en la cadena ``str''
+		\item [Referencias Cruzadas: ] \hfill
+      \begin {itemize}
+      \item Caso de Uso: Interpretar entrada estándar 
+      \item Caso de Uso: Interpretar línea
+      \end{itemize}
+      \item [Precondiciones:] \hfill
+      \begin {itemize}
+      \item Se creó un ``interpreter'' ``i''.
+      \item Se creó y asoció una instancia de ``parser'' y ``scanner'' a ``i''.
+      \item Se creó y asoció una instancia de ``varSymblos'', ``funcSymbols'' y ``classSymbols'' a ``i''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó una instancia ``s'' de ``source'' (creación de objeto).
+         \item Se asignó ``str'' a ``s.src'' (s.src = str) (modificación de atributos)
+         \item Se asoció ``s'' al ``scanner'' componente del ``interpreter'' ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$t_0...t_n$'' de ``token'' a partir del análisis léxico (creación de objeto).
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``runNode'' a partir del análisis sintáctico (creación de objetos).
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico (creación de enlace).
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``interprter'' ``i'' (creación de enlace).
+         %~ \item Se asignó cada valor ``$v_i$'', dado por la ejecución de ``$e_i\ \epsilon\ n_0...n_n$'' objeto de ``expNode'', a ``$e_i$.val'' ($e_i$.val = $v_i$)(modificación de atributos) 
+         \item Se creó un conjunto ``$var_0...var_n$'' de ``refNode'' correspondientes a las variables definidas en el contenido fuente (creación de objetos).
+         \item Se creó un conjunto ``$val_0...val_n$'' de ``runNode'' correspondientes a los valores asignados a las variables definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$val_i\ \epsilon\ val_0...val_n$'' a  ``$var_i\ \epsilon\ var_0...var_n$'' donde $val_i$ es el valor de la variable $var_i$ (creación de enlace). 
+         \item Se asoció todo ``refNode'' ``$var_0...var_n$'' al componente ``varSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$func_0...func_n$'' de ``refNode'' correspondientes a las funciones con identificador definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$func_i\ \epsilon\ func_0...func_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``funcNode'' correspondiente a la definición de la función $func_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$func_0...func_n$'' al componente ``funcSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$class_0...class_n$'' de ``refNode'' correspondientes a las clases definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$class_i\ \epsilon\ class_0...class_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``classNode'' correspondiente a la definición de la clase $class_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$class_0...class_n$'' al componente ``classSymbols'' de ``i'' (creación de enlace). 
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación interpretar\_fichero}
+
+	\begin{description}
+		\item [Nombre:] interpretar\_fichero(fichero, args)
+		\item [Responsabilidades:] Interpreta el contenido fuente almacenado en ``fichero''
+		\item [Referencias Cruzadas: ] Caso de Uso: Interpretar fichero
+      \item [Precondiciones:] No tiene.
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó una instancia ``i'' de ``interpreter'' (creación de objeto).
+         \item Se inicializaron los atributos de ``i''.
+         \item Se creó el conjunto ``$a_0...a_n$'' de ``arg'' según el número de argumentos en ``args'' (creación de objeto).
+         \item Se asignó ``args$_i$'' a ``$a_i.value$'' ($a_i.value = $args$_i$) (modificación de atributos).
+         \item Se asoció los ``arg'' ``$a_0...a_n$'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``p'' de ``parser'' (creación de objeto).
+         \item Se inicializaron los atributos de ``p''.
+         \item Se creó una instancia ``s'' de ``scanner'' (creación de objeto).
+         \item Se inicializaron los atributos de ``s''.
+         \item Se asoció el ``scanner'' ``s'' al objeto ``p'' de ``parser'' (creación de enlace).
+         \item Se asoció el ``parser'' ``p'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``c'' de ``context'' (creación de objeto).
+         \item Se inicializaron los atributos de ``c''.
+         \item Se creó una instancia ``var'' de ``varSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``var''.
+         \item Se asoció el ``varSymbols'' ``var'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``func'' de ``funcSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``func''.
+         \item Se asoció el ``funcSymbols'' ``func'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``class'' de ``classSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``class''.
+         \item Se asoció el ``classSymbols'' ``class'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se asoció el ``context'' ``c'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+      
+      
+         \item Se creó una instancia ``src'' de ``source'' (creación de objeto).
+         \item Se asignó el contenido de ``fichero'' a ``src.src'' (src.src = fichero) (modificación de atributos)
+         \item Se asoció ``src'' al ``scanner'' ``s'' componente del ``interpreter'' ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$t_0...t_n$'' de ``token'' a partir del análisis léxico (creación de objeto).
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``runNode'' a partir del análisis sintáctico (creación de objetos).
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico (creación de enlace).
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``interprter'' ``i'' (creación de enlace).
+         %~ \item Se asignó cada valor ``$v_i$'', dado por la ejecución de ``$e_i\ \epsilon\ n_0...n_n$'' objeto de ``expNode'', a ``$e_i$.val'' ($e_i$.val = $v_i$)(modificación de atributos) 
+         \item Se creó un conjunto ``$var_0...var_n$'' de ``refNode'' correspondientes a las variables definidas en el contenido fuente (creación de objetos).
+         \item Se creó un conjunto ``$val_0...val_n$'' de ``runNode'' correspondientes a los valores asignados a las variables definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$val_i\ \epsilon\ val_0...val_n$'' a  ``$var_i\ \epsilon\ var_0...var_n$'' donde $val_i$ es el valor de la variable $var_i$ (creación de enlace). 
+         \item Se asoció todo ``refNode'' ``$var_0...var_n$'' al componente ``varSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$func_0...func_n$'' de ``refNode'' correspondientes a las funciones con identificador definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$func_i\ \epsilon\ func_0...func_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``funcNode'' correspondiente a la definición de la función $func_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$func_0...func_n$'' al componente ``funcSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$class_0...class_n$'' de ``refNode'' correspondientes a las clases definidas en el contenido fuente (creación de objetos).
+         \item Se asoció ``$class_i\ \epsilon\ class_0...class_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``classNode'' correspondiente a la definición de la clase $class_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$class_0...class_n$'' al componente ``classSymbols'' de ``i'' (creación de enlace). 
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación iniciar\_interpretacion\_red}
+
+	\begin{description}
+		\item [Nombre:] iniciar\_interpretacion\_red (src)
+		\item [Responsabilidades:] Iniciar la interpretación de una petición por red.
+		\item [Referencias Cruzadas: ] Caso de Uso: Iniciar interpretación red
+      \item [Precondiciones:] No tiene.
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó una instancia ``i'' de ``interpreter'' (creación de objeto).
+         \item Se inicializaron los atributos de ``i''.
+         \item Se creó una instancia ``p'' de ``parser'' (creación de objeto).
+         \item Se inicializaron los atributos de ``p''.
+         \item Se creó una instancia ``s'' de ``scanner'' (creación de objeto).
+         \item Se inicializaron los atributos de ``s''.
+         \item Se asoció el ``scanner'' ``s'' al objeto ``p'' de ``parser'' (creación de enlace).
+         \item Se asoció el ``parser'' ``p'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``c'' de ``context'' (creación de objeto).
+         \item Se inicializaron los atributos de ``c''.
+         \item Se creó una instancia ``var'' de ``varSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``var''.
+         \item Se asoció el ``varSymbols'' ``var'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``func'' de ``funcSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``func''.
+         \item Se asoció el ``funcSymbols'' ``func'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se creó una instancia ``class'' de ``classSymbols'' (creación de objeto).
+         \item Se inicializaron los atributos de ``class''.
+         \item Se asoció el ``classSymbols'' ``class'' al objeto ``c'' de ``context'' (creación de enlace).
+         \item Se asoció el ``context'' ``c'' al objeto ``i'' de ``interpreter'' (creación de enlace).
+         \item Se creó una instancia ``src'' de ``source'' (creación de objeto).
+         \item Se asignó el contenido de ``fichero'' a ``src.src'' (src.src = fichero) (modificación de atributos)
+         \item Se asoció ``src'' al ``scanner'' ``s'' componente del ``interpreter'' ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$t_0...t_n$'' de ``token'' a partir del análisis léxico (creación de objeto).
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``runNode'' a partir del análisis sintáctico (creación de objetos).
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico (creación de enlace).
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``interprter'' ``i'' (creación de enlace).
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación obtener\_paso\_interpretacion\_red}
+
+	\begin{description}
+		\item [Nombre:] obtener\_paso\_interpretacion\_red
+		\item [Responsabilidades:] Obtiene el siguiente paso de la interpretación de una petición por red abierta.
+		\item [Referencias Cruzadas: ] Caso de Uso: Obtener pasos interpretación red
+      \item [Precondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó un ``interpreter'' ``i''.
+         \item Se creó y asoció una instancia de ``parser'' y ``scanner'' a ``i''.
+         \item Se creó y asoció una instancia de ``varSymblos'', ``funcSymbols'' y ``classSymbols'' a ``i''.
+         \item Se creó una instancia ``src'' de ``source''.
+         \item Se asoció ``src'' al ``scanner'' ``s'' componente del ``interpreter'' ``i''. 
+         \item Se creó un conjunto ``$t_0...t_n$'' de ``token'' a partir del análisis léxico.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``runNode'' a partir del análisis sintáctico.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``interprter'' ``i''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó un conjunto ``$var_0...var_n$'' de ``refNode'' correspondientes a las variables definidas en el paso correspondiente (creación de objetos).
+         \item Se creó un conjunto ``$val_0...val_n$'' de ``runNode'' correspondientes a los valores asignados a las variables definidas en el paso correspondiente (creación de objetos).
+         \item Se asoció ``$val_i\ \epsilon\ val_0...val_n$'' a  ``$var_i\ \epsilon\ var_0...var_n$'' donde $val_i$ es el valor de la variable $var_i$ (creación de enlace). 
+         \item Se asoció todo ``refNode'' ``$var_0...var_n$'' al componente ``varSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$func_0...func_n$'' de ``refNode'' correspondientes a las funciones con identificador definidas en el paso correspondiente (creación de objetos).
+         \item Se asoció ``$func_i\ \epsilon\ func_0...func_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``funcNode'' correspondiente a la definición de la función $func_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$func_0...func_n$'' al componente ``funcSymbols'' de ``i'' (creación de enlace). 
+         \item Se creó un conjunto ``$class_0...class_n$'' de ``refNode'' correspondientes a las clases definidas en el paso correspondiente (creación de objetos).
+         \item Se asoció ``$class_i\ \epsilon\ class_0...class_n$'' a  ``$n_i\ \epsilon\ n_0...n_n$'' donde $n_i$ es un ``classNode'' correspondiente a la definición de la clase $class_i$ (creación de enlaces).
+         \item Se asoció todo ``refNode'' ``$class_0...class_n$'' al componente ``classSymbols'' de ``i'' (creación de enlace). 
+      \end{itemize}
+	\end{description}
+
+% ----------------------------------------------------------------------
+\subsection{runTree}
+\begin{center}
+\includegraphics[scale=0.7]{analysis/operaciones_sistema_runtree.png} 
+\captionof{figure}{Contrato de operaciones runTree}
+\end{center}
+\subsubsection{Operación enviar\_codigo\_fuente}
+
+	\begin{description}
+		\item [Nombre:] enviar\_codigo\_fuente (src)
+		\item [Responsabilidades:] Envía código fuente para una interpretación por red.
+		\item [Referencias Cruzadas: ] Caso de Uso: Enviar código fuente
+      \item [Precondiciones:] No tiene.
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó un ``tree'' ``t'' a partir del código enviado a interpretación (creación de objeto).
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node'' a partir de los datos recibidos de la petición (creación de objeto).
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico (creación de enlace).
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t'' (creación de enlace).
+         \item Se inicializó el atributo ``canvas'' del ``tree'' `t'' para dibujar el árbol correspondiente a los nodos ``$\ n_0...n_n$''.
+         \item Se creó un ``symbols'' ``s'' (creación de objeto).
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class'' (creación de objeto).
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s'' (creación de enlace).
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación siguiente\_paso}
+
+	\begin{description}
+		\item [Nombre:] siguiente\_paso
+		\item [Responsabilidades:] Obtiene el siguiente paso del proceso de interpretación abierto.
+		\item [Referencias Cruzadas: ] Caso de Uso: Siguiente paso
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó el conjunto ``$r_0...r_n$'' de `refs'' según el nuevo paso del proceso de interpretación (creación de objeto).
+         \item Se creó el conjunto ``$v_0...v_m$'' de `node'' correspondiente a los valores generados en el paso del proceso de interpretación (creación de objeto).
+         \item Se asoció ``$v_i$'' a ``$r_i$'' como valor de la referecia (creación de enlace).
+         \item Se asoció ``$r_i\ \epsilon \ r_0...r_n$'' a ``vars'', ``funcs'' o ``class'' según el paso del proceso de interpretación (creación de enlace).  
+         \item Se actualizó el valor del atributo ``canvas'' de ``s'' para reflejar el nuevo estado tras la ejecución del paso.
+         \item Se actualizó el valor del atributo ``canvas'' de ``t'' para reflejar el nuevo estado tras la ejecución del paso.
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación siguiente\_sentencia}
+
+	\begin{description}
+		\item [Nombre:] siguiente\_sentencia
+		\item [Responsabilidades:] Obtiene la siguiente sentencia dentro del proceso de interpretación abierto.
+		\item [Referencias Cruzadas: ] Caso de Uso: Siguiente sentencia
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se creó el conjunto ``$r_0...r_n$'' de `refs'' según la nueva sentencia interpretada (creación de objeto).
+         \item Se creó el conjunto ``$v_0...v_m$'' de `node'' correspondiente a los valores generados en la sentencia  interpretada (creación de objeto).
+         \item Se asoció ``$v_i$'' a ``$r_i$'' como valor de la referecia (creación de enlace).
+         \item Se asoció ``$r_i\ \epsilon \ r_0...r_n$'' a ``vars'', ``funcs'' o ``class'' según la sentencia interpretada (creación de enlace).  
+         \item Se actualizó el valor del atributo ``canvas'' de ``s'' para reflejar el nuevo estado tras la ejecución de la sentencia.
+         \item Se actualizó el valor del atributo ``canvas'' de ``t'' para reflejar el nuevo estado tras la ejecución del la sentencia.
+      \end{itemize}
+	\end{description}
+
+
+\subsubsection{Operación activar\_ejecucion\_automatica}
+
+	\begin{description}
+		\item [Nombre:] activar\_ejecucion\_automatica
+		\item [Responsabilidades:] Activa la ejecución automática del proceso de interpretación.
+		\item [Referencias Cruzadas: ] Caso de Uso: Activar ejecución automática
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se establece a ``1'' el atributo ``auto'' de ``t''.
+      \end{itemize}
+	\end{description} 
+
+
+\subsubsection{Operación desactivar\_ejecucion\_automatica}
+
+	\begin{description}
+		\item [Nombre:] desactivar\_ejecucion\_automatica
+		\item [Responsabilidades:] Desactiva la ejecución automática del proceso de interpretación.
+		\item [Referencias Cruzadas: ] Caso de Uso: Desactivar ejecución automática
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se establece a ``0'' el atributo ``auto'' de ``t''.
+      \end{itemize}
+	\end{description} 
+
+
+\subsubsection{Operación limpiar\_salida}
+
+	\begin{description}
+		\item [Nombre:] limpiar\_salida
+		\item [Responsabilidades:] Limpia la salida producida por el proceso de interpretación
+		\item [Referencias Cruzadas: ] Caso de Uso: Limpiar salida
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se restablece los valores del atributo ``canvas'' de ``t''.
+      \end{itemize}
+	\end{description} 
+
+
+\subsubsection{Operación ver\_informacion\_nodo}
+
+	\begin{description}
+		\item [Nombre:] ver\_informacion\_nodo
+		\item [Responsabilidades:] Muestra la información de un nodo
+		\item [Referencias Cruzadas: ] Caso de Uso: Ver información nodo
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se establece los valores del atributo ``canvas'' de ``t'' para representar la información del nodo.
+      \end{itemize}
+	\end{description} 
+
+
+\subsubsection{Operación ver\_tabla\_simbolos}
+
+	\begin{description}
+		\item [Nombre:] ver\_tabla\_simbolos
+		\item [Responsabilidades:] Muestra la información contenida en una tabla de símbolos
+		\item [Referencias Cruzadas: ] Caso de Uso: Ver información nodo
+      \item [Precondiciones:] \hfill
+         \begin {itemize}
+         \item Se creó un ``tree'' ``t''.
+         \item Se creó un conjunto ``$n_0...n_n$'' de ``node''.
+         \item Se asoció ``$n_i\ \epsilon\ n_0...n_n$'' a ``$n_k\ \epsilon\ n_0...n_n$'' para construir el árbol sintáctico.
+         \item Se asoció  ``$n_r\ \epsilon\ n_0...n_n$'', raíz del árbol sintáctico, al ``tree'' ``t''.
+         \item Se creó un ``symbols'' ``s''.
+         \item Se creó tres instancias de ``table'': ``vars'', ``funcs'' y ``class''.
+         \item Se asociaron ``vars'', ``funcs'' y ``class'' a ``s''.
+      \end{itemize}
+      \item [Postcondiciones:] \hfill
+      \begin {itemize}
+         \item Se establece los valores del atributo ``canvas'' de ``s'' para representar la información de la tabla de símbolos.
+      \end{itemize}
+	\end{description} 
+
+
+
+
+% ======================================================================
+\section{Modelo de interfaz de usuario}
+En esta sección se procede al análisis de la interfaz de usuario. Para ello se analizará la interfaz precisa 
+para el intérprete y para el cliente runTree.
+
+El intérprete utilizará una interfaz de consola de comandos. Toda la información de salida la presentará como 
+cadenas de caracteres. Así mismo toda la información de entrada la tomará del teclado en formato orden y opciones. 
+
+Por otro lado el cliente runTree presentará una interfaz en la que se disponga de una descripción gráfica de todo el proceso 
+de interpretación. Para una descripción del proceso de interpretación se precisa de la visualización del código fuente, un árbol con los nodos
+que encierran el significado semántico del código, las distintas tablas de símbolos que referenciarán a varibles, funciones y clases, y una consola
+en la que se mostrará información textual.
+
+También un diagrama de navegación en el que se expone las distintas ventanas de la web OMI.
+% ======================================================================
+\subsection{Intérprete}
+El interprete será accesible como cualquier otro comando de la consola del sistema. Este recibirá una serie de opciones y parámetros. 
+Las opciones del intérprete tendrán los siguientes propósitos:
+\begin{itemize}
+\item Determinar cómo se toma el código fuente, pudiéndo ser desde la entrada estándar, un fichero o la propia línea de comandos
+\item Ejecutar el intérprete de forma interactiva, mostrando un prompt en el que se introduzca directamente las sentencias
+\item Listar y cargar los módulos del intérprete.
+\item Ver la ayuda.
+\item Abrir un puerto de escucha para peticiones de red.
+\item Configurar el formato de la salida que describe el proceso de interpretación.
+\end{itemize}
+
+Como cualquier interprete que tome su entrada de la estrada estándar, el interprete OMI puede ser ejecutado por el 
+sistema operativo si se indica al comienzo de un script como el shebang del mismo. 
+% ======================================================================
+\subsection{runTree}
+El cliente runTree será accesible desde un navegador web, y presentará una interfaz gráfica compatible con las versiones actuales de estos.
+La interfaz gráfica del cliente deberá contener la siguiente información:
+
+\begin{itemize}
+\item El código fuente introducido por el usuario y que será enviado a interpretar. \\
+\item El árbol de nodos resultado del análisis léxico y sintáctico. \\
+\item Las distintas tablas de símbolos que guardarán información sobre las variables, las funciones y las clases que serán creadas. \\
+\item La explicación del proceso semántico llevado a cabo.  \\
+\item La salida producida como fruto de la ejecución del código fuente. \\
+\item La entrada introducida por el usuario y que ha sido solicitada por el código fuente. \\
+\item Información relativa a los nodos y tablas de símbolos que el usuario señale.
+\end{itemize} 
+
+%~ \subsubsection{Wireframe}
+\begin{center}
+\includegraphics[scale=1]{analysis/wireframe_runtree.png} 
+\captionof{figure}{Interfaz de usuario runTree}
+\end{center}
+
+\subsection{Sitio web}
+El proyecto OMI incluye un sitio web que sirve como presentación del mismo, además de como medio de acceso a la documentación 
+y el software desarrollado. Todas las páginas web pertenecientes al sitio contienen información relativa al proyecto y a las áreas que este
+ocupa. 
+
+\pagebreak
+
+El sitio web OMI se compone de: 
+
+\begin{description}
+\item [Página de inicio:] Describe e introduce brevemente el proyecto. Contiene enlaces a las demás secciones del sitio web. Además presenta un
+listado de noticias y enlaces de descargas a la última versión del intérprete.
+\item [Índice de documentación:] Página que representa un índice de los documentos que conforman el proyecto.
+\item [Documentos:] Páginas relativas a la documentación del proyecto en si.
+\item [Navegador de clases:] Páginas relativas a la documentación de las clases incluidas en la biblioteca. 
+\item [Navegador de ficheros:] Páginas relativas a la documentación de los ficheros que conforman 
+el código fuente de la biblioteca y el intérprete.
+\item [Navegador de gramática:] Páginas relativas a la documentación gráfica de la gramática del lenguaje.
+\item [Descargas:] Página que enlaza la descarga de las distintas versiones del software que conforma el proyecto, disponibles en varios formatos de instalación.
+\item [Sobre OMI:] Página con información relativa a la motivación y circunstancias en las que se ha dado el proyecto. Además da detalles sobre los autores y los
+organismos implicados en el desarrollo del mismo.
+\item [Contacto:] Página con información de contacto.
+\end{description}
+\pagebreak
+\subsubsection{Wireframe}
+\begin{center}
+\includegraphics[scale=0.3]{analysis/wireframe.png}
+\captionof{figure}{Interfaz de usuario web}
+\end{center}

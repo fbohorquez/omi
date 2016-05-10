@@ -1,0 +1,40 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visi\IeC {\'o}n general}{4}
+\contentsline {section}{\numberline {2}Diagramas de secuencia del sistema}{4}
+\contentsline {subsection}{\numberline {2.1}Int\IeC {\'e}rprete}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}Interpretar entrada est\IeC {\'a}ndar}{4}
+\contentsline {subsubsection}{\numberline {2.1.2}Interpretar l\IeC {\'\i }nea}{5}
+\contentsline {subsubsection}{\numberline {2.1.3}Interpretar fichero}{5}
+\contentsline {subsubsection}{\numberline {2.1.4}Ver ayuda}{6}
+\contentsline {subsubsection}{\numberline {2.1.5}Cargar extensi\IeC {\'o}n}{6}
+\contentsline {subsubsection}{\numberline {2.1.6}Listar extensiones}{7}
+\contentsline {subsubsection}{\numberline {2.1.7}Iniciar interpretaci\IeC {\'o}n red}{7}
+\contentsline {subsubsection}{\numberline {2.1.8}Obtener pasos interpretaci\IeC {\'o}n red}{8}
+\contentsline {subsection}{\numberline {2.2}runTree}{8}
+\contentsline {subsubsection}{\numberline {2.2.1}Enviar c\IeC {\'o}digo fuente}{8}
+\contentsline {subsubsection}{\numberline {2.2.2}Siguiente paso}{9}
+\contentsline {subsubsection}{\numberline {2.2.3}Siguiente sentencia}{9}
+\contentsline {subsubsection}{\numberline {2.2.4}Activar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{10}
+\contentsline {subsubsection}{\numberline {2.2.5}Desctivar ejecuci\IeC {\'o}n autom\IeC {\'a}tica}{10}
+\contentsline {subsubsection}{\numberline {2.2.6}Limpiar salida}{11}
+\contentsline {subsubsection}{\numberline {2.2.7}Ver infomaci\IeC {\'o}n de nodo}{11}
+\contentsline {subsubsection}{\numberline {2.2.8}Ver contenido tabla de s\IeC {\'\i }mbolo}{12}
+\contentsline {subsubsection}{\numberline {2.2.9}Guardar c\IeC {\'o}digo fuente}{12}
+\contentsline {subsubsection}{\numberline {2.2.10}Abrir c\IeC {\'o}digo fuente}{13}
+\contentsline {section}{\numberline {3}Contratos de operaciones del sistema}{13}
+\contentsline {subsection}{\numberline {3.1}Int\IeC {\'e}rprete}{13}
+\contentsline {subsubsection}{\numberline {3.1.1}Operaci\IeC {\'o}n inicio\_interprete\_stdin}{13}
+\contentsline {subsubsection}{\numberline {3.1.2}Operaci\IeC {\'o}n inicio\_interprete\_linea}{15}
+\contentsline {subsubsection}{\numberline {3.1.3}Operaci\IeC {\'o}n interpretar\_cadena}{16}
+\contentsline {subsubsection}{\numberline {3.1.4}Operaci\IeC {\'o}n interpretar\_fichero}{17}
+\contentsline {subsubsection}{\numberline {3.1.5}Operaci\IeC {\'o}n iniciar\_interpretacion\_red}{19}
+\contentsline {subsubsection}{\numberline {3.1.6}Operaci\IeC {\'o}n obtener\_paso\_interpretacion\_red}{21}
+\contentsline {subsection}{\numberline {3.2}runTree}{22}
+\contentsline {subsubsection}{\numberline {3.2.1}Operaci\IeC {\'o}n enviar\_codigo\_fuente}{22}
+\contentsline {subsubsection}{\numberline {3.2.2}Operaci\IeC {\'o}n siguiente\_paso}{23}
+\contentsline {subsubsection}{\numberline {3.2.3}Operaci\IeC {\'o}n siguiente\_sentencia}{24}
+\contentsline {subsubsection}{\numberline {3.2.4}Operaci\IeC {\'o}n activar\_ejecucion\_automatica}{25}
+\contentsline {subsubsection}{\numberline {3.2.5}Operaci\IeC {\'o}n desactivar\_ejecucion\_automatica}{26}
+\contentsline {subsubsection}{\numberline {3.2.6}Operaci\IeC {\'o}n limpiar\_salida}{26}
+\contentsline {subsubsection}{\numberline {3.2.7}Operaci\IeC {\'o}n ver\_informacion\_nodo}{27}
+\contentsline {subsubsection}{\numberline {3.2.8}Operaci\IeC {\'o}n ver\_tabla\_simbolos}{27}

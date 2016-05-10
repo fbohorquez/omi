@@ -1,0 +1,191 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visi\IeC {\'o}n general}{10}{section.1}
+\contentsline {section}{\numberline {2}Situaci\IeC {\'o}n actual}{10}{section.2}
+\contentsline {section}{\numberline {3}Necesidades}{11}{section.3}
+\contentsline {section}{\numberline {4}Objetivos}{12}{section.4}
+\contentsline {section}{\numberline {5}Requisitos funcionales}{13}{section.5}
+\contentsline {subsection}{\numberline {5.1}Interprete}{13}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}L\IeC {\'e}xico}{13}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Gram\IeC {\'a}tica}{13}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Sem\IeC {\'a}ntica}{14}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Comentarios}{14}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Contenido fuente}{15}{subsubsection.5.1.5}
+\contentsline {subsubsection}{\numberline {5.1.6}Entorno}{16}{subsubsection.5.1.6}
+\contentsline {subsubsection}{\numberline {5.1.7}Par\IeC {\'a}metros}{16}{subsubsection.5.1.7}
+\contentsline {subsection}{\numberline {5.2}Ejecuci\IeC {\'o}n}{17}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Sentencias}{17}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Expresiones}{18}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Datos}{19}{subsubsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.4}Operadores}{20}{subsubsection.5.2.4}
+\contentsline {subsection}{\numberline {5.3}Tipos de datos}{21}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Nulo}{21}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}L\IeC {\'o}gico}{22}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Aritm\IeC {\'e}tico}{22}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Cadena de caracteres}{23}{subsubsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.5}Expresiones regulares}{23}{subsubsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.6}Arrays}{24}{subsubsection.5.3.6}
+\contentsline {subsection}{\numberline {5.4}Sentencias de control de flujo}{24}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Inclusi\IeC {\'o}n de ficheros}{24}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Saltar a etiqueta}{25}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}Sentencia if}{25}{subsubsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4}Sentencia switch}{26}{subsubsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.5}Sentencia while}{26}{subsubsection.5.4.5}
+\contentsline {subsubsection}{\numberline {5.4.6}Sentencia do...while}{27}{subsubsection.5.4.6}
+\contentsline {subsubsection}{\numberline {5.4.7}Sentencia for}{27}{subsubsection.5.4.7}
+\contentsline {subsubsection}{\numberline {5.4.8}Sentencia foreach}{28}{subsubsection.5.4.8}
+\contentsline {subsubsection}{\numberline {5.4.9}Sentenci\IeC {\'o}n de iteraci\IeC {\'o}n \IeC {\'a}gil}{29}{subsubsection.5.4.9}
+\contentsline {subsubsection}{\numberline {5.4.10}Sentencia with}{29}{subsubsection.5.4.10}
+\contentsline {subsubsection}{\numberline {5.4.11}Finalizar bloque de sentencias}{30}{subsubsection.5.4.11}
+\contentsline {subsubsection}{\numberline {5.4.12}Finalizar iteraci\IeC {\'o}n}{30}{subsubsection.5.4.12}
+\contentsline {subsubsection}{\numberline {5.4.13}Finalizar ejecuci\IeC {\'o}n}{31}{subsubsection.5.4.13}
+\contentsline {subsubsection}{\numberline {5.4.14}Capturar excepci\IeC {\'o}n}{31}{subsubsection.5.4.14}
+\contentsline {subsubsection}{\numberline {5.4.15}Lanzar excepci\IeC {\'o}n}{31}{subsubsection.5.4.15}
+\contentsline {subsection}{\numberline {5.5}Definiciones}{31}{subsection.5.5}
+\contentsline {subsubsection}{\numberline {5.5.1}Variables}{32}{subsubsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.2}Funciones}{33}{subsubsection.5.5.2}
+\contentsline {paragraph}{\numberline {5.5.2.1}Defici\IeC {\'o}n de funci\IeC {\'o}n}{33}{paragraph.5.5.2.1}
+\contentsline {paragraph}{\numberline {5.5.2.2}Llamada a funci\IeC {\'o}n}{34}{paragraph.5.5.2.2}
+\contentsline {paragraph}{\numberline {5.5.2.3}Valor de retorno}{34}{paragraph.5.5.2.3}
+\contentsline {paragraph}{\numberline {5.5.2.4}Valores de par\IeC {\'a}metros por defecto}{35}{paragraph.5.5.2.4}
+\contentsline {paragraph}{\numberline {5.5.2.5}Par\IeC {\'a}metros por valor}{35}{paragraph.5.5.2.5}
+\contentsline {paragraph}{\numberline {5.5.2.6}Par\IeC {\'a}metros por referencia}{36}{paragraph.5.5.2.6}
+\contentsline {paragraph}{\numberline {5.5.2.7}Funci\IeC {\'o}n lambda}{36}{paragraph.5.5.2.7}
+\contentsline {paragraph}{\numberline {5.5.2.8}Funci\IeC {\'o}n lambda simple}{37}{paragraph.5.5.2.8}
+\contentsline {paragraph}{\numberline {5.5.2.9}Referencia a funci\IeC {\'o}n}{37}{paragraph.5.5.2.9}
+\contentsline {paragraph}{\numberline {5.5.2.10}Funciones de orden superior}{38}{paragraph.5.5.2.10}
+\contentsline {paragraph}{\numberline {5.5.2.11}Funciones clausura}{38}{paragraph.5.5.2.11}
+\contentsline {paragraph}{\numberline {5.5.2.12}Aplicacion parcial}{39}{paragraph.5.5.2.12}
+\contentsline {paragraph}{\numberline {5.5.2.13}Decoradores}{39}{paragraph.5.5.2.13}
+\contentsline {paragraph}{\numberline {5.5.2.14}Funci\IeC {\'o}n de contexto}{40}{paragraph.5.5.2.14}
+\contentsline {subsubsection}{\numberline {5.5.3}Clases de objetos}{41}{subsubsection.5.5.3}
+\contentsline {paragraph}{\numberline {5.5.3.1}Clase de objeto}{41}{paragraph.5.5.3.1}
+\contentsline {paragraph}{\numberline {5.5.3.2}Objeto}{42}{paragraph.5.5.3.2}
+\contentsline {paragraph}{\numberline {5.5.3.3}Elementos privados}{42}{paragraph.5.5.3.3}
+\contentsline {paragraph}{\numberline {5.5.3.4}Elementos est\IeC {\'a}ticos}{43}{paragraph.5.5.3.4}
+\contentsline {paragraph}{\numberline {5.5.3.5}Herencia de clases}{43}{paragraph.5.5.3.5}
+\contentsline {paragraph}{\numberline {5.5.3.6}Instanciaci\IeC {\'o}n de clases}{44}{paragraph.5.5.3.6}
+\contentsline {paragraph}{\numberline {5.5.3.7}Acceso al objeto en ejecuci\IeC {\'o}n}{44}{paragraph.5.5.3.7}
+\contentsline {paragraph}{\numberline {5.5.3.8}Acceso al objeto en ejecuci\IeC {\'o}n como clase padre}{45}{paragraph.5.5.3.8}
+\contentsline {paragraph}{\numberline {5.5.3.9}Enlace est\IeC {\'a}tico en tiempo de ejecuci\IeC {\'o}n}{45}{paragraph.5.5.3.9}
+\contentsline {subsubsection}{\numberline {5.5.4}Listas}{46}{subsubsection.5.5.4}
+\contentsline {subsubsection}{\numberline {5.5.5}Pares clave/valor}{46}{subsubsection.5.5.5}
+\contentsline {subsubsection}{\numberline {5.5.6}Etiqueta}{47}{subsubsection.5.5.6}
+\contentsline {subsubsection}{\numberline {5.5.7}Generadores}{47}{subsubsection.5.5.7}
+\contentsline {subsection}{\numberline {5.6}Asignaciones}{48}{subsection.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}Asignaci\IeC {\'o}n}{48}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Asignaci\IeC {\'o}n de referencia}{48}{subsubsection.5.6.2}
+\contentsline {subsection}{\numberline {5.7}Operadores aritm\IeC {\'e}ticos}{49}{subsection.5.7}
+\contentsline {subsubsection}{\numberline {5.7.1}Suma}{49}{subsubsection.5.7.1}
+\contentsline {subsubsection}{\numberline {5.7.2}Diferencia}{49}{subsubsection.5.7.2}
+\contentsline {subsubsection}{\numberline {5.7.3}Producto}{50}{subsubsection.5.7.3}
+\contentsline {subsubsection}{\numberline {5.7.4}Divisi\IeC {\'o}n}{50}{subsubsection.5.7.4}
+\contentsline {subsubsection}{\numberline {5.7.5}Potencia}{51}{subsubsection.5.7.5}
+\contentsline {subsubsection}{\numberline {5.7.6}M\IeC {\'o}dulo}{51}{subsubsection.5.7.6}
+\contentsline {subsubsection}{\numberline {5.7.7}Tama\IeC {\~n}o}{52}{subsubsection.5.7.7}
+\contentsline {subsubsection}{\numberline {5.7.8}Incremento y asignaci\IeC {\'o}n}{52}{subsubsection.5.7.8}
+\contentsline {subsubsection}{\numberline {5.7.9}Asignaci\IeC {\'o}n e incremento}{53}{subsubsection.5.7.9}
+\contentsline {subsubsection}{\numberline {5.7.10}Decremento y asignaci\IeC {\'o}n}{53}{subsubsection.5.7.10}
+\contentsline {subsubsection}{\numberline {5.7.11}Asignaci\IeC {\'o}n y decremento}{54}{subsubsection.5.7.11}
+\contentsline {subsubsection}{\numberline {5.7.12}Suma y asignaci\IeC {\'o}n}{54}{subsubsection.5.7.12}
+\contentsline {subsubsection}{\numberline {5.7.13}Diferencia y asignaci\IeC {\'o}n}{55}{subsubsection.5.7.13}
+\contentsline {subsubsection}{\numberline {5.7.14}Producto y asignaci\IeC {\'o}n}{55}{subsubsection.5.7.14}
+\contentsline {subsubsection}{\numberline {5.7.15}Divisi\IeC {\'o}n y asignaci\IeC {\'o}n}{56}{subsubsection.5.7.15}
+\contentsline {subsubsection}{\numberline {5.7.16}Potencia y asignaci\IeC {\'o}n}{56}{subsubsection.5.7.16}
+\contentsline {subsubsection}{\numberline {5.7.17}M\IeC {\'o}dulo y asignaci\IeC {\'o}n}{57}{subsubsection.5.7.17}
+\contentsline {subsection}{\numberline {5.8}Operadores l\IeC {\'o}gicos}{57}{subsection.5.8}
+\contentsline {subsubsection}{\numberline {5.8.1}AND l\IeC {\'o}gico}{57}{subsubsection.5.8.1}
+\contentsline {subsubsection}{\numberline {5.8.2}OR l\IeC {\'o}gico}{58}{subsubsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.3}NOT l\IeC {\'o}gico}{58}{subsubsection.5.8.3}
+\contentsline {subsubsection}{\numberline {5.8.4}Vac\IeC {\'\i }o}{59}{subsubsection.5.8.4}
+\contentsline {subsubsection}{\numberline {5.8.5}Es nulo}{59}{subsubsection.5.8.5}
+\contentsline {subsubsection}{\numberline {5.8.6}Menor que}{60}{subsubsection.5.8.6}
+\contentsline {subsubsection}{\numberline {5.8.7}Menor o igual que}{60}{subsubsection.5.8.7}
+\contentsline {subsubsection}{\numberline {5.8.8}Mayor que}{61}{subsubsection.5.8.8}
+\contentsline {subsubsection}{\numberline {5.8.9}Mayor o igual que}{61}{subsubsection.5.8.9}
+\contentsline {subsubsection}{\numberline {5.8.10}Igual que}{62}{subsubsection.5.8.10}
+\contentsline {subsubsection}{\numberline {5.8.11}Id\IeC {\'e}ntico que}{62}{subsubsection.5.8.11}
+\contentsline {subsubsection}{\numberline {5.8.12}Distinto que}{63}{subsubsection.5.8.12}
+\contentsline {subsubsection}{\numberline {5.8.13}No id\IeC {\'e}ntico que}{63}{subsubsection.5.8.13}
+\contentsline {subsection}{\numberline {5.9}Operadores sobre cadenas}{64}{subsection.5.9}
+\contentsline {subsubsection}{\numberline {5.9.1}Concatenaci\IeC {\'o}n}{64}{subsubsection.5.9.1}
+\contentsline {subsubsection}{\numberline {5.9.2}explode}{64}{subsubsection.5.9.2}
+\contentsline {subsubsection}{\numberline {5.9.3}implode}{65}{subsubsection.5.9.3}
+\contentsline {subsubsection}{\numberline {5.9.4}sprintf}{66}{subsubsection.5.9.4}
+\contentsline {subsubsection}{\numberline {5.9.5}Buscar subcadena}{67}{subsubsection.5.9.5}
+\contentsline {subsubsection}{\numberline {5.9.6}Buscar y remplazar}{68}{subsubsection.5.9.6}
+\contentsline {subsubsection}{\numberline {5.9.7}Remplazar subcadena}{69}{subsubsection.5.9.7}
+\contentsline {subsubsection}{\numberline {5.9.8}Convertir a may\IeC {\'u}sculas}{69}{subsubsection.5.9.8}
+\contentsline {subsubsection}{\numberline {5.9.9}Convertir a min\IeC {\'u}sculas}{70}{subsubsection.5.9.9}
+\contentsline {subsection}{\numberline {5.10}Operadores sobre array}{70}{subsection.5.10}
+\contentsline {subsubsection}{\numberline {5.10.1}Dividir en fragmentos}{70}{subsubsection.5.10.1}
+\contentsline {subsubsection}{\numberline {5.10.2}Reducir mediante funci\IeC {\'o}n}{70}{subsubsection.5.10.2}
+\contentsline {subsubsection}{\numberline {5.10.3}Obtener \IeC {\'u}ltimo}{71}{subsubsection.5.10.3}
+\contentsline {subsubsection}{\numberline {5.10.4}Obtener primero}{71}{subsubsection.5.10.4}
+\contentsline {subsubsection}{\numberline {5.10.5}Insertar en posici\IeC {\'o}n}{71}{subsubsection.5.10.5}
+\contentsline {subsubsection}{\numberline {5.10.6}Eliminar posici\IeC {\'o}n}{71}{subsubsection.5.10.6}
+\contentsline {subsubsection}{\numberline {5.10.7}Insertar al inicio}{71}{subsubsection.5.10.7}
+\contentsline {subsubsection}{\numberline {5.10.8}Insertar al final}{71}{subsubsection.5.10.8}
+\contentsline {subsubsection}{\numberline {5.10.9}Buscar}{71}{subsubsection.5.10.9}
+\contentsline {subsubsection}{\numberline {5.10.10}Ordenar}{71}{subsubsection.5.10.10}
+\contentsline {subsubsection}{\numberline {5.10.11}in array}{72}{subsubsection.5.10.11}
+\contentsline {subsubsection}{\numberline {5.10.12}Rango}{72}{subsubsection.5.10.12}
+\contentsline {subsubsection}{\numberline {5.10.13}Eliminar e insertar a partir de posici\IeC {\'o}n}{72}{subsubsection.5.10.13}
+\contentsline {subsection}{\numberline {5.11}Operadores sobre expresiones regulares}{72}{subsection.5.11}
+\contentsline {subsubsection}{\numberline {5.11.1}Crear expresi\IeC {\'o}n regular}{72}{subsubsection.5.11.1}
+\contentsline {subsubsection}{\numberline {5.11.2}Comprobar expresi\IeC {\'o}n regular}{73}{subsubsection.5.11.2}
+\contentsline {subsubsection}{\numberline {5.11.3}Buscar mediante expresi\IeC {\'o}n regular}{74}{subsubsection.5.11.3}
+\contentsline {subsection}{\numberline {5.12}Operadores de conversi\IeC {\'o}n de tipo}{75}{subsection.5.12}
+\contentsline {subsubsection}{\numberline {5.12.1}Conversi\IeC {\'o}n a num\IeC {\'e}rico}{75}{subsubsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.2}Conversi\IeC {\'o}n a l\IeC {\'o}gico}{75}{subsubsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.3}Conversi\IeC {\'o}n a cadena de caracteres}{76}{subsubsection.5.12.3}
+\contentsline {subsection}{\numberline {5.13}Operadores de entrada/salida}{76}{subsection.5.13}
+\contentsline {subsubsection}{\numberline {5.13.1}Escribir en la salida est\IeC {\'a}ndar}{76}{subsubsection.5.13.1}
+\contentsline {subsection}{\numberline {5.14}Leer de la entrada est\IeC {\'a}ndar}{77}{subsection.5.14}
+\contentsline {subsection}{\numberline {5.15}Operadores informativos}{77}{subsection.5.15}
+\contentsline {subsubsection}{\numberline {5.15.1}Tipo de}{77}{subsubsection.5.15.1}
+\contentsline {subsubsection}{\numberline {5.15.2}Tama\IeC {\~n}o de}{78}{subsubsection.5.15.2}
+\contentsline {subsubsection}{\numberline {5.15.3}Informaci\IeC {\'o}n sobre}{78}{subsubsection.5.15.3}
+\contentsline {subsection}{\numberline {5.16}Procesos}{79}{subsection.5.16}
+\contentsline {subsubsection}{\numberline {5.16.1}Ejecutar comando}{79}{subsubsection.5.16.1}
+\contentsline {subsubsection}{\numberline {5.16.2}Evaluar cadena}{79}{subsubsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.3}Bifurcaci\IeC {\'o}n de proceso}{80}{subsubsection.5.16.3}
+\contentsline {subsubsection}{\numberline {5.16.4}Espera entre procesos}{80}{subsubsection.5.16.4}
+\contentsline {subsubsection}{\numberline {5.16.5}Obtener identificador de proceso}{81}{subsubsection.5.16.5}
+\contentsline {subsubsection}{\numberline {5.16.6}Obtener identificador de proceso padre}{81}{subsubsection.5.16.6}
+\contentsline {subsubsection}{\numberline {5.16.7}Se\IeC {\~n}ales entre procesos}{82}{subsubsection.5.16.7}
+\contentsline {subsubsection}{\numberline {5.16.8}Manejador de se\IeC {\~n}ales a procesos}{82}{subsubsection.5.16.8}
+\contentsline {subsubsection}{\numberline {5.16.9}Llamar a funci\IeC {\'o}n como proceso}{83}{subsubsection.5.16.9}
+\contentsline {subsection}{\numberline {5.17}Ficheros}{83}{subsection.5.17}
+\contentsline {subsubsection}{\numberline {5.17.1}Fichero}{83}{subsubsection.5.17.1}
+\contentsline {subsubsection}{\numberline {5.17.2}Abrir ficheros}{84}{subsubsection.5.17.2}
+\contentsline {subsubsection}{\numberline {5.17.3}Cerrar ficheros}{84}{subsubsection.5.17.3}
+\contentsline {subsubsection}{\numberline {5.17.4}Escribir en fichero}{85}{subsubsection.5.17.4}
+\contentsline {subsubsection}{\numberline {5.17.5}Leer de fichero}{85}{subsubsection.5.17.5}
+\contentsline {subsubsection}{\numberline {5.17.6}Cambiar posici\IeC {\'o}n de puntero a fichero}{86}{subsubsection.5.17.6}
+\contentsline {subsubsection}{\numberline {5.17.7}Obtener la posici\IeC {\'o}n actual de puntero a fichero}{86}{subsubsection.5.17.7}
+\contentsline {subsubsection}{\numberline {5.17.8}Obtener contenido de un fichero}{87}{subsubsection.5.17.8}
+\contentsline {subsubsection}{\numberline {5.17.9}Cadena como contenido de un fichero.}{87}{subsubsection.5.17.9}
+\contentsline {subsubsection}{\numberline {5.17.10}A\IeC {\~n}adir cadena al contenido de un fichero}{88}{subsubsection.5.17.10}
+\contentsline {subsection}{\numberline {5.18}Fechas y tiempo}{90}{subsection.5.18}
+\contentsline {subsubsection}{\numberline {5.18.1}Obtener fecha}{90}{subsubsection.5.18.1}
+\contentsline {subsubsection}{\numberline {5.18.2}Tiempo Unix }{91}{subsubsection.5.18.2}
+\contentsline {subsubsection}{\numberline {5.18.3}Parar ejecuci\IeC {\'o}n}{91}{subsubsection.5.18.3}
+\contentsline {subsection}{\numberline {5.19}Errores}{92}{subsection.5.19}
+\contentsline {subsection}{\numberline {5.20}Extensiones}{92}{subsection.5.20}
+\contentsline {subsubsection}{\numberline {5.20.1}Extensi\IeC {\'o}n}{92}{subsubsection.5.20.1}
+\contentsline {subsubsection}{\numberline {5.20.2}Carga de extensiones mediante fichero de configuraci\IeC {\'o}n}{93}{subsubsection.5.20.2}
+\contentsline {subsubsection}{\numberline {5.20.3}Carga de extensiones mediante sentencia}{93}{subsubsection.5.20.3}
+\contentsline {subsubsection}{\numberline {5.20.4}Biblioteca GNU de internacionalizaci\IeC {\'o}n (gettext)}{94}{subsubsection.5.20.4}
+\contentsline {subsubsection}{\numberline {5.20.5}Operaciones sobre un SGBD Mysql}{94}{subsubsection.5.20.5}
+\contentsline {section}{\numberline {6}Requisitos no funcionales}{94}{section.6}
+\contentsline {subsection}{\numberline {6.1}Rendimiento}{94}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Tiempo}{95}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Espacio}{95}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}Usabilidad}{95}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Reglas l\IeC {\'e}xicas y sint\IeC {\'a}cticas'}{95}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Interfaz}{95}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Accesibilidad}{95}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Estabilidad}{96}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Mantenibilidad}{96}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Concurrencia}{96}{subsection.6.6}
+\contentsfinish 

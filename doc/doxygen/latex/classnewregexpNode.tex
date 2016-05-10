@@ -1,0 +1,74 @@
+\hypertarget{classnewregexpNode}{\section{Referencia de la Clase newregexp\-Node}
+\label{classnewregexpNode}\index{newregexp\-Node@{newregexp\-Node}}
+}
+
+
+Operador de definición de expresión regular.  
+
+
+
+
+{\ttfamily \#include $<$regexp\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de newregexp\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classnewregexpNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnewregexpNode_a86eb66399cb4e8bd53d8d2dbc8c117c7}{newregexp\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classnewregexpNode_adeeddddbdc4019702b5db58581283a57}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Operador de definición de expresión regular. 
+
+Este nodo se encarga de crear una expresión regular a partir de una cadena de texto.
+
+Tras la ejecución el nodo toma como valor interno la expresión regular definida. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnewregexpNode_a86eb66399cb4e8bd53d8d2dbc8c117c7}{\index{newregexp\-Node@{newregexp\-Node}!newregexp\-Node@{newregexp\-Node}}
+\index{newregexp\-Node@{newregexp\-Node}!newregexpNode@{newregexp\-Node}}
+\subsubsection[{newregexp\-Node}]{\setlength{\rightskip}{0pt plus 5cm}newregexp\-Node\-::newregexp\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classnewregexpNode_a86eb66399cb4e8bd53d8d2dbc8c117c7}
+Constructor principal de la clase
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & Cadena de texto corespondiente al patrón \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnewregexpNode_adeeddddbdc4019702b5db58581283a57}{\index{newregexp\-Node@{newregexp\-Node}!run@{run}}
+\index{run@{run}!newregexpNode@{newregexp\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void newregexp\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnewregexpNode_adeeddddbdc4019702b5db58581283a57}
+Método correspondiente a la ejecución del nodo.
+
+Crea una expresión a partir de una cadena de texto.
+
+Tras la ejecución el nodo toma como valor interno la expresión regular creada. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-h\item 
+trunk/src/run/operators/regexp\-Op\-Node.\-cpp\end{DoxyCompactItemize}

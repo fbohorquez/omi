@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="44cm" height="23cm" viewBox="401 -185 861 457" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="402" y="-164" width="582" height="435"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="402" y="-164" width="582" height="435"/>
+    <rect style="fill: #ffffff" x="402" y="-184" width="81" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="402" y="-184" width="81" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="404" y="-169"> typeData </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="1012,-164 1249,-164 1261,-152 1261,-66 1012,-66 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1012,-164 1249,-164 1261,-152 1261,-66 1012,-66 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="1249,-164 1249,-152 1261,-152 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1019" y="-139.1">
+      <tspan x="1019" y="-139.1">Falta tratar listNode, mapNode</tspan>
+      <tspan x="1019" y="-123.1">Ver en definitions</tspan>
+      <tspan x="1019" y="-107.1"></tspan>
+      <tspan x="1019" y="-91.1">Falta tratar objetos, </tspan>
+      <tspan x="1019" y="-75.1">Ver en objects</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="456" y="62" width="100.75" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="456" y="62" width="100.75" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="506.375" y="81">dexpNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="-145" width="90.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="-145" width="90.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="705.25" y="-126">nullNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="-35.2" width="117.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="-35.2" width="117.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="718.9" y="-16.2">arithNode</text>
+    <rect style="fill: #ffffff" x="660" y="-7.2" width="117.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="-7.2" width="117.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="663" y="6.8">+numvalue: num</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="-98.2" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="-98.2" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="726.6" y="-79.2">logicNode</text>
+    <rect style="fill: #ffffff" x="660" y="-70.2" width="133.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="-70.2" width="133.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="663" y="-56.2">+boolvalue: bool</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="68" width="140.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="68" width="140.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="730.45" y="87">stringNode</text>
+    <rect style="fill: #ffffff" x="660" y="96" width="140.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="96" width="140.9" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="663" y="110">+strvalue: string</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="660" y="135" width="104.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="660" y="135" width="104.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="712.025" y="154">arrayNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="659" y="187" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="659" y="187" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="725.6" y="206">regexpNode</text>
+    <rect style="fill: #ffffff" x="659" y="215" width="133.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="659" y="215" width="133.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="662" y="229">+pattern: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="662" y="245">+r: regexp</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 616.375,76 616.375,-131 660,-131 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 616.375,76 616.375,-84.2 660,-84.2 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 616.375,76 616.375,-21.2 660,-21.2 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 616.375,76 616.375,82 660,82 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 616.375,76 616.375,149 660,149 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,76 615.875,76 615.875,201 659,201 "/>
+    <polygon style="fill: #ffffff" points="574.986,68 558.986,76 574.986,84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="574.986,68 558.986,76 574.986,84 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="847" y="-35" width="96.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="847" y="-35" width="96.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="895.075" y="-16">numNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="848" y="-98" width="95.65" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="848" y="-98" width="95.65" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="895.825" y="-79">boolNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="811.436,-84.2 828.6,-84.2 828.6,-84 848,-84 "/>
+    <polygon style="fill: #ffffff" points="811.436,-92.2 795.436,-84.2 811.436,-76.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="811.436,-92.2 795.436,-84.2 811.436,-76.2 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="796.036,-21.2 820.4,-21.2 820.4,-21 847,-21 "/>
+    <polygon style="fill: #ffffff" points="796.036,-29.2 780.036,-21.2 796.036,-13.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="796.036,-29.2 780.036,-21.2 796.036,-13.2 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="849" y="68" width="81.75" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="849" y="68" width="81.75" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="889.875" y="87">strNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="819.136,82 817.9,82 848,82 849,82 "/>
+    <polygon style="fill: #ffffff" points="819.136,74 803.136,82 819.136,90 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="819.136,74 803.136,82 819.136,90 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="850" y="135" width="84.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="850" y="135" width="84.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="892.025" y="154">symbols</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="789.222,149 779.05,149 849,149 850,149 "/>
+    <polygon style="fill: #ffffff" points="764.05,149 778.05,144.2 792.05,149 778.05,153.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="764.05,149 778.05,144.2 792.05,149 778.05,153.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="814.025" y="146"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="796.05" y="146"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="846" y="146"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="842" y="19" width="49.45" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="842" y="19" width="49.45" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="866.725" y="38">num</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="718.9,12.8 718.9,33.8 775.95,33.8 775.95,33 835.295,33 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="822.647,38 838.647,33 822.647,28 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="841" y="205" width="72.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="841" y="205" width="72.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="877.4" y="224">regexp</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="793.208,219 794.208,219 832,219 834.295,219 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.647,224 837.647,219 821.647,214 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="462.1" y="-148.2" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="462.1" y="-148.2" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="505.8" y="-129.2">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="436.1" y="-81.2" width="139.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="436.1" y="-81.2" width="139.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="505.7" y="-62.2">printableNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="429.1" y="-10.2" width="154.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="429.1" y="-10.2" width="154.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="506.3" y="8.8">objectTypeNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="505.8,-101.964 505.8,-92.7 505.7,-92.7 505.7,-81.2 "/>
+    <polygon style="fill: #ffffff" points="513.8,-101.964 505.8,-117.964 497.8,-101.964 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="513.8,-101.964 505.8,-117.964 497.8,-101.964 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="505.7,-34.9639 505.7,-23.7 506.3,-23.7 506.3,-10.2 "/>
+    <polygon style="fill: #ffffff" points="513.7,-34.9639 505.7,-50.9639 497.7,-34.9639 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="513.7,-34.9639 505.7,-50.9639 497.7,-34.9639 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="506.3,36.0361 506.3,47.9 506.375,47.9 506.375,62 "/>
+    <polygon style="fill: #ffffff" points="514.3,36.0361 506.3,20.0361 498.3,36.0361 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="514.3,36.0361 506.3,20.0361 498.3,36.0361 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="580" y="49">
+    <tspan x="580" y="49">type</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="533" y="132">
+    <tspan x="533" y="132">{</tspan>
+    <tspan x="533" y="148">   complete,</tspan>
+    <tspan x="533" y="164">   disjoint</tspan>
+    <tspan x="533" y="180">}</tspan>
+  </text>
+</svg>

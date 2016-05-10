@@ -1,0 +1,96 @@
+\hypertarget{classneqNode}{\section{Referencia de la Clase neq\-Node}
+\label{classneqNode}\index{neq\-Node@{neq\-Node}}
+}
+
+
+Nodo operador distinto.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de neq\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classneqNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classneqNode_a8a69d8ac9acf08b6c81c1e6b0a3bbccf}{neq\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classneqNode_a88cbbfd96d5962f40fd2d5ea42da9de9}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classneqNode_aac8835195e639b47e32a61b252bfe0dd}{do\-\_\-neq} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador distinto. 
+
+Este nodo implementa la operación distinto sobre dos nodos asociados.
+
+Para obtener el valor de la operación solo se compara el valor simbólido de los operandos. Así \char`\"{}2\char`\"{} != 2 es falso.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classneqNode_a8a69d8ac9acf08b6c81c1e6b0a3bbccf}{\index{neq\-Node@{neq\-Node}!neq\-Node@{neq\-Node}}
+\index{neq\-Node@{neq\-Node}!neqNode@{neq\-Node}}
+\subsubsection[{neq\-Node}]{\setlength{\rightskip}{0pt plus 5cm}neq\-Node\-::neq\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classneqNode_a8a69d8ac9acf08b6c81c1e6b0a3bbccf}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classneqNode_aac8835195e639b47e32a61b252bfe0dd}{\index{neq\-Node@{neq\-Node}!do\-\_\-neq@{do\-\_\-neq}}
+\index{do\-\_\-neq@{do\-\_\-neq}!neqNode@{neq\-Node}}
+\subsubsection[{do\-\_\-neq}]{\setlength{\rightskip}{0pt plus 5cm}bool neq\-Node\-::do\-\_\-neq (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classneqNode_aac8835195e639b47e32a61b252bfe0dd}
+Ejecuta la operación distinto sobre dos nodos dados 
+\begin{DoxyParams}{Parámetros}
+{\em op1} & Primer nodo operando. \\
+\hline
+{\em op2} & Sengundo nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación. 
+\end{DoxyReturn}
+\hypertarget{classneqNode_a88cbbfd96d5962f40fd2d5ea42da9de9}{\index{neq\-Node@{neq\-Node}!run@{run}}
+\index{run@{run}!neqNode@{neq\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void neq\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classneqNode_a88cbbfd96d5962f40fd2d5ea42da9de9}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor lógico del nodo mediante la operación de comparación distinto entre el valor numérico de los dos nodos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+sub do_cmd_ex {
+    $val = 100;
+    100;
+}
+true;

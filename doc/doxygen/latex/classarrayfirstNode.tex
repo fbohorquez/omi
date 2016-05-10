@@ -1,0 +1,80 @@
+\hypertarget{classarrayfirstNode}{\section{Referencia de la Clase arrayfirst\-Node}
+\label{classarrayfirstNode}\index{arrayfirst\-Node@{arrayfirst\-Node}}
+}
+
+
+Nodo función priemer elemento de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de arrayfirst\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classarrayfirstNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarrayfirstNode_a90ce782fc1cc3514e6f12839d3ceccea}{arrayfirst\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$array)
+\item 
+void \hyperlink{classarrayfirstNode_a6966767db3660da890d9d3c7363f8e90}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classarrayfirstNode_aa94b0227fcfd30303ed314921ce83cbc}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo función priemer elemento de array. 
+
+Este nodo se utiliza para obtener el primer elemento de un array, o un nodo nulo si este está vacío. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarrayfirstNode_a90ce782fc1cc3514e6f12839d3ceccea}{\index{arrayfirst\-Node@{arrayfirst\-Node}!arrayfirst\-Node@{arrayfirst\-Node}}
+\index{arrayfirst\-Node@{arrayfirst\-Node}!arrayfirstNode@{arrayfirst\-Node}}
+\subsubsection[{arrayfirst\-Node}]{\setlength{\rightskip}{0pt plus 5cm}arrayfirst\-Node\-::arrayfirst\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classarrayfirstNode_a90ce782fc1cc3514e6f12839d3ceccea}
+Constructor de la clase 
+\begin{DoxyParams}{Parámetros}
+{\em array} & Nodo que representa el array \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarrayfirstNode_aa94b0227fcfd30303ed314921ce83cbc}{\index{arrayfirst\-Node@{arrayfirst\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!arrayfirstNode@{arrayfirst\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ arrayfirst\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classarrayfirstNode_aa94b0227fcfd30303ed314921ce83cbc}
+Devuelve un nodo primer elemento de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método first. 
+\end{DoxyReturn}
+\hypertarget{classarrayfirstNode_a6966767db3660da890d9d3c7363f8e90}{\index{arrayfirst\-Node@{arrayfirst\-Node}!run@{run}}
+\index{run@{run}!arrayfirstNode@{arrayfirst\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void arrayfirst\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayfirstNode_a6966767db3660da890d9d3c7363f8e90}
+Método que ejecuta el nodo. Toma como valor una referencia al primer elemento de un array, o a un nodo nulo si el array está vacío. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

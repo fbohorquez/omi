@@ -1,0 +1,69 @@
+\hypertarget{classfwriteNode}{\section{Referencia de la Clase fwrite\-Node}
+\label{classfwriteNode}\index{fwrite\-Node@{fwrite\-Node}}
+}
+
+
+Node función escribir fichero .  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fwrite\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfwriteNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfwriteNode_aef6a275b6900529690bb3cc2556146aa}{fwrite\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file, \hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classfwriteNode_aea4d89505071406cc2caceb55ce00c66}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node función escribir fichero . 
+
+Escribe una cadena de caracteres como contenido de un fichero. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfwriteNode_aef6a275b6900529690bb3cc2556146aa}{\index{fwrite\-Node@{fwrite\-Node}!fwrite\-Node@{fwrite\-Node}}
+\index{fwrite\-Node@{fwrite\-Node}!fwriteNode@{fwrite\-Node}}
+\subsubsection[{fwrite\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fwrite\-Node\-::fwrite\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file, }
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classfwriteNode_aef6a275b6900529690bb3cc2556146aa}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que representa la ruta del fichero en el que se escribirá. \\
+\hline
+{\em str.} & Nodo que representa la cadena que se escribirá \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfwriteNode_aea4d89505071406cc2caceb55ce00c66}{\index{fwrite\-Node@{fwrite\-Node}!run@{run}}
+\index{run@{run}!fwriteNode@{fwrite\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fwrite\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfwriteNode_aea4d89505071406cc2caceb55ce00c66}
+Método de ejecución. Escribe la cadena de caracteres como contenido del fichero. Si el fichero no existe es creado. Toma como valor la cadena escrita. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

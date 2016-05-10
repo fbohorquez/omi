@@ -1,0 +1,29 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.20)  14 JAN 2016 20:11
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**user_interface.tex
+(./user_interface.tex
+LaTeX2e <2015/10/01> patch level 1
+Babel <3.9m> and hyphenation patterns for 14 languages loaded.
+./user_interface.tex:2: Undefined control sequence.
+l.2 \section
+            {Visión general}
+? 
+./user_interface.tex:2: Emergency stop.
+l.2 \section
+            {Visión general}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 494373
+ 162 string characters out of 6170532
+ 49017 words of memory out of 5000000
+ 3402 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 456 hyphenation exceptions out of 8191
+ 5i,0n,1p,93b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+./user_interface.tex:2:  ==> Fatal error occurred, no output PDF file produced!
+

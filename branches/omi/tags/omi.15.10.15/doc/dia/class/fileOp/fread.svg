@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="11cm" height="14cm" viewBox="341 165 214 261" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="343" y="186.6" width="212" height="238"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="343" y="186.6" width="212" height="238"/>
+    <rect style="fill: #ffffff" x="343" y="166.6" width="57.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="343" y="166.6" width="57.9" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="345" y="181.6"> fread </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="376" y="207.6" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="376" y="207.6" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="419.7" y="226.6">runNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="365" y="276.6" width="110.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="365" y="276.6" width="110.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="420.05" y="295.6">stringNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="419.7,253.836 419.7,264.1 420.05,264.1 420.05,276.6 "/>
+    <polygon style="fill: #ffffff" points="427.7,253.836 419.7,237.836 411.7,253.836 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="427.7,253.836 419.7,237.836 411.7,253.836 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="368" y="343.6" width="104.65" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="368" y="343.6" width="104.65" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="420.325" y="362.6">freadNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="420.05,322.836 420.05,332.1 420.325,332.1 420.325,343.6 "/>
+    <polygon style="fill: #ffffff" points="428.05,322.836 420.05,306.836 412.05,322.836 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="428.05,322.836 420.05,306.836 412.05,322.836 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="497.822,357.6 507.65,357.6 507.65,221.6 463.4,221.6 "/>
+    <polygon style="fill: #ffffff" points="472.65,357.6 486.65,352.8 500.65,357.6 486.65,362.4 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="472.65,357.6 486.65,352.8 500.65,357.6 486.65,362.4 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="509.65" y="286.6">file</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="504.65" y="354.6"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="467.4" y="218.6"> 1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="467.4" y="234.6"/>
+  </g>
+</svg>

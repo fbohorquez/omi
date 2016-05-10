@@ -1,0 +1,186 @@
+\hypertarget{classiloopNode}{\section{Referencia de la Clase iloop\-Node}
+\label{classiloopNode}\index{iloop\-Node@{iloop\-Node}}
+}
+
+
+Nodo de sentencia de iteración ágil.  
+
+
+
+
+{\ttfamily \#include $<$loop\-Stmt\-Node.\-h$>$}
+
+Diagrama de herencias de iloop\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classiloopNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classiloopNode_abf6fd3950a64b07801f4c0cd5d448b90}{iloop\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$iter, \hyperlink{classrunNode}{run\-Node} $\ast$stmt, \hyperlink{classrunNode}{run\-Node} $\ast$id=N\-U\-L\-L, \hyperlink{classrunNode}{run\-Node} $\ast$second\-\_\-id=N\-U\-L\-L, \hyperlink{classrunNode}{run\-Node} $\ast$inc=N\-U\-L\-L)
+\item 
+void \hyperlink{classiloopNode_af2bb6d18f46c88d2dd80db09d758fe9c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classiloopNode_a28b29270e593f2bfa065336a71147f42}{get\-\_\-ielement} ()
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classiloopNode_a59fd4b9110d999b9b8fc1b0c559da4b6}{get\-\_\-ielement\-\_\-n} (int i)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classiloopNode_ac3356c2e8e0a41cfbc009511961fa76a}{set\-\_\-ielement} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classiloopNode_a2ce7c03e4be22b5b316f353f028c6dc5}{push\-\_\-ielement} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classiloopNode_a335b05f20f829f155e0bad0e895dbf41}{pop\-\_\-ielement} ()
+\item 
+static void \hyperlink{classiloopNode_ac5978d4ff494c4248898b0a9c62f743a}{push\-\_\-level} ()
+\item 
+static void \hyperlink{classiloopNode_a03c333f0f0f2f5a7806ca3fc533a6b1b}{pop\-\_\-level} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo de sentencia de iteración ágil. 
+
+Esta sentencia permite iterar un conjunto de elementos de forma simple y rápida. Para ello solo precisa de un elemento a iterar y un bloque de sentencias.
+
+Internamente el valor de cada iteración es introducido en una estructura de datos y podrá ser consultado desde el bloque de sentencias mediante el uso del nodo \begin{DoxySeeAlso}{Ver también}
+\hyperlink{classgetiNode}{geti\-Node} . Esta estructura se organiza por niveles, cada uno de los cuales contendrá una pila de valores. Con cada sentencia iterativa ágil anidada se añadirá un elemento a la pila del nivel actual, y con cada llamada a función se incrementará el nivel en uso.
+\end{DoxySeeAlso}
+El conjunto sobre el que se itera dependerá del tipo de dato obtenido al evaluar la expresión conjunto\-:
+\begin{DoxyItemize}
+\item Booleano\-: Se itera hasta que se evalúa como falso. En cada iteración se asigna el entero correspondiente al número de la misma.
+\item Numérico\-: Si es positivo se itera desde cero hasta el valor sin incluirlo. Si es negativo no se itera.
+\item Cadena de caracteres\-: Se itera por cada carácter en la cadena.
+\item Array\-: Se itera por cada elemento en el array.
+\end{DoxyItemize}
+
+Se podrá indicar un identificador para referenciar al valor y la clave generada en cada iteración. Además se podrá dar una expresión de incremento que será ejecutada en cada iteración. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classiloopNode_abf6fd3950a64b07801f4c0cd5d448b90}{\index{iloop\-Node@{iloop\-Node}!iloop\-Node@{iloop\-Node}}
+\index{iloop\-Node@{iloop\-Node}!iloopNode@{iloop\-Node}}
+\subsubsection[{iloop\-Node}]{\setlength{\rightskip}{0pt plus 5cm}iloop\-Node\-::iloop\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{iter, }
+\item[{{\bf run\-Node} $\ast$}]{stmt, }
+\item[{{\bf run\-Node} $\ast$}]{id = {\ttfamily NULL}, }
+\item[{{\bf run\-Node} $\ast$}]{second\-\_\-id = {\ttfamily NULL}, }
+\item[{{\bf run\-Node} $\ast$}]{inc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classiloopNode_abf6fd3950a64b07801f4c0cd5d448b90}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em iter} & Nodo que hace de conjunto sobre el que iterar. \\
+\hline
+{\em stmt} & Nodo que representa el bloque de sentencias que se ejecutarán en cada iteración. \\
+\hline
+{\em id} & Nodo identificador para el valor. \\
+\hline
+{\em second\-\_\-id} & Nodo identificador para la clave. \\
+\hline
+{\em inc} & Nodo que representa la expresión de incremento. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classiloopNode_a28b29270e593f2bfa065336a71147f42}{\index{iloop\-Node@{iloop\-Node}!get\-\_\-ielement@{get\-\_\-ielement}}
+\index{get\-\_\-ielement@{get\-\_\-ielement}!iloopNode@{iloop\-Node}}
+\subsubsection[{get\-\_\-ielement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ iloop\-Node\-::get\-\_\-ielement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_a28b29270e593f2bfa065336a71147f42}
+Obtiene valor encima de la pila iloop \begin{DoxyReturn}{Devuelve}
+Valor cima de la pila 
+\end{DoxyReturn}
+\hypertarget{classiloopNode_a59fd4b9110d999b9b8fc1b0c559da4b6}{\index{iloop\-Node@{iloop\-Node}!get\-\_\-ielement\-\_\-n@{get\-\_\-ielement\-\_\-n}}
+\index{get\-\_\-ielement\-\_\-n@{get\-\_\-ielement\-\_\-n}!iloopNode@{iloop\-Node}}
+\subsubsection[{get\-\_\-ielement\-\_\-n}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ iloop\-Node\-::get\-\_\-ielement\-\_\-n (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_a59fd4b9110d999b9b8fc1b0c559da4b6}
+Obtiene valor indicado de la pila iloop 
+\begin{DoxyParams}{Parámetros}
+{\em i} & Profundidad de la pila \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la pila determinado 
+\end{DoxyReturn}
+\hypertarget{classiloopNode_a335b05f20f829f155e0bad0e895dbf41}{\index{iloop\-Node@{iloop\-Node}!pop\-\_\-ielement@{pop\-\_\-ielement}}
+\index{pop\-\_\-ielement@{pop\-\_\-ielement}!iloopNode@{iloop\-Node}}
+\subsubsection[{pop\-\_\-ielement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ iloop\-Node\-::pop\-\_\-ielement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_a335b05f20f829f155e0bad0e895dbf41}
+Saca un elemento de la pila \begin{DoxyReturn}{Devuelve}
+Elemento sacado de la pila. 
+\end{DoxyReturn}
+\hypertarget{classiloopNode_a03c333f0f0f2f5a7806ca3fc533a6b1b}{\index{iloop\-Node@{iloop\-Node}!pop\-\_\-level@{pop\-\_\-level}}
+\index{pop\-\_\-level@{pop\-\_\-level}!iloopNode@{iloop\-Node}}
+\subsubsection[{pop\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void iloop\-Node\-::pop\-\_\-level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_a03c333f0f0f2f5a7806ca3fc533a6b1b}
+Elimina un nivel de pilas iloop \hypertarget{classiloopNode_a2ce7c03e4be22b5b316f353f028c6dc5}{\index{iloop\-Node@{iloop\-Node}!push\-\_\-ielement@{push\-\_\-ielement}}
+\index{push\-\_\-ielement@{push\-\_\-ielement}!iloopNode@{iloop\-Node}}
+\subsubsection[{push\-\_\-ielement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ iloop\-Node\-::push\-\_\-ielement (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_a2ce7c03e4be22b5b316f353f028c6dc5}
+Introduce un nuevo valor en la cima de la pila 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo ha introducir en la pila \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Anterior valor en la cima 
+\end{DoxyReturn}
+\hypertarget{classiloopNode_ac5978d4ff494c4248898b0a9c62f743a}{\index{iloop\-Node@{iloop\-Node}!push\-\_\-level@{push\-\_\-level}}
+\index{push\-\_\-level@{push\-\_\-level}!iloopNode@{iloop\-Node}}
+\subsubsection[{push\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void iloop\-Node\-::push\-\_\-level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_ac5978d4ff494c4248898b0a9c62f743a}
+Crea un nuevo nivel de pilas iloop \hypertarget{classiloopNode_af2bb6d18f46c88d2dd80db09d758fe9c}{\index{iloop\-Node@{iloop\-Node}!run@{run}}
+\index{run@{run}!iloopNode@{iloop\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void iloop\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classiloopNode_af2bb6d18f46c88d2dd80db09d758fe9c}
+Método que ejecuta el nodo. Ejecuta el bloque de sentencias para cada elemento en el conjunto. Introduciendo el elemento en el nivel actual de la pila iloop. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classiloopNode_ac3356c2e8e0a41cfbc009511961fa76a}{\index{iloop\-Node@{iloop\-Node}!set\-\_\-ielement@{set\-\_\-ielement}}
+\index{set\-\_\-ielement@{set\-\_\-ielement}!iloopNode@{iloop\-Node}}
+\subsubsection[{set\-\_\-ielement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ iloop\-Node\-::set\-\_\-ielement (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classiloopNode_ac3356c2e8e0a41cfbc009511961fa76a}
+Cambia el valor en la cima de la pila 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nuevo valor de la cima de la pila \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor anterior 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{loopStmtNode_8h}{loop\-Stmt\-Node.\-h}\item 
+trunk/src/run/stmts/loop\-Stmt\-Node.\-cpp\end{DoxyCompactItemize}

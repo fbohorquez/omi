@@ -1,0 +1,74 @@
+\hypertarget{classisBoolNode}{\section{Referencia de la Clase is\-Bool\-Node}
+\label{classisBoolNode}\index{is\-Bool\-Node@{is\-Bool\-Node}}
+}
+
+
+Nodo operador comprobación de booleano.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de is\-Bool\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classisBoolNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisBoolNode_a9bcee62d1c853c9357a88ccf169ad918}{is\-Bool\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classisBoolNode_acf758fab0546f592da7115ebe7fbb46c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador comprobación de booleano. 
+
+Este nodo implementa la operación de comprobación del tipo para el caso booleano.
+
+Para determinar el valor de la operación se comprueba si el valor del operando es de tipo nulo.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisBoolNode_a9bcee62d1c853c9357a88ccf169ad918}{\index{is\-Bool\-Node@{is\-Bool\-Node}!is\-Bool\-Node@{is\-Bool\-Node}}
+\index{is\-Bool\-Node@{is\-Bool\-Node}!isBoolNode@{is\-Bool\-Node}}
+\subsubsection[{is\-Bool\-Node}]{\setlength{\rightskip}{0pt plus 5cm}is\-Bool\-Node\-::is\-Bool\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classisBoolNode_a9bcee62d1c853c9357a88ccf169ad918}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisBoolNode_acf758fab0546f592da7115ebe7fbb46c}{\index{is\-Bool\-Node@{is\-Bool\-Node}!run@{run}}
+\index{run@{run}!isBoolNode@{is\-Bool\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void is\-Bool\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classisBoolNode_acf758fab0546f592da7115ebe7fbb46c}
+Método virtual de ejecución. Este método debe ser implementado por todas las clases específicas de nodos ejecutables.
+
+La implementación de este método definirá la función que se llevará a cabo al ejecutarse el nodo. Encierra el significado semántico del nodo.
+
+En esencia los distintos nodos se diferencia entre si por la forma en que implementan esta función. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

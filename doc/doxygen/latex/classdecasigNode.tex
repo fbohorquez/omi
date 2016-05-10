@@ -1,0 +1,68 @@
+\hypertarget{classdecasigNode}{\section{Referencia de la Clase decasig\-Node}
+\label{classdecasigNode}\index{decasig\-Node@{decasig\-Node}}
+}
+
+
+Nodo operador decremento y asignación.  
+
+
+
+
+{\ttfamily \#include $<$arith\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de decasig\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classdecasigNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdecasigNode_aac7063a27fc37eaae22f4d66266bf800}{decasig\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classdecasigNode_ac45f48e8d9866816c2efae4eed38d833}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador decremento y asignación. 
+
+Este nodo implementa la operación decremento y asignación. Se lleva a cabo el incremento del nodo asociado, luego el nuevo resultado se utiliza como valor del operador.
+
+El resultado de evaluar la expresión es un valor aritmético correspondiente al decremento. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classdecasigNode_aac7063a27fc37eaae22f4d66266bf800}{\index{decasig\-Node@{decasig\-Node}!decasig\-Node@{decasig\-Node}}
+\index{decasig\-Node@{decasig\-Node}!decasigNode@{decasig\-Node}}
+\subsubsection[{decasig\-Node}]{\setlength{\rightskip}{0pt plus 5cm}decasig\-Node\-::decasig\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classdecasigNode_aac7063a27fc37eaae22f4d66266bf800}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classdecasigNode_ac45f48e8d9866816c2efae4eed38d833}{\index{decasig\-Node@{decasig\-Node}!run@{run}}
+\index{run@{run}!decasigNode@{decasig\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void decasig\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classdecasigNode_ac45f48e8d9866816c2efae4eed38d833}
+Método que ejecuta el nodo. Procede a incrementar el valor del nodo operando. Luego asocia el resultado del incremento como valor interno del operador. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arithOpNode_8h}{arith\-Op\-Node.\-h}\item 
+trunk/src/run/operators/arith\-Op\-Node.\-cpp\end{DoxyCompactItemize}

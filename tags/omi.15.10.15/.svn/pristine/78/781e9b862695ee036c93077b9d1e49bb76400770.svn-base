@@ -1,0 +1,30 @@
+/*! @file ccalc.c
+ * @brief main program
+ *********************************************************************
+ * a simple calculator with variables
+ *
+ * sample-files for a artikel in developerworks.ibm.com
+ * Author: Christian Hagen, chagen@de.ibm.com
+ *
+ * @par ccalc.c
+ * main-program
+ *
+ *********************************************************************
+ */
+#include "error.h"
+#include "run/stmtNode.h"
+queue<string> warningQueue::q_ = queue<string>();
+extern
+int yyerror(const char *s) {
+   string str (infile);
+   if (infile != "") {
+      cout << "Error: file " << infile << " line " << yylineno -1 << " => " << s << endl;
+   } else if(!inline_param) {
+      cout << "Error: line " << yylineno  -1 << " => " << s << endl;
+   } else {
+      cout << "Error: " << s << endl;
+   }
+   if (!inline_param) {
+      stmtNode::compile_error = true;
+   }
+}

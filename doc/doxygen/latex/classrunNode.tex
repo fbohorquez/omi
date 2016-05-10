@@ -1,0 +1,192 @@
+\hypertarget{classrunNode}{\section{Referencia de la Clase run\-Node}
+\label{classrunNode}\index{run\-Node@{run\-Node}}
+}
+
+
+Nodo ejecutable.  
+
+
+
+
+{\ttfamily \#include $<$run\-Tree.\-h$>$}
+
+Diagrama de herencias de run\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classrunNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classrunNode_a39886db07c6112feb82a84ff0d28c29a}{run\-Node} (string str)
+\item 
+\hyperlink{classrunNode_ac3bfbc4522d49085eab96f8129ba9d72}{run\-Node} ()
+\item 
+virtual void \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run} ()=0
+\item 
+virtual void \hyperlink{classrunNode_ab4a07d831845eadea0d2d088dc106288}{add\-Ref} ()
+\item 
+virtual void \hyperlink{classrunNode_a8d0761660753ceb2c98836614c526a45}{rm\-Ref} ()
+\item 
+virtual bool \hyperlink{classrunNode_ad65c9a22e807dbe18f5c83c84d777d44}{is\-\_\-print} () const 
+\item 
+virtual bool \hyperlink{classrunNode_a231638d0fc5b436c5e4a664fe7d5126a}{is\-\_\-runlist} () const 
+\item 
+virtual bool \hyperlink{classrunNode_a3fda5276a76f39ad12d316794a892b06}{is\-\_\-string} () const 
+\item 
+string \hyperlink{classrunNode_a7f789742e86bc7c897defe1073a26c65}{get\-Ptr\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classrunNode_ab54d457f51ddd7254dc9e90e78c69f95}{compare} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2, int op=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo ejecutable. 
+
+Un nodo de ejecución representa la unidad funcional básica de un programa O\-M\-I. Un programa estará formado por una serie de nodos relacionados entre si, donde cada nodo produce un resultado semántico al ejecutarse. Un árbol de ejecución consiste en una referencia al nodo que hace de raíz.
+
+Se definen una gran variedad de tipos de nodos ejecutables. Así existirá un nodo de ejecución por cada tipo de dato, sentencia, operador... Cada uno de estos tipos realizará una función diferente sobre los datos y elementos que los forma, que igualmente serán nodos de ejecución.
+
+Por ejemplo una sentencia \char`\"{}if\char`\"{} se corresponderá con un nodo de ejecución que a su vez enlaza a 3 nodos. El primero de los cuales representa una expresión booleana que será evaluada al ejecutarse el nodo \char`\"{}if\char`\"{}. Si la expresión booleana resulta verdadera se ejecutará uno de los otros nodos, el cual representará el bloque de sentencias \char`\"{}then\char`\"{}. Por el contrario si la expresión resulta falsa se ejecutará el otro que representa el bloque de sentencias \char`\"{}else\char`\"{}.
+
+Existen diferentes niveles de abstracción en la definición de los nodos ejecutables.
+
+Los nodos genéricos definen clases de nodos con atributos y métodos afines. Por ejemplo los nodos lógicos tendrán un valor booleano asociado, los nodos imprimibles podrán ser procesados para conformar una salida, etc. Estos nodos son tipos de datos incompletos o interfaces.
+
+Los nodos específicos suelen derivar de los anteriores, es decir, son especializaciones de los nodos genéricos. Algunos de estos nodos pueden ser el operador \char`\"{}or\char`\"{}, la sentencia \char`\"{}if\char`\"{}, el dato cadena ....
+
+Los nodos pueden ser referenciados desde otros nodos. Las tablas de símbolos son estructuras que guardan nodos que sirven de referencia a otros nodos. Durante la ejecución del árbol pueden crearse nuevos nodos y ser referenciados desde estas estructuras. De esta forma se pueden dar mecanismos como las variables, funciones o clases.
+
+Todo nodo presenta un valor numérico que indica el número de referencias que tiene. Cuando este número es disminuido a cero el nodo es destruido y liberado de memoria. Los nodos creados en el análisis sintáctico no serán liberados hasta que finalice la ejecución. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classrunNode_a39886db07c6112feb82a84ff0d28c29a}{\index{run\-Node@{run\-Node}!run\-Node@{run\-Node}}
+\index{run\-Node@{run\-Node}!runNode@{run\-Node}}
+\subsubsection[{run\-Node}]{\setlength{\rightskip}{0pt plus 5cm}run\-Node\-::run\-Node (
+\begin{DoxyParamCaption}
+\item[{string}]{str}
+\end{DoxyParamCaption}
+)}}\label{classrunNode_a39886db07c6112feb82a84ff0d28c29a}
+Constructor de la clase. \hypertarget{classrunNode_ac3bfbc4522d49085eab96f8129ba9d72}{\index{run\-Node@{run\-Node}!run\-Node@{run\-Node}}
+\index{run\-Node@{run\-Node}!runNode@{run\-Node}}
+\subsubsection[{run\-Node}]{\setlength{\rightskip}{0pt plus 5cm}run\-Node\-::run\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrunNode_ac3bfbc4522d49085eab96f8129ba9d72}
+Constructor de la clase. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classrunNode_ab4a07d831845eadea0d2d088dc106288}{\index{run\-Node@{run\-Node}!add\-Ref@{add\-Ref}}
+\index{add\-Ref@{add\-Ref}!runNode@{run\-Node}}
+\subsubsection[{add\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Node\-::add\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrunNode_ab4a07d831845eadea0d2d088dc106288}
+Aumenta en uno el número de referencias del nodo. \hypertarget{classrunNode_ab54d457f51ddd7254dc9e90e78c69f95}{\index{run\-Node@{run\-Node}!compare@{compare}}
+\index{compare@{compare}!runNode@{run\-Node}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}bool run\-Node\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2, }
+\item[{int}]{op = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classrunNode_ab54d457f51ddd7254dc9e90e78c69f95}
+Compara dos \hyperlink{classrunNode}{run\-Node}.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node1,node2} & Nodos a comparar. \\
+\hline
+{\em op} & Operador a aplicar case 0\-: == case 1\-: != case 2\-: $>$ case 3\-: $<$ case 4\-: $>$= case 5\-: $<$= case 6\-: === \\
+\hline
+\end{DoxyParams}
+\hypertarget{classrunNode_a7f789742e86bc7c897defe1073a26c65}{\index{run\-Node@{run\-Node}!get\-Ptr\-String@{get\-Ptr\-String}}
+\index{get\-Ptr\-String@{get\-Ptr\-String}!runNode@{run\-Node}}
+\subsubsection[{get\-Ptr\-String}]{\setlength{\rightskip}{0pt plus 5cm}string run\-Node\-::get\-Ptr\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classrunNode_a7f789742e86bc7c897defe1073a26c65}
+Obtiene una cadena de caracteres correspondiente a la posición de memoria en la que se encuentra el nodo. \begin{DoxyReturn}{Devuelve}
+Cadena que representa la posición de memoria. 
+\end{DoxyReturn}
+\hypertarget{classrunNode_ad65c9a22e807dbe18f5c83c84d777d44}{\index{run\-Node@{run\-Node}!is\-\_\-print@{is\-\_\-print}}
+\index{is\-\_\-print@{is\-\_\-print}!runNode@{run\-Node}}
+\subsubsection[{is\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}bool run\-Node\-::is\-\_\-print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrunNode_ad65c9a22e807dbe18f5c83c84d777d44}
+Método que indica si el nodo es imprimible y puede ser escrito en la salida estándar. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si es imprimible. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classfexpNode_af28c9cdf9743d074f40b7dbb1f51efbb}{fexp\-Node}.
+
+\hypertarget{classrunNode_a231638d0fc5b436c5e4a664fe7d5126a}{\index{run\-Node@{run\-Node}!is\-\_\-runlist@{is\-\_\-runlist}}
+\index{is\-\_\-runlist@{is\-\_\-runlist}!runNode@{run\-Node}}
+\subsubsection[{is\-\_\-runlist}]{\setlength{\rightskip}{0pt plus 5cm}bool run\-Node\-::is\-\_\-runlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrunNode_a231638d0fc5b436c5e4a664fe7d5126a}
+Método que indica si el nodo debe ser ejecutado cuando se procesa una lista de nodos. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si es imprimible. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classfexpNode_a325f796b4c98dbd3453cdb1fd298b53d}{fexp\-Node}, \hyperlink{classlistNode_a91043dbc59fa1d3ffe2e7447353e4745}{list\-Node} y \hyperlink{classasigNode_a36ca81966c60c93f1b8c38fce719b000}{asig\-Node}.
+
+\hypertarget{classrunNode_a3fda5276a76f39ad12d316794a892b06}{\index{run\-Node@{run\-Node}!is\-\_\-string@{is\-\_\-string}}
+\index{is\-\_\-string@{is\-\_\-string}!runNode@{run\-Node}}
+\subsubsection[{is\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}bool run\-Node\-::is\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrunNode_a3fda5276a76f39ad12d316794a892b06}
+Método que indica si el nodo puede ser representado mediante una cadena de caracteres. \begin{DoxyReturn}{Devuelve}
+Booleano que indica si puede ser representado mediante una cadena. 
+\end{DoxyReturn}
+
+
+Reimplementado en \hyperlink{classstrNode_a8c20866d5b62df101233be5bc11a28a7}{str\-Node}.
+
+\hypertarget{classrunNode_a8d0761660753ceb2c98836614c526a45}{\index{run\-Node@{run\-Node}!rm\-Ref@{rm\-Ref}}
+\index{rm\-Ref@{rm\-Ref}!runNode@{run\-Node}}
+\subsubsection[{rm\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Node\-::rm\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classrunNode_a8d0761660753ceb2c98836614c526a45}
+Disminuye en uno el número de referencias del nodo. Si queda reducido a 0 el nodo es destruido y liberado de memoria. 
+
+Reimplementado en \hyperlink{classregexpConstNode_ae8383ec5adf0ff93cf29e0818e83eac3}{regexp\-Const\-Node}, \hyperlink{classarrayConstNode_a93fccf8c5a3fa33313a21b8e3e8838f0}{array\-Const\-Node}, \hyperlink{classfexpNode_a26cdef5bf8cd58af7e9955b74350c48b}{fexp\-Node}, \hyperlink{classrefNode_a57cee8085d111667cc0bb89ac8d81b2a}{ref\-Node}, \hyperlink{classstrConstNode_af955237c0491d855a055ab3bd995d1f4}{str\-Const\-Node}, \hyperlink{classnumConstNode_ab82d4b4e7ee1276889f045d6ac4dce30}{num\-Const\-Node} y \hyperlink{classboolConstNode_a2f87a46feab71dc6f3fab0be3023a1cf}{bool\-Const\-Node}.
+
+\hypertarget{classrunNode_a83c10df8148829b08e04153c93d69eec}{\index{run\-Node@{run\-Node}!run@{run}}
+\index{run@{run}!runNode@{run\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual void run\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classrunNode_a83c10df8148829b08e04153c93d69eec}
+Método virtual de ejecución. Este método debe ser implementado por todas las clases específicas de nodos ejecutables.
+
+La implementación de este método definirá la función que se llevará a cabo al ejecutarse el nodo. Encierra el significado semántico del nodo.
+
+En esencia los distintos nodos se diferencia entre si por la forma en que implementan esta función. 
+
+Implementado en \hyperlink{classregexpNode_a6371f51d04fc8c86e6b2ef536b275007}{regexp\-Node}, \hyperlink{classemptyNode_ab86f4f2c21cd278bf4d1c07b8d7539a3}{empty\-Node}, \hyperlink{classisObjectNode_aa88000acc716f0b07adf772d33003385}{is\-Object\-Node}, \hyperlink{classisArrayNode_a5aaed405734079e49e8bf125d9e476b6}{is\-Array\-Node}, \hyperlink{classarrayConstNode_a84b4ae603b7c24d96f16a8acc94a0403}{array\-Const\-Node}, \hyperlink{classisNumNode_ac5b294788181c892a878214ffaf6b91a}{is\-Num\-Node}, \hyperlink{classisStringNode_a38366ff46223286f941e8d471b56a74c}{is\-String\-Node}, \hyperlink{classtryNode_ac52c2062053f0a58c92d847ec2662d2e}{try\-Node}, \hyperlink{classisBoolNode_acf758fab0546f592da7115ebe7fbb46c}{is\-Bool\-Node}, \hyperlink{classthrowNode_a030f2922340a640074d7a291dea86520}{throw\-Node}, \hyperlink{classisNullNode_a0f55adb4c14683eafb6242d719164d43}{is\-Null\-Node}, \hyperlink{classsizeNode_a86d4ed29e9587ed49b34da8bd742898a}{size\-Node}, \hyperlink{classforNode_aaec3e2c55e856503df16c17c1ae1f254}{for\-Node}, \hyperlink{classnidenNode_afa39f3a84cd19576a8cdc9d08e482186}{niden\-Node}, \hyperlink{classdatInfoNode_a681d40c5a8d3b567da3c167a1c701e59}{dat\-Info\-Node}, \hyperlink{classasigdecNode_a64dcc521a5b122854a4736943823e82c}{asigdec\-Node}, \hyperlink{classarrayNode_a5ead9863a0f9478798c7777a0c03b1a5}{array\-Node}, \hyperlink{classsizeOfNode_abf4290955d8a57bdbeead3951e30dab0}{size\-Of\-Node}, \hyperlink{classneqNode_a88cbbfd96d5962f40fd2d5ea42da9de9}{neq\-Node}, \hyperlink{classdecasigNode_ac45f48e8d9866816c2efae4eed38d833}{decasig\-Node}, \hyperlink{classpartialFunctionNode_a02ef7f91a539de04d3ca4d05b53111f7}{partial\-Function\-Node}, \hyperlink{classcontinueNode_afef4eca9866bfb614c779a5c9b02adc1}{continue\-Node}, \hyperlink{classarraypopNode_a5a96f6ab8867ca653bbe74ec8f4c1d4b}{arraypop\-Node}, \hyperlink{classlowerNode_a791d630f65f89ba5329cd7beaeb5f3c7}{lower\-Node}, \hyperlink{classwithNode_afc545ad8ecb12e04bdaecbeccf5e8156}{with\-Node}, \hyperlink{classglobalNode_afe7ecb283fb3c4dec0983aff20cbf214}{global\-Node}, \hyperlink{classidenNode_a6e5cacd5b21f736ae0b6049d9381e5d6}{iden\-Node}, \hyperlink{classgetclassNode_a3f9d4481bce93bc8a3e8442869a331e5}{getclass\-Node}, \hyperlink{classasigincNode_abba913e2980459be1217172e294c1e22}{asiginc\-Node}, \hyperlink{classcontextFunction_ad726824c42f4968600df92d75609d6ae}{context\-Function}, \hyperlink{classmapNode_a4952ccc82274599b547f73ea5743ec27}{map\-Node}, \hyperlink{classincloopNode_a32835d32147f653d0f04cdf4e94b5180}{incloop\-Node}, \hyperlink{classnamespaceNode_a770dfe081c011399490fbef5e4f83037}{namespace\-Node}, \hyperlink{classarrayshiftNode_a2a34028d6f0763c7df0220ef2c624580}{arrayshift\-Node}, \hyperlink{classupperNode_ab8cb550c4e8645bf27789f01d53a6b89}{upper\-Node}, \hyperlink{classgetEnvNode_afb268b8afbddf595a70be3338405c4e9}{get\-Env\-Node}, \hyperlink{classgotoNode_a41280bd7c75f0112336cc2a539433c97}{goto\-Node}, \hyperlink{classrefparamNode_aab9b41790c37b398dfc05794b05722b3}{refparam\-Node}, \hyperlink{classincasigNode_a88e017927106af6dfc6b8305108841c3}{incasig\-Node}, \hyperlink{classeqNode_a9cbc94f2bc737f97bce1de0acb14c73d}{eq\-Node}, \hyperlink{classprivateNode_a9e3c651356ee19cec14a05e76bd46337}{private\-Node}, \hyperlink{classarraypushNode_a6eb706763d3f8cc7715706005d4bf049}{arraypush\-Node}, \hyperlink{classgetiNode_a83eb646bc0da75725c7363215c8e1737}{geti\-Node}, \hyperlink{classsubreplaceNode_a145d05be6f2fec48b084dabd35599e20}{subreplace\-Node}, \hyperlink{classgetNode__strInterface_ad7ab23855d231a9747a0c89ac392fcd2}{get\-Node\-\_\-str\-Interface}, \hyperlink{classreturnNode_abad8b5f36635ebc83cfc538d265779ff}{return\-Node}, \hyperlink{classrefNode_ad2905de207b40a8b6aec5d4ba15351d6}{ref\-Node}, \hyperlink{classstaticNode_a8ed0c090fc67d5a09aeaf32163ea4c49}{static\-Node}, \hyperlink{classmodNode_a0cebb0d5dcfd939c63be542ff45f2be8}{mod\-Node}, \hyperlink{classlistNode_a27cfebeda882dbf8d3129ac0f6761835}{list\-Node}, \hyperlink{classfcloseNode_a6110a473ad462d640df0095c9c3764dd}{fclose\-Node}, \hyperlink{classlabelNode_a9906fc4f7d7088d6ea52660f8e036b41}{label\-Node}, \hyperlink{classsignalhandlerNode_a53ba7498168b7ad02d6b34e2557e5e46}{signalhandler\-Node}, \hyperlink{classgeqNode_ad2bee104bed0c28534a3c3c8d8998436}{geq\-Node}, \hyperlink{classreplaceNode_a1bf20f6a4f26f339050837fce45ede44}{replace\-Node}, \hyperlink{classidgetNode_a9423b08e0755a0432b47dde32e7c473f}{idget\-Node}, \hyperlink{classftellNode_af0cd3be4467a5331f9d9dc7827c57bf0}{ftell\-Node}, \hyperlink{classarraydeleteNode_a0ce9f89cbb1485472f071b3573f0477d}{arraydelete\-Node}, \hyperlink{classsignalNode_ab7301aabdfecb2e2fcdcd4e787c7476d}{signal\-Node}, \hyperlink{classexitNode_afdb1e6ff54c0d3c4a5ef2ec1d9f40326}{exit\-Node}, \hyperlink{classsqrtNode_ad506515cfee088421b7eefcd93b14d78}{sqrt\-Node}, \hyperlink{classgetNode__endValue_aa6e13ab26b17eafe1773c096036f843f}{get\-Node\-\_\-end\-Value}, \hyperlink{classnullNode_ada671e4b33f2d95221694475531b7e26}{null\-Node}, \hyperlink{classiloopNode_af2bb6d18f46c88d2dd80db09d758fe9c}{iloop\-Node}, \hyperlink{classfunctiongetNode_a44cb617849960e62101f2a5681473567}{functionget\-Node}, \hyperlink{classgthNode_ae514f348e41cc8ef252f4c4d83771fef}{gth\-Node}, \hyperlink{classfseekNode_aec2f6985f9df3761c36d063d7d32b59c}{fseek\-Node}, \hyperlink{classbreakNode_a3fb64fa2dbc0a81922690ad041a40467}{break\-Node}, \hyperlink{classthisNode_a40982d7b797f87d4c99fc2938783df6d}{this\-Node}, \hyperlink{classexitProcessNode_ab68ac4e38c752216e5cc5960994dc111}{exit\-Process\-Node}, \hyperlink{classarrayinsertNode_a1a72ddaf1ade1ee8a535ae1ca1fc2861}{arrayinsert\-Node}, \hyperlink{classfindNode_a50ac36a34f93eb0facbd1b3c240bffc6}{find\-Node}, \hyperlink{classpowNode_addee6366a08fc6dc4fed08f04b48e3ef}{pow\-Node}, \hyperlink{classfunctioncallNode_ab75cccac2ce7de1b68cb725ff24f5381}{functioncall\-Node}, \hyperlink{classnewNode_afa5d1d8599f4dd6d7e68b04ad0c12b15}{new\-Node}, \hyperlink{classfappendNode_a872c68dabc8306cc405452ce4200b7bd}{fappend\-Node}, \hyperlink{classleqNode_a8805e035c0562e4b8974f9ebb346abe5}{leq\-Node}, \hyperlink{classprocessNode_a9099657c572e7326578a0464439c048f}{process\-Node}, \hyperlink{classstrNode_af11bd0e4f2dff849f90528f01220b811}{str\-Node}, \hyperlink{classgetNode_a17b811df8eff8890188d21aeb817b11d}{get\-Node}, \hyperlink{classarrayfirstNode_a6966767db3660da890d9d3c7363f8e90}{arrayfirst\-Node}, \hyperlink{classforeachGeneratorNode_a2769b5956850366b99fa9f9d0e89ec37}{foreach\-Generator\-Node}, \hyperlink{classfwriteNode_aea4d89505071406cc2caceb55ce00c66}{fwrite\-Node}, \hyperlink{classgetppidNode_ad4a2f0ad4df2c2b04b878de06e04bdb7}{getppid\-Node}, \hyperlink{classdivNode_a56aa027a86b596362a5741bed8b8eb51}{div\-Node}, \hyperlink{classsprintfNode_ad572656a67da5d4df98bce0eeb2affd5}{sprintf\-Node}, \hyperlink{classstrconvNode_a85f8c063a67fe4c753fc9053ec87977b}{strconv\-Node}, \hyperlink{classlthNode_af7b0f02382415e845606e0c6e5795726}{lth\-Node}, \hyperlink{classtypeofNode_af20d8079022f6227d5403c5d2fc58527}{typeof\-Node}, \hyperlink{classgetRefNode_aa373d10ffbf1dd843b4b30295e5f0ddb}{get\-Ref\-Node}, \hyperlink{classgetpidNode_a58300ddbc9eb7069737ccdaeaa13c58f}{getpid\-Node}, \hyperlink{classarraylastNode_a408528a55b63a926c665dac74764319a}{arraylast\-Node}, \hyperlink{classfreadNode_a70bf100a17d78be82f7972d467b22fe8}{fread\-Node}, \hyperlink{classsearchNode_aee137a8b956e6582c22588117efbc366}{search\-Node}, \hyperlink{classsleepNode_a64995fd7ed1b6b3653659edc1ee02162}{sleep\-Node}, \hyperlink{classincludeNode_adcaaf58d6c1613abaa8e7c939023945b}{include\-Node}, \hyperlink{classprodNode_aa632c55af2d26992b82b9f5a1ffed951}{prod\-Node}, \hyperlink{classswitchNode_a7376e88757e30536bd26878d58bc2069}{switch\-Node}, \hyperlink{classwaitNode_a89cb8462c00751c8c374d6e3b8bf0c4b}{wait\-Node}, \hyperlink{classfloatconvNode_ae4ffda78f5fa50df0cbf21f7eb1b1572}{floatconv\-Node}, \hyperlink{classasigrefNode_a208e32830e6f43157a94d993c599ed00}{asigref\-Node}, \hyperlink{classnumNode_a631d65e358f2103268827f6274d381c2}{num\-Node}, \hyperlink{classfgetNode_a189fa91cf346d112382c333348d1ffcd}{fget\-Node}, \hyperlink{classnotNode_a1a0cfd8402c4223615b1333998e7b13d}{not\-Node}, \hyperlink{classimplodeNode_af08c8e5a3ba8cdd2c1aff5645fe72ad4}{implode\-Node}, \hyperlink{classforeachNode_a86c6a9ef828c2a700a29d725a0bc4a53}{foreach\-Node}, \hyperlink{classtimeNode_a41b2272aa750223db76fef316e93322e}{time\-Node}, \hyperlink{classloadNode_a27a4b249f01174cd93f0c386822a4f95}{load\-Node}, \hyperlink{classforkNode_a7b3213a5ad54b2d051f9b1a96b88d5fd}{fork\-Node}, \hyperlink{classexplodeNode_a1bb7df027458cb1e63d5b0898540b114}{explode\-Node}, \hyperlink{classfputNode_ac1e5fdc58f9d57e1b7782b1eda9e273f}{fput\-Node}, \hyperlink{classcaseNode_a257a849756f7bcd0ccb0dc41a62783d9}{case\-Node}, \hyperlink{classinputNode_a1fa415de6a36c066fbca49e9168b4d61}{input\-Node}, \hyperlink{classstmtNode_a3af40723e5e98718eacc7ac7935b281b}{stmt\-Node}, \hyperlink{classsubNode_add0c5dd4579e62476c941333d5bc1577}{sub\-Node}, \hyperlink{classintconvNode_a70bf0fffc52d33f453f3d798f1147d99}{intconv\-Node}, \hyperlink{classnewregexpNode_adeeddddbdc4019702b5db58581283a57}{newregexp\-Node}, \hyperlink{classclassNode_a65ea61be38e2ecbec6c7766951819939}{class\-Node}, \hyperlink{classandNode_a87b7e06b52e72e4f6d08027d59310a7e}{and\-Node}, \hyperlink{classarrayChunkNode_afaeae0c90a08aa29b23ff3852a089489}{array\-Chunk\-Node}, \hyperlink{classnotnullNode_a5dce7fd752570604933feeadd6e5d973}{notnull\-Node}, \hyperlink{classdowhileNode_a347c599237629fdd55071a78a693d351}{dowhile\-Node}, \hyperlink{classfunctionNode_acfd33517bb4dfab471fe0d1ec72ffb11}{function\-Node}, \hyperlink{classevalNode_a09885abc979cca1e769cb83e32017909}{eval\-Node}, \hyperlink{classdateNode_ad13a252816fd28e65c027ad49d8c3976}{date\-Node}, \hyperlink{classboolNode_a98c7446189867e474cd759334b30a9ad}{bool\-Node}, \hyperlink{classasigNode_a7009318d86f9bcb728933074015fcf22}{asig\-Node}, \hyperlink{classcatNode_af6735016b3cb2477a94de79d7e1e1c62}{cat\-Node}, \hyperlink{classidNode_a720f6ab623192e93743e0098db5d7af7}{id\-Node}, \hyperlink{classnoNode_a20a6dd98d7e65af4ddfaae9fe4abc228}{no\-Node}, \hyperlink{classfileNode_a54a9c6df980993a5de838839f4fc54f3}{file\-Node}, \hyperlink{classmatchNode_a216cb0810f679bab31aa61eeaad86f9a}{match\-Node}, \hyperlink{classprintNode_a5a3da53743a7d8be8641672478eaad4c}{print\-Node}, \hyperlink{classaddNode_aade4eeee8fc992cc3322ee7f608ce5d2}{add\-Node}, \hyperlink{classternNode_a5ba4c96a74db8179e190d2ae60958be4}{tern\-Node}, \hyperlink{classboolconvNode_a344001e8903f5969a0187021d749c637}{boolconv\-Node}, \hyperlink{classorNode_a326d03128c3fd68b03749eb6d9c31ec3}{or\-Node}, \hyperlink{classifNode_af136e318ac35eaab32770bebe8c039a1}{if\-Node}, \hyperlink{classwhileNode_ac46ec596fcf2cc2a4ec397de4bcdfef4}{while\-Node}, \hyperlink{classreduceNode_aab13f70c0ca5a00dec30f9ea1be93420}{reduce\-Node} y \hyperlink{classexecNode_a0eec036e65db650fa5a58e92dfbfb967}{exec\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{runTree_8h}{run\-Tree.\-h}\item 
+trunk/src/run/tree/run\-Tree.\-cpp\end{DoxyCompactItemize}

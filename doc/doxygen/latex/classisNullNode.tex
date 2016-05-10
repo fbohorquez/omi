@@ -1,0 +1,70 @@
+\hypertarget{classisNullNode}{\section{Referencia de la Clase is\-Null\-Node}
+\label{classisNullNode}\index{is\-Null\-Node@{is\-Null\-Node}}
+}
+
+
+Nodo operador de comprobación de nulo.  
+
+
+
+
+{\ttfamily \#include $<$logic\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de is\-Null\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classisNullNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classisNullNode_aee160904eb282f4495d86384ddb02e76}{is\-Null\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classisNullNode_a0f55adb4c14683eafb6242d719164d43}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo operador de comprobación de nulo. 
+
+Este nodo implementa la operación de comprobación de tipo para el caso nulo.
+
+Para determinar el valor de la operación se comprueba si el valor del operando es de tipo nulo.
+
+El resultado de evaluar la expresión es un valor booleano. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classisNullNode_aee160904eb282f4495d86384ddb02e76}{\index{is\-Null\-Node@{is\-Null\-Node}!is\-Null\-Node@{is\-Null\-Node}}
+\index{is\-Null\-Node@{is\-Null\-Node}!isNullNode@{is\-Null\-Node}}
+\subsubsection[{is\-Null\-Node}]{\setlength{\rightskip}{0pt plus 5cm}is\-Null\-Node\-::is\-Null\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classisNullNode_aee160904eb282f4495d86384ddb02e76}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classisNullNode_a0f55adb4c14683eafb6242d719164d43}{\index{is\-Null\-Node@{is\-Null\-Node}!run@{run}}
+\index{run@{run}!isNullNode@{is\-Null\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void is\-Null\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classisNullNode_a0f55adb4c14683eafb6242d719164d43}
+Método que ejecuta el nodo. Procede a la ejecución del nodo asociado. Comprueba si el tipo del nodo asociado es nulo para tomar el valor lógico correspondiente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{logicOpNode_8h}{logic\-Op\-Node.\-h}\item 
+trunk/src/run/operators/logic\-Op\-Node.\-cpp\end{DoxyCompactItemize}

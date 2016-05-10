@@ -1,0 +1,239 @@
+#!/usr/local/bin/omi
+
+host="127.0.0.1";
+user= "root";
+pass = "75766599e";
+
+#inicialización básica. Conecta al sistema de bases de datos
+connect (host, user, pass);
+if (args[0] == "drop" ){
+  query ("DROP DATABASE rules"); 
+  exit;
+}
+#petición al sistema de base de datos
+query ("CREATE DATABASE IF NOT EXISTS rules CHARACTER SET 'utf8'");
+#~ 
+#conectando a base de datos
+connect(db,"rules");
+echo "#Creando Tablas:";
+query ("SHOW DATABASES;");
+query ("CREATE TABLE IF NOT EXISTS sentencias (id INT(11) AUTO_INCREMENT PRIMARY KEY, autor INT(11),nombre VARCHAR(127) CHARACTER SET 'utf8', descripcion TEXT);");
+query (
+  "CREATE TABLE IF NOT EXISTS 
+    tipos (
+      id INT(11) AUTO_INCREMENT PRIMARY KEY, 
+      nombre VARCHAR(127) CHARACTER SET 'utf8', 
+      descripcion TEXT
+    );"
+);
+query (
+  "CREATE TABLE IF NOT EXISTS 
+    argumentos (
+      id INT(11) AUTO_INCREMENT PRIMARY KEY,
+      sentencia INT(11),
+      tipo INT(11),
+      nombre VARCHAR(127) CHARACTER SET 'utf8'
+    );"
+);
+query (
+  "CREATE TABLE IF NOT EXISTS 
+    personas (
+      id INT(11) AUTO_INCREMENT PRIMARY KEY,
+      nombre VARCHAR(127) CHARACTER SET 'utf8',
+      apellidos VARCHAR(127) CHARACTER SET 'utf8'
+    );"
+);
+query (
+  "CREATE TABLE IF NOT EXISTS 
+    cargos (
+      id INT(11) AUTO_INCREMENT PRIMARY KEY,
+      nombre VARCHAR(127) CHARACTER SET 'utf8'
+    );"
+);
+query (
+  "CREATE TABLE IF NOT EXISTS 
+    personas_cargos (
+      id INT(11) AUTO_INCREMENT PRIMARY KEY,
+      persona INT(11),
+      cargo INT(11)
+    );"
+);
+cargo1 = { "nombre" : "Programador" };
+cargo2 = { "nombre" : "Jefe de Proyecto" };
+cargo3 = { "nombre" : "Apoyo moral" };
+sql = {
+  "sentencia@sentencias" : {
+    {
+      "nombre" : "connect",
+      "descripcion" : "Realiza conexiones sobre un sistema de base de datos",
+      "autor@personas" : {
+        "nombre" : "Francisco Javier",
+        "apellidos" : "Bohórquez Ogalla",
+        "persona:personas_cargos" : {
+          {
+            "cargo@cargos" : cargo1
+          },
+          {
+            "cargo@cargos" : cargo2
+          }
+        }
+      },
+      "sentencia:argumentos" : {
+        {
+            "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            "nombre" : "host"
+        },
+        {
+            "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            "nombre" : "user"
+        },
+        {
+            "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            "nombre" : "pass"
+        },
+        {
+            "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            "nombre" : "database"
+        },
+        {
+            "tipo@tipos" :{ "nombre" : "number", "descripcion" : "Numérico"},
+            "nombre" : "port"
+        }
+      }
+    },
+    {
+      "nombre" : "query",
+      "descripcion" : "Realiza una petición al sitema de base de datos",
+      "autor@personas" : {
+        "nombre" : "Francisco Javier",
+        "apellidos" : "Bohórquez Ogalla"
+      },
+      "sentencia:argumentos" : {
+        {
+            "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            "nombre" : "q"
+        }
+      }
+    }
+  },
+  "persona@personas" : {
+    {
+      "nombre" : "Sandra",
+      "apellidos" : "Fernandez Domiguez",
+      "persona:personas_cargos" : {
+        {
+          "cargo@cargos": cargo3
+        }
+      }
+    }
+  }
+};
+#~ 
+#~ sql_sin_tabla_ini = {
+    #~ {
+      #~ "nombre" : "connect",
+      #~ "descripcion" : "Realiza conexiones sobre un sistema de base de datos",
+      #~ "autor@personas" : {
+        #~ "nombre" : "Francisco Javier",
+        #~ "apellidos" : "Bohórquez Ogalla",
+        #~ "persona:personas_cargos" : {
+          #~ {
+            #~ "cargo@cargos" : cargo1
+          #~ },
+          #~ {
+            #~ "cargo@cargos" : cargo2
+          #~ }
+        #~ }
+      #~ },
+      #~ "sentencia:argumentos" : {
+        #~ {
+            #~ "tipo" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            #~ "nombre" : "host"
+        #~ },
+        #~ {
+            #~ "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            #~ "nombre" : "user"
+        #~ },
+        #~ {
+            #~ "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            #~ "nombre" : "pass"
+        #~ },
+        #~ {
+            #~ "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            #~ "nombre" : "database"
+        #~ },
+        #~ {
+            #~ "tipo@tipos" :{ "nombre" : "number", "descripcion" : "Numérico"},
+            #~ "nombre" : "port"
+        #~ }
+      #~ }
+    #~ },
+    #~ {
+      #~ "nombre" : "query",
+      #~ "descripcion" : "Realiza una petición al sitema de base de datos",
+      #~ "autor@personas" : {
+        #~ "nombre" : "Francisco Javier",
+        #~ "apellidos" : "Bohórquez Ogalla"
+      #~ },
+      #~ "sentencia:argumentos" : {
+        #~ {
+            #~ "tipo@tipos" :{ "nombre" : "string", "descripcion" : "Cadena de texto"},
+            #~ "nombre" : "q"
+        #~ }
+      #~ }
+    #~ }
+#~ };
+#~ 
+echo insert (sql);
+  #~ 
+#~ echo insert ("sentencia@sentencias", sql_sin_tabla_ini);
+#~ 
+#~ echo "#Select todas las personas";
+#~ echo select (db, "personas", "nombre", "");
+#~ echo "#Select una persona por nombre";
+#~ echo select (
+  #~ db, 
+  #~ "personas", 
+  #~ "
+    #~ *
+  #~ ", 
+  #~ "
+    #~ WHERE nombre LIKE 'Francisco Javier'
+  #~ "
+#~ );
+#~ echo "#Select todas las personas y su cargo";
+#~ echo select (
+  #~ db, 
+  #~ "personas, personas_cargos, cargos", 
+  #~ "
+    #~ CONCAT(personas.nombre, ' ', personas.apellidos) as persona,
+    #~ cargos.nombre as cargo
+  #~ ", 
+  #~ "
+    #~ WHERE 
+      #~ personas.id = personas_cargos.persona AND
+      #~ cargos.id = personas_cargos.cargo
+    #~ ORDER BY persona
+  #~ "
+#~ );
+#~ 
+#~ echo update (
+  #~ "personas",
+  #~ "apellidos='Bohorquez Ogalla'",
+  #~ "WHERE apellidos LIKE '%Ogalla%'"
+#~ );
+#~ 
+#~ persona = {
+  #~ "nombre" : "Sandrita"
+#~ };
+#~ 
+#~ echo update (
+  #~ "personas",
+  #~ persona,
+  #~ "WHERE id=1"
+#~ );
+#~ 
+#~ echo delete (
+  #~ "personas",
+  #~ "WHERE id = 1"
+#~ );

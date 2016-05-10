@@ -1,0 +1,103 @@
+\hypertarget{classfileNode}{\section{Referencia de la Clase file\-Node}
+\label{classfileNode}\index{file\-Node@{file\-Node}}
+}
+
+
+Nodo fichero .  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de file\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfileNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfileNode_a2d9014c5f0902bd415b41a6519056c4b}{file\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file, \hyperlink{classrunNode}{run\-Node} $\ast$mode=N\-U\-L\-L)
+\item 
+void \hyperlink{classfileNode_a54a9c6df980993a5de838839f4fc54f3}{run} ()
+\item 
+fstream $\ast$ \hyperlink{classfileNode_a46be9af6a79c1956c0e07444c2ec713e}{get} () const 
+\item 
+string \hyperlink{classfileNode_a6b5786f432ddab8daf3c90deb24413c9}{get\-Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo fichero . 
+
+Este nodo abre un descriptor de fichero segun una ruta dada y un modo.
+
+El modo puede ser\-:
+\begin{DoxyItemize}
+\item r\-: Solo lectura
+\item r+\-: Lectura y/o escritura
+\item w\-: Escritura truncando el fichero
+\item w+\-: Lectura y/o escritura truncando el fichero
+\item a\-: Escritura posicionando el puntero al final del fichero
+\item a+\-: Lectura y/o escritura posicionando el puntero al final del fichero 
+\end{DoxyItemize}
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfileNode_a2d9014c5f0902bd415b41a6519056c4b}{\index{file\-Node@{file\-Node}!file\-Node@{file\-Node}}
+\index{file\-Node@{file\-Node}!fileNode@{file\-Node}}
+\subsubsection[{file\-Node}]{\setlength{\rightskip}{0pt plus 5cm}file\-Node\-::file\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file, }
+\item[{{\bf run\-Node} $\ast$}]{mode = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classfileNode_a2d9014c5f0902bd415b41a6519056c4b}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que representa la ruta de un fichero \\
+\hline
+{\em mode.} & Nodo que representa la cadena que determina el modo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfileNode_a46be9af6a79c1956c0e07444c2ec713e}{\index{file\-Node@{file\-Node}!get@{get}}
+\index{get@{get}!fileNode@{file\-Node}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}fstream$\ast$ file\-Node\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfileNode_a46be9af6a79c1956c0e07444c2ec713e}
+Obtiene el descriptor de fichero interno \begin{DoxyReturn}{Devuelve}
+Descriptor de fichero 
+\end{DoxyReturn}
+\hypertarget{classfileNode_a6b5786f432ddab8daf3c90deb24413c9}{\index{file\-Node@{file\-Node}!get\-Mode@{get\-Mode}}
+\index{get\-Mode@{get\-Mode}!fileNode@{file\-Node}}
+\subsubsection[{get\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}string file\-Node\-::get\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classfileNode_a6b5786f432ddab8daf3c90deb24413c9}
+Obtiene el modo \begin{DoxyReturn}{Devuelve}
+Cadena correspondiente al modo 
+\end{DoxyReturn}
+\hypertarget{classfileNode_a54a9c6df980993a5de838839f4fc54f3}{\index{file\-Node@{file\-Node}!run@{run}}
+\index{run@{run}!fileNode@{file\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void file\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfileNode_a54a9c6df980993a5de838839f4fc54f3}
+Método de ejecución. Abre el descriptor de fichero y lo toma como valor. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

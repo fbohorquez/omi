@@ -1,0 +1,66 @@
+\hypertarget{classfcloseNode}{\section{Referencia de la Clase fclose\-Node}
+\label{classfcloseNode}\index{fclose\-Node@{fclose\-Node}}
+}
+
+
+Nodo función que cierra un descriptor de fichero.  
+
+
+
+
+{\ttfamily \#include $<$file\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fclose\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfcloseNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfcloseNode_aebf6497162cd14d57fc18151d02e231d}{fclose\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$file)
+\item 
+void \hyperlink{classfcloseNode_a6110a473ad462d640df0095c9c3764dd}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función que cierra un descriptor de fichero. 
+
+La ejecución de este nodo conlleva el cierre de un descriptor de fichero. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfcloseNode_aebf6497162cd14d57fc18151d02e231d}{\index{fclose\-Node@{fclose\-Node}!fclose\-Node@{fclose\-Node}}
+\index{fclose\-Node@{fclose\-Node}!fcloseNode@{fclose\-Node}}
+\subsubsection[{fclose\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fclose\-Node\-::fclose\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classfcloseNode_aebf6497162cd14d57fc18151d02e231d}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em file.} & Nodo que representa el descriptor de fichero \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfcloseNode_a6110a473ad462d640df0095c9c3764dd}{\index{fclose\-Node@{fclose\-Node}!run@{run}}
+\index{run@{run}!fcloseNode@{fclose\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fclose\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfcloseNode_a6110a473ad462d640df0095c9c3764dd}
+Método de ejecución. Procede a cerrar el descriptor de fichero finalizando todas las operaciones pendientes. Toma como valor un booleano que indica si el proceso se llevó a cabo correctamente. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{fileOpNode_8h}{file\-Op\-Node.\-h}\item 
+trunk/src/run/operators/file\-Op\-Node.\-cpp\end{DoxyCompactItemize}

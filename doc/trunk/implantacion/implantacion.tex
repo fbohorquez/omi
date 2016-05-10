@@ -1,0 +1,148 @@
+\section{Vista general}
+En esta sección se detallan las instrucciones de instalación y explotación del sistema
+
+\section{Introducción}
+Los objetivos del proyecto OMI es servir como una plataforma para el aprendizaje de cómo se 
+construyen los lenguajes de programación. Esto lo hace mediante el estudio de un intérprete propio del 
+proyecto, desarrollado desde cero y con características de los lenguajes actuales. Para facilitar toda esta información el
+proyecto OMI pone a disposición del usuario una serie de herramientas que ayudan al aprendizaje, así mismo como toda la información relativa al proyecto. 
+
+El sistema OMI pretende ser un sistema distribuido con una alta disponibilidad y de fácil acceso. Es por ello que 
+todas las herramientas y recursos del proyecto son ofrecida vía online y pueden ser accedidas desde cualquier navegador o dispositivo.
+
+La implantación del sistema OMI comprende la configuración del dominio, del servidor web y del sistema intérprete.
+ 
+\section{Requisitos previos}
+Para el correcto funcionamiento de la plataforma se precisa de un equipo con alta disponibilidad que hará de servidor web. Este equipo tendrá una 
+una distribución GNU/Linux Debian o derivada.
+
+\section{Inventario de componentes}
+
+\subsection{Hardware}
+
+\begin{description}
+\item[Virtualizacion:] VPS
+\item[RAM:] 2 GiB
+\item[CPU:] 8 núcleos
+\end{description} 
+
+\subsection{Software}
+\begin{description}
+\item[Sistema Operativo:] Debian 7
+\item[Interprete:] OMI 1.0
+\item[Nombre de dominio:] Bind 9
+\item[Web:] Apache 2.2
+\item[Interprete web:] PHP 5.4
+\item[Plataforma:] omi-project 1.0
+\end{description}
+
+\section{Procedimiento de intalación}
+
+Se procede con la instalación de los paquetes necesarios
+\begin{lstlisting}[language=bash]
+apt-get install apache2 php5 bind9 autoconf automake build-essential libreadline-dev libboost-regex-dev
+\end{lstlisting}
+
+Se configura la zona del dominio y los registros asociados al mismo.
+\begin{lstlisting}
+; Zone file for omi-project.com
+$TTL 14400
+omi-project.com.	14400	IN	SOA	ns.omi-project.com. omi-project.com. (
+			10000000001
+			86400
+			7200
+			3600000
+			86400 )
+
+omi-project.com.	14400	IN	NS	ns1.omi-project.com.
+omi-project.com.	14400 	IN	NS	ns2.omi-project.com.
+omi-project.com.	14400	IN	A	$IP$
+localhost	14400	IN	A	127.0.0.1
+omi-project.com.	14400	IN	MX	10	mail
+omi-project.com. 	14400	IN	TXT	"v=spf1 mx ptr ip4:$IP$ mx:mail.omi-project.com +all"
+omi-project.com.     14400   IN      SPF     "v=spf1 mx ptr ip4:$IP$ mx:mail.omi-project.com +all"
+
+mail	14400	IN	A	$IP$
+www	14400	IN	CNAME	omi-project.com.
+ftp	14400	IN	A	$IP$
+ns	14400	IN	A	$IP$
+ns1 	14400  	IN	A	$IP$
+ns2 	14400	IN	A	$IP$
+admin 	14400	IN	A	$IP$
+
+_adsp._domainkey.omi-project.com. IN TXT "dkim=all; atps=y; asl=omi-project;"
+\end{lstlisting}
+
+Descarga y compilación del proyecto OMI.
+
+\begin{lstlisting}[language=bash]
+wget http://www.omi-project.com/download/code/omi_1.0.tar.gz
+tar -xzvf omi_1.0.tar.gz
+cd omi_1.0.tar.gz
+./configure JSON=1 SERVER=1
+make
+make install
+make clean
+\end{lstlisting}
+
+Configuración del servidor web Apache. Se define un nuevo host virtual
+
+\begin{lstlisting}
+<VirtualHost *:80>
+     ServerAdmin admin@omi-project.com
+     ServerName omi-project.com
+     DocumentRoot $PATH$
+     ErrorLog $PATH$/error.log
+     TransferLog $PATH$/access.log
+     <Directory $PATH$ >
+         Require all granted
+         AllowOverride all
+     </Directory>
+   
+   <IfModule php5_module>
+	    php_flag session.cookie_httponly on
+	</IfModule>
+
+	<IfModule mod_headers.c>
+       Header always append X-Frame-Options SAMEORIGIN
+       Header set Server "securesauce http/html processor"
+       Header unset X-Powered-By
+   </IfModule>
+</VirtualHost>
+\end{lstlisting}
+
+Se ha de mover la web al directorio de producción y dar los permisos de acceso correspondientes
+\begin{lstlisting}
+mv OMI_1.0/web $PATH$
+chown -R omi:www-data $PATH$
+chmod -R 750 $PATH$
+\end{lstlisting}
+
+Para finalizar se han de reiniciar los servicios.
+\begin{lstlisting}
+service omi restart
+service apache2 restart
+service bind9 restart
+\end{lstlisting}
+
+\section{Pruebas de implantación}
+Para comprobar que la implantación se ha llevado a cabo correctamente se puede llevar a cabo un chequeo de las pruebas automáticas. Para ello:
+\begin{lstlisting}
+cd OMI_1.0
+make check
+\end{lstlisting}
+
+También se puede acceder a las distintas secciones de la web. Navegando por los distintos páginas y comprobando la disponibilidad de los recursos.
+ 
+ Para comprobar que el servidor OMI se encuentra funcionando correctamente se puede usar el cliente runTree y comprobar
+ que el código fuente enviado se interpreta correctamente.
+ 
+ \section{Procedimientos de operación y nivel de servicio}
+ Para comprobar el correcto funcionamiento  del sistema en cuanto a rendimiento y disponibilidad se puede usar 
+ un navegador web y las herramientas de desarrollo que la mayoría de estos tienen integradas. También se puede automatizar 
+ un chequeo de disponibilidad desde una maquina tercera o la propia máquina
+ 
+ La web OMI no guarda ningún dato del usuario ni de los proceso asociados por lo que no es necesario hacer back-ups periódicos. 
+ 
+ Es posible chequear errores en el servicio web mediante el log \$PATH\$/error.log. También es posible
+ chequear las transferencias de datos y las peticiones atendidas en el fichero \$PATH\$/access.log.

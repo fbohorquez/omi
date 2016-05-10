@@ -1,0 +1,134 @@
+\hypertarget{classasigNode}{\section{Referencia de la Clase asig\-Node}
+\label{classasigNode}\index{asig\-Node@{asig\-Node}}
+}
+
+
+Nodo asignación.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de asig\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classasigNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classasigNode_ad8a2612519f5aa530dbdb0efe0987044}{asig\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2)
+\item 
+void \hyperlink{classasigNode_a7009318d86f9bcb728933074015fcf22}{run} ()
+\item 
+void \hyperlink{classasigNode_a2b95850e36d0c65e0e8bbbf2f49d106a}{run\-Level} ()
+\item 
+void \hyperlink{classasigNode_a5d43f5aacfd7a906a8454cb5ef55ff0a}{set\-Value} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classasigNode_a8902a08795822d1e04f0c3a28ed8492b}{get\-Left} ()
+\item 
+\hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classasigNode_a3aff56b9b19402e286846e7eae023fba}{get\-Right} ()
+\item 
+bool \hyperlink{classasigNode_a36ca81966c60c93f1b8c38fce719b000}{is\-\_\-runlist} () const 
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo asignación. 
+
+Asigna el valor de un nodo a otro. La asignación se debe realizar sobre una expresión de tipo no definido, modificándose la referencia interna de este al nodo asignado.
+
+Si el nodo que es asignado es constante será clonado y se asignará la copia. Si el nodo es dinámico se asigna el propio nodo aumentaándose el número de referencias del mismo.
+
+La asignación es en si misma una expresión de tipo no definido cuyo valor tras la ejecución será el nodo asignado. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classasigNode_ad8a2612519f5aa530dbdb0efe0987044}{\index{asig\-Node@{asig\-Node}!asig\-Node@{asig\-Node}}
+\index{asig\-Node@{asig\-Node}!asigNode@{asig\-Node}}
+\subsubsection[{asig\-Node}]{\setlength{\rightskip}{0pt plus 5cm}asig\-Node\-::asig\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2}
+\end{DoxyParamCaption}
+)}}\label{classasigNode_ad8a2612519f5aa530dbdb0efe0987044}
+Construcutor de la clase que asocia los nodos al nodo operación de asignación 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Nodo sobre el que se realizará la asignación \\
+\hline
+{\em node2} & Nodo que será asignado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classasigNode_a8902a08795822d1e04f0c3a28ed8492b}{\index{asig\-Node@{asig\-Node}!get\-Left@{get\-Left}}
+\index{get\-Left@{get\-Left}!asigNode@{asig\-Node}}
+\subsubsection[{get\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ asig\-Node\-::get\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classasigNode_a8902a08795822d1e04f0c3a28ed8492b}
+Obtiene la parte izquierda del operador \begin{DoxyReturn}{Devuelve}
+Nodo de la parte izquierda del operador 
+\end{DoxyReturn}
+\hypertarget{classasigNode_a3aff56b9b19402e286846e7eae023fba}{\index{asig\-Node@{asig\-Node}!get\-Right@{get\-Right}}
+\index{get\-Right@{get\-Right}!asigNode@{asig\-Node}}
+\subsubsection[{get\-Right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ asig\-Node\-::get\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classasigNode_a3aff56b9b19402e286846e7eae023fba}
+Obtiene la parte derecha del operador \begin{DoxyReturn}{Devuelve}
+Nodo de la parte derecha del operador 
+\end{DoxyReturn}
+\hypertarget{classasigNode_a36ca81966c60c93f1b8c38fce719b000}{\index{asig\-Node@{asig\-Node}!is\-\_\-runlist@{is\-\_\-runlist}}
+\index{is\-\_\-runlist@{is\-\_\-runlist}!asigNode@{asig\-Node}}
+\subsubsection[{is\-\_\-runlist}]{\setlength{\rightskip}{0pt plus 5cm}bool asig\-Node\-::is\-\_\-runlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classasigNode_a36ca81966c60c93f1b8c38fce719b000}
+Las asignaciones deben ser ejecutadas cunado se encuentran dentro de una lista. 
+
+Reimplementado de \hyperlink{classrunNode_a231638d0fc5b436c5e4a664fe7d5126a}{run\-Node}.
+
+\hypertarget{classasigNode_a7009318d86f9bcb728933074015fcf22}{\index{asig\-Node@{asig\-Node}!run@{run}}
+\index{run@{run}!asigNode@{asig\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void asig\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classasigNode_a7009318d86f9bcb728933074015fcf22}
+Método que ejecuta el nodo. Se lleva a cabo la asignación, para ello se procesa el lado derecho de la asignación. Luego este valor es asignado a como referencia del lado izquierdo.
+
+Tras la ejecución se toma como valor el nodo asignado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+\hypertarget{classasigNode_a2b95850e36d0c65e0e8bbbf2f49d106a}{\index{asig\-Node@{asig\-Node}!run\-Level@{run\-Level}}
+\index{run\-Level@{run\-Level}!asigNode@{asig\-Node}}
+\subsubsection[{run\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void asig\-Node\-::run\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classasigNode_a2b95850e36d0c65e0e8bbbf2f49d106a}
+Método que ejecuta el nodo entre niveles de la tabla de símbolos. Se lleva a cabo la asignación, para ello se procesa el lado derecho de la asignación en el nivel anterior de la tabla de símbolos. Luego este valor es asignado a como referencia del lado izquierdo en el nivel actual de la tabla de símbolos.
+
+Generalmente el lado izquierdo de la expresión será un identificador.
+
+Tras la ejecución se toma como valor el nodo asignado \hypertarget{classasigNode_a5d43f5aacfd7a906a8454cb5ef55ff0a}{\index{asig\-Node@{asig\-Node}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!asigNode@{asig\-Node}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void asig\-Node\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classasigNode_a5d43f5aacfd7a906a8454cb5ef55ff0a}
+Asigna el valor de un nodo dado al referencia del nodo del lado izquierdo del operador 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{symbolOpNode_8h}{symbol\-Op\-Node.\-h}\item 
+trunk/src/run/operators/symbol\-Op\-Node.\-cpp\end{DoxyCompactItemize}

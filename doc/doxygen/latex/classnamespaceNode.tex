@@ -1,0 +1,69 @@
+\hypertarget{classnamespaceNode}{\section{Referencia de la Clase namespace\-Node}
+\label{classnamespaceNode}\index{namespace\-Node@{namespace\-Node}}
+}
+
+
+Nodo de espacio de nombre.  
+
+
+
+
+{\ttfamily \#include $<$class\-Node.\-h$>$}
+
+Diagrama de herencias de namespace\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classnamespaceNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnamespaceNode_acdcf5f6fd3fc2e8c126a2417e67298b8}{namespace\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$space, \hyperlink{classrunNode}{run\-Node} $\ast$key)
+\item 
+void \hyperlink{classnamespaceNode_a770dfe081c011399490fbef5e4f83037}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de espacio de nombre. 
+
+Este nodo se corresponde con el operador de espacio de nombre. Se utiliza para acceder a atributos y métodos de la clase o la clase padre. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classnamespaceNode_acdcf5f6fd3fc2e8c126a2417e67298b8}{\index{namespace\-Node@{namespace\-Node}!namespace\-Node@{namespace\-Node}}
+\index{namespace\-Node@{namespace\-Node}!namespaceNode@{namespace\-Node}}
+\subsubsection[{namespace\-Node}]{\setlength{\rightskip}{0pt plus 5cm}namespace\-Node\-::namespace\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{space, }
+\item[{{\bf run\-Node} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{classnamespaceNode_acdcf5f6fd3fc2e8c126a2417e67298b8}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em space} & Identificador usará para acceder al contexto. Puede ser un nodo identificador, un nodo estático o un nodo padre. \\
+\hline
+{\em key} & Clave utilizada para obtener el elemento. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classnamespaceNode_a770dfe081c011399490fbef5e4f83037}{\index{namespace\-Node@{namespace\-Node}!run@{run}}
+\index{run@{run}!namespaceNode@{namespace\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void namespace\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classnamespaceNode_a770dfe081c011399490fbef5e4f83037}
+Según el nodo dado como espacio se accede al contexto de una clase, y se toma como valor el atributo o método determinado por la clave. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/table/\hyperlink{classNode_8h}{class\-Node.\-h}\item 
+trunk/src/run/table/class\-Node.\-cpp\end{DoxyCompactItemize}

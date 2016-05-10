@@ -1,0 +1,87 @@
+\hypertarget{classexplodeNode}{\section{Referencia de la Clase explode\-Node}
+\label{classexplodeNode}\index{explode\-Node@{explode\-Node}}
+}
+
+
+Nodo operador explode.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de explode\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classexplodeNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexplodeNode_a90c920b30840535e2ad7c27913e91f7c}{explode\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$substr, \hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classexplodeNode_a1bb7df027458cb1e63d5b0898540b114}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classexplodeNode_aea0516f602785514e0a709b4f0867774}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo operador explode. 
+
+Este operador permite dividir en partes una cadena de texto a partir de una subcadena denominada separador
+
+El nodo toma como valor un array que contedrá cada una de las subscadenas en que queda dividida la cadena principal por el separador. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classexplodeNode_a90c920b30840535e2ad7c27913e91f7c}{\index{explode\-Node@{explode\-Node}!explode\-Node@{explode\-Node}}
+\index{explode\-Node@{explode\-Node}!explodeNode@{explode\-Node}}
+\subsubsection[{explode\-Node}]{\setlength{\rightskip}{0pt plus 5cm}explode\-Node\-::explode\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{substr, }
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classexplodeNode_a90c920b30840535e2ad7c27913e91f7c}
+Constructor principal a partir de la subcadena separador y la cadena a dividir 
+\begin{DoxyParams}{Parámetros}
+{\em substr} & Nodo subcadena que se usará como separador \\
+\hline
+{\em str} & Nodo cadena al que se realizará la operación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classexplodeNode_aea0516f602785514e0a709b4f0867774}{\index{explode\-Node@{explode\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!explodeNode@{explode\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ explode\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classexplodeNode_aea0516f602785514e0a709b4f0867774}
+Devuelve un nodo explode como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método explode. 
+\end{DoxyReturn}
+\hypertarget{classexplodeNode_a1bb7df027458cb1e63d5b0898540b114}{\index{explode\-Node@{explode\-Node}!run@{run}}
+\index{run@{run}!explodeNode@{explode\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void explode\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classexplodeNode_a1bb7df027458cb1e63d5b0898540b114}
+La ejecución del nodo consite en dividir la cadena principal haciendo uso del separador. Cada una de las subcadenas en la que queda dividida la cadena principal se guardan en un array por orden posicional.
+
+El nodo tomará como valor el array resultante. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

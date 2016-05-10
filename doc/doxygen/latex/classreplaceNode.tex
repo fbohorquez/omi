@@ -1,0 +1,98 @@
+\hypertarget{classreplaceNode}{\section{Referencia de la Clase replace\-Node}
+\label{classreplaceNode}\index{replace\-Node@{replace\-Node}}
+}
+
+
+Nodo función de remplazo.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de replace\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classreplaceNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreplaceNode_a0a8599660f34e20c1dffdc4dba61ed84}{replace\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$search, \hyperlink{classrunNode}{run\-Node} $\ast$replace, \hyperlink{classrunNode}{run\-Node} $\ast$cad, \hyperlink{classrunNode}{run\-Node} $\ast$num\-\_\-replace)
+\item 
+void \hyperlink{classreplaceNode_a1bf20f6a4f26f339050837fce45ede44}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classreplaceNode_aa464dc5a26255e2bf4792f751fb1cd35}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función de remplazo. 
+
+Busca las ocurrencia de una subcadena dada en una cadena principal, sustituyendolas por una cadena de remplazo. Este operador admite el número de sustituciones que se llevarán a cabo.
+
+Como valor interno tras la ejecución toma la cadena resultante de sustituir en la cadena principal las ocurrencias de la subcadenas por la cadena de remplazo.
+
+Adicionalemnte la subcadena de búsqueda puede ser una expresión regular, en cuyo caso se buscará subcadenas que pertenezcan al conjunto de las palabras definido por la expresión regular.
+
+Si se utiliza una expresión regular como patrón de búsqueda es posible utilizar en la cadena de remplazo parte de la subcadena que concuerda con la expresión regular. Para ello se forma la expresión regular mediante subexpresiones delimitadas por \char`\"{}()\char`\"{}. En la cadena de remplazo se puede hacer referencia, de forma posicional, a las subcadenas correspondientes a cada una de las subexpresiones. Para ello se utiliza la expresiónposicion\} en la cadena de remplazo 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classreplaceNode_a0a8599660f34e20c1dffdc4dba61ed84}{\index{replace\-Node@{replace\-Node}!replace\-Node@{replace\-Node}}
+\index{replace\-Node@{replace\-Node}!replaceNode@{replace\-Node}}
+\subsubsection[{replace\-Node}]{\setlength{\rightskip}{0pt plus 5cm}replace\-Node\-::replace\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{search, }
+\item[{{\bf run\-Node} $\ast$}]{replace, }
+\item[{{\bf run\-Node} $\ast$}]{cad, }
+\item[{{\bf run\-Node} $\ast$}]{num\-\_\-replace}
+\end{DoxyParamCaption}
+)}}\label{classreplaceNode_a0a8599660f34e20c1dffdc4dba61ed84}
+Contructor principal.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em search} & Subcadena a buscar \\
+\hline
+{\em replace} & Cadena de remplazo \\
+\hline
+{\em cad} & Cadena principal \\
+\hline
+{\em num\-\_\-replace} & Número de remplazos \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classreplaceNode_aa464dc5a26255e2bf4792f751fb1cd35}{\index{replace\-Node@{replace\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!replaceNode@{replace\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ replace\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classreplaceNode_aa464dc5a26255e2bf4792f751fb1cd35}
+Devuelve un nodo replace como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método replace. 
+\end{DoxyReturn}
+\hypertarget{classreplaceNode_a1bf20f6a4f26f339050837fce45ede44}{\index{replace\-Node@{replace\-Node}!run@{run}}
+\index{run@{run}!replaceNode@{replace\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void replace\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classreplaceNode_a1bf20f6a4f26f339050837fce45ede44}
+Método que se encarga de ejecutar el nodo. Consiste en buscar las ocurrencias de la subcadena en la cadena principal y sustituirlas por la cadena de remplazo, llevándose a cabo el número dado de remplazos. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

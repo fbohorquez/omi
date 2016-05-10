@@ -1,0 +1,104 @@
+\hypertarget{classcatNode}{\section{Referencia de la Clase cat\-Node}
+\label{classcatNode}\index{cat\-Node@{cat\-Node}}
+}
+
+
+Nodo función concatenación.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de cat\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classcatNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcatNode_a1ea19392b499f9383534fd26ccc9a6c8}{cat\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2, bool newline=false)
+\item 
+void \hyperlink{classcatNode_af6735016b3cb2477a94de79d7e1e1c62}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classcatNode_ae861e45f75270c8ba63e9bffd6bb7806}{do\-\_\-cat} (\hyperlink{classrunNode}{run\-Node} $\ast$op1, \hyperlink{classrunNode}{run\-Node} $\ast$op2, bool newline=false)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función concatenación. 
+
+Este nodo implementa la operación concatenación sobre dos nodos asociados.
+
+Si algún nodo no es una cadena de caracteres, fuerza la conversión a este tipo para realizar la operación
+
+El resultado de evaluar la expresión es un valor cadena de caracteres. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classcatNode_a1ea19392b499f9383534fd26ccc9a6c8}{\index{cat\-Node@{cat\-Node}!cat\-Node@{cat\-Node}}
+\index{cat\-Node@{cat\-Node}!catNode@{cat\-Node}}
+\subsubsection[{cat\-Node}]{\setlength{\rightskip}{0pt plus 5cm}cat\-Node\-::cat\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2, }
+\item[{bool}]{newline = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classcatNode_a1ea19392b499f9383534fd26ccc9a6c8}
+Constructor de la clase. Asocia el nodo operador a dos nodos. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+{\em newline} & Determina si se debe concatenar un salto de línea al resultado de la operación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classcatNode_ae861e45f75270c8ba63e9bffd6bb7806}{\index{cat\-Node@{cat\-Node}!do\-\_\-cat@{do\-\_\-cat}}
+\index{do\-\_\-cat@{do\-\_\-cat}!catNode@{cat\-Node}}
+\subsubsection[{do\-\_\-cat}]{\setlength{\rightskip}{0pt plus 5cm}string cat\-Node\-::do\-\_\-cat (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{op1, }
+\item[{{\bf run\-Node} $\ast$}]{op2, }
+\item[{bool}]{newline = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classcatNode_ae861e45f75270c8ba63e9bffd6bb7806}
+Ejecuta la operación concatenación sobre dos nodos dados. 
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Primer nodo operando. \\
+\hline
+{\em node2} & Sengundo nodo operando. \\
+\hline
+{\em newline} & Determina si se debe concatenar un salto de línea al resultado de la operación \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la operación. 
+\end{DoxyReturn}
+\hypertarget{classcatNode_af6735016b3cb2477a94de79d7e1e1c62}{\index{cat\-Node@{cat\-Node}!run@{run}}
+\index{run@{run}!catNode@{cat\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void cat\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcatNode_af6735016b3cb2477a94de79d7e1e1c62}
+Método que ejecuta el nodo. Procede a la ejecución de los nodos asociados. Luego obtiene el valor cadena de caracteres del nodo mediante la operación concatención entre el valor textual de los dos nodos.
+
+Concatena un salto de línea si asi se especifico en la inicialización. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

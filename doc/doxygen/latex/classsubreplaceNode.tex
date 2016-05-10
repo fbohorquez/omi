@@ -1,0 +1,92 @@
+\hypertarget{classsubreplaceNode}{\section{Referencia de la Clase subreplace\-Node}
+\label{classsubreplaceNode}\index{subreplace\-Node@{subreplace\-Node}}
+}
+
+
+Nodo función replazo de subcadena.  
+
+
+
+
+{\ttfamily \#include $<$str\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de subreplace\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classsubreplaceNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsubreplaceNode_a9398100d18db77e5fc85f3d6d134aaa5}{subreplace\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$ini, \hyperlink{classrunNode}{run\-Node} $\ast$len, \hyperlink{classrunNode}{run\-Node} $\ast$replace, \hyperlink{classrunNode}{run\-Node} $\ast$str)
+\item 
+void \hyperlink{classsubreplaceNode_a145d05be6f2fec48b084dabd35599e20}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classsubreplaceNode_a1f8f3f3176aaeb58f5d633a00db7fdf0}{as\-Method} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función replazo de subcadena. 
+
+Este nodo se encarga de remplazar una subcadena dentro de una cadena por otra dada. La subcadena se deterina mediante una psición inicial y una longitud 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classsubreplaceNode_a9398100d18db77e5fc85f3d6d134aaa5}{\index{subreplace\-Node@{subreplace\-Node}!subreplace\-Node@{subreplace\-Node}}
+\index{subreplace\-Node@{subreplace\-Node}!subreplaceNode@{subreplace\-Node}}
+\subsubsection[{subreplace\-Node}]{\setlength{\rightskip}{0pt plus 5cm}subreplace\-Node\-::subreplace\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{ini, }
+\item[{{\bf run\-Node} $\ast$}]{len, }
+\item[{{\bf run\-Node} $\ast$}]{replace, }
+\item[{{\bf run\-Node} $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsubreplaceNode_a9398100d18db77e5fc85f3d6d134aaa5}
+Método constructor 
+\begin{DoxyParams}{Parámetros}
+{\em ini} & Posición inicial \\
+\hline
+{\em len} & Longitud \\
+\hline
+{\em replace} & Cadena de remplazo \\
+\hline
+{\em str} & Cadena sobre la que se realizará la operación \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classsubreplaceNode_a1f8f3f3176aaeb58f5d633a00db7fdf0}{\index{subreplace\-Node@{subreplace\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!subreplaceNode@{subreplace\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ subreplace\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsubreplaceNode_a1f8f3f3176aaeb58f5d633a00db7fdf0}
+Devuelve un nodo subreplace como cuerpo de un nodo función, siendo un nodo this la cadena. \begin{DoxyReturn}{Devuelve}
+Método subreplace. 
+\end{DoxyReturn}
+\hypertarget{classsubreplaceNode_a145d05be6f2fec48b084dabd35599e20}{\index{subreplace\-Node@{subreplace\-Node}!run@{run}}
+\index{run@{run}!subreplaceNode@{subreplace\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void subreplace\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsubreplaceNode_a145d05be6f2fec48b084dabd35599e20}
+Método que ejecuta el nodo. Lleva acabo el remplazo de la cadena delimitada por una posición inicial y una longitud por la cadena de remplazo dentro de la cadena dada.
+
+Tras la ejecución toma la cadena con el remplazo 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{strOpNode_8h}{str\-Op\-Node.\-h}\item 
+trunk/src/run/operators/str\-Op\-Node.\-cpp\end{DoxyCompactItemize}

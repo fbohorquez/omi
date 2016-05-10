@@ -1,0 +1,47 @@
+#!/usr/local/bin/omi
+<< "Nº de jugadores posibles";
+<< "Nº de jugadores en juego";
+<< "Acceso al jugador activo, player, P, pl";
+<< "Acceso al conjunto de jugadores, players";
+<< "Acceso al conjunto de jugadores distintos del activo, !players";
+<< "Bloque rules @";  # Representa el bloque de reglas. 
+<< "Bloque rules ini"; # Representa el bloque de reglas de inicio.
+<< "Bloque rules end"; # Representa el bloque de reglas de fin (determina fin de bucle y ganadores, varios o ninguno)
+<< "Establecer array de ganadores"; #winners array, finaliza el bucle de juego en la siguiente 
+<< "Bloque rules game"; # Bucle de juego 
+<< "Bloque rules player game"; #Bucle de juego con cambio de turno
+<< "Bucle con cambio de jugador activo, $(players)";
+<< "Posicionamiento lógico"; #put
+<< "Zonas de juego"; #zone
+<< "Búsqueda en posicionamineto"; #in
+<< "Flujos de movimiento"; #definición de flujos de movimientos
+<< "Mover por flujos de movimiento"; #move
+<< "Control de turno"; #obtener el turno actual, jugador activo...
+<< "Cambio de turno"; #nextT
+<< "Cambio de turno y volver"; #changeT
+<< "Perder turnos"; #lostT
+<< "Eventos de turno"; #Asocia eventos a determinados turnos
+<< "Eventos de rondas"; #Asocia eventos a determinadas rondas
+<< "Finalización forzada de ronda"; #endRound
+<< "Finalización forzada de juego"; #endGame
+<< "Tirada de dados, N dices X"; 
+<< "Bloque decide";
+# decide {
+#	condition => option => action; 
+#	option => action;
+#	action; 
+#}
+<< "Senetencia select"; # select S(component);
+<< "Tomar componentes aleatorios"; #rand
+<< "Construir mazos a partir de array de componentes"; #desk
+<< "Manipular mazos de componentes: barajar, robar, descarte, mirar componentes, buscar componentes..."; #desk
+<< "Construir reservas a partir de array de componentes"; #reserv
+<< "Manipular reservas de componentes: barajar, robar, devolver, mirar componentes, uscar componente..."; #reserv
+<< "Acción de descarte";
+<< "Acciones automaticas disparadas por evento";
+	# Al asignar a jugador
+	# Al poner en componente
+	# Al seleccionar componente
+	# Al desasignar a jugador
+	# Al quitar de componente
+	# Al descartar

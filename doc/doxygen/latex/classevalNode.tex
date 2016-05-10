@@ -1,0 +1,66 @@
+\hypertarget{classevalNode}{\section{Referencia de la Clase eval\-Node}
+\label{classevalNode}\index{eval\-Node@{eval\-Node}}
+}
+
+
+Node operador evaluación.  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de eval\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classevalNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classevalNode_ade792e8e711f68ccac607e929e75f8b8}{eval\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classevalNode_a09885abc979cca1e769cb83e32017909}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Node operador evaluación. 
+
+Este nodo procesa y evalua una cadena como si de codigo fuente se tratase. Como valor toma el resultado devuelto por la primera sentencia return ejecutada al evaluar la cadena. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classevalNode_ade792e8e711f68ccac607e929e75f8b8}{\index{eval\-Node@{eval\-Node}!eval\-Node@{eval\-Node}}
+\index{eval\-Node@{eval\-Node}!evalNode@{eval\-Node}}
+\subsubsection[{eval\-Node}]{\setlength{\rightskip}{0pt plus 5cm}eval\-Node\-::eval\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classevalNode_ade792e8e711f68ccac607e929e75f8b8}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em node.} & Nodo que representa la cadena que será interpretada \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classevalNode_a09885abc979cca1e769cb83e32017909}{\index{eval\-Node@{eval\-Node}!run@{run}}
+\index{run@{run}!evalNode@{eval\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void eval\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classevalNode_a09885abc979cca1e769cb83e32017909}
+Metodo de ejecución. Procede a la ejecución del nodo asociado que representa una cadena de codigo fuente. Toma como valor el resultado devuelto por la primera sentencia return evaluada, si no se ejecuta una sentencia return al procesar la cadena se tomará como valor el nodo nulo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

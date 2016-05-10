@@ -1,0 +1,61 @@
+\hypertarget{classforkNode}{\section{Referencia de la Clase fork\-Node}
+\label{classforkNode}\index{fork\-Node@{fork\-Node}}
+}
+
+
+Nodo función fork.  
+
+
+
+
+{\ttfamily \#include $<$process\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de fork\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classforkNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classforkNode_a0136ac241984f4ba15322837976f8baf}{fork\-Node} ()
+\item 
+void \hyperlink{classforkNode_a7b3213a5ad54b2d051f9b1a96b88d5fd}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo función fork. 
+
+El nodo fork crea una bifurcación en el proceso actual. Cuando este nodo es ejecutado se crea un proceso (hijo) copia del proceso actual (padre). En el proceso hijo el nodo tomará como valor aritmético 0, mientras que en el proceso padre tomará como valor el identificador de proceso del hijo. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classforkNode_a0136ac241984f4ba15322837976f8baf}{\index{fork\-Node@{fork\-Node}!fork\-Node@{fork\-Node}}
+\index{fork\-Node@{fork\-Node}!forkNode@{fork\-Node}}
+\subsubsection[{fork\-Node}]{\setlength{\rightskip}{0pt plus 5cm}fork\-Node\-::fork\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforkNode_a0136ac241984f4ba15322837976f8baf}
+Constructor de la clase. 
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classforkNode_a7b3213a5ad54b2d051f9b1a96b88d5fd}{\index{fork\-Node@{fork\-Node}!run@{run}}
+\index{run@{run}!forkNode@{fork\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void fork\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classforkNode_a7b3213a5ad54b2d051f9b1a96b88d5fd}
+Metodo de ejecución. Crea una bifurcación en el proceso actual. Cuando este nodo es ejecutado se crea un proceso (hijo) copia del proceso actual (padre). En el proceso hijo el nodo tomará como valor aritmético 0, mientras que en el proceso padre tomará como valor el identificador de proceso del hijo. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{processOpNode_8h}{process\-Op\-Node.\-h}\item 
+trunk/src/run/operators/process\-Op\-Node.\-cpp\end{DoxyCompactItemize}

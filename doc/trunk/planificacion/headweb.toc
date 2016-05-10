@@ -1,0 +1,44 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Visión general}{5}
+\contentsline {section}{\numberline {2}Metodología de desarrollo}{6}
+\contentsline {section}{\numberline {3}Planificación}{7}
+\contentsline {subsection}{\numberline {3.1}General}{7}
+\contentsline {subsection}{\numberline {3.2}Expresiones lógicas}{8}
+\contentsline {subsection}{\numberline {3.3}Sentencias de entrada/salida}{9}
+\contentsline {subsection}{\numberline {3.4}Sistema de errores}{10}
+\contentsline {subsection}{\numberline {3.5}Expresiones aritméticas}{11}
+\contentsline {subsection}{\numberline {3.6}Símbolos variables}{12}
+\contentsline {subsection}{\numberline {3.7}Sentencias de control I}{13}
+\contentsline {subsection}{\numberline {3.8}Interfaz de usuario I}{14}
+\contentsline {subsection}{\numberline {3.9}Expresiones cadenas de caracteres}{15}
+\contentsline {subsection}{\numberline {3.10}Conversión de tipos}{16}
+\contentsline {subsection}{\numberline {3.11}Funciones de cadenas}{17}
+\contentsline {subsection}{\numberline {3.12}Expresiones array}{18}
+\contentsline {subsection}{\numberline {3.13}Símbolos funciones}{19}
+\contentsline {subsection}{\numberline {3.14}Expresiones regulares}{20}
+\contentsline {subsection}{\numberline {3.15}Símbolos clases I}{21}
+\contentsline {subsection}{\numberline {3.16}Expresiones condicionales}{22}
+\contentsline {subsection}{\numberline {3.17}Funciones de depuración}{23}
+\contentsline {subsection}{\numberline {3.18}Optimización de memoria}{24}
+\contentsline {subsection}{\numberline {3.19}Sentencias de control II}{25}
+\contentsline {subsection}{\numberline {3.20}Paso de argumentos}{26}
+\contentsline {subsection}{\numberline {3.21}Interfaz de usuario II}{27}
+\contentsline {subsection}{\numberline {3.22}Procesos I}{28}
+\contentsline {subsection}{\numberline {3.23}Fechas y tiempo}{29}
+\contentsline {subsection}{\numberline {3.24}Ficheros}{30}
+\contentsline {subsection}{\numberline {3.25}Extensiones}{31}
+\contentsline {subsection}{\numberline {3.26}Extensión gettext}{32}
+\contentsline {subsection}{\numberline {3.27}Procesos II}{33}
+\contentsline {subsection}{\numberline {3.28}Símbolos clases II}{34}
+\contentsline {subsection}{\numberline {3.29}Símbolos funciones II}{35}
+\contentsline {subsection}{\numberline {3.30}Extensión mysql}{36}
+\contentsline {section}{\numberline {4}Organización}{36}
+\contentsline {section}{\numberline {5}Costes}{37}
+\contentsline {section}{\numberline {6}Riesgos}{38}
+\contentsline {subsection}{\numberline {6.1}Riesgos tecnológicos}{39}
+\contentsline {subsection}{\numberline {6.2}Riesgos personales}{41}
+\contentsline {subsection}{\numberline {6.3}Riesgos organizativos}{41}
+\contentsline {subsection}{\numberline {6.4}Riesgos de requisitos}{42}
+\contentsline {subsection}{\numberline {6.5}Riesgos de soluciones}{43}
+\contentsline {subsection}{\numberline {6.6}Riesgos de costes, tiempos y recursos}{45}
+\contentsline {section}{\numberline {7}Aseguramiento de calidad}{46}

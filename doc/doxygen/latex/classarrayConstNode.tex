@@ -1,0 +1,93 @@
+\hypertarget{classarrayConstNode}{\section{Referencia de la Clase array\-Const\-Node}
+\label{classarrayConstNode}\index{array\-Const\-Node@{array\-Const\-Node}}
+}
+
+
+Nodo array constante.  
+
+
+
+
+{\ttfamily \#include $<$type\-Node.\-h$>$}
+
+Diagrama de herencias de array\-Const\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classarrayConstNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classarrayConstNode_a6032c2b8e43345e5198e1331ec64d729}{array\-Const\-Node} (\hyperlink{classlistNode}{list\-Node} $\ast$list)
+\item 
+void \hyperlink{classarrayConstNode_a84b4ae603b7c24d96f16a8acc94a0403}{run} ()
+\item 
+void \hyperlink{classarrayConstNode_a93fccf8c5a3fa33313a21b8e3e8838f0}{rm\-Ref} ()
+\item 
+void \hyperlink{classarrayConstNode_aba71d93899fadd2d756009ce16f5eefc}{is\-Cloned} (bool cloned)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo array constante. 
+
+Un nodo constante sobrecarga el método de eliminar referencia para que no pueda ser elimado de la forma normal. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classarrayConstNode_a6032c2b8e43345e5198e1331ec64d729}{\index{array\-Const\-Node@{array\-Const\-Node}!array\-Const\-Node@{array\-Const\-Node}}
+\index{array\-Const\-Node@{array\-Const\-Node}!arrayConstNode@{array\-Const\-Node}}
+\subsubsection[{array\-Const\-Node}]{\setlength{\rightskip}{0pt plus 5cm}array\-Const\-Node\-::array\-Const\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf list\-Node} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}}\label{classarrayConstNode_a6032c2b8e43345e5198e1331ec64d729}
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em data} & Valor lista del nodo. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classarrayConstNode_aba71d93899fadd2d756009ce16f5eefc}{\index{array\-Const\-Node@{array\-Const\-Node}!is\-Cloned@{is\-Cloned}}
+\index{is\-Cloned@{is\-Cloned}!arrayConstNode@{array\-Const\-Node}}
+\subsubsection[{is\-Cloned}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Const\-Node\-::is\-Cloned (
+\begin{DoxyParamCaption}
+\item[{bool}]{cloned}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classarrayConstNode_aba71d93899fadd2d756009ce16f5eefc}
+Establece si el nodo ha sido clonado. 
+\begin{DoxyParams}{Parámetros}
+{\em cloned} & Determinará si el nodo fue clonado. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classarrayConstNode_a93fccf8c5a3fa33313a21b8e3e8838f0}{\index{array\-Const\-Node@{array\-Const\-Node}!rm\-Ref@{rm\-Ref}}
+\index{rm\-Ref@{rm\-Ref}!arrayConstNode@{array\-Const\-Node}}
+\subsubsection[{rm\-Ref}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Const\-Node\-::rm\-Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayConstNode_a93fccf8c5a3fa33313a21b8e3e8838f0}
+Sobrecarga del método para eliminar referencias. 
+
+Reimplementado de \hyperlink{classrunNode_a8d0761660753ceb2c98836614c526a45}{run\-Node}.
+
+\hypertarget{classarrayConstNode_a84b4ae603b7c24d96f16a8acc94a0403}{\index{array\-Const\-Node@{array\-Const\-Node}!run@{run}}
+\index{run@{run}!arrayConstNode@{array\-Const\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void array\-Const\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classarrayConstNode_a84b4ae603b7c24d96f16a8acc94a0403}
+La ejecución de un array consiste en recorrer la lista de elementos asociadas al mismo y guardarlos en la tabla de símbolos. 
+
+Reimplementado de \hyperlink{classarrayNode_a5ead9863a0f9478798c7777a0c03b1a5}{array\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/tree/\hyperlink{typeNode_8h}{type\-Node.\-h}\item 
+trunk/src/run/tree/\hyperlink{typeNode_8cpp}{type\-Node.\-cpp}\end{DoxyCompactItemize}

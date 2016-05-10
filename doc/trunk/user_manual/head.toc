@@ -1,0 +1,141 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}{section.1}
+\contentsline {section}{\numberline {2}Caracter\IeC {\'\i }sticas}{3}{section.2}
+\contentsline {section}{\numberline {3}Requisitos previos}{5}{section.3}
+\contentsline {section}{\numberline {4}Uso del sistema}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Obtener OMI}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Instalaci\IeC {\'o}n}{6}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Compilaci\IeC {\'o}n e instalaci\IeC {\'o}n desde c\IeC {\'o}digo fuente}{6}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Instalaci\IeC {\'o}n mediante paquete .deb}{8}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Int\IeC {\'e}rprete}{8}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Referencias del lenguaje}{9}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Sentencias}{9}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Comentarios}{10}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Ejecuci\IeC {\'o}n}{10}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Identificadores}{10}{subsubsection.4.4.4}
+\contentsline {paragraph}{\numberline {4.4.4.1}Palabras reservadas}{11}{paragraph.4.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.5}Tipos de datos}{13}{subsubsection.4.4.5}
+\contentsline {paragraph}{\numberline {4.4.5.1}Booleano}{13}{paragraph.4.4.5.1}
+\contentsline {paragraph}{\numberline {4.4.5.2}Num\IeC {\'e}rico}{14}{paragraph.4.4.5.2}
+\contentsline {paragraph}{\numberline {4.4.5.3}Cadena de caracteres}{14}{paragraph.4.4.5.3}
+\contentsline {paragraph}{\numberline {4.4.5.4}Array}{15}{paragraph.4.4.5.4}
+\contentsline {paragraph}{\numberline {4.4.5.5}Objetos}{16}{paragraph.4.4.5.5}
+\contentsline {paragraph}{\numberline {4.4.5.6}Nulo}{17}{paragraph.4.4.5.6}
+\contentsline {paragraph}{\numberline {4.4.5.7}Funci\IeC {\'o}n}{17}{paragraph.4.4.5.7}
+\contentsline {paragraph}{\numberline {4.4.5.8}Expresi\IeC {\'o}n regular}{18}{paragraph.4.4.5.8}
+\contentsline {paragraph}{\numberline {4.4.5.9}Conversi\IeC {\'o}n impl\IeC {\'\i }cita entre tipos de datos}{18}{paragraph.4.4.5.9}
+\contentsline {subsubsection}{\numberline {4.4.6}Operadores}{20}{subsubsection.4.4.6}
+\contentsline {paragraph}{\numberline {4.4.6.1}Operadores l\IeC {\'o}gicos}{20}{paragraph.4.4.6.1}
+\contentsline {paragraph}{\numberline {4.4.6.2}Operadores de comparaci\IeC {\'o}n}{21}{paragraph.4.4.6.2}
+\contentsline {paragraph}{\numberline {4.4.6.3}Operadores aritm\IeC {\'e}ticos}{22}{paragraph.4.4.6.3}
+\contentsline {paragraph}{\numberline {4.4.6.4}Operadores sobre cadenas de caracteres}{23}{paragraph.4.4.6.4}
+\contentsline {paragraph}{\numberline {4.4.6.5}Operadores de asignaci\IeC {\'o}n}{24}{paragraph.4.4.6.5}
+\contentsline {paragraph}{\numberline {4.4.6.6}Operadores de incremento y decremento}{25}{paragraph.4.4.6.6}
+\contentsline {paragraph}{\numberline {4.4.6.7}Operadores de conversi\IeC {\'o}n de tipo}{25}{paragraph.4.4.6.7}
+\contentsline {paragraph}{\numberline {4.4.6.8}Operadores sobre arrays}{26}{paragraph.4.4.6.8}
+\contentsline {paragraph}{\numberline {4.4.6.9}Operadores sobre clases y objetos}{27}{paragraph.4.4.6.9}
+\contentsline {paragraph}{\numberline {4.4.6.10}Operadores sobre funciones}{27}{paragraph.4.4.6.10}
+\contentsline {paragraph}{\numberline {4.4.6.11}Operadores comprobaci\IeC {\'o}n de tipos}{28}{paragraph.4.4.6.11}
+\contentsline {paragraph}{\numberline {4.4.6.12}Operadores condicionales}{29}{paragraph.4.4.6.12}
+\contentsline {paragraph}{\numberline {4.4.6.13}Operadores de entrada/salida}{29}{paragraph.4.4.6.13}
+\contentsline {paragraph}{\numberline {4.4.6.14}Precedencia de operadores}{31}{paragraph.4.4.6.14}
+\contentsline {subsubsection}{\numberline {4.4.7}Etiquetas}{32}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}Sentencias de control}{32}{subsubsection.4.4.8}
+\contentsline {paragraph}{\numberline {4.4.8.1}Sentencia condicional $if...\ else...$}{32}{paragraph.4.4.8.1}
+\contentsline {paragraph}{\numberline {4.4.8.2}Sentencia condicional $switch...\ case...$}{33}{paragraph.4.4.8.2}
+\contentsline {paragraph}{\numberline {4.4.8.3}Sentencia iterativa $while...$}{34}{paragraph.4.4.8.3}
+\contentsline {paragraph}{\numberline {4.4.8.4}Sentencia iterativa $do...\ while$}{35}{paragraph.4.4.8.4}
+\contentsline {paragraph}{\numberline {4.4.8.5}Sentencia iterativa $for...$}{35}{paragraph.4.4.8.5}
+\contentsline {paragraph}{\numberline {4.4.8.6}Sentencia iterativa $for...\ as...$ y $for...\ in...$}{35}{paragraph.4.4.8.6}
+\contentsline {paragraph}{\numberline {4.4.8.7}Sentencia iterativa \IeC {\'a}gil}{37}{paragraph.4.4.8.7}
+\contentsline {paragraph}{\numberline {4.4.8.8}Sentencia de salto $break$}{38}{paragraph.4.4.8.8}
+\contentsline {paragraph}{\numberline {4.4.8.9}Sentencia de salto $continue$}{38}{paragraph.4.4.8.9}
+\contentsline {paragraph}{\numberline {4.4.8.10}Sentencia de salto $goto$}{39}{paragraph.4.4.8.10}
+\contentsline {paragraph}{\numberline {4.4.8.11}Sentencia $include$}{40}{paragraph.4.4.8.11}
+\contentsline {paragraph}{\numberline {4.4.8.12}Sentencia $exit$}{40}{paragraph.4.4.8.12}
+\contentsline {paragraph}{\numberline {4.4.8.13}Sentencia $with$}{41}{paragraph.4.4.8.13}
+\contentsline {paragraph}{\numberline {4.4.8.14}Sentencia $try...\ catch...$}{41}{paragraph.4.4.8.14}
+\contentsline {paragraph}{\numberline {4.4.8.15}Sentencia $throw$}{42}{paragraph.4.4.8.15}
+\contentsline {paragraph}{\numberline {4.4.8.16}Sentencia $sleep$}{42}{paragraph.4.4.8.16}
+\contentsline {paragraph}{\numberline {4.4.8.17}Sentencia $typeof$}{43}{paragraph.4.4.8.17}
+\contentsline {paragraph}{\numberline {4.4.8.18}Sentencia $datInfo$}{43}{paragraph.4.4.8.18}
+\contentsline {subsubsection}{\numberline {4.4.9}Variables}{43}{subsubsection.4.4.9}
+\contentsline {subsubsection}{\numberline {4.4.10}Referencias}{45}{subsubsection.4.4.10}
+\contentsline {subsubsection}{\numberline {4.4.11}Funciones}{46}{subsubsection.4.4.11}
+\contentsline {paragraph}{\numberline {4.4.11.1}Par\IeC {\'a}metros con valores por defecto}{48}{paragraph.4.4.11.1}
+\contentsline {paragraph}{\numberline {4.4.11.2}Paso de par\IeC {\'a}metros por referencia}{49}{paragraph.4.4.11.2}
+\contentsline {paragraph}{\numberline {4.4.11.3}Definici\IeC {\'o}n como parte de expresiones}{49}{paragraph.4.4.11.3}
+\contentsline {paragraph}{\numberline {4.4.11.4}Referencias a funciones }{49}{paragraph.4.4.11.4}
+\contentsline {paragraph}{\numberline {4.4.11.5}Funciones an\IeC {\'o}nimas}{50}{paragraph.4.4.11.5}
+\contentsline {paragraph}{\numberline {4.4.11.6}Expresiones parametrizadas}{50}{paragraph.4.4.11.6}
+\contentsline {paragraph}{\numberline {4.4.11.7}Funciones de orden superior}{51}{paragraph.4.4.11.7}
+\contentsline {paragraph}{\numberline {4.4.11.8}Clausura de funciones}{52}{paragraph.4.4.11.8}
+\contentsline {paragraph}{\numberline {4.4.11.9}Funci\IeC {\'o}n de contexto}{52}{paragraph.4.4.11.9}
+\contentsline {paragraph}{\numberline {4.4.11.10}Decoradores}{52}{paragraph.4.4.11.10}
+\contentsline {paragraph}{\numberline {4.4.11.11}Aplicaci\IeC {\'o}n parcial}{54}{paragraph.4.4.11.11}
+\contentsline {subsubsection}{\numberline {4.4.12}Listas por comprensi\IeC {\'o}n}{54}{subsubsection.4.4.12}
+\contentsline {subsubsection}{\numberline {4.4.13}Clases de objeto}{56}{subsubsection.4.4.13}
+\contentsline {paragraph}{\numberline {4.4.13.1}Accesibilidad de m\IeC {\'e}todos y atributos}{58}{paragraph.4.4.13.1}
+\contentsline {paragraph}{\numberline {4.4.13.2}Atributos y m\IeC {\'e}todos est\IeC {\'a}ticos}{59}{paragraph.4.4.13.2}
+\contentsline {paragraph}{\numberline {4.4.13.3}Herencia de clases}{61}{paragraph.4.4.13.3}
+\contentsline {paragraph}{\numberline {4.4.13.4}Redefinici\IeC {\'o}n de clases}{64}{paragraph.4.4.13.4}
+\contentsline {paragraph}{\numberline {4.4.13.5}Clases bases}{65}{paragraph.4.4.13.5}
+\contentsline {paragraph}{\numberline {4.4.13.6}Duck typing}{66}{paragraph.4.4.13.6}
+\contentsline {paragraph}{\numberline {4.4.13.7}M\IeC {\'e}todos m\IeC {\'a}gicos}{67}{paragraph.4.4.13.7}
+\contentsline {subsubsection}{\numberline {4.4.14}Entorno del programa}{68}{subsubsection.4.4.14}
+\contentsline {subsubsection}{\numberline {4.4.15}Excepciones}{69}{subsubsection.4.4.15}
+\contentsline {subsubsection}{\numberline {4.4.16}Reflexi\IeC {\'o}n}{69}{subsubsection.4.4.16}
+\contentsline {subsubsection}{\numberline {4.4.17}Introspecci\IeC {\'o}n de tipos}{70}{subsubsection.4.4.17}
+\contentsline {subsubsection}{\numberline {4.4.18}Errores}{70}{subsubsection.4.4.18}
+\contentsline {paragraph}{\numberline {4.4.18.1}L\IeC {\'e}xicos}{71}{paragraph.4.4.18.1}
+\contentsline {paragraph}{\numberline {4.4.18.2}Sint\IeC {\'a}cticos}{71}{paragraph.4.4.18.2}
+\contentsline {paragraph}{\numberline {4.4.18.3}Sem\IeC {\'a}nticos}{71}{paragraph.4.4.18.3}
+\contentsline {subsection}{\numberline {4.5}Funciones del lenguaje}{72}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Cadenas de caracteres}{72}{subsubsection.4.5.1}
+\contentsline {paragraph}{\numberline {4.5.1.1}str\_explode}{72}{paragraph.4.5.1.1}
+\contentsline {paragraph}{\numberline {4.5.1.2}str\_find}{73}{paragraph.4.5.1.2}
+\contentsline {paragraph}{\numberline {4.5.1.3}str\_replace}{73}{paragraph.4.5.1.3}
+\contentsline {paragraph}{\numberline {4.5.1.4}str\_replace\_sub}{74}{paragraph.4.5.1.4}
+\contentsline {paragraph}{\numberline {4.5.1.5}str\_upper}{75}{paragraph.4.5.1.5}
+\contentsline {paragraph}{\numberline {4.5.1.6}str\_lower}{76}{paragraph.4.5.1.6}
+\contentsline {paragraph}{\numberline {4.5.1.7}str\_search}{76}{paragraph.4.5.1.7}
+\contentsline {paragraph}{\numberline {4.5.1.8}str\_match}{77}{paragraph.4.5.1.8}
+\contentsline {paragraph}{\numberline {4.5.1.9}regexp}{78}{paragraph.4.5.1.9}
+\contentsline {paragraph}{\numberline {4.5.1.10}sprintf}{78}{paragraph.4.5.1.10}
+\contentsline {subsubsection}{\numberline {4.5.2}Arrays}{80}{subsubsection.4.5.2}
+\contentsline {paragraph}{\numberline {4.5.2.1}array\_implode}{80}{paragraph.4.5.2.1}
+\contentsline {paragraph}{\numberline {4.5.2.2}array\_first}{80}{paragraph.4.5.2.2}
+\contentsline {paragraph}{\numberline {4.5.2.3}array\_last}{81}{paragraph.4.5.2.3}
+\contentsline {paragraph}{\numberline {4.5.2.4}array\_insert}{81}{paragraph.4.5.2.4}
+\contentsline {paragraph}{\numberline {4.5.2.5}array\_delete}{82}{paragraph.4.5.2.5}
+\contentsline {paragraph}{\numberline {4.5.2.6}array\_push}{83}{paragraph.4.5.2.6}
+\contentsline {paragraph}{\numberline {4.5.2.7}array\_pop}{84}{paragraph.4.5.2.7}
+\contentsline {paragraph}{\numberline {4.5.2.8}array\_unshift}{84}{paragraph.4.5.2.8}
+\contentsline {paragraph}{\numberline {4.5.2.9}array\_shift}{85}{paragraph.4.5.2.9}
+\contentsline {paragraph}{\numberline {4.5.2.10}array\_reduce}{86}{paragraph.4.5.2.10}
+\contentsline {subsubsection}{\numberline {4.5.3}Procesos}{87}{subsubsection.4.5.3}
+\contentsline {paragraph}{\numberline {4.5.3.1}exec}{87}{paragraph.4.5.3.1}
+\contentsline {paragraph}{\numberline {4.5.3.2}fork}{87}{paragraph.4.5.3.2}
+\contentsline {paragraph}{\numberline {4.5.3.3}wait}{88}{paragraph.4.5.3.3}
+\contentsline {paragraph}{\numberline {4.5.3.4}getpid}{88}{paragraph.4.5.3.4}
+\contentsline {paragraph}{\numberline {4.5.3.5}getppid}{89}{paragraph.4.5.3.5}
+\contentsline {paragraph}{\numberline {4.5.3.6}signal}{89}{paragraph.4.5.3.6}
+\contentsline {paragraph}{\numberline {4.5.3.7}shandler}{90}{paragraph.4.5.3.7}
+\contentsline {paragraph}{\numberline {4.5.3.8}exit\_process}{91}{paragraph.4.5.3.8}
+\contentsline {paragraph}{\numberline {4.5.3.9}process}{91}{paragraph.4.5.3.9}
+\contentsline {subsubsection}{\numberline {4.5.4}Ficheros}{92}{subsubsection.4.5.4}
+\contentsline {paragraph}{\numberline {4.5.4.1}file}{92}{paragraph.4.5.4.1}
+\contentsline {paragraph}{\numberline {4.5.4.2}fclose}{93}{paragraph.4.5.4.2}
+\contentsline {paragraph}{\numberline {4.5.4.3}fput}{93}{paragraph.4.5.4.3}
+\contentsline {paragraph}{\numberline {4.5.4.4}fget}{94}{paragraph.4.5.4.4}
+\contentsline {paragraph}{\numberline {4.5.4.5}fseek}{95}{paragraph.4.5.4.5}
+\contentsline {paragraph}{\numberline {4.5.4.6}ftell}{95}{paragraph.4.5.4.6}
+\contentsline {paragraph}{\numberline {4.5.4.7}fread}{96}{paragraph.4.5.4.7}
+\contentsline {paragraph}{\numberline {4.5.4.8}fwrite}{96}{paragraph.4.5.4.8}
+\contentsline {paragraph}{\numberline {4.5.4.9}fappend}{97}{paragraph.4.5.4.9}
+\contentsline {subsubsection}{\numberline {4.5.5}Fechas y tiempo}{97}{subsubsection.4.5.5}
+\contentsline {paragraph}{\numberline {4.5.5.1}date}{98}{paragraph.4.5.5.1}
+\contentsline {paragraph}{\numberline {4.5.5.2}time}{99}{paragraph.4.5.5.2}
+\contentsline {subsection}{\numberline {4.6}Extensiones del lenguaje}{99}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Carga de m\IeC {\'o}dulos}{99}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Creaci\IeC {\'o}n de m\IeC {\'o}dulos}{100}{subsubsection.4.6.2}

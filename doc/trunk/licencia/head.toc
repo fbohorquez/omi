@@ -1,0 +1,4 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Licencia}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}GPLv3}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Creative Commons}{15}{subsection.1.2}

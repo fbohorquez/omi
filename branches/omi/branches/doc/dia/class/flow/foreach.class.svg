@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="27cm" height="13cm" viewBox="187 6 524 243" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="189" y="27" width="522" height="221"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="27" width="522" height="221"/>
+    <rect style="fill: #ffffff" x="189" y="7" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="189" y="7" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="191" y="22"> foreach </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="522" y="170" width="125.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="522" y="170" width="125.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="584.55" y="189">foreachNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="367" y="169.8" width="94.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="367" y="169.8" width="94.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="414.175" y="188.8">flowNode</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="208" y="169.8" width="87.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="208" y="169.8" width="87.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="251.7" y="188.8">runNode</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="313.636,183.8 312.4,183.8 366,183.8 367,183.8 "/>
+    <polygon style="fill: #ffffff" points="313.636,175.8 297.636,183.8 313.636,191.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="313.636,175.8 297.636,183.8 313.636,191.8 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="480.592,183.8 500.178,183.8 500.178,184 522,184 "/>
+    <polygon style="fill: #ffffff" points="480.592,175.8 464.592,183.8 480.592,191.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="480.592,175.8 464.592,183.8 480.592,191.8 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="672.272,184 691.198,184 691.198,106 277,106 277,105.87 251.7,105.87 251.7,169.8 "/>
+    <polygon style="fill: #ffffff" points="647.1,184 661.1,179.2 675.1,184 661.1,188.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="647.1,184 661.1,179.2 675.1,184 661.1,188.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="484.099" y="103">key</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="679.1" y="181"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="255.7" y="165.8">0,1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="672.272,198 701.452,198 701.452,81 257,81 257,81 208,81 208,169.8 "/>
+    <polygon style="fill: #ffffff" points="647.1,198 661.1,193.2 675.1,198 661.1,202.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="647.1,198 661.1,193.2 675.1,198 661.1,202.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="479.226" y="78">elem</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="679.1" y="195"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="212" y="165.8">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="672.272,170 680.238,170 680.238,129 295.4,129 295.4,169.8 "/>
+    <polygon style="fill: #ffffff" points="647.1,170 661.1,165.2 675.1,170 661.1,174.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="647.1,170 661.1,165.2 675.1,170 661.1,174.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="487.819" y="126">val</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="679.1" y="167"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="299.4" y="165.8">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="584.55,223.172 584.55,233 251.7,233 251.7,197.8 "/>
+    <polygon style="fill: #ffffff" points="584.55,198 589.35,212 584.55,226 579.75,212 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="584.55,198 589.35,212 584.55,226 579.75,212 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="418.125" y="230">do</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="595.55" y="210"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="255.7" y="209.8">1</text>
+  </g>
+</svg>

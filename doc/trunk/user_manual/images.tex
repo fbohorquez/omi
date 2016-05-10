@@ -1,0 +1,2273 @@
+\batchmode
+
+
+\documentclass[12pt,spanish]{article}
+\RequirePackage{ifthen}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{framed}
+
+
+\usepackage{fancyhdr}
+
+\usepackage{anysize} 
+
+\usepackage{dsfont}	
+
+\usepackage[dvips]{graphicx}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}  
+
+\usepackage{color}
+
+
+\usepackage{multicol}\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+
+
+\lstdefinelanguage[]{omi} { 
+   %
+frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.2cm,
+     framextopmargin=0.3pt,
+     framexbottommargin=0.2pt,
+     framexleftmargin=0.5cm,
+     framesep=0pt,
+     rulesep=.1pt,
+     tabsize=2,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+stringstyle=\ttfamily ,
+     showstringspaces = false,
+     basicstyle=\scriptsize\ttfamily ,
+     commentstyle=\color{gray75},
+     comment=[l]{\#},%
+morecomment=[l]{//},%
+morecomment=[s][\color{gray75}]{/*}{*/},%
+morecomment=[s][\color{green}]{`}{`},%
+keywordstyle=\bfseries ,
+     stringstyle=\itshape\ttfamily\color{red},
+     string=[b]',%
+morestring=[b]",%
+escapeinside=||,
+   	%
+numbers=left,
+     numbersep=1pt,
+     numberstyle=\tiny ,
+     numberfirstline = false,
+     breaklines=true,
+     emph={%
+$PS1, $PS2, ~, switch, case, default, goto, as, in, function, for, while, false, true, size, class, extends, parent, \<\<, private, static, return, &, include, global,~,new, null, if, else, this, $, prompt$, elif, break, continue, load %
+},
+     emphstyle={\bfseries\itshape\sffamily },%
+}%
+\lstdefinelanguage[]{bash} { 
+   %
+frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.2cm,
+     framextopmargin=0.3pt,
+     framexbottommargin=0.2pt,
+     framexleftmargin=0.5cm,
+     framesep=0pt,
+     rulesep=.1pt,
+     tabsize=2,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+stringstyle=\ttfamily ,
+     showstringspaces = false,
+     basicstyle=\scriptsize\ttfamily ,
+     commentstyle=\color{gray75},
+     comment=[l]{\#},%
+morecomment=[s][\color{gray75}]{/*}{*/},%
+keywordstyle=\bfseries ,
+     stringstyle=\itshape\ttfamily\color{red},
+   	%
+numbers=left,
+     numbersep=1pt,
+     numberstyle=\tiny ,
+     numberfirstline = false,
+     breaklines=true,
+     emph={%
+$PS1, $PS2, std, c++11, g++ %
+},
+     emphstyle={\bfseries\itshape\sffamily },%
+}%
+\lstdefinelanguage[]{cpp} { 
+   %
+frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.2cm,
+     framextopmargin=0.3pt,
+     framexbottommargin=0.2pt,
+     framexleftmargin=0.5cm,
+     framesep=0pt,
+     rulesep=.1pt,
+     tabsize=2,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+stringstyle=\ttfamily ,
+     showstringspaces = false,
+     basicstyle=\scriptsize\ttfamily ,
+     commentstyle=\color{gray75},
+     comment=[l]{//},%
+morecomment=[s][\color{gray75}]{/*}{*/},%
+morecomment=[s][\color{green}]{<omi}{h>},%
+morecomment=[s][\color{red}]{"}{"},%
+keywordstyle=\bfseries ,
+     stringstyle=\itshape\ttfamily\color{red},
+   	%
+numbers=left,
+     numbersep=1pt,
+     numberstyle=\tiny ,
+     numberfirstline = false,
+     breaklines=true,
+     emph={%
+class,include, define, public, void, this, if, else, throw, extern, using
+     },
+     emphstyle={\bfseries\itshape\sffamily },%
+}
+
+\usepackage{makeidx}
+\makeindex 
+
+\parskip 0.2in									
+%
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{300pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}} \usepackage{float}
+\restylefloat{table}
+\usepackage{placeins}
+\usepackage{framed}
+\usepackage{epsf}
+
+\usepackage{titlesec}
+
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{5}
+
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries }{\theparagraph }{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{eurosym} 
+\usepackage{fancybox}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+
+
+\author{Manual de usuario \\\\\ Fco. Javier Bohórquez Ogalla}						%
+\date{}														%
+
+
+\title{ 
+\begin{center}
+\includegraphics[scale=0.5]{logo-doc.png}
+\end{center} 
+}
+
+
+\DeclareUnicodeCharacter{E6}{\ae}
+\usepackage{dingbat}
+
+
+
+
+\pagecolor[gray]{.7}
+
+\usepackage[latin1]{inputenc}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup\kern.05em }%
+\newcommand\lthtmlhboxmathB{\adjustnormalsize\setbox\sizebox=\hbox to\hsize\bgroup\hfill }%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup %
+ \let\ifinner=\iffalse \let\)\liih@math }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\gdef\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\dimen0\ht\sizebox \advance\dimen0\dp\sizebox
+  \ifdim\dimen0>.95\vsize
+   \lthtmltypeout{%
+*** image for \lthtmlmathenv\space is too tall at \the\dimen0, reducing to .95 vsize ***}%
+   \ht\sizebox.95\vsize \dp\sizebox\z@ \fi
+  \lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlpictureA{\bgroup\catcode`\_=8 \lthtmlpictureB}%
+\newcommand\lthtmlpictureB[1]{\lthtmlmathtype{#1}\egroup
+       \let\@savefreelist\@freelist \lthtmlhboxmathB}%
+\newcommand\lthtmlpictureZ[1]{\hfill\lthtmlfigureZ}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA{\bgroup\catcode`\_=8 \lthtmldisplayAi}%
+\newcommand\lthtmldisplayAi[1]{\lthtmlmathtype{#1}\egroup\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA{\bgroup\catcode`\_=8 \lthtmlinlinemathB}
+\newcommand\lthtmlinlinemathB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA
+  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA{\bgroup\catcode`\_=8 \lthtmlinlineB}%
+\newcommand\lthtmlinlineB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\newcommand\lthtmlindisplaymathZ{\egroup %
+  \centerinlinemath\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em \vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\kern-.05em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+\providecommand{\Chi}{\textrm{X}}
+\providecommand{\Epsilon}{\textrm{E}}
+\providecommand{\Rho}{\textrm{R}}
+\providecommand{\Eta}{\textrm{H}}
+\providecommand{\Beta}{\textrm{B}}
+\providecommand{\Iota}{\textrm{J}}
+\providecommand{\Omicron}{\textrm{O}}
+\providecommand{\Kappa}{\textrm{K}}
+\providecommand{\Mu}{\textrm{M}}
+\providecommand{\Alpha}{\textrm{A}}
+\providecommand{\Zeta}{\textrm{Z}}
+\providecommand{\Tau}{\textrm{T}}
+\providecommand{\Nu}{\textrm{N}}
+\providecommand{\omicron}{\textrm{o}}
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{5}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{section}
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlfigureA{center3827}%
+\begin{center}\vbox{\input{features_web.tex}
+}\end{center}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3836}%
+$\displaystyle omi\  [options]\  [file]\  [args...]
+$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3838}%
+$\displaystyle /usr/local/bin/omi$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3840}%
+$\displaystyle /usr/local/share/omi$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3848}%
+$ new$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2500}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores lógicos (\autoref{sec:op_bool}).
+   \item Operadores de comparación (\autoref{sec:op_cmp}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv})
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2546}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores sobre arrays (\autoref{sec:op_string}).
+   \item Funciones sobre arrays (\autoref{sec:func_string}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2560}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Clases de objetos (\autoref{sec:class}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2580}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones (\autoref{sec:function}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2592}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones de expresiones regulares (\autoref{sec:func_regex}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3898}%
+$ ''$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3982}%
+$ !$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3984}%
+$ \&\&$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3986}%
+$ and$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3988}%
+$ ||$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3990}%
+$ or$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2632}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato booleano (\autoref{sec:type_bool}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3994}%
+$ ==$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3996}%
+$ !=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3998}%
+$ <$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4000}%
+$ <=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4002}%
+$ >$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4004}%
+$ >=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4006}%
+$ ===$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4008}%
+$ !==$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4012}%
+$ +$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4014}%
+$ -$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4016}%
+$ *$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4018}%
+$ /$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4020}%
+$ \%$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2670}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato numérico (\autoref{sec:type_num}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4024}%
+$ .$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4026}%
+$ [n]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2696}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato cadena de caracteres (\autoref{sec:type_string}).
+   \item Funciones sobre cadena de caracteres (\autoref{sec:fun_string}).
+   \item Operadores sobre array (\autoref{sec:op_array}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4030}%
+$ +=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4032}%
+$ -=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4034}%
+$ *=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4036}%
+$ /=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4038}%
+$ \%=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4040}%
+$ .=$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2712}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores aritméticos (\autoref{sec:op_arth}).
+   \item Operadores sobre cadenas de caracteres (\autoref{sec:op_string}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4044}%
+$ ++i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4046}%
+$ i++$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4048}%
+$ --i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4050}%
+$ i--$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2724}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operadores aritméticos (\autoref{sec:op_arth}).
+   \item Operadores de asignación (\autoref{sec:op_asig}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4054}%
+$ bool$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4056}%
+$ int$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4058}%
+$ float$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4060}%
+$ string$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2736}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Conversión implícita entre tipos de datos (\autoref{sec:type_iconv}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4064}%
+$ [k]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4066}%
+$ []$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4068}%
+$ size$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2760}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de dato (\autoref{sec:data_type}).
+   \item Tipo de dato array (\autoref{sec:type_array}).
+   \item Funciones sobre array (\autoref{sec:func_array}).
+   \item Operadores sobre cadenas de caracteres (\autoref{sec:op_string}).
+\par
+\end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4076}%
+$ this$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4078}%
+$ parent$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4080}%
+$ static$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2772}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Clases de objetos (\autoref{sec:class}).
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Tipos de datos objetos (\autoref{sec:type_object}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4084}%
+$ (p0,...)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4086}%
+$ P[v1,...]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4088}%
+$ \sim>$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2784}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Funciones (\autoref{sec:function}).
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Tipos de datos funciones (\autoref{sec:type_func}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4092}%
+$ isnull$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4094}%
+$ isbool$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4096}%
+$ isnum$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4098}%
+$ isstring$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4100}%
+$ isarray$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4102}%
+$ isobject$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2794}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4106}%
+$ cond\  ?\  op1:op2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4108}%
+$ [[ op1, op2,...,opn ]]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2816}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Tipos de datos (\autoref{sec:data_type}).
+   \item Operadores lógicos (\autoref{sec:op_bool}).
+   \item Operadores de comparación (\autoref{sec:op_cmp}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4112}%
+$ >>$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4114}%
+$ input$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4116}%
+$ <.$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4118}%
+$ <<$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4120}%
+$ echo$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4134}%
+$ (p0,..)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4148}%
+$ ++$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4150}%
+$ --$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4160}%
+$ [[op1,...]]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4162}%
+$ ?:$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4196}%
+$ =$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4211}%
+$ goto$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2862}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Sentencia $goto$\  (\autoref{sec:stmt_goto}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4218}%
+$ if...\  else...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4222}%
+$ else$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4224}%
+$ if...\  elif...\  else...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4226}%
+$ elif$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4229}%
+$ switch...\  case...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4235}%
+$ break$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4237}%
+$ default$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2902}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Sentencia break (\autoref{sec:stmt_break}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4241}%
+$ while...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4246}%
+$ do...\  while$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4255}%
+$ for...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4264}%
+$ for...\  as...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4266}%
+$ for...\  in...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4286}%
+$ continue$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2992}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Etiquetas (\autoref{sec:label}).
+   \item Sentencia condicional $if...\ else...$\  (\autoref{sec:stmt_if}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4303}%
+$ include$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4308}%
+$ exit$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4313}%
+$ with$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4318}%
+$ try...\  catch...$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4322}%
+$ catch$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3028}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Excepciones (\autoref{sec:exception}).
+   \item Sentencia  $throw$\  (\autoref{sec:stmt_throw}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4326}%
+$ throw$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4336}%
+$ try...\  catch$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3040}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Excepciones (\autoref{sec:exception}).
+   \item Sentencia  $try...\ catch...$\  (\autoref{sec:stmt_try}).
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4340}%
+$ sleep$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4345}%
+$ typeof$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4350}%
+$ datInfo$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4356}%
+$ datinfo$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4359}%
+$ global$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3080}%
+\fbox{\parbox[c]{\textwidth}{\tiny{
+   Para más información:
+   \begin{itemize}
+   \setlength{\itemsep}{1px}
+   \item Operador de asignación (\autoref{sec:op_asig}).
+   \item Identificadores (\autoref{sec:id})
+   \end{itemize}
+}}}%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4363}%
+$ \&$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4368}%
+$ \sim$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4370}%
+$ function$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4372}%
+$ return$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4384}%
+$ \sim\&$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4400}%
+$ \sim\sim$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4403}%
+$ P$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4408}%
+$ for$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4412}%
+$ if$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4414}%
+$ :$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4419}%
+$ class$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4423}%
+$ ->$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4428}%
+$ private$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4433}%
+$ ::$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4436}%
+$ extends$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4456}%
+$ getenv$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4458}%
+$ args$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4463}%
+$ try$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4470}%
+$ @$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4472}%
+$ eval$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4475}%
+$ getclass$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{paragraph}
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1042}%
+\begin{framed}
+\hfill \\$array$\  \textbf{str\_explode} ( $string$\  \textbf{str}, $string$\  \textbf{delimeter})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[delimeter:] Cadena delimitadora.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Array de elementos que contiene las subcadenas resultado de dividir \textbf{str} usando el delimitador \textbf{delimeter}.
+\par
+Si el separador no se encuentra en la cadena el resultado será un array de un elemento que contendrá la cadena completa.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1056}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{str\_find} ( $string$\  \textbf{str}, $mixed$\  \textbf{substr} [, $numeric$\  \textbf{position}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[substr:] Expresión de búsqueda. Puede ser una cadena de caracteres o una expresión regular.  
+   \item[position:] Posición dentro de la cadena \textbf{str} a partir de la cual se comenzará la búsqueda. Si no es dado 
+   se comenzará desde la primera posición de la cadena.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el número entero correspondiente a la primera posición en la que se encuentre \textbf{substr} dentro de \textbf{str}. 
+   Se ha de tener en cuenta que la primera posición de la cadena se corresponde con el entero $0$.
+\par
+Si \textbf{substr} es una expresión regular esta se corresponderá con la subcadena de mayor longitud perteneciente al 
+   lenguaje definido por esta. 
+\par
+Si la subcadena no se encuentra devuelve el valor $-1$. 
+\par
+Si la posición de inicio \textbf{position} es mayor que la longitud de la cadena \textbf{str} se devuelve el valor $-1$. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1075}%
+\begin{framed}
+\hfill \\$string$\  \textbf{str\_replace} ( $string$\  \textbf{str}, $mixed$\  \textbf{search}, $string$\  \textbf{replace} [, $numeric$\  \textbf{n}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[search:] Expresión de búsqueda. Puede ser una cadena de caracteres o una expresión regular.  
+   \item[replace:] Cadena de remplazo.
+   \item[n:] Número de reemplazos a efectuar. Si no es dado se realizan todos los reemplazos.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un cadena de caracteres resultado de remplazar la subcadena \textbf{search}  por \textbf{replace}
+   en la cadena de caracteres \textbf{str}, tantas veces como indique el parámetro \textbf{n}.
+\par
+Si \textbf{search} es una expresión regular se buscarán subcadenas que pertenezcan al conjunto de palabras del lenguaje definido por esta. La
+   expresión regular puede estar compuesta por subexpresiones delimitadas por paréntesis, si es así es posible hacer referencia a las subcadenas 
+   correspondientes a estas usando el carácter ``\textbackslash'' seguido de la posición que ocupa la subexpresión.
+\par
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1094}%
+\begin{framed}
+\hfill \\$string$\  \textbf{str\_replace\_sub} ( $string$\  \textbf{str}, $numeric$\  \textbf{ini}, $numeric$\  \textbf{len}, $string$\  \textbf{replace} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \item[ini:] Posición inicial para el remplazo.
+   \item[len:] Longitud de la subcadena de remplazo.
+   \item[replace:] Cadena de remplazo.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un cadena de caracteres resultado de remplazar la subcadena dada por la posición \textbf{ini} y la longitud
+   \textbf{len} dentro de la cadena de caracteres \textbf{str} por la cadena \textbf{replace}.
+\par
+Si la posición inicial dada se encuentra fuera de la cadena se produce un error semántico.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1112}%
+\begin{framed}
+\hfill \\$string$\  \textbf{str\_upper} ( $string$\  \textbf{str} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres \textbf{str} con todos los caracteres alfabéticos convertidos a mayúsculas.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1124}%
+\begin{framed}
+\hfill \\$string$\  \textbf{str\_lower} ( $string$\  \textbf{str} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de caracteres de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres \textbf{str} con todos los caracteres alfabéticos convertidos a minúsculas.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1136}%
+\begin{framed}
+\hfill \\$array$\  \textbf{str\_search} ( $mixed$\  \textbf{str}, $regexp$\  \textbf{pattern} [, $string$\  \textbf{keys...}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada. Puede ser un array de cadenas.
+   \item[pattern:] Patrón de búsqueda. 
+   \item[keys...:] Listado de claves para las coincidencias. Si no se da las
+   claves serán numéricas.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un array que contiene todas las coincidencias del patrón dado por la 
+   expresión regular \textbf{pattern} en la cadena \textbf{str}, donde las 
+   claves del array vienen dadas por la lista de cadenas \textbf{keys...}. \\
+\par
+La expresión regular puede estar formada por subexpresiones delimitadas
+   por "()". En dicho caso se buscará en la cadena \textbf{str} subcadenas que pertenezcan al
+   conjunto delimitado por la expresión regular. Por cada subcadena encontrada se creará un array
+   con las correspondencias de cada subexpresión. \\
+\par
+Si \textbf{str} es un array de cadenas se aplicará el algoritmo de búsqueda de foram iterativa a cada cadena en el mismo.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1154}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{str\_match} ( $string$\  \textbf{str}, $regexp$\  \textbf{pattern})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada.
+   \item[pattern:] Expresión regular patrón. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor booleano verdadero si la cadena de caracteres \textbf{str} pertenence
+   al conjunto de palabras del lenguaje definido por la expresión regular \textbf{pattern}. Falso
+   en caso contrario.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1168}%
+\begin{framed}
+\hfill \\$regexp$\  \textbf{regexp} ( $string$\  \textbf{str})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[str:] Cadena de entrada.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la expresión regular correspondiente a la cadena \textbf{str}.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1180}%
+\begin{framed}
+\hfill \\$string$\  \textbf{sprintf} ( $string$\  \textbf{format} [, $mixed$\  \textbf{values...}] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[format:]  \hfill \\
+      La cadena formato contendrá una serie de
+		directivas de formato. Estas directivas serán sustituidas por el valor correspondiente, según posición, de la
+		lista. Cuando se realiza cada sustitución el valor es formateado según la directiva. \\
+\par
+Las directivas de formato tienen el siguiente forma:
+		\begin{displaymath}\%[operador][precisi\acute{o}n][formato]\end{displaymath}\  \\
+		Los posibles operadores serán los siguientes:
+		\begin{description}
+			\item[ +:] Fuerza la impresión del símbolo + cuando se formatean números positivos.
+			\item[ \^\ :] Convierte el caracteres a mayúsculas cuando se formatean cadenas de texto.
+			\item[ \#:] Añade el carácter 0x cuando se formatean números hexadecimales y el carácter 0 cuando se formatean octales.
+		\end{description} \hfill 
+\par
+La precisión se refiere al número de decimales que se imprimirán en el caso de formatear
+		números o el número de caracteres en el caso de formatear cadenas. \\
+\par
+El carácter de formato indica que tipo de formato se le dará al valor: 
+		\begin{description}
+			\item[  i|d:] Número entero.
+			\item[  u:] Sin signo.
+			\item[  f:] Coma flotante.
+			\item[  \%:] Carácter \%.
+			\item[  e:] Notación científica.
+			\item[  o:] Octal.
+			\item[  x:] Hexadecimal.
+			\item[  s|c:] Cadena de texto.
+		\end{description} \hfill \\
+   \item[values:] \hfill \\Lista de valores. Se deben de dar tantos como directivas existan en la cadena de formato.
+\par
+\end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres resultante de sustituir las directivas de formato de la cadena \textbf{format}, por los valores  de la lista \textbf{values} formateados 
+   según la directiva correspondiente posicionalmente.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1200}%
+\begin{framed}
+\hfill \\$string$\  \textbf{array\_implode} ( $array$\  \textbf{elements}, $string$\  \textbf{sep} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \item[sep:] Cadena separadora
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un string correspondiente a todos los elementos del array \textbf{elements} en el mismo orden, con el string \textbf{sep} entre cada elemento. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1214}%
+\begin{framed}
+\hfill \\$mixed$\  \textbf{array\_first} ( $array$\  \textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el primer elemento del array \textbf{elements}. Si \textbf{elements} es un array
+   numérico con claves numéricas devuelve el elemento con la posición 0. Si es un array asociativo 
+   devuelve el elemento correspondiente a la primera clave que se introdujo. Si el array es vacío 
+   devuelve un valor nulo. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1227}%
+\begin{framed}
+\hfill \\$mixed$\  \textbf{array\_last} ( $array$\  \textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el último elemento del array \textbf{elements}. Si \textbf{elements} es un array
+   numérico con claves numéricas devuelve el elemento con la posición $size - 1$. Si es un array asociativo 
+   devuelve el elemento correspondiente a la última clave que se introdujo. Si el array es vacío 
+   devuelve un valor nulo. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1240}%
+\begin{framed}
+\hfill \\$array$\  \textbf{array\_insert} ( $array$\  \&\textbf{elements}, $numeric$\  \textbf{position}, $mixed$\  \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[position:] Entero sin signo que determina la posición en la que se insertará el elemento. Debe ser un valor entero entre $0$\  y
+   el tamaño del array, cualquier otro valor dará error de índice.
+   \item[element:] Elemento a insertar
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array resultado de insertar \textbf{element} en la posición \textbf{position} del array \textbf{elements}.
+   Si \textbf{elements} es un array de índices numéricos inserta el elemento en la posición dada. Si 
+   es un array asociativo inserta el elemento en la clave que ocupa la posición dada, desplazando los demás valores y creando
+   una nueva clave correspondiente al número de elementos.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1257}%
+\begin{framed}
+\hfill \\$array$\  \textbf{array\_delete} ( $array$\  \&\textbf{elements}, $mixed$\  \textbf{position})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[position:] Puede ser un entero sin signo que determina la posición que será eliminada. Debe ser un valor entero mayor que $0$\  y
+   menor que el tamaño del array, cualqueir otro valor no tendrá efecto. Además puede ser una cadena de caracteres que 
+   represente la clave del array que será eliminada. Si la clave no existe en el array la función no realizará ninguna acción.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Si el array \textbf{elements} presenta índices numéricos devuelve el array resultado de eliminar la posición \textbf{position} del array. 
+\par
+Si el array \textbf{elements} es asociativo devuelve el array resultado de eliminar la clave \textbf{position} del array. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1273}%
+\begin{framed}
+\hfill \\$array$\  \textbf{array\_push} ( $array$\  \&\textbf{elements}, $mixed$\  \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[element:] Elemento a insertar al final del array
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array \textbf{elements} con el elemento \textbf{element} insertado en la última posición. Si \textbf{elements} es
+   asociativo la clave del elemento insertado será el número de elementos del array antes de la insercción. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1288}%
+\begin{framed}
+\hfill \\$mixed$\  \textbf{array\_pop} ( $array$\  \&\textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el último elemento del array \textbf{elements} y lo elimina del mismo. Si el array es asociativo devuelve el
+   elemento de la última clave introducida.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1300}%
+\begin{framed}
+\hfill \\$array$\  \textbf{array\_unshift} ( $array$\  \&\textbf{elements}, $mixed$\  \textbf{element})  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \item[element:] Elemento a insertar al inicio del array
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el array \textbf{elements} con el elemento \textbf{element} insertado en la primera posición. Si \textbf{elements} es
+   asociativo la clave del elemento insertado será la misma que la anterior, llevándose a cabo un desplazamiento. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1315}%
+\begin{framed}
+\hfill \\$mixed$\  \textbf{array\_shift} ( $array$\  \&\textbf{elements} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos. Es una referencia por lo que el array dado como valor de este parámetro será modificado. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el primer elemento del array \textbf{elements} y lo elimina del mismo. Si el array es asociativo devuelve el
+   elemento de la primera clave introducida.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1327}%
+\begin{framed}
+\hfill \\$mixed$\  \textbf{array\_reduce} ( $array$\  \textbf{elements}, $function$\  \textbf{iterative} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[elements:] Array de elementos.
+   \item[itereative:] Función de iteración para la reducción. La función debe recibir dos parámetros donde el primero
+   será el acumulador y el segundo el elemento de la iteración actual, y devolverá el acumulador para la próxima iteración.
+   La iteración comienza con el primer elemento como valor del acumulador y el segundo como primer elemento para iterar.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el resultado de aplicar la función \textbf{iterative} iterativamente sobre los elementos del array \textbf{elements}.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1342}%
+\begin{framed}
+\hfill \\$string$\  \textbf{exec} ( $string$\  \textbf{cmd} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[cmd:] Cadena de caracteres que representa el comando a ejecutar
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el contenido de la salida estándar al ejecutar el comando del sistema indicado por \textbf{cmd}.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1354}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{fork} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Produce una bifurcación en la ejecución, creando un nuevo proceso copia del 
+   proceso actual. La ejecución en el proceso hijo prosigue en la misma sentencia 
+   y con el mismo estado que el proceso padre. 
+\par
+El valor devuelto en el proceso padre será de el identificador del proceso hijo creado. 
+\par
+El valor devuelto en el proceso hijo será $0$.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1362}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{wait} ( [ $numeric$\  pid ] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[pid:] Identificador del proceso hijo cuya ejecución se desea esperar a que 
+   finalice. Si no es dado se esperará a que finalicen todos los procesos hijos.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el código de salida producido por el último proceso en finalizar.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1372}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{getpid} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el identificador del proceso actual
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1380}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{getppid} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el identificador del proceso padre del actual.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1388}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{signal} ( $numeric$\  \textbf{pid}, $numeric$\  \textbf{code} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[pid:] Identificador de proceso al que se le envía la señal
+   \item[code:] Código numérico de señal POSIX
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Un valor booleano que indica si la señal se envió correctamente. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1400}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{shandler} ( $numeric$\  \textbf{code}, $function$\  \textbf{handler} )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[code:] Código numérico de señal POSIX a la que se le atribuirá el manejador.
+   \item[handler:] Función que manejará la ejecución cuando se dé la señal.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Un valor booleano que indica si el manejador de señal se estableció correctamente. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1412}%
+\begin{framed}
+\hfill \\$void$\  \textbf{exit\_process} ( )  
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1418}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{process} ( $function$\  \textbf{func} [, $mixed$\  \textbf{args ...} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[func:] Función que será llamada como un proceso.
+   \item[args...:] Lista de parámetros que serán pasados a la función.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor verdadero si el proceso fue llamado con éxito.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1431}%
+\begin{framed}
+\hfill \\$file$\  \textbf{file} ( $string$\  \textbf{name}, $string$\  \textbf{mode}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[name:] Nombre del fichero que se desea abrir. Se puede utilizar una ruta absoluta o relativa al programa
+   \item[mode:] Modo en el que se abrirá el fichero:
+      \begin{description}
+         \item [r:] Solo lectura
+         \item [r+:] Lectura y/o escritura
+         \item [w:] Escritura truncando el fichero
+         \item [w+:] Lectura y/o escritura truncando el fichero
+         \item [a:] Escritura posicionando el puntero al final del fichero
+         \item [a+:] Lectura y/o escritura posicionando el puntero al final del fichero
+      \end{description} \hfill 
+\par
+Todos los modos excepto el solo lectura crean el fichero si este no existe. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un puntero a fichero si el fichero ha sido abierto correctamente. Y un valor falso si no se ha 
+   abierto el fichero con éxito
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1445}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{fclose} ( $file$\  \textbf{fpointer}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor booleano que indica si el fichero se ha cerrado correctamente.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1456}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{fput}|\textbf{f>:} ( $file$\  \textbf{fpointer}, $string$\  \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[content:] Cadena de caracteres que será escrita en el fichero a partir de la posición en la que se encuentre el puntero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un valor numérico que representa los bytes que han sido escritos.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1469}%
+\begin{framed}
+\hfill \\$string$\  \textbf{fget}|\textbf{f<:} ( $file$\  \textbf{fpointer} [, $numeric$\  \textbf{size} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[size:] Número de caracteres que serán leídos. Si no es dado se lee hasta el primer carácter de salto de línea encontrado o hasta el final del fichero 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres leída.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1482}%
+\begin{framed}
+\hfill \\$bool$\  \textbf{fseek} ( $file$\  \textbf{fpointer}, $numeric$\  \textbf{offset} [, $enum$\  \textbf{position} ]  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \item[offset:] Número de bytes que será desplazado el puntero
+   \item[position:] Posición de referencia desde la que mover el puntero. Puede ser algún valor 
+   FSET, FCUR o FEND, para referirse al inicio, la posición actual o el final. Si no es dado se
+   toma como referencia el inicio del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un booleano que indica si la posición cambió correctamente. Si la posición 
+   nueva se encuentra fuera del fichero el puntero se colocará al final del mismo.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1495}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{ftell} ( $file$\  \textbf{fpointer}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[fpointer:] Puntero a fichero. 
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve un la posición del puntero al fichero como un número que representa el
+   número de bytes desde el inicio del mismo. 
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1506}%
+\begin{framed}
+\hfill \\$string$\  \textbf{fread} ( $mixed$\  \textbf{file}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. Si el fichero no existe
+   devolverá el valor nulo.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve una cadena de caracteres que representa el contenido del fichero.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1517}%
+\begin{framed}
+\hfill \\$string$\  \textbf{fwrite} ( $mixed$\  \textbf{file}, $string$\  \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. 
+   Si el fichero no existe será creado.
+   \item[content:] Cadena de caracteres que será el contenido del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres escrita en el fichero.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1529}%
+\begin{framed}
+\hfill \\$string$\  \textbf{fappend} ( $mixed$\  \textbf{file}, $string$\  \textbf{content}  )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[file:] Fichero que será leído. Puede ser dado con ruta relativa al programa o absoluta, o como un puntero a fichero. 
+   Si el fichero no existe será creado.
+   \item[content:] Cadena de caracteres que será añadida al contenido del fichero.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres escrita en el fichero.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1542}%
+\begin{framed}
+\hfill \\$string$\  \textbf{date} ( $mixed$\  \textbf{format} [, $numeric$\  \textbf{timestamp} ] )  
+\begin{description}
+\item [Parámetros:] \hfill 
+   \begin{description}
+   \item[format:] Cadena de formato. Establece el formato de la fecha mediante una 
+   serie de directivas.
+   \begin{description}
+         \item[\%d:] Día del mes con dos dígitos.
+			\item[\%j:] Día del mes sin ceros iniciales.
+			\item[\%l:] Día de la semana de forma alfabética completa.
+			\item[\%D:] Día de la semana de forma alfabética y con tres letras.
+			\item[\%w:] Día de la semana de forma numérica (0-domingo,6-sábado).
+			\item[\%z:] Día del año de forma numérica.
+			\item[\%F:] Mes de forma alfabética.
+			\item[\%m:] Mes de forma numérica con dos dígitos.
+			\item[\%n:] Mes de forma numérica sin ceros iniciales.
+			\item[\%M:] Mes de forma alfabética con tres letras.
+			\item[\%Y:] Año con cuatro dígitos.
+			\item[\%y:] Año con dos dígitos.
+			\item[\%a:] Periodo del día (am/pm) en minúsculas.
+			\item[\%A:] Periodo del día (am/pm) en mayúsculas.
+			\item[\%g:] Hora en formato 12h sin ceros iniciales.
+			\item[\%G:] Hora en formato 24h sin ceros iniciales.
+			\item[\%h:] Hora en formato 12h con dos dígitos.
+			\item[\%H:] Hora en formato 24h con dos dígitos.
+			\item[\%i:] Minutos con dos dígitos.
+			\item[\%U:] Segundos desde la Época Unix (1 de Enero del 1970 00:00:00 GMT).
+			\item[\%\%:] Carácter \%.
+   \end{description}
+   \item[timestamp:] Número entero que representa la marca de tiempo Unix a la que se desea dar formato. Si 
+   no es dado se toma el momento actual.
+   \end{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve la cadena de caracteres correspondiente a la marca de tiempo \textbf{timestamp} formateada según
+   \textbf{format}.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{paragraph}
+{\newpage\clearpage
+\lthtmlfigureA{framed1558}%
+\begin{framed}
+\hfill \\$numeric$\  \textbf{time} ( )  
+\begin{description}
+\item[Valores devueltos:] \hfill \\
+   Devuelve el entero correspondiente a la marca de tiempo Unix actual.
+\end{description}
+\end{framed}%
+\lthtmlfigureZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsection}
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4529}%
+$ load$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsubsection}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4534}%
+$ dev$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4536}%
+$ run$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4542}%
+$ getParams$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+
+\end{document}

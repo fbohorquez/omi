@@ -1,0 +1,56 @@
+\subsection{Operadores de acceso}
+\subsubsection{Acceso a variable}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a variable.
+		\item [Categoría:] Operadores de acceso.
+		\item [Descripción:] Se hace necesario la gestión de los símbolos variables creados durante la ejecución, lo que implica el
+		acceso a los datos referenciados por estos. Se deberá poder acceder a los datos referenciados por una variable
+		simplemente mediante una expresión formada por el identificador asociado a la misma. El acceso a una variable debe originar un
+		valor por defecto si esta no tiene un valor asociado. El valor por defecto dependerá del contexto:  
+		\begin{description}
+			\item[Clave de array:] Si la variable se utiliza para la clave de un array, o cualquier tipo
+			derivado de este, el valor por defecto de esta es una cadena de caracteres que representa
+			el identificador con el que se accede a la misma.
+			\item [Cualquier otro:] En cualquier otro contexto el valor por defecto será el valor nulo.
+		\end{description}
+		Una operación de acceso a variable representa una expresión que deberá tener, como valor asociado tras su ejecución, el valor al
+		que referencia el símbolo variable.
+	\end {description}
+\end{framed}
+
+
+\subsubsection{Acceso a símbolo de dato compuesto}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a símbolo de dato compuesto.
+		\item [Categoría:] Operadores de acceso.
+		\item [Descripción:] Dado a que existen tipos de datos compuestos que deben mantener su propia tabla de símbolos,
+		se precisa de un mecanismo para acceder a estos a partir del propio dato. Este mecanismo deberá devolver el símbolo al que se
+		accede, pudiéndose aplicar cualquiera de las operaciones sobre símbolos.
+	\end {description}
+\end{framed}
+
+\subsubsection{Acceso a última posición}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a última posición.
+		\item [Categoría:] Operadores de acceso.
+		\item [Descripción:] La mayoría de datos compuestos consisten en un listado de elementos. Se hace necesario un mecanismo
+		para referenciar el final de este listado. A esta referencia se le podrá asignar algún dato, lo que lo añadirá al final del listado.
+	\end {description}
+\end{framed}
+
+\subsubsection{Acceso a variables de entorno del sistema}
+\begin{framed}
+	\begin{description}
+		\item [Número:] \cn
+		\item [Nombre:] Acceso a variables de entorno del sistema.
+		\item [Categoría:] Operadores de acceso.
+		\item [Descripción:] Se necesita de un mecanismo para acceder a las variables de entorno definidas en el sistema operativo. 
+	\end{description}
+\end{framed}
+

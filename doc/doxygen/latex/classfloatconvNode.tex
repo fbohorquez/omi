@@ -1,0 +1,88 @@
+\hypertarget{classfloatconvNode}{\section{Referencia de la Clase floatconv\-Node}
+\label{classfloatconvNode}\index{floatconv\-Node@{floatconv\-Node}}
+}
+
+
+Nodo de conversión a flotante.  
+
+
+
+
+{\ttfamily \#include $<$conv\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de floatconv\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{classfloatconvNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classfloatconvNode_a0de7468218b7634c7fabcd4bebdb3e60}{floatconv\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\item 
+void \hyperlink{classfloatconvNode_ae4ffda78f5fa50df0cbf21f7eb1b1572}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static num \hyperlink{classfloatconvNode_a32fa0d9657a4be471d7ca5920344fde4}{do\-\_\-floatconv} (\hyperlink{classrunNode}{run\-Node} $\ast$node)
+\end{DoxyCompactItemize}
+\subsection*{Otros miembros heredados}
+
+
+\subsection{Descripción detallada}
+Nodo de conversión a flotante. 
+
+Este nodo fuerza la conversion a flotante del valor de un nodo
+
+Si el nodo es booleano toma el valor de 0 ó 1 Si el nodo es aritmético toma el valor flotante del nodo Si el nodo es cadena de texto toma el valor flotante significativo de la cadena, en el caso de ser numérico. En caso contario toma el tamaño de la cadena. Si el nodo es array toma el numéro de elementos del mismo 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classfloatconvNode_a0de7468218b7634c7fabcd4bebdb3e60}{\index{floatconv\-Node@{floatconv\-Node}!floatconv\-Node@{floatconv\-Node}}
+\index{floatconv\-Node@{floatconv\-Node}!floatconvNode@{floatconv\-Node}}
+\subsubsection[{floatconv\-Node}]{\setlength{\rightskip}{0pt plus 5cm}floatconv\-Node\-::floatconv\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classfloatconvNode_a0de7468218b7634c7fabcd4bebdb3e60}
+Constructor de la clase. Asocia el nodo operador a un nodo. 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classfloatconvNode_a32fa0d9657a4be471d7ca5920344fde4}{\index{floatconv\-Node@{floatconv\-Node}!do\-\_\-floatconv@{do\-\_\-floatconv}}
+\index{do\-\_\-floatconv@{do\-\_\-floatconv}!floatconvNode@{floatconv\-Node}}
+\subsubsection[{do\-\_\-floatconv}]{\setlength{\rightskip}{0pt plus 5cm}num floatconv\-Node\-::do\-\_\-floatconv (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classfloatconvNode_a32fa0d9657a4be471d7ca5920344fde4}
+Convierte un nodo a su valor flotante 
+\begin{DoxyParams}{Parámetros}
+{\em node} & Nodo operando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de la operación 
+\end{DoxyReturn}
+\hypertarget{classfloatconvNode_ae4ffda78f5fa50df0cbf21f7eb1b1572}{\index{floatconv\-Node@{floatconv\-Node}!run@{run}}
+\index{run@{run}!floatconvNode@{floatconv\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void floatconv\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfloatconvNode_ae4ffda78f5fa50df0cbf21f7eb1b1572}
+Tras ser ejecutado el operador toma como valor el resultado de la conversión a flotante del nodo asociado 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{convOpNode_8h}{conv\-Op\-Node.\-h}\item 
+trunk/src/run/operators/conv\-Op\-Node.\-cpp\end{DoxyCompactItemize}

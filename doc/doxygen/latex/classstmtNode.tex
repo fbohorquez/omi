@@ -1,0 +1,112 @@
+\hypertarget{classstmtNode}{\section{Referencia de la Clase stmt\-Node}
+\label{classstmtNode}\index{stmt\-Node@{stmt\-Node}}
+}
+
+
+Nodo de sentencia.  
+
+
+
+
+{\ttfamily \#include $<$stmt\-Node.\-h$>$}
+
+Diagrama de herencias de stmt\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstmtNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstmtNode_ac71c29f617015a7ce9441fbb5b4e7052}{stmt\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$node1, \hyperlink{classrunNode}{run\-Node} $\ast$node2, Y\-Y\-L\-T\-Y\-P\-E bloq=Y\-Y\-L\-T\-Y\-P\-E(), bool firstlevel=false)
+\item 
+void \hyperlink{classstmtNode_a3af40723e5e98718eacc7ac7935b281b}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classstmtNode_a08d12bc2ec45075d8693f26a5cae8ead}{new\-Line} (void)
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classstmtNode_a5238bce92ef57e15abd5eacdd4c7cbae}{row\-\_\-} = 2
+\item 
+static bool \hyperlink{classstmtNode_aa1f2b53dbf57a8030442f44de541e6bc}{compile\-\_\-error} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo de sentencia. 
+
+La funcionalidad de este nodo es meramente constructiva. Su función es enlazar dos nodos de diferente naturaleza.
+
+El nodo de sentencia es asociado a otros dos nodos. Su ejecución consistirá en ejecutar ambos nodos de forma secuencial.
+
+Haciendo un uso anidado del mismo es posible enlazar varios nodos de ejecución.
+
+Las sentencias pueden presentarse en un primer nivel si no se encuentras dentro de ningún bloque, o dentro de otras sentencias en forma de bloque. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classstmtNode_ac71c29f617015a7ce9441fbb5b4e7052}{\index{stmt\-Node@{stmt\-Node}!stmt\-Node@{stmt\-Node}}
+\index{stmt\-Node@{stmt\-Node}!stmtNode@{stmt\-Node}}
+\subsubsection[{stmt\-Node}]{\setlength{\rightskip}{0pt plus 5cm}stmt\-Node\-::stmt\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{node1, }
+\item[{{\bf run\-Node} $\ast$}]{node2, }
+\item[{Y\-Y\-L\-T\-Y\-P\-E}]{bloq = {\ttfamily YYLTYPE()}, }
+\item[{bool}]{firstlevel = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classstmtNode_ac71c29f617015a7ce9441fbb5b4e7052}
+Constructor de la clase.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em node1} & Nodo que se ejecutará en primer lugar. \\
+\hline
+{\em node2} & Nodo que se ejecutará en segundo lugar. \\
+\hline
+{\em bloq} & Determina en la línea en la que se encuentra la sentencia dentro del fichero \\
+\hline
+{\em fistlevel} & Determina si la sentencia es de primer nivel \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classstmtNode_a08d12bc2ec45075d8693f26a5cae8ead}{\index{stmt\-Node@{stmt\-Node}!new\-Line@{new\-Line}}
+\index{new\-Line@{new\-Line}!stmtNode@{stmt\-Node}}
+\subsubsection[{new\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void stmt\-Node\-::new\-Line (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classstmtNode_a08d12bc2ec45075d8693f26a5cae8ead}
+Añade una nueva línea para el control de líneas en la que se encuentra cada sentencia \hypertarget{classstmtNode_a3af40723e5e98718eacc7ac7935b281b}{\index{stmt\-Node@{stmt\-Node}!run@{run}}
+\index{run@{run}!stmtNode@{stmt\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void stmt\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classstmtNode_a3af40723e5e98718eacc7ac7935b281b}
+Método de ejecución del nodo.
+
+Ejecuta secuencialmente los nodos asociados en la construcción del objeto. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{classstmtNode_aa1f2b53dbf57a8030442f44de541e6bc}{\index{stmt\-Node@{stmt\-Node}!compile\-\_\-error@{compile\-\_\-error}}
+\index{compile\-\_\-error@{compile\-\_\-error}!stmtNode@{stmt\-Node}}
+\subsubsection[{compile\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}bool stmt\-Node\-::compile\-\_\-error = false\hspace{0.3cm}{\ttfamily [static]}}}\label{classstmtNode_aa1f2b53dbf57a8030442f44de541e6bc}
+Determina si se ha llevado a cabo un error al procesar el código fuente \hypertarget{classstmtNode_a5238bce92ef57e15abd5eacdd4c7cbae}{\index{stmt\-Node@{stmt\-Node}!row\-\_\-@{row\-\_\-}}
+\index{row\-\_\-@{row\-\_\-}!stmtNode@{stmt\-Node}}
+\subsubsection[{row\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int stmt\-Node\-::row\-\_\- = 2\hspace{0.3cm}{\ttfamily [static]}}}\label{classstmtNode_a5238bce92ef57e15abd5eacdd4c7cbae}
+Líneas en el fichero 
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/stmts/\hyperlink{stmtNode_8h}{stmt\-Node.\-h}\item 
+trunk/src/run/stmts/stmt\-Node.\-cpp\end{DoxyCompactItemize}

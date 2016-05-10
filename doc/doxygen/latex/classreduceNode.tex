@@ -1,0 +1,85 @@
+\hypertarget{classreduceNode}{\section{Referencia de la Clase reduce\-Node}
+\label{classreduceNode}\index{reduce\-Node@{reduce\-Node}}
+}
+
+
+Nodo reduccion de array.  
+
+
+
+
+{\ttfamily \#include $<$array\-Op\-Node.\-h$>$}
+
+Diagrama de herencias de reduce\-Node\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classreduceNode}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classreduceNode_ac4c8aa39ec6f6b76b09f7839c2cee7eb}{reduce\-Node} (\hyperlink{classrunNode}{run\-Node} $\ast$elem, \hyperlink{classrunNode}{run\-Node} $\ast$func)
+\item 
+void \hyperlink{classreduceNode_aab13f70c0ca5a00dec30f9ea1be93420}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classrunNode}{run\-Node} $\ast$ \hyperlink{classreduceNode_ab81193bde5ae9ff6b2cce7fe4ff99b8f}{as\-Method} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Nodo reduccion de array. 
+
+Recorre un nodo array aplicando una función para cada elemento, manteniendo un acumulador que sera devuelto al final del recorrido.
+
+La función constará de dos parámetros que se corresponderán al acumulador y al elemento actual en el recorrido. Y devuelve el siguiente acumulador. 
+
+\subsection{Documentación del constructor y destructor}
+\hypertarget{classreduceNode_ac4c8aa39ec6f6b76b09f7839c2cee7eb}{\index{reduce\-Node@{reduce\-Node}!reduce\-Node@{reduce\-Node}}
+\index{reduce\-Node@{reduce\-Node}!reduceNode@{reduce\-Node}}
+\subsubsection[{reduce\-Node}]{\setlength{\rightskip}{0pt plus 5cm}reduce\-Node\-::reduce\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf run\-Node} $\ast$}]{elem, }
+\item[{{\bf run\-Node} $\ast$}]{func}
+\end{DoxyParamCaption}
+)}}\label{classreduceNode_ac4c8aa39ec6f6b76b09f7839c2cee7eb}
+Constructor de la clase. Crea e inicializa un nodo reducción de array a partir de un nodo array y otro función. 
+\begin{DoxyParams}{Parámetros}
+{\em elem} & Nodo que hace de array \\
+\hline
+{\em func} & Nodo que hace de función \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\hypertarget{classreduceNode_ab81193bde5ae9ff6b2cce7fe4ff99b8f}{\index{reduce\-Node@{reduce\-Node}!as\-Method@{as\-Method}}
+\index{as\-Method@{as\-Method}!reduceNode@{reduce\-Node}}
+\subsubsection[{as\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf run\-Node} $\ast$ reduce\-Node\-::as\-Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classreduceNode_ab81193bde5ae9ff6b2cce7fe4ff99b8f}
+Devuelve un nodo reducción de array como cuerpo de un nodo función, siendo un nodo this el array de elementos. \begin{DoxyReturn}{Devuelve}
+Método reduce. 
+\end{DoxyReturn}
+\hypertarget{classreduceNode_aab13f70c0ca5a00dec30f9ea1be93420}{\index{reduce\-Node@{reduce\-Node}!run@{run}}
+\index{run@{run}!reduceNode@{reduce\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void reduce\-Node\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classreduceNode_aab13f70c0ca5a00dec30f9ea1be93420}
+Método que ejecuta el nodo. Se encarga de recorrer el array de elementos aplicando una función por cada uno y manteniendo un acumulador. 
+
+Implementa \hyperlink{classrunNode_a83c10df8148829b08e04153c93d69eec}{run\-Node}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+trunk/src/run/operators/\hyperlink{arrayOpNode_8h}{array\-Op\-Node.\-h}\item 
+trunk/src/run/operators/array\-Op\-Node.\-cpp\end{DoxyCompactItemize}

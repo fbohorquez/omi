@@ -1,0 +1,59 @@
+-- Constantes
+-- Impresión
+true
+false
+-- Asignación a variable
+true
+true
+false
+false
+true
+true
+true
+-- Asignación a posición de array
+[0] => true
+[1] => false
+[0] => true
+[1] => true
+[2] => true
+[3] => true
+[4] => true
+[5] => true
+[6] => true
+[7] => true
+[8] => true
+[9] => true
+-- Asignación a posición de cadena
+B
+BCDEF
+1
+1BCDEF
+
+GFEDEFG
+-- Asignación a referencia
+false
+false
+true
+true
+-- ERROR[
+Error: file ./basic.lsh line 51 => data type error, assigning constant
+dev: asigNode: Node 1 is const 
+Error: file ./basic.lsh line 52 => data type error, assigning constant
+dev: asigNode: Node 1 is const 
+Error: file ./basic.lsh line 53 => data type error, assigning constant
+dev: asigNode: Node 1 is const 
+Error: file ./basic.lsh line 54 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+Error: file ./basic.lsh line 55 => data type error, Change reference of const node
+dev: getNode_strInterface: node must be symbol
+]

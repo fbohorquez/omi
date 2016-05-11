@@ -1,1 +1,0 @@
-digraph MyGraph {rankdir=LR; a->b; b->c}

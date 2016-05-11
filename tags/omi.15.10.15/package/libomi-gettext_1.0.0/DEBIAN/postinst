@@ -1,2 +1,0 @@
-#/bin/sh
-echo '/usr/local/share/omi/libs/libomi_gettext.so' >> /usr/local/share/omi/libs.ini

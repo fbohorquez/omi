@@ -1,1 +1,0 @@
-$(document).ready(function(){var data="ruta=guardar_ruta";$.ajax({url:'../guardar_ruta_referencia/guardar_ruta.php',type:"POST",data:data,cache:false,success:function(data){}});});

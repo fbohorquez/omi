@@ -1,6 +1,0 @@
-SUBDIRS = src
-EXTRA_DIST = AUTHORS ChangeLog NEWS README THANKS 
-AM_CXXFLAGS = -fpic -Wall -Wextra
-
-
-

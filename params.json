@@ -1,0 +1,6 @@
+{
+  "name": "Omi",
+  "tagline": "OMI. Open Modular Interpreter",
+  "body": "### OMI. Open Modular Interpreter\r\nOMI is one interpreter that processed source code written in OMI language. OMI is academic software and he is used for learning about how interpreters work.\r\n\r\nInterpretere software can be run as server software. This \r\nreceives source code by a TCP port.\r\n\r\nWhen OMI processed source code can produce a JSON struct that describes the syntatic and semantic process carried out. This data can be represented by one client software, allowing interaction with the interpreting process. ",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

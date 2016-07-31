@@ -37,13 +37,10 @@ execNode::execNode (runNode* node) : node_(node) {}
 
 void execNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
+      throw errorException ("function not allowed", "execNode: function not allowed in this mode", 3);
+   #endif
    runNode *node = node_;
    nexpNode::resolved (node);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
    string cmd = stringNode::to_str (node);
    FILE* pipe = popen(cmd.c_str(), "r");
    if (!pipe) cerr << "ERROR" << endl;
@@ -55,9 +52,6 @@ void execNode::run () {
    }
    pclose(pipe);
    strvalue_ = result;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, strvalue_);
-   #endif   
 }
 //----------------------------------------------------------------------
 
@@ -67,27 +61,18 @@ evalNode::evalNode (runNode* node) : node_(node) {}
 
 void evalNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
+      throw errorException ("function not allowed", "evalNode: function not allowed in this mode", 3);
    #endif
    runNode *node = node_;
    nexpNode::resolved (node);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
    try {
       string code = stringNode::to_str (node);
       interpreter::get()->scan_string(code.c_str());
       yyparse();
       nullNode*s = new nullNode ();
-      noderef(s);
-      #if JSON==1
-         interpreter::to_jsonSetValue(this, s);
-      #endif      
+      noderef(s);    
    } catch (returnException& e) {
       noderef(e.val());
-      #if JSON==1
-         interpreter::to_jsonSetValue(this, e.val());
-      #endif
    }
 }
 //----------------------------------------------------------------------
@@ -98,8 +83,8 @@ forkNode::forkNode () {}
 
 void forkNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif    
+      throw errorException ("function not allowed", "forkNode: function not allowed in this mode", 3);
+   #endif
    pid_t pID = fork ();
    numvalue_ = pID;
 }
@@ -111,30 +96,21 @@ waitNode::waitNode (runNode *pID) : pID_(pID) {}
 
 void waitNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif    
+      throw errorException ("function not allowed", "waitNode: function not allowed in this mode", 3);
+   #endif
    runNode *pID = pID_;
    int childExitStatus, pid;
    if (pID) {
-      nexpNode::resolved (pID);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif       
+      nexpNode::resolved (pID); 
       pid = arithNode::to_num (pID);
    } else {
       pid = 0;
    }
    pid_t ws = waitpid(pid, &childExitStatus, 0);
    if( !WIFEXITED(childExitStatus) ) {
-      numvalue_ = WEXITSTATUS(childExitStatus);
-      #if JSON==1
-         interpreter::to_jsonSetValue(this, numvalue_);
-      #endif         
+      numvalue_ = WEXITSTATUS(childExitStatus);   
    } else if( WIFSIGNALED(childExitStatus) ) {
       numvalue_ = WEXITSTATUS(childExitStatus);
-      #if JSON==1
-         interpreter::to_jsonSetValue(this, numvalue_);
-      #endif      
    }
 }
 //----------------------------------------------------------------------
@@ -145,14 +121,11 @@ getpidNode::getpidNode () {}
 
 void getpidNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif    
+      throw errorException ("function not allowed", "getpidNode: function not allowed in this mode", 3);
+   #endif
    pid_t pid ;
    pid = getpid();
    numvalue_ = pid;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, numvalue_);
-   #endif
 }
 //----------------------------------------------------------------------
 
@@ -162,14 +135,11 @@ getppidNode::getppidNode () {}
 
 void getppidNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif 
+      throw errorException ("function not allowed", "getppidNode: function not allowed in this mode", 3);
+   #endif
    pid_t ppid;
    ppid = getppid();
    numvalue_ = ppid;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, numvalue_);
-   #endif
 }
 //----------------------------------------------------------------------
 
@@ -178,6 +148,7 @@ void getppidNode::run () {
 processNode::processNode (runNode * func, runNode* params) : func_(func), params_ (params) {}
 
 void *processNode::processRun (void *ptr) {
+   
    if (processNode * thNode = (processNode*)ptr) {
       runNode *func = thNode->func_, *params = thNode->params_;
       if (idNode* id = dynamic_cast<idNode*>(func)) {
@@ -199,20 +170,14 @@ void *processNode::processRun (void *ptr) {
 
 void processNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
-   //~ pthread_t th;
+      throw errorException ("function not allowed", "processNode: function not allowed in this mode", 3);
+   #endif
    pid_t pID = fork ();
    if (pID == 0) {
       processNode::processRun (this);
       _Exit(0);
    }
    boolvalue_ = true;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, boolvalue_);
-   #endif
-   //~ pthread_create(&th, NULL, processNode::processRun, this);
-   //~ processNode::ths_.push_back (th);
 }
 //----------------------------------------------------------------------
 
@@ -222,13 +187,10 @@ exitProcessNode::exitProcessNode () {}
 
 void exitProcessNode::run () {
    #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif    
+      throw errorException ("function not allowed", "exitProcessNode: function not allowed in this mode", 3);
+   #endif 
    _Exit(0);
    boolvalue_ = true;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, boolvalue_);
-   #endif
 }
 //----------------------------------------------------------------------
 
@@ -238,21 +200,12 @@ signalNode::signalNode (runNode* pid, runNode* signal) : signal_(signal), pid_ (
 
 void signalNode::run(){
    #if JSON==1
-      interpreter::to_jsonRun(this);
+      throw errorException ("function not allowed", "signalNode: function not allowed in this mode", 3);
    #endif
    runNode *pid = pid_, *signal = signal_;
    nexpNode::resolved(pid);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
    nexpNode::resolved(signal);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif  
    boolvalue_ = kill((int)arithNode::to_num (pid), (int)arithNode::to_num (signal)) == 0;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, boolvalue_);
-   #endif
 }
 //----------------------------------------------------------------------
 
@@ -264,23 +217,14 @@ signalhandlerNode::signalhandlerNode (runNode* signal, runNode* function) : sign
 
 void signalhandlerNode::run(){
    #if JSON==1
-      interpreter::to_jsonRun(this);
+      throw errorException ("function not allowed", "signalhandlerNode: function not allowed in this mode", 3);
    #endif
    runNode *function = function_, *sig = signal_;
    nexpNode::resolved(function);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
    nexpNode::resolved(sig);
-   #if JSON==1
-      interpreter::to_jsonRun(this);
-   #endif   
    signalhandlerNode::instances.push_back(function);
    signal ((int)arithNode::to_num (sig), signalhandlerNode::callHandlers);
    boolvalue_ = true;
-   #if JSON==1
-      interpreter::to_jsonSetValue(this, boolvalue_);
-   #endif
 }
 
 void signalhandlerNode::callHandlers (int signum){
